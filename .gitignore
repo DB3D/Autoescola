@@ -1,2 +1,18 @@
 __pycache__/
 *.pyc
+
+# Frontend dependencies and build output
+node_modules/
+dist/
+.vite/
+coverage/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# Logs and editor/OS files
+*.log
+.DS_Store
+Thumbs.db

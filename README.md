@@ -1,4 +1,4 @@
-# Autoescola Olimpica test export
+# Autoescola study app data
 
 Authenticated offline export of the Catalan driving-test bank available to the
 student account. Credentials are prompted for at runtime and are **not** stored
@@ -18,14 +18,20 @@ The source occasionally returns an extra fully blank record, which the
 extractor removes. The original server position and record count remain in the
 JSON for auditing.
 
-## Files
+## Project layout
 
-- `src/questions.json`: complete structured dataset, grouped by test
-- `src/translations.json`: Catalan source text with the French translation of
+- `src/data/questions.json`: complete structured dataset, grouped by test
+- `src/data/translations.json`: Catalan source text with the French translation of
   every question and answer, keyed by question text
+- `src/data/userout.json`: initialized per-question progress records for all
+  4,400 question IDs
 - `src/images/`: locally downloaded question images
-- `src/manifest.json`: counts, validation results, and overrides
-- `extract_autoescola.py`: repeatable standard-library-only Python 3.10+ extractor
+- `src/data/manifest.json`: counts, validation results, and overrides
+- `docs/`: official reference material used while auditing questions
+
+The `src/` directory is reserved for the future frontend application. Images
+remain in `src/images/`; application code can be added alongside the existing
+`data/` and `images/` directories.
 
 Important question fields:
 
@@ -35,14 +41,35 @@ Important question fields:
 - `source_position`: randomized position returned by the website
 - `correct_option`: 1, 2, or 3
 - `correct_answer`: text of the correct choice
-- `image_local`: path relative to `src/`
+- `image_local`: logical image path relative to `src/` (for example,
+  `images/example.jpg`)
 - `answer_key_status`: `present` or `manual_override`
+
+## User progress
+
+`src/data/userout.json` is the initial and exportable user-progress format. It
+is keyed by question ID and stores total, Catalan, and French attempts,
+successes, failures, elapsed seconds, last-attempt timestamps, notes, and a
+difficulty rating.
+
+The count invariants are:
+
+```text
+total_trials = total_failed + total_success
+catala_trials = catala_failed + catala_success
+fr_trials = fr_failed + fr_success
+```
+
+Empty timestamps are `null`. Populated timestamps should use ISO 8601 with
+seconds and a timezone offset. A static deployment cannot write changes back
+to this file, so the application will persist live progress in IndexedDB or a
+remote database and use this JSON as its initialization/export schema.
 
 ## Source answer-key defects
 
 The server supplied an empty answer key for 11 otherwise complete questions.
 They were resolved from unambiguous rule wording or road-sign images and are
-labelled `manual_override`, with a note in both JSON and CSV:
+labelled `manual_override`, with a note in the question data and manifest:
 
 | Question ID | Correct option | Basis |
 | --- | ---: | --- |
@@ -62,21 +89,3 @@ The two detailed statutory checks agree with articles 7 and 65 of Andorra's
 current circulation code:
 
 https://portaljuridicandorra.ad/L2021012
-
-## Rerun
-
-From this directory:
-
-```powershell
-python .\extract_autoescola.py
-```
-
-For a login/schema check without rewriting the export:
-
-```powershell
-python .\extract_autoescola.py --probe
-```
-
-The server randomizes question order on each start, so `source_position` can
-change on a later export. Question IDs and visible test numbers remain the
-stable identifiers.
