@@ -2,7 +2,7 @@
 
 Authenticated offline export of the Catalan driving-test bank available to the
 student account. Credentials are prompted for at runtime and are **not** stored
-in the script, JSON, CSV, manifest, or images.
+in the script, JSON, manifest, or images.
 
 ## Export summary
 
@@ -20,10 +20,11 @@ JSON for auditing.
 
 ## Files
 
-- `autoescola_data/questions.json`: complete structured dataset, grouped by test
-- `autoescola_data/questions.csv`: one question per row, UTF-8 with BOM for Excel
-- `autoescola_data/images/`: locally downloaded question images
-- `autoescola_data/manifest.json`: counts, validation results, and overrides
+- `src/questions.json`: complete structured dataset, grouped by test
+- `src/translations.json`: Catalan source text with the French translation of
+  every question and answer, keyed by question text
+- `src/images/`: locally downloaded question images
+- `src/manifest.json`: counts, validation results, and overrides
 - `extract_autoescola.py`: repeatable standard-library-only Python 3.10+ extractor
 
 Important question fields:
@@ -34,7 +35,7 @@ Important question fields:
 - `source_position`: randomized position returned by the website
 - `correct_option`: 1, 2, or 3
 - `correct_answer`: text of the correct choice
-- `image_local`: path relative to `autoescola_data/`
+- `image_local`: path relative to `src/`
 - `answer_key_status`: `present` or `manual_override`
 
 ## Source answer-key defects
