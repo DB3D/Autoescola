@@ -88,3 +88,43 @@ graó lateral → dénivelé latéral · fletxa de retorn → flèche de rabatte
 ## Final report
 Entry count per output file, plus any strings you were genuinely unsure about
 (index + the issue).
+
+---
+
+# Decisions taken during review
+
+These were settled while auditing the finished translation and applied
+file-wide. Follow them if more questions are ever added.
+
+## Terminology fixed by review
+
+| Catalan | French | Why |
+|---|---|---|
+| `preferència` / `prioritat` (right of way) | **priorité** | "préférence" does not carry the right-of-way sense in French. The one exception is where the Catalan glosses one synonym with the other — `preferència de pas (prioritat de pas)` — which keeps "préférence (priorité)" so the gloss is not a self-repetition. |
+| `retenció` (traffic queue) | **retenue** | Standard French traffic vocabulary ("bouchons et retenues") *and* the cognate. "rétention" is the medical sense and is wrong. |
+| `pretendre` (to intend) | **avoir l'intention de** | False friend: French "prétendre" = to claim. Was wrong in 57 fields. |
+| `trepitjar` / `xafar` a line | **chevaucher** | To straddle a marking. "écraser" (crush) is wrong for a painted line — but IS correct for physically crushing a beacon/cone. |
+| `ultrapassar` / `depassar` a line | **franchir** | Keep distinct from `avançar` → **dépasser** (to overtake). Collapsing the two makes answers self-contradictory. |
+| `Cert` / `Fals` (true-false options) | **Vrai** / **Faux** | "Certain" means "sure" and loses the true/false function. |
+| `canvi de rasant` | **changement de déclivité** | |
+| `graó lateral` | **dénivelé latéral** | |
+| `vorera d'emergència` | **bande d'arrêt d'urgence** | Hard shoulder; plain `vorera` stays **trottoir**. |
+| `botzina` | **klaxon** | |
+
+## Traps that caused the only answer-breaking errors
+
+1. **A preposition carrying a quantity.** Catalan `en` before a number often
+   means "BY that amount": `no sobrepassi el límit EN 30 km/h` = do not exceed
+   the limit BY 30, NOT "the 30 km/h limit". Getting this wrong invents a rule.
+2. **Two Catalan near-synonyms collapsed into one French word** in the same
+   entry, which makes an option contradict itself and the question unanswerable.
+   Watch trepitjar/ultrapassar, parar/aturar/detenir, via/carril.
+3. **A qualifier attaching to the wrong noun.** `portar menors ... en una
+   motocicleta a menors de X anys` — "de moins de X" must attach to the minors,
+   not to the motorcycle.
+
+## Note on the source data
+
+The scrape is noisy: garbled and truncated questions, 11 blank answer fields,
+and **accent typos** (`graò` for `graó`, `pretèn` for `pretén`). Any script that
+matches Catalan text must fold accents, or it will silently miss entries.
