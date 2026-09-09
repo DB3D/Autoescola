@@ -1,0 +1,602 @@
+{
+ "3500": {
+  "q": "2398 QUAN EL BASTIDOR I LA CARROSSERIA D'UN AUTOMÒBIL FORMEN UN CONJUNT RÍGID, ES DENOMINA...",
+  "a1": "portant",
+  "a2": "xassís-plataforma.",
+  "a3": "monocasc."
+ },
+ "3501": {
+  "q": "2424 De quin tipus de vidre està format actualment el parabrises?",
+  "a1": "De vidre que al trencar-se es fraccioni en petits trossos.",
+  "a2": "De vidre temperat.",
+  "a3": "De vidre laminat."
+ },
+ "3502": {
+  "q": "2373 Per a ventilar l'habitacle el més recomanable és utilizar de manera adecuada els dispositius d'aireació i circulació forçada del vehicle.",
+  "a1": "Es cert.",
+  "a2": "Es evident ,que baixant les finestres del vehicle es més eficient.",
+  "a3": "Anivell d'eficiència energètica es indiferent."
+ },
+ "3503": {
+  "q": "2347 El conductor d'un vehicle pesat ha de tenir especial atenció al reglatge dels llums, la seva alçada i la seva neteja ,per no encegar als altres conductors.",
+  "a1": "Si, s'ha de tenir una especial cura",
+  "a2": "No, s'ha de tenir una cura mes especial que els altre vehicles",
+  "a3": "No, si es disposa de reglatge automàtic dels fanals"
+ },
+ "3504": {
+  "q": "2422 QUIN MANTENIMENT TÉ EL COIXÍ DE SEGURETAT?",
+  "a1": "Mirar la pressió.",
+  "a2": "Cap.",
+  "a3": "Revisió cada dos mesos."
+ },
+ "3505": {
+  "q": "2298 La intensitat del fusibles de la instal·lació elèctrica d’un automòbil, es mesuren en ...",
+  "a1": "Watts",
+  "a2": "Volts",
+  "a3": "Ampers"
+ },
+ "3506": {
+  "q": "2382 Per a mantenir la velocitat de circulació el més uniforme possible, la forma correcta d'usar el pedal de l'accelerador és:",
+  "a1": "Mantenir-lo estable en una determinada posició.",
+  "a2": "Realitzant petites variacions sistemàtiques de forma contínua entorn d'una determinada posició del pedal .",
+  "a3": "Bloquejant mecànicament el pedal de l'accelerador."
+ },
+ "3507": {
+  "q": "2372 Per a mantenir una sensació de benestar en el cotxe, es recomana una temperatura interior de l'habitacle de:",
+  "a1": "18-22oC",
+  "a2": "15-16oC",
+  "a3": "23-24oC"
+ },
+ "3508": {
+  "q": "2427 EL MOTOR QUE UTILITZA COM COMBUSTIBLE EL GAS-OIL ES DENOMINA MOTOR DE...",
+  "a1": "explosió.",
+  "a2": "explosió o combustió, indiferentment.",
+  "a3": "combustió."
+ },
+ "3509": {
+  "q": "2363 De les quals s'exposen a continuació, marqui un ensenyament derivat de la conducció eficient en relació amb la seguretat:",
+  "a1": "Mantenir una distància de seguretat superior a l'habitual",
+  "a2": "Mantenir una velocitat mitja constant",
+  "a3": "Conduir amb anticipació i previsió mantenint sempre un adequat camp visual"
+ },
+ "3510": {
+  "q": "2385 Al finalitzar la marxa, si s'ha circulat en condicions particularment exigents per al motor, és convenient",
+  "a1": "Es convenient fer girar el motor durant uns minuts al ralentí abans d'aturar-lo.",
+  "a2": "Aturar-lo immediatament per no bloquejar el turbocompressor.",
+  "a3": "Aturar-lo immediatament per evitar condensacions d'aigua."
+ },
+ "3511": {
+  "q": "2377 Només quan no hagi altra solució es pot recórrer a transportar objectes en l'exterior del vehicle, col·locant-los de manera que afectin en la menor mesura a la seguretat,entre les claus a tenir en compte per a assolir dominar la conducció eficie",
+  "a1": "Circular en la marxa més llarga possible i a baixes revolucions.",
+  "a2": "Col·locar els embalatges en la baca fora del perfil del vehicle .",
+  "a3": "En els processos de desceleració, reduir la marxa a més tardar possible ."
+ },
+ "3512": {
+  "q": "2351 Al principat es pot conduir un vehicle especial de PMA de mes de 3500 kg. Amb la categoria de permís B.",
+  "a1": "Si",
+  "a2": "No",
+  "a3": "Si, sempre que no superi el 40 km/h."
+ },
+ "3513": {
+  "q": "2375 Una distribució dolenta de la càrrega pot oferir major resistència a l'aire i major inestabilitat provocada per la disminució adherència al ferm del vehicle i per tant un augment del consum.",
+  "a1": "Adherència si, mes consum necessariament no.",
+  "a2": "Adherència no, perquè encara que les carregues no estiguin distribuïdes la rigidesa del xassís del vehicle la compensa, al ser les rodes, quatre punts fixes de suport del vehicle i la carrega.",
+  "a3": "Si, l'enunciat es correcte."
+ },
+ "3514": {
+  "q": "2383 Mai s'ha de baixar un pendent en punt mort, perquè :",
+  "a1": "S'incrementa el consum de carburant i resulta extremadament perillós",
+  "a2": "Encara que disminueix el consum de carburant, resulta extremadament perillós .",
+  "a3": "S'ha d'utilitzar amb massa freqüència el fre de ma."
+ },
+ "3515": {
+  "q": "2406 LA CIÈNCIA QUE ESTUDIA ELS FENÒMENS DEL DESPLAÇAMENT D'UN COS EN L'AIRE ES DENOMINA...",
+  "a1": "dinàmica.",
+  "a2": "aerodinàmica.",
+  "a3": "termodinàmica."
+ },
+ "3516": {
+  "q": "2368 En el millor dels casos, de l'energia que allibera el carburant només es pot aprofitar en un 38%, però normalment aquest percentatge és bastant menor quan se circula per ciutats amb freqüents arrencades i parades essent quantificat en...",
+  "a1": "8%",
+  "a2": "17%",
+  "a3": "35%"
+ },
+ "3517": {
+  "q": "2330 Si en cas d'emergencia , en un tunel, soc aturat en la zona que s'indica en el senyal, estic obligat a encendre l'enllumenant de \"warning\", es a dir, els llums d'intemitencia?",
+  "a1": "Si, sempre.",
+  "a2": "No,l'obligació es tindre encesos els llums de posició.",
+  "a3": "Si, aixi com els llums de posició."
+ },
+ "3518": {
+  "q": "2335 En passar per sota un pont, amb un vehicle de gran volum, hem de tindre en conte prioritàriament...",
+  "a1": "amb la possible corbatura d'aquestes construccions",
+  "a2": "que no passi per sobre alhora un tren",
+  "a3": "que hagi persones llançant objectes"
+ },
+ "3519": {
+  "q": "2415 La força de deriva és la...",
+  "a1": "Que permet un radi de gir mínim",
+  "a2": "força lateral que suporta el vehicle en les corbes o per la força del vent.",
+  "a3": "que tendeix a aixecar el vehicle del sòl"
+ },
+ "3520": {
+  "q": "2396 Quin element uneix el xassís (o la carrosseria) amb les rodes?",
+  "a1": "La suspensió.",
+  "a2": "Les rodes.",
+  "a3": "La transmissió."
+ },
+ "3521": {
+  "q": "2336 A l'entrar a una població amb de tenir en conte la limitació d'entrada de vehicles i les seves carregues.",
+  "a1": "les limitacions tant sols son respecte al tipus i pes de vehicle",
+  "a2": "Si, es correcta l'afirmació",
+  "a3": "No, perquè les vies urbanes han d'estar preparades per poder ser repartida qualsevol carrega, en qualsevol indret de la vila."
+ },
+ "3522": {
+  "q": "2376 Assenyali la resposta correcta. Transportar equipatge en la baca:",
+  "a1": "Augmenta la resistència a l'aire, incrementa el consum de carburant",
+  "a2": "No té incidència alguna en el consum de carburant",
+  "a3": "Incrementa la seguretat del vehicle"
+ },
+ "3523": {
+  "q": "2384 El dolent costum de frenar bruscament just abans d'entrar en la corba i accelerar fortament durant el seu traçat, resulta nociva, entre aspectes :",
+  "a1": "Per l'excés de carburant consumit .",
+  "a2": "Perquè produeix marejos",
+  "a3": "Perquè és innecessària"
+ },
+ "3524": {
+  "q": "2338 En trams de la calçada que no disposin de senyalització i que per la seva mínima amplada que sol permet el pas simultani de vehicles, la prioritat de pas es per...",
+  "a1": "El arriba primer al pas",
+  "a2": "El que tingui major dificultat de maniobra",
+  "a3": "El que arriba primer al pas i en cas de dubte al que tingui major dificultat de maniobra"
+ },
+ "3525": {
+  "q": "2407 LA FORMA DE LA CARROSSERIA EN UN, DOS O TRES VOLUMS TÉ UNA INFLUÈNCIA DECISIVA...",
+  "a1": "en la velocitat punta i en la contaminació.",
+  "a2": "en l'estabilitat, consum i velocitat punta.",
+  "a3": "en el consum i la càrrega."
+ },
+ "3526": {
+  "q": "2527 EN QUÈ CONSISTEIX LA DIRECCIÓ ASSISTIDA?",
+  "a1": "En un dispositiu que fa més segura l'adreça.",
+  "a2": "En un mecanisme que multiplica la força que el conductor aplica sobre el volant, fent l'adreça més suau.",
+  "a3": "En un mecanisme que substituïx a l'adreça manual."
+ },
+ "3527": {
+  "q": "2542 Si, circulant per una via pública, troba davant seu un vehicle parat que ocupa la part de calçada corresponent a la seva marxa, però circulen vehicles en sentit contrari, què ha de fer?.",
+  "a1": "Encendre d'intermitent de l'esquerra i passar.",
+  "a2": "Esperar per avançar-lo que passin els vehicles que circulen en sentit contrari.",
+  "a3": "Utilitzar els senyals acústics amb tocs curts i freqüents."
+ },
+ "3528": {
+  "q": "2553 Quin és el millor remei contra la fatiga del conductor ?",
+  "a1": "Parar per descansar i dormir si cal.",
+  "a2": "Recolzar-se sobre el recolzacaps.",
+  "a3": "Obrir les finestres si tenim calefacció."
+ },
+ "3529": {
+  "q": "2517 PER A LA PROTECCIÓ DELS CIRCUITS EN CAS D'UN AUGMENT DE LA INTENSITAT DE CORRENT, S'UTILITZEN ELS...",
+  "a1": "fusibles.",
+  "a2": "interruptors.",
+  "a3": "commutadors."
+ },
+ "3530": {
+  "q": "2516 EN ELS LLUMS HALÒGENS QUE S'UTILITZEN PER A LA LLUM D'ENCREUAMENT I DE CARRETERA, QUÈ CAL TENIR EN COMPTE?",
+  "a1": "Que no s'escalfen.",
+  "a2": "Que són més grans.",
+  "a3": "Que no s'ha de tocar el quars, ja que pot fondre's més fàcilment."
+ },
+ "3531": {
+  "q": "2550 Quan conduim un vehicle amb aquesta matrícula i d'aquest color portem... ?",
+  "a1": "Un cotxe de bombers.",
+  "a2": "Que és tracta de un cotxe antic de mes de vint-i-cin anys.",
+  "a3": "Aquesta matrícula no és valida pel territori Andorrà."
+ },
+ "3532": {
+  "q": "2554 Podem fer la maniobra un cop l'hem senyalitzada ?",
+  "a1": "Sí, per què ja hem complert la norma del codi.",
+  "a2": "Sí, per què un cop senyalitzada, ja tenim dret preferent.",
+  "a3": "No sempre, el fet de senyalitzar-la no ens dóna cap dret"
+ },
+ "3533": {
+  "q": "2468 LA SUBSTITUCIÓ DE L'OLI HA DE FER-SE PERIÒDICAMENT I AMB EL MOTOR...",
+  "a1": "fred.",
+  "a2": "calent.",
+  "a3": "molt calenta perquè s'aboqui bé l'oli molt diluït."
+ },
+ "3534": {
+  "q": "2557 Quan diem que una autopista és de peatge ?",
+  "a1": "Quan l'autopista és d'una societat privada.",
+  "a2": "Quan tenen carrils d'acceleració.",
+  "a3": "Quan hem de pagar uns drets per utilitzar-la"
+ },
+ "3535": {
+  "q": "2566 Que hem de fer quan la visibilitat és reduïda ?",
+  "a1": "Tocar la botzina intermitentment.",
+  "a2": "Disminuir la velocitat.",
+  "a3": "Circular com a màxim al pas de l'home."
+ },
+ "3536": {
+  "q": "2567 Per on hem de circular amb més precaució ?",
+  "a1": "Per les autopistes, a causa de les grans velocitats.",
+  "a2": "Per les vies urbanes i travesseres especialment.",
+  "a3": "Per les carreteres normals, perquè s'hi circula en tots dos sentits."
+ },
+ "3537": {
+  "q": "2473 QUAN LA REFRIGERACIÓ ÉS PER AIRE FORÇAT, PARA QUÈ SERVEIX EL VENTILADOR?",
+  "a1": "Per a refredar el radiador.",
+  "a2": "Per a accelerar la circulació de l'aire.",
+  "a3": "Per a absorbir més ràpidament l'aire calent."
+ },
+ "3538": {
+  "q": "2565 Com circulem per les vies públiques de doble sentit amb un obstacle al centre ?",
+  "a1": "Per la dreta o l'esquerra, indiferentment.",
+  "a2": "Deixem sempre l'obstacle a l'esquerra.",
+  "a3": "Deixem sempre l'obstacle a la dreta"
+ },
+ "3539": {
+  "q": "2529 LA DIRECCIÓ A LES QUATRE RODES...",
+  "a1": "millora l'estabilitat del vehicle en les corbes.",
+  "a2": "augmenta el gir del volant en les corbes tancades.",
+  "a3": "permet que les rodes davanteres i del darrere girin en el mateix sentit sempre."
+ },
+ "3540": {
+  "q": "2506 ENTRE ELS INCONVENIENTS DEL MOTOR DIÈSEL, ESTÀ...",
+  "a1": "Un parell motor més baix.",
+  "a2": "Dificultat d'arrencada en fred.",
+  "a3": "Menor rendiment tèrmic."
+ },
+ "3541": {
+  "q": "2514 ELS LLUMS DUEN GRAVADES LA SEVA POTÈNCIA EN EL SUPORT I AQUESTA ES MESURA EN...",
+  "a1": "wats.",
+  "a2": "volts.",
+  "a3": "ohms."
+ },
+ "3542": {
+  "q": "2469 EL SISTEMA DE REFRIGERACIÓ SERVEIX PER A DISMINUIR L'ESCALFAMENT D'ALGUNA PART DELS MOTORS REFREDANT...",
+  "a1": "el cárter de l'oli.",
+  "a2": "la bomba d'alimentació.",
+  "a3": "les parets dels cilindres."
+ },
+ "3543": {
+  "q": "2483 SI DURANT LA MARXA DEL VEHICLE S'ENCÉN EL TESTIMONI LLUMINÓS DE L'INDICADOR DE LA TEMPERATURA DEL LÍQUID, QUÈ HA DE FER-SE?",
+  "a1": "Minorar la marxa posant una velocitat més curta.",
+  "a2": "Aturar el motor immediatament.",
+  "a3": "Detenir el vehicle amb el motor al ralentí"
+ },
+ "3544": {
+  "q": "2470 QUINA ÉS LA TEMPERATURA IDEAL DE FUNCIONAMENT DEL MOTOR?",
+  "a1": "De 100° a 120°C .",
+  "a2": "De 85° a 90°C",
+  "a3": "De 45° a 60°C ."
+ },
+ "3545": {
+  "q": "2568 N'hi ha prou amb senyalitzar la maniobra amb l'indicador de direcció perquè sigui correcta ?",
+  "a1": "No, si no ho fem amb antelació i claredat suficients.",
+  "a2": "Si, perquè un cop senyalitzada ja tenim dret a fer-la.",
+  "a3": "No, si no l'hem senyalitzada amb el braç."
+ },
+ "3546": {
+  "q": "2523 L'OPERACIÓ DE TREPITJAR EL PEDAL DE L'EMBRAGAMENT REP EL NOM DE...",
+  "a1": "acoblar el motor a les rodes.",
+  "a2": "embragar.",
+  "a3": "desembragar."
+ },
+ "3547": {
+  "q": "2544 Quin permís necessitem per conduir un vehicle de 6.500 kg de pes total màxim i 18 seients?.",
+  "a1": "D2.",
+  "a2": "C1+D1",
+  "a3": ""
+ },
+ "3548": {
+  "q": "2549 Quin vehicle porta aquesta matrícula?",
+  "a1": "Els vehicles del cos consular.",
+  "a2": "Tots els vehicles del cos diplomàtic.",
+  "a3": "Els vehicles de prova."
+ },
+ "3549": {
+  "q": "2546 Per a realitzar l'arrencada de forma correcta des del punt de vista tant mecànic com de consum, és convenient que en els cotxes propulsats per gasolina iniciar la marxa després d'arrencar el motor.",
+  "a1": "Si.",
+  "a2": "Si, pero no en els propulsat per gas-oil.",
+  "a3": "Si, tant el propulsats amb gasolina,gas-oil o altres combustibles."
+ },
+ "3550": {
+  "q": "2552 Quin és el principal efecte de cansament en un conductor ?",
+  "a1": "Debilita la força muscular.",
+  "a2": "Fa que deixem anar el volant.",
+  "a3": "Disminueix l'atenció."
+ },
+ "3551": {
+  "q": "2513 L'APARELL QUE SUBMINISTRA CORRENT PER A CARREGAR LA BATERIA ÉS El...",
+  "a1": "generador.",
+  "a2": "motor d'arrencada.",
+  "a3": "disyuntor."
+ },
+ "3552": {
+  "q": "2543 Què ordena aquest agent? (foto)",
+  "a1": "Alto solament als que el vegin de front.",
+  "a2": "Alto al front i al darrera.",
+  "a3": "Alto solament als que el vegin per darrera."
+ },
+ "3553": {
+  "q": "2556 Com es diu el moment que hi ha entre la percepció d'un obstacle o perill i posar el peu al fre?",
+  "a1": "Temps de reacció.",
+  "a2": "Temps de recepció.",
+  "a3": "Temps d'actuació."
+ },
+ "3554": {
+  "q": "2489 PERQUÈ EN EL DIPÒSIT DE CARBURANT NO ES PRODUEIXI EL BUIT A L'ASPIRAR LA BOMBA D'ALIMENTACIÓ...",
+  "a1": "s'ompli totalment el dipòsit.",
+  "a2": "existeix un orifici en el tap de tancament per a l'entrada d'aire.",
+  "a3": "es col·loca allunyat del motor per a evitar que amb la calor augmenti el volum dels gasos del carburant."
+ },
+ "3555": {
+  "q": "2564 Quina distància de seguretat hem de mantenir quan plou ?",
+  "a1": "La mateixa que quan no plou.",
+  "a2": "Més gran.",
+  "a3": "Més petita."
+ },
+ "3556": {
+  "q": "2551 Pot una grip disminuir les facultats físiques del conductor ?",
+  "a1": "No, si el conductor és robust.",
+  "a2": "Si, si no ha descansat la nit anterior.",
+  "a3": "Si."
+ },
+ "3557": {
+  "q": "2530 EN EL SISTEMA DE DIRECCIÓ, QUÈ CAL REVISAR PERIÒDICAMENT?",
+  "a1": "La convergència/divergència de les rodes.",
+  "a2": "La inclinació del pivot.",
+  "a3": "Que les rodes estiguin sempre paral·leles."
+ },
+ "3558": {
+  "q": "2479 QUIN ELEMENT ACCIONA L'ELECTROVENTILADOR?",
+  "a1": "una vàlvula de seguretat.",
+  "a2": "una vàlvula termostática.",
+  "a3": "un termocontacte."
+ },
+ "3559": {
+  "q": "2515 ENTRE QUINS VALORS OSCIL·LA LA POTÈNCIA DELS LLUMS CONVENCIONALS UTILITZADES EN ELS AUTOMÒBILS?",
+  "a1": "De 15 a 20 wats.",
+  "a2": "De 25 a 35 wats.",
+  "a3": "De 40 a 55 wats."
+ },
+ "3560": {
+  "q": "2571 ELS PRETENSORS DEL CINTURÓ DE SEGURETAT SERVEIXEN PER A...",
+  "a1": "reduir la tensió del cinturo per una conducció còmoda, sempre que no portin una pinça o altre artilugi aliè.",
+  "a2": "no trencar el teixit del cinturó.",
+  "a3": "ajustar el cos al seient."
+ },
+ "3561": {
+  "q": "2562 Quan cal regularitzar a Govern la carta groga del vehicle ?",
+  "a1": "En qualsevol cas en què variïn les dades que hi figuren.",
+  "a2": "Només en cas de transferència del vehicle.",
+  "a3": "Mai, un cop ha estat correctament expedit."
+ },
+ "3562": {
+  "q": "2561 Com podem fer ús de la botzina a les vies urbanes ?",
+  "a1": "Sempre que convingui.",
+  "a2": "Tocant-la breument e intermitentment en qualsevol moment.",
+  "a3": "Breument en cas de perill d'atropellament o col·lisió."
+ },
+ "3563": {
+  "q": "2526 LA MISSIÓ DE LA DIRECCIÓ ÉS...",
+  "a1": "orientar les rodes motrius.",
+  "a2": "desmultiplicar el gir del volant.",
+  "a3": "orientar les rodes directrius."
+ },
+ "3564": {
+  "q": "2476 LA VÀLVULA TERMOSTÁTICA S'OBRE, QUAN EL LÍQUID DEL ...",
+  "a1": "radiador està excessivament calent.",
+  "a2": "radiador està excessivament fred.",
+  "a3": "motor s'escalfa a una temperatura adequada."
+ },
+ "3565": {
+  "q": "2519 SI EL MOTOR D'ARRENCADA ROMAN IMMÒBIL A L'ACCIONAR L'INTERRUPTOR D'ARRENCADA...",
+  "a1": "la corretja està trencada o fluixa.",
+  "a2": "el generador està avariat.",
+  "a3": "la bateria està descarregada."
+ },
+ "3566": {
+  "q": "2598 Quin dels següents remeis no hem de posar en pràctica quan estem cansats ?",
+  "a1": "Prendre begudes alcohòliques.",
+  "a2": "Prendre cafè ben carregat.",
+  "a3": "Prendre begudes ensucrades."
+ },
+ "3567": {
+  "q": "2611 Quines precaucions prenem amb els animals a la calçada ?",
+  "a1": "Reduïm la velocitat i som prudents.",
+  "a2": "Cap, perquè no l'han d'ocupar.",
+  "a3": "Mirem de no atropellar-los només amb el cotxe."
+ },
+ "3568": {
+  "q": "2621 Respecte la marxa enrere la llei estableix, com l'hem de fer?",
+  "a1": "Hem de fer la maniobra molt lentament i en el mínim espai possible.",
+  "a2": "Sempre amb el llum de marxa enrere encesa.",
+  "a3": "Com a norma general no és permès circular endarrere."
+ },
+ "3569": {
+  "q": "2634 El posseïdor de la llicencia de conduir de la categoria J pot conduir vehicles fora del Principat d'Andorra?",
+  "a1": "Si",
+  "a2": "No",
+  "a3": "Sempre que la relació potencia / pes del vehicle no superi els 0.073 Kw./Kgr."
+ },
+ "3570": {
+  "q": "2613 És el mateix canviar el sentit de la marxa que canviar de direcció?",
+  "a1": "No, són dos conceptes diferents.",
+  "a2": "Sí, són termes sinònims.",
+  "a3": "Sí, quan el canvi de direcció és a l'esquerra."
+ },
+ "3571": {
+  "q": "2596 Podem posar diferents llums en un mateix dispositiu ?",
+  "a1": "No, està prohibit.",
+  "a2": "Sí, però només a la part posterior.",
+  "a3": "Sí, si compleixen les prescripcions segons la seva finalitat."
+ },
+ "3572": {
+  "q": "2601 És correcte avançar en un estretall per obres ?",
+  "a1": "No.",
+  "a2": "Sí.",
+  "a3": "Sí, quan el vehicle que avancem va a poc a poc i el pas habilitat permet la maniobra."
+ },
+ "3573": {
+  "q": "2607 ABANS D'INICIAR UN AVANÇAMENT HEM D'ADVERTIR DE LA NOSTRA MANIOBRA ELS ALTRES VEHICLES QUE CIRCULEN, TANT DAVANT COM DARRERE NOSTRE. COM AVISAREM ELS QUE VAN DARRERE?",
+  "a1": "Amb els indicadors de direcció de la dreta.",
+  "a2": "Amb els llums de gàlib de l'esquerra.",
+  "a3": "Amb els indicadors de direcció de l'esquerra."
+ },
+ "3574": {
+  "q": "2606 Què no hem de fer mai per estalviar gasolina ?",
+  "a1": "Treure el contacte quan baixem un port de muntanya o baixar en punt mort.",
+  "a2": "Pujar els ports amb marxes curtes.",
+  "a3": "Pujar els ports amb marxes llargues."
+ },
+ "3575": {
+  "q": "2572 Quan un motor està en ralentí consumeix carburant, aquest consum mig es superior, com a miním, a 0.5 l/km.",
+  "a1": "Falç",
+  "a2": "Cert",
+  "a3": "Per aixo el nous vehicles estant equipats amb el sistema Star-Stop"
+ },
+ "3576": {
+  "q": "2617 La marxa d ́un vehicle es pot contenir :",
+  "a1": "Exclusivament amb els frens.",
+  "a2": "Amb els frens i el motor.",
+  "a3": "Usant simultàniament l'embragatge i els frens."
+ },
+ "3577": {
+  "q": "2608 On està prohibit parar també és prohibit ?",
+  "a1": "Estacionar",
+  "a2": "Fer qualsevol maniobra.",
+  "a3": "Detenir-se."
+ },
+ "3578": {
+  "q": "2604 En una zona de carrils de preselecció quina maniobra no es pot realitzar?",
+  "a1": "Canviar de carril.",
+  "a2": "L'estacionament.",
+  "a3": "La detenció."
+ },
+ "3579": {
+  "q": "2573 Quan circulem de nit per una via de doble sentit, de quin color veiem els llums dels vehicles que circulen en sentit contrari?.",
+  "a1": "Grocs selectiu o vermells.",
+  "a2": "Grocs o vermells.",
+  "a3": "Només vermells."
+ },
+ "3580": {
+  "q": "2614 Què prohibeix una ratlla continua groga pintada a la vorera o al costat de la calçada ?",
+  "a1": "Només l'estacionament.",
+  "a2": "Només la parada.",
+  "a3": "La parada i l'estacionament."
+ },
+ "3581": {
+  "q": "2597 Quins dels remeis que proposem pot ser vàlid contra la disminució de la vigilància ?",
+  "a1": "Prendre una petita quantitat d'alcohol.",
+  "a2": "Parar el cotxe i passejar uns minuts.",
+  "a3": "Prendre cafè amb una copa de conyac."
+ },
+ "3582": {
+  "q": "2602 On hem de fer ús de la preferència de pas o l'hem de cedir ?",
+  "a1": "A les carreteres nacionals.",
+  "a2": "A tots els ponts.",
+  "a3": "A les interseccions i estretalls."
+ },
+ "3583": {
+  "q": "2628 Quin calçat hem de fer servir per conduir ?",
+  "a1": "Un calçat lleuger o flexible per controlar la nostra actuació",
+  "a2": "Qualsevol, fins i tot podem anar descalços.",
+  "a3": "Sabates gruixudes per pitjar més fort."
+ },
+ "3584": {
+  "q": "2625 On hem de posar-nos quan arribem a un pas a nivell tancat ?",
+  "a1": "A la dreta o l'esquerra indiferentment.",
+  "a2": "En doble fila, sempre.",
+  "a3": "A la dreta, darrera l'últim que està parat"
+ },
+ "3585": {
+  "q": "2599 Quins factors intervenen en la distància de frenada ?",
+  "a1": "La càrrega, la velocitat i l'adherència.",
+  "a2": "Només la càrrega i la velocitat.",
+  "a3": "La velocitat, l'adherència, la carrega i la força centrífuga."
+ },
+ "3586": {
+  "q": "2629 Què hem de fer en cas d'incendi ?",
+  "a1": "Apagar-lo amb aigua o amb extintor.",
+  "a2": "Intentar apagar-lo amb extintor, i si no hem tenim amb mantes o terra.",
+  "a3": "Apartar-nos perquè hi ha perill d'explosió."
+ },
+ "3587": {
+  "q": "2591 Un conductor que hagi posat l'indicador de direcció de l'esquerra i giri cap a aquell costat sense preocupar-se dels altres vehicles que circulin darrere, pot provocar un accident?",
+  "a1": "No, perquè porta l'indicador de direcció bé.",
+  "a2": "Sí.",
+  "a3": "Sí, si el de darrera és un vehicle ràpid."
+ },
+ "3588": {
+  "q": "2610 Quins vehicles tenen preferència de pas ?",
+  "a1": "Aquells que tenen pressa i ho manifesten.",
+  "a2": "Els que circulen per rails, com els trens i tramvies.",
+  "a3": "Els vehicles dels metges quan fan visites a domicili."
+ },
+ "3589": {
+  "q": "2600 També hem de cedir el pas davant del senyal de \"cediu el pas\" però,¿ sabeu si hi ha alguna diferència entre aquesta i la d'stop ?",
+  "a1": "Davant de la primera cedim el pas si cal davant d'un stop ens detindrem sempre.",
+  "a2": "No, hi ha cap diferència en el significat, només en la forma.",
+  "a3": "S'usen indistintament fent cas al seu significat."
+ },
+ "3590": {
+  "q": "2620 Quina altra precaució hem de prendre amb el vehicle que avancem ?",
+  "a1": "Hem de deixar un metre de separació com mínim quan som a la seva alçada.",
+  "a2": "No li hem de tallar el pas tornant a la dreta bruscament.",
+  "a3": "No l ́ hem d'espantar amb la botzina."
+ },
+ "3591": {
+  "q": "2594 Quina conducció és més perillosa ?",
+  "a1": "La diürna.",
+  "a2": "La nocturna.",
+  "a3": "És tan perillosa la diürna com la nocturna."
+ },
+ "3592": {
+  "q": "2626 Quan arribis al lloc d'un accident, què és el primer que de fer?",
+  "a1": "Desconnectar la bateria del vehicle accidentat.",
+  "a2": "Traslladar els ferits, tant aviat com puguem, al centre hospitalari més pròxim.",
+  "a3": "Senyalitzar el lloc de l'accident ."
+ },
+ "3593": {
+  "q": "2632 Com actuem, si arribem a un pas a nivell amb un senyal d'stop al davant ?",
+  "a1": "Fem ús dels senyals acústics i passem.",
+  "a2": "Passem sense parar-nos si la barrera està aixecada i hi ha pas lliure.",
+  "a3": "Ens parem i mirem a les dues bandes per assegurar-nos que no s'apropa el tren."
+ },
+ "3594": {
+  "q": "2609 On podem fer la parada ?",
+  "a1": "Només al costat dret de la calçada.",
+  "a2": "Allà on el vehicle no obstaculitzi la circulació ni sigui un risc per als usuaris de la via.",
+  "a3": "Al costat dret o esquerre de la calçada, indiferentment."
+ },
+ "3595": {
+  "q": "2574 Quin és el nom de la pertorbació i el malestar que provoca una llum molt intensa en els òrgans visuals ?",
+  "a1": "Acte reflex.",
+  "a2": "Reflexió pupil·lar.",
+  "a3": "Enlluernament."
+ },
+ "3596": {
+  "q": "2595 Quan pot ser perillós el vent a l'autopista ?",
+  "a1": "Quan bufa en sentit que circulem.",
+  "a2": "Quan bufa lateralment, sobretot si estem avançant.",
+  "a3": "Quan bufa en sentit contrari."
+ },
+ "3597": {
+  "q": "2623 Com fem l'avançament a les vies amb circulació saturada o densa ?",
+  "a1": "En aquest tipus de circulació no existeix pròpiament l'avançament.",
+  "a2": "Per la dreta o l'esquerra, indiferentment.",
+  "a3": "Per qualsevol carril que estigui lliure amb molta precaució i sense pertobar la circulació dels altres usuaris."
+ },
+ "3598": {
+  "q": "2593 Què és la llicència de conduir ?",
+  "a1": "Una autorització per conduir motos petites.",
+  "a2": "Un permís reduït que ens faciliten quan ens retiren l'ordinari per suspensió.",
+  "a3": "Una autorització per conduir ciclomotors."
+ },
+ "3599": {
+  "q": "2624 Què és un ciclomotor ?",
+  "a1": "Una bicicleta amb un motor acoblat de qualsevol potència.",
+  "a2": "Una bicicleta amb un motor que no faci més de 50 cc. i que no passi de 45 Km/h..",
+  "a3": "Una moto petita que no passi de 75 centímetres cúbics."
+ }
+}

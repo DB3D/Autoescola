@@ -1,0 +1,602 @@
+{
+ "2500": {
+  "q": "Aquest senyal de prohibició de circular a superior a la indicada, quan deixa de tenir efecte?",
+  "a1": "Deixa de ser vigència en sortir d'una població.",
+  "a2": "Deixar de tenir vigència desprès de trobar-ne qualsevol altre de fi de prohibició.",
+  "a3": "Situat en una via sense prioritat, deixa de tenir vigència en sortir d'una intersecció amb una via amb prioritat."
+ },
+ "2501": {
+  "q": "Utilitzant monopatins o similars, es pot circular per la calçada?",
+  "a1": "Si, ja que es el lloc per on normalment es circularà amb aquests aparells.",
+  "a2": "No.",
+  "a3": "Si, però utilitzant el costat esquerre segons el sentit de marxa."
+ },
+ "2502": {
+  "q": "En un vehicle destinat al transport de mercaderies de longitud inferior o igual a 5 m., quan pot sobresortir la càrrega transportada per la part posterior de l'estructura del vehicle?",
+  "a1": "Si l'equipatge o objectes transportats no es poden dividir, el terç de la longitud total del vehicle.",
+  "a2": "Res.",
+  "a3": "Com a mínim 1,5 metres."
+ },
+ "2503": {
+  "q": "L'assegurança obligatòria no cobreix els danys corporals...",
+  "a1": "Del conductor del vehicle assegurat.",
+  "a2": "Dels que viatgen en el vehicle assegurat.",
+  "a3": "Del conductor ni dels seus familiars que viatgin en el vehicle."
+ },
+ "2504": {
+  "q": "Circulant per la dreta d'aquesta via de doble sentit...",
+  "a1": "Puc avançar trepitjant les línies longitudinals centrals sempre que no apareix-hi un vehicle en sentit contrari.",
+  "a2": "No puc avançar, si he de trepitjar les línies longitudinals centrals.",
+  "a3": "En una via de doble sentit les dues línies longitudinals han de ser contínues."
+ },
+ "2505": {
+  "q": "Un remolc de menys de 750 Kg. ha de portar...",
+  "a1": "La seva pròpia placa de matricula.",
+  "a2": "No necessita portar cap identificació.",
+  "a3": "La mateixa placa de matricula que la que porta el vehicle tractor."
+ },
+ "2506": {
+  "q": "Quan està permesa la competència de velocitat en les vies públiques obertes al trànsit en general?",
+  "a1": "En les vies interurbanes, si no hi ha cap obstacle que faci perillosa la circulació.",
+  "a2": "Solament quan un dels vehicles és d'urgències.",
+  "a3": "Mai."
+ },
+ "2507": {
+  "q": "Si avui es l'últim dia del mes, ha de saber que al costat de la calçada on estigui situat aquest senyal...",
+  "a1": "No hi pot estacionar, però si parar.",
+  "a2": "No hi pot parar, ni estacionar.",
+  "a3": "Hi pot parar i estacionar."
+ },
+ "2508": {
+  "q": "Si vostè veu l'agent de circulació en la posició de la fotografia en una cruïlla, significa?",
+  "a1": "Que te via lliure per circular.",
+  "a2": "Que tenen via lliure els que circulen transversalment a vostè mentre que vostè no.",
+  "a3": "Que te una via lliure tothom que arriba a la cruïlla."
+ },
+ "2509": {
+  "q": "En cas d'accident està indicat donar-li als ferits algun medicament tranquil.litzant?",
+  "a1": "Si, perquè al tranquil·litzar-se, suporten millor el dolor i l'estat nerviós causat per l'accident.",
+  "a2": "No.",
+  "a3": "Es indiferent, però si el ferit ho demana, cal donar-li."
+ },
+ "2510": {
+  "q": "Quan trepitgem el pedal de l'embragatge quin efecte es produeix?",
+  "a1": "Que el moviment del motor no es transfereix a la caixa de velocitat.",
+  "a2": "Que el gir del cigonyal no es transfereix al volant d'inèrcia.",
+  "a3": "Que el gir de l'eix secundari de la caixa de velocitats no es transfereix al grup diferencial."
+ },
+ "2511": {
+  "q": "Aquest senyal es portarà el vehicle que tingui...",
+  "a1": "Una longitud superior a 6 metres.",
+  "a2": "Una amplada superior a 2,55 metres.",
+  "a3": "Carregues que sobresurten."
+ },
+ "2512": {
+  "q": "En població, a quina velocitat màxima li està permès circular si condueix un conjunt format per un turisme amb remolc?",
+  "a1": "A 50 Km/h.",
+  "a2": "A 40 Km/h.",
+  "a3": "A 70 Km/h."
+ },
+ "2513": {
+  "q": "El senyal que observa, li indica que...",
+  "a1": "S'ha acabat l'autovia.",
+  "a2": "Comença l'autovia.",
+  "a3": "Circulo per un carril que em condueix a una autopista o a una autovia."
+ },
+ "2514": {
+  "q": "El fre de servei, sobre quines rodes del vehicle actua?",
+  "a1": "Sobre una de cada costat.",
+  "a2": "Només sobre les del darrere.",
+  "a3": "Sobre totes, generalment."
+ },
+ "2515": {
+  "q": "Si circula conduint un turisme i troba un semàfor que consisteix en una franja blanca horitzontal il.luminada sobre fons negre, que ha de fer?",
+  "a1": "Detenir-me, com si fos un llum vermell.",
+  "a2": "Continuar la marxa, perquè aquestes indicacions no afecten els turismes.",
+  "a3": "Passar, únicament si vull seguir de cara."
+ },
+ "2516": {
+  "q": "La immobilització d'un vehicle per emergència es considera com...",
+  "a1": "Una parada.",
+  "a2": "Una detenció.",
+  "a3": "Un estacionament."
+ },
+ "2517": {
+  "q": "No es pot efectuar parades ni estacionaments sobre els passos a vianants i la seva zona d'influència que s'entén a...",
+  "a1": "2 metres dels seus extrems transversals.",
+  "a2": "3 metres dels seus extrems transversals.",
+  "a3": "3 metres dels seus extrems laterals."
+ },
+ "2518": {
+  "q": "Si circulant amb el seu turisme a 100 quilòmetres per hora, observa que el vibra en les mans, que ha de fer?",
+  "a1": "Augmentar la pressió d'inflat dels pneumàtics.",
+  "a2": "Deixar de circular fins que es refredin els pneumàtics.",
+  "a3": "Realitzar un equilibrat de rodes."
+ },
+ "2519": {
+  "q": "Està obligat a moderar la velocitat en aproximar-se a una intersecció?",
+  "a1": "Només si no tinc prioritat de pas.",
+  "a2": "Si, en qualsevol cas.",
+  "a3": "Si, sempre que la intersecció es trobi dins de la població."
+ },
+ "2520": {
+  "q": "Que indica un llum groga intermitent encesa en un semàfor?",
+  "a1": "No prohibeix el pas, però exigeix als conductors d'extremar la precaució.",
+  "a2": "Prohibeix temporalment el pas abans d'un pas a nivell.",
+  "a3": "Prohibeix el pas."
+ },
+ "2521": {
+  "q": "A la vista d'un control de policia, en la que existeix un senyal de prohibició amb una franja horitzontal i una inscripció. Que indica?",
+  "a1": "Que ens hem de desviar a la dreta.",
+  "a2": "Que tenim que parar-nos.",
+  "a3": "Que podem seguir amb precaució."
+ },
+ "2522": {
+  "q": "Un llum vermell intermitent o dos llums vermells alternativament intermitents d'un semàfor...",
+  "a1": "Permeten el pas amb precaució.",
+  "a2": "Obliguen a moderar la velocitat abans de passar.",
+  "a3": "Prohibeixen temporalment el pas."
+ },
+ "2523": {
+  "q": "De quin color es l'enllumenat de boira davanter?",
+  "a1": "Blanc.",
+  "a2": "Blanc o groc.",
+  "a3": "Groc selectiu."
+ },
+ "2524": {
+  "q": "Està prohibit col.locar vidres tintats o acolorits?",
+  "a1": "Si, en qualsevol cas.",
+  "a2": "Si, si estan homologats.",
+  "a3": "No, en cap cas."
+ },
+ "2525": {
+  "q": "Si s'incorpora a una autopista o a una autovia pel carril d'acceleració, ha de cedir el pas als vehicles que circulen per la via principal?",
+  "a1": "Si.",
+  "a2": "No.",
+  "a3": "Mai."
+ },
+ "2526": {
+  "q": "El nivell de la capacitat del conductor es conseqüència, entre altres factors...",
+  "a1": "De la maniobrabilitat del vehicle.",
+  "a2": "De l'estat general del ferm de la carretera.",
+  "a3": "De les seves pròpies condicions físiques o psíquiques."
+ },
+ "2527": {
+  "q": "Aquest senyal es...",
+  "a1": "Confirmació de ruta.",
+  "a2": "Direcció d'interès general.",
+  "a3": "Informació d'àmbit comunal."
+ },
+ "2528": {
+  "q": "El temps de reacció augmenta...",
+  "a1": "Amb l'edat i les condicions físiques dolentes.",
+  "a2": "Per l'incorporació a l'organisme d'alcohol. drogues, etc.",
+  "a3": "Les dues respostes son correctes."
+ },
+ "2529": {
+  "q": "Quan la pressió d'inflat dels pneumàtics es més baixa que la recomanada pel fabricant, el desgast dels mateixos és...",
+  "a1": "Major.",
+  "a2": "Igual.",
+  "a3": "Menor."
+ },
+ "2530": {
+  "q": "Per obtenir un permís de la categoria A1, ha de ser declarat apte en les proves corresponents o també pot obtenir-lo si disposa...",
+  "a1": "Del permís de la categoria E.",
+  "a2": "De la llicència de conducció.",
+  "a3": "Del B1 amb una antiguitat superior a 5 anys."
+ },
+ "2531": {
+  "q": "En una calçada amb doble sentit de circulació, circula conduint un turisme per un carril delimitat per marques dobles discontínues pels dos costats. Per tant sap que circula per...",
+  "a1": "Un carril reservat a vehicles lents.",
+  "a2": "Un carril reversible.",
+  "a3": "Un carril adicional."
+ },
+ "2532": {
+  "q": "Que suposa la fatiga en la conducció?",
+  "a1": "Un augment de la capacitat de concentració.",
+  "a2": "Una disminució dels riscos, per autoprotecció psíquica del propi organisme.",
+  "a3": "Un descens en la capacitat de rendiment del conductor."
+ },
+ "2533": {
+  "q": "Els panells indicadors complementaris són:",
+  "a1": "Fondo blau fosc i contorns blancs.",
+  "a2": "Fondo blanc i contorns vermells.",
+  "a3": "Fons blanc i contorns negres."
+ },
+ "2534": {
+  "q": "Aquest senyal indica:",
+  "a1": "Un encreuament normal amb prioritat a la dreta.",
+  "a2": "Un encreuament normal amb prioritat a l'esquerra.",
+  "a3": "Pas a nivell amb barreres."
+ },
+ "2535": {
+  "q": "Que indica unes llums d'abalissament al llarg d'una calçada?",
+  "a1": "Que no es pot sobrepassar la línia imaginària que les uneix.",
+  "a2": "Detenció temporal.",
+  "a3": "Extremar la precaució al travessar-les."
+ },
+ "2536": {
+  "q": "El conductor del vehicle que circula davant del seu estén el braç movent-lo de dalt a baix amb moviments curts i ràpids. Que l'indica?",
+  "a1": "Que va a desplaçar-se al carril esquerre.",
+  "a2": "Que va a reduir la seva marxa de manera considerable.",
+  "a3": "Que circula en situació d'emergència."
+ },
+ "2537": {
+  "q": "Quins documents han de portar obligatòriament quan conduim?",
+  "a1": "El permís de conduir, de matriculació, la tarja d'inspecció tècnica, si escau i el rebut actualitzat de l'assegurança.",
+  "a2": "El permís de conduir i el rebut actualitzat de l'assegurança.",
+  "a3": "El permís de conduir, el de matriculació i la carta verda."
+ },
+ "2538": {
+  "q": "Quan es trobi amb un senyal de STOP, ha de detenir-se sempre?",
+  "a1": "Si.",
+  "a2": "Només quan s'aproximen vehicles per la via transversal.",
+  "a3": "Si, quan existeixi marca transversal de detenció i si no existeix, només quan sigui necessari."
+ },
+ "2539": {
+  "q": "Aquest senyal la podem trobar...",
+  "a1": "En una via urbana.",
+  "a2": "En la part posterior del vehicle, que ens precedeix.",
+  "a3": "En la part posterior d'un autobús escolar."
+ },
+ "2540": {
+  "q": "Aquest senyal adverteix el perill...",
+  "a1": "Per la proximitat d'una parada de vehicles que circulen amb tròlei.",
+  "a2": "Que representen els rails del tramvia disposats sobre la calçada.",
+  "a3": "Proximitat d'un encreuament amb una línia de tramvia, que te prioritat de pas."
+ },
+ "2541": {
+  "q": "Si desprès d'iniciar l'avançament s'adverteix que hi ha dificultats per finalitzar-lo...",
+  "a1": "S'han de fer advertències acústiques.",
+  "a2": "S'ha de reduir ràpidament la marxa tornant un altre cop a la dreta.",
+  "a3": "S'ha d'augmentar la velocitat per finalitzar-lo com més aviat millor."
+ },
+ "2542": {
+  "q": "El conductor a través dels indicis, pot i ha d'estar disposat a preveure els moviments dels altres usuaris de la via...",
+  "a1": "Si.",
+  "a2": "No, encara que ho ha de procurar.",
+  "a3": "No, perquè no es la seva responsabilitat."
+ },
+ "2543": {
+  "q": "Com a norma general, el fre de socors, anomenat també de mà, en un vehicle tipus turisme, actua sobre...",
+  "a1": "Les quatre rodes simultàniament.",
+  "a2": "Les rodes de l'eix de davant.",
+  "a3": "Les rodes de l'eix de darrera."
+ },
+ "2544": {
+  "q": "Creu que circula correctament el turisme que observa a la fotografia?",
+  "a1": "Si, perquè encara que circula sobre la marca longitudinal contínua que separa els sentits de circulació, pren millor la corba i deixa espai suficient per a l'encreuament amb l'altre vehicle.",
+  "a2": "Si, ja que en aquest no es produeix cap situació de perill.",
+  "a3": "No, perquè circula sobrepassant la línia contínua i envaint del sentit contrari."
+ },
+ "2545": {
+  "q": "Si falla el fre de servei, com cal actuar com a norma general?",
+  "a1": "Canviant successivament, a una relació de marxa inferior, utilitzant el fre de mà si es necessari.",
+  "a2": "Sortint de la via immediatament.",
+  "a3": "Frenant amb el fre de mà i amb la relació de velocitat en punt mort."
+ },
+ "2546": {
+  "q": "De les fractures que citen quina es verdaderament perillosa i en la que s'ha d'evitar moure el mes mínim al ferit?",
+  "a1": "La fractura de pelvis.",
+  "a2": "La fractura de columna, pel risc de lesió medul.lar.",
+  "a3": "La fractura de les costelles per que pot afectar a la perforació pulmonar."
+ },
+ "2547": {
+  "q": "Aquest senyal, concedeix la prioritat de pas als vianants?",
+  "a1": "No.",
+  "a2": "Si.",
+  "a3": "Depèn."
+ },
+ "2548": {
+  "q": "Que ordena aquest agent?",
+  "a1": "Que he de continuar la marxa.",
+  "a2": "Que he de parar-me.",
+  "a3": "Que he de girar cap a la dreta."
+ },
+ "2549": {
+  "q": "Si voleu avançar un vehicle que us precedeix i observeu que ve un altre en sentit contrari, que heu de fer?",
+  "a1": "Accelerar per no tallar el pas al vehicle que ve de cara.",
+  "a2": "Apropar-me tant com pugui al que està avançant, per deixar pas a l'altre.",
+  "a3": "Desistir de l'avançament i col.locar-me una altra vegada a la dreta."
+ },
+ "2550": {
+  "q": "En aquest pas a nivell tancat, quins vehicles estan ben detinguts?",
+  "a1": "Tots quatre.",
+  "a2": "El vermell i el taronja solament.",
+  "a3": "El vermell,el taronja i el blau."
+ },
+ "2551": {
+  "q": "En quin ordre ha de passar els vehicles situats en l'encreuament senyalitzat?",
+  "a1": "Groc, vermell i blau.",
+  "a2": "Groc, blau i vermell.",
+  "a3": "El vermell a d'esperar, en tot cas, que la calçada estigui lliure,"
+ },
+ "2552": {
+  "q": "D'acord amb la senyalització que s'observa en la fotografia i que la línia groga es contínua, li està permès parar o estacionar?",
+  "a1": "Estacionar no, parar si.",
+  "a2": "Si, perquè no s'obstaculitza a altres vehicles ja que hi ha mes carrils per a circular.",
+  "a3": "No, no es pot parar, ni estacionar."
+ },
+ "2553": {
+  "q": "En un accident de circulació com a norma fonamental hem de...",
+  "a1": "Tombar els ferits panxa a dalt en espera d'assistència sanitària.",
+  "a2": "Procurar moure el menys possible als accidentats.",
+  "a3": "Evacuar immediatament als ferits amb qualsevol vehicle disponible."
+ },
+ "2554": {
+  "q": "Prop d'un revolt de visibilitat reduida, està prohibit...",
+  "a1": "Parar-hi únicament.",
+  "a2": "Parar-hi i estacionar.",
+  "a3": "Estacionar-hi únicament."
+ },
+ "2555": {
+  "q": "En un turisme s'ha de comprovar periòdicament el nivell d'oli en el carter.Per que la comprovació sigui correcta, llevat d'instruccions en contrari del fabricant, s'ha de realitzar...",
+  "a1": "Amb el motor fred i el vehicle en posició horitzontal.",
+  "a2": "Amb el motor en calent mantenint el motor al ralentí.",
+  "a3": "Amb el motor en calent i el vehicle en posició horitzontal."
+ },
+ "2556": {
+  "q": "Que indica aquest conductor?",
+  "a1": "Que redueix de manera important la seva velocitat.",
+  "a2": "Que vol girar a la dreta.",
+  "a3": "Que vol girar a l'esquerra."
+ },
+ "2557": {
+  "q": "Quins vehicles tenen permès circular amb l'escapament lliure?",
+  "a1": "Cap.",
+  "a2": "Els vehicles que no estiguin obligats a passar una inspecció tècnica.",
+  "a3": "Tots."
+ },
+ "2558": {
+  "q": "Si vostè ha ingerit alcohol, quan arribarà al grau màxim d'alcoholèmia?",
+  "a1": "Quatre hores desprès d'haver begut.",
+  "a2": "Dos hores desprès d'haver begut.",
+  "a3": "Una hora desprès d'haver begut."
+ },
+ "2559": {
+  "q": "En les sortides a l'estranger, cal portar col.locat el distintiu de nacionalitat Andorrana « AND » en la part posterior del vehicle?",
+  "a1": "Si.",
+  "a2": "No.",
+  "a3": "Depèn del tipùs de vehicle."
+ },
+ "2560": {
+  "q": "Si ens molesta conduir de nit i som molt sensibles a l'enllumenat, que hauriem de fer?",
+  "a1": "Posar-nos ulleres de sol.",
+  "a2": "Llogar un taxi.",
+  "a3": "Evitar sempre que sigui possible, la conducció nocturna i prendre les mesures oportunes quan sigui necessari conduir en aquelles condicions."
+ },
+ "2561": {
+  "q": "La il.luminació de la placa de matricula ha de permetre poder llegir la seva inscripció, de nit i e temps clar, a una distància mínima de 20 metres. Aquesta il.luminació ha de ser simultània sempre amb l'enllumenat...",
+  "a1": "De posició o ordinari.",
+  "a2": "D'encreuament i de carretera.",
+  "a3": "Ambdós casos anteriors són correctes."
+ },
+ "2562": {
+  "q": "Està permès parar i estacionar en...",
+  "a1": "Els passos per a vianants.",
+  "a2": "Els passos a nivell.",
+  "a3": "Les respostes anteriors 1 i 2 son incorrectes."
+ },
+ "2563": {
+  "q": "Si avui és el primer dia del mes, l'hi està permès estacionar al costat de la calçada en la que està situada el senyal?",
+  "a1": "Si.",
+  "a2": "No.",
+  "a3": "Si no molestem."
+ },
+ "2564": {
+  "q": "Està permès circular amb làmines adhesives o cortines en les finestres posteriors dels vehicles?",
+  "a1": "No, mai.",
+  "a2": "Si, sempre.",
+  "a3": "Només quan es portin dos miralls retrovisors exteriors, un a cada costat del vehicle."
+ },
+ "2565": {
+  "q": "Pot conduir un camió de 3.500 Kg. de PMA amb el permís que autoritza a conduir turismes?",
+  "a1": "Si.",
+  "a2": "No.",
+  "a3": "Si, però te limitada la circulació en un radi de 50 Km/h."
+ },
+ "2566": {
+  "q": "Pot un ciclista circular a partir d'aquest senyal?",
+  "a1": "Si.",
+  "a2": "No.",
+  "a3": "Ens hem d'informar bé."
+ },
+ "2567": {
+  "q": "Està prohibit canviar el sentit de la marxa...",
+  "a1": "A les zones senyalitzades com carrers residencials.",
+  "a2": "En un pas a nivell.",
+  "a3": "A les vies interurbanes."
+ },
+ "2568": {
+  "q": "De nit, circulant amb l'enllumenat de carretera, al creuar-nos amb un altre vehicle en sentit contrari, per no enlluernar-lo hem de canviar-lo per l'enllumenat de...",
+  "a1": "Encreuament.",
+  "a2": "Ordinari.",
+  "a3": "Carretera."
+ },
+ "2569": {
+  "q": "En una intersecció, sense senyalitzar la preferència i que no es de circulació giratòria, dels supòsits següents, qui te la preferència de pas sobre tots els altres:",
+  "a1": "Els vehicles que s'acostin per la dreta.",
+  "a2": "Els vehicles que circulen per una carretera general davant els que ho fan per una de categoria inferior.",
+  "a3": "Els vehicles que circulen per la via transversal."
+ },
+ "2570": {
+  "q": "Aquest senyal indica:",
+  "a1": "La proximitat d'un taller situat a la via on circula.",
+  "a2": "Fi de calçada amb prioritat de pas en totes les interseccions.",
+  "a3": "Calçada amb sentit únic."
+ },
+ "2571": {
+  "q": "Que indica l'agent de circulació?",
+  "a1": "Parar els vehicles que s'atansen pel seu darrere.",
+  "a2": "Parar els vehicles que s'atansen pel davant.",
+  "a3": "Parar tocant la vora."
+ },
+ "2572": {
+  "q": "Pot ser immobilitzat un vehicle en el supòsit de que el seu conductor es negui a sotmetre's a les proves de detecció d'alcoholèmia o substàncies estupefaents?",
+  "a1": "Si.",
+  "a2": "No.",
+  "a3": "Depèn."
+ },
+ "2573": {
+  "q": "L'agent de circulació comunal es aquell que depen de l'administració…",
+  "a1": "General.",
+  "a2": "Local.",
+  "a3": "Del Ministeri de l'Interior."
+ },
+ "2574": {
+  "q": "Conduint el turisme vermell, arriba a aquesta intersecció i troba el camió, perquè te vostè l'obligació de parar-se?",
+  "a1": "Perquè trobo el senyal de cediu el pas.",
+  "a2": "Perquè surt per l'esquerra.",
+  "a3": "Perquè el camió es més lent."
+ },
+ "2575": {
+  "q": "Entre aquests tipus de senyals que es citen, quines són les prioritàries sobre les altres en cas de contradicció?",
+  "a1": "Els semàfors.",
+  "a2": "Els senyals circumstancials que modifica el regim normal de utilització de la via.",
+  "a3": "Un senyal de STOP per ser molt restrictiva."
+ },
+ "2576": {
+  "q": "Quines son les velocitats màximes permeses en les vies urbanes i interurbanes?",
+  "a1": "De 50 Km/h. en les urbanes i de 90 Km/h en les interurbanes.",
+  "a2": "De 90 Km/h. en les vies urbanes i de 40 Km/h. en les interurbanes.",
+  "a3": "De 60 Km/h. en les urbanes i de 80 Km/h. en les interurbanes."
+ },
+ "2577": {
+  "q": "En trobar aquest panell complementari sota un senyal vertical de perill, sabrem…",
+  "a1": "La distància a l'inici del perill o prescripció.",
+  "a2": "La longitud del tram perillós.",
+  "a3": "Que a 1000 m. hem de cedir el pas."
+ },
+ "2578": {
+  "q": "Quan està permesa la competència de velocitat en les vies públiques obertes al trànsit general?",
+  "a1": "En les vies interurbanes, si no hi ha cap obstacle que faci perillosa la circulació.",
+  "a2": "Solament quan un dels vehicles és d'urgències.",
+  "a3": "Mai."
+ },
+ "2579": {
+  "q": "Aquest senyal està per informar als conductors i altres usuaris de la via de la situació de…",
+  "a1": "Un telèfon d'ús permanent per advertir de l'existència d'un accident o emergència en la via.",
+  "a2": "Un aparell telefònic.",
+  "a3": "Una oficina d'informació."
+ },
+ "2580": {
+  "q": "El fre de servei d'un vehicle, anomenat fre de peu, es el dispositiu utilitzat per a…",
+  "a1": "Mantenir immòbil el vehicle en absència del conductor.",
+  "a2": "Disminuir la velocitat i detenir el vehicle.",
+  "a3": "Disminuir la velocitat i detenir el vehicle en cas de fallada del sistema elèctric de frenat."
+ },
+ "2581": {
+  "q": "Si circula per una via i es troba aquest senyal, l'ús de cadenes o altres dispositius anàlegs…",
+  "a1": "Està recomanat.",
+  "a2": "Està permès.",
+  "a3": "Es obligatori."
+ },
+ "2582": {
+  "q": "Quins cinturons de seguretat han d'estar homologats?",
+  "a1": "Només els dels seients davanters.",
+  "a2": "Cap.",
+  "a3": "Tots."
+ },
+ "2583": {
+  "q": "Quin dels següents estacionaments seria correcte el dia 2 de cada mes, segons aquests senyals?",
+  "a1": "Al costat de la calçada on estigui situat el senyal A.",
+  "a2": "Al costat de la calçada on estigui situat el senyal B.",
+  "a3": "Cap."
+ },
+ "2584": {
+  "q": "Vostè circula de nit, a menys de 150 metres d'un turisme. Quin enllumenat ha d'utilitzar?",
+  "a1": "Solament el de posició.",
+  "a2": "El de carretera.",
+  "a3": "El d'encreuament."
+ },
+ "2585": {
+  "q": "Al trobar aquest aballisament sabem que…",
+  "a1": "Hi ha una bifurcació de la calçada a la dreta i a l'esquerra del mateix.",
+  "a2": "Que podem estacionar darrera d'ell.",
+  "a3": "Indica la posició d'un aparell de control de velocitat per radar."
+ },
+ "2586": {
+  "q": "La renovació del permís de conduir es pot sol.licitar amb...",
+  "a1": "90 dies.",
+  "a2": "60 dies.",
+  "a3": "30 dies."
+ },
+ "2587": {
+  "q": "En una via de dos carrils i doble sentit de circulació, a on cal situar-se per girar a l'esquerra en la pròxima intersecció?",
+  "a1": "El més a prop possible de la vora esquerra de la via.",
+  "a2": "A la vorada de la dreta.",
+  "a3": "Al costat de la marca vial que separa els dos sentits, o en el seu defecte al costat de la línia imaginaria que els delimita."
+ },
+ "2588": {
+  "q": "En quin cas, dels quals a continuació s'indiquen, està permesa la immobilització d'un vehicle en la part transitable del voral d'una autopista?",
+  "a1": "Per efectuar una parada.",
+  "a2": "Per motiu d'emergència.",
+  "a3": "Per estacionar."
+ },
+ "2589": {
+  "q": "Quan es condueix sota els efectes d'alcohol, s'observa…",
+  "a1": "Un augment de la capacitat de concentració.",
+  "a2": "Una disminució de la capacitat de reacció.",
+  "a3": "Una reducció de la distancia de frenada."
+ },
+ "2590": {
+  "q": "Es aconsellable descansar desprès de l'absorció d'alcohol, però no hem d'oblidar que l'alcoholèmia augmenta progressivament durant la digestió i arriba al seu nivell més alt:",
+  "a1": "Tres hores desprès que el conductor hagi ingerit la darrera copa.",
+  "a2": "Dues hores desprès que el conductor hagi finalitzat la digestió.",
+  "a3": "Una hora desprès d'haver ingerit la darrera dosi d'alcohol."
+ },
+ "2591": {
+  "q": "Que ens pot passar al sortir d'un tram de carretera protegit quan hi ha fort vent lateral?",
+  "a1": "Res, si subjectem amb força el volant i premem a fons l'accelerador.",
+  "a2": "Que l'efecte del vent modifiqui la nostra trajectòria.",
+  "a3": "Que s'obri alguna finestra."
+ },
+ "2592": {
+  "q": "Si al voler arrancar el motor, aquest no gira o gira molt poc a poc, quina es la causa més probable?",
+  "a1": "Que la bateria està en mal estat o descarregada.",
+  "a2": "Que el carburador es brut.",
+  "a3": "Que les bugies estan brutes."
+ },
+ "2593": {
+  "q": "Amb edificacions pròximes a la vorada de la calçada, estrenyiments ferms lliscants, en les interseccions i en els passos a nivell, estem obligats a…",
+  "a1": "Detenir-nos.",
+  "a2": "Moderar la velocitat.",
+  "a3": "Augmentar la velocitat."
+ },
+ "2594": {
+  "q": "Quan en una via de sentit únic, hi hagi una illeta o una zona de línies obliqües, per quina part de la calçada ha de circular?",
+  "a1": "Pel costat esquerre de la illeta o de la zona.",
+  "a2": "Pel costat dret de la illeta o de la zona.",
+  "a3": "Per qualsevol costat."
+ },
+ "2595": {
+  "q": "Un remolc de PMA <750 Kg. es obligatori assegurar-lo?",
+  "a1": "No.",
+  "a2": "Si.",
+  "a3": "Únicament si es surt fora d'Andorra."
+ },
+ "2596": {
+  "q": "Quina de les maniobres següents es permet en l'autopista?",
+  "a1": "Estacionar fora de les àrees de repòs o de servei.",
+  "a2": "Realitzar la marxa enrrere.",
+  "a3": "Canviar de sentit de la marxa en els llocs habilitats a tal efecte."
+ },
+ "2597": {
+  "q": "Que indica aquest senyal?",
+  "a1": "Que només està permesa la circulació de turismes.",
+  "a2": "Perill per proximitat d'un tram on la circulació es troba detinguda dificultada per congestió de tràfic.",
+  "a3": "Que està prohibit circular en paral.lel."
+ },
+ "2598": {
+  "q": "Aquest senyal es utilitzat per senyalitzar treballs temporals d'obres?",
+  "a1": "Si, indica un obstacle de poca importància i complementa una senyalització més gran.",
+  "a2": "Ja no s'utilitza.",
+  "a3": "No."
+ },
+ "2599": {
+  "q": "Perquè un vehicle de motor pugui circular a de disposar…",
+  "a1": "De la factura de compra.",
+  "a2": "Del permís de circulació.",
+  "a3": "Del certificat \"CE\" d'homologació."
+ }
+}

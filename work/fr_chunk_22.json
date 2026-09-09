@@ -1,0 +1,602 @@
+{
+ "2100": {
+  "q": "Dans quel ordre passent ces véhicules?",
+  "a1": "Jaune, rouge et bleu.",
+  "a2": "Bleu, jaune et rouge.",
+  "a3": "Rouge, bleu et jaune."
+ },
+ "2101": {
+  "q": "Sommes-nous obligés de varier le type d'éclairage en nous croisant de nuit avec d'autres véhicules, si nous avons connecté l'éclairage de route?",
+  "a1": "Oui, nous devons changer ce type d'éclairage pour celui de croisement.",
+  "a2": "Le code impose seulement l'obligation de mettre l'éclairage de croisement si l'autre usager le fait.",
+  "a3": "Seulement si nous voyons des feux de gabarit sur l'autre véhicule."
+ },
+ "2102": {
+  "q": "Que nous indique cet agent?",
+  "a1": "Stop aux véhicules qui s'approchent par sa droite.",
+  "a2": "Halte au véhicule immédiat à l'agent par son arrière.",
+  "a3": "Stop, s'arrêter à sa droite."
+ },
+ "2103": {
+  "q": "Quand nous circulons près d'un véhicule à deux roues, nous devons prévoir un type de réactions qui, même si elles semblent étranges, sont fréquentes comme…",
+  "a1": "Des mouvements transversaux ou quelque déviation plus ou moins brusque.",
+  "a2": "Changer de voie souvent, toujours de droite à gauche.",
+  "a3": "Qu'ils perdent l'équilibre et tombent."
+ },
+ "2104": {
+  "q": "L'usage de la ceinture de sécurité est obligatoire…",
+  "a1": "Seulement dans les zones interurbaines.",
+  "a2": "Sauf certaines exceptions, dans les zones urbaines et interurbaines.",
+  "a3": "Dans les véhicules de moins de 2500 Kg."
+ },
+ "2105": {
+  "q": "Que signifie ce signal?",
+  "a1": "Interdit de tourner à gauche.",
+  "a2": "Demi-tour interdit.",
+  "a3": "Virage serré vers la gauche."
+ },
+ "2106": {
+  "q": "Comment devons-nous effectuer la manœuvre de changement de direction à gauche?",
+  "a1": "En nous plaçant au centre de la chaussée, en laissant toutefois libre la voie destinée aux véhicules, qui circulent en sens contraire, en allumant l'indicateur de direction gauche.",
+  "a2": "En donnant la préférence aux véhicules qui s'approchent par la droite dans le même sens.",
+  "a3": "En allumant l'indicateur de direction gauche en cédant le passage à droite."
+ },
+ "2107": {
+  "q": "Avec quoi doit se compléter la signalisation de position dans la partie arrière des véhicules automobiles?",
+  "a1": "Avec deux dispositifs triangulaires, visibles à 100 mètres, par temps clair. Ils doivent être réflecteurs.",
+  "a2": "Ce n'est pas obligatoire.",
+  "a3": "Avec des dispositifs réfléchissants rouges non triangulaires, visibles de nuit à 100 mètres, Un sur les motocyclettes et deux sur le reste des véhicules."
+ },
+ "2108": {
+  "q": "Comment se signalera une automobile stationnée sur une voie insuffisamment éclairée et hors d'une zone de stationnement?",
+  "a1": "Avec l'éclairage ordinaire et les dispositifs réflecteurs.",
+  "a2": "Avec quatre feux de couleur jaune-auto.",
+  "a3": "Avec les dispositifs réflecteurs triangulaires."
+ },
+ "2109": {
+  "q": "Qu'est-ce que le fading?",
+  "a1": "La perte d'efficacité des freins, quand l'usage est trop prolongé.",
+  "a2": "Le nom technique qu'a l'éclairage d'urgence.",
+  "a3": "Le dégonflement soudain d'un pneumatique."
+ },
+ "2110": {
+  "q": "Tout usager de la voie est-il obligé de se soumettre aux contrôles d'alcoolémie effectués par la Police?",
+  "a1": "Non.",
+  "a2": "Oui.",
+  "a3": "Non, seulement les conducteurs sont obligés."
+ },
+ "2111": {
+  "q": "La pression des pneumatiques a-t-elle une relation avec la consommation d'essence?",
+  "a1": "Oui,",
+  "a2": "Non.",
+  "a3": "Cela dépend de la marque du pneumatique."
+ },
+ "2112": {
+  "q": "Aux passages pour piétons, le conducteur a l'obligation de:",
+  "a1": "S'arrêter devant la ligne transversale, même s'il ne passe pas de piétons.",
+  "a2": "Ne pas franchir la ligne transversale quand des piétons passent.",
+  "a3": "Il a l'obligation de céder le passage aux autres véhicules."
+ },
+ "2113": {
+  "q": "Que doit faire le conducteur d'un véhicule en arrivant à un passage pour piétons?",
+  "a1": "Réduire la vitesse et s'arrêter si un ou plusieurs piétons sont en disposition de traverser la chaussée.",
+  "a2": "Passer en touchant le trottoir.",
+  "a3": "Faire un usage insistant des signaux acoustiques pour avertir les piétons."
+ },
+ "2114": {
+  "q": "Quand la visibilité est insuffisante dans un virage…",
+  "a1": "Nous devons klaxonner.",
+  "a2": "Nous devons faire des appels de phares.",
+  "a3": "Nous devons nous approcher au maximum de la droite."
+ },
+ "2115": {
+  "q": "Que signifie ce signal?",
+  "a1": "Passage dangereux.",
+  "a2": "Situation de passage à niveau sans barrières (double voie).",
+  "a3": "Approche d'un passage à niveau ou pont mobile."
+ },
+ "2116": {
+  "q": "À partir du point où se trouve ce signal et jusqu'à la prochaine intersection, il est interdit:",
+  "a1": "Stationner dans le croisement.",
+  "a2": "L'arrêt.",
+  "a3": "Le stationnement et l'arrêt est autorisé jusqu'à la prochaine intersection."
+ },
+ "2117": {
+  "q": "Si un véhicule que nous voulons dépasser ne nous laisse pas un espace suffisant pour le faire aisément, que devons-nous faire?",
+  "a1": "Utiliser l'accotement.",
+  "a2": "Renoncer à faire la manœuvre.",
+  "a3": "Faire quand même le dépassement , en l'avertissant avec les signaux acoustiques."
+ },
+ "2118": {
+  "q": "Qu'ordonne ce feu de signalisation?",
+  "a1": "Halte.",
+  "a2": "Voie libre en avant et à droite.",
+  "a3": "Halte à gauche, permis de continuer en avant et à droite en cédant le passage."
+ },
+ "2119": {
+  "q": "La voiture de tourisme rouge sort du stationnement. À qui doit-elle donner la préférence?",
+  "a1": "Seulement aux véhicules à traction mécanique.",
+  "a2": "À tous les véhicules qui s'approchent.",
+  "a3": "Aux véhicules à traction mécanique qui s'approchent par sa droite."
+ },
+ "2120": {
+  "q": "Qu'indique ce signal?",
+  "a1": "La situation d'une station d'inspection technique de véhicules.",
+  "a2": "Que nous sommes à la hauteur de l'institut de télévision.",
+  "a3": "La situation d'une station émettrice de TV locale."
+ },
+ "2121": {
+  "q": "Est-il correct qu'une voiture de tourisme porte un feu de couleur blanche dans la partie arrière?",
+  "a1": "Non, elle peut seulement le porter dans la partie avant.",
+  "a2": "Non, il peut seulement être jaune-sélectif.",
+  "a3": "Oui, pour annoncer la manœuvre de marche arrière."
+ },
+ "2122": {
+  "q": "Sur les routes étroites, pour éviter d'entrer en collision avec le véhicule que nous dépassons, il est convenable…",
+  "a1": "De l'avertir de notre intention, avec un léger coup de klaxon ou en faisant usage des feux.",
+  "a2": "De dépasser par l'accotement gauche.",
+  "a3": "De laisser une séparation de 12 mètres."
+ },
+ "2123": {
+  "q": "Que signifie ce signal?",
+  "a1": "Passage obligatoire.",
+  "a2": "Direction obligatoire.",
+  "a3": "Signal de position d'une déviation ou d'un rétrécissement."
+ },
+ "2124": {
+  "q": "Si en circulant à des vitesses déterminées nous remarquons que le volant du véhicule vibre, c'est dû au fait que…",
+  "a1": "Les roues du véhicule sont déséquilibrées.",
+  "a2": "Les amortisseurs sont usés.",
+  "a3": "Le moteur défaille à des régimes déterminés."
+ },
+ "2125": {
+  "q": "L'état de la chaussée peut-il influer sur l'adhérence du véhicule?",
+  "a1": "Oui.",
+  "a2": "Non.",
+  "a3": "Seulement quand elle est mouillée."
+ },
+ "2126": {
+  "q": "Sur cette voie à double sens de circulation, où le tramway circule au centre, le dépassement que fait la voiture de tourisme rouge au tramway est-il correct?",
+  "a1": "Il n'est pas correct, elle doit le faire par la droite du tramway.",
+  "a2": "Il est seulement correct quand le tramway est arrêté.",
+  "a3": "Oui, il est correct."
+ },
+ "2127": {
+  "q": "Que signifie ce signal?",
+  "a1": "Circulation parallèle autorisée pour les automobiles.",
+  "a2": "Passage interdit aux automobiles.",
+  "a3": "Dépassement interdit."
+ },
+ "2128": {
+  "q": "Le camion du dessin circule-t-il correctement sur l'autoroute?",
+  "a1": "Non, parce qu'il circule sur la voie de gauche.",
+  "a2": "Non parce qu'il lui est interdit de circuler sur les autoroutes.",
+  "a3": "Oui, parce que ce sont des lignes discontinues."
+ },
+ "2129": {
+  "q": "Ce signal indique…",
+  "a1": "Interdit de stationner aux véhicules qui transportent une charge de plus de 5,5 tonnes.",
+  "a2": "Limitation de poids total à 5,5 tonnes.",
+  "a3": "Voie pour les véhicules qui pèsent plus de 5,5 tonnes."
+ },
+ "2130": {
+  "q": "Pouvons-nous parler au téléphone mobile pendant que nous conduisons un véhicule?",
+  "a1": "Seulement si nous avons installé un dispositif mains libres qui nous permette de conduire sans limitation de mouvements et avec normalité.",
+  "a2": "C'est totalement interdit.",
+  "a3": "C'est interdit sur les voies interurbaines mais pas sur les urbaines."
+ },
+ "2131": {
+  "q": "Sur les portions de chaussée signalisées avec des flèches de présélection de trafic…",
+  "a1": "On doit toujours circuler par les flèches de la droite.",
+  "a2": "Nous devons nous arrêter avant de prendre une direction.",
+  "a3": "On ne peut pas stationner."
+ },
+ "2132": {
+  "q": "Que signifie ce signal?",
+  "a1": "Halte de face et à l'arrière.",
+  "a2": "Halte de face et voie libre à gauche.",
+  "a3": "Halte à l'arrière et à gauche."
+ },
+ "2133": {
+  "q": "En voulant commencer la marche sur une surface enneigée ou gelée…",
+  "a1": "Nous accélérons à fond pour pouvoir démarrer sans problèmes.",
+  "a2": "Nous accélérons doucement en essayant de maintenir le maximum d'adhérence.",
+  "a3": "Nous laissons toujours le frein à main un peu serré pour compenser le manque d'adhérence."
+ },
+ "2134": {
+  "q": "Que devons-nous vérifier avant de faire un changement de direction?",
+  "a1": "Qu'aucun véhicule ne se trouve à moins de 500 mètres.",
+  "a2": "Que la vitesse et la distance des véhicules qui s'approchent dans les deux sens le permettent.",
+  "a3": "Que le véhicule qui va derrière ne soit pas à moins de 200 mètres."
+ },
+ "2135": {
+  "q": "Qu'interdit le code dans les tunnels?",
+  "a1": "Changer le sens de la marche.",
+  "a2": "Circuler avec les feux de croisement.",
+  "a3": "Faire des dépassements."
+ },
+ "2136": {
+  "q": "Si nous devons mettre des chaînes, à quelles roues devons-nous les mettre?",
+  "a1": "Aux roues directrices pour pouvoir mieux tourner.",
+  "a2": "Aux roues motrices.",
+  "a3": "Aux roues non motrices, pour compenser la motricité du véhicule."
+ },
+ "2137": {
+  "q": "À ce passage à niveau fermé, quels véhicules sont bien arrêtés?",
+  "a1": "Tous les quatre.",
+  "a2": "Le rouge et le jaune seulement.",
+  "a3": "Le rouge,le jaune et le bleu."
+ },
+ "2138": {
+  "q": "En circulant sur une voie publique, devons-nous avertir les autres usagers de notre intention de nous arrêter?",
+  "a1": "On doit seulement avertir des manœuvres de changement de direction et l'arrêt n'en est pas une.",
+  "a2": "Oui.",
+  "a3": "Seulement sur les voies à double direction et à plus de 50 Km/h."
+ },
+ "2139": {
+  "q": "Qui doit céder le passage à ce croisement?",
+  "a1": "Seulement le véhicule bleu et le jaune pour circuler sur une route générale.",
+  "a2": "Seulement le jaune pour continuer en ligne droite.",
+  "a3": "Aucun."
+ },
+ "2140": {
+  "q": "Que signifie ce signal?",
+  "a1": "Danger indéterminé (bus électrique).",
+  "a2": "Croisement de tramway.",
+  "a3": "Passage à niveau sans barrières (voie électrifiée)."
+ },
+ "2141": {
+  "q": "Sur les chaussées avec deux voies pour chaque sens de marche, sur laquelle circulerons-nous?",
+  "a1": "Indistinctement sur n'importe quelle voie.",
+  "a2": "Sur la voie de notre droite, en laissant les centrales pour les dépassements.",
+  "a3": "Sur les voies de droite, si nous circulons à moins de 40 Km/h., sinon sur les centrales."
+ },
+ "2142": {
+  "q": "Si vous, conducteur, arrivez à une intersection où vous voyez le signal de croisement normal, à qui devrez-vous céder le passage?",
+  "a1": "À personne, puisqu'il s'agit d'un croisement normal.",
+  "a2": "À tous.",
+  "a3": "À tous ceux qui s'approchent par ma droite."
+ },
+ "2143": {
+  "q": "Quand savons-nous que le conducteur qui nous précède a pris connaissance de notre intention de le dépasser?",
+  "a1": "Quand il freine.",
+  "a2": "Quand il allume le signal de panne.",
+  "a3": "Quand il se serre à droite."
+ },
+ "2144": {
+  "q": "Que doit-on faire quand nous devons circuler près des trottoirs dans les marchés ou à proximité des écoles?",
+  "a1": "Faire un usage insistant des signaux acoustiques.",
+  "a2": "Réduire la vitesse à l'équivalent de celle du pas d'un homme.",
+  "a3": "Augmenter la vitesse afin de donner une plus grande fluidité au trafic."
+ },
+ "2145": {
+  "q": "Pouvons-nous circuler sur la partie gauche de la chaussée?",
+  "a1": "Quand nous sommes absolument sûrs qu'aucun véhicule ne s'approche face à nous.",
+  "a2": "Si aucun véhicule ne vient face à nous quand nous le voulons si la signalisation le permet et quand c'est nécessaire pour une manœuvre.",
+  "a3": "Jamais."
+ },
+ "2146": {
+  "q": "Qu'entendons-nous par taux d'alcoolémie?",
+  "a1": "La classe d'alcool que nous avons ingérée.",
+  "a2": "La quantité d'alcool qu'il y a dans le sang.",
+  "a3": "Les litres d'alcool que nous pouvons boire."
+ },
+ "2147": {
+  "q": "Quelle est une des causes les plus fréquentes des embouteillages dans les villes?",
+  "a1": "Entrer dans une intersection quand la circulation est obstruée.",
+  "a2": "Ne pas entrer dans une intersection quand la circulation est obstruée.",
+  "a3": "Circuler dans des rues de direction interdite."
+ },
+ "2148": {
+  "q": "Pour quels véhicules l'éclairage de brouillard est-il obligatoire?",
+  "a1": "Il n'est pas obligatoire pour les voitures de tourisme.",
+  "a2": "Seulement le postérieur est obligatoire pour les voitures de tourisme.",
+  "a3": "Pour aucun."
+ },
+ "2149": {
+  "q": "Quels véhicules portent ce signal?",
+  "a1": "Les véhicules lents.",
+  "a2": "Ceux qui excèdent en poids ou dimensions.",
+  "a3": "C'est un signal qui indique provisoirement des travaux ou des obstacles sur la chaussée."
+ },
+ "2150": {
+  "q": "Qu'indique cet agent?",
+  "a1": "Arrêter les véhicules qui s'approchent par son arrière.",
+  "a2": "Arrêter les véhicules qui s'approchent par son avant.",
+  "a3": "S'arrêter en touchant le bord."
+ },
+ "2151": {
+  "q": "Qu'est-ce qu'un changement de rasant?",
+  "a1": "C'est un pont élevé qui se construit sur les voies express.",
+  "a2": "C'est un type de changement de vitesses des véhicules.",
+  "a3": "C'est le point d'intersection de deux tronçons de route de différente inclinaison, dont le premier est en sens ascendant selon notre sens de la marche."
+ },
+ "2152": {
+  "q": "Qu'ordonne cet agent?",
+  "a1": "Possibilité de tourner vers la gauche.",
+  "a2": "Que s'arrêtent les véhicules qui s'approchent par derrière, vers l'agent de circulation.",
+  "a3": "Que s'arrêtent les véhicules qui s'approchent par la droite de l'agent de circulation."
+ },
+ "2153": {
+  "q": "Quelle voiture de tourisme circule bien sur cette place?",
+  "a1": "La voiture de tourisme bleue.",
+  "a2": "Toutes circulent bien.",
+  "a3": "La voiture de tourisme rouge."
+ },
+ "2154": {
+  "q": "Qu'indique ce signal?",
+  "a1": "Dépassement autorisé pour les camions.",
+  "a2": "Danger indéterminé.",
+  "a3": "Fin d'interdiction de dépassement pour les camions."
+ },
+ "2155": {
+  "q": "Qu'indique ce signal?",
+  "a1": "Entrée en agglomération.",
+  "a2": "Direction d'intérêt général.",
+  "a3": "Information de portée communale."
+ },
+ "2156": {
+  "q": "Si en circulant de nuit, un véhicule s'approchait en sens contraire avec l'éclairage de route allumé et ne le changeait pas pour celui de croisement, que devons-nous faire?",
+  "a1": "Allumer l'éclairage de route et celui de brouillard, pour pouvoir y voir suffisamment.",
+  "a2": "Nous arrêter immédiatement sur la chaussée et connecter l'éclairage de position.",
+  "a3": "Modérer la vitesse et nous ranger au bord droit de la chaussée, en arrivant à nous arrêter si nous n'avions pas la visibilité suffisante."
+ },
+ "2157": {
+  "q": "Qu'indique ce signal?",
+  "a1": "Chaussée glissante.",
+  "a2": "Danger imminent indéfini.",
+  "a3": "Danger par obstruction de la chaussée par un véhicule motorisé."
+ },
+ "2158": {
+  "q": "Sur l'autoroute, le temps de réaction est habituellement…",
+  "a1": "Plus court, puisque la vitesse est plus haute.",
+  "a2": "Le même que sur toute autre route.",
+  "a3": "Plus long."
+ },
+ "2159": {
+  "q": "Qu'ordonne un feu jaune fixe sur la chaussée?",
+  "a1": "Passage permis (sauf pour des raisons d'affluence de circulation).",
+  "a2": "Précaution.",
+  "a3": "Arrêt (sauf s'il ne peut pas se faire dans des conditions de sécurité quand il s'allume)."
+ },
+ "2160": {
+  "q": "Ce signal signifie?",
+  "a1": "Que nous nous approchons d'un tunnel où le passage est coupé.",
+  "a2": "Il indique la fin d'un tunnel.",
+  "a3": "Fin d'obligation d'éclairage de croisement."
+ },
+ "2161": {
+  "q": "Si le véhicule qui s'approche de nous en sens contraire porte sur une partie visible une plaque jaune de 20 cm. de côté, que nous indique-t-il?",
+  "a1": "Qu'il porte une remorque.",
+  "a2": "Qu'il dépasse le poids maximum ou les dimensions.",
+  "a3": "Qu'il s'agit d'un véhicule d'urgence."
+ },
+ "2162": {
+  "q": "Qu'interdit ce signal?",
+  "a1": "Ce signal n'interdit rien, il n'est pas d'interdiction.",
+  "a2": "De tourner à gauche.",
+  "a3": "De dépasser tout type de véhicule."
+ },
+ "2163": {
+  "q": "Que signifie ce signal?",
+  "a1": "Obstruction sur la chaussée.",
+  "a2": "Danger, visibilité réduite.",
+  "a3": "Danger, congestion."
+ },
+ "2164": {
+  "q": "Qu'est-ce qu'un cyclomoteur?",
+  "a1": "C'est une motocyclette avec moteur rotatif.",
+  "a2": "C'est une motocyclette avec un moteur d'une cylindrée égale ou inférieure à 50 cc.",
+  "a3": "C'est une motocyclette sur laquelle on a installé un moteur à quatre temps."
+ },
+ "2165": {
+  "q": "Les conditions atmosphériques influent-elles sur l'adhérence des pneumatiques?",
+  "a1": "Non, parce qu'aujourd'hui les pneumatiques sont totalement préparés.",
+  "a2": "Oui.",
+  "a3": "Seulement en hiver."
+ },
+ "2166": {
+  "q": "La distance parcourue en une seconde…",
+  "a1": "Est directement proportionnelle à la vitesse.",
+  "a2": "Est inversement proportionnelle à la vitesse.",
+  "a3": "Est directement proportionnelle à la puissance du véhicule."
+ },
+ "2167": {
+  "q": "Qu'indique ce signal utilisé manuellement?",
+  "a1": "Circulation interdite.",
+  "a2": "Arrêt.",
+  "a3": "Direction interdite."
+ },
+ "2168": {
+  "q": "Comme norme générale, de quelle couleur doivent être les feux des automobiles?",
+  "a1": "Blancs ou jaunes ceux de l'avant et rouges ceux de l'arrière.",
+  "a2": "Blancs ceux de l'avant et jaunes ceux de l'arrière.",
+  "a3": "Tous blancs ou jaunes."
+ },
+ "2169": {
+  "q": "Dans les rues à double sens de circulation, nous pouvons trouver des véhicules qui viennent de face en dépassant et si la chaussée n'est pas assez large, nous devons…",
+  "a1": "Augmenter la vitesse pour passer avant.",
+  "a2": "Nous arrêter dans un stationnement.",
+  "a3": "Diminuer la vitesse et nous arrêter s'il le fallait."
+ },
+ "2170": {
+  "q": "Avant de faire un dépassement, que devons-nous prendre en compte?",
+  "a1": "Que nous devons avertir.",
+  "a2": "Que nous devons vérifier que nous pouvons le réaliser et avertir avec une anticipation suffisante.",
+  "a3": "La puissance du véhicule qui nous suit."
+ },
+ "2171": {
+  "q": "Conduire en alternant de fortes accélérations avec des freinages considérables de manière continue, comporte que le véhicule…",
+  "a1": "Ait les organes du système de suspension endommagés.",
+  "a2": "Présente une grave détérioration du liquide de freins.",
+  "a3": "Augmente de manière significative la consommation de combustible."
+ },
+ "2172": {
+  "q": "Que devons-nous faire quand la visibilité est réduite?",
+  "a1": "Circuler au maximum au pas de l'homme.",
+  "a2": "Diminuer la vitesse.",
+  "a3": "Avertir de notre présence avec l'éclairage de position."
+ },
+ "2173": {
+  "q": "Comment devons-nous circuler en arrivant à une place?",
+  "a1": "Par le côté droit et en laissant le possible obstacle central à gauche.",
+  "a2": "En laissant toujours l'obstacle à droite.",
+  "a3": "En laissant le possible obstacle à droite ou à gauche indistinctement, s'il n'y a aucun signal qui oblige ou interdise."
+ },
+ "2174": {
+  "q": "Qu'indique ce signal?",
+  "a1": "Chaussée réservée aux cyclistes.",
+  "a2": "Circulation obligatoire pour les cyclistes.",
+  "a3": "Danger cyclistes."
+ },
+ "2175": {
+  "q": "Qu'indique ce signal?",
+  "a1": "Poste de secours.",
+  "a2": "Hôpital.",
+  "a3": "Base d'ambulance."
+ },
+ "2176": {
+  "q": "Porter la pression 200 grammes de plus que la normale à chaque roue, c'est normal…",
+  "a1": "En cas de mesurer la pression des pneumatiques à chaud.",
+  "a2": "En cas de mesurer la pression des pneumatiques à froid.",
+  "a3": "Jamais."
+ },
+ "2177": {
+  "q": "Quand en circulant nous nous trouvons devant la présence d'une plaque de glace, que devons-nous faire?",
+  "a1": "Sans faire de brusqueries d'aucune sorte, réduire progressivement la vitesse sans appuyer sur le frein.",
+  "a2": "Circuler seulement en première vitesse.",
+  "a3": "Accélérer et appuyer sur le frein à la fois pour compenser le véhicule."
+ },
+ "2178": {
+  "q": "Si en circulant de nuit, nous voyons devant nous un autre véhicule qui, dans sa partie postérieure, porte deux dispositifs en forme de triangle, qui réfléchissent une lumière rouge, nous saurons…",
+  "a1": "Qu'il s'agit d'une remorque.",
+  "a2": "Que nous ne pouvons pas le dépasser parce que c'est un véhicule d'urgence.",
+  "a3": "Qu'il dépasse la longueur maximale autorisée."
+ },
+ "2179": {
+  "q": "Que devons-nous faire pour ne pas éblouir les autres usagers?",
+  "a1": "Porter seulement deux phares.",
+  "a2": "Mettre un pare-soleil sur la partie supérieure des phares pour que le rayon de lumière ne se projette pas vers le haut.",
+  "a3": "Avoir les phares bien ajustés et éviter l'éclairage avec des feux intensifs."
+ },
+ "2180": {
+  "q": "Qu'indique ce signal?",
+  "a1": "Pont mobile.",
+  "a2": "Quai.",
+  "a3": "Proximité d'une barrière ou grand dénivelé."
+ },
+ "2181": {
+  "q": "La voiture de tourisme bleue est un véhicule de police en service d'urgence. Dites dans quel ordre doivent passer les trois voitures de tourisme?",
+  "a1": "Bleue, rouge, jaune.",
+  "a2": "Bleue, jaune, rouge.",
+  "a3": "Rouge, bleue, jaune."
+ },
+ "2182": {
+  "q": "Dans un passage étroit pour travaux, quel véhicule doit céder le passage?",
+  "a1": "Le bleu, parce qu'il a l'obstacle à sa droite.",
+  "a2": "Le rouge, parce qu'il a l'obstacle à sa gauche.",
+  "a3": "Le rouge doit reculer."
+ },
+ "2183": {
+  "q": "Quand le danger d'éblouissement par effet des rayons solaires peut-il être plus grand?",
+  "a1": "Quand ils tombent verticalement.",
+  "a2": "À l'aube et au crépuscule.",
+  "a3": "L'après-midi."
+ },
+ "2184": {
+  "q": "Quand le signal d'un agent est en contradiction avec un autre signal de n'importe quel type, auquel devons-nous obéir?",
+  "a1": "Celui de l'agent, si l'autre est un feu de signalisation, mais pas s'il s'agit d'un autre signal.",
+  "a2": "Celui de l'agent doit toujours prévaloir.",
+  "a3": "En ville prévalent les feux de signalisation ou les autres signaux et sur la route prévalent ceux des agents."
+ },
+ "2185": {
+  "q": "En circulant avec votre voiture de tourisme un jour de brouillard, quelle précaution, entre autres devez-vous prendre?",
+  "a1": "Adapter la vitesse de mon véhicule à la visibilité de la voie.",
+  "a2": "Laisser entre mon véhicule et celui qui circule devant une distance minimale de 50 mètres.",
+  "a3": "N'effectuer aucune manœuvre."
+ },
+ "2186": {
+  "q": "Dans les agglomérations et les lieux de trafic intense, comment doit-on circuler?",
+  "a1": "En modérant la vitesse en l'adaptant aux conditions du trafic.",
+  "a2": "En augmentant la vitesse afin d'imprimer une plus grande fluidité au trafic.",
+  "a3": "Chaque véhicule dans sa voie, sans chevaucher les lignes discontinues."
+ },
+ "2187": {
+  "q": "Que veut dire ce signal?",
+  "a1": "Vitesse minimale obligatoire de 30 kilomètres par heure.",
+  "a2": "Interdit de circuler à plus de 30 kilomètres par heure.",
+  "a3": "Vitesse conseillée."
+ },
+ "2188": {
+  "q": "Voie à sens unique. Quelle manœuvre parmi celles indiquées est bien faite pour tourner à gauche?",
+  "a1": "La manœuvre C.",
+  "a2": "La manœuvre B.",
+  "a3": "La manœuvre D"
+ },
+ "2189": {
+  "q": "À la vue de ce signal, nous saurons que…",
+  "a1": "Danger, l'usage de chaînes ou d'équipements spéciaux est conseillé.",
+  "a2": "Obligation, l'usage de chaînes ou d'équipements spéciaux.",
+  "a3": "Interdiction, l'usage de chaînes ou d'équipements spéciaux."
+ },
+ "2190": {
+  "q": "Où doit s'arrêter le conducteur de ce véhicule?",
+  "a1": "Où se trouve le signal.",
+  "a2": "En franchissant de 48 cm. la ligne transversale.",
+  "a3": "Près de la première ligne transversale sans la franchir."
+ },
+ "2191": {
+  "q": "Sur les chaussées avec deux voies pour chaque sens de la marche, où circulerons-nous?",
+  "a1": "Indistinctement sur n'importe laquelle d'elles.",
+  "a2": "Sur la voie de droite, en laissant les centrales pour les dépassements.",
+  "a3": "De préférence les centrales."
+ },
+ "2192": {
+  "q": "Quand est-il permis de s'arrêter ou de stationner du côté gauche de la chaussée sur les voies urbaines?",
+  "a1": "Quand la droite est occupée.",
+  "a2": "Seulement quand la voie est à double sens de circulation et qu'il y a de l'espace.",
+  "a3": "Quand elles sont à un seul sens de marche et que la circulation n'est pas entravée."
+ },
+ "2193": {
+  "q": "Lequel des véhicules du graphique effectue bien la manœuvre de virage à gauche sur une voie à double sens de circulation?",
+  "a1": "Le véhicule D.",
+  "a2": "Le véhicule A ou le véhicule C indistinctement.",
+  "a3": "Le véhicule B"
+ },
+ "2194": {
+  "q": "La voiture de tourisme peut-elle dépasser le camion?",
+  "a1": "Oui, parce qu'elle a allumé les indicateurs de direction.",
+  "a2": "Oui, parce que la ligne est discontinue.",
+  "a3": "Non, parce que le camion ne laisse pas libre la moitié gauche de la chaussée."
+ },
+ "2195": {
+  "q": "Qu'indique ce signal?",
+  "a1": "Circulation interdite aux véhicules de 2 essieux et 2 t, par essieu.",
+  "a2": "Entrée interdite aux véhicules à moteur avec remorque.",
+  "a3": "Circulation interdite aux véhicules avec une distance entre essieux supérieure à 2 m."
+ },
+ "2196": {
+  "q": "L'existence de glace sur la chaussée se remarque parce que...",
+  "a1": "La direction est bloquée.",
+  "a2": "Les roues avant vibrent excessivement.",
+  "a3": "L'actionnement de la direction est excessivement doux."
+ },
+ "2197": {
+  "q": "Que nous ordonne un feu de signalisation quand les lumières sont rouges alternativement intermittentes?",
+  "a1": "Interdiction temporaire de passage.",
+  "a2": "Rue coupée au trafic, direction interdite.",
+  "a3": "Interdit de circuler vers l'avant et vers la droite."
+ },
+ "2198": {
+  "q": "Les voitures de tourisme jaunes et rouges du dessin sont immobilisées sans possibilité d'avancer. Que doit faire la voiture de tourisme bleue, qui prétend continuer de front?",
+  "a1": "Passer, parce que le feu de signalisation l'ordonne.",
+  "a2": "Avertir de façon répétée avec le klaxon pour qu'ils laissent le passage.",
+  "a3": "Attendre, parce que si elle avance elle gêne la circulation transversale."
+ },
+ "2199": {
+  "q": "Parmi les mesures suivantes, laquelle croyez-vous qu'il est convenable d'appliquer, comme norme générale, aux blessés dans un accident de circulation?",
+  "a1": "Leur desserrer les pièces de vêtement, qui peuvent opprimer le cou ou les voies respiratoires.",
+  "a2": "Leur donner à boire chaque fois qu'ils le sollicitent.",
+  "a3": "Les faire marcher."
+ }
+}

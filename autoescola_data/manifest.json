@@ -1,0 +1,94 @@
+{
+  "source": "https://www.autoescolaolimpica.com/pagines/questionari.php",
+  "extracted_at": "2026-09-09T21:21:56+00:00",
+  "test_count": 110,
+  "question_count": 4400,
+  "unique_question_ids": 4400,
+  "downloaded_images": 3341,
+  "image_errors": [],
+  "missing_answer_keys": [],
+  "manual_answer_key_overrides": [
+    {
+      "test_number": 73,
+      "group_id": 209,
+      "question_id": "8464",
+      "correct_option": 3,
+      "note": "rule wording: speed competitions on public roads are never permitted"
+    },
+    {
+      "test_number": 74,
+      "group_id": 210,
+      "question_id": "8501",
+      "correct_option": 1,
+      "note": "sign image: no right turn"
+    },
+    {
+      "test_number": 75,
+      "group_id": 211,
+      "question_id": "8548",
+      "correct_option": 1,
+      "note": "sign image: maximum height"
+    },
+    {
+      "test_number": 75,
+      "group_id": 211,
+      "question_id": "8539",
+      "correct_option": 2,
+      "note": "definition: carriageway"
+    },
+    {
+      "test_number": 75,
+      "group_id": 211,
+      "question_id": "8558",
+      "correct_option": 1,
+      "note": "rule wording: exercise extra caution at the children warning sign"
+    },
+    {
+      "test_number": 75,
+      "group_id": 211,
+      "question_id": "8550",
+      "correct_option": 2,
+      "note": "sign image: no left or right turn"
+    },
+    {
+      "test_number": 76,
+      "group_id": 212,
+      "question_id": "8597",
+      "correct_option": 3,
+      "note": "sign image: level crossing with barriers"
+    },
+    {
+      "test_number": 76,
+      "group_id": 212,
+      "question_id": "8585",
+      "correct_option": 2,
+      "note": "rule wording: abandon an unsafe overtaking manoeuvre"
+    },
+    {
+      "test_number": 77,
+      "group_id": 213,
+      "question_id": "8653",
+      "correct_option": 3,
+      "note": "rule wording: higher speed makes a crash more severe"
+    },
+    {
+      "test_number": 77,
+      "group_id": 213,
+      "question_id": "8631",
+      "correct_option": 1,
+      "note": "rule wording: reduce speed where mud or gravel may be thrown"
+    },
+    {
+      "test_number": 77,
+      "group_id": 213,
+      "question_id": "8648",
+      "correct_option": 1,
+      "note": "rule wording: rear overhang marking and red light at night"
+    }
+  ],
+  "files": [
+    "questions.json",
+    "questions.csv",
+    "images/"
+  ]
+}

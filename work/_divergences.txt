@@ -1,0 +1,41 @@
+CAT: Prohibit circular a vehicles que transportin matèries contaminants de l'aigua.
+   FR: Interdit de circuler aux véhicules qui transportent des matières contaminantes de l'eau.
+   FR: Interdit de circuler aux véhicules qui transportent des matières polluantes pour l'eau.
+
+CAT: Autoritzat el pas d'animals de montura.
+   FR: Passage d'animaux de selle autorisé.
+   FR: Autorisé le passage d'animaux de monture
+
+CAT: Circulaciò obligatòria per a ciclistes.
+   FR: Circulation obligatoire pour cyclistes.
+   FR: Circulation obligatoire pour cyclistes.
+   FR: Circulation obligatoire pour les cyclistes.
+
+CAT: Realitzant petites variacions sistemàtiques de forma continua entorn d'una determinada posiciò del pedal.
+   FR: En réalisant de petites variations systématiques de forme continue autour d'une position déterminée de la pédale.
+   FR: En réalisant de petites variations systématiques de façon continue autour d'une position déterminée de la pédale .
+
+CAT: Preparar-se per a parar. Canvi pròxim.
+   FR: Se préparer à s'arrêter. Changement prochain.
+   FR: Se préparer à s'arrêter. Changement proche
+
+CAT: Obrir una finestra i buscar un lloc on estacionar el cotxe sense perill. Llavors prendre l'aire i descansar.
+   FR: Ouvrir une fenêtre et chercher un lieu où stationner la voiture sans danger. Alors prendre l'air et se reposer.
+   FR: Ouvrir une fenêtre et chercher un endroit où stationner la voiture sans danger. Ensuite, prendre l'air et nous reposer.
+
+CAT: Si tenim molta destresa, podem i hem de conduir amb una mà, deixant l'altra per accionar els diversos mecanismes del vehicle.
+   FR: Si nous avons beaucoup d'adresse, nous pouvons et devons conduire avec une main, laissant l'autre pour actionner les divers mécanismes du véhicule.
+   FR: Si nous avons beaucoup de dextérité, nous pouvons et devons conduire avec une main, laissant l'autre pour actionner les divers mécanismes du véhicule.
+
+CAT: Entrar exclusivament a les autopistes i autovies
+   FR: Entrer exclusivement sur les autoroutes et voies express
+   FR: Entrer exclusivement dans les autoroutes et voies express.
+   FR: Entrer exclusivement sur les autoroutes et voies express.
+
+CAT: Que surti un nen al darrere, per tant hem d'extremar les precaucions.
+   FR: Qu'un enfant sorte derrière, par conséquent nous devons redoubler de précautions.
+   FR: Qu'un enfant sorte derrière, par conséquent nous devons redoubler les précautions.
+
+CAT: Moderar la velocitat i arrambar-nos a la vora dreta de la calçada.
+   FR: Modérer la vitesse et nous serrer au bord droit de la chaussée.
+   FR: Modérer la vitesse et nous serrer sur le bord droit de la chaussée.

@@ -1,0 +1,1001 @@
+REVIEW BATCH 1 - 100 entries
+
+### ENTRY 110
+Q  CAT: Quan estem conduint, hem d'advertir sempre i amb antelació suficient les nostres maniobres als altres usuaris?
+Q  FR : Quand nous conduisons, devons-nous avertir toujours et avec une anticipation suffisante les autres usagers de nos manœuvres?
+A1 CAT: Si.
+A1 FR : Oui.
+A2 CAT: No cal, ja que tothom sap les normes, el que es pot fer i el que no.
+A2 FR : Ce n'est pas nécessaire, car tout le monde connaît les normes, ce qui peut se faire et ce qui ne peut pas.
+A3 CAT: Només durant la nit.
+A3 FR : Seulement pendant la nuit.
+
+### ENTRY 785
+Q  CAT: Que significa aquest senyal?
+Q  FR : Que signifie ce signal?
+A1 CAT: Alto als vehicles que volen continuar recte.
+A1 FR : Halte aux véhicules qui veulent continuer tout droit.
+A2 CAT: Via lliure als vehicles que volen girar a la dreta o a l'esquerra.
+A2 FR : Voie libre aux véhicules qui veulent tourner à droite ou à gauche.
+A3 CAT: Alto als vehicles que volen girar a l'esquerra.
+A3 FR : Halte aux véhicules qui veulent tourner à gauche.
+
+### ENTRY 2964
+Q  CAT: 1478 Què significa aquest senyal?
+Q  FR : 1478 Que signifie ce signal?
+A1 CAT: Zona d'estacionament amb durada limitada.
+A1 FR : Zone de stationnement à durée limitée.
+A2 CAT: Estacionament prohibit.
+A2 FR : Stationnement interdit.
+A3 CAT: Parada prohibida.
+A3 FR : Arrêt interdit.
+
+### ENTRY 819
+Q  CAT: Com a norma general hem de cedir el pas...
+Q  FR : Comme norme générale nous devons céder le passage...
+A1 CAT: Als vehicle més ràpids.
+A1 FR : Aux véhicules les plus rapides.
+A2 CAT: Als vehicles que surten per la dreta.
+A2 FR : Aux véhicules qui sortent par la droite.
+A3 CAT: Només quan veiem el senyal respectiu a la nostra via.
+A3 FR : Seulement quand nous voyons le signal respectif sur notre voie.
+
+### ENTRY 1996
+Q  CAT: Que indica aquest senyal?
+Q  FR : Qu'indique ce signal?
+A1 CAT: Prohibició d'estacionar des de la 1 hores 15 minuts.
+A1 FR : Interdiction de stationner depuis la 1 heures 15 minutes.
+A2 CAT: Prohibició d'estacionar fins la 1 hora
+A2 FR : Interdiction de stationner jusqu'à la 1 heure
+A3 CAT: Temps limitat d'estacionament o sigui que s'autoritza estacionar durant 1 hora 15 minuts com a mínim.
+A3 FR : Temps limité de stationnement c'est-à-dire qu'on autorise à stationner pendant 1 heure 15 minutes au minimum.
+
+### ENTRY 1871
+Q  CAT: Que significa aquest senyal?
+Q  FR : Que signifie ce signal?
+A1 CAT: Calçada obligatòria per a camions.
+A1 FR : Chaussée obligatoire pour camions.
+A2 CAT: Via reservada a vehicles lents, que poden, amb tot, abandonar-la per tal d'efectuar avançaments.
+A2 FR : Voie réservée aux véhicules lents, qui peuvent, malgré tout, l'abandonner afin d'effectuer des dépassements.
+A3 CAT: Via exclusiva per als camions, autobusos i tractors.
+A3 FR : Voie exclusive pour les camions, autobus et tracteurs.
+
+### ENTRY 468
+Q  CAT: Que indica aquest senyal?
+Q  FR : Qu'indique ce signal?
+A1 CAT: Entrada a poblaciò.
+A1 FR : Entrée en agglomération.
+A2 CAT: Direcciò d'interès general.
+A2 FR : Direction d'intérêt général.
+A3 CAT: Informaciò d'ambit comunal.
+A3 FR : Information de portée communale.
+
+### ENTRY 4
+Q  CAT: Com se senyalitzarà un automòbil estacionat en una vía insuficientment il.luminada i fora d'una zona d'aparcament?
+Q  FR : Comment signalera-t-on une automobile stationnée sur une voie insuffisamment éclairée et hors d'une zone de stationnement?
+A1 CAT: Amb l'enllumenat ordinari i dispositius reflectors.
+A1 FR : Avec l'éclairage ordinaire et des dispositifs réflecteurs.
+A2 CAT: Amb quatre llums de color groc auto.
+A2 FR : Avec quatre feux de couleur jaune auto.
+A3 CAT: Amb dos dispositius reflectors triangulars.
+A3 FR : Avec deux dispositifs réflecteurs triangulaires.
+
+### ENTRY 1493
+Q  CAT: Si avui és el primer dia de mes l’hi està permès estacionar al costat de la calçada en el qual està situada la senyal?
+Q  FR : Si aujourd'hui est le premier jour du mois, vous est-il permis de stationner du côté de la chaussée où est situé le signal?
+A1 CAT: Si.
+A1 FR : Oui.
+A2 CAT: No.
+A2 FR : Non.
+A3 CAT: xxx
+A3 FR : xxx
+
+### ENTRY 3657
+Q  CAT: 2741 Els vehicles de motor no poden remolcar un altre vehicle de motor...
+Q  FR : 2741 Les véhicules à moteur ne peuvent pas remorquer un autre véhicule à moteur...
+A1 CAT: excepte en el cas en què es trobi accidentat o avariat i no pugui ser arrossegat per un altre vehicle específicament destinat a aquest finalitat i amb autorització expressa de l'autoritat encarregada del trànsit.
+A1 FR : excepté dans le cas où il se trouve accidenté ou en panne et ne puisse pas être traîné par un autre véhicule spécifiquement destiné à cette finalité et avec autorisation expresse de l'autorité chargée du trafic.
+A2 CAT: excepte en cas en què es trobi accidentat o avariat i no pugui ser arrossegat per un altre vehicle específicament destinat a aquest fiamb l'autorització expressa de l'autoritat encarregada del trànsit.
+A2 FR : excepté dans le cas où il se trouve accidenté ou en panne et ne puisse pas être traîné par un autre véhicule spécifiquement destiné à cette finavec l'autorisation expresse de l'autorité chargée du trafic.
+A3 CAT: Tant sols en cas en què es trobi accidentat o avariat
+A3 FR : Seulement dans le cas où il se trouve accidenté ou en panne
+
+### ENTRY 3608
+Q  CAT: 2650 Quina precaució tindrem amb la presència de vehicles pesats ?
+Q  FR : 2650 Quelle précaution aurons-nous avec la présence de véhicules lourds ?
+A1 CAT: Necessiten més espai per fer les maniobres i de vegades van a l'esquerra abans de girar a la dreta.
+A1 FR : Ils ont besoin de plus d'espace pour faire les manœuvres et parfois ils vont à gauche avant de tourner à droite.
+A2 CAT: Fan malbé les vies públiques i tenen l'obligació de reparar-les.
+A2 FR : Ils abîment les voies publiques et ont l'obligation de les réparer.
+A3 CAT: Quan arribem a un estretall sempre tenen preferència de pas.
+A3 FR : Quand nous arrivons à un rétrécissement ils ont toujours la préférence de passage.
+
+### ENTRY 3639
+Q  CAT: 2659 Esta permès dipositar la mercaderia a la calçada, voral i zones de vianants?
+Q  FR : 2659 Est-il permis de déposer la marchandise sur la chaussée, accotement et zones de piétons?
+A1 CAT: Si , a la vorada
+A1 FR : Oui , sur la bordure
+A2 CAT: No
+A2 FR : Non
+A3 CAT: En la calçada no, però si en el voral
+A3 FR : Sur la chaussée non, mais oui sur l'accotement
+
+### ENTRY 223
+Q  CAT: Les posicions dels llums d'aquest semàfor:
+Q  FR : Les positions des feux de ce feu de signalisation:
+A1 CAT: Permeten avançar solament als automòbils que giren a l'esquerra.
+A1 FR : Permettent d'avancer seulement aux automobiles qui tournent à gauche.
+A2 CAT: No permeten avançar a la dreta i a l'esquerra.
+A2 FR : Ne permettent pas d'avancer à droite et à gauche.
+A3 CAT: Permeten avançar a dreta i a esquerra.
+A3 FR : Permettent d'avancer à droite et à gauche.
+
+### ENTRY 751
+Q  CAT: Que indica aquest senyal?
+Q  FR : Qu'indique ce signal?
+A1 CAT: Encreuament normal.
+A1 FR : Croisement normal.
+A2 CAT: Carretera amb preferència de pas.
+A2 FR : Route avec préférence de passage.
+A3 CAT: Perill, encreuament senyalitzat.
+A3 FR : Danger, croisement signalisé.
+
+### ENTRY 3069
+Q  CAT: 1649 Com es tradueix aquest senyal?
+Q  FR : 1649 Comment se traduit ce signal?
+A1 CAT: Prohibició d'estacionar des de la 1 hores 15 minuts.
+A1 FR : Interdiction de stationner à partir de 1 heures 15 minutes.
+A2 CAT: Prohibició d'estacionar fins la 1 hores 15 minuts.
+A2 FR : Interdiction de stationner jusqu'à 1 heures 15 minutes.
+A3 CAT: Temps limitat d'estacionament, o sigui que s'autoritza estacionar durant 1 hora 15 minuts com a màxim.
+A3 FR : Temps limité de stationnement, c'est-à-dire qu'on autorise à stationner pendant 1 heure 15 minutes au maximum.
+
+### ENTRY 455
+Q  CAT: Quan els vehicles es troben parats o estacionats en vies insuficientment il.luminades en hores en les quals s'han de portar encesos els llums...
+Q  FR : Quand les véhicules se trouvent arrêtés ou stationnés sur des voies insuffisamment illuminées aux heures où les feux doivent être allumés...
+A1 CAT: Hauràn de posar el seu enllumenat en posiciò d'encreuament.
+A1 FR : Ils devront mettre leur éclairage en position de croisement.
+A2 CAT: Hauràn de tenir encès l'enllumenat ordinari o de posiciò.
+A2 FR : Ils devront avoir allumé l'éclairage ordinaire ou de position.
+A3 CAT: Poden continuar amb l'enllumenat apagat fins que es posin en marxa de nou.
+A3 FR : Ils peuvent continuer avec l'éclairage éteint jusqu'à ce qu'ils se mettent en marche de nouveau.
+
+### ENTRY 586
+Q  CAT: A causa de les condicions meteorològiques adverses i devant de l'existència de plaques de gel en la calçada, l'hi està permés circular per sota de la velocitat mìnima establerta per la via?
+Q  FR : À cause des conditions météorologiques adverses et devant l'existence de plaques de glace sur la chaussée, vous est-il permis de circuler au-dessous de la vitesse minimale établie pour la voie?
+A1 CAT: Si, perquè és una causa justificada, circulin o no altres vehicles.
+A1 FR : Oui, parce que c'est une cause justifiée, que d'autres véhicules circulent ou non.
+A2 CAT: Si, sempre que no entorpeixi la marxa normal d'altres vehicles que hem segueixin.
+A2 FR : Oui, pourvu que cela ne gêne pas la marche normale d'autres véhicules qui nous suivent.
+A3 CAT: No, perquè està prohibit.
+A3 FR : Non, parce que c'est interdit.
+
+### ENTRY 3412
+Q  CAT: 2146 Els usuaris de tota mena de motocicletes...
+Q  FR : 2146 Les usagers de toutes sortes de motocyclettes...
+A1 CAT: Han de circular com a màxim a 45 km/h.
+A1 FR : Doivent circuler au maximum à 45 km/h.
+A2 CAT: Han de circular sempre de manera obligatòria i continuada amb el casc de protecció personal, degudament cordat.
+A2 FR : Doivent circuler toujours de manière obligatoire et continue avec le casque de protection personnelle, dûment attaché.
+A3 CAT: Han de portar encesos els llums d'advertència.
+A3 FR : Doivent porter allumés les feux d'avertissement.
+
+### ENTRY 911
+Q  CAT: Quin permís necessitem per conduir un vehicle de 6500kg de pès total màxim i 18 seients?
+Q  FR : Quel permis nous faut-il pour conduire un véhicule de 6500kg de poids total maximum et 18 sièges?
+A1 CAT: D2.
+A1 FR : D2.
+A2 CAT: C1+D1.
+A2 FR : C1+D1.
+A3 CAT: J.
+A3 FR : J.
+
+### ENTRY 2807
+Q  CAT: 1296 Podem sortir a la via pública amb marxa enrere, des d'un immoble?
+Q  FR : 1296 Pouvons-nous sortir sur la voie publique en marche arrière, depuis un immeuble?
+A1 CAT: No.
+A1 FR : Non.
+A2 CAT: Sí, però solament si no es pot dur a terme la maniobra d'altra manera. En tot cas, no és aconsellable.
+A2 FR : Oui, mais seulement si l'on ne peut pas mener à bien la manœuvre d'une autre manière. En tout cas, ce n'est pas conseillé.
+A3 CAT: Depèn de l'amplada de la via pública.
+A3 FR : Cela dépend de la largeur de la voie publique.
+
+### ENTRY 4138
+Q  CAT: 4252 Poden els agents immobilitzar un vehicle si produeix un soroll excessiu?
+Q  FR : 4252 Les agents peuvent-ils immobiliser un véhicule s’il produit un bruit excessif?
+A1 CAT: No, només el poden multar.
+A1 FR : Non, ils peuvent seulement lui infliger une amende.
+A2 CAT: Sí, quan el soroll superi els nivells permesos.
+A2 FR : Oui, quand le bruit dépasse les niveaux permis.
+A3 CAT: No, ja que no suposa cap perill per a la circulació.
+A3 FR : Non, puisque cela ne suppose aucun danger pour la circulation.
+
+### ENTRY 2201
+Q  CAT: En les calçades que no permetin el pas simultani de dos vehicles…
+Q  FR : Sur les chaussées qui ne permettent pas le passage simultané de deux véhicules…
+A1 CAT: Tenen prioritat sobre aquell que circula en sentit contrari.
+A1 FR : Ils ont priorité sur celui qui circule en sens contraire.
+A2 CAT: Està prohibit deixar un vehicle estacionat.
+A2 FR : Il est interdit de laisser un véhicule stationné.
+A3 CAT: Està prohibit circular a velocitat superior a 60 Km/h.
+A3 FR : Il est interdit de circuler à une vitesse supérieure à 60 Km/h.
+
+### ENTRY 877
+Q  CAT: Si en efectuar un avançament, després de fer totes les comprovacions obligatòries sorgeix una dificultat imprevisible abans d'acabar la maniobra que hem de fer?
+Q  FR : Si en effectuant un dépassement, après avoir fait toutes les vérifications obligatoires surgit une difficulté imprévisible avant de finir la manœuvre que devons-nous faire?
+A1 CAT: Continuar i acabar la maniobra si la dificultat s'ha produit per causes alienes.
+A1 FR : Continuer et finir la manœuvre si la difficulté s'est produite par des causes étrangères.
+A2 CAT: Augmentar la velocitat per tal d'acabar abans la maniobra.
+A2 FR : Augmenter la vitesse afin de finir plus tôt la manœuvre.
+A3 CAT: Disminuir la velocitat i tornar al costat dret.
+A3 FR : Diminuer la vitesse et retourner au côté droit.
+
+### ENTRY 4066
+Q  CAT: 4012 Les operacions de càrrega i descàrrega s’han de realitzar...
+Q  FR : 4012 Les opérations de charge et décharge doivent se réaliser...
+A1 CAT: depositant la mercaderia en la calçada per agilitzar el treball.
+A1 FR : en déposant la marchandise sur la chaussée pour accélérer le travail.
+A2 CAT: respectant sempre les normes de parada i estacionament.
+A2 FR : en respectant toujours les normes d’arrêt et de stationnement.
+A3 CAT: únicament pel costat dret de la calçada.
+A3 FR : uniquement par le côté droit de la chaussée.
+
+### ENTRY 1125
+Q  CAT: Quan poden ordenar l'immobilitzaciò dels vehicles els agents de circulació?
+Q  FR : Quand les agents de circulation peuvent-ils ordonner l'immobilisation des véhicules?
+A1 CAT: Quan el conductor no porti el permís de conduir o presenti un permís no vàlid i no presenti les condicions físiques o psíquiques necessaries per a conduir.
+A1 FR : Quand le conducteur ne porte pas le permis de conduire ou présente un permis non valide et ne présente pas les conditions physiques ou psychiques nécessaires pour conduire.
+A2 CAT: Quan el conductor no porti el permís de conduir o presenti un permís no vàlid.
+A2 FR : Quand le conducteur ne porte pas le permis de conduire ou présente un permis non valide.
+A3 CAT: Sempre que l'agent vulgui.
+A3 FR : Chaque fois que l'agent le veut.
+
+### ENTRY 1414
+Q  CAT: En el carril de l'esquerra de la vìa per la qual circula, s'ha encès en el semàfor de carril una aspa vermella, que han de fer els vehicles que circulen per aquest carril?
+Q  FR : Sur la voie de gauche de la voie sur laquelle vous circulez, une croix rouge s'est allumée dans le feu de signalisation de voie, que doivent faire les véhicules qui circulent sur cette voie?
+A1 CAT: Abandonar el carril en el temps més breu possible.
+A1 FR : Abandonner la voie dans le temps le plus bref possible.
+A2 CAT: Canviar-se de carril abans d'arribar a l'altura del semàfor.
+A2 FR : Changer de voie avant d'arriver à la hauteur du feu de signalisation.
+A3 CAT: Detenir-se perque per aquest carril no es pot circular.
+A3 FR : S'arrêter parce que sur cette voie on ne peut pas circuler.
+
+### ENTRY 578
+Q  CAT: Si per causa d'averìa el seu turisme queda immobilitzat en una autopista pot ser remolcat per un altre turisme?
+Q  FR : Si à cause d'une panne votre voiture de tourisme reste immobilisée sur une autoroute peut-elle être remorquée par une autre voiture de tourisme?
+A1 CAT: Sí, fins el lloc més pròxim on pugui quedar immobilitzat sense entorpir la circulació..
+A1 FR : Oui, jusqu'au lieu le plus proche où elle puisse rester immobilisée sans gêner la circulation..
+A2 CAT: Sí, però només quan el conductor del vehicle remolcador sigui titular del permís que autoritza a arrossegar remolcs.
+A2 FR : Oui, mais seulement quand le conducteur du véhicule remorqueur est titulaire du permis qui autorise à tirer des remorques.
+A3 CAT: No.
+A3 FR : Non.
+
+### ENTRY 3661
+Q  CAT: 2746 Es pot considerar el vehicle de la foto com a ciclomotor i per tant com vehicle de tres rodes?
+Q  FR : 2746 Peut-on considérer le véhicule de la photo comme cyclomoteur et donc comme véhicule à trois roues?
+A1 CAT: Sempre que no tingui una velocitat màxima per construcció no superior a 50 km/h i amb un motor de cilindrada no superior a 45 cm3 per als motors d’encesa per guspira (positiva), o bé que la seva potència màxima neta sigui inferior o igual a 4 kW pe
+A1 FR : Pourvu qu'il n'ait pas une vitesse maximale par construction non supérieure à 50 km/h et avec un moteur de cylindrée non supérieure à 45 cm3 pour les moteurs d’allumage par étincelle (positive), ou bien que sa puissance maximale nette soit inférieure ou égale à 4 kW po
+A2 CAT: Sempre que no tingui una velocitat màxima per construcció no superior a 45 km/h i amb un motor de cilindrada no superior a 50 cm3 per als motors d’encesa per guspira (positiva), o bé que la seva potència màxima neta sigui inferior o igual a 4 kW pe
+A2 FR : Pourvu qu'il n'ait pas une vitesse maximale par construction non supérieure à 45 km/h et avec un moteur de cylindrée non supérieure à 50 cm3 pour les moteurs d’allumage par étincelle (positive), ou bien que sa puissance maximale nette soit inférieure ou égale à 4 kW po
+A3 CAT: Sempre que no tingui una velocitat màxima per construcció no superior a 45 km/h i amb un motor de cilindrada no superior a 50 cm3 per als motors d’encesa per guspira (positiva), o bé que la seva potència màxima neta sigui inferior o igual a 6 kW pe
+A3 FR : Pourvu qu'il n'ait pas une vitesse maximale par construction non supérieure à 45 km/h et avec un moteur de cylindrée non supérieure à 50 cm3 pour les moteurs d’allumage par étincelle (positive), ou bien que sa puissance maximale nette soit inférieure ou égale à 6 kW po
+
+### ENTRY 2087
+Q  CAT: Que significa aquest senyal?
+Q  FR : Que signifie ce signal?
+A1 CAT: Cediu el pas als vehicles que circulen per dins la plaça.
+A1 FR : Cédez le passage aux véhicules qui circulent à l'intérieur de la place.
+A2 CAT: Intersecció amb circulació giratòria.
+A2 FR : Intersection avec circulation giratoire.
+A3 CAT: Preferència de pas al sentit giratori.
+A3 FR : Priorité de passage au sens giratoire.
+
+### ENTRY 411
+Q  CAT: Que indica aquest senyal?
+Q  FR : Qu'indique ce signal?
+A1 CAT: Zona d'estacionament.
+A1 FR : Zone de stationnement.
+A2 CAT: Carrer particular.
+A2 FR : Rue particulière.
+A3 CAT: Carretera tallada.
+A3 FR : Route coupée.
+
+### ENTRY 696
+Q  CAT: Com a norma general, dintre de població com senyalitzarà una maniobra?
+Q  FR : Comme norme générale, à l'intérieur d'une agglomération comment signaliserez-vous une manœuvre?
+A1 CAT: Amb senyals lluminosos i en el seu defete amb el braç.
+A1 FR : Avec des signaux lumineux et à leur défaut avec le bras.
+A2 CAT: Amb senyals acùstics.
+A2 FR : Avec des signaux acoustiques.
+A3 CAT: Amb senyals òptiques i acùstiques simultaniament.
+A3 FR : Avec des signaux optiques et acoustiques simultanément.
+
+### ENTRY 3344
+Q  CAT: 2072 En població, sempre que sigui possible i no representi cap perill, cal aturar-se per facilitar la sortida dels vehicles de transport col·lectiu de viatgers des d'una parada senyalitzada?
+Q  FR : 2072 En agglomération, chaque fois que c'est possible et que cela ne représente aucun danger, faut-il s'arrêter pour faciliter la sortie des véhicules de transport collectif de voyageurs depuis un arrêt signalisé?
+A1 CAT: Si
+A1 FR : Oui
+A2 CAT: No
+A2 FR : Non
+A3 CAT: No, doncs al ser mes voluminos no te prioritat
+A3 FR : Non, car étant plus volumineux il n'a pas priorité
+
+### ENTRY 946
+Q  CAT: Que significa aquest senyal?
+Q  FR : Que signifie ce signal?
+A1 CAT: Fí de limitaciò de velocitat.
+A1 FR : Fin de limitation de vitesse.
+A2 CAT: Velocitat mínima obligatòria.
+A2 FR : Vitesse minimale obligatoire.
+A3 CAT: Velocitat màxima permesa.
+A3 FR : Vitesse maximale permise.
+
+### ENTRY 526
+Q  CAT: Un semàfor té la llum en groc fix, que ha de fer?
+Q  FR : Un feu de signalisation a la lumière en jaune fixe, que devez-vous faire?
+A1 CAT: Continuar i passar abans que el semàfor és posi en vermell.
+A1 FR : Continuer et passer avant que le feu ne se mette au rouge.
+A2 CAT: Continuar però extremant les precaucions.
+A2 FR : Continuer mais en redoublant les précautions.
+A3 CAT: Detenir-me abans del semàfor com si d'una llum vermella es tractés, llevat que aquesta acció posi en perill la seguretat viària.
+A3 FR : M'arrêter avant le feu comme s'il s'agissait d'une lumière rouge, à moins que cette action ne mette en danger la sécurité routière.
+
+### ENTRY 960
+Q  CAT: El posseidor de la llicència de conduir de la categoría J pot conduir vehicles fora del Principat d'Andorra?
+Q  FR : Le possesseur de la licence de conduire de la catégorie J peut-il conduire des véhicules hors de la Principauté d'Andorre?
+A1 CAT: Si.
+A1 FR : Oui.
+A2 CAT: No.
+A2 FR : Non.
+A3 CAT: Sempre que la relació potència/pès del vehicle no superi els 0,073kw/kgs.
+A3 FR : Pourvu que la relation puissance/poids du véhicule ne dépasse pas les 0,073kw/kgs.
+
+### ENTRY 3938
+Q  CAT: 3700 En aquesta carretera, en avançar amb el seu camió de 3.500 kg a un turisme, quina separació lateral ha de respectar?
+Q  FR : 3700 Sur cette route, en dépassant avec votre camion de 3.500 kg une voiture de tourisme, quelle séparation latérale devez-vous respecter?
+A1 CAT: Una distància d’1,5 metres com a mínim.
+A1 FR : Une distance d’1,5 mètres au minimum.
+A2 CAT: Una distància proporcional a la velocitat, a l’amplada i a les característiques de la calçada.
+A2 FR : Une distance proportionnelle à la vitesse, à la largeur et aux caractéristiques de la chaussée.
+A3 CAT: Una distància proporcional a l’amplada del turisme.
+A3 FR : Une distance proportionnelle à la largeur de la voiture de tourisme.
+
+### ENTRY 1128
+Q  CAT: Per conduir un vehicle de 3500kgs, 10 seients arrossegant un remolc de 850kgs, es necessari ser posseidor d'un permís amb la/es categories...
+Q  FR : Pour conduire un véhicule de 3500kgs, 10 sièges tractant une remorque de 850kgs, il est nécessaire d'être possesseur d'un permis avec la/les catégories...
+A1 CAT: B1
+A1 FR : B1
+A2 CAT: D+E.
+A2 FR : D+E.
+A3 CAT: D1+E.
+A3 FR : D1+E.
+
+### ENTRY 880
+Q  CAT: Quins miralls retrovisors son obligatoris?
+Q  FR : Quels miroirs rétroviseurs sont obligatoires?
+A1 CAT: Només l'interior.
+A1 FR : Seulement l'intérieur.
+A2 CAT: Els dos exteriors poden substituir el dret per l'interior.
+A2 FR : Les deux extérieurs, on peut substituer le droit par l'intérieur.
+A3 CAT: L'interior i l'exterior esquerra.
+A3 FR : L'intérieur et l'extérieur gauche.
+
+### ENTRY 692
+Q  CAT: Es pot circular a la mateixa velocitat en una via urbana que en una via interurbana?
+Q  FR : Peut-on circuler à la même vitesse sur une voie urbaine que sur une voie interurbaine?
+A1 CAT: Si.
+A1 FR : Oui.
+A2 CAT: No.
+A2 FR : Non.
+A3 CAT: Depén de l'amplada de les vies.
+A3 FR : Ça dépend de la largeur des voies.
+
+### ENTRY 2482
+Q  CAT: Com a norma general la distància de seguretat ha d'augmentar-se el doble en els casos següents:
+Q  FR : Comme norme générale la distance de sécurité doit être augmentée au double dans les cas suivants:
+A1 CAT: Quan es condueix durant la nit.
+A1 FR : Quand on conduit durant la nuit.
+A2 CAT: Quan la visibilitat sigui insuficient per circumstàncies meteorològiques.
+A2 FR : Quand la visibilité est insuffisante par des circonstances météorologiques.
+A3 CAT: Quan anem darrera d'un camió.
+A3 FR : Quand nous allons derrière un camion.
+
+### ENTRY 3041
+Q  CAT: 1604 Com a norma general, les parades s'efectuaran...
+Q  FR : 1604 Comme norme générale, les arrêts s'effectueront...
+A1 CAT: A la dreta.
+A1 FR : À droite.
+A2 CAT: A l'esquerra.
+A2 FR : À gauche.
+A3 CAT: Indistintament.
+A3 FR : Indistinctement.
+
+### ENTRY 1435
+Q  CAT: Que indica el senyal?
+Q  FR : Qu'indique le signal?
+A1 CAT: Perill per proximitat d'una sortida a 200 metres.
+A1 FR : Danger par proximité d'une sortie à 200 mètres.
+A2 CAT: A proximitat a una sortida a 200 metres.
+A2 FR : À proximité d'une sortie à 200 mètres.
+A3 CAT: Aproximació a un pas a nivell sense barreres a 200 metres.
+A3 FR : Approche d'un passage à niveau sans barrières à 200 mètres.
+
+### ENTRY 2863
+Q  CAT: 1345 Quan deixem un vehicle estacionat, a més d'aplicar el fre de mà, és necessari adoptar altre mesures?
+Q  FR : 1345 Quand nous laissons un véhicule stationné, en plus d'appliquer le frein à main, est-il nécessaire d'adopter d'autres mesures?
+A1 CAT: No.
+A1 FR : Non.
+A2 CAT: Deixar encès el gàlib de la dreta o de l'esquerra, segons on estigui estacionat.
+A2 FR : Laisser allumé le gabarit de droite ou de gauche, selon où il est stationné.
+A3 CAT: Interrompre la ignició del motor.
+A3 FR : Interrompre l'allumage du moteur.
+
+### ENTRY 4098
+Q  CAT: 4162 Quin ha de ser el seu comportament al cedir el pas?
+Q  FR : 4162 Quel doit être votre comportement en cédant le passage?
+A1 CAT: Aturar-se en les interseccions si s’acosta un altre vehicle.
+A1 FR : S’arrêter dans les intersections si s’approche un autre véhicule.
+A2 CAT: Parar i comprovar si un altre usuari de la via té prioritat.
+A2 FR : S’arrêter et vérifier si un autre usager de la voie a la priorité.
+A3 CAT: No obligar al vehicle que té prioritat a modificar bruscament la seva trajectòria o velocitat.
+A3 FR : Ne pas obliger le véhicule qui a la priorité à modifier brusquement sa trajectoire ou vitesse.
+
+### ENTRY 2626
+Q  CAT: Està permès desplaçar-se a un carril delimitat per cons?
+Q  FR : Est-il permis de se déplacer vers une voie délimitée par des cônes?
+A1 CAT: Si, sempre que circuli amb motocicleta amb situació de retencions en el meu carril.
+A1 FR : Oui, pourvu que je circule avec une motocyclette en situation de retenues sur ma voie.
+A2 CAT: Si per avançar i sempre que no trobi cap con al fer-ho.
+A2 FR : Oui pour dépasser et pourvu que je ne trouve aucun cône en le faisant.
+A3 CAT: No, perquè els cons prohibeixen el pas a traves de la línia imaginària que els uneix.
+A3 FR : Non, parce que les cônes interdisent le passage à travers la ligne imaginaire qui les unit.
+
+### ENTRY 2988
+Q  CAT: 1584 El millor remei per evitar "l'aquaplaning" és:
+Q  FR : 1584 Le meilleur remède pour éviter "l'aquaplaning" est:
+A1 CAT: No circular a velocitat excessiva per una calçada mullada.
+A1 FR : Ne pas circuler à vitesse excessive sur une chaussée mouillée.
+A2 CAT: Frenar repetidament unes quantes vegades.
+A2 FR : Freiner répétitivement quelques fois.
+A3 CAT: Accelerar perquè el vehicle se subjecti millor.
+A3 FR : Accélérer pour que le véhicule se tienne mieux.
+
+### ENTRY 981
+Q  CAT: On hem de posar-nos quan arribem a un pas a nivell tancat?
+Q  FR : Où devons-nous nous placer quand nous arrivons à un passage à niveau fermé?
+A1 CAT: A la dreta o a l'esquerra indiferentment.
+A1 FR : À droite ou à gauche indifféremment.
+A2 CAT: En doble fila sempre.
+A2 FR : En double file toujours.
+A3 CAT: A la dreta, darrera l'últim que està parat.
+A3 FR : À droite, derrière le dernier qui est arrêté.
+
+### ENTRY 1666
+Q  CAT: Si vostè, conductor, pretén canviar la direcció, haurà de…
+Q  FR : Si vous, conducteur, prétendez changer la direction, vous devrez…
+A1 CAT: Arramblar-se sempre al costat dret.
+A1 FR : Vous ranger toujours du côté droit.
+A2 CAT: Indicar-ho amb la suficient antelació.
+A2 FR : L'indiquer avec la suffisante anticipation.
+A3 CAT: Fer la maniobra a tota la velocitat.
+A3 FR : Faire la manœuvre à toute vitesse.
+
+### ENTRY 4096
+Q  CAT: 4096 És obligatori matricular un ciclomotor?
+Q  FR : 4096 Est-il obligatoire d’immatriculer un cyclomoteur?
+A1 CAT: No, és opcional.
+A1 FR : Non, c’est optionnel.
+A2 CAT: Sí, és obligatori per poder circular per les vies públiques.
+A2 FR : Oui, c’est obligatoire pour pouvoir circuler sur les voies publiques.
+A3 CAT: Sí, però únicament si és per circular per vies interurbanes.
+A3 FR : Oui, mais uniquement si c’est pour circuler sur des voies interurbaines.
+
+### ENTRY 2475
+Q  CAT: Que s'ha de fer en cas d'hemorràgies exterioritzades per l'orella?
+Q  FR : Que doit-on faire en cas d'hémorragies extériorisées par l'oreille?
+A1 CAT: Taponar l'orella per tallar l'hemorràgia.
+A1 FR : Tamponner l'oreille pour couper l'hémorragie.
+A2 CAT: Cobrir l'orella amb una gasa estèril sense pressionar.
+A2 FR : Couvrir l'oreille avec une gaze stérile sans presser.
+A3 CAT: Netejar la sang i deixar que surti.
+A3 FR : Nettoyer le sang et laisser qu'il sorte.
+
+### ENTRY 249
+Q  CAT: Que indica aquest senyal?
+Q  FR : Qu'indique ce signal?
+A1 CAT: Calçada obligatòria per a vianants.
+A1 FR : Chaussée obligatoire pour piétons.
+A2 CAT: Circulaciò prohibida per a vianants.
+A2 FR : Circulation interdite pour piétons.
+A3 CAT: Pas per a vianants.
+A3 FR : Passage pour piétons.
+
+### ENTRY 3909
+Q  CAT: 3563 La maniobra de marxa enrere s’ha d’efectuar...
+Q  FR : 3563 La manœuvre de marche arrière doit s’effectuer...
+A1 CAT: amb la màxima precaució.
+A1 FR : avec le maximum de précaution.
+A2 CAT: advertint-la prèviament amb el senyal d’emergència.
+A2 FR : en l’avertissant préalablement avec le signal de détresse.
+A3 CAT: el més ràpid possible.
+A3 FR : le plus rapidement possible.
+
+### ENTRY 712
+Q  CAT: El llum de posiciò devanter, ha de ser de color...
+Q  FR : Le feu de position avant, doit être de couleur...
+A1 CAT: Blanc o groc auto.
+A1 FR : Blanc ou jaune auto.
+A2 CAT: Blanc o groc selectiu.
+A2 FR : Blanc ou jaune sélectif.
+A3 CAT: Blanc.
+A3 FR : Blanc.
+
+### ENTRY 3314
+Q  CAT: 2034 En una carretera convencional sense vorada, es pot circular, sense causa justificada, a una velocitat anormalment reduïda?
+Q  FR : 2034 Sur une route conventionnelle sans bordure, peut-on circuler, sans cause justifiée, à une vitesse anormalement réduite?
+A1 CAT: No
+A1 FR : Non
+A2 CAT: Solament quant no circulin altres vehicles
+A2 FR : Seulement quand d'autres véhicules ne circulent pas
+A3 CAT: Si, si amb això no s'ha d'aturar a la circulació
+A3 FR : Oui, si avec cela on ne doit pas arrêter la circulation
+
+### ENTRY 2123
+Q  CAT: Que significa aquest senyal?
+Q  FR : Que signifie ce signal?
+A1 CAT: Pas obligatori.
+A1 FR : Passage obligatoire.
+A2 CAT: Direcció obligatòria.
+A2 FR : Direction obligatoire.
+A3 CAT: Senyal de posició d'una desviació o d'un estrenyiment.
+A3 FR : Signal de position d'une déviation ou d'un rétrécissement.
+
+### ENTRY 2433
+Q  CAT: En autopista, els ciclomotors i els vianants circularan per...?
+Q  FR : Sur autoroute, les cyclomoteurs et les piétons circuleront par...?
+A1 CAT: El voral.
+A1 FR : L'accotement.
+A2 CAT: La calçada, excepte els vianants que ho faran pel voral.
+A2 FR : La chaussée, excepté les piétons qui le feront par l'accotement.
+A3 CAT: Cap lloc.
+A3 FR : Aucun lieu.
+
+### ENTRY 1489
+Q  CAT: Que significa un triangle pintat sobre la calçada amb el vèrtex dirigit al vehicle que s'apropa?
+Q  FR : Que signifie un triangle peint sur la chaussée avec le sommet dirigé vers le véhicule qui s'approche?
+A1 CAT: Obligació de cedir el pas a la pròxima intersecció a altres vehicles.
+A1 FR : Obligation de céder le passage à la prochaine intersection à d'autres véhicules.
+A2 CAT: Obligació d'aturar-se.
+A2 FR : Obligation de s'arrêter.
+A3 CAT: Limitació de velocitat.
+A3 FR : Limitation de vitesse.
+
+### ENTRY 92
+Q  CAT: Que vol dir aquesta senyal?
+Q  FR : Que veut dire ce signal?
+A1 CAT: Que no es pot girar en cap sentit.
+A1 FR : Qu'on ne peut tourner dans aucun sens.
+A2 CAT: Próxima intersecció amb circulació giratòria.
+A2 FR : Prochaine intersection avec circulation giratoire.
+A3 CAT: Gir obligatori.
+A3 FR : Virage obligatoire.
+
+### ENTRY 3626
+Q  CAT: 2705 EL GRUP DIFERENCIAL, ES LUBRIFICA ...
+Q  FR : 2705 LE GROUPE DIFFÉRENTIEL, SE LUBRIFIE ...
+A1 CAT: Amb valvolina o oli d'alta densitat.
+A1 FR : Avec de la valvoline ou huile de haute densité.
+A2 CAT: Amb oli molt poc dens.
+A2 FR : Avec de l'huile très peu dense.
+A3 CAT: Amb el mateix oli del carter.
+A3 FR : Avec la même huile du carter.
+
+### ENTRY 2587
+Q  CAT: En una via de dos carrils i doble sentit de circulació, a on cal situar-se per girar a l'esquerra en la pròxima intersecció?
+Q  FR : Sur une voie de deux voies et double sens de circulation, où faut-il se situer pour tourner à gauche à la prochaine intersection?
+A1 CAT: El més a prop possible de la vora esquerra de la via.
+A1 FR : Le plus près possible du bord gauche de la voie.
+A2 CAT: A la vorada de la dreta.
+A2 FR : À la bordure de droite.
+A3 CAT: Al costat de la marca vial que separa els dos sentits, o en el seu defecte al costat de la línia imaginaria que els delimita.
+A3 FR : À côté de la marque routière qui sépare les deux sens, ou à son défaut à côté de la ligne imaginaire qui les délimite.
+
+### ENTRY 1181
+Q  CAT: Que significa aquest senyal?
+Q  FR : Que signifie ce signal?
+A1 CAT: Confirmaciò de ruta
+A1 FR : Confirmation de route
+A2 CAT: Direcciò d’interès general.
+A2 FR : Direction d'intérêt général.
+A3 CAT: Fita quilomètrica en carretera general
+A3 FR : Borne kilométrique sur route générale
+
+### ENTRY 1638
+Q  CAT: Si veiem sortir una pilota a la calçada, que hem d'imaginar?
+Q  FR : Si nous voyons sortir un ballon sur la chaussée, que devons-nous imaginer?
+A1 CAT: Res.
+A1 FR : Rien.
+A2 CAT: Que si no ens desviem ens poden trencar un llum.
+A2 FR : Que si nous ne nous dévions pas on peut nous casser un feu.
+A3 CAT: Que al seu darrere sortirà un nen corrent.
+A3 FR : Que derrière lui sortira un enfant en courant.
+
+### ENTRY 3922
+Q  CAT: 3598 En aquest carrer d’un sentit no hi ha senyals que prohibeixin estacionar. En quin costat es pot estacionar?
+Q  FR : 3598 Dans cette rue à sens unique il n’y a pas de signaux qui interdisent de stationner. De quel côté peut-on stationner?
+A1 CAT: En el costat esquerre només.
+A1 FR : Du côté gauche seulement.
+A2 CAT: En el costat dret només.
+A2 FR : Du côté droit seulement.
+A3 CAT: En el costat dret i en l’esquerre.
+A3 FR : Du côté droit et du gauche.
+
+### ENTRY 3262
+Q  CAT: 1950 Quan la pressió d'inflat dels pneumàtics és superior a la indicada pel fabricant, disminueix la zona de contacte amb la calçada i, per consegüent,...
+Q  FR : 1950 Quand la pression de gonflage des pneumatiques est supérieure à celle indiquée par le fabricant, la zone de contact avec la chaussée diminue et, par conséquent,...
+A1 CAT: Es perd adherència i, per tant, seguretat.
+A1 FR : On perd de l'adhérence et, par conséquent, de la sécurité.
+A2 CAT: S'absorbeixen millor les irregularitats del terreny i el vehicle vibra menys.
+A2 FR : Les irrégularités du terrain s'absorbent mieux et le véhicule vibre moins.
+A3 CAT: Els pneumàtics es desgasten menys
+A3 FR : Les pneumatiques s'usent moins
+
+### ENTRY 1007
+Q  CAT: Si volem girar a l'esquerra, en una via de sentit únic, hem de:
+Q  FR : Si nous voulons tourner à gauche, sur une voie à sens unique, nous devons:
+A1 CAT: Observar el retrovisor, posar l'indicador de direcciò a l'esquerra i col.locar-nos al centre de la calçada, sense envair la part contrària, ni trepitjar la línia continua.
+A1 FR : Observer le rétroviseur, mettre l'indicateur de direction à gauche et nous placer au centre de la chaussée, sans envahir la partie contraire, ni marcher sur la ligne continue.
+A2 CAT: Cedir el pas als que vinguin de cara.
+A2 FR : Céder le passage à ceux qui viennent en face.
+A3 CAT: Observar el retrovisor, posar l'indicador de direcciò esquerra i col.locar-nos a la part esquerra de la calçada.
+A3 FR : Observer le rétroviseur, mettre l'indicateur de direction gauche et nous placer sur la partie gauche de la chaussée.
+
+### ENTRY 4089
+Q  CAT: 4152 En trams amb suficient visibilitat i sense formar retencions de vehicles, podran els ciclistes circular en columna de dos, aproximant-se l’extrem dret de la via?
+Q  FR : 4152 Sur des tronçons avec suffisante visibilité et sans former de rétentions de véhicules, les cyclistes pourront-ils circuler en colonne de deux, en s’approchant de l’extrémité droite de la voie?
+A1 CAT: Sí.
+A1 FR : Oui.
+A2 CAT: No, sempre pel voral.
+A2 FR : Non, toujours par l’accotement.
+A3 CAT: No, sempre en fila d’un.
+A3 FR : Non, toujours en file d’un.
+
+### ENTRY 2949
+Q  CAT: 1516 Quan pot avançar el conductor d'un vehicle un altre de més lent que el precedeix?
+Q  FR : 1516 Quand le conducteur d'un véhicule peut-il en dépasser un autre plus lent qui le précède?
+A1 CAT: Quan la calçada tingui carril exprés per als avançaments.
+A1 FR : Quand la chaussée a une voie expresse pour les dépassements.
+A2 CAT: Sempre que no estigui prohibit i el vehicle lent li doni pas.
+A2 FR : Pourvu que ce ne soit pas interdit et que le véhicule lent lui donne le passage.
+A3 CAT: Quan no hi hagi obstacle ni senyalització que ho impedeixi i tingui visibilitat suficient.
+A3 FR : Quand il n'y a ni obstacle ni signalisation qui l'empêche et qu'il ait une visibilité suffisante.
+
+### ENTRY 1197
+Q  CAT: Que significa aquest senyal?
+Q  FR : Que signifie ce signal?
+A1 CAT: Fletxa de direcció
+A1 FR : Flèche de direction
+A2 CAT: Confirmació de ruta
+A2 FR : Confirmation de route
+A3 CAT: Direcció d’interés general
+A3 FR : Direction d'intérêt général
+
+### ENTRY 3309
+Q  CAT: 1988 Aquest senyal pintat a la calçada indica...
+Q  FR : 1988 Ce signal peint sur la chaussée indique...
+A1 CAT: Velocitat màxima
+A1 FR : Vitesse maximale
+A2 CAT: Velocitat mínima
+A2 FR : Vitesse minimale
+A3 CAT: Velocitat aconsellable
+A3 FR : Vitesse conseillée
+
+### ENTRY 2724
+Q  CAT: 1132 EN ELS ENCREUAMENTS SENSE SENYALITZAR TENEN PREFERENCIA...
+Q  FR : 1132 AUX CROISEMENTS SANS SIGNALISATION ONT PRÉFÉRENCE...
+A1 CAT: Els vehicles que apareixen per la meva dreta.
+A1 FR : Les véhicules qui apparaissent par ma droite.
+A2 CAT: Els vehicles que circulin en sentit contrari.
+A2 FR : Les véhicules qui circulent en sens contraire.
+A3 CAT: Abans d'entrar en l'altra via hem de donar preferncia a tots els vehicles que hi circulin.
+A3 FR : Avant d'entrer sur l'autre voie nous devons donner préférence à tous les véhicules qui y circulent.
+
+### ENTRY 2028
+Q  CAT: Quan està permès parar o estacionar en el costat esquerre de les calçades en vies urbanes?
+Q  FR : Quand est-il permis de s'arrêter ou de stationner sur le côté gauche des chaussées dans les voies urbaines?
+A1 CAT: Quan la dreta està ocupada.
+A1 FR : Quand la droite est occupée.
+A2 CAT: Solament quan la via és de doble sentit de circulació i hi hagi espai.
+A2 FR : Seulement quand la voie est à double sens de circulation et qu'il y a de l'espace.
+A3 CAT: Quan son d'un sol sentit de la marxa i no s'obstaculitzi la circulació.
+A3 FR : Quand elles sont à un seul sens de la marche et que l'on n'obstrue pas la circulation.
+
+### ENTRY 4112
+Q  CAT: 4158 Pot circular conduint un vehicle de tracció animal per una via interurbana sense voral?
+Q  FR : 4158 Pouvez-vous circuler en conduisant un véhicule à traction animale sur une voie interurbaine sans accotement?
+A1 CAT: Sí, pel centre del carril dret.
+A1 FR : Oui, par le centre de la voie droite.
+A2 CAT: No, en aquest cas no es pot circular.
+A2 FR : Non, dans ce cas on ne peut pas circuler.
+A3 CAT: Sí, per la dreta, ocupant la part imprescindible de la calçada.
+A3 FR : Oui, par la droite, en occupant la partie indispensable de la chaussée.
+
+### ENTRY 761
+Q  CAT: Les condicions atmosferiques influeixen en l'adherència dels pneumàtics?
+Q  FR : Les conditions atmosphériques influent-elles sur l'adhérence des pneumatiques?
+A1 CAT: No, perquè avui en dia els pneumàtics estan totalment preparats.
+A1 FR : Non, parce qu'aujourd'hui les pneumatiques sont totalement préparés.
+A2 CAT: Si.
+A2 FR : Oui.
+A3 CAT: Només a l'hivern.
+A3 FR : Seulement en hiver.
+
+### ENTRY 2872
+Q  CAT: 1335 Què indica aquest senyal?
+Q  FR : 1335 Qu'indique ce signal?
+A1 CAT: Estacionament prohibit a camions i autobusos.
+A1 FR : Stationnement interdit aux camions et autobus.
+A2 CAT: Estacionament prohibit a tota classe de vehicles comercials.
+A2 FR : Stationnement interdit à toute classe de véhicules commerciaux.
+A3 CAT: Estacionament reservat a camions i autobusos.
+A3 FR : Stationnement réservé aux camions et autobus.
+
+### ENTRY 2356
+Q  CAT: Aquest senyal el trobarem…
+Q  FR : Ce signal nous le trouverons…
+A1 CAT: En una zona de perill.
+A1 FR : Dans une zone de danger.
+A2 CAT: En la part davantera d'un automòbil.
+A2 FR : Dans la partie avant d'une automobile.
+A3 CAT: En la part posterior d'un automòbil.
+A3 FR : Dans la partie postérieure d'une automobile.
+
+### ENTRY 226
+Q  CAT: Aquest senyal indica?
+Q  FR : Ce signal indique?
+A1 CAT: Pas de vianants.
+A1 FR : Passage pour piétons.
+A2 CAT: Prohibeix la circulaciò de vianants.
+A2 FR : Interdit la circulation de piétons.
+A3 CAT: Calçada obligatòria per a vianants.
+A3 FR : Chaussée obligatoire pour piétons.
+
+### ENTRY 4131
+Q  CAT: 4282 Encara que no es superin els límits màxims de velocitat, pot arribar a circular a una velocitat inadequada?
+Q  FR : 4282 Bien qu’on ne dépasse pas les limites maximales de vitesse, pouvez-vous arriver à circuler à une vitesse inadéquate?
+A1 CAT: No, en cap cas.
+A1 FR : Non, en aucun cas.
+A2 CAT: Sí, sempre que vagi a més de 100 km/h.
+A2 FR : Oui, pourvu que vous alliez à plus de 100 km/h.
+A3 CAT: Sí, mentre que la velocitat s’ha d’adequar a les circumstàncies de la via, com per exemple la pluja, neu o gel.
+A3 FR : Oui, tandis que la vitesse doit s’adéquer aux circonstances de la voie, comme par exemple la pluie, la neige ou le verglas.
+
+### ENTRY 2566
+Q  CAT: Pot un ciclista circular a partir d'aquest senyal?
+Q  FR : Un cycliste peut-il circuler à partir de ce signal?
+A1 CAT: Si.
+A1 FR : Oui.
+A2 CAT: No.
+A2 FR : Non.
+A3 CAT: Ens hem d'informar bé.
+A3 FR : Nous devons bien nous informer.
+
+### ENTRY 153
+Q  CAT: Estem obligats a moderar la nostra velocitat en creuar-nos de nit amb altres vehicles?
+Q  FR : Sommes-nous obligés de modérer notre vitesse en croisant de nuit d'autres véhicules?
+A1 CAT: Si
+A1 FR : Oui
+A2 CAT: Solament si veiem llums de gàlib en l'altre vehicle.
+A2 FR : Seulement si nous voyons des feux de gabarit sur l'autre véhicule.
+A3 CAT: Ùnicament hi estem obligats quan ens creuem amb vehicles d'urgència.
+A3 FR : Nous y sommes uniquement obligés quand nous croisons des véhicules d'urgence.
+
+### ENTRY 2427
+Q  CAT: A on s'aturarà davant un semàfor amb fase de color vermell fix?
+Q  FR : Où vous arrêterez-vous devant un feu de signalisation avec phase de couleur rouge fixe?
+A1 CAT: Sempre a l'alçada de la línia transversal de la via encara que sobrepassi el semàfor.
+A1 FR : Toujours à la hauteur de la ligne transversale de la voie même si vous dépassez le feu de signalisation.
+A2 CAT: A l'alçada de la línia de detenció sense sobrepassar el semàfor.
+A2 FR : À la hauteur de la ligne d'arrêt sans dépasser le feu de signalisation.
+A3 CAT: xxx
+A3 FR : xxx
+
+### ENTRY 1436
+Q  CAT: El senyal de la fotografia l'hi indica…
+Q  FR : Le signal de la photographie vous indique…
+A1 CAT: A l'esquerra de la calçada, l'atansament d'un pas a nivell amb barreres.
+A1 FR : À gauche de la chaussée, l'approche d'un passage à niveau avec barrières.
+A2 CAT: A la dreta de la calçada, l'atansament d'un pas anivell amb barreres.
+A2 FR : À droite de la chaussée, l'approche d'un passage à niveau avec barrières.
+A3 CAT: A la dreta de la calçada, la proximitat d'un pas a nivell amb barreres.
+A3 FR : À droite de la chaussée, la proximité d'un passage à niveau avec barrières.
+
+### ENTRY 1486
+Q  CAT: Aquest senyal indica…
+Q  FR : Ce signal indique…
+A1 CAT: Un encreuament normal amb prioritat a la dreta.
+A1 FR : Un croisement normal avec priorité à droite.
+A2 CAT: Un encreuament normal amb prioritat a l’esquerra.
+A2 FR : Un croisement normal avec priorité à gauche.
+A3 CAT: Pas a nivell amb barreres.
+A3 FR : Passage à niveau avec barrières.
+
+### ENTRY 1323
+Q  CAT: Que mana l’agent?
+Q  FR : Qu'ordonne l'agent?
+A1 CAT: Parar als que circulen de front.
+A1 FR : Arrêter ceux qui circulent de front.
+A2 CAT: Parar.
+A2 FR : S'arrêter.
+A3 CAT: Parar tocant la vora.
+A3 FR : S'arrêter en touchant le bord.
+
+### ENTRY 1421
+Q  CAT: Quan es prepara per a avançar el camió cisterna que s'observa en la fotografia d'acord amb els senyals que el mateix porta, he de tenir en compte que es un vehicle que…
+Q  FR : Quand vous vous préparez à dépasser le camion-citerne qu'on observe sur la photographie conformément aux signaux que celui-ci porte, je dois tenir compte que c'est un véhicule qui…
+A1 CAT: Te un pes màxim autoritzat superior a 3500 quilògrams.
+A1 FR : A un poids maximal autorisé supérieur à 3500 kilogrammes.
+A2 CAT: Te una amplada superior a 2,50 metres.
+A2 FR : A une largeur supérieure à 2,50 mètres.
+A3 CAT: Te una llargada superior a 12 metres.
+A3 FR : A une longueur supérieure à 12 mètres.
+
+### ENTRY 4130
+Q  CAT: 4189 Ha de facilitar la maniobra a aquest autobús que es vol incorporar a la circulació?
+Q  FR : 4189 Devez-vous faciliter la manœuvre à cet autobus qui veut s’incorporer à la circulation?
+A1 CAT: No, perquè es tracta d’una via urbana.
+A1 FR : Non, parce qu’il s’agit d’une voie urbaine.
+A2 CAT: No, perquè els turismes tenen preferència.
+A2 FR : Non, parce que les voitures de tourisme ont la priorité.
+A3 CAT: Sí, arribant fins i tot a aturar el vehicle.
+A3 FR : Oui, en arrivant même à arrêter le véhicule.
+
+### ENTRY 1232
+Q  CAT: Que significa aquest senyal?
+Q  FR : Que signifie ce signal?
+A1 CAT: Zona d’estacionament amb durada limitada.
+A1 FR : Zone de stationnement à durée limitée.
+A2 CAT: Estacionament prohibit.
+A2 FR : Stationnement interdit.
+A3 CAT: Parada prohibida.
+A3 FR : Arrêt interdit.
+
+### ENTRY 1669
+Q  CAT: Que significa aquest senyal?
+Q  FR : Que signifie ce signal?
+A1 CAT: Senyal de posició d'una desviació o d'un estrenyiment temporal.
+A1 FR : Signal de position d'une déviation ou d'un rétrécissement temporaire.
+A2 CAT: Direcció per corba.
+A2 FR : Direction par courbe.
+A3 CAT: Corba perillosa.
+A3 FR : Courbe dangereuse.
+
+### ENTRY 114
+Q  CAT: Que fixa aquest senyal?
+Q  FR : Que fixe ce signal?
+A1 CAT: Carretera de muntanya.
+A1 FR : Route de montagne.
+A2 CAT: Corbes perilloses, la primera a l'esquerra.
+A2 FR : Courbes dangereuses, la première à gauche.
+A3 CAT: Paviment lliscant
+A3 FR : Revêtement glissant
+
+### ENTRY 4052
+Q  CAT: 4086 Està permès circular amb les portes posteriors obertes?
+Q  FR : 4086 Est-il permis de circuler avec les portes postérieures ouvertes?
+A1 CAT: No, en cap cas.
+A1 FR : Non, en aucun cas.
+A2 CAT: Sí, quan sigui necessari.
+A2 FR : Oui, quand c’est nécessaire.
+A3 CAT: Sí, en qualsevol cas.
+A3 FR : Oui, dans tous les cas.
+
+### ENTRY 3817
+Q  CAT: 3379 Els conductors de vehicles hauran de cedir el pas als vianants...
+Q  FR : 3379 Les conducteurs de véhicules devront céder le passage aux piétons...
+A1 CAT: quan transitin per la calçada.
+A1 FR : quand ils transitent par la chaussée.
+A2 CAT: que hagin baixat d’un autobús en una parada senyalitzada i es trobin entre l’autobús i el refugi més proper.
+A2 FR : qui soient descendus d’un autobus à un arrêt signalisé et se trouvent entre l’autobus et le refuge le plus proche.
+A3 CAT: sempre que circulin pel voral.
+A3 FR : chaque fois qu’ils circulent sur l’accotement.
+
+### ENTRY 3377
+Q  CAT: 2116 A LES VIES GENERALS OBERTES AL TRANSIT, ELS VEHICLES DE TRANSPORT COLLECTIU DE PERSONES...
+Q  FR : 2116 SUR LES VOIES GÉNÉRALES OUVERTES AU TRAFIC, LES VÉHICULES DE TRANSPORT COLLECTIF DE PERSONNES...
+A1 CAT: Han de circular a menys de 30 km/h.
+A1 FR : Doivent circuler à moins de 30 km/h.
+A2 CAT: Tenen prioritat davant els altres vehicles, llevat dels d'urgència en servei.
+A2 FR : Ont priorité devant les autres véhicules, sauf ceux d'urgence en service.
+A3 CAT: Tenen prioritat davant els altres vehicles, llevat dels d'urgència en servei en les zones de parada d'autobus.
+A3 FR : Ont priorité devant les autres véhicules, sauf ceux d'urgence en service dans les zones d'arrêt d'autobus.
+
+### ENTRY 2042
+Q  CAT: Els revolts són trams de la via considerats perillosos per dues raons:
+Q  FR : Les virages sont des tronçons de la voie considérés dangereux pour deux raisons:
+A1 CAT: Perquè la força centrifuga empeny el cotxe cap a l'interior del revolt i perquè pot vascular, sempre a la dreta.
+A1 FR : Parce que la force centrifuge pousse la voiture vers l'intérieur du virage et parce qu'elle peut basculer, toujours à droite.
+A2 CAT: Perquè en aquests punts, la visibilitat moltes vegades, es reduïda i perquè hi ha el risc d'entrar-hi amb massa velocitat, amb el perill subsegüent.
+A2 FR : Parce qu'en ces points, la visibilité bien des fois, est réduite et parce qu'il y a le risque d'y entrer avec trop de vitesse, avec le danger subséquent.
+A3 CAT: Perquè la carretera ès més estreta i perquè mai no hi ha visibilitat.
+A3 FR : Parce que la route est plus étroite et parce qu'il n'y a jamais de visibilité.
+
+### ENTRY 3158
+Q  CAT: 1790 Què significa aquest senyal?
+Q  FR : 1790 Que signifie ce signal?
+A1 CAT: Alto al front i al darrere.
+A1 FR : Halte de face et à l'arrière.
+A2 CAT: Alto al front,via lliure a l'esquerra i a la dreta.
+A2 FR : Halte de face,voie libre à gauche et à droite.
+A3 CAT: Alto a l'esquerra, via lliure al front ia la dreta.
+A3 FR : Halte à gauche, voie libre de face et à droite.
+
+### ENTRY 1686
+Q  CAT: Que significa aquest senyal?
+Q  FR : Que signifie ce signal?
+A1 CAT: Calçada reservada solament per animals de muntura.
+A1 FR : Chaussée réservée seulement pour animaux de monture.
+A2 CAT: Circulació prohibida als animals de muntura.
+A2 FR : Circulation interdite aux animaux de monture.
+A3 CAT: Autoritzat el pas d'animals de muntura
+A3 FR : Autorisé le passage d'animaux de monture
+
+### ENTRY 1344
+Q  CAT: Que significa aquest senyal?
+Q  FR : Que signifie ce signal?
+A1 CAT: Alto al front i al darrera.
+A1 FR : Halte au front et à l'arrière.
+A2 CAT: Alto al front,via lliure a l’esquerra.
+A2 FR : Halte au front,voie libre à gauche.
+A3 CAT: Alto al darrera i a l’esquerra.
+A3 FR : Halte à l'arrière et à gauche.
+
+### ENTRY 3531
+Q  CAT: 2550 Quan conduim un vehicle amb aquesta matrícula i d'aquest color portem... ?
+Q  FR : 2550 Quand nous conduisons un véhicule avec cette plaque d'immatriculation et de cette couleur nous portons... ?
+A1 CAT: Un cotxe de bombers.
+A1 FR : Une voiture de pompiers.
+A2 CAT: Que és tracta de un cotxe antic de mes de vint-i-cin anys.
+A2 FR : Qu'il s'agit d'une voiture ancienne de plus de vingt-cin ans.
+A3 CAT: Aquesta matrícula no és valida pel territori Andorrà.
+A3 FR : Cette plaque d'immatriculation n'est pas valide pour le territoire Andorran.
+
+### ENTRY 350
+Q  CAT: Que significa aquest senyal?
+Q  FR : Que signifie ce signal?
+A1 CAT: Separaciò mínima obligatòria.
+A1 FR : Séparation minimale obligatoire.
+A2 CAT: Distància màxima entre vehicles.
+A2 FR : Distance maximale entre véhicules.
+A3 CAT: Circulaciò obligatòria en filera a una distància mìnima de 70 metres.
+A3 FR : Circulation obligatoire en file à une distance minimale de 70 mètres.
+
+### ENTRY 1058
+Q  CAT: Que significa aquest senyal?
+Q  FR : Que signifie ce signal?
+A1 CAT: Parada a la intersecciò.
+A1 FR : Arrêt à l'intersection.
+A2 CAT: Cedir el pas sense arribar a aturar-nos.
+A2 FR : Céder le passage sans arriver à nous arrêter.
+A3 CAT: STOP: Sobretot Tingui Observaciò de Parar-se.
+A3 FR : STOP: Surtout Tenez l'Observation de la Pause.
+
+### ENTRY 1944
+Q  CAT: Com a norma general, els avançaments s'han de fer:
+Q  FR : Comme norme générale, les dépassements doivent se faire:
+A1 CAT: A la carretera, per l'esquerra i a les vies urbanes per la dreta.
+A1 FR : Sur la route, par la gauche et sur les voies urbaines par la droite.
+A2 CAT: Per l'esquerra.
+A2 FR : Par la gauche.
+A3 CAT: Per la vora en que l'espai per passar sigui més ample.
+A3 FR : Par le bord où l'espace pour passer soit plus large.
+
+### ENTRY 2859
+Q  CAT: 1349 Estem obligats a moderar la nostra velocitat en creuar-nos de nit amb altre vehicles?
+Q  FR : 1349 Sommes-nous obligés de modérer notre vitesse en nous croisant la nuit avec d'autres véhicules?
+A1 CAT: Sí.
+A1 FR : Oui.
+A2 CAT: Solament si veiem llums de gàlib en l'altre vehicle.
+A2 FR : Seulement si nous voyons des feux de gabarit sur l'autre véhicule.
+A3 CAT: Únicament hi estem obligats quan ens creuem amb vehicles d'urgència.
+A3 FR : Nous y sommes uniquement obligés quand nous nous croisons avec des véhicules d'urgence.

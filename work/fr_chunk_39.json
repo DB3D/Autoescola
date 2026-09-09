@@ -1,0 +1,602 @@
+{
+ "3800": {
+  "q": "3219 Quand on circule sur une voie où il n’y a que des piétons, doit-il avertir de la manœuvre de tourner à droite?",
+  "a1": "Oui, on doit avertir tous les usagers des manœuvres.",
+  "a2": "Non, on doit avertir seulement les autres véhicules.",
+  "a3": "Ce n’est pas obligatoire, mais c’est très recommandable."
+ },
+ "3801": {
+  "q": "3220 Le conducteur du véhicule de la photographie est en train d’indiquer qu’il va ...",
+  "a1": "freiner.",
+  "a2": "se déplacer vers la droite.",
+  "a3": "se déplacer vers la gauche."
+ },
+ "3802": {
+  "q": "3295 Après avoir initié le dépassement il vérifie qu’il ne pourra pas finaliser la manœuvre en sécurité parce qu’un véhicule s’approche de face; que doit-il faire?",
+  "a1": "Se maintenir sur la voie de sens contraire et finaliser la manœuvre.",
+  "a2": "Se maintenir sur la voie de sens contraire et terminer la manœuvre.",
+  "a3": "Avertir avec des appels de phares l’autre conducteur pour qu’il réduise sa vitesse."
+ },
+ "3803": {
+  "q": "3300 Que doit-il faire si la validité de son permis a expiré et qu’il veut continuer à conduire?",
+  "a1": "Se présenter à un nouvel examen théorique.",
+  "a2": "Se réexaminer des épreuves pratiques.",
+  "a3": "Solliciter le renouvellement en apportant la documentation nécessaire."
+ },
+ "3804": {
+  "q": "3274 Dans cette intersection, le véhicule est en train de tourner à droite, qui a la préférence?",
+  "a1": "Le véhicule, parce qu’il n’y a pas de passage pour piétons.",
+  "a2": "Le véhicule toujours.",
+  "a3": "Le piéton."
+ },
+ "3805": {
+  "q": "3231 En circulant sur l’accotement, est-il permis à un véhicule à traction animale de circuler en parallèle avec un autre véhicule?",
+  "a1": "Non, c’est interdit.",
+  "a2": "Oui, si l’accotement est assez large.",
+  "a3": "Oui, il peut circuler en parallèle, mais il ne pourra pas dépasser."
+ },
+ "3806": {
+  "q": "3370 Dans les ronds-points on circulera...",
+  "a1": "indistinctement, tant par la droite que par la gauche.",
+  "a2": "en laissant à droite le centre.",
+  "a3": "en laissant à gauche le centre."
+ },
+ "3807": {
+  "q": "3381 Sur les passages pour piétons non régulés par feu de signalisation ou agent, les piétons ont-ils la préférence?",
+  "a1": "Oui, dans n’importe quel cas.",
+  "a2": "Non, quoique par courtoisie on puisse leur céder le passage.",
+  "a3": "Oui, seulement sur les voies urbaines."
+ },
+ "3808": {
+  "q": "3395 Sur les voies divisées en trois chaussées, la centrale pourra être destinée à la circulation dans...",
+  "a1": "les deux sens, toujours.",
+  "a2": "un sens unique, dans n’importe quel cas.",
+  "a3": "les deux sens ou en sens unique, selon ce que dispose la signalisation."
+ },
+ "3809": {
+  "q": "3329 Qui a la préférence de passage dans cette intersection?",
+  "a1": "L’automobile.",
+  "a2": "Le tramway.",
+  "a3": "Celui qui circule par la voie principale."
+ },
+ "3810": {
+  "q": "3401 Combien de personnes peuvent voyager dans un véhicule mixte adaptable?",
+  "a1": "Huit au maximum conducteur inclus.",
+  "a2": "Neuf au maximum conducteur inclus.",
+  "a3": "Cinq au maximum sans inclure le conducteur."
+ },
+ "3811": {
+  "q": "3352 Sur les voies ou partie de la voie destinées ou réservées spécifiquement au transport public urbain, une voiture de tourisme peut-elle réaliser un arrêt?",
+  "a1": "Non.",
+  "a2": "Oui, si elle n’obstrue pas le passage des autobus et taxis.",
+  "a3": "Oui, dans tous les cas."
+ },
+ "3812": {
+  "q": "3383 Les cyclomoteurs, peuvent-ils circuler sur l’accotement en colonne de deux?",
+  "a1": "Oui, de forme exceptionnelle, quand l’accotement soit praticable et suffisant.",
+  "a2": "Non, jamais.",
+  "a3": "Oui, toujours."
+ },
+ "3813": {
+  "q": "3361 Un autobus et un camion entrent à la fois dans un rétrécissement non signalisé, quel véhicule doit reculer?",
+  "a1": "Le véhicule qui a la plus grande masse maximale autorisée.",
+  "a2": "Celui qui a moins de difficultés de manœuvre en tenant compte des dimensions et caractéristiques des véhicules.",
+  "a3": "L’autobus."
+ },
+ "3814": {
+  "q": "3334 Il est interdit d’utiliser le feu de longue portée quand...",
+  "a1": "le feu de courte portée est allumé.",
+  "a2": "il puisse éblouir d’autres usagers.",
+  "a3": "le feu de brouillard avant est allumé."
+ },
+ "3815": {
+  "q": "3326 Les agents de l’autorité chargés de la surveillance du trafic dans l’exercice de leurs fonctions, pourront procéder à l’immobilisation du véhicule quand...",
+  "a1": "le véhicule n’ait pas d’autorisation administrative pour circuler ou que ne soient pas enfreintes les conditions de l’autorisation qui habilite sa circulation.",
+  "a2": "le conducteur d’une bicyclette fasse usage du casque de protection.",
+  "a3": "le véhicule présente des déficiences qui ne constituent pas un danger pour la sécurité routière."
+ },
+ "3816": {
+  "q": "3338 En circulant avec une pluie très intense, est-il correct d’allumer le feu antibrouillard arrière?",
+  "a1": "Oui.",
+  "a2": "Oui, mais son usage est exceptionnel.",
+  "a3": "Non, on ne peut l’utiliser qu’avec du brouillard dense ou une forte chute de neige."
+ },
+ "3817": {
+  "q": "3379 Les conducteurs de véhicules devront céder le passage aux piétons...",
+  "a1": "quand ils transitent par la chaussée.",
+  "a2": "qui soient descendus d’un autobus à un arrêt signalisé et se trouvent entre l’autobus et le refuge le plus proche.",
+  "a3": "chaque fois qu’ils circulent sur l’accotement."
+ },
+ "3818": {
+  "q": "3366 Un dérivé de voiture de tourisme et un camion entrent en même temps dans un rétrécissement non signalisé, quel véhicule est obligé de reculer?",
+  "a1": "Celui qui a moins de difficultés de manœuvre en tenant compte des dimensions et caractéristiques des véhicules.",
+  "a2": "Le véhicule qui a la plus grande masse maximale autorisée.",
+  "a3": "Le camion."
+ },
+ "3819": {
+  "q": "3372 Le conducteur d’une motocyclette, qui porte une personne sur le siège postérieur...",
+  "a1": "doit utiliser le casque protecteur et sera responsable de ce que l’accompagnant l’utilise.",
+  "a2": "doit utiliser le casque protecteur et sera responsable de ce que l’accompagnant l’utilise, mais seulement sur des voies interurbaines.",
+  "a3": "doit utiliser le casque protecteur et conseiller à l’accompagnant de l’utiliser."
+ },
+ "3820": {
+  "q": "3360 Où est-il interdit de circuler avec le feu long allumé?",
+  "a1": "Dans tous les tunnels.",
+  "a2": "Où il y a danger d’éblouir et sur les voies urbaines.",
+  "a3": "Sur les autoroutes illuminées."
+ },
+ "3821": {
+  "q": "3335 S’il initie un dépassement et que se produisent des circonstances qui rendent difficile de finaliser la manœuvre...",
+  "a1": "il doit revenir à sa voie et en avertir ceux qui circulent derrière.",
+  "a2": "il doit accélérer pour finaliser la manœuvre avec rapidité.",
+  "a3": "le véhicule dépassé est obligé de s’écarter sur l’accotement."
+ },
+ "3822": {
+  "q": "3373 Le manque d’expérience du passager, peut-il être la cause d’un accident en moto?",
+  "a1": "Non.",
+  "a2": "Oui, surtout dans les virages.",
+  "a3": "Oui, dû à l’augmentation de poids."
+ },
+ "3823": {
+  "q": "3418 Sur une voie urbaine, il est obligatoire de réaliser les opérations de chargement et déchargement...",
+  "a1": "en respectant uniquement les dispositions sur les arrêts et stationnements.",
+  "a2": "en respectant les dispositions que dictent les administrations compétentes.",
+  "a3": "toujours par le côté le plus proche du bord de la chaussée."
+ },
+ "3824": {
+  "q": "3347 Pendant qu’on s’approvisionne en carburant sur une motocyclette, est-il obligatoire d’éteindre l’éclairage?",
+  "a1": "Oui.",
+  "a2": "Non, on doit laisser allumé le feu de croisement.",
+  "a3": "Non, on doit laisser allumé le feu de position."
+ },
+ "3825": {
+  "q": "3393 Le conducteur qui stationne sa voiture de tourisme de 3.500 kg dans une pente ascendante enneigée est obligé, s’il quitte sa place, à...",
+  "a1": "laisser placée la première vitesse, et appuyer une des roues directrices sur la bordure orientée vers le centre de la chaussée.",
+  "a2": "mettre le levier de changement en position de marche arrière, et appuyer une des roues directrices sur la bordure orientée vers l’extérieur de la chaussée.",
+  "a3": "laisser placée la première vitesse quand le véhicule a une boîte de vitesses manuelle."
+ },
+ "3826": {
+  "q": "3367 Devant un passage à niveau sans barrières, demi-barrières ou feux de signalisation, les conducteurs sont obligés de...",
+  "a1": "le traverser toujours rapidement.",
+  "a2": "s’assurer avant de le traverser qu’aucun véhicule qui circule sur rails ne s’approche.",
+  "a3": "s’assurer avant de le traverser qu’aucun véhicule qui circule sur rails ne s’approche."
+ },
+ "3827": {
+  "q": "3417 En circulant avec une voiture de tourisme, de nuit, par une voie hors agglomération suffisamment illuminée, quels feux doit-il porter allumés?",
+  "a1": "Ceux de longue portée, quand des véhicules ne s’approchent pas en sens contraire.",
+  "a2": "Ceux de position et ceux de courte portée.",
+  "a3": "Ceux de courte portée uniquement."
+ },
+ "3828": {
+  "q": "3392 En stationnant un véhicule dans une pente ascendante, son conducteur devra...",
+  "a1": "appuyer une roue avant sur la bordure et l’orienter vers l’extérieur de la chaussée.",
+  "a2": "laisser sélectionnée la marche arrière.",
+  "a3": "laisser actionné le frein de stationnement."
+ },
+ "3829": {
+  "q": "3351 Le véhicule jaune est arrêté parce qu’il veut changer de sens. Est-ce correct en tenant compte des circonstances observées?",
+  "a1": "Non, parce qu’il empêche de circuler le reste des véhicules.",
+  "a2": "Oui, parce que le véhicule qui circule en sens contraire doit lui faciliter la manœuvre.",
+  "a3": "Oui, parce que la ligne longitudinale qui sépare les deux sens est discontinue."
+ },
+ "3830": {
+  "q": "3423 Un quadricycle léger, entre autres, quelles caractéristiques doit-il avoir?",
+  "a1": "Une masse à vide qui soit inférieure à 350 kg, exclue la masse des batteries dans le cas de véhicules électriques et atteindre, par construction, une vitesse maximale inférieure ou égale à 45 km/h.",
+  "a2": "Une masse en ordre de marche inférieure ou égale à 550 kg et atteindre, par construction, une vitesse maximale inférieure ou égale à 45 km/h.",
+  "a3": "Une puissanceUne masse en ordre de marche inférieure ou égale à 425 kg et atteindre, par construction, une vitesse maximale supérieure à 45 km/h."
+ },
+ "3831": {
+  "q": "3350 Le véhicule jaune, est-il bien situé pour réaliser un changement de sens de la marche?",
+  "a1": "Non, parce qu’il empêche de continuer la marche aux véhicules qui circulent derrière.",
+  "a2": "Oui, parce qu’il peut le faire d’un seul virage.",
+  "a3": "Oui, parce que c’est le lieu adéquat pour le faire."
+ },
+ "3832": {
+  "q": "3439 Il pense tourner à droite et le signalise avec l’indicateur lumineux correspondant, jusqu’à quand est-il nécessaire de le maintenir allumé?",
+  "a1": "Jusqu’à ce que la manœuvre finalise.",
+  "a2": "Jusqu’à ce que je sache avec sécurité que le véhicule qui me suit a vu l’indication.",
+  "a3": "Le moins de temps possible."
+ },
+ "3833": {
+  "q": "3400 Dans un véhicule mixte adaptable...",
+  "a1": "on peut substituer la charge, partiellement ou totalement, par des personnes.",
+  "a2": "on peut substituer la partie destinée au transport de personnes, totalement ou partiellement, par de la charge.",
+  "a3": "on ne peut pas substituer la charge par des personnes."
+ },
+ "3834": {
+  "q": "3369 En tournant le véhicule, doit-il donner la priorité aux animaux?",
+  "a1": "Non, parce que les animaux n’ont jamais la priorité sur la chaussée.",
+  "a2": "Non, parce qu’il n’existe pas de passage pour animaux domestiques.",
+  "a3": "Oui."
+ },
+ "3835": {
+  "q": "3365 Comme norme générale, une motocyclette, peut-elle circuler sur l’accotement?",
+  "a1": "Oui, mais elle ne peut pas le faire en parallèle avec d’autres véhicules.",
+  "a2": "Oui, mais seulement si sa cylindrée est égale ou inférieure à 125 cc.",
+  "a3": "Non, elle doit circuler sur la chaussée."
+ },
+ "3836": {
+  "q": "3391 Le conducteur d’une motocyclette qui va tourner à gauche, comment doit-il signaliser la manœuvre avec le bras?",
+  "a1": "Avec le bras gauche vers le bas et la paume de la main vers l’arrière.",
+  "a2": "Avec le bras gauche étendu horizontalement et la paume de la main vers le bas.",
+  "a3": "Avec le bras gauche plié vers le haut."
+ },
+ "3837": {
+  "q": "3422 Les piétons ont la préférence...",
+  "a1": "dans les zones de piétons.",
+  "a2": "en descendant de n’importe quel véhicule.",
+  "a3": "sur les voies urbaines."
+ },
+ "3838": {
+  "q": "3396 Sur des voies de trois chaussées, comme norme générale, on utilisera celles des latéraux...",
+  "a1": "dans un unique sens, quand il y ait un trafic fluide.",
+  "a2": "dans les deux sens.",
+  "a3": "dans un unique sens, sans préjudice de ce que les autorités puissent établir un autre sens, qui sera signalisé opportunément."
+ },
+ "3839": {
+  "q": "3399 Quand il reste arrêté à l’intérieur d’un tunnel plus de 2 minutes, quelles précautions doit-il adopter?",
+  "a1": "Éteindre le moteur de combustion et laisser l’éclairage de position.",
+  "a2": "Mettre l’éclairage de croisement et éteindre le moteur.",
+  "a3": "Éteindre le moteur toujours."
+ },
+ "3840": {
+  "q": "3330 Quel permis de conduire autorise à conduire des motocyclettes de puissance supérieure à 35 kW?",
+  "a1": "Le permis de la classe A.",
+  "a2": "Le permis de la classe A3.",
+  "a3": "Le permis de la classe A2."
+ },
+ "3841": {
+  "q": "3371 Les piétons devront traverser les places et ronds-points...",
+  "a1": "par le parcours le plus court.",
+  "a2": "par le centre de la chaussée.",
+  "a3": "en les entourant par les trottoirs."
+ },
+ "3842": {
+  "q": "3378 Les cyclistes ont la priorité de passage par rapport aux autres véhicules...",
+  "a1": "toujours.",
+  "a2": "uniquement sur les passages pour cyclistes.",
+  "a3": "quand ils circulent sur une voie dûment signalisée."
+ },
+ "3843": {
+  "q": "3394 S’il stationne dans une pente ascendante il est obligé de...",
+  "a1": "appuyer la roue postérieure sur la bordure.",
+  "a2": "mettre le levier de changement de position de marche arrière.",
+  "a3": "laisser placée la première vitesse quand le véhicule a une boîte de vitesses manuelle."
+ },
+ "3844": {
+  "q": "3331 Un piéton, a-t-il permis de circuler par la droite sur une voie hors agglomération?",
+  "a1": "Non.",
+  "a2": "Oui, quand il le fait pour des raisons de sécurité.",
+  "a3": "Oui, toujours."
+ },
+ "3845": {
+  "q": "3354 Que doit-il faire pour avertir qu’il va diminuer la vitesse de son véhicule?",
+  "a1": "Appuyer plusieurs fois sur la pédale du frein.",
+  "a2": "Allumer les feux de position.",
+  "a3": "Allumer l’intermittent gauche."
+ },
+ "3846": {
+  "q": "3553 Quand est-il permis d’utiliser les signaux acoustiques?",
+  "a1": "Quand je circule par des voies urbaines seulement.",
+  "a2": "Quand je circule par n’importe quelle voie.",
+  "a3": "Pour avertir, hors agglomérations, le conducteur d’un autre véhicule du propos de le dépasser."
+ },
+ "3847": {
+  "q": "3509 Peut-elle circuler une voiture de tourisme qui expulse par le tube d’échappement plus de fumée que ce qui est permis?",
+  "a1": "Oui, mais uniquement hors agglomération.",
+  "a2": "Oui, tant que ce ne sont pas des gaz nocifs.",
+  "a3": "Non."
+ },
+ "3848": {
+  "q": "3527 Quand un autobus prétend s’incorporer depuis un arrêt signalisé, que doivent faire le reste des conducteurs?",
+  "a1": "Diminuer la vitesse et, si c’est nécessaire, s’arrêter pour les laisser effectuer les manœuvres nécessaires.",
+  "a2": "Continuer la marche, car le conducteur de l’autobus doit leur céder le passage.",
+  "a3": "Augmenter la vitesse."
+ },
+ "3849": {
+  "q": "3454 Est-il permis qu’une personne en chaise roulante se déplace sur l’accotement?",
+  "a1": "Seulement sur les voies urbaines.",
+  "a2": "Oui, pourvu qu’elle adopte les précautions dues.",
+  "a3": "Non."
+ },
+ "3850": {
+  "q": "3482 Sur les voies urbaines, s’il ne prétend pas dépasser, quelle séparation doit-on maintenir avec la voiture de tourisme qui circule devant?",
+  "a1": "Toujours 50 mètres.",
+  "a2": "Celle qui permette qu’une motocyclette dépasse en sécurité.",
+  "a3": "Celle qui permette de s’arrêter sans entrer en collision avec le véhicule qui va devant au cas où il freinerait brusquement."
+ },
+ "3851": {
+  "q": "3457 En circulant par voie urbaine, pour éviter un possible accident, comment indiquera-t-il sa présence à un autre véhicule qui veut s’incorporer à la circulation?",
+  "a1": "En utilisant de forme intermittente les éclairages de courte ou longue portée sans éblouir.",
+  "a2": "En allumant le feu de longue portée et en utilisant le klaxon de forme simultanée.",
+  "a3": "Uniquement en utilisant le klaxon pour qu’il ne sorte pas."
+ },
+ "3852": {
+  "q": "3481 Est-il permis de dépasser par la droite s’il existe un espace suffisant?",
+  "a1": "Uniquement les tramways.",
+  "a2": "Oui, sur les voies urbaines, avec deux voies ou plus délimitées par des marques routières.",
+  "a3": "Non, en aucun cas."
+ },
+ "3853": {
+  "q": "3466 Si on fait une réforme au véhicule après l’avoir immatriculé, quelles démarches doit-on réaliser?",
+  "a1": "Il n’est pas nécessaire de réaliser une inspection technique extraordinaire si la réforme a été faite dans un atelier autorisé.",
+  "a2": "Présenter le véhicule à une inspection technique extraordinaire avant de circuler à nouveau.",
+  "a3": "Il n’est nécessaire de réaliser aucune inspection, jusqu’à ce que cela corresponde à cause de l’ancienneté du véhicule."
+ },
+ "3854": {
+  "q": "3490 En cas de pluie non intense, est-il permis d’utiliser le feu antibrouillard?",
+  "a1": "Oui, tant celui de devant que celui de derrière.",
+  "a2": "Non.",
+  "a3": "Oui, mais seulement celui de derrière."
+ },
+ "3855": {
+  "q": "3506 Le permis de la classe B autorise-t-il à conduire des motocyclettes?",
+  "a1": "Oui, les motocyclettes que le permis A1 autorise à conduire, si le permis a plus de cinq ans d’ancienneté.",
+  "a2": "Non, en aucun cas.",
+  "a3": "Oui, jusqu’à 250 cc de cylindrée."
+ },
+ "3856": {
+  "q": "3444 N’importe quel conducteur est obligé de...",
+  "a1": "utiliser le véhicule avec la diligence, la précaution et l’attention nécessaires pour éviter n’importe quel dommage, propre ou d’autrui.",
+  "a2": "ne pas dépasser.",
+  "a3": "circuler à tout moment à la vitesse maximale de la voie."
+ },
+ "3857": {
+  "q": "3452 Quand peut-il ouvrir les portes du véhicule pour descendre?",
+  "a1": "Après avoir vérifié qu’il n’y a pas de danger et pourvu que le véhicule soit immobilisé.",
+  "a2": "Quand il éteint le moteur et met le frein à main.",
+  "a3": "Avec le véhicule immobilisé ou circulant à une vitesse inférieure à 10 km/h."
+ },
+ "3858": {
+  "q": "3534 Comme norme générale, où est-il interdit de dépasser?",
+  "a1": "Sur les voies à une voie pour chaque sens.",
+  "a2": "Sur les voies de moins de 6 mètres de largeur.",
+  "a3": "Près d’un passage pour piétons."
+ },
+ "3859": {
+  "q": "3449 Sur une route avec une voie pour chaque sens, un camion est en train de dépasser et ne le laisse pas voir. Peut-il dépasser derrière le camion?",
+  "a1": "Oui, parce que le camion me protège.",
+  "a2": "Non, parce qu’il n’y a pas de visibilité.",
+  "a3": "Oui, quand il n’y a pas de signal d’interdiction de dépasser."
+ },
+ "3860": {
+  "q": "3450 En circulant à une vitesse supérieure à la vitesse maximale permise il est en train de circuler...",
+  "a1": "à une vitesse modérée, selon les circonstances.",
+  "a2": "avec excès de vitesse.",
+  "a3": "à une vitesse maximale."
+ },
+ "3861": {
+  "q": "3455 Un mineur d'âge, peut-il voyager comme passager sur une motocyclette?",
+  "a1": "Non, excepté qu’il fasse plus de 150 cm.",
+  "a2": "Non.",
+  "a3": "Oui, pourvu qu’il ait plus de 7 ans, avec certaines conditions."
+ },
+ "3862": {
+  "q": "3507 Est-il permis de dépasser à l’intérieur d’un tunnel?",
+  "a1": "Non.",
+  "a2": "Oui, s’il y a plus d’une voie dans le même sens de la marche.",
+  "a3": "Oui, quand les sens sont séparés."
+ },
+ "3863": {
+  "q": "3508 Les conducteurs de cyclomoteurs, sont-ils obligés de porter un casque de protection par des voies urbaines?",
+  "a1": "Oui, c’est obligatoire.",
+  "a2": "Non, c’est obligatoire seulement quand ils circulent par des voies interurbaines.",
+  "a3": "Non, les conducteurs de cyclomoteurs ne sont pas obligés de porter un casque."
+ },
+ "3864": {
+  "q": "3448 La charge transportée sur une motocyclette de largeur inférieure à 1 mètre, peut-elle dépasser par la partie avant ou postérieure?",
+  "a1": "Oui, jusqu’à 0,50 mètres tant par la partie avant que par la postérieure.",
+  "a2": "Oui, mais seulement par la partie postérieure jusqu’à 0,50 mètres.",
+  "a3": "Par la partie avant, non; par la postérieure oui, jusqu’à 0,25 mètres."
+ },
+ "3865": {
+  "q": "3467 Dans les intersections signalisées, quelle est la norme générale qui prévaut?",
+  "a1": "S’en tenir à la signalisation qui les régule.",
+  "a2": "Céder le passage toujours à la droite.",
+  "a3": "S’abstenir de l’accomplissement de la signalisation."
+ },
+ "3866": {
+  "q": "3518 Quels documents doit porter avec lui le conducteur d’une motocyclette, en plus du permis de conduire?",
+  "a1": "La carte ITV et le certificat d’immatriculation (carte jaune).",
+  "a2": "Le certificat d’immatriculation, seulement.",
+  "a3": "La carte ITV, seulement."
+ },
+ "3867": {
+  "q": "3546 Le conducteur qui fait un dépassement...",
+  "a1": "peut excéder la vitesse maximale fixée.",
+  "a2": "doit porter son véhicule à une vitesse supérieure à celle du véhicule qu’il prétend dépasser.",
+  "a3": "doit maintenir une vitesse modérée, sans importer le temps qu’il utilise dans le dépassement."
+ },
+ "3868": {
+  "q": "3511 Le permis de la classe B, autorise-t-il à conduire un quadricycle léger?",
+  "a1": "Non.",
+  "a2": "Oui, quand il ne se dédie pas au transport de marchandises.",
+  "a3": "Oui."
+ },
+ "3869": {
+  "q": "3539 Les agents de l’autorité chargés de la surveillance du trafic pourront procéder à l’immobilisation d’un véhicule...",
+  "a1": "si son conducteur ne porte pas les originaux de la documentation du véhicule.",
+  "a2": "chaque fois que son conducteur soit sanctionné.",
+  "a3": "s’il circule en dépassant les niveaux de gaz, fumées et bruits réglementairement permis."
+ },
+ "3870": {
+  "q": "3526 Le conducteur d’un véhicule qui observe qu’il sera dépassé, doit...",
+  "a1": "s’approcher du bord droit de la chaussée pour faciliter la manœuvre.",
+  "a2": "allumer l’indicateur de direction droit pour montrer qu’il permettra la manœuvre.",
+  "a3": "augmenter la vitesse."
+ },
+ "3871": {
+  "q": "3512 Les véhicules pour personnes avec handicap, sont-ils obligés de circuler sur l’accotement?",
+  "a1": "Oui, dans le cas où il n’existe pas de voie ou partie de celle-ci qui leur soit spécialement destinée.",
+  "a2": "Non, ils peuvent circuler sur l’accotement quand ils le croient convenable.",
+  "a3": "Non, cela dépendra toujours des indications des agents et du type de voie."
+ },
+ "3872": {
+  "q": "3545 Sur la voie de l’image, en dépassant avec sa voiture de tourisme ce camion, comment doit-il le faire?",
+  "a1": "En occupant toujours une partie de la voie contiguë.",
+  "a2": "En laissant une distance latérale de sécurité suffisante, proportionnelle à la vitesse, largeur et caractéristiques de la chaussée.",
+  "a3": "En laissant une distance latérale minimale de 1,50 mètres."
+ },
+ "3873": {
+  "q": "3500 Dans une intersection où le feu de signalisation ne fonctionne pas, que doit-il faire?",
+  "a1": "Passer parce qu’on entend que le feu est vert.",
+  "a2": "S’arrêter parce que le passage est interdit.",
+  "a3": "Céder le passage aux véhicules qui viennent par la droite, et extrémer la précaution."
+ },
+ "3874": {
+  "q": "3499 Le feu de signalisation de la photographie est en panne, à qui doit-il céder le passage à l’intersection?",
+  "a1": "À tous les véhicules.",
+  "a2": "Aux véhicules qui s’approchent par la gauche.",
+  "a3": "Aux véhicules qui s’approchent par la droite."
+ },
+ "3875": {
+  "q": "3522 Dans un véhicule de moins de 5 mètres de longueur, destiné au transport de marchandises, de combien peut dépasser une charge de longueur indivisible par sa partie avant?",
+  "a1": "Elle ne peut rien dépasser.",
+  "a2": "Un tiers de la longueur du véhicule.",
+  "a3": "Un 15 pour 100 de la longueur du véhicule."
+ },
+ "3876": {
+  "q": "3519 S’il conduit cette motocyclette avec side-car, le passager qu’il porte dans le side-car est-il obligé de porter un casque?",
+  "a1": "Seulement quand il circule en agglomération.",
+  "a2": "Oui.",
+  "a3": "Non."
+ },
+ "3877": {
+  "q": "3445 Un véhicule à deux roues pourvu d’un moteur à combustion interne pourra être catalogué comme motocyclette pourvu que...",
+  "a1": "sa cylindrée soit supérieure à 50 centimètres cubiques.",
+  "a2": "il puisse atteindre une vitesse maximale supérieure à 40 km/h.",
+  "a3": "il dispose d’au moins deux places, celle du conducteur incluse."
+ },
+ "3878": {
+  "q": "3551 En circulant derrière un véhicule volumineux qui veut tourner à droite, que doit-il tenir en compte?",
+  "a1": "Que le véhicule volumineux ne réduira pas sa vitesse.",
+  "a2": "Que le véhicule volumineux, avant de tourner, se déplacera probablement vers la gauche.",
+  "a3": "Que le véhicule volumineux s’approchera le maximum possible à la droite."
+ },
+ "3879": {
+  "q": "3510 Hors agglomération où il n’existe pas de zone de piétons, par où sont obligés de circuler les piétons comme norme générale?",
+  "a1": "C’est indifférent.",
+  "a2": "Par leur gauche.",
+  "a3": "Par leur droite."
+ },
+ "3880": {
+  "q": "3535 Dans les intersections, est-il permis de dépasser?",
+  "a1": "Oui, quand le dépassement se réalise à une vitesse si suffisamment réduite qu’elle permette de s’arrêter à temps si surgissait un danger.",
+  "a2": "Oui, quand il ne se génère pas de danger par manque de visibilité.",
+  "a3": "Non, comme norme générale."
+ },
+ "3881": {
+  "q": "3456 S’il pense faire un nouveau dépassement, est-il permis de continuer à circuler par la voie gauche?",
+  "a1": "Oui, quand il n’obstrue pas les véhicules qui circulent plus vite par derrière.",
+  "a2": "Oui, s’il circule à la vitesse maximale permise sur la voie.",
+  "a3": "Non, il doit revenir obligatoirement à la droite."
+ },
+ "3882": {
+  "q": "3498 Quand il circule de nuit par une voie urbaine bien illuminée, quels feux doit-il porter allumés sur sa motocyclette?",
+  "a1": "Le feu de position et celui de croisement.",
+  "a2": "Le feu de position et celui de route, s’il n’y a pas de risque de produire un éblouissement.",
+  "a3": "Seulement le feu de position."
+ },
+ "3883": {
+  "q": "3451 Une fois le véhicule immobilisé, les usagers devront entrer ou sortir...",
+  "a1": "toujours par le côté du conducteur.",
+  "a2": "par n’importe quel côté, en prenant les précautions dues.",
+  "a3": "comme norme générale, par le côté le plus proche du trottoir."
+ },
+ "3884": {
+  "q": "3477 Est-il permis de s’arrêter et de stationner dans un passage inférieur?",
+  "a1": "Seulement s’il est suffisamment illuminé.",
+  "a2": "Non.",
+  "a3": "S’arrêter, oui; stationner, non."
+ },
+ "3885": {
+  "q": "3521 La charge qui dépasse par devant d’un véhicule, comment doit-elle aller signalisée?",
+  "a1": "Avec un feu blanc et un réflecteur blanc, de nuit ou dans des conditions qui diminuent sensiblement la visibilité.",
+  "a2": "Avec un feu blanc, tant de jour que de nuit.",
+  "a3": "Avec un feu rouge, de nuit ou dans des conditions qui diminuent sensiblement la visibilité."
+ },
+ "3886": {
+  "q": "3590 Le signal lumineux rotatif que portent les tracteurs agricoles indique...",
+  "a1": "leur présence sur la voie.",
+  "a2": "qu’ils ont la priorité sur le reste des véhicules.",
+  "a3": "qu’ils ne peuvent pas être un obstacle pour le reste des usagers."
+ },
+ "3887": {
+  "q": "3661 Avant l’immobilisation complète du véhicule, il est interdit de...",
+  "a1": "allumer les feux d’urgence.",
+  "a2": "se détacher la ceinture de sécurité, quand on est en train de stationner.",
+  "a3": "ouvrir les portes."
+ },
+ "3888": {
+  "q": "3660 Pour conduire des véhicules spéciaux agricoles avec remorque, parmi les réponses qui sont citées, quel permis de conduire est nécessaire au minimum?",
+  "a1": "Celui de la classe B.",
+  "a2": "Toujours celui de la classe B2+E.",
+  "a3": "Le permis de la classe C1."
+ },
+ "3889": {
+  "q": "3663 Une fois initié le dépassement se produisent des circonstances qui peuvent rendre difficile sa finalisation sans provoquer de risques, qu’est obligé de faire le conducteur?",
+  "a1": "Finaliser le dépassement en augmentant rapidement la vitesse.",
+  "a2": "Terminer le dépassement en augmentant rapidement la vitesse.",
+  "a3": "Freiner brusquement pour revenir à sa droite le plus tôt possible."
+ },
+ "3890": {
+  "q": "3588 Pour s’approvisionner en carburant, comment doit-il agir?",
+  "a1": "Seulement arrêter le moteur et mettre le premier rapport de vitesses.",
+  "a2": "Seulement éteindre les feux.",
+  "a3": "Arrêter le moteur, éteindre les feux, les équipements électriques et le mobile."
+ },
+ "3891": {
+  "q": "3614 Si son véhicule est pourvu d’une boîte de vitesses manuelle, dans une rue avec pente ascendante, comment doit-il stationner?",
+  "a1": "Il suffit de mettre le frein de stationnement.",
+  "a2": "En mettant le frein de stationnement et la marche arrière.",
+  "a3": "En mettant le frein de stationnement et la première vitesse."
+ },
+ "3892": {
+  "q": "3602 Une file d’écoliers est en train de traverser la chaussée. Doit-il leur céder le passage?",
+  "a1": "Oui.",
+  "a2": "Non, quand il ne porte pas la palette de STOP.",
+  "a3": "Seulement sur les passages pour piétons."
+ },
+ "3893": {
+  "q": "3594 Il est interdit de changer le sens de la marche quand...",
+  "a1": "la chaussée soit à deux sens.",
+  "a2": "pour pouvoir le réaliser il ne puisse pas sortir de la chaussée par le côté droit.",
+  "a3": "il puisse mettre en danger ou faire obstacle à d’autres usagers de la voie."
+ },
+ "3894": {
+  "q": "3582 Sur les chaussées à double sens de circulation et trois voies séparées par des marques longitudinales discontinues, pourra-t-on circuler par celle située le plus à gauche?",
+  "a1": "Oui, quand un autre véhicule ne s’approche pas.",
+  "a2": "Non.",
+  "a3": "Seulement pour tourner à gauche."
+ },
+ "3895": {
+  "q": "3615 Si le résultat de l’inspection réalisée à son véhicule dans une station ITV est défavorable, pourra-t-il circuler par les voies publiques?",
+  "a1": "Oui, si le défaut observé n’empêche pas la marche du véhicule.",
+  "a2": "Non s’il se détecte des défauts dans le véhicule qui affectent gravement les conditions de sécurité ou des modifications pour occulter des marchandises ou des biens.",
+  "a3": "Non, absolument pas, parce que le véhicule sera radié définitivement."
+ },
+ "3896": {
+  "q": "3575 Circuler en motocyclette sous une pluie intense oblige à...",
+  "a1": "allumer le feu de longue portée y compris en circulant à l’intérieur d’une agglomération.",
+  "a2": "circuler le plus près possible du véhicule qui va devant pour avoir plus de protection et de visibilité.",
+  "a3": "modérer la vitesse, jusqu’à s’arrêter si c’est nécessaire."
+ },
+ "3897": {
+  "q": "3597 Les motocyclettes avec plus de cinq ans d’ancienneté doivent passer l’ITV...",
+  "a1": "tous les cinq ans.",
+  "a2": "tous les deux ans.",
+  "a3": "chaque année."
+ },
+ "3898": {
+  "q": "3620 Sur ce tronçon de voie où, par son étroitesse, deux véhicules ne peuvent pas se croiser, a la préférence de passage le véhicule qui...",
+  "a1": "a moins de difficultés de manœuvre.",
+  "a2": "y a accédé en premier.",
+  "a3": "circule par une voie descendante."
+ },
+ "3899": {
+  "q": "3554 Comme norme générale, il est interdit de changer le sens de la marche quand...",
+  "a1": "on ne puisse pas aller vers l’avant.",
+  "a2": "il est interdit de dépasser, excepté que le changement de sens soit autorisé.",
+  "a3": "il s’agit d’un rond-point."
+ }
+}

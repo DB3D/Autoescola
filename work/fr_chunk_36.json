@@ -1,0 +1,602 @@
+{
+ "3500": {
+  "q": "2398 QUAND LE CHÂSSIS ET LA CARROSSERIE D'UN AUTOMOBILE FORMENT UN ENSEMBLE RIGIDE, CELA SE DÉNOMME...",
+  "a1": "portant",
+  "a2": "châssis-plateforme.",
+  "a3": "monocoque."
+ },
+ "3501": {
+  "q": "2424 De quel type de verre est formé actuellement le pare-brise?",
+  "a1": "De verre qui en se cassant se fractionne en petits morceaux.",
+  "a2": "De verre trempé.",
+  "a3": "De verre feuilleté."
+ },
+ "3502": {
+  "q": "2373 Pour ventiler l'habitacle le plus recommandable est d'utiliser de manière adéquate les dispositifs d'aération et circulation forcée du véhicule.",
+  "a1": "C'est certain.",
+  "a2": "Il est évident ,qu'en baissant les fenêtres du véhicule c'est plus efficient.",
+  "a3": "Au niveau d'efficience énergétique c'est indifférent."
+ },
+ "3503": {
+  "q": "2347 Le conducteur d'un véhicule lourd doit avoir une attention spéciale au réglage des feux, leur hauteur et leur propreté ,pour ne pas aveugler les autres conducteurs.",
+  "a1": "Oui, on doit avoir un soin spécial",
+  "a2": "Non, on doit avoir un soin plus spécial que les autres véhicules",
+  "a3": "Non, si on dispose de réglage automatique des phares"
+ },
+ "3504": {
+  "q": "2422 QUEL ENTRETIEN A LE COUSSIN DE SÉCURITÉ?",
+  "a1": "Regarder la pression.",
+  "a2": "Aucun.",
+  "a3": "Révision tous les deux mois."
+ },
+ "3505": {
+  "q": "2298 L'intensité des fusibles de l'installation électrique d’un automobile, se mesurent en ...",
+  "a1": "Watts",
+  "a2": "Volts",
+  "a3": "Ampères"
+ },
+ "3506": {
+  "q": "2382 Pour maintenir la vitesse de circulation la plus uniforme possible, la façon correcte d'user la pédale de l'accélérateur est:",
+  "a1": "La maintenir stable dans une position déterminée.",
+  "a2": "En réalisant de petites variations systématiques de façon continue autour d'une position déterminée de la pédale .",
+  "a3": "En bloquant mécaniquement la pédale de l'accélérateur."
+ },
+ "3507": {
+  "q": "2372 Pour maintenir une sensation de bien-être dans la voiture, on recommande une température intérieure de l'habitacle de:",
+  "a1": "18-22oC",
+  "a2": "15-16oC",
+  "a3": "23-24oC"
+ },
+ "3508": {
+  "q": "2427 LE MOTEUR QUI UTILISE COMME COMBUSTIBLE LE GAS-OIL SE DÉNOMME MOTEUR DE...",
+  "a1": "explosion.",
+  "a2": "explosion ou combustion, indifféremment.",
+  "a3": "combustion."
+ },
+ "3509": {
+  "q": "2363 De celles qui s'exposent ci-après, marquez un enseignement dérivé de la conduite efficiente en relation avec la sécurité:",
+  "a1": "Maintenir une distance de sécurité supérieure à l'habituelle",
+  "a2": "Maintenir une vitesse moyenne constante",
+  "a3": "Conduire avec anticipation et prévision en maintenant toujours un adéquat champ visuel"
+ },
+ "3510": {
+  "q": "2385 En finalisant la marche, si l'on a circulé dans des conditions particulièrement exigeantes pour le moteur, il est convenable",
+  "a1": "Il est convenable de faire tourner le moteur pendant quelques minutes au ralenti avant de l'arrêter.",
+  "a2": "L'arrêter immédiatement pour ne pas bloquer le turbocompresseur.",
+  "a3": "L'arrêter immédiatement pour éviter des condensations d'eau."
+ },
+ "3511": {
+  "q": "2377 Seulement quand il n'y aura pas d'autre solution on peut recourir à transporter des objets à l'extérieur du véhicule, en les plaçant de manière qu'ils affectent dans la moindre mesure la sécurité,parmi les clés à tenir en compte pour parvenir à dominer la conduite efficie",
+  "a1": "Circuler dans la vitesse la plus longue possible et à bas régime.",
+  "a2": "Placer les emballages dans la galerie hors du profil du véhicule .",
+  "a3": "Dans les processus de décélération, réduire la vitesse le plus tard possible ."
+ },
+ "3512": {
+  "q": "2351 En principauté on peut conduire un véhicule spécial de PMA de plus de 3500 kg. Avec la catégorie de permis B.",
+  "a1": "Oui",
+  "a2": "Non",
+  "a3": "Oui, pourvu qu'il ne dépasse pas les 40 km/h."
+ },
+ "3513": {
+  "q": "2375 Une mauvaise distribution de la charge peut offrir une plus grande résistance à l'air et une plus grande instabilité provoquée par la diminution adhérence au revêtement du véhicule et par conséquent une augmentation de la consommation.",
+  "a1": "Adhérence oui, plus de consommation nécessairement non.",
+  "a2": "Adhérence non, parce que même si les charges ne sont pas distribuées la rigidité du châssis du véhicule la compense, les roues étant quatre points fixes d'appui du véhicule et de la charge.",
+  "a3": "Oui, l'énoncé est correct."
+ },
+ "3514": {
+  "q": "2383 Jamais on ne doit descendre une pente au point mort, parce que :",
+  "a1": "S'incrémente la consommation de carburant et cela résulte extrêmement dangereux",
+  "a2": "Bien que diminue la consommation de carburant, cela résulte extrêmement dangereux .",
+  "a3": "On doit utiliser avec trop de fréquence le frein à main."
+ },
+ "3515": {
+  "q": "2406 LA SCIENCE QUI ÉTUDIE LES PHÉNOMÈNES DU DÉPLACEMENT D'UN CORPS DANS L'AIR SE DÉNOMME...",
+  "a1": "dynamique.",
+  "a2": "aérodynamique.",
+  "a3": "thermodynamique."
+ },
+ "3516": {
+  "q": "2368 Dans le meilleur des cas, de l'énergie que libère le carburant on ne peut profiter que d'un 38%, mais normalement ce pourcentage est bien moindre quand on circule par des villes avec de fréquents démarrages et arrêts étant quantifié en...",
+  "a1": "8%",
+  "a2": "17%",
+  "a3": "35%"
+ },
+ "3517": {
+  "q": "2330 Si en cas d'urgence , dans un tunnel, je suis arrêté dans la zone qu'indique le signal, suis-je obligé d'allumer l'éclairage de \"warning\", c'est-à-dire, les feux d'intermittence?",
+  "a1": "Oui, toujours.",
+  "a2": "Non,l'obligation est d'avoir allumés les feux de position.",
+  "a3": "Oui, ainsi que les feux de position."
+ },
+ "3518": {
+  "q": "2335 En passant sous un pont, avec un véhicule de grand volume, nous devons tenir en compte prioritairement...",
+  "a1": "avec la possible courbure de ces constructions",
+  "a2": "qu'un train ne passe pas dessus en même temps",
+  "a3": "qu'il y ait des personnes lançant des objets"
+ },
+ "3519": {
+  "q": "2415 La force de dérive est la...",
+  "a1": "Qui permet un rayon de braquage minimal",
+  "a2": "force latérale que supporte le véhicule dans les virages ou par la force du vent.",
+  "a3": "qui tend à soulever le véhicule du sol"
+ },
+ "3520": {
+  "q": "2396 Quel élément unit le châssis (ou la carrosserie) avec les roues?",
+  "a1": "La suspension.",
+  "a2": "Les roues.",
+  "a3": "La transmission."
+ },
+ "3521": {
+  "q": "2336 En entrant dans une agglomération on doit tenir en compte la limitation d'entrée de véhicules et leurs charges.",
+  "a1": "les limitations sont seulement quant au type et poids de véhicule",
+  "a2": "Oui, l'affirmation est correcte",
+  "a3": "Non, parce que les voies urbaines doivent être préparées pour pouvoir être distribuée n'importe quelle charge, en n'importe quel endroit de la ville."
+ },
+ "3522": {
+  "q": "2376 Signalez la réponse correcte. Transporter des bagages dans la galerie:",
+  "a1": "Augmente la résistance à l'air, incrémente la consommation de carburant",
+  "a2": "N'a aucune incidence sur la consommation de carburant",
+  "a3": "Incrémente la sécurité du véhicule"
+ },
+ "3523": {
+  "q": "2384 La mauvaise habitude de freiner brusquement juste avant d'entrer dans le virage et accélérer fortement pendant son tracé, résulte nocive, entre aspects :",
+  "a1": "Par l'excès de carburant consommé .",
+  "a2": "Parce qu'elle produit des vertiges",
+  "a3": "Parce qu'elle n'est pas nécessaire"
+ },
+ "3524": {
+  "q": "2338 Dans des tronçons de la chaussée qui ne disposent pas de signalisation et qui par leur largeur minimale qui permet seulement le passage simultané de véhicules, la priorité de passage est pour...",
+  "a1": "Celui arrive le premier au passage",
+  "a2": "Celui qui a une plus grande difficulté de manœuvre",
+  "a3": "Celui qui arrive le premier au passage et en cas de doute celui qui a une plus grande difficulté de manœuvre"
+ },
+ "3525": {
+  "q": "2407 LA FORME DE LA CARROSSERIE EN UN, DEUX OU TROIS VOLUMES A UNE INFLUENCE DÉCISIVE...",
+  "a1": "sur la vitesse de pointe et sur la contamination.",
+  "a2": "sur la stabilité, consommation et vitesse de pointe.",
+  "a3": "sur la consommation et la charge."
+ },
+ "3526": {
+  "q": "2527 EN QUOI CONSISTE LA DIRECTION ASSISTÉE?",
+  "a1": "En un dispositif qui rend plus sûre la direction.",
+  "a2": "En un mécanisme qui multiplie la force que le conducteur applique sur le volant, rendant la direction plus douce.",
+  "a3": "En un mécanisme qui substitue la direction manuelle."
+ },
+ "3527": {
+  "q": "2542 Si, en circulant par une voie publique, vous trouvez devant vous un véhicule arrêté qui occupe la partie de chaussée correspondant à votre marche, mais des véhicules circulent en sens contraire, que devez-vous faire?.",
+  "a1": "Allumer le clignotant de gauche et passer.",
+  "a2": "Attendre pour le dépasser que passent les véhicules qui circulent en sens contraire.",
+  "a3": "Utiliser les signaux acoustiques avec des coups courts et fréquents."
+ },
+ "3528": {
+  "q": "2553 Quel est le meilleur remède contre la fatigue du conducteur ?",
+  "a1": "S'arrêter pour se reposer et dormir s'il le faut.",
+  "a2": "S'appuyer sur l'appui-tête.",
+  "a3": "Ouvrir les fenêtres si nous avons le chauffage."
+ },
+ "3529": {
+  "q": "2517 POUR LA PROTECTION DES CIRCUITS EN CAS D'UNE AUGMENTATION DE L'INTENSITÉ DE COURANT, ON UTILISE LES...",
+  "a1": "fusibles.",
+  "a2": "interrupteurs.",
+  "a3": "commutateurs."
+ },
+ "3530": {
+  "q": "2516 DANS LES LAMPES HALOGÈNES QU'ON UTILISE POUR LE FEU DE CROISEMENT ET DE ROUTE, QU'EST-CE QU'IL FAUT TENIR EN COMPTE?",
+  "a1": "Qu'elles ne se réchauffent pas.",
+  "a2": "Qu'elles sont plus grandes.",
+  "a3": "Qu'on ne doit pas toucher le quartz, car il peut se fondre plus facilement."
+ },
+ "3531": {
+  "q": "2550 Quand nous conduisons un véhicule avec cette plaque d'immatriculation et de cette couleur nous portons... ?",
+  "a1": "Une voiture de pompiers.",
+  "a2": "Qu'il s'agit d'une voiture ancienne de plus de vingt-cin ans.",
+  "a3": "Cette plaque d'immatriculation n'est pas valide pour le territoire Andorran."
+ },
+ "3532": {
+  "q": "2554 Pouvons-nous faire la manœuvre une fois que nous l'avons signalisée ?",
+  "a1": "Oui, parce que nous avons déjà accompli la norme du code.",
+  "a2": "Oui, parce qu'une fois signalisée, nous avons déjà un droit préférentiel.",
+  "a3": "Pas toujours, le fait de la signaliser ne nous donne aucun droit"
+ },
+ "3533": {
+  "q": "2468 LA SUBSTITUTION DE L'HUILE DOIT SE FAIRE PÉRIODIQUEMENT ET AVEC LE MOTEUR...",
+  "a1": "froid.",
+  "a2": "chaud.",
+  "a3": "très chaud pour que se déverse bien l'huile très diluée."
+ },
+ "3534": {
+  "q": "2557 Quand disons-nous qu'une autoroute est à péage ?",
+  "a1": "Quand l'autoroute est d'une société privée.",
+  "a2": "Quand elles ont des voies d'accélération.",
+  "a3": "Quand nous devons payer des droits pour l'utiliser"
+ },
+ "3535": {
+  "q": "2566 Que devons-nous faire quand la visibilité est réduite ?",
+  "a1": "Toucher le klaxon par intermittence.",
+  "a2": "Diminuer la vitesse.",
+  "a3": "Circuler au maximum au pas de l'homme."
+ },
+ "3536": {
+  "q": "2567 Par où devons-nous circuler avec plus de précaution ?",
+  "a1": "Par les autoroutes, à cause des grandes vitesses.",
+  "a2": "Par les voies urbaines et traversées spécialement.",
+  "a3": "Par les routes normales, parce qu'on y circule dans les deux sens."
+ },
+ "3537": {
+  "q": "2473 QUAND LA RÉFRIGÉRATION EST PAR AIR FORCÉ, À QUOI SERT LE VENTILATEUR?",
+  "a1": "Pour refroidir le radiateur.",
+  "a2": "Pour accélérer la circulation de l'air.",
+  "a3": "Pour absorber plus rapidement l'air chaud."
+ },
+ "3538": {
+  "q": "2565 Comment circulons-nous par les voies publiques à double sens avec un obstacle au centre ?",
+  "a1": "Par la droite ou la gauche, indifféremment.",
+  "a2": "Nous laissons toujours l'obstacle à gauche.",
+  "a3": "Nous laissons toujours l'obstacle à droite"
+ },
+ "3539": {
+  "q": "2529 LA DIRECTION AUX QUATRE ROUES...",
+  "a1": "améliore la stabilité du véhicule dans les virages.",
+  "a2": "augmente le tour du volant dans les virages fermés.",
+  "a3": "permet que les roues avant et arrière tournent dans le même sens toujours."
+ },
+ "3540": {
+  "q": "2506 PARMI LES INCONVÉNIENTS DU MOTEUR DIESEL, IL Y A...",
+  "a1": "Un couple moteur plus bas.",
+  "a2": "Difficulté de démarrage à froid.",
+  "a3": "Moindre rendement thermique."
+ },
+ "3541": {
+  "q": "2514 LES LAMPES PORTENT GRAVÉE LEUR PUISSANCE SUR LE SUPPORT ET CELLE-CI SE MESURE EN...",
+  "a1": "watts.",
+  "a2": "volts.",
+  "a3": "ohms."
+ },
+ "3542": {
+  "q": "2469 LE SYSTÈME DE RÉFRIGÉRATION SERT À DIMINUER L'ÉCHAUFFEMENT DE QUELQUE PARTIE DES MOTEURS EN REFROIDISSANT...",
+  "a1": "le carter de l'huile.",
+  "a2": "la pompe d'alimentation.",
+  "a3": "les parois des cylindres."
+ },
+ "3543": {
+  "q": "2483 SI PENDANT LA MARCHE DU VÉHICULE S'ALLUME LE TÉMOIN LUMINEUX DE L'INDICATEUR DE LA TEMPÉRATURE DU LIQUIDE, QUE DOIT-ON FAIRE?",
+  "a1": "Ralentir la marche en mettant une vitesse plus courte.",
+  "a2": "Arrêter le moteur immédiatement.",
+  "a3": "Arrêter le véhicule avec le moteur au ralenti"
+ },
+ "3544": {
+  "q": "2470 QUELLE EST LA TEMPÉRATURE IDÉALE DE FONCTIONNEMENT DU MOTEUR?",
+  "a1": "De 100° à 120°C .",
+  "a2": "De 85° à 90°C",
+  "a3": "De 45° à 60°C ."
+ },
+ "3545": {
+  "q": "2568 Suffit-il de signaliser la manœuvre avec l'indicateur de direction pour qu'elle soit correcte ?",
+  "a1": "Non, si nous ne le faisons pas avec une anticipation et clarté suffisantes.",
+  "a2": "Oui, parce qu'une fois signalisée nous avons déjà le droit de la faire.",
+  "a3": "Non, si nous ne l'avons pas signalisée avec le bras."
+ },
+ "3546": {
+  "q": "2523 L'OPÉRATION D'APPUYER SUR LA PÉDALE DE L'EMBRAYAGE REÇOIT LE NOM DE...",
+  "a1": "accoupler le moteur aux roues.",
+  "a2": "embrayer.",
+  "a3": "débrayer."
+ },
+ "3547": {
+  "q": "2544 Quel permis nous faut-il pour conduire un véhicule de 6.500 kg de poids total maximal et 18 sièges?.",
+  "a1": "D2.",
+  "a2": "C1+D1",
+  "a3": ""
+ },
+ "3548": {
+  "q": "2549 Quel véhicule porte cette plaque d'immatriculation?",
+  "a1": "Les véhicules du corps consulaire.",
+  "a2": "Tous les véhicules du corps diplomatique.",
+  "a3": "Les véhicules d'essai."
+ },
+ "3549": {
+  "q": "2546 Pour réaliser le démarrage de façon correcte du point de vue tant mécanique que de consommation, il est convenable que dans les voitures propulsées par essence initier la marche après avoir démarré le moteur.",
+  "a1": "Oui.",
+  "a2": "Oui, mais pas dans les propulsées par gas-oil.",
+  "a3": "Oui, tant les propulsées par essence,gas-oil ou autres combustibles."
+ },
+ "3550": {
+  "q": "2552 Quel est le principal effet de la fatigue chez un conducteur ?",
+  "a1": "Elle affaiblit la force musculaire.",
+  "a2": "Elle fait que nous lâchions le volant.",
+  "a3": "Elle diminue l'attention."
+ },
+ "3551": {
+  "q": "2513 L'APPAREIL QUI FOURNIT DU COURANT POUR CHARGER LA BATTERIE EST LE...",
+  "a1": "générateur.",
+  "a2": "moteur de démarrage.",
+  "a3": "disjoncteur."
+ },
+ "3552": {
+  "q": "2543 Qu'ordonne cet agent? (photo)",
+  "a1": "Halte seulement à ceux qui le voient de front.",
+  "a2": "Halte au front et à l'arrière.",
+  "a3": "Halte seulement à ceux qui le voient par derrière."
+ },
+ "3553": {
+  "q": "2556 Comment s'appelle le moment qu'il y a entre la perception d'un obstacle ou danger et mettre le pied au frein?",
+  "a1": "Temps de réaction.",
+  "a2": "Temps de réception.",
+  "a3": "Temps d'action."
+ },
+ "3554": {
+  "q": "2489 POUR QUE DANS LE RÉSERVOIR DE CARBURANT NE SE PRODUISE PAS LE VIDE QUAND ASPIRE LA POMPE D'ALIMENTATION...",
+  "a1": "on remplit totalement le réservoir.",
+  "a2": "il existe un orifice dans le bouchon de fermeture pour l'entrée d'air.",
+  "a3": "il se place éloigné du moteur pour éviter qu'avec la chaleur augmente le volume des gaz du carburant."
+ },
+ "3555": {
+  "q": "2564 Quelle distance de sécurité devons-nous maintenir quand il pleut ?",
+  "a1": "La même que quand il ne pleut pas.",
+  "a2": "Plus grande.",
+  "a3": "Plus petite."
+ },
+ "3556": {
+  "q": "2551 Une grippe peut-elle diminuer les facultés physiques du conducteur ?",
+  "a1": "Non, si le conducteur est robuste.",
+  "a2": "Oui, s'il ne s'est pas reposé la nuit antérieure.",
+  "a3": "Oui."
+ },
+ "3557": {
+  "q": "2530 DANS LE SYSTÈME DE DIRECTION, QU'EST-CE QU'IL FAUT RÉVISER PÉRIODIQUEMENT?",
+  "a1": "La convergence/divergence des roues.",
+  "a2": "L'inclinaison du pivot.",
+  "a3": "Que les roues soient toujours parallèles."
+ },
+ "3558": {
+  "q": "2479 QUEL ÉLÉMENT ACTIONNE L'ÉLECTROVENTILATEUR?",
+  "a1": "une valve de sécurité.",
+  "a2": "une valve thermostatique.",
+  "a3": "un thermocontact."
+ },
+ "3559": {
+  "q": "2515 ENTRE QUELLES VALEURS OSCILLE LA PUISSANCE DES LAMPES CONVENTIONNELLES UTILISÉES DANS LES AUTOMOBILES?",
+  "a1": "De 15 à 20 watts.",
+  "a2": "De 25 à 35 watts.",
+  "a3": "De 40 à 55 watts."
+ },
+ "3560": {
+  "q": "2571 LES PRÉTENSIONNEURS DE LA CEINTURE DE SÉCURITÉ SERVENT À...",
+  "a1": "réduire la tension de la ceinture pour une conduite commode, pourvu qu'ils ne portent pas une pince ou autre engin étranger.",
+  "a2": "ne pas casser le tissu de la ceinture.",
+  "a3": "ajuster le corps au siège."
+ },
+ "3561": {
+  "q": "2562 Quand faut-il régulariser au Gouvernement la carte jaune du véhicule ?",
+  "a1": "Dans n'importe quel cas où varient les données qui y figurent.",
+  "a2": "Seulement en cas de transfert du véhicule.",
+  "a3": "Jamais, une fois qu'elle a été correctement expédiée."
+ },
+ "3562": {
+  "q": "2561 Comment pouvons-nous faire usage du klaxon sur les voies urbaines ?",
+  "a1": "Chaque fois qu'il convient.",
+  "a2": "En le touchant brièvement et par intermittence à n'importe quel moment.",
+  "a3": "Brièvement en cas de danger de renversement ou collision."
+ },
+ "3563": {
+  "q": "2526 LA MISSION DE LA DIRECTION EST...",
+  "a1": "orienter les roues motrices.",
+  "a2": "démultiplier le tour du volant.",
+  "a3": "orienter les roues directrices."
+ },
+ "3564": {
+  "q": "2476 LA VALVE THERMOSTATIQUE S'OUVRE, QUAND LE LIQUIDE DU ...",
+  "a1": "radiateur est excessivement chaud.",
+  "a2": "radiateur est excessivement froid.",
+  "a3": "moteur se réchauffe à une température adéquate."
+ },
+ "3565": {
+  "q": "2519 SI LE MOTEUR DE DÉMARRAGE RESTE IMMOBILE EN ACTIONNANT L'INTERRUPTEUR DE DÉMARRAGE...",
+  "a1": "la courroie est cassée ou lâche.",
+  "a2": "le générateur est en panne.",
+  "a3": "la batterie est déchargée."
+ },
+ "3566": {
+  "q": "2598 Lequel des remèdes suivants ne devons-nous pas mettre en pratique quand nous sommes fatigués ?",
+  "a1": "Prendre des boissons alcooliques.",
+  "a2": "Prendre du café bien chargé.",
+  "a3": "Prendre des boissons sucrées."
+ },
+ "3567": {
+  "q": "2611 Quelles précautions prenons-nous avec les animaux sur la chaussée ?",
+  "a1": "Nous réduisons la vitesse et nous sommes prudents.",
+  "a2": "Aucune, parce qu'ils ne doivent pas l'occuper.",
+  "a3": "Nous tâchons de ne pas les renverser seulement avec la voiture."
+ },
+ "3568": {
+  "q": "2621 Concernant la marche arrière la loi établit, comment devons-nous la faire?",
+  "a1": "Nous devons faire la manœuvre très lentement et dans le minimum d'espace possible.",
+  "a2": "Toujours avec le feu de marche arrière allumé.",
+  "a3": "Comme norme générale il n'est pas permis de circuler en arrière."
+ },
+ "3569": {
+  "q": "2634 Le possesseur de la licence de conduire de la catégorie J peut-il conduire des véhicules hors de la Principauté d'Andorre?",
+  "a1": "Oui",
+  "a2": "Non",
+  "a3": "Pourvu que le rapport puissance / poids du véhicule ne dépasse pas les 0.073 Kw./Kgr."
+ },
+ "3570": {
+  "q": "2613 Est-ce la même chose changer le sens de la marche que changer de direction?",
+  "a1": "Non, ce sont deux concepts différents.",
+  "a2": "Oui, ce sont des termes synonymes.",
+  "a3": "Oui, quand le changement de direction est à gauche."
+ },
+ "3571": {
+  "q": "2596 Pouvons-nous mettre différents feux dans un même dispositif ?",
+  "a1": "Non, c'est interdit.",
+  "a2": "Oui, mais seulement à la partie postérieure.",
+  "a3": "Oui, s'ils accomplissent les prescriptions selon leur finalité."
+ },
+ "3572": {
+  "q": "2601 Est-il correct de dépasser dans un rétrécissement pour travaux ?",
+  "a1": "Non.",
+  "a2": "Oui.",
+  "a3": "Oui, quand le véhicule que nous dépassons va lentement et le passage aménagé permet la manœuvre."
+ },
+ "3573": {
+  "q": "2607 AVANT D'INITIER UN DÉPASSEMENT NOUS DEVONS AVERTIR DE NOTRE MANŒUVRE LES AUTRES VÉHICULES QUI CIRCULENT, TANT DEVANT QUE DERRIÈRE NOUS. COMMENT AVERTIRONS-NOUS CEUX QUI VONT DERRIÈRE?",
+  "a1": "Avec les indicateurs de direction de la droite.",
+  "a2": "Avec les feux de gabarit de la gauche.",
+  "a3": "Avec les indicateurs de direction de la gauche."
+ },
+ "3574": {
+  "q": "2606 Que ne devons-nous jamais faire pour économiser de l'essence ?",
+  "a1": "Couper le contact quand nous descendons un col de montagne ou descendre au point mort.",
+  "a2": "Monter les cols avec des vitesses courtes.",
+  "a3": "Monter les cols avec des vitesses longues."
+ },
+ "3575": {
+  "q": "2572 Quand un moteur est au ralenti il consomme du carburant, cette consommation moyenne est supérieure, au minimum, à 0.5 l/km.",
+  "a1": "Faux",
+  "a2": "Certain",
+  "a3": "Pour cela les nouveaux véhicules sont équipés avec le système Star-Stop"
+ },
+ "3576": {
+  "q": "2617 La marche d ́un véhicule peut se contenir :",
+  "a1": "Exclusivement avec les freins.",
+  "a2": "Avec les freins et le moteur.",
+  "a3": "En utilisant simultanément l'embrayage et les freins."
+ },
+ "3577": {
+  "q": "2608 Où il est interdit de s'arrêter il est aussi interdit ?",
+  "a1": "Stationner",
+  "a2": "Faire n'importe quelle manœuvre.",
+  "a3": "S'immobiliser."
+ },
+ "3578": {
+  "q": "2604 Dans une zone de voies de présélection quelle manœuvre ne peut-on pas réaliser?",
+  "a1": "Changer de voie.",
+  "a2": "Le stationnement.",
+  "a3": "L'immobilisation."
+ },
+ "3579": {
+  "q": "2573 Quand nous circulons de nuit par une voie à double sens, de quelle couleur voyons-nous les feux des véhicules qui circulent en sens contraire?.",
+  "a1": "Jaunes sélectif ou rouges.",
+  "a2": "Jaunes ou rouges.",
+  "a3": "Seulement rouges."
+ },
+ "3580": {
+  "q": "2614 Qu'interdit une raie continue jaune peinte sur le trottoir ou au bord de la chaussée ?",
+  "a1": "Seulement le stationnement.",
+  "a2": "Seulement l'arrêt.",
+  "a3": "L'arrêt et le stationnement."
+ },
+ "3581": {
+  "q": "2597 Lequel des remèdes que nous proposons peut être valide contre la diminution de la vigilance ?",
+  "a1": "Prendre une petite quantité d'alcool.",
+  "a2": "Arrêter la voiture et se promener quelques minutes.",
+  "a3": "Prendre du café avec un verre de cognac."
+ },
+ "3582": {
+  "q": "2602 Où devons-nous faire usage de la préférence de passage ou devons-nous la céder ?",
+  "a1": "Sur les routes nationales.",
+  "a2": "Sur tous les ponts.",
+  "a3": "Aux intersections et rétrécissements."
+ },
+ "3583": {
+  "q": "2628 Quelle chaussure devons-nous utiliser pour conduire ?",
+  "a1": "Une chaussure légère ou flexible pour contrôler notre action",
+  "a2": "N'importe laquelle, nous pouvons même aller déchaussés.",
+  "a3": "Des chaussures épaisses pour appuyer plus fort."
+ },
+ "3584": {
+  "q": "2625 Où devons-nous nous mettre quand nous arrivons à un passage à niveau fermé ?",
+  "a1": "À droite ou à gauche indifféremment.",
+  "a2": "En double file, toujours.",
+  "a3": "À droite, derrière le dernier qui est arrêté"
+ },
+ "3585": {
+  "q": "2599 Quels facteurs interviennent dans la distance de freinage ?",
+  "a1": "La charge, la vitesse et l'adhérence.",
+  "a2": "Seulement la charge et la vitesse.",
+  "a3": "La vitesse, l'adhérence, la charge et la force centrifuge."
+ },
+ "3586": {
+  "q": "2629 Que devons-nous faire en cas d'incendie ?",
+  "a1": "L'éteindre avec de l'eau ou avec un extincteur.",
+  "a2": "Tenter de l'éteindre avec un extincteur, et si nous n'en avons pas avec des couvertures ou de la terre.",
+  "a3": "Nous écarter parce qu'il y a un danger d'explosion."
+ },
+ "3587": {
+  "q": "2591 Un conducteur qui a mis l'indicateur de direction de gauche et tourne vers ce côté-là sans se préoccuper des autres véhicules qui circulent derrière, peut-il provoquer un accident?",
+  "a1": "Non, parce qu'il porte l'indicateur de direction bien.",
+  "a2": "Oui.",
+  "a3": "Oui, si celui de derrière est un véhicule rapide."
+ },
+ "3588": {
+  "q": "2610 Quels véhicules ont la préférence de passage ?",
+  "a1": "Ceux qui sont pressés et le manifestent.",
+  "a2": "Ceux qui circulent par rails, comme les trains et tramways.",
+  "a3": "Les véhicules des médecins quand ils font des visites à domicile."
+ },
+ "3589": {
+  "q": "2600 Nous devons aussi céder le passage devant le signal de \"cédez le passage\" mais,¿ savez-vous s'il y a quelque différence entre celui-ci et celui de stop ?",
+  "a1": "Devant le premier nous cédons le passage s'il le faut devant un stop nous nous arrêterons toujours.",
+  "a2": "Non, il n'y a aucune différence dans la signification, seulement dans la forme.",
+  "a3": "Ils s'utilisent indistinctement en faisant cas à leur signification."
+ },
+ "3590": {
+  "q": "2620 Quelle autre précaution devons-nous prendre avec le véhicule que nous dépassons ?",
+  "a1": "Nous devons laisser un mètre de séparation au minimum quand nous sommes à sa hauteur.",
+  "a2": "Nous ne devons pas lui couper le passage en revenant à droite brusquement.",
+  "a3": "Nous ne devons pas l ́ effrayer avec le klaxon."
+ },
+ "3591": {
+  "q": "2594 Quelle conduite est plus dangereuse ?",
+  "a1": "La diurne.",
+  "a2": "La nocturne.",
+  "a3": "La diurne est aussi dangereuse que la nocturne."
+ },
+ "3592": {
+  "q": "2626 Quand tu arrives au lieu d'un accident, qu'est-ce qui est le premier à faire?",
+  "a1": "Déconnecter la batterie du véhicule accidenté.",
+  "a2": "Transporter les blessés, aussitôt que nous pourrons, au centre hospitalier le plus proche.",
+  "a3": "Signaliser le lieu de l'accident ."
+ },
+ "3593": {
+  "q": "2632 Comment agissons-nous, si nous arrivons à un passage à niveau avec un signal de stop devant ?",
+  "a1": "Nous faisons usage des signaux acoustiques et nous passons.",
+  "a2": "Nous passons sans nous arrêter si la barrière est levée et il y a passage libre.",
+  "a3": "Nous nous arrêtons et nous regardons des deux côtés pour nous assurer que le train ne s'approche pas."
+ },
+ "3594": {
+  "q": "2609 Où pouvons-nous faire l'arrêt ?",
+  "a1": "Seulement au côté droit de la chaussée.",
+  "a2": "Là où le véhicule n'obstrue pas la circulation ni ne soit un risque pour les usagers de la voie.",
+  "a3": "Au côté droit ou gauche de la chaussée, indifféremment."
+ },
+ "3595": {
+  "q": "2574 Quel est le nom de la perturbation et le malaise que provoque une lumière très intense dans les organes visuels ?",
+  "a1": "Acte réflexe.",
+  "a2": "Réflexion pupillaire.",
+  "a3": "Éblouissement."
+ },
+ "3596": {
+  "q": "2595 Quand le vent peut-il être dangereux sur l'autoroute ?",
+  "a1": "Quand il souffle dans le sens où nous circulons.",
+  "a2": "Quand il souffle latéralement, surtout si nous sommes en train de dépasser.",
+  "a3": "Quand il souffle en sens contraire."
+ },
+ "3597": {
+  "q": "2623 Comment faisons-nous le dépassement sur les voies avec circulation saturée ou dense ?",
+  "a1": "Dans ce type de circulation il n'existe pas proprement le dépassement.",
+  "a2": "Par la droite ou la gauche, indifféremment.",
+  "a3": "Par n'importe quelle voie qui soit libre avec beaucoup de précaution et sans perturber la circulation des autres usagers."
+ },
+ "3598": {
+  "q": "2593 Qu'est-ce que la licence de conduire ?",
+  "a1": "Une autorisation pour conduire des petites motos.",
+  "a2": "Un permis réduit qu'on nous facilite quand on nous retire l'ordinaire par suspension.",
+  "a3": "Une autorisation pour conduire des cyclomoteurs."
+ },
+ "3599": {
+  "q": "2624 Qu'est-ce qu'un cyclomoteur ?",
+  "a1": "Une bicyclette avec un moteur accouplé de n'importe quelle puissance.",
+  "a2": "Une bicyclette avec un moteur qui ne fasse pas plus de 50 cc. et qui ne dépasse pas 45 Km/h..",
+  "a3": "Une petite moto qui ne dépasse pas 75 centimètres cubiques."
+ }
+}

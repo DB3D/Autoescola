@@ -1,0 +1,401 @@
+RANDOM SAMPLE OF 40 ENTRIES (seed 20260910)
+
+--- 1 ---
+Q  CAT: Està permès dipositar la mercaderia a la calçada, voral i zones de vianants?
+Q  FR : Est-il permis de déposer la marchandise sur la chaussée, l'accotement et les zones de piétons?
+A1 CAT: Si.
+A1 FR : Oui.
+A2 CAT: No.
+A2 FR : Non.
+A3 CAT: En la calçada no, però si en el voral.
+A3 FR : Sur la chaussée non, mais oui sur l'accotement.
+
+--- 2 ---
+Q  CAT: Quan estem especialment obligats a circular per la dreta?
+Q  FR : Quand sommes-nous spécialement obligés de circuler par la droite?
+A1 CAT: Quan la carretera no tingui prioritat.
+A1 FR : Quand la route n'a pas la priorité.
+A2 CAT: Quan la visibilitat sigui insuficient per la presència de corbes, canvis de rasant, etc.
+A2 FR : Quand la visibilité est insuffisante par la présence de courbes, changements de déclivité, etc.
+A3 CAT: Quan la part central de la calçada no estigui marcada.
+A3 FR : Quand la partie centrale de la chaussée n'est pas marquée.
+
+--- 3 ---
+Q  CAT: En una autopista, els ciclomotors i els vianants circularan per...
+Q  FR : Sur une autoroute, les cyclomoteurs et les piétons circuleront par...
+A1 CAT: Per el voral.
+A1 FR : Par l'accotement.
+A2 CAT: Per la calçada excepte els vianants que ho faràn pel voral.
+A2 FR : Par la chaussée excepté les piétons qui le feront par l'accotement.
+A3 CAT: Per cap lloc.
+A3 FR : Par nulle part.
+
+--- 4 ---
+Q  CAT: Que indica aquest senyal?
+Q  FR : Qu'indique ce signal?
+A1 CAT: La situació d’una estació d’inspecció tècnica de vehicles.
+A1 FR : La situation d'une station d'inspection technique de véhicules.
+A2 CAT: Que estem a l’alçada de l’institut de Televisió.
+A2 FR : Que nous sommes à la hauteur de l'institut de Télévision.
+A3 CAT: La situació d’una emissora de TV local.
+A3 FR : La situation d'une station émettrice de TV locale.
+
+--- 5 ---
+Q  CAT: 1550 Què significa aquest senyal?
+Q  FR : 1550 Que signifie ce signal?
+A1 CAT: Pas a nivell amb barreres.
+A1 FR : Passage à niveau avec barrières.
+A2 CAT: Estació de ferrocarril.
+A2 FR : Station de chemin de fer.
+A3 CAT: Pas a nivell sense barreres.
+A3 FR : Passage à niveau sans barrières.
+
+--- 6 ---
+Q  CAT: 1304 Quan circulant per una via de doble carril, ens acostem a una intersecció on el semàfor és vermell i hi ha una fletxa lateral verda indicant vers la dreta, però nosaltres no tenim intenció de girar a la dreta, què farem?
+Q  FR : 1304 Quand, circulant sur une voie à deux voies de circulation, nous nous approchons d'une intersection où le feu est rouge et il y a une flèche latérale verte indiquant vers la droite, mais nous n'avons pas l'intention de tourner à droite, que ferons-nous?
+A1 CAT: Esperar que els semàfors canviïn de color i llavors pensar bé el que anem a fer.
+A1 FR : Attendre que les feux changent de couleur et alors bien penser ce que nous allons faire.
+A2 CAT: Col·locar-nos forçosament al carril de la dreta i girar, ja que és l'única maniobra autoritzada.
+A2 FR : Nous placer forcément sur la voie de droite et tourner, puisque c'est l'unique manœuvre autorisée.
+A3 CAT: Col·locar-nos al carril de la nostra direcció i deixar lliure el de la dreta.
+A3 FR : Nous placer sur la voie de notre direction et laisser libre celle de droite.
+
+--- 7 ---
+Q  CAT: Quan es permet de fer marxa enrrere circulant per una autopista?
+Q  FR : Quand est-il permis de faire marche arrière en circulant sur une autoroute?
+A1 CAT: Quan no s'atansi cap vehicle en sentit contrari i avisem la maniobra amb la suficient antelació.
+A1 FR : Quand aucun véhicule ne s'approche en sens contraire et que nous avisons la manœuvre avec la suffisante anticipation.
+A2 CAT: En cap cas.
+A2 FR : En aucun cas.
+A3 CAT: Quan ens situem a l'altura de la mitjana.
+A3 FR : Quand nous nous situons à la hauteur du terre-plein central.
+
+--- 8 ---
+Q  CAT: Que significa aquest senyal?
+Q  FR : Que signifie ce signal?
+A1 CAT: Permesa la circulació paral.lela.
+A1 FR : Circulation parallèle permise.
+A2 CAT: Doble sentit de circulació.
+A2 FR : Double sens de circulation.
+A3 CAT: Direcciò doble obligatòria.
+A3 FR : Direction double obligatoire.
+
+--- 9 ---
+Q  CAT: Que indica aquest senyal?
+Q  FR : Qu'indique ce signal?
+A1 CAT: Encreuament normal.
+A1 FR : Croisement normal.
+A2 CAT: Carretera amb preferència de pas.
+A2 FR : Route avec préférence de passage.
+A3 CAT: Perill, encreuament senyalitzat.
+A3 FR : Danger, croisement signalisé.
+
+--- 10 ---
+Q  CAT: Amb el seu turisme circula per un carril que ha estat habilitat per a ser utilitzat en sentit contrari l'habitual, l'hi està permès desplaçar-se al destinat al sentit normal de circulació per a avançar?
+Q  FR : Avec votre voiture de tourisme vous circulez sur une voie qui a été habilitée pour être utilisée dans le sens contraire à l'habituel, vous est-il permis de vous déplacer sur celle destinée au sens normal de circulation pour dépasser?
+A1 CAT: No.
+A1 FR : Non.
+A2 CAT: Si.
+A2 FR : Oui.
+A3 CAT: xxxx
+A3 FR : xxxx
+
+--- 11 ---
+Q  CAT: A la vista del senyal que s’observa en el camió sap que te…
+Q  FR : À la vue du signal qu'on observe sur le camion vous savez qu'il a…
+A1 CAT: Un Pes Màxim Autoritzat superior a 3500kgs.
+A1 FR : Un Poids Maximal Autorisé supérieur à 3500kgs.
+A2 CAT: Una amplada superior a 2,50 metres.
+A2 FR : Une largeur supérieure à 2,50 mètres.
+A3 CAT: Una llargada superior a 12 metres.
+A3 FR : Une longueur supérieure à 12 mètres.
+
+--- 12 ---
+Q  CAT: Que significa aquest senyal?
+Q  FR : Que signifie ce signal?
+A1 CAT: Parada a la intersecciò.
+A1 FR : Arrêt à l'intersection.
+A2 CAT: Cedir el pas sense arribar a aturar-nos.
+A2 FR : Céder le passage sans arriver à nous arrêter.
+A3 CAT: STOP: Sobretot Tingui Observaciò de Parar-se.
+A3 FR : STOP: Surtout Tenez l'Observation de la Pause.
+
+--- 13 ---
+Q  CAT: 1971 Què indica aquest senyal?
+Q  FR : 1971 Qu'indique ce signal?
+A1 CAT: Que l'estacionament està autoritzat a dreta i a esquerra del senyal.
+A1 FR : Que le stationnement est autorisé à droite et à gauche du signal.
+A2 CAT: Que està prohibit el gir a la dreta i a l'esquerra des del senyal.
+A2 FR : Qu'il est interdit de tourner à droite et à gauche depuis le signal.
+A3 CAT: Que l'estacionament està prohibit a dreta i a esquerra del senyal
+A3 FR : Que le stationnement est interdit à droite et à gauche du signal
+
+--- 14 ---
+Q  CAT: 1559 Els senyals quadrats són tots:
+Q  FR : 1559 Les signaux carrés sont tous:
+A1 CAT: D'obligació.
+A1 FR : D'obligation.
+A2 CAT: De prohibició.
+A2 FR : D'interdiction.
+A3 CAT: D'indicació.
+A3 FR : D'indication.
+
+--- 15 ---
+Q  CAT: Aquest senyal indica que...
+Q  FR : Ce signal indique que...
+A1 CAT: En el quilòmetre 12, pot accedir a la carretera general 1.
+A1 FR : Au kilomètre 12, vous pouvez accéder à la route générale 1.
+A2 CAT: La carretera general 1 té una llargada de 12 km.
+A2 FR : La route générale 1 a une longueur de 12 km.
+A3 CAT: És troba en el quilòmetre 12 de la carretera general 1.
+A3 FR : Vous vous trouvez au kilomètre 12 de la route générale 1.
+
+--- 16 ---
+Q  CAT: 3874 Si un quadricicle lleuger té cinturons de seguretat, és obligatori posar-se el casc?
+Q  FR : 3874 Si un quadricycle léger a des ceintures de sécurité, est-il obligatoire de mettre le casque?
+A1 CAT: Sí, però únicament en vies urbanes.
+A1 FR : Oui, mais uniquement sur les voies urbaines.
+A2 CAT: No.
+A2 FR : Non.
+A3 CAT: Sí, però únicament fora de poblat.
+A3 FR : Oui, mais uniquement hors agglomération.
+
+--- 17 ---
+Q  CAT: Quan un semàfor canvii de verd a groc, és difícil decidir si accelerem o frenem, perquè cal tenir en comte:
+Q  FR : Quand un feu de signalisation change de vert à jaune, il est difficile de décider si nous accélérons ou freinons, parce qu'il faut tenir compte:
+A1 CAT: No hi ha elecció, obligatòriament hem de parar.
+A1 FR : Il n'y a pas de choix, obligatoirement nous devons nous arrêter.
+A2 CAT: La velocitat a la qual circulem, la distància a la qual ens trobem de la intersecció i la presència d'altres vehicles.
+A2 FR : La vitesse à laquelle nous circulons, la distance à laquelle nous nous trouvons de l'intersection et la présence d'autres véhicules.
+A3 CAT: Sempre hem d'accelerar a fons per tenir temps de passar abans que es posi el semàfor vermell.
+A3 FR : Nous devons toujours accélérer à fond pour avoir le temps de passer avant que le feu de signalisation se mette au rouge.
+
+--- 18 ---
+Q  CAT: Que significa aquest senyal?
+Q  FR : Que signifie ce signal?
+A1 CAT: Perill en general
+A1 FR : Danger en général
+A2 CAT: Fi de prioritat de pas
+A2 FR : Fin de priorité de passage
+A3 CAT: Fi de perill indefinit
+A3 FR : Fin de danger indéfini
+
+--- 19 ---
+Q  CAT: Quan podrem estacionar a l'esquerre d'una via?
+Q  FR : Quand pourrons-nous stationner à gauche d'une voie?
+A1 CAT: En una via interurbana de doble sentit.
+A1 FR : Sur une voie interurbaine à double sens.
+A2 CAT: En una via urbana de doble sentit.
+A2 FR : Sur une voie urbaine à double sens.
+A3 CAT: En una via urbana d'un sol sentit.
+A3 FR : Sur une voie urbaine à sens unique.
+
+--- 20 ---
+Q  CAT: El ventilador té com objecte..
+Q  FR : Le ventilateur a comme objet..
+A1 CAT: Activar el corrent de la bomba d'aigua.
+A1 FR : Activer le courant de la pompe à eau.
+A2 CAT: Enviar aire del motor al radiador.
+A2 FR : Envoyer de l'air du moteur au radiateur.
+A3 CAT: Forçar un corrent d'aire a través del radiador.
+A3 FR : Forcer un courant d'air à travers le radiateur.
+
+--- 21 ---
+Q  CAT: Per a qui és obligatori el senyal de gàlib?
+Q  FR : Pour qui le signal de gabarit est-il obligatoire?
+A1 CAT: Per als vehicles d'amplada 1,50 metres o de longitud igual o superior a 5 metres.
+A1 FR : Pour les véhicules de largeur 1,50 mètres ou de longueur égale ou supérieure à 5 mètres.
+A2 CAT: Per als vehicles d'amplada 2,10 metres i/o longitud igual o superior a 6 metres.
+A2 FR : Pour les véhicules de largeur 2,10 mètres et/ou longueur égale ou supérieure à 6 mètres.
+A3 CAT: Per a tots.
+A3 FR : Pour tous.
+
+--- 22 ---
+Q  CAT: 1346 Si en efectuar un avançament, després de fer totes les comprovacions obligatòries, sorgeix una dificultat imprevisible abans d'acabar la maniobra, què hem de fer?
+Q  FR : 1346 Si en effectuant un dépassement, après avoir fait toutes les vérifications obligatoires, surgit une difficulté imprévisible avant de finir la manœuvre, que devons-nous faire?
+A1 CAT: Continuar i acabar la maniobra si la dificultat s'ha produït per causes alienes.
+A1 FR : Continuer et finir la manœuvre si la difficulté s'est produite pour des causes étrangères.
+A2 CAT: Augmentar la velocitat per tal d'acabar abans la maniobra.
+A2 FR : Augmenter la vitesse afin de finir avant la manœuvre.
+A3 CAT: Disminuir la velocitat i tornar al costat dret.
+A3 FR : Diminuer la vitesse et revenir du côté droit.
+
+--- 23 ---
+Q  CAT: 2614 Què prohibeix una ratlla continua groga pintada a la vorera o al costat de la calçada ?
+Q  FR : 2614 Qu'interdit une raie continue jaune peinte sur le trottoir ou au bord de la chaussée ?
+A1 CAT: Només l'estacionament.
+A1 FR : Seulement le stationnement.
+A2 CAT: Només la parada.
+A2 FR : Seulement l'arrêt.
+A3 CAT: La parada i l'estacionament.
+A3 FR : L'arrêt et le stationnement.
+
+--- 24 ---
+Q  CAT: Qui ha de passar primer pel pas provisional?
+Q  FR : Qui doit passer en premier par le passage provisoire?
+A1 CAT: El turisme vermell.
+A1 FR : La voiture de tourisme rouge.
+A2 CAT: El que trobi l'obstacle de cara.
+A2 FR : Celui qui trouve l'obstacle de face.
+A3 CAT: El turisme blau.
+A3 FR : La voiture de tourisme bleue.
+
+--- 25 ---
+Q  CAT: 3933 Què indiquen els llums blancs posteriors del vehicle?
+Q  FR : 3933 Qu’indiquent les feux blancs postérieurs du véhicule?
+A1 CAT: Que està aturat en doble fila.
+A1 FR : Qu’il est arrêté en double file.
+A2 CAT: Que està efectuant la maniobra de marxa enrere.
+A2 FR : Qu’il est en train d’effectuer la manœuvre de marche arrière.
+A3 CAT: Que està avariat.
+A3 FR : Qu’il est en panne.
+
+--- 26 ---
+Q  CAT: 3728 Si es donen les condicions de seguretat precises i vol avançar a un ciclista en aquesta via, o un vehicle VMP quina separació lateral ha de deixar?
+Q  FR : 3728 Si les conditions de sécurité requises sont réunies et que vous voulez dépasser un cycliste sur cette voie, ou un véhicule VMP, quelle séparation latérale devez-vous laisser?
+A1 CAT: Igual o superior a 1.5 metres per a un ciclista i 1 metre per a un vehicle VMP.
+A1 FR : Égale ou supérieure à 1.5 mètres pour un cycliste et 1 mètre pour un véhicule VMP.
+A2 CAT: Igual o superior a 1,50 metres.
+A2 FR : Égale ou supérieure à 1,50 mètres.
+A3 CAT: Almenys 1 metre.
+A3 FR : Au moins 1 mètre.
+
+--- 27 ---
+Q  CAT: 4286 Quan està permès estacionar en un túnel?
+Q  FR : 4286 Quand est-il permis de stationner dans un tunnel?
+A1 CAT: Mai.
+A1 FR : Jamais.
+A2 CAT: Quan la calçada té dos carrils de circulació per a cada sentit.
+A2 FR : Quand la chaussée a deux voies de circulation pour chaque sens.
+A3 CAT: Quan el túnel està suficientment il•luminat.
+A3 FR : Quand le tunnel est suffisamment éclairé.
+
+--- 28 ---
+Q  CAT: Que significa aquest senyal?
+Q  FR : Que signifie ce signal?
+A1 CAT: Limitació de pes total.
+A1 FR : Limitation de poids total.
+A2 CAT: Pes limitat per eix.
+A2 FR : Poids limité par essieu.
+A3 CAT: Entrada prohibida a vehicles de remolc, que no sigui un semiremolc o un remolc d'un sol eix.
+A3 FR : Entrée interdite aux véhicules avec remorque, qui ne soit pas une semi-remorque ou une remorque à un seul essieu.
+
+--- 29 ---
+Q  CAT: 2657 Per què hi ha els senyals a les vies públiques ?
+Q  FR : 2657 Pourquoi y a-t-il les signaux sur les voies publiques ?
+A1 CAT: Per a l'ornamentació de carrers i carreteres.
+A1 FR : Pour l'ornementation de rues et routes.
+A2 CAT: Com a punts de referència del conductor.
+A2 FR : Comme points de référence du conducteur.
+A3 CAT: Per la seguretat, comoditat i fluïdesa de la circulació.
+A3 FR : Pour la sécurité, commodité et fluidité de la circulation.
+
+--- 30 ---
+Q  CAT: En un tram pla d'una via amb doble sentit, amb motiu d'un obstacle o obra, sols hi ha espai per passar un sol vehicle. En cas de trobar-se dos vehicles en sentit contrari, te la preferència de pas?
+Q  FR : Sur un tronçon plat d'une voie à double sens, en raison d'un obstacle ou de travaux, il n'y a de l'espace que pour le passage d'un seul véhicule. Au cas où deux véhicules se trouvent en sens contraire, qui a la préférence de passage?
+A1 CAT: El vehicle més gran sobre el més petit.
+A1 FR : Le véhicule le plus grand sur le plus petit.
+A2 CAT: Aquell que troba l'obstacle a la seva esquerra.
+A2 FR : Celui qui trouve l'obstacle à sa gauche.
+A3 CAT: Aquell que troba l'obstacle a la seva dreta.
+A3 FR : Celui qui trouve l'obstacle à sa droite.
+
+--- 31 ---
+Q  CAT: 1042 QUIN SENYAL HA D'UTILITZAR-SE ABANS DE PARAR EL NOSTRE VEHICLE A LA DRETA?
+Q  FR : 1042 QUEL SIGNAL DOIT-ON UTILISER AVANT D'ARRÊTER NOTRE VÉHICULE À DROITE?
+A1 CAT: Cap.
+A1 FR : Aucun.
+A2 CAT: Encendre l'indicador de direcció de la dreta.
+A2 FR : Allumer l'indicateur de direction de droite.
+A3 CAT: Encendre els llums vermells o taronges de frenada.
+A3 FR : Allumer les feux rouges ou orange de freinage.
+
+--- 32 ---
+Q  CAT: Quan estem especialment obligats a circular per la dreta?
+Q  FR : Quand sommes-nous spécialement obligés de circuler à droite?
+A1 CAT: Quan la carretera no tingui prioritat
+A1 FR : Quand la route n'a pas la priorité
+A2 CAT: Quan la visibilitat sigui insuficient, en corbes, canvis de rasant, etc.
+A2 FR : Quand la visibilité est insuffisante, dans les courbes, changements de déclivité, etc.
+A3 CAT: Quan la part central de la calçada no estigui marcada.
+A3 FR : Quand la partie centrale de la chaussée n'est pas marquée.
+
+--- 33 ---
+Q  CAT: Aquest senyal indica :
+Q  FR : Ce signal indique :
+A1 CAT: Aparcament permés en doble fila.
+A1 FR : Stationnement permis en double file.
+A2 CAT: Prohibiciò de circular en doble fila.
+A2 FR : Interdiction de circuler en double file.
+A3 CAT: Circulaciò paral.lela.
+A3 FR : Circulation parallèle.
+
+--- 34 ---
+Q  CAT: 1738 Quan estem distrets, fatigats o hem begut massa alcohol, que passa amb el temps de reacció?
+Q  FR : 1738 Quand nous sommes distraits, fatigués ou avons bu trop d'alcool, qu'arrive-t-il au temps de réaction?
+A1 CAT: Augmenta.
+A1 FR : Il augmente.
+A2 CAT: Disminueix.
+A2 FR : Il diminue.
+A3 CAT: Es el mateix.
+A3 FR : C'est le même.
+
+--- 35 ---
+Q  CAT: Que indica aquest senyal?
+Q  FR : Qu'indique ce signal?
+A1 CAT: La situació d'una estació d'inspecció tècnica de vehicles.
+A1 FR : La situation d'une station d'inspection technique de véhicules.
+A2 CAT: Que estem a l'alçada de l'institut de televisió.
+A2 FR : Que nous sommes à la hauteur de l'institut de télévision.
+A3 CAT: La situació d'una emissora de TV local.
+A3 FR : La situation d'une station émettrice de TV locale.
+
+--- 36 ---
+Q  CAT: 2557 Quan diem que una autopista és de peatge ?
+Q  FR : 2557 Quand disons-nous qu'une autoroute est à péage ?
+A1 CAT: Quan l'autopista és d'una societat privada.
+A1 FR : Quand l'autoroute est d'une société privée.
+A2 CAT: Quan tenen carrils d'acceleració.
+A2 FR : Quand elles ont des voies d'accélération.
+A3 CAT: Quan hem de pagar uns drets per utilitzar-la
+A3 FR : Quand nous devons payer des droits pour l'utiliser
+
+--- 37 ---
+Q  CAT: Els medicaments que prenem amb alcohol?
+Q  FR : Les médicaments que nous prenons avec de l'alcool?
+A1 CAT: Poden ser una barreja perillosa.
+A1 FR : Ils peuvent être un mélange dangereux.
+A2 CAT: Atenuen els efectes de l'alcohol.
+A2 FR : Ils atténuent les effets de l'alcool.
+A3 CAT: Son sedants i estimulants segons la nostra necessitat.
+A3 FR : Ils sont sédatifs et stimulants selon notre nécessité.
+
+--- 38 ---
+Q  CAT: Que indica aquest senyal?
+Q  FR : Qu'indique ce signal?
+A1 CAT: El vehicle que ens precedeix té una llargada inferior a 12m.
+A1 FR : Le véhicule qui nous précède a une longueur inférieure à 12m.
+A2 CAT: El vehicle que ens precedeix te una llargada superior a 12m.
+A2 FR : Le véhicule qui nous précède a une longueur supérieure à 12m.
+A3 CAT: Que el vehicle que ens precedeix transporta matèries peribles.
+A3 FR : Que le véhicule qui nous précède transporte des matières périssables.
+
+--- 39 ---
+Q  CAT: 3309 En cas d’accident, sigui de danys materials o de danys corporals, els conductors de turismes han d’utilitzar l’armilla reflectora d’alta visibilitat...
+Q  FR : 3309 En cas d’accident, que ce soit de dommages matériels ou de dommages corporels, les conducteurs de voitures de tourisme doivent utiliser le gilet réfléchissant de haute visibilité...
+A1 CAT: només quan ocupin la calçada.
+A1 FR : seulement quand ils occupent la chaussée.
+A2 CAT: només quan ocupin el voral.
+A2 FR : seulement quand ils occupent l’accotement.
+A3 CAT: quan surtin del vehicle i ocupin la calçada o el voral, en tot tipus de vies.
+A3 FR : quand ils sortent du véhicule et occupent la chaussée ou l’accotement, sur tout type de voies.
+
+--- 40 ---
+Q  CAT: Que significa aquest senyal?
+Q  FR : Que signifie ce signal?
+A1 CAT: Limitaciò de pés total.
+A1 FR : Limitation de poids total.
+A2 CAT: Pés limitat per eix.
+A2 FR : Poids limité par essieu.
+A3 CAT: Entrada prohibida a vehicles de remolc, que no sigui un semiremolc o un remolc d'un sol eix.
+A3 FR : Entrée interdite aux véhicules à remorque, autre qu'une semi-remorque ou une remorque à un seul essieu.

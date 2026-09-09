@@ -1,0 +1,602 @@
+{
+ "3600": {
+  "q": "2631 Es pot fumar conduint ? .",
+  "a1": "No està prohibit, però és aconsellable no fumar.",
+  "a2": "No, solament està prohibit de nit.",
+  "a3": "Està prohibit de dia"
+ },
+ "3601": {
+  "q": "2622 Per quin costat és fan els avançaments ?",
+  "a1": "Com a norma general, per l'esquerra.",
+  "a2": "Pel carril que estigui lliure a la dreta o a l'esquerra indiferentment.",
+  "a3": "Pel carril del centre si està lliure."
+ },
+ "3602": {
+  "q": "2616 És convenient aproximar-nos al vehicle que volem avançar ?",
+  "a1": "No, perquè disminueix l'angle de visió si el vehicle que avancem és voluminós.",
+  "a2": "Si perquè avançarem amb més rapidesa..",
+  "a3": "Sí, perquè així la maniobra serà més curta."
+ },
+ "3603": {
+  "q": "2627 Què hem de fer amb els vehicles accidentats ?",
+  "a1": "Retirar-los tan aviat com puguem.",
+  "a2": "Intentar posar-los sobre les rodes si han bolcat.",
+  "a3": "Treure el contacte i si podem, desconnectar la bateria."
+ },
+ "3604": {
+  "q": "2619 Quina altra precaució prenem quan fem marxa enrrere ?",
+  "a1": "Aturarem el vehicle, si hi ha perill d'atropellament o col·lisió.",
+  "a2": "Allarguem el braç amb el palmell de la mà cap endavant.",
+  "a3": "La fem ràpidament, en el mínim espai possible"
+ },
+ "3605": {
+  "q": "2603 Com a norma general hem de cedir el pas ...",
+  "a1": "Als vehicles més ràpids.",
+  "a2": "Als vehicles que surten per la dreta.",
+  "a3": "Només quan veiem el senyal respectiu a la nostra via."
+ },
+ "3606": {
+  "q": "2718 Quan l’autoria de la infracció recau en un menor de divuit anys responen de la multa imposada, solidàriament amb ell i per aquest ordre, els pares, els tutors, els acollidors o els guardadors legals o de fet.",
+  "a1": "Falç",
+  "a2": "Cert",
+  "a3": "Excepte si disposa de la Llicencia de Conduccio de Categoria J."
+ },
+ "3607": {
+  "q": "2655 Influeix arrossegar un remolc o caravana en el consum ?",
+  "a1": "No.",
+  "a2": "No, sempre que les rodes del remolc tinguin la pressio correcta, en cada cas.",
+  "a3": "Si."
+ },
+ "3608": {
+  "q": "2650 Quina precaució tindrem amb la presència de vehicles pesats ?",
+  "a1": "Necessiten més espai per fer les maniobres i de vegades van a l'esquerra abans de girar a la dreta.",
+  "a2": "Fan malbé les vies públiques i tenen l'obligació de reparar-les.",
+  "a3": "Quan arribem a un estretall sempre tenen preferència de pas."
+ },
+ "3609": {
+  "q": "2701 Observeu que el vehicle que us precedeix porta a la part posterior 2 catadiòptrics vermells de forma triangular, què indiquen?",
+  "a1": "Que es tracta d'un remolc o un semiremolc.",
+  "a2": "Que sobrepassa els 12 metres de longitud.",
+  "a3": "Que està autoritzat a sobrepassar pesos i dimensions."
+ },
+ "3610": {
+  "q": "2656 Podem quedar-nos als carrils de l'esquerra després d'avançar ?",
+  "a1": "Només si volem tornar a avançar i no destorbem la marxa dels altres vehicles més ràpids.",
+  "a2": "No mai.",
+  "a3": "Sí, sempre que hi hagi 3 o més carrils."
+ },
+ "3611": {
+  "q": "2658 Quins factors influeixen en l'home com a causa d'accidents ?",
+  "a1": "Exclusivament el seu estat físic .",
+  "a2": "El seu estat fisic i psiquic.",
+  "a3": "L'alcohol si el pren en petites quantitats."
+ },
+ "3612": {
+  "q": "2685 Com tornarem el volant a la seva posició original desprès de fer un revolt ?",
+  "a1": "Al deixarem que torni sol a la seva posició.",
+  "a2": "El tornarem la posició adequada amb una ma.",
+  "a3": "Aguantarem el retrocés per tornar a la posició normal, subjectant el volant el necessari per a què no giri bojament i puguem perdre el control de la direcció."
+ },
+ "3613": {
+  "q": "2683 El permis de conduir de la categoria J, atenen el seu caracter formatiu,té una vigencia maxima de ...",
+  "a1": "1 any.",
+  "a2": "2 anys.",
+  "a3": "3 anys."
+ },
+ "3614": {
+  "q": "2635 Per poder conduir amb la llicencia J he de tindre una edat superior a 16 anys i inferior a 18.",
+  "a1": "Superior a 14 anys inferior a 16 anys.",
+  "a2": "Superior a 14 anys inferior a 18 anys.",
+  "a3": "L'afirmació es correcta."
+ },
+ "3615": {
+  "q": "2670 A quin grup pertany aquest senyal?",
+  "a1": "Al dels senyals informatius",
+  "a2": "Al dels senyals perceptius d'obligació",
+  "a3": "Al dels senyals de perill"
+ },
+ "3616": {
+  "q": "2660 Com avancem a les vies de 3 carrils en dos sentits de circulació?",
+  "a1": "Sempre pel carril central, si no l'ocupa un altre vehicle que avança en sentit contrari.",
+  "a2": "Sempre pel carril central.",
+  "a3": "Pel carril de l'esquerra."
+ },
+ "3617": {
+  "q": "2664 En el cas de trobar un vehicle amb aquest senyal a cada extrem de la seva part posterior, podem dir que es tracta d'un vehicle de transport de passatger?",
+  "a1": "No",
+  "a2": "Sempre",
+  "a3": "Si, sempre i quant sigui arrastrat per un altre vehicle de transport de passatgers"
+ },
+ "3618": {
+  "q": "2671 Si volem girar a l'esquerra, en una via de sentit únic, hem de:",
+  "a1": "Observar el retrovisor, posar l'indicador de direcció esquerre i col·locar-nos al centre de la calçada, sense envair la part contrària, ni trepitjar la línia contínua.",
+  "a2": "Cedir el pas als que vinguin de cara.",
+  "a3": "Observar el retrovisor, posar l'indicador de direcció esquerre i col·locar-nos a la part esquerra de la calçada."
+ },
+ "3619": {
+  "q": "2681 Aquest senyal, situat a la part posterior d'un vehicle ens indica que transporta matèries ...",
+  "a1": "Inflamables o perilloses.",
+  "a2": "Explosives",
+  "a3": "Tòxiques"
+ },
+ "3620": {
+  "q": "2698 L'AIRE QUE ES COLA PER SOTA DE L'AUTOMÒBIL TÉ UN EFECTE DE...",
+  "a1": "augment de la resistència de l'aire.",
+  "a2": "llast.",
+  "a3": "elevació."
+ },
+ "3621": {
+  "q": "2678 Podeu conduir a l 'estranger amb un permís andorrà ?",
+  "a1": "Sí, en alguns paisos a d'anar acompanyat d'un un permis internacional lliurat pel ACA.",
+  "a2": "Sí.",
+  "a3": "No es pot."
+ },
+ "3622": {
+  "q": "2668 En passos estrets per obra o per accidents, hem de tenir en conta...",
+  "a1": "Que els vehicles d'obra i d'emergència , no estan obligats a complir les normes de circulació en realitzar aquestes obres o emergències",
+  "a2": "Deixar els senyals de abalissament, sempre a la nostra dreta.",
+  "a3": "Tindre cura de trepitjar els senyals d'abalisament , i aturar-nos i moure'ls si els hem de xafar , a causa del volum del nostre vehicle"
+ },
+ "3623": {
+  "q": "2708 Perquè és fonamental moure poc a un ferit en un accident ?",
+  "a1": "Per tal que els agents puguin determinar millor les causes del accident i les responsabilitats que se'n derivin.",
+  "a2": "Per evitar sofriments i l'agreujament de possibles lesions ocultes.",
+  "a3": "Per tal que els agents puguin determinar millor les causes de l'accident i les responsabilitats que se'n derivin."
+ },
+ "3624": {
+  "q": "2686 El vehicle que us precedeix porta a la part posterior 2 catadiòptrics vermells de forma triangular, què indiquen?",
+  "a1": "Que es tracta d'un remolc o un semiremolc.",
+  "a2": "Que sobrepassa els 12 metres de longitud.",
+  "a3": "Que està autoritzat a sobrepassar-se en pesos i dimensions."
+ },
+ "3625": {
+  "q": "2667 QUÈ S'ACONSEGUEIX AMB ELS FALDONS LATERALS?",
+  "a1": "Fixar més l'automòbil al paviment.",
+  "a2": "Que no penetri l'aigua i el fang pels costats.",
+  "a3": "No s'aconsegueix cap efecte, només estètica."
+ },
+ "3626": {
+  "q": "2705 EL GRUP DIFERENCIAL, ES LUBRIFICA ...",
+  "a1": "Amb valvolina o oli d'alta densitat.",
+  "a2": "Amb oli molt poc dens.",
+  "a3": "Amb el mateix oli del carter."
+ },
+ "3627": {
+  "q": "2687 Quins miralls retrovisors són obligatoris?",
+  "a1": "Només l'interior.",
+  "a2": "Els dos exteriors, poden substituir el dret per l'interior.",
+  "a3": "L'interior i l'exterior esquerre."
+ },
+ "3628": {
+  "q": "2716 Les infraccions derivades de l’incompliment de les normes establertes i les sancions aplicables, en la regulacio del transit, la circulació de vehicles i vianants i la seguretat vial o regula:",
+  "a1": "El reglament del regim sancionador del Codi de la Circulació",
+  "a2": "El reglament del Codi de la Circulació",
+  "a3": "El reglament del regim sancionador del Codi de la Circulació"
+ },
+ "3629": {
+  "q": "2651 Quina precaució especial hem de prendre per incorporar-nos a l'autopista ?",
+  "a1": "Mirar el trànsit de l'autopista pel mirall retrovisor exterior de l'esquerra.",
+  "a2": "Posar l'intermitent de la dreta per indicar que cedim el pas.",
+  "a3": "Fer senyals amb el braç esquerre perquè no ens avanci cap vehicle"
+ },
+ "3630": {
+  "q": "2682 En quin altre cas poden perdre eficàcia els frens ?",
+  "a1": "Quan les sabates són noves i encara no estan ben ajustades.",
+  "a2": "Quant el motor esta fred.",
+  "a3": "Quan fa molta calor i s'assequen les sabates o les pastilles dels frens de disc."
+ },
+ "3631": {
+  "q": "2700 A un ferit inconscient no traumàtic se l'ha de col·locar ...",
+  "a1": "Assegut",
+  "a2": "En posició de defensa o de seguretat",
+  "a3": "De panxa enlaire, amb precaució de no flexionar el coll"
+ },
+ "3632": {
+  "q": "2666 Podem trobar aquest senyal en un vehicle de transport públic de passatgers?",
+  "a1": "Si",
+  "a2": "No",
+  "a3": "Es obligatori"
+ },
+ "3633": {
+  "q": "2669 Quan podem dir que no complim amb l ́obligació de cedir el pas ?",
+  "a1": "Quan el vehicle que s ́aproxima és a menys de 200 m.",
+  "a2": "Quan el vehicle que s ́aproxima és a més de 200 metres.",
+  "a3": "Quan obliguem un conductor a modificar bruscament la direcció o la velocitat."
+ },
+ "3634": {
+  "q": "2688 El turisme pretén avançar al camió. Pot fer-ho?",
+  "a1": "Pot avançar si trepitja la ralla solament amb dues rodes.",
+  "a2": "No pot avançar si per a això li cal trepitjar les línies pintades en la calçada.",
+  "a3": "Si, sempre que deixi un separacio minima de seguretat amb el camió."
+ },
+ "3635": {
+  "q": "2657 Per què hi ha els senyals a les vies públiques ?",
+  "a1": "Per a l'ornamentació de carrers i carreteres.",
+  "a2": "Com a punts de referència del conductor.",
+  "a3": "Per la seguretat, comoditat i fluïdesa de la circulació."
+ },
+ "3636": {
+  "q": "2644 Els titulars del permis de categoria J poden ser requerits pel departament competent per tal d'efectuar les proves de la conducció i els coneixements de circulació que s'assenyalin, sense que aquestes proves puguin ser més de tres durant el perío",
+  "a1": "Si, pero sols una vegada.",
+  "a2": "Si, pero el maxim es cinc vegades.",
+  "a3": "Si"
+ },
+ "3637": {
+  "q": "2691 Podem utilitzar falques per immobilitzar el vehicle ?",
+  "a1": "Sí, si aquesta és la seva funció i les retirem al iniciar la marxa.",
+  "a2": "Si , encara que siguin pedres, si després les retirem.",
+  "a3": "No, està prohibit."
+ },
+ "3638": {
+  "q": "2699 Què significa aquest senyal?.",
+  "a1": "Posició d'una desviació o d'un estrenyiment temporal.",
+  "a2": "Pas a nivell amb barreres.",
+  "a3": "Direcció per corba."
+ },
+ "3639": {
+  "q": "2659 Esta permès dipositar la mercaderia a la calçada, voral i zones de vianants?",
+  "a1": "Si , a la vorada",
+  "a2": "No",
+  "a3": "En la calçada no, però si en el voral"
+ },
+ "3640": {
+  "q": "2717 Quan no resulta possible identificar el conductor del vehicle que ha comès la infracció, la multa recau en el titular del vehicle, sigui persona física o jurídica, tret que concorri",
+  "a1": "que el vehicle hagi estat arrendat",
+  "a2": "que el vehicle hagi estat desat",
+  "a3": "causa de força major i s'estableixi que la infracció ha estat comesa amb un vehicle robat o el titular faciliti les dades necessàries per poder identificar de forma veraç l'autor de la infracció."
+ },
+ "3641": {
+  "q": "2690 En quin altre cas poden perdre eficàcia els frens ?",
+  "a1": "Quan les sabates són noves i encara no estan ben ajustades.",
+  "a2": "Després de rentar el vehicle o passar per una bassa d'aigua.",
+  "a3": "Quan fa molta calor i s'assequen les sabates o les pastilles dels frens de disc."
+ },
+ "3642": {
+  "q": "2645 No s'autoritza l'acompanyament d'un conductor amb el permis J, a aquelles persones que hagin estat condemnades per un tribunal a la retirada del permis de conduir en més d'una ocasió en els...",
+  "a1": "2 darrers anys, abans de la data de la sol·licitud.",
+  "a2": "4 darrers anys, abans de la data de la sol·licitud.",
+  "a3": "6 darrers anys, abans de la data de la sol·licitud."
+ },
+ "3643": {
+  "q": "2648 Hi ha vehicles que disposen sempre de preferència de pas?",
+  "a1": "No, només les ambulàncies, quan porten un ferit greu.",
+  "a2": "Les ambulàncies, la policia i els bombers sempre que circulin per la via públiques.",
+  "a3": "Les ambulàncies, l'extinció d'incendis i la policia quan s'anuncien amb els senyals òptics i acústics."
+ },
+ "3644": {
+  "q": "2676 És obligatori permetre l'avançament a un altre vehicle que ens demana pas ?",
+  "a1": "És obligatori si es tracte d'un vehicle d'urgències",
+  "a2": "És obligatori, permetre l'avançament a qualsevol vehicle sempre que no hi hagi cap obstacle que ho impedeixi.",
+  "a3": "No."
+ },
+ "3645": {
+  "q": "2649 Quines característiques tenen tant les bicicletes com els Vehicles de mobilitat personal (VMP) ?",
+  "a1": "Són més lleugers que els altres i quan fa bo són recomanables.",
+  "a2": "Són inestables, fràgils i no tant visibles com altres vehicles.",
+  "a3": "Són econòmics i s'haurien de fer servir més."
+ },
+ "3646": {
+  "q": "2729 Els agents encarregats de la vigilància i la disciplina del trànsit, a més d’imposar les sancions monetàries previstes en aquesta Llei, i sense perjudici de la responsabilitat penal que sigui exigible en cada cas, poden ordenar la immobilitzaci",
+  "a1": "Si",
+  "a2": "Si, sempre que s'acordi la prohibició de circular.",
+  "a3": "Si. quant sols la revisio ITV estigui caducada."
+ },
+ "3647": {
+  "q": "3013 L’alcohol s’elimina...",
+  "a1": "més lentament mentre es dorm.",
+  "a2": "més ràpid mentre es dorm.",
+  "a3": "a la mateixa velocitat dormit o despert."
+ },
+ "3648": {
+  "q": "3002 Circulant amb pluja intensa, és obligatori utilitzar el llum antiboira posterior?",
+  "a1": "Sí.",
+  "a2": "Sí, el posterior i el davanter.",
+  "a3": "No."
+ },
+ "3649": {
+  "q": "3012 L’alcohol, com afecta a la conducció?",
+  "a1": "Pot afavorir l’aparició de la son.",
+  "a2": "Pot reduir el temps de reacció.",
+  "a3": "Pot retardar l’aparició de la son."
+ },
+ "3650": {
+  "q": "2744 Vehicle de mobilitat personal (VMP) es un vehicle capaç d’assistir l’ésser humà en el seu desplaçament personal i que, per la seva construcció, pot excedir les característiques del cicle i estar dotat de motor elèctric.",
+  "a1": "Cert",
+  "a2": "Falç",
+  "a3": "i/o motor d'explosió o combustió"
+ },
+ "3651": {
+  "q": "3011 Es poden patir més distraccions pels efectes de l’alcohol?",
+  "a1": "No.",
+  "a2": "Sí, especialment en situacions complexes.",
+  "a3": "No, si la taxa d’alcoholèmia és inferior a la màxima permesa."
+ },
+ "3652": {
+  "q": "2721 El conductor del vehicle, que es trobin prestant un servei públic a tercers en vehicles de més de nou places ,a d'informar als passatgers d'obligatorietat de portar cordats els cinturats de seguretat, amb pictogrames, retols o audivisuals?",
+  "a1": "sempre",
+  "a2": "mai",
+  "a3": "excepte que es tracti de conductors professionals"
+ },
+ "3653": {
+  "q": "2740 Cap vehicle tractor no pot arrossegar alhora més d’un remolc o d’un semiremolc.",
+  "a1": "Cert",
+  "a2": "Falç",
+  "a3": "Tret de les excepcions reglamentàriament establertes"
+ },
+ "3654": {
+  "q": "2728 Les persones contra les quals s’incoï l’expedient sancionador que no constin com a residents al Principat d’Andorra han de constituir un dipòsit equivalent a l’import de la sanció aplicable des del mateix moment en què s’emet la constat",
+  "a1": "Falç",
+  "a2": "Cert",
+  "a3": "Falç, si existeix un conveni bilateral entre estats."
+ },
+ "3655": {
+  "q": "2738 No es poden utilitzar plaques de matrícula en vehicles inscrits al Registre de Vehicles que no siguin les lliurades per l’Automòbil Club d’Andorra.",
+  "a1": "Cert",
+  "a2": "Falç",
+  "a3": "Falç, doncs es poden realitzar en un taller legalment constituit al Principat d'Andorra"
+ },
+ "3656": {
+  "q": "2731 Els agents encarregats de la vigilància i la disciplina del trànsit, a més d’imposar les sancions monetàries previstes en aquesta Llei, i sense perjudici de la responsabilitat penal que sigui exigible en cada cas, poden ordenar la immobilitzaci",
+  "a1": "conductors de quads.",
+  "a2": "conductors de taxis especials.",
+  "a3": "ciclistes."
+ },
+ "3657": {
+  "q": "2741 Els vehicles de motor no poden remolcar un altre vehicle de motor...",
+  "a1": "excepte en el cas en què es trobi accidentat o avariat i no pugui ser arrossegat per un altre vehicle específicament destinat a aquest finalitat i amb autorització expressa de l'autoritat encarregada del trànsit.",
+  "a2": "excepte en cas en què es trobi accidentat o avariat i no pugui ser arrossegat per un altre vehicle específicament destinat a aquest fiamb l'autorització expressa de l'autoritat encarregada del trànsit.",
+  "a3": "Tant sols en cas en què es trobi accidentat o avariat"
+ },
+ "3658": {
+  "q": "2725 En cas que es faci el pagament voluntari de la sanció en el mateix moment en què s’incoa el procediment sancionador o dins els deu dies hàbils següents, es redueix un 50% l’import de la sanció. Aquest pagament voluntari implica:",
+  "a1": "La renúncia a fer al·legacions. En cas que se'n facin, es tenen per no formulades.",
+  "a2": "La finalització del procediment sancionador sense que calgui dictar una resolució expressa.",
+  "a3": "Les respostes a) i b) son correctes"
+ },
+ "3659": {
+  "q": "2723 És competència exclusiva del ministre titular d’interior la imposició de la suspensió temporal de l’autorització administrativa de conduir vehicles de motor i/o ciclomotors...",
+  "a1": "d'ofici",
+  "a2": "a proposta d'altres ministeris",
+  "a3": "totes les anteriors"
+ },
+ "3660": {
+  "q": "3004 Quines circumstàncies de l’entorn afavoreixen l’aparició de la fatiga?",
+  "a1": "Les condicions climatològiques adverses.",
+  "a2": "Circular per una via molt coneguda.",
+  "a3": "Les condicions climatològiques favorables."
+ },
+ "3661": {
+  "q": "2746 Es pot considerar el vehicle de la foto com a ciclomotor i per tant com vehicle de tres rodes?",
+  "a1": "Sempre que no tingui una velocitat màxima per construcció no superior a 50 km/h i amb un motor de cilindrada no superior a 45 cm3 per als motors d’encesa per guspira (positiva), o bé que la seva potència màxima neta sigui inferior o igual a 4 kW pe",
+  "a2": "Sempre que no tingui una velocitat màxima per construcció no superior a 45 km/h i amb un motor de cilindrada no superior a 50 cm3 per als motors d’encesa per guspira (positiva), o bé que la seva potència màxima neta sigui inferior o igual a 4 kW pe",
+  "a3": "Sempre que no tingui una velocitat màxima per construcció no superior a 45 km/h i amb un motor de cilindrada no superior a 50 cm3 per als motors d’encesa per guspira (positiva), o bé que la seva potència màxima neta sigui inferior o igual a 6 kW pe"
+ },
+ "3662": {
+  "q": "2719 La responsabilitat en les sancions s’extingeix...",
+  "a1": "pel compliment de la sanció o la defunció de l'infractor",
+  "a2": "la prescripció de la infracció i la prescripció de la sanció.",
+  "a3": "totes les anteriors"
+ },
+ "3663": {
+  "q": "2748 Els vehicles de la fotografia, segons la definicio del Codi de la circulació es denomina...",
+  "a1": "Tricicle",
+  "a2": "Vehicle de mobilitat personal (VMP).",
+  "a3": "Cicle"
+ },
+ "3664": {
+  "q": "3003 Quins efectes té la fatiga sobre els conductors?",
+  "a1": "Augmenta l’angle visual.",
+  "a2": "Augmenta la sensibilitat auditiva.",
+  "a3": "La visió pot tornar-se borrosa."
+ },
+ "3665": {
+  "q": "3007 Les medecines alternatives o naturals, poden produir efectes negatius en la conducció?",
+  "a1": "No, perquè no es consideren medicaments.",
+  "a2": "Sí, en determinats casos.",
+  "a3": "Sí, sempre."
+ },
+ "3666": {
+  "q": "2734 Els agents encarregats de la vigilància i la disciplina del trànsit, a més d’imposar les sancions monetàries previstes en aquesta Llei, i sense perjudici de la responsabilitat penal que sigui exigible en cada cas, poden ordenar la immobilitzaci",
+  "a1": "Cert",
+  "a2": "",
+  "a3": ""
+ },
+ "3667": {
+  "q": "3001 En circular amb pluja intensa, és obligatori utilitzar algun enllumenant?",
+  "a1": "Sí.",
+  "a2": "No.",
+  "a3": "Només durant la nit."
+ },
+ "3668": {
+  "q": "2739 Els caràcters que figuren en les matrícules, així com els símbols d’Estat que han de portar els vehicles, són propietat del Govern, que cedeix en cada cas el dret a usar-los.",
+  "a1": "Cert",
+  "a2": "Falç",
+  "a3": "El caracters com la placa de matricula son propietat del titular del vehicle"
+ },
+ "3669": {
+  "q": "3005 En un vehicle de menys de 5 metres de longitud, destinat al transport de mercaderies, quant pot sobresortir una càrrega de longitud indivisible per la seva part davantera?",
+  "a1": "Res; només podrà sobresortir per la seva part posterior.",
+  "a2": "Un terç de la longitud del vehicle.",
+  "a3": "Un 15% de la longitud del vehicle."
+ },
+ "3670": {
+  "q": "3000 Si circulant per una via saturada observa que s’acosta un vehicle policial que circula en servei d’urgència, què ha de fer?",
+  "a1": "Facilitar-li el pas, en la mesura que es pugui.",
+  "a2": "Continuar la marxa perquè no té preferència.",
+  "a3": "Detenir el vehicle fins a ser avançat."
+ },
+ "3671": {
+  "q": "3006 Què ha de fer si està en estat d’estrès?",
+  "a1": "Prendre un estimulant com cafè o te, mai medicaments.",
+  "a2": "No conduir.",
+  "a3": "Prendre un ansiolític abans de conduir."
+ },
+ "3672": {
+  "q": "2736 Els agents encarregats de la vigilància i la disciplina del trànsit poden retirar o ordenar retirar un vehicle de la via pública i mantenir-lo en dipòsit en el lloc que es designi, si la persona obligada no ho fa, quan el vehicle estigui estacion",
+  "a1": "Cert",
+  "a2": "Cert, pero el periode a de ser superior a 30 dies",
+  "a3": "Cert, pero el periode a de ser superior a 40 dies"
+ },
+ "3673": {
+  "q": "2727 Els comuns regularan el procediment sancionador aplicable pel cas d’infraccions en l’estacionament en zones d’aparcament lliures destinades a vehicles o bé per les zones d’aparcament blaves, verdes o altres. Poden sancionar en aquestes zones",
+  "a1": "Qualsevol Agent de Servei de Circulacio de qualsevol Comu.",
+  "a2": "Qualsevol Agent de Servei de Circulacio del Comu a ón és produiexi el fet.",
+  "a3": "Qualsevol membre del Cos de Policia."
+ },
+ "3674": {
+  "q": "2720 El conductor d’una motocicleta, d’un ciclomotor, d’un vehicle de 3 o 4 rodes sense carrosseria o de qualsevol altre vehicle per al qual s’exigeix l’ús del casc per a conductor i passatgers és responsable de la manca d’utilització del c",
+  "a1": "Cert",
+  "a2": "Falç",
+  "a3": "Falç, doncs el passatger es responsable de si mateix."
+ },
+ "3675": {
+  "q": "3008 Una quadrícula de marques grogues pintades al terra indica...",
+  "a1": "que no s’ha d’entrar a la intersecció si es pot quedar aturat en ella.",
+  "a2": "que no es pot franquejar la intersecció.",
+  "a3": "que l’estacionament està prohibit."
+ },
+ "3676": {
+  "q": "2724 El procediment sancionador s’incoa amb la denúncia d’un membre del Cos de Policia mitjançant la constatació de la infracció corresponent, que ha de ser notificada a la persona expedientada. Aquesta persona disposa d’un termini de deu dies h",
+  "a1": "d’un termini de deu dies naturals, comptats a partir de l’endemà de la notificació, per fer les al·legacions que consideri pertinents",
+  "a2": "d’un termini de deu dies hàbils, comptats a partir de l’endemà de la notificació, per fer les al·legacions que consideri pertinents",
+  "a3": "d’un termini de trenta dies hàbils, comptats a partir de l’endemà de la notificació, per fer les al·legacions que consideri pertinents"
+ },
+ "3677": {
+  "q": "2726 Si el procediment sancionador s’incoa amb la denúncia d’un membre del Servei de Circulació mitjançant la constatació de la infracció corresponent, que ha de ser notificada a la persona expedientada. Aquesta persona disposa ...",
+  "a1": "d'un termini de vuit dies hàbils, comptats a partir de l'endemà de la notificació, per fer les al·legacions que consideri pertinents.",
+  "a2": "d'un termini de quinze dies hàbils, comptats a partir de l'endemà de la notificació, per fer les al·legacions que consideri pertinents.",
+  "a3": "d'un termini de trenta dies hàbils, comptats a partir de l'endemà de la notificació, per fer les al·legacions que consideri pertinents."
+ },
+ "3678": {
+  "q": "3015 El llum de posició dels vehicles, què indica?",
+  "a1": "El lloc que ocupa a la calçada i l’amplada del vehicle.",
+  "a2": "Que el vehicle està parat.",
+  "a3": "Que el vehicle està circulant."
+ },
+ "3679": {
+  "q": "2722 L’acompanyant autoritzat d’una persona titular d’un permís de conduir condicionat a anar acompanyat d’una persona autoritzada respon solidàriament amb el conductor de les infraccions comeses...",
+  "a1": "únicament i exclusivament pel que fa a la multa imposada.",
+  "a2": "En un periode superior a mes de 6 mesos i inferior a un any",
+  "a3": "en un periode maxim dels ultims 6 mesos"
+ },
+ "3680": {
+  "q": "3010 Quines mesures haurà d’adoptar davant aquest senyal?",
+  "a1": "Acceleraré passant la zona el més ràpidament possible per deixar pas lliure.",
+  "a2": "Augmentaré l’atenció per possibles despreniments i obstacles en la calçada.",
+  "a3": "M’autoritza a circular en sentit contrari, extremant la precaució, en cas de despreniments."
+ },
+ "3681": {
+  "q": "2737 Els comuns poden ordenar el trasllat del vehicle a un gestor de residus de vehicles autoritzat per desballestar-lo transcorreguts més de dos mesos des de la immobilització o la retirada del vehicle de la via pública, amb la publicació prèvia al",
+  "a1": "Si, cal la publicació prèvia al Butlletí Oficial del Principat d'Andorra.",
+  "a2": "Si cal la publicació prèvia al Butlletí Oficial del Principat d'Andorra.",
+  "a3": "Cert, pero han de trasncorrer mes de tres mesos"
+ },
+ "3682": {
+  "q": "2735 Els agents encarregats de la vigilància i la disciplina del trànsit poden retirar o ordenar retirar un vehicle de la via pública i mantenir-lo en dipòsit en el lloc que es designi, si la persona obligada no ho fa, quan un vehicle romangui més de",
+  "a1": "Cert",
+  "a2": "Falç",
+  "a3": "72 Hores"
+ },
+ "3683": {
+  "q": "2747 El vehicle de la fotografia, es de propulsió electrica, es considera un ...",
+  "a1": "Vehicle de motor",
+  "a2": "Vehicle de mobilitat personal (VMP).",
+  "a3": "Vehicle de tres rodes, sempre que la seva potència contínua nominal màxima sigui inferior o igual a 4 kW per als motors elèctrics."
+ },
+ "3684": {
+  "q": "3014 Les circumstàncies personals com l’estrès, poden influir en els efectes de l’alcohol?",
+  "a1": "No, l’alcohol només afecta a les característiques físiques.",
+  "a2": "No, només depenen de la quantitat i el tipus d’alcohol ingerit.",
+  "a3": "Sí."
+ },
+ "3685": {
+  "q": "3009 Què indica aquest senyal?",
+  "a1": "Perill perquè hi ha obres a prop de la calçada.",
+  "a2": "Perill perquè pot saltar graveta d’un altre vehicle.",
+  "a3": "Perill perquè poden produir-se despreniments."
+ },
+ "3686": {
+  "q": "3071 Em quin moment haurà de finalitzar la senyalització òptica aquest vehicle?",
+  "a1": "Tan aviat com el vehicle hagi pres la nova trajectòria.",
+  "a2": "No és necessari treure-la perquè es treu sola.",
+  "a3": "Als 30 metres després d’haver realitzar el gir."
+ },
+ "3687": {
+  "q": "3025 Per evitar els atropellaments, què han de fer els conductors?",
+  "a1": "Indicar als vianants quan han de creuar.",
+  "a2": "Usar el clàxon quan s’acostin a un pas per a vianants.",
+  "a3": "Respectar la prioritat de pas dels vianants."
+ },
+ "3688": {
+  "q": "3054 Quins efectes pot produir en el conductor el consum d’èxtasi?",
+  "a1": "Augment de la capacitat de concentració.",
+  "a2": "Disminució del temps de reacció.",
+  "a3": "Episodis de depressió o ansietat."
+ },
+ "3689": {
+  "q": "3027 Quins efectes té en la conducció una conversa pel mòbil que superi el minut i mig?",
+  "a1": "La velocitat mitjana augmenta, fins i tot amb el dispositiu de mans lliures.",
+  "a2": "El conductor deixa de percebre una part important dels senyals, fins i tot amb el dispositiu de mans lliures.",
+  "a3": "El conductor no deixa de percebre els senyals si utilitza el dispositiu de mans lliures."
+ },
+ "3690": {
+  "q": "3032 En aquesta carretera, quina separació lateral ha de deixar, com a mínim, quan avança al ciclista?",
+  "a1": "2 metres.",
+  "a2": "1,50 metres.",
+  "a3": "La suficient per realitzar l’avançament amb seguretat."
+ },
+ "3691": {
+  "q": "3016 En un dia de calor, tant si al vehicle s’utilitza aire condicionat com climatitzador, quina temperatura interior és la més adequada?",
+  "a1": "Quant més baixa millor.",
+  "a2": "Al voltant dels 25 o 26 graus.",
+  "a3": "S’ha de procurar que la temperatura estigui aproximadament dels 20 als 23 graus."
+ },
+ "3692": {
+  "q": "3035 Encara és de dia, però ja s’ha posat el sol. Quins llums ha d’encendre?",
+  "a1": "Els de curt abast o d’encreuament.",
+  "a2": "Està prohibit encendre els llums quan és de dia.",
+  "a3": "N’hi ha prou amb els de posició."
+ },
+ "3693": {
+  "q": "3039 En vies amb trànsit dens, es pot fer ús del clàxon?",
+  "a1": "Sí, però només fora de poblat.",
+  "a2": "No, si no és estrictament necessari.",
+  "a3": "Sí, però només dins de poblat."
+ },
+ "3694": {
+  "q": "3072 La depressió, quins efectes té en la conducció?",
+  "a1": "Ansietat i impulsivitat.",
+  "a2": "Distraccions i somnolència.",
+  "a3": "Cap."
+ },
+ "3695": {
+  "q": "3043 Un manteniment adequat del vehicle...",
+  "a1": "no redueix mai la probabilitat de patir un accident.",
+  "a2": "pot reduir la probabilitat de patir un accident.",
+  "a3": "elimina la probabilitat de patir un accident."
+ },
+ "3696": {
+  "q": "3056 Haurà d’estar il•luminada la placa de matrícula posterior d’un remolc?",
+  "a1": "No, perquè únicament haurà d’estar il•luminada obligatòriament la del vehicle tractor.",
+  "a2": "No, perquè és retroreflectora.",
+  "a3": "Sí, entre l’ocàs i la sortida del sol."
+ },
+ "3697": {
+  "q": "3036 Es poden portar objecte o paquets que surtin per les finestretes dels costats?",
+  "a1": "Sí, fins a 30 centímetres.",
+  "a2": "No.",
+  "a3": "Sí, amb una tela de color vermell."
+ },
+ "3698": {
+  "q": "3051 Els plafons de les cantonades del camió, què indiquen?",
+  "a1": "Que la càrrega sobresurt per darrera.",
+  "a2": "Que la càrrega sobresurt pels costats.",
+  "a3": "Que la càrrega sobresurt per davant."
+ },
+ "3699": {
+  "q": "3026 Circular per sota del límit màxim de velocitat, pot causar accidentes?",
+  "a1": "No.",
+  "a2": "No, només es poden causar accidents circulant per sobre d’aquest límit.1",
+  "a3": "Sí, quan la velocitat no s’adapti a les circumstàncies del trànsit."
+ }
+}

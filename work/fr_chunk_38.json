@@ -1,0 +1,602 @@
+{
+ "3700": {
+  "q": "3052 Quelle est la distance idéale à laquelle on doit se placer par rapport au coussin de sécurité?",
+  "a1": "10 cm.",
+  "a2": "25 cm.",
+  "a3": "La distance qui lui permette de conduire dans une posture confortable."
+ },
+ "3701": {
+  "q": "3050 En cas de souffrir d’une maladie, doit-on demander au médecin les précautions qu’il faut prendre pour conduire?",
+  "a1": "Oui.",
+  "a2": "Seulement quand la maladie est chronique.",
+  "a3": "Non."
+ },
+ "3702": {
+  "q": "3033 En réalisant une manœuvre qui requiert un déplacement latéral, comment doit-on la signaliser?",
+  "a1": "Uniquement avec le bras.",
+  "a2": "Avec les feux intermittents jusqu’à adopter la nouvelle trajectoire ou avec le bras.",
+  "a3": "Uniquement avec les feux intermittents."
+ },
+ "3703": {
+  "q": "3018 Il y a de la neige sur la chaussée. Comment doit-il circuler?",
+  "a1": "Lentement, mais avec la vitesse la plus longue possible.",
+  "a2": "Rapidement pour que le véhicule ne patine pas.",
+  "a3": "Dans le premier rapport de vitesses et en accélérant à fond."
+ },
+ "3704": {
+  "q": "3040 A-t-il une obligation quelconque quand son véhicule va être dépassé?",
+  "a1": "Oui, signaliser avec l’intermittent droit pour indiquer qu’il peut réaliser la manœuvre en sécurité.",
+  "a2": "Non, la responsabilité est du véhicule qui dépasse.",
+  "a3": "Oui, se serrer sur le bord droit de la chaussée pour faciliter la manœuvre."
+ },
+ "3705": {
+  "q": "3066 La distribution de la charge dans un véhicule, affecte-t-elle la consommation de combustible?",
+  "a1": "Oui, c’est pourquoi il est très important de placer la charge de manière adéquate.",
+  "a2": "Non, sur la consommation seule la vitesse a une influence.",
+  "a3": "Non, sur la consommation seul le type de véhicule a une influence."
+ },
+ "3706": {
+  "q": "3034 En cas de renversement, les enfants sont-ils spécialement vulnérables?",
+  "a1": "Oui, parce que le véhicule a l’habitude d’aller à plus grande vitesse.",
+  "a2": "Non.",
+  "a3": "Oui, dû à leur faible hauteur."
+ },
+ "3707": {
+  "q": "3065 Prendre un café ou un thé réduit-il le taux d’alcoolémie?",
+  "a1": "Oui, mais seulement le café.",
+  "a2": "Non.",
+  "a3": "Oui."
+ },
+ "3708": {
+  "q": "3045 S’il doit circuler avec sa motocyclette sur une zone spécialement glissante, quelles précautions doit-il prendre?",
+  "a1": "Freiner dans la zone pour contrôler la trajectoire.",
+  "a2": "Diminuer la vitesse avant d’arriver et maintenir la motocyclette verticale en passant par-dessus.",
+  "a3": "Accélérer pour passer par la zone dans le moindre temps possible."
+ },
+ "3709": {
+  "q": "3041 Avant de changer de voie, comment doit-il avertir?",
+  "a1": "Avec les indicateurs de direction.",
+  "a2": "Avec le klaxon.",
+  "a3": "Avec les feux de freinage."
+ },
+ "3710": {
+  "q": "3055 Qui sont les plus sensibles aux effets de l’alcool?",
+  "a1": "Les personnes de moins de 18 ans et celles de plus de 45.",
+  "a2": "Les personnes de moins de 18 ans et celles de plus de 65.",
+  "a3": "Les personnes entre 18 et 30 ans."
+ },
+ "3711": {
+  "q": "3053 Quels conducteurs ont l’interdiction de circuler sous les effets des drogues?",
+  "a1": "Tous.",
+  "a2": "Seulement les conducteurs d’automobiles.",
+  "a3": "Seulement les conducteurs de véhicules à moteur."
+ },
+ "3712": {
+  "q": "3058 Le conducteur peut-il réduire la probabilité d’accident due au “facteur véhicule”?",
+  "a1": "Non, les défaillances mécaniques sont imprévisibles.",
+  "a2": "Oui, moyennant une maintenance adéquate du véhicule.",
+  "a3": "Non, si le véhicule ne dispose pas des systèmes modernes de sécurité."
+ },
+ "3713": {
+  "q": "3060 Avec du brouillard qui réduit sensiblement la visibilité, est-il permis de conduire uniquement avec les éclairages de position et de courte portée?",
+  "a1": "Oui, même si le véhicule dispose de feu avant de brouillard.",
+  "a2": "Non, il doit allumer obligatoirement l’éclairage avant et arrière de brouillard.",
+  "a3": "Non, il doit porter les feux avant de brouillard dans tous les cas."
+ },
+ "3714": {
+  "q": "3022 En circulant à une vitesse adéquate il est plus facile...",
+  "a1": "d’avoir plus d’accidents.",
+  "a2": "de contrôler le véhicule devant n’importe quel obstacle ou imprévu.",
+  "a3": "de faire obstacle au trafic."
+ },
+ "3715": {
+  "q": "3057 Les distractions peuvent être provoquées...",
+  "a1": "tant par des éléments externes au véhicule que par des éléments internes.",
+  "a2": "seulement par des éléments externes du véhicule.",
+  "a3": "uniquement par des éléments internes du véhicule."
+ },
+ "3716": {
+  "q": "3028 Peut-il utiliser le téléphone mobile pendant qu’il conduit avec n’importe quel dispositif mains libres?",
+  "a1": "Non, on ne peut jamais utiliser le téléphone mobile en conduisant, pas même avec le dispositif mains libres.",
+  "a2": "Oui, tant qu’on peut le faire sans employer les mains, ni utiliser de casques ou d’écouteurs.",
+  "a3": "Non, seulement avec ceux qui sont homologués."
+ },
+ "3717": {
+  "q": "3068 Il est interdit de dépasser dans...",
+  "a1": "les ronds-points.",
+  "a2": "toutes les intersections, même si la signalisation le permet.",
+  "a3": "les intersections avec des voies pour cyclistes."
+ },
+ "3718": {
+  "q": "3073 La réanimation d’un accidenté, combien de temps doit-elle durer?",
+  "a1": "5 minutes au maximum.",
+  "a2": "Si après deux minutes il ne s’est pas rétabli il vaut mieux l’abandonner.",
+  "a3": "Jusqu’à ce qu’il se rétablisse ou qu’arrive l’aide médicale."
+ },
+ "3719": {
+  "q": "3017 Quand la chaussée est gelée...",
+  "a1": "la distance de freinage se maintient égale à celle des conditions normales.",
+  "a2": "la distance de freinage augmente.",
+  "a3": "la distance de freinage diminue."
+ },
+ "3720": {
+  "q": "3046 Les essuie-glaces doivent être maintenus en bon état pour circuler en sécurité. Pour cela il faut...",
+  "a1": "vérifier que le réservoir qui contient le liquide lave-glace soit toujours au niveau maximum.",
+  "a2": "réaliser la révision des balais dans le but d’assurer leur efficacité maximale.",
+  "a3": "appliquer sur le pare-brise le liquide que recommande le fabricant pour faciliter le déplacement des balais."
+ },
+ "3721": {
+  "q": "3037 Quand il pleut, quelle pression doivent avoir les pneumatiques?",
+  "a1": "La pression que conseille le fabricant.",
+  "a2": "Plus élevée que celle conseillée par le fabricant.",
+  "a3": "Moindre que celle conseillée par le fabricant."
+ },
+ "3722": {
+  "q": "3059 Avec du brouillard, quand le véhicule ne dispose pas d’éclairage antibrouillard avant, quel éclairage doit-il utiliser?",
+  "a1": "Celui de position avec celui de courte portée.",
+  "a2": "Celui de position et les feux d’urgence.",
+  "a3": "Seulement celui de courte portée et celui de longue portée."
+ },
+ "3723": {
+  "q": "3029 Le mauvais état de la voie, influe-t-il sur l’apparition de la fatigue?",
+  "a1": "Oui, quoique seulement de nuit.",
+  "a2": "Non, en aucun cas.",
+  "a3": "Oui, parce qu’il exige une plus grande attention dans la conduite."
+ },
+ "3724": {
+  "q": "3078 Si un véhicule a subi une réforme au véhicule après l’avoir immatriculé, doit-il passer une inspection technique?",
+  "a1": "Non.",
+  "a2": "Oui.",
+  "a3": "Non, s’il ne s’est pas écoulé plus de deux ans depuis la dernière inspection."
+ },
+ "3725": {
+  "q": "3031 Pendant une journée avec des températures ambiantes très basses, est-il correct de conduire avec le manteau mis?",
+  "a1": "Oui, pour ne pas avoir de sensation de froid, qui peut faire que nous nous distrayions.",
+  "a2": "Non, car en cas d’accident cela réduit l’efficacité de la ceinture de sécurité et du prétensionneur.",
+  "a3": "Oui, pour ne pas avoir froid et, en plus, en cas d’accident il protège l’occupant."
+ },
+ "3726": {
+  "q": "3084 Les conducteurs de bicyclettes, quand ont-ils la priorité de passage par rapport aux autres véhicules?",
+  "a1": "Toujours.",
+  "a2": "Jamais.",
+  "a3": "Quand, circulant en groupe, le premier cycliste a déjà commencé le croisement ou est entré dans un rond-point."
+ },
+ "3727": {
+  "q": "3140 Quand doit éteindre l’indicateur de direction un véhicule qui se déplace pour dépasser?",
+  "a1": "Quand il a dépassé le véhicule et avant de revenir à droite.",
+  "a2": "Quand il revient à la voie droite.",
+  "a3": "Quand il a terminé le déplacement."
+ },
+ "3728": {
+  "q": "3087 Le conducteur d’un véhicule étend le bras horizontalement avec la paume de la main vers l’arrière, qu’indique-t-il?",
+  "a1": "Qu’il a l’intention d’immobiliser le véhicule ou de freiner sa marche de manière considérable.",
+  "a2": "Qu’il tournera à gauche.",
+  "a3": "Qu’il circulera en marche arrière."
+ },
+ "3729": {
+  "q": "3079 L’automobile à quatre roues ou plus, conçue et construite pour le transport de marchandises, dont la cabine n’est pas intégrée au reste de la carrosserie et avec un maximum de 9 places, conducteur inclus, est un...",
+  "a1": "fourgon ou fourgonnette.",
+  "a2": "camion.",
+  "a3": "véhicule mixte adaptable."
+ },
+ "3730": {
+  "q": "3118 S’il doit réduire considérablement la marche du véhicule, comment doit-il avertir les véhicules qui circulent derrière?",
+  "a1": "Moyennant l’utilisation réitérée des feux de freinage.",
+  "a2": "En allumant les feux de position.",
+  "a3": "Seulement avec l’intermittent droit."
+ },
+ "3731": {
+  "q": "3114 Une motocyclette à deux roues, en dépassant un véhicule à traction animale sur une voie hors agglomération, doit laisser une séparation latérale...",
+  "a1": "non inférieure à 1,50 mètres.",
+  "a2": "non supérieure à 1,50 mètres.",
+  "a3": "proportionnelle à la vitesse et à la largeur de la chaussée."
+ },
+ "3732": {
+  "q": "3146 Dans un véhicule il est obligatoire de placer et d’attacher la charge de façon qu’elle ne puisse pas...",
+  "a1": "traîner, tomber ou se déplacer de manière dangereuse.",
+  "a2": "tomber ou se déplacer de manière dangereuse, uniquement.",
+  "a3": "se déplacer de manière dangereuse, uniquement."
+ },
+ "3733": {
+  "q": "3125 Pour réaliser un arrêt, est-il permis de circuler en marche arrière?",
+  "a1": "Non.",
+  "a2": "Oui, toujours.",
+  "a3": "Oui, avec quelques conditions."
+ },
+ "3734": {
+  "q": "3144 Le conducteur d’une motocyclette qui va tourner à gauche, comment signalisera-t-il la manœuvre?",
+  "a1": "Avec le bras gauche plié vers le haut.",
+  "a2": "Avec le bras gauche plié vers le haut.",
+  "a3": "Avec l’indicateur de direction gauche ou avec le bras gauche étendu en position horizontale et la paume de la main vers le bas."
+ },
+ "3735": {
+  "q": "3100 Le dépassement est interdit dans les intersections ni immédiatement avant, excepté...",
+  "a1": "que l’intersection ne soit pas signalisée.",
+  "a2": "que la chaussée jouisse de la priorité même si elle n’est pas signalisée.",
+  "a3": "quand la chaussée jouisse de la priorité et soit signalisée."
+ },
+ "3736": {
+  "q": "3098 Les bagages sur la galerie d’une voiture de tourisme, peuvent-ils dépasser par les côtés?",
+  "a1": "Oui, mais la largeur totale doit être inférieure à 2,5 mètres.",
+  "a2": "Oui, quand les bagages sont larges et ne peuvent pas être divisés.",
+  "a3": "Non."
+ },
+ "3737": {
+  "q": "3176 Dans les opérations de chargement et déchargement il est...",
+  "a1": "permis de déposer les marchandises sur le trottoir, mais pas sur la chaussée.",
+  "a2": "interdit de déposer la marchandise sur la voie publique.",
+  "a3": "permis de déposer les marchandises sur la chaussée et sur le trottoir, pourvu qu’elles ne gênent pas."
+ },
+ "3738": {
+  "q": "3187 Quand considère-t-on qu’une voie est insuffisamment illuminée?",
+  "a1": "Quand je ne peux pas lire une plaque d’immatriculation à 10 mètres.",
+  "a2": "Quand on ne distingue pas un véhicule foncé à 100 mètres.",
+  "a3": "Quand il ne peut pas lire une plaque d’immatriculation à 50 mètres."
+ },
+ "3739": {
+  "q": "3185 Sur des voies urbaines qui ne soient pas des traversées, est-il obligatoire que les véhicules stationnés portent allumé l’éclairage de position?",
+  "a1": "Oui, quand la voie n’a qu’une seule voie de circulation.",
+  "a2": "Oui, quand la voie forme une intersection avec une traversée.",
+  "a3": "Non, quand l’illumination permette de les distinguer à une distance suffisante."
+ },
+ "3740": {
+  "q": "3115 Est-il permis de circuler sur une traversée avec les feux antibrouillard allumés dans des conditions normales de visibilité?",
+  "a1": "Oui.",
+  "a2": "Non.",
+  "a3": "Non, parce que sur une traversée ils sont interdits."
+ },
+ "3741": {
+  "q": "3095 Le véhicule rouge, est-il correctement stationné?",
+  "a1": "Oui, si la durée du stationnement est inférieure à deux minutes.",
+  "a2": "Non, parce qu’il est en double file.",
+  "a3": "Oui, s’il n’y a pas d’espace proche pour stationner d’une autre manière."
+ },
+ "3742": {
+  "q": "3164 Sur une voie interurbaine avec trois voies pour le même sens, par laquelle doit-il circuler à caractère général?",
+  "a1": "Par la voie centrale ou la gauche.",
+  "a2": "Par la voie de droite.",
+  "a3": "Par la voie gauche."
+ },
+ "3743": {
+  "q": "3089 Comme norme générale, qui a la préférence dans un rétrécissement non signalisé?",
+  "a1": "Le véhicule le plus lourd.",
+  "a2": "Les véhicules à traction animale.",
+  "a3": "Celui qui y a accédé en premier."
+ },
+ "3744": {
+  "q": "3083 Est-il permis que la charge d’une voiture de tourisme dépasse par les latéraux?",
+  "a1": "Oui, quand elle ne compromet pas la stabilité du véhicule.",
+  "a2": "Oui, signalisée avec un panneau à bandes rouges et blanches.",
+  "a3": "Non."
+ },
+ "3745": {
+  "q": "3102 Sur cette voie à double sens, le véhicule rouge, dépasse-t-il correctement?",
+  "a1": "Oui, parce qu’il a la préférence par rapport aux véhicules qui s’approchent par la droite.",
+  "a2": "Non, parce que la chaussée n’a pas la priorité dans l’intersection.",
+  "a3": "Oui, quand des véhicules ne s’approchent pas par la voie transversale."
+ },
+ "3746": {
+  "q": "3101 Est-il correct le dépassement que réalise le véhicule rouge?",
+  "a1": "Non, parce qu’il est en train de le faire dans une intersection avec priorité de la droite.",
+  "a2": "Oui, parce qu’il n’y a pas de signal qui l’interdise.",
+  "a3": "Oui, parce que la ligne est discontinue."
+ },
+ "3747": {
+  "q": "3166 Sur les véhicules de largeur inférieure à un mètre, la charge ne doit pas dépasser par l’extrémité postérieure de plus de...",
+  "a1": "0,40 mètres.",
+  "a2": "0,50 mètres.",
+  "a3": "0,25 mètres."
+ },
+ "3748": {
+  "q": "3105 Sur les motocyclettes, qu’est-il obligatoire de tenir en compte avec les bagages transportés?",
+  "a1": "Qu’ils ne dépassent pas par la partie postérieure.",
+  "a2": "Qu’ils ne dépassent pas latéralement.",
+  "a3": "Qu’ils soient placés et attachés de manière à ne pas déséquilibrer la motocyclette."
+ },
+ "3749": {
+  "q": "3175 Quand on dépasse des véhicules à traction animale, la séparation latérale...",
+  "a1": "sera au moins de 1,5 mètres en tout cas.",
+  "a2": "ne sera pas inférieure à 1,5 mètres, quand le dépassement se réalise hors agglomération.",
+  "a3": "sera toujours proportionnelle à la vitesse, à la largeur et aux caractéristiques de la chaussée."
+ },
+ "3750": {
+  "q": "3135 Le conducteur d’un véhicule est obligé d’exhiber aux agents de l’autorité qui le sollicitent...",
+  "a1": "uniquement le certificat d’immatriculation.",
+  "a2": "seulement la carte d’inspection technique.",
+  "a3": "le certificat d’immatriculation, la carte d’inspection technique et l’assurance obligatoire."
+ },
+ "3751": {
+  "q": "3090 Sur cette chaussée à sens unique et trois voies, le véhicule est-il bien situé pour réaliser un changement de direction à gauche?",
+  "a1": "Oui, si d’autres véhicules ne circulent pas.",
+  "a2": "Non, parce qu’il doit se placer sur la voie gauche.",
+  "a3": "Oui, parce qu’il n’y a pas de flèches sur le pavement."
+ },
+ "3752": {
+  "q": "3080 Pour dépasser le groupe de cyclistes, le véhicule franchit la ligne continue et occupe la voie destinée à la circulation en sens contraire; son comportement est-il correct?",
+  "a1": "Ce n’est correct que s’il n’existe pas un signal vertical qui interdise de dépasser.",
+  "a2": "Oui, et il doit garder une séparation latérale d’au moins 1,5 mètres.",
+  "a3": "Non, parce que sur ce tronçon de voie le dépassement est interdit."
+ },
+ "3753": {
+  "q": "3133 Sur ce passage pour piétons si le feu de signalisation ne fonctionne pas, est-il obligatoire de s’arrêter et de céder le passage aux piétons qui tentent de le traverser?",
+  "a1": "Non, car les piétons n’ont pas la priorité de passage.",
+  "a2": "Non, parce que sans les indications du feu les véhicules ont la priorité.",
+  "a3": "Oui, parce que les piétons ont la priorité comme l’indique la marque routière."
+ },
+ "3754": {
+  "q": "3082 Sur cette route, à quelle vitesse maximale circulera une voiture de tourisme avec remorque?",
+  "a1": "À 60 km/h.",
+  "a2": "À 70 km/h.",
+  "a3": "À 90 km/h."
+ },
+ "3755": {
+  "q": "3142 Après avoir dépassé le camion, doit-il revenir immédiatement à la voie de droite s’il prétend continuer à dépasser?",
+  "a1": "Oui, dans n’importe quel cas.",
+  "a2": "Non, sauf quand derrière circule un autre véhicule à plus grande vitesse.",
+  "a3": "Non, ce n’est pas obligatoire."
+ },
+ "3756": {
+  "q": "3120 Une fourgonnette, circule sur une voie interurbaine avec trois voies par sens de la circulation, quelles voies peut-elle utiliser?",
+  "a1": "Celle de droite, et l’immédiate uniquement quand les circonstances du trafic ou de la voie le conseillent.",
+  "a2": "N’importe laquelle d’entre elles, quand les circonstances du trafic ou de la voie le conseillent et qu’elles n’obstruent pas la marche d’un autre véhicule qui le suit.",
+  "a3": "Seulement celle de droite."
+ },
+ "3757": {
+  "q": "3104 Sur les véhicules de largeur inférieure à un mètre la charge ne doit pas dépasser latéralement de plus de...",
+  "a1": "0,50 mètres de chaque côté de l’axe longitudinal du véhicule.",
+  "a2": "0,40 mètres de chaque côté du véhicule.",
+  "a3": "0,50 mètres de chaque côté du véhicule."
+ },
+ "3758": {
+  "q": "3178 Qu’est en train d’indiquer ce conducteur?",
+  "a1": "Qu’il va tourner à gauche.",
+  "a2": "Qu’il va tourner à droite.",
+  "a3": "Qu’il va continuer tout droit."
+ },
+ "3759": {
+  "q": "3091 Sur une chaussée à un seul sens de circulation, où doit-on se situer pour changer de direction à gauche?",
+  "a1": "Sur une chaussée à un seul sens on ne peut pas changer de direction.",
+  "a2": "À côté du bord droit de la chaussée.",
+  "a3": "À côté du bord gauche de la chaussée."
+ },
+ "3760": {
+  "q": "3126 Ce véhicule a les feux blancs allumés. Qu’indiquent-ils?",
+  "a1": "Qu’il tournera à gauche.",
+  "a2": "Qu’il a mis la marche arrière.",
+  "a3": "Qu’il commencera à circuler."
+ },
+ "3761": {
+  "q": "3186 On considère qu’une voie est insuffisamment illuminée quand...",
+  "a1": "on ne puisse pas distinguer la plaque d’immatriculation d’un autre véhicule à 50 mètres.",
+  "a2": "avec une vue normale, on ne puisse pas lire une plaque d’immatriculation à 10 mètres ou distinguer un véhicule peint en foncé à 50 mètres.",
+  "a3": "la voie ne permette pas de voir avec clarté."
+ },
+ "3762": {
+  "q": "3179 Est-il permis de signaliser une manœuvre avec le bras?",
+  "a1": "Non, on la signalise uniquement avec les intermittents.",
+  "a2": "Oui, mais il est obligatoire d’utiliser en même temps les intermittents.",
+  "a3": "Oui, mais elle doit être visible pour le reste des usagers."
+ },
+ "3763": {
+  "q": "3165 L’éclairage de gabarit est obligatoire pour...",
+  "a1": "les véhicules dont la largeur est supérieure à 2,10 mètres.",
+  "a2": "les véhicules d’assistance sur route.",
+  "a3": "les véhicules qui transportent des marchandises dangereuses."
+ },
+ "3764": {
+  "q": "3145 Dans une zone de travaux où s’est produit un rétrécissement de la chaussée, quel véhicule aura la préférence s’il n’y a pas de signal qui la règle?",
+  "a1": "Celui qui y a accédé en premier.",
+  "a2": "Celui qui n’ait pas à changer de voie pour entrer dans le rétrécissement.",
+  "a3": "Celui qui trouve le rétrécissement à sa droite."
+ },
+ "3765": {
+  "q": "3156 En s’approchant d’un passage à niveau, tout conducteur, quand doit-il modérer la vitesse?",
+  "a1": "Seulement quand ils se trouvent ouverts.",
+  "a2": "Seulement quand ils se trouvent fermés.",
+  "a3": "Toujours."
+ },
+ "3766": {
+  "q": "3259 Est-il obligatoire de réaliser les opérations de chargement et déchargement...",
+  "a1": "toujours hors de la voie.",
+  "a2": "avec les moyens suffisants pour obtenir leur célérité maximale.",
+  "a3": "toujours à l’intérieur de la voie."
+ },
+ "3767": {
+  "q": "3314 Dans des conditions météorologiques ou ambiantes défavorables, comment doit être la séparation avec les véhicules qui circulent devant?",
+  "a1": "Égale que si elles étaient favorables.",
+  "a2": "Moindre, pour mieux voir les véhicules qui circulent devant.",
+  "a3": "Supérieure."
+ },
+ "3768": {
+  "q": "3275 En tournant à droite le piéton se trouve en train de traverser la chaussée. Doit-il le laisser passer?",
+  "a1": "Non, parce qu’il n’y a pas de passage pour piétons par où le piéton est en train de traverser.",
+  "a2": "Non, parce que je suis dans une intersection avec priorité",
+  "a3": "Oui, même s’il n’y a pas de passage pour piétons."
+ },
+ "3769": {
+  "q": "3258 La voiture de tourisme jaune sort d’une station-service pour s’incorporer à la circulation, en cas nécessaire, quand doit-elle céder le passage?",
+  "a1": "Quand elle s’incorpore par la gauche.",
+  "a2": "Quand elle s’incorpore par la droite.",
+  "a3": "Quand elle s’incorpore par la droite ou par la gauche."
+ },
+ "3770": {
+  "q": "3256 L’assurance obligatoire, couvre-t-elle les dommages du conducteur responsable de l’accident?",
+  "a1": "Oui, elle couvre les dommages de tous les occupants.",
+  "a2": "Oui, elle couvre seulement les dommages personnels.",
+  "a3": "Non."
+ },
+ "3771": {
+  "q": "3195 Dans ce virage de visibilité réduite, est-il permis de s’arrêter ou de stationner?",
+  "a1": "Non.",
+  "a2": "Oui, pourvu qu’il le fasse sur l’accotement.",
+  "a3": "Oui, car il n’y a pas de signal qui l’interdise."
+ },
+ "3772": {
+  "q": "3266 Pour tourner à gauche, il est obligatoire de s’approcher du bord gauche de la chaussée sur les voies...",
+  "a1": "à un unique sens de circulation.",
+  "a2": "avec plus d’une voie pour un des sens de circulation.",
+  "a3": "à double sens de circulation."
+ },
+ "3773": {
+  "q": "3309 En cas d’accident, que ce soit de dommages matériels ou de dommages corporels, les conducteurs de voitures de tourisme doivent utiliser le gilet réfléchissant de haute visibilité...",
+  "a1": "seulement quand ils occupent la chaussée.",
+  "a2": "seulement quand ils occupent l’accotement.",
+  "a3": "quand ils sortent du véhicule et occupent la chaussée ou l’accotement, sur tout type de voies."
+ },
+ "3774": {
+  "q": "3237 Cet ensemble de cyclistes circule à côté du bord droit de la chaussée et en file. Est-ce correct?",
+  "a1": "Non.",
+  "a2": "Oui, mais ils pourraient le faire en occupant toute la voie droite.",
+  "a3": "Oui."
+ },
+ "3775": {
+  "q": "3190 Quand on fait des changements importants dans les caractéristiques techniques du véhicule, doit-on faire immédiatement l’inspection technique du véhicule?",
+  "a1": "Non.",
+  "a2": "On peut attendre jusqu’à ce que cela corresponde pour des raisons de l’ancienneté du véhicule.",
+  "a3": "Oui, dans tous les cas."
+ },
+ "3776": {
+  "q": "3297 Est-il interdit de jeter n’importe quel objet qui puisse produire un incendie ou mettre en danger la sécurité routière?",
+  "a1": "Non.",
+  "a2": "Oui, tant sur la voie que dans ses alentours.",
+  "a3": "Oui, sur la voie, mais pas dans ses alentours."
+ },
+ "3777": {
+  "q": "3203 Les remorques et semi-remorques, doivent-elles avoir une carte d’inspection technique?",
+  "a1": "Non, celle du véhicule est suffisante.",
+  "a2": "Oui, toutes.",
+  "a3": "Oui, mais uniquement les non légères."
+ },
+ "3778": {
+  "q": "3294 Véhicule est tout appareil...",
+  "a1": "apte à circuler par les voies publiques.",
+  "a2": "qui est sur la voie publique.",
+  "a3": "qui a un moteur."
+ },
+ "3779": {
+  "q": "3191 Une voiture de tourisme avec onze ans d’ancienneté doit se soumettre à l’inspection technique périodique...",
+  "a1": "tous les quatre ans.",
+  "a2": "chaque année.",
+  "a3": "tous les deux ans."
+ },
+ "3780": {
+  "q": "3230 Sur une route, permet-on le remorquage d’un véhicule par un autre non destiné à cette finalité?",
+  "a1": "Oui, mais seulement jusqu’au lieu le plus proche où il puisse rester convenablement immobilisé.",
+  "a2": "Non, excepté avec l’autorisation expresse de l’autorité chargée du trafic.",
+  "a3": "Oui, pourvu qu’on ne parcoure pas de cette façon plus de 10 kilomètres."
+ },
+ "3781": {
+  "q": "3211 En réalisant un déplacement latéral, les feux indicateurs de direction doivent être utilisés...",
+  "a1": "seulement si le conducteur le croit nécessaire.",
+  "a2": "seulement avant, pour indiquer la manœuvre.",
+  "a3": "avec une anticipation suffisante à l’initiation de la manœuvre et pendant sa réalisation."
+ },
+ "3782": {
+  "q": "3210 À mesure qu’on augmente la vitesse quand on circule...",
+  "a1": "il résulte moins dangereux de circuler.",
+  "a2": "il résulte plus difficile de contrôler le véhicule.",
+  "a3": "il résulte plus facile de s’adapter aux circonstances du trafic."
+ },
+ "3783": {
+  "q": "3302 En cas de vente d’un véhicule, qui doit le notifier au Registre des Véhicules?",
+  "a1": "Le propriétaire dans le délai de 15 jours.",
+  "a2": "Tant l’acheteur que le vendeur dans le délai le plus bref possible.",
+  "a3": "L’acheteur, dans un délai maximum de 10 jours."
+ },
+ "3784": {
+  "q": "3272 Le feu antibrouillard arrière doit uniquement être utilisé...",
+  "a1": "quand les conditions météorologiques ou ambiantes soient spécialement défavorables.",
+  "a2": "quand existent des conditions météorologiques ou ambiantes qui diminuent sensiblement la visibilité.",
+  "a3": "en cas de pluie, chute de neige ou nuages de poussière ou de fumée."
+ },
+ "3785": {
+  "q": "3264 S’il désire tourner à gauche, il doit savoir que c’est interdit quand il n’existe pas...",
+  "a1": "de signal qui autorise expressément le virage.",
+  "a2": "de visibilité suffisante.",
+  "a3": "de voie spécialement conditionnée pour réaliser le virage."
+ },
+ "3786": {
+  "q": "3265 Peut-il tourner dans une intersection à gauche s’il n’a pas de visibilité?",
+  "a1": "Oui, avec précaution.",
+  "a2": "Non, même si c’est permis par la signalisation.",
+  "a3": "Oui, toujours."
+ },
+ "3787": {
+  "q": "3287 Les véhicules prioritaires qui circulent en service urgent avertiront de leur présence...",
+  "a1": "seulement avec le signal acoustique.",
+  "a2": "avec l’utilisation simultanée du signal d’urgence et du signal acoustique.",
+  "a3": "moyennant l’utilisation simultanée du signal lumineux et du signal acoustique."
+ },
+ "3788": {
+  "q": "3241 Dans ce changement de pente de visibilité réduite, le véhicule blanc peut-il dépasser le bleu?",
+  "a1": "Oui, parce qu’il n’y a pas de signalisation expresse qui l’interdise.",
+  "a2": "Oui, parce qu’il l’a signalisé convenablement.",
+  "a3": "Non, parce que pour le faire il doit occuper une partie de la chaussée qui correspond au sens contraire."
+ },
+ "3789": {
+  "q": "3301 Un permis de conduire périmé, autorise-t-il son titulaire à conduire?",
+  "a1": "Non.",
+  "a2": "Oui, excepté s’il s’est passé plus d’un an.",
+  "a3": "Oui, parce que même s’il a expiré il a un permis."
+ },
+ "3790": {
+  "q": "3288 Les opérations de chargement et déchargement se réaliseront...",
+  "a1": "en tâchant d’éviter des bruits et des gênes inutiles.",
+  "a2": "à l’intérieur de la voie, dans n’importe quel cas.",
+  "a3": "par le côté du véhicule le plus proche du centre de la chaussée."
+ },
+ "3791": {
+  "q": "3292 Il circule avec sa voiture de tourisme sur cette route générale, quelle est la vitesse maximale permise?",
+  "a1": "80 km/h.",
+  "a2": "100 km/h.",
+  "a3": "90 km/h."
+ },
+ "3792": {
+  "q": "3303 S’il vend sa voiture de tourisme, quel délai a-t-il pour le communiquer au Registre des Véhicules?",
+  "a1": "Un mois.",
+  "a2": "Trois mois.",
+  "a3": "Quinze jours ouvrables."
+ },
+ "3793": {
+  "q": "3188 En stationnant un véhicule sur une voie urbaine suffisamment illuminée, quel éclairage laissera-t-il allumé?",
+  "a1": "Aucun.",
+  "a2": "L’éclairage de position ou celui de stationnement, s’il s’agit d’une traversée.",
+  "a3": "L’éclairage de position."
+ },
+ "3794": {
+  "q": "3260 Le chargement et déchargement d’un véhicule devra se réaliser...",
+  "a1": "toujours sur l’accotement.",
+  "a2": "par le côté du véhicule qui résulte le plus commode.",
+  "a3": "comme norme générale, hors de la voie."
+ },
+ "3795": {
+  "q": "3310 La manœuvre de marche arrière doit se réaliser...",
+  "a1": "rapidement.",
+  "a2": "avec la précaution maximale.",
+  "a3": "en parcourant, au maximum, 20 mètres."
+ },
+ "3796": {
+  "q": "3322 Même si le dépassement est interdit, une voiture de tourisme pourra dépasser, y compris en envahissant le sens contraire,...",
+  "a1": "n’importe quel camion.",
+  "a2": "n’importe quel autobus ou camion qui circule lentement.",
+  "a3": "des conducteurs de bicyclettes."
+ },
+ "3797": {
+  "q": "3196 Il y a beaucoup de véhicules qui circulent et il prévoit qu’il restera arrêté sur le passage pour piétons. Doit-il entrer sur le passage?",
+  "a1": "Oui.",
+  "a2": "Non, parce que je coupe le passage aux piétons.",
+  "a3": "Oui, quand le feu est vert."
+ },
+ "3798": {
+  "q": "3229 Dans une intersection non signalisée, quels véhicules auront la priorité sur les autres usagers?",
+  "a1": "Ceux qui ont la gauche libre.",
+  "a2": "Les trains, mais pas les tramways.",
+  "a3": "Ceux qui circulent sur rails."
+ },
+ "3799": {
+  "q": "3306 En sortant d’un garage, doit-il céder le passage?",
+  "a1": "Oui, aux piétons et aux véhicules.",
+  "a2": "Ce n’est pas obligatoire.",
+  "a3": "Oui, mais seulement aux piétons qui vont sur le trottoir."
+ }
+}

@@ -1,0 +1,66 @@
+ENTRY 907 A3
+  CAT: Si, sempre que no sobrepassi el limit en 30km/h.
+  FR : Oui, pourvu que je ne dépasse pas la limite de 30km/h.
+ENTRY 2322 A1
+  CAT: Mai no la podem trepitjar o ultrapassar.
+  FR : Nous ne pouvons jamais la franchir ou l'outrepasser.
+ENTRY 2322 A2
+  CAT: Només la podem ultrapassar per realitzar una maniobra.
+  FR : Nous pouvons seulement l'outrepasser pour réaliser une manœuvre.
+ENTRY 2322 A3
+  CAT: No la podem trepitjar però si ultrapassar-la per realitzar una maniobra.
+  FR : Nous ne pouvons pas la franchir mais oui l'outrepasser pour réaliser une manœuvre.
+ENTRY 2475 A3
+  CAT: Netejar la sang i deixar que surti.
+  FR : Nettoyer le sang et laisser qu'il sorte.
+ENTRY 645 A3
+  CAT: Netejar la sang i deixar que surti.
+  FR : Nettoyer le sang et laisser qu'il sorte.
+ENTRY 3767 A1
+  CAT: Igual que si fossin favorables.
+  FR : Égale que si elles étaient favorables.
+ENTRY 3672 Q
+  CAT: 2736 Els agents encarregats de la vigilància i la disciplina del trànsit poden retirar o ordenar retirar un vehicle de la via pública i mantenir-lo en dipòsit en el lloc que es designi, si la persona obligada no ho fa, quan el vehicle estigui estacion
+  FR : 2736 Les agents chargés de la surveillance et la discipline du trafic peuvent retirer ou ordonner de retirer un véhicule de la voie publique et le maintenir en dépôt au lieu qui soit désigné, si la personne obligée ne le fait pas, quand le véhicule soit stationn
+ENTRY 3672 A1
+  CAT: Cert
+  FR : Certain
+ENTRY 3672 A2
+  CAT: Cert, pero el periode a de ser superior a 30 dies
+  FR : Certain, mais la période doit être supérieure à 30 jours
+ENTRY 3672 A3
+  CAT: Cert, pero el periode a de ser superior a 40 dies
+  FR : Certain, mais la période doit être supérieure à 40 jours
+ENTRY 410 A2
+  CAT: La comprovaciò del grau d'impregnaciò alcohòlica a través del alcoholìmetre.
+  FR : La vérification du degré d'imprégnation alcoolique à travers l'alcoolmètre.
+ENTRY 287 A1
+  CAT: Procurar que la maniobra s'allargui el menys possible.
+  FR : Procurer que la manœuvre s'allonge le moins possible.
+ENTRY 2862 A2
+  CAT: Quan la visibilitat sigui insuficient per circumstàncies meteorològiques.
+  FR : Quand la visibilité est insuffisante pour des circonstances météorologiques.
+ENTRY 1804 A3
+  CAT: Avisar, abans que res, els familiars més pròxims.
+  FR : Aviser, avant tout, les familiers les plus proches.
+ENTRY 3718 A2
+  CAT: Si després de dos minuts no s’ha recuperat és millor deixar-ho.
+  FR : Si après deux minutes il ne s’est pas rétabli il vaut mieux l’abandonner.
+ENTRY 2321 A1
+  CAT: Tenen la preferència de pas sobre els que pretenguin accedir a ella.
+  FR : Ont la priorité de passage sur ceux qui prétendent y accéder.
+ENTRY 2321 A2
+  CAT: Han de cedir el pas als vehicles que per la seva dreta pretenguin accedir a ella.
+  FR : Doivent céder le passage aux véhicules qui par leur droite prétendent y accéder.
+ENTRY 2494 A2
+  CAT: En el costat dret, fora de la calçada deixant lliure la voravia.
+  FR : Sur le côté droit, hors de la chaussée en laissant libre l'accotement.
+ENTRY 2494 A3
+  CAT: En el costat dret o esquerre de la calçada, deixant lliure la voravia.
+  FR : Sur le côté droit ou gauche de la chaussée, en laissant libre l'accotement.
+ENTRY 1666 A1
+  CAT: Arramblar-se sempre al costat dret.
+  FR : Vous ranger toujours du côté droit.
+ENTRY 3878 Q
+  CAT: 3551 En circular darrera d’un vehicle voluminós que vol girar a la dreta, què ha de tenir en compte?
+  FR : 3551 En circulant derrière un véhicule volumineux qui veut tourner à droite, que doit-il tenir en compte?

@@ -1,0 +1,602 @@
+{
+ "3800": {
+  "q": "3219 Quan es circula per una via on només hi ha vianants, ha d’advertir la maniobra de girar a la dreta?",
+  "a1": "Sí, les maniobres s’han d’advertir a tots els usuaris.",
+  "a2": "No, només s’han d’advertir als altres vehicles.",
+  "a3": "No és obligatori, però sí molt recomanable."
+ },
+ "3801": {
+  "q": "3220 El conductor del vehicle de la fotografia està indicant que va a ...",
+  "a1": "frenar.",
+  "a2": "desplaçar-se cap a la dreta.",
+  "a3": "desplaçar-se cap a l’esquerra."
+ },
+ "3802": {
+  "q": "3295 Després d’iniciar l’avançament comprova que no podrà finalitzar la maniobra amb seguretat perquè s’acosta un vehicle de cara; què ha de fer?",
+  "a1": "Mantenir-se al carril de sentit contrari i finalitzar la maniobra.",
+  "a2": "Mantenir-se al carril de sentit contrari i terminar la maniobra.",
+  "a3": "Advertir amb ràfegues a l’altre conductor perquè redueixi la seva velocitat."
+ },
+ "3803": {
+  "q": "3300 Què ha de fer si ha caducat la vigència del seu permís i vol continuar conduint?",
+  "a1": "Presentar-se a un nou examen teòric.",
+  "a2": "Tornar a examinar-se de les proves pràctiques.",
+  "a3": "Sol•licitar la renovació aportant la documentació necessària."
+ },
+ "3804": {
+  "q": "3274 En aquesta intersecció, el vehicle està girant a la dreta, qui té preferència?",
+  "a1": "El vehicle, perquè no hi ha pas per a vianants.",
+  "a2": "El vehicle sempre.",
+  "a3": "El vianant."
+ },
+ "3805": {
+  "q": "3231 Circulant pel voral, té permès un vehicle de tracció animal circular en paral•lel amb un altre vehicle?",
+  "a1": "No, està prohibit.",
+  "a2": "Sí, si el voral és bastant ample.",
+  "a3": "Sí, pot circular en paral•lel, però no podrà avançar."
+ },
+ "3806": {
+  "q": "3370 En les rotondes es circularà...",
+  "a1": "indistintament, tant per la dreta com per l’esquerra.",
+  "a2": "deixant a la dreta el centre.",
+  "a3": "deixant a l’esquerra el centre."
+ },
+ "3807": {
+  "q": "3381 Als passos per vianants no regulats per semàfor o agent, tenen preferència els vianants?",
+  "a1": "Sí, en qualsevol cas.",
+  "a2": "No, encara que per cortesia se’ls pot cedir el pas.",
+  "a3": "Sí, només en vies urbanes."
+ },
+ "3808": {
+  "q": "3395 A les vies dividides en tres calçades, la central podrà estar destinada a la circulació en...",
+  "a1": "els dos sentits, sempre.",
+  "a2": "sentit únic, en qualsevol cas.",
+  "a3": "els dos sentits o en sentit únic, segons disposi la senyalització."
+ },
+ "3809": {
+  "q": "3329 Qui té preferència de pas en aquesta intersecció?",
+  "a1": "L’automòbil.",
+  "a2": "El tramvia.",
+  "a3": "El que circuli per la via principal."
+ },
+ "3810": {
+  "q": "3401 Quantes persones poden viatjar en un vehicle mixt adaptable?",
+  "a1": "Vuit com a màxim inclòs el conductor.",
+  "a2": "Nou com a màxim inclòs el conductor.",
+  "a3": "Cinc com a màxim sense incloure al conductor."
+ },
+ "3811": {
+  "q": "3352 En els carrils o part de la via destinats o reservats específicament al transport públic urbà, pot un turisme realitzar una parada?",
+  "a1": "No.",
+  "a2": "Sí, si no obstaculitza el pas d’autobusos i taxis.",
+  "a3": "Sí, en tot cas."
+ },
+ "3812": {
+  "q": "3383 Els ciclomotors, poden circular pel voral en columna de dos?",
+  "a1": "Sí, de forma excepcional, quan el voral sigui transitable i suficient.",
+  "a2": "No, mai.",
+  "a3": "Sí, sempre."
+ },
+ "3813": {
+  "q": "3361 Un autobús i un camió entren a la vegada a un estretall sense senyalitzar, quin vehicle ha de retrocedir?",
+  "a1": "El vehicle que tingui major massa màxima autoritzada.",
+  "a2": "El que tingui menys dificultats de maniobra tenint en compte les dimensions i característiques dels vehicles.",
+  "a3": "L’autobús."
+ },
+ "3814": {
+  "q": "3334 Està prohibit utilitzar el llum de llarg abast quan...",
+  "a1": "estigui encès el llum de curt abast.",
+  "a2": "pugui enlluernar a altres usuaris.",
+  "a3": "estigui encès el llum de boira davanter."
+ },
+ "3815": {
+  "q": "3326 Els agents de l’autoritat encarregats de la vigilància del trànsit en l’exercici de les seves funcions, podran procedir a la immobilització del vehicle quan...",
+  "a1": "el vehicle no tingui autorització administrativa per circular o no s’incompleixin les condicions de l’autorització que habilita la seva circulació.",
+  "a2": "el conductor d’una bicicleta faci ús del casc de protecció.",
+  "a3": "el vehicle presenti deficiències que no constitueixin un perill per a la seguretat viària."
+ },
+ "3816": {
+  "q": "3338 Circulant amb pluja molt intensa, és correcte encendre el llum antiboira del darrera?",
+  "a1": "Sí.",
+  "a2": "Sí, però el seu ús és excepcional.",
+  "a3": "No, només es pot utilitzar amb boira densa o nevada forta."
+ },
+ "3817": {
+  "q": "3379 Els conductors de vehicles hauran de cedir el pas als vianants...",
+  "a1": "quan transitin per la calçada.",
+  "a2": "que hagin baixat d’un autobús en una parada senyalitzada i es trobin entre l’autobús i el refugi més proper.",
+  "a3": "sempre que circulin pel voral."
+ },
+ "3818": {
+  "q": "3366 Un derivat de turisme i un camió entren al mateix temps en un estretall sense senyalitzar, quin vehicle està obligat a retrocedir?",
+  "a1": "El que tingui menys dificultats de maniobra tenint en compte les dimensions i característiques dels vehicles.",
+  "a2": "El vehicle que tingui major massa màxima autoritzada.",
+  "a3": "El camió."
+ },
+ "3819": {
+  "q": "3372 El conductor d’una motocicleta, que porta una persona al seient posterior...",
+  "a1": "ha d’utilitzar el casc protector i serà responsable de que l’utilitzi l’acompanyant.",
+  "a2": "ha d’utilitzar el casc protector i serà responsable de que l’utilitzi l’acompanyant, però només en vies interurbanes.",
+  "a3": "ha d’utilitzar el casc protector i aconsellar a l’acompanyant que l’utilitzi."
+ },
+ "3820": {
+  "q": "3360 On està prohibit circular amb el llum llarg encès?",
+  "a1": "A tots els túnels.",
+  "a2": "On hi ha perill d’enlluernar i a vies urbanes.",
+  "a3": "En autopistes il•luminades."
+ },
+ "3821": {
+  "q": "3335 Si inicia un avançament i es produeixen circumstàncies que fan difícil finalitzar la maniobra...",
+  "a1": "ha de tornar al seu carril i advertir-ho als que circulen darrera.",
+  "a2": "ha d’accelerar per finalitzar la maniobra amb rapidesa.",
+  "a3": "el vehicle avançat està obligat a apartar-se del voral."
+ },
+ "3822": {
+  "q": "3373 La manca d’experiència del passatger, pot ser la causa d’un accident en moto?",
+  "a1": "No.",
+  "a2": "Sí, sobre tot als revolts.",
+  "a3": "Sí, degut a l’augment de pes."
+ },
+ "3823": {
+  "q": "3418 En una via urbana, és obligatori realitzar les operacions de càrrega i descàrrega...",
+  "a1": "respectant únicament les disposicions sobre parades i estacionaments.",
+  "a2": "respectant les disposicions que dictin les administracions competents.",
+  "a3": "sempre pel costat més proper a la vora de la calçada."
+ },
+ "3824": {
+  "q": "3347 Mentre es proveeix de carburant en una motocicleta, és obligatori apagar l’enllumenat?",
+  "a1": "Sí.",
+  "a2": "No, s’ha de deixar encès el llum d’encreuament.",
+  "a3": "No, s’ha de deixar encès el llum de posició."
+ },
+ "3825": {
+  "q": "3393 El conductor que estacioni el seu turisme de 3.500 kg en un pendent ascendent nevat està obligat, si deixa el seu lloc, a...",
+  "a1": "deixar col•locada la primera velocitat, i recolzar una de les rodes directrius a la vorada orientada cap el centre de la calçada.",
+  "a2": "posar la palanca de canvi en posició de marxa enrere, i recolzar una de les rodes directrius a la vorada orientada cap a fora de la calçada.",
+  "a3": "deixar col•locada la primera velocitat quan el vehicle tingui caixa de canvis manual."
+ },
+ "3826": {
+  "q": "3367 Davant un pas a nivell sense barreres, semibarreres o semàfors, els conductors estan obligats a...",
+  "a1": "travessar-lo sempre ràpidament.",
+  "a2": "cerciorar-se abans de travessar-lo que no s’acosta cap vehicle que circuli sobre rails.",
+  "a3": "cerciorar-se abans de travessar-lo que no s’acosta cap vehicle que circuli sobre rails."
+ },
+ "3827": {
+  "q": "3417 En circular amb un turisme, de nit, per una via fora de poblat suficientment il•luminada, quins llums ha de portar encesos?",
+  "a1": "Els de llarg abast, quan no s’acostin vehicles en sentit contrari.",
+  "a2": "Els de posició i els de curt abast.",
+  "a3": "Els de curt abast únicament."
+ },
+ "3828": {
+  "q": "3392 En estacionar un vehicle en pendent ascendent, el seu conductor haurà...",
+  "a1": "de recolzar una roda davantera a la vorada i orientar-la cap a fora de la calçada.",
+  "a2": "deixar seleccionada la marxa enrere.",
+  "a3": "deixar accionat el fre d’estacionament."
+ },
+ "3829": {
+  "q": "3351 El vehicle groc està detingut perquè vol canviar de sentit. És correcte tenint en compte les circumstàncies observades?",
+  "a1": "No, perquè impedeix circular a la resta de vehicles.",
+  "a2": "Sí, perquè el vehicle que circula en sentit contrari ha de facilitar-li la maniobra.",
+  "a3": "Sí, perquè la línia longitudinal que separa ambdós sentits és discontínua."
+ },
+ "3830": {
+  "q": "3423 Un quadricicle lleuger, entre altres, quines característiques ha de tenir?",
+  "a1": "Una massa en buit del qual sigui inferior a 350 kg, exclosa la massa de les bateries en el cas de vehicles elèctrics i aconseguir, per construcció, una velocitat màxima inferior o igual a 45 km/h.",
+  "a2": "Una massa en ordre de marxa inferior o igual a 550 kg i aconseguir, per construcció, una velocitat màxima inferior o igual a 45 km/h.",
+  "a3": "Una potènciaUna massa en ordre de marxa inferior o igual a 425 kg i aconseguir, per construcció, una velocitat màxima superior a 45 km/h."
+ },
+ "3831": {
+  "q": "3350 El vehicle groc, està ben situat per a realitzar un canvi de sentit de la marxa?",
+  "a1": "No, perquè impedeix continuar la marxa als vehicles que circulen darrera.",
+  "a2": "Sí, perquè ho pot fer d’un sol gir.",
+  "a3": "Sí, perquè és el lloc adequat per fer-ho."
+ },
+ "3832": {
+  "q": "3439 Pensa girar a la dreta i ho senyalitza amb l’indicador lluminós corresponent, fins quan és necessari mantenir-lo encès?",
+  "a1": "Fins que finalitzi la maniobra.",
+  "a2": "Fins que sàpiga amb seguretat que el vehicle que em segueix ha vist la indicació.",
+  "a3": "El menor temps possible."
+ },
+ "3833": {
+  "q": "3400 En un vehicle mixt adaptable...",
+  "a1": "es pot substituir la càrrega, parcialment o totalment, per persones.",
+  "a2": "es pot substituir la part destinada al transport de persones, totalment o parcialment, per càrrega.",
+  "a3": "no es pot substituir la càrrega per persones."
+ },
+ "3834": {
+  "q": "3369 En girar el vehicle, ha de donar prioritat als animals?",
+  "a1": "No, perquè els animals no tenen mai prioritat a la calçada.",
+  "a2": "No, perquè no existeix un pas per a animals domèstics.",
+  "a3": "Sí."
+ },
+ "3835": {
+  "q": "3365 Com a norma general, una motocicleta, pot circular pel voral?",
+  "a1": "Sí, però no pot fer-ho en paral•lel amb altres vehicles.",
+  "a2": "Sí, però només si la seva cilindrada és igual o inferior a 125 cc.",
+  "a3": "No, ha de circular per la calçada."
+ },
+ "3836": {
+  "q": "3391 El conductor d’una motocicleta que va a girar a l’esquerra, com ha de senyalitzar la maniobra amb el braç?",
+  "a1": "Amb el braç esquerre cap avall i el palmell de la mà cap enrere.",
+  "a2": "Amb el braç esquerre estès horitzontalment i el palmell de la mà cap avall.",
+  "a3": "Amb el braç esquerre doblegat cap amunt."
+ },
+ "3837": {
+  "q": "3422 Els vianants tenen preferència...",
+  "a1": "en les zones de vianants.",
+  "a2": "en baixar de qualsevol vehicle.",
+  "a3": "en les vies urbanes."
+ },
+ "3838": {
+  "q": "3396 En vies de tres calçades, com a norma general, s’utilitzaran les dels laterals...",
+  "a1": "en un únic sentit, quan hi hagi trànsit fluït.",
+  "a2": "en ambdós sentits.",
+  "a3": "en un únic sentit, sense perjudici de que les autoritats puguin establir altre sentit, que serà senyalitzat oportunament."
+ },
+ "3839": {
+  "q": "3399 Quan quedi detingut a l’interior d’un túnel més de 2 minuts, quines precaucions ha d’adoptar?",
+  "a1": "Apagar el motor de combustió i deixar l’enllumenat de posició.",
+  "a2": "Posar l’enllumenat d’encreuament i apagar el motor.",
+  "a3": "Apagar el motor sempre."
+ },
+ "3840": {
+  "q": "3330 Quin permís de conducció autoritza a conduir motocicletes de potència superior a 35 kW?",
+  "a1": "El permís de la classe A.",
+  "a2": "El permís de la classe A3.",
+  "a3": "El permís de la classe A2."
+ },
+ "3841": {
+  "q": "3371 Els vianants hauran de creuar les places i rotondes...",
+  "a1": "pel recorregut més curt.",
+  "a2": "pel centre de la calçada.",
+  "a3": "envoltant-les per les voreres."
+ },
+ "3842": {
+  "q": "3378 Els ciclistes tenen prioritat de pas respecte a altres vehicles...",
+  "a1": "sempre.",
+  "a2": "únicament en els passos per a ciclistes.",
+  "a3": "quan circulin per un carril degudament senyalitzat."
+ },
+ "3843": {
+  "q": "3394 Si estaciona en un pendent ascendent està obligat a...",
+  "a1": "recolzar la roda posterior a la vorada.",
+  "a2": "posar la palanca de canvi de posició de marxa enrere.",
+  "a3": "deixar col•locada la primera velocitat quan el vehicle té caixa de canvis manual."
+ },
+ "3844": {
+  "q": "3331 Un vianant, té permès circular per la dreta en una via fora de poblat?",
+  "a1": "No.",
+  "a2": "Sí, quan ho fa per raons de seguretat.",
+  "a3": "Sí, sempre."
+ },
+ "3845": {
+  "q": "3354 Què ha de fer per avisar que va a disminuir la velocitat del seu vehicle?",
+  "a1": "Trepitjar vàries vegades el pedal del fre.",
+  "a2": "Encendre els llums de posició.",
+  "a3": "Encendre l’intermitent esquerre."
+ },
+ "3846": {
+  "q": "3553 Quan està permès utilitzar els senyals acústics?",
+  "a1": "Quan circulo per vies urbanes només.",
+  "a2": "Quan circulo per qualsevol via.",
+  "a3": "Per advertir, fora d’aglomeracions, al conductor d’un altre vehicle el propòsit d’avançar-lo."
+ },
+ "3847": {
+  "q": "3509 Pot circular un turisme que expulsa pel tub d’escapament més fum del que està permès?",
+  "a1": "Sí, però únicament fora de poblat.",
+  "a2": "Sí, mentre no siguin gasos nocius.",
+  "a3": "No."
+ },
+ "3848": {
+  "q": "3527 Quan un autobús pretén incorporar-se des d’una parada senyalitzada, què han de fer la resta de conductors?",
+  "a1": "Disminuir la velocitat i, si és necessari, parar per deixar-los efectuar les maniobres necessàries.",
+  "a2": "Continuar la marxa, ja que el conductor de l’autobús els ha de cedir el pas.",
+  "a3": "Augmentar la velocitat."
+ },
+ "3849": {
+  "q": "3454 Està permès que una persona en cadira de rodes es desplaci pel voral?",
+  "a1": "Només en vies urbanes.",
+  "a2": "Sí, sempre que adopti les degudes precaucions.",
+  "a3": "No."
+ },
+ "3850": {
+  "q": "3482 En vies urbanes, si no pretén avançar, quina separació s’ha de mantenir amb el turisme que circula davant?",
+  "a1": "Sempre 50 metres.",
+  "a2": "La que permeti que una motocicleta avanci amb seguretat.",
+  "a3": "La que permeti detenir-se sense col•lisionar amb el vehicle que va davant en cas que freni bruscament."
+ },
+ "3851": {
+  "q": "3457 Circulant per via urbana, per evitar un possible accident, com indicarà la seva presència a un altre vehicle que vol incorporar-se a la circulació?",
+  "a1": "Utilitzant de forma intermitent els enllumenats de curt o llarg abast sense enlluernar.",
+  "a2": "Encenent el llum de llarg abast i utilitzant el clàxon de forma simultània.",
+  "a3": "Únicament utilitzant el clàxon perquè no surti."
+ },
+ "3852": {
+  "q": "3481 Està permès avançar per la dreta si existeix espai suficient?",
+  "a1": "Únicament als tramvies.",
+  "a2": "Sí, en vies urbanes, amb dos o més carrils delimitats per marques viàries.",
+  "a3": "No, en cap cas."
+ },
+ "3853": {
+  "q": "3466 Si es fa una reforma al vehicle després de matricular-lo, quins tràmits s’han de realitzar?",
+  "a1": "No és necessari realitzar una inspecció tècnica extraordinària si la reforma s’ha fet en un taller autoritzat.",
+  "a2": "Presentar el vehicle a inspecció tècnica extraordinària abans de tornar a circular.",
+  "a3": "No és necessari realitzar cap inspecció, fins que correspongui a causa de l’antiguitat del vehicle."
+ },
+ "3854": {
+  "q": "3490 En cas de pluja no intensa, està permès utilitzar el llum antiboira?",
+  "a1": "Sí, tant el del davant com el del darrera.",
+  "a2": "No.",
+  "a3": "Sí, però només el del darrera."
+ },
+ "3855": {
+  "q": "3506 Autoritza el permís de la classe B a conduir motocicletes?",
+  "a1": "Sí, les motocicletes que autoritza a conduir el permís A1, si el permís té més de cinc anys d’antiguitat.",
+  "a2": "No, en cap cas.",
+  "a3": "Sí, fins a 250 cc de cilindrada."
+ },
+ "3856": {
+  "q": "3444 Qualsevol conductor està obligat a...",
+  "a1": "utilitzar el vehicle amb la diligència, la precaució i l’atenció necessàries per evitar qual- sevol dany, propi o aliè.",
+  "a2": "no avançar.",
+  "a3": "circular en tot moment a la velocitat màxima de la via."
+ },
+ "3857": {
+  "q": "3452 Quan pot obrir les portes del vehicle per baixar?",
+  "a1": "Després de comprovar que no hi ha perill i sempre que el vehicle estigui immobilitzat.",
+  "a2": "Quan apagui el motor i posi el fre de mà.",
+  "a3": "Amb el vehicle immobilitzat o circulant a velocitat inferior a 10 km/h."
+ },
+ "3858": {
+  "q": "3534 Com a norma general, on està prohibit avançar?",
+  "a1": "En les vies d’un carril per a cada sentit.",
+  "a2": "En les vies de menys de 6 metres d’amplada.",
+  "a3": "A prop d’un pas de vianants."
+ },
+ "3859": {
+  "q": "3449 En una carretera amb un carril per a cada sentit, un camió està avançant i no el deixa veure. Pot avançar darrera del camió?",
+  "a1": "Sí, perquè el camió em protegeix.",
+  "a2": "No, perquè no hi ha visibilitat.",
+  "a3": "Sí, quan no hi ha senyal de prohibició d’avançar."
+ },
+ "3860": {
+  "q": "3450 Circulant a una velocitat superior a la velocitat màxima permesa està circulant...",
+  "a1": "a una velocitat moderada, segons les circumstàncies.",
+  "a2": "amb excés de velocitat.",
+  "a3": "a una velocitat màxima."
+ },
+ "3861": {
+  "q": "3455 Un menor d'edat, pot viatjar de passatger en una motocicleta?",
+  "a1": "No, excepte que faci més de 150 cm.",
+  "a2": "No.",
+  "a3": "Sí, sempre que tingui més de 7 anys, amb certes condicions."
+ },
+ "3862": {
+  "q": "3507 Està permès avançar en l’interior d’un túnel?",
+  "a1": "No.",
+  "a2": "Sí, si hi ha més d’un carril en el mateix sentit de la marxa.",
+  "a3": "Sí, quan els sentits estan separats."
+ },
+ "3863": {
+  "q": "3508 Els conductors de ciclomotors, estan obligats a portar casc de protecció per vies urbanes?",
+  "a1": "Sí, és obligatori.",
+  "a2": "No, només és obligatori quan circulin per vies interurbanes.",
+  "a3": "No, els conductors de ciclomotors no estan obligats a portar casc."
+ },
+ "3864": {
+  "q": "3448 La càrrega transportada en una motocicleta d’amplària inferior a 1 metre, pot sobresortir per la part davantera o posterior?",
+  "a1": "Sí, fins 0,50 metres tant per la part davantera com per la posterior.",
+  "a2": "Sí, però només per la part posterior fins 0,50 metres.",
+  "a3": "Per la part davantera, no; per la posterior sí, fins 0,25 metres."
+ },
+ "3865": {
+  "q": "3467 En les interseccions senyalitzades, quina és la norma general que preval?",
+  "a1": "Atenir-se a la senyalització que les reguli.",
+  "a2": "Cedir el pas sempre a la dreta.",
+  "a3": "Abstenir-se del compliment de la senyalització."
+ },
+ "3866": {
+  "q": "3518 Quins documents ha de portar amb ell el conductor d’una motocicleta, a més del permís de conducció?",
+  "a1": "La targeta ITV i el certificat de matriculació (carta groga).",
+  "a2": "El certificat de matriculació, només.",
+  "a3": "La targeta ITV, només."
+ },
+ "3867": {
+  "q": "3546 El conductor que faci un avançament...",
+  "a1": "pot rebassar la velocitat màxima fixada.",
+  "a2": "ha de portar el seu vehicle a una velocitat superior a la del vehicle que pretén avançar.",
+  "a3": "ha de mantenir una velocitat moderada, sense importar el temps que utilitzi en l’avançament."
+ },
+ "3868": {
+  "q": "3511 El permís de la classe B, autoritza a conduir un quadricicle lleuger?",
+  "a1": "No.",
+  "a2": "Sí, quan no es dedica al transport de mercaderies.",
+  "a3": "Sí."
+ },
+ "3869": {
+  "q": "3539 Els agents de l’autoritat encarregats de la vigilància del trànsit podran procedir a la immobilització d’un vehicle...",
+  "a1": "si el seu conductor no porta els originals de la documentació del vehicle.",
+  "a2": "sempre que el seu conductor sigui sancionat.",
+  "a3": "si circula superant els nivells de gasos, fums i sorolls reglamentàriament permesos."
+ },
+ "3870": {
+  "q": "3526 El conductor d’un vehicle que observa que serà avançat, ha...",
+  "a1": "d’acostar-se a la vora dreta de la calçada per facilitar la maniobra.",
+  "a2": "d’encendre l’indicador de direcció dret per mostrar que permetrà la maniobra.",
+  "a3": "d’augmentar la velocitat."
+ },
+ "3871": {
+  "q": "3512 Els vehicles per a persones amb discapacitat, estan obligats a circular pel voral?",
+  "a1": "Sí, en el cas de que no existeixi via o part de la mateixa que els estigui especialment destinada.",
+  "a2": "No, poden circular pel voral quan ho creguin convenient.",
+  "a3": "No, sempre dependrà de les indicacions dels agents i del tipus de via."
+ },
+ "3872": {
+  "q": "3545 En la via de la imatge, en avançar amb el seu turisme a aquest camió, com ho ha de fer?",
+  "a1": "Ocupant sempre part del carril contigu.",
+  "a2": "Deixant una distància lateral de seguretat suficient, proporcional a la velocitat, amplària i característiques de la calçada.",
+  "a3": "Deixant una distància lateral mínima d’1,50 metres."
+ },
+ "3873": {
+  "q": "3500 En una intersecció on no funciona el semàfor, què ha de fer?",
+  "a1": "Passar perquè s’entén que el semàfor està verd.",
+  "a2": "Aturar-se perquè està prohibit el pas.",
+  "a3": "Cedir el pas als vehicles que vinguin per la dreta, i extremar la precaució."
+ },
+ "3874": {
+  "q": "3499 El semàfor de la fotografia està espatllat, a qui ha de cedir el pas a la intersecció?",
+  "a1": "A tots els vehicles.",
+  "a2": "Als vehicles que s’aproximin per l’esquerra.",
+  "a3": "Als vehicles que s’aproximin per la dreta."
+ },
+ "3875": {
+  "q": "3522 En un vehicle de menys de 5 metres de longitud, destinat al transport de mercaderies, quan pot sobresortir una càrrega de longitud indivisible per la seva part davantera?",
+  "a1": "No pot sobresortir res.",
+  "a2": "Un terç de la longitud del vehicle.",
+  "a3": "Un 15 per 100 de la longitud del vehicle."
+ },
+ "3876": {
+  "q": "3519 Si condueix aquesta motocicleta amb sidecar, el passatger que porti al sidecar està obligat a portar casc?",
+  "a1": "Només quan circuli per poblat.",
+  "a2": "Sí.",
+  "a3": "No."
+ },
+ "3877": {
+  "q": "3445 Un vehicle de dues rodes proveït d’un motor de combustió interna podrà ser catalogat com a motocicleta sempre que...",
+  "a1": "la seva cilindrada sigui superior a 50 centímetres cúbics.",
+  "a2": "pugui aconseguir una velocitat màxima superior a 40 km/h.",
+  "a3": "disposi d’almenys dues places, inclosa la del conductor."
+ },
+ "3878": {
+  "q": "3551 En circular darrera d’un vehicle voluminós que vol girar a la dreta, què ha de tenir en compte?",
+  "a1": "Que el vehicle voluminós no reduirà la seva velocitat.",
+  "a2": "Que el vehicle voluminós, abans de girar, probablement es desplaçarà cap a l’esquerra.",
+  "a3": "Que el vehicle voluminós s’acostarà el màxim possible a la dreta."
+ },
+ "3879": {
+  "q": "3510 Fora de poblat on no existeixi zona de vianants, per on estan obligats a circular els vianants com a norma general?",
+  "a1": "És indiferent.",
+  "a2": "Per la seva esquerra.",
+  "a3": "Per la seva dreta."
+ },
+ "3880": {
+  "q": "3535 En les interseccions, està permès avançar?",
+  "a1": "Sí, quan l’avançament es realitzi a una velocitat tan suficientment reduïda que permeti detenir-se a temps si sorgís perill.",
+  "a2": "Sí, quan no es generi perill per manca de visibilitat.",
+  "a3": "No, como a norma general."
+ },
+ "3881": {
+  "q": "3456 Si pensa fer un nou avançament, està permès continuar circulant pel carril esquerre?",
+  "a1": "Sí, quan no obstaculitzi els vehicles que circulen més ràpid per darrera.",
+  "a2": "Sí, si circula a la màxima velocitat permesa a la via.",
+  "a3": "No, ha de tornar obligatòriament a la dreta."
+ },
+ "3882": {
+  "q": "3498 Quan circuli de nit per una via urbana ben il•luminada, quins llums ha de portar encesos a la seva motocicleta?",
+  "a1": "El llum de posició i el d’encreuament.",
+  "a2": "El llum de posició i el de carretera, si no hi ha risc de produir enlluernament.",
+  "a3": "Només el llum de posició."
+ },
+ "3883": {
+  "q": "3451 Una vegada immobilitzat el vehicle, els usuaris hauran d’entrar o sortir...",
+  "a1": "sempre pel costat del conductor.",
+  "a2": "per qualsevol costat, prenent les degudes precaucions.",
+  "a3": "com a norma general, pel costat més proper a la vorera."
+ },
+ "3884": {
+  "q": "3477 Està permès parar i estacionar en un pas inferior?",
+  "a1": "Només si està suficientment il•luminat.",
+  "a2": "No.",
+  "a3": "Parar, sí; estacionar, no."
+ },
+ "3885": {
+  "q": "3521 La càrrega que sobresurt per davant d’un vehicle, com ha d’anar senyalitzada?",
+  "a1": "Amb un llum blanc i un reflector blanc, de nit o en condicions que disminueixin sensiblement la visibilitat.",
+  "a2": "Amb un llum blanc, tant de dia com de nit.",
+  "a3": "Amb un llum vermell, de nit o en condicions que disminueixin sensiblement la visibilitat."
+ },
+ "3886": {
+  "q": "3590 El senyal lluminós rotatiu que porten els tractors agrícoles indica...",
+  "a1": "la seva presència a la via.",
+  "a2": "que tenen prioritat sobre la resta dels vehicles.",
+  "a3": "que no poden ser un obstacle per a la resta dels usuaris."
+ },
+ "3887": {
+  "q": "3661 Abans de la immobilització completa del vehicle, està prohibit...",
+  "a1": "encendre els llums d’emergència.",
+  "a2": "descordar-se el cinturó de seguretat, quan s’està estacionant.",
+  "a3": "obrir les portes."
+ },
+ "3888": {
+  "q": "3660 Per conduir vehicles especials agrícoles amb remolc, de les respostes que es citen, quin permís de conduir es necessita com a mínim?",
+  "a1": "El de la classe B.",
+  "a2": "Sempre el de la classe B2+E.",
+  "a3": "El permís de la classe C1."
+ },
+ "3889": {
+  "q": "3663 Una vegada iniciat l’avançament es produeixen circumstàncies que poden fer difícil la seva finalització sense provocar riscos, què està obligat a fer el conductor?",
+  "a1": "Finalitzar l’avançament augmentant ràpidament la velocitat.",
+  "a2": "Terminar l’avançament augmentant ràpidament la velocitat.",
+  "a3": "Frenar bruscament per tornar a la seva dreta el més aviat possible."
+ },
+ "3890": {
+  "q": "3588 Per proveir carburant, com ha d’actuar?",
+  "a1": "Només parar el motor i posar la primera relació de marxes.",
+  "a2": "Només apagar els llums.",
+  "a3": "Parar el motor, apagar els llums, els equips elèctrics i el mòbil."
+ },
+ "3891": {
+  "q": "3614 Si el seu vehicle està proveït de caixa de canvis manual, en un carrer amb pendent ascendent, com ha d’estacionar?",
+  "a1": "N’hi ha prou amb posar el fre d’estacionament.",
+  "a2": "Posant el fre d’estacionament i la marxa enrere.",
+  "a3": "Posant el fre d’estacionament i la primera velocitat."
+ },
+ "3892": {
+  "q": "3602 Una fila d’escolars està travessant la calçada. Els ha de cedir el pas?",
+  "a1": "Sí.",
+  "a2": "No, quan no porta paleta d’STOP.",
+  "a3": "Només en els passos per a vianants."
+ },
+ "3893": {
+  "q": "3594 Està prohibit canviar el sentit de la marxa quan...",
+  "a1": "la calçada sigui de dos sentits.",
+  "a2": "per poder realitzar-lo no pugui sortir de la calçada pel costat dret.",
+  "a3": "pugui posar en perill o obstaculitzar a altres usuaris de la via."
+ },
+ "3894": {
+  "q": "3582 A les calçades amb doble sentit de circulació i tres carrils separats per marques longitudinals discontínues, es podrà circular pel situat més a l’esquerra?",
+  "a1": "Sí, quan no s’aproximi un altre vehicle.",
+  "a2": "No.",
+  "a3": "Només per girar a l’esquerra."
+ },
+ "3895": {
+  "q": "3615 Si el resultat de la inspecció realitzada al seu vehicle en una estació ITV és desfavorable, podrà circular per les vies públiques?",
+  "a1": "Sí, si el defecte observat no impedeix la marxa del vehicle.",
+  "a2": "No si es detecti defectes en el vehicle que afecten greument les condicions de seguretat o modificacions per ocultar mercaderies o béns.",
+  "a3": "No, en absolut, perquè el vehicle causarà baixa definitiva."
+ },
+ "3896": {
+  "q": "3575 Circular en motocicleta sota una pluja intensa obliga a...",
+  "a1": "encendre el llum de llarg abast fins i tot circulant dins de poblat.",
+  "a2": "circular el més a prop possible del vehicle que va davant per tenir més protecció i visibilitat.",
+  "a3": "moderar la velocitat, arribant a aturar-se si és necessari."
+ },
+ "3897": {
+  "q": "3597 Les motocicletes amb més de cinc anys d’antiguitat han de passar la ITV...",
+  "a1": "cada cinc anys.",
+  "a2": "cada dos anys.",
+  "a3": "cada any."
+ },
+ "3898": {
+  "q": "3620 En aquest tram de via on, per la seva estretor, no es poden creuar dos vehicles, té preferència de pas el vehicle que...",
+  "a1": "tingui menys dificultats de maniobra.",
+  "a2": "hi hagi accedit primer.",
+  "a3": "circuli per una via descendent."
+ },
+ "3899": {
+  "q": "3554 Com a norma general, està prohibit canviar el sentit de la marxa quan...",
+  "a1": "no es pugui marxar cap endavant.",
+  "a2": "està prohibit avançar, excepte que el canvi de sentit estigui autoritzat.",
+  "a3": "es tracti d’una rotonda."
+ }
+}

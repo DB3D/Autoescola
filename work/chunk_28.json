@@ -1,0 +1,602 @@
+{
+ "2700": {
+  "q": "1149 ON S'HA DE COL·LOCAR LA SENYALITZACIÓ MÓBIL OBLIGATÓRIA D'EMERGÉNCIA PER A TOTS ELS VEHICLES PESANTS QUE ES TROBIN EN LA CALÇADA PER AVARIA O ACCIDENT?",
+  "a1": "A 50 m al davant i a 50 m al darrere del vehicle immobilitzat, a la vora dels carrils d'ambdos sentits.",
+  "a2": "Darrere del vehicle es col·locará un senyal de perill indefinit amb un llum giratori.",
+  "a3": "A 50 cm del vehicle immobilitzat."
+ },
+ "2701": {
+  "q": "1163 QUÈ HAUREM DE FER EN ATANSAR-NOS A UN PAS ESTRET DE LA CALÇADA?",
+  "a1": "Mantenir la mateixa velocitat, fent senyals acústics.",
+  "a2": "Passar ràpidament i tan aviat com sigui possible, ja que és un perill.",
+  "a3": "Reduir la velocitat."
+ },
+ "2702": {
+  "q": "1169 EL TURISME BLAU ARRIBA A UNA INTERSECCIÓ SENYALITZADA CONFORME A LA FIGURA. QUÈ HA DE FER?",
+  "a1": "Parar-se i esperar que passi el vehicle vermell, perquè el senyal així ho ordena.",
+  "a2": "Parar-se i esperar que passi el vehicle vermell, perquè el senyal així ho ordena.",
+  "a3": "Parar-se tres metres abans del senyal."
+ },
+ "2703": {
+  "q": "1146 Què significa aquest senyal?",
+  "a1": "Vehicle amb càrregues que sobresurten",
+  "a2": "Pintura a la calçada (pas de vianants).",
+  "a3": "Vehicle amb una longitud superior a 12 m."
+ },
+ "2704": {
+  "q": "1139 QUAN ESTEM CONDUINT, HEM D'ADVERTIR SEMPRE I AMB L'ANTELACIÓ SUFICIENT LES NOSTRES MANIOBRES ALS ALTRES USUARIS?",
+  "a1": "Si.",
+  "a2": "No cal, ja que tothom sap les normes, el que es pot fer i el que no.",
+  "a3": "Només durant la nit."
+ },
+ "2705": {
+  "q": "1143 QUÈ SIGNIFICA AQUEST SENYAL?",
+  "a1": "Volta prohibida.",
+  "a2": "Atenció, corba perillosa vers la esquerra.",
+  "a3": "Prohibit girar a l'esquerra."
+ },
+ "2706": {
+  "q": "1074 QUÈ INDICA AQUEST SEMAFOR?",
+  "a1": "Direcció prohibida.",
+  "a2": "Prohibició temporal de pas.",
+  "a3": "Via tallada al tránsit permanentment."
+ },
+ "2707": {
+  "q": "1142 PER A UTILITZAR ELS COMANDAMENTS EN FORMA CONVENIENT, HEM DE PODER-HI ARRIBAR FÀCILMENT I AMB COMODITAT. AMB AQUEST PROPÒSIT HEM DE:",
+  "a1": "Regular els pedals i els indicadors.",
+  "a2": "Regular el seient, el respatller i si és possible el volant.",
+  "a3": "Portar el vehicle al concessionari per a que un especialista adapti els comandaments al seu criteri."
+ },
+ "2708": {
+  "q": "1165 SI LA SEVA INTENCIÓ ÉS DESVIAR-SE CAP A UNA VIA SITUADA A LA DRETA, QUÈ HA DE FER?",
+  "a1": "Situar-me en el centre de la calçada per tenir visibilitat suficient.",
+  "a2": "Encendre l'indicador de direcció de la dreta i adequar la velocitat a la maniobra.",
+  "a3": "Parar-me abans d'efectuar la maniobra i mirar pel retrovisor."
+ },
+ "2709": {
+  "q": "1167 QUAN ÉS OBLIGATORI PARAR EL FUNCIONAMENT DEL MOTOR, LES LLUMS I EL DISPOSITIU DE TELEFONIA MOBIL?",
+  "a1": "Quan reposem carburant.",
+  "a2": "Quan efectuem una parada.",
+  "a3": "Sempre que sigui necessari posar aigua al radiador."
+ },
+ "2710": {
+  "q": "1154 QUAN DISMINUEIX LA NOSTRA ATENCIÓ PER SON O QUALSEVOL ALTRA CIRCUMSTÁNCIA I NO ENS FA EFECTE LA VENTILACIÓ DEL COTXE, QUÉ HEM DE FER?",
+  "a1": "Posar la rádio a fort volum, encendre una cigarreta o parlar ininterrompudament amb els ocupants.",
+  "a2": "Obrir una finestreta i buscar un lloc on estacionar el cotxe sense perill. Llavors, prendre l'aire i descansar.",
+  "a3": "Augmentar el ritme de la marxa per estar més concentrats."
+ },
+ "2711": {
+  "q": "1164 VEHICLE AVARIAT DE NIT EN UNA AUTOPISTA. COM S'HA DE SENYALITZAR?",
+  "a1": "Amb una banderola de color roig viu.",
+  "a2": "Amb l'enllumenat d'encreuament.",
+  "a3": "Amb l'enllumenat ordinari, i si és necessari amb el d'emergència."
+ },
+ "2712": {
+  "q": "1144 QUÈ SIGNIFICA AQUEST SENYAL?",
+  "a1": "Perill, proximitat d'un lloc freqüentat per nens.",
+  "a2": "Pas obligat de nens",
+  "a3": "Pas prohibit per a nens no acompanyats."
+ },
+ "2713": {
+  "q": "1162 COM S'HA DE CIRCULAR PER UNA PLAÇA PÚBLICA?",
+  "a1": "Deixant el centre de la nostra dreta.",
+  "a2": "Cedint el pas a tots els vehicles que apareguin per la nostra esquerra.",
+  "a3": "Deixant el centre de la plaça a la nostra esquerra."
+ },
+ "2714": {
+  "q": "1141 A QUÈ ES DEU LA MAJOR GRAVETAT DELS ACCIDENTS EN LES VIES INTERURBANES?",
+  "a1": "A l'amplada de la carretera.",
+  "a2": "Fonamentalment a la velocitat.",
+  "a3": "A que circulem sempre per sobre de 90 km/h."
+ },
+ "2715": {
+  "q": "1133 SI NOTEM QUE ELS PNEUMÁTICS RELLISQUEN EN AGAFAR UNA CORBA EN UNA CARRETERA NORMALMENT ENQUITRANADA...",
+  "a1": "Anem amb una velocitat excessiva",
+  "a2": "Es normal si portem la 2a velocitat.",
+  "a3": "Hem de fer contravolant i posar el fre d'estacionament."
+ },
+ "2716": {
+  "q": "1160 COM A NORMA GENERAL, LA DISTÀNCIA DE SEGURETAT HA D'AUGMENTAR-SE EL DOBLE EN ELS CASOS SEGÜENTS:",
+  "a1": "Quan es condueix durant la nit.",
+  "a2": "Quan la visibilitat sigui insuficient per circumstàncies meteorològiques.",
+  "a3": "Quan anem darrera d'un camió."
+ },
+ "2717": {
+  "q": "1126 QUAN ESTÀ PERMESA LA COMPETÈNCIA DE VELOCITAT EN LES VIES PÚBLIQUES OBERTES AL TRÀNSIT GENERAL?",
+  "a1": "Únicament en les vies interurbanes de circulació en un sol sentit i amb dos carrils com a mínim.",
+  "a2": "Solament quan un dels vehicles és d'urgéncia.",
+  "a3": "Mai."
+ },
+ "2718": {
+  "q": "1161 EN ZONES DE CALÇADA MAL CONSERVADA, ON ES PUGUI ESQUITXAR FANG O GRAVA...",
+  "a1": "És obligatori moderar la velocitat.",
+  "a2": "Hem d'aturar-nos davant la presència d'un altre vehicle.",
+  "a3": "Se circularà pel centre de la calçada, esquivant els sots."
+ },
+ "2719": {
+  "q": "1156 En els llocs reservats per a vehicles de transport públic de viatgers...",
+  "a1": "Està prohibit l'estacionament",
+  "a2": "Està prohibida la parada, però no l'estacionament.",
+  "a3": "S'ha de circular tocant el clàxon."
+ },
+ "2720": {
+  "q": "1135 QUAN CIRCULEM AMB BOIRA I NO TINGUEM ELS LLUMS POSTERIORS CORRESPONENTS, SI VEIEM QUE S'ACOSTA UN VEHICLE PEL DARRERA QUÈ HEM DE FER?",
+  "a1": "Pitjar de tant en tant el pedal de fre, perquè els llums facin esclats.",
+  "a2": "Augmentar la velocitat perquè no se'ns acosti.",
+  "a3": "Arrambar-nos a la dreta i obligar-lo a passar."
+ },
+ "2721": {
+  "q": "1147 QUINA ZONA DE CALÇADA HA D'IL·LUMINAR EFICAÇMENT L'ENLLUMENAT DE CARRETERA?",
+  "a1": "Cent metres de longitud, com a mínim.",
+  "a2": "Cent cinquanta metres com a mínim.",
+  "a3": "Varia segons la categoria del vehicle"
+ },
+ "2722": {
+  "q": "1158 A LA VISTA DE LES LÍNIES MARCADES EN EL PAVIMENT, POT AVANÇAR EL CAMIÓ AL TURISME?",
+  "a1": "Sí, encara que hagi de trepitjar o ultrapassar les línies.",
+  "a2": "Sí, però solament mantenint les línies entre les rodes.",
+  "a3": "No, perquè el camió és un vehicle de la 3a categoria."
+ },
+ "2723": {
+  "q": "1150 QUÈ INDICA AQUEST AGENT?",
+  "a1": "Parar només per els que vinguin per darrere seu.",
+  "a2": "Alto solament per als que vinguin de front.",
+  "a3": "Alto al front i al darrere."
+ },
+ "2724": {
+  "q": "1132 EN ELS ENCREUAMENTS SENSE SENYALITZAR TENEN PREFERENCIA...",
+  "a1": "Els vehicles que apareixen per la meva dreta.",
+  "a2": "Els vehicles que circulin en sentit contrari.",
+  "a3": "Abans d'entrar en l'altra via hem de donar preferncia a tots els vehicles que hi circulin."
+ },
+ "2725": {
+  "q": "1148 SI CIRCULANT DE NIT, S'APROXIMA UN VEHICLE EN SENTIT CONTRARI AMB L'ENLLUMENAT DE CARRETERA ENCÉS I NO EL CANVIA PEL D'ENCREUAMENT, QUÉ HEM DE FER?",
+  "a1": "Encendre l'enllumenat de carretera i el de boira, per poder-hi veure suficientment.",
+  "a2": "Parar immediatament a la calçada i connectar l'enllumenat de posició.",
+  "a3": "Moderar la velocitat i arrambar-nos a la vora dreta de la calçada, arribant a detenir-nos si no tinguéssim la visibilitat mínima suficient."
+ },
+ "2726": {
+  "q": "1184 QUÈ INDICA AQUEST SENYAL?",
+  "a1": "Presència de nens.",
+  "a2": "Pas de vianants (nens).",
+  "a3": "Situació de pas de vianants."
+ },
+ "2727": {
+  "q": "1192 EN EL SUPÒSIT QUE ES PRODUÍS CONTRADICCIÓ ENTRE ELS SENYALS FETS AMB ELS BRAÇOS PER UN CONDUCTOR I ELS FETS AMB ELS INDICADORS DE DIRECCIÓ DEL VEHICLE, S'HAURAN DE TENIR EN COMPTE ELS:",
+  "a1": "Fets amb els indicadors de direcció.",
+  "a2": "Cap dels dos.",
+  "a3": "Fets amb els braços"
+ },
+ "2728": {
+  "q": "1181 QUÈ REPRESENTA AQUEST SENYAL?",
+  "a1": "Direcció permesa.",
+  "a2": "Direcció obligatòria.",
+  "a3": "Gir obligatori."
+ },
+ "2729": {
+  "q": "1233 Quin senyal ha d'utilitzar-se abans de parar el nostre vehicle a la dreta?",
+  "a1": "Cap.",
+  "a2": "Encendre d'indicador de direcció de la dreta.",
+  "a3": "Encendre els llums vermells o taronges de frenada."
+ },
+ "2730": {
+  "q": "1218 Circulant per una autopista, on ens situarem en arribar a un pas a nivell tancat?",
+  "a1": "En el carril de la dreta.",
+  "a2": "Sense envair la part esquerra, en paral·lel.",
+  "a3": "En les autopistes no existeixen passos a nivell."
+ },
+ "2731": {
+  "q": "1238 Quan hem de mirar pel retrovisor de l'esquerra abans d'iniciar un avançament?",
+  "a1": "Sempre.",
+  "a2": "És obligatori únicament mirar pel retrovisor interior.",
+  "a3": "En els casos en els quals s'efectuï l'avançament per la dreta."
+ },
+ "2732": {
+  "q": "1196 Quan un vehicle ens avança imprudentment, i no té lloc suficient per tornar a la dreta, com hem de procedir?",
+  "a1": "Disminuir la velocitat i deixar-li un espai davant nostre.",
+  "a2": "Arrambar-nos a l'esquerra i escridassar-lo per la seva conducta.",
+  "a3": "Accelerar a fons per evitar que passi el vehicle."
+ },
+ "2733": {
+  "q": "1217 Quina és la finalitat principal de l'enllumenat d'encreuament?",
+  "a1": "Facilitar la identificació del vehicle.",
+  "a2": "No enlluernar els altres usuaris de la via.",
+  "a3": "Reforçar l'enllumenat intensiu en cas necessari."
+ },
+ "2734": {
+  "q": "1226 En quin dels casos que s'indiquen el conductor d'un vehicle no en pot avançar un altre?",
+  "a1": "Quan plou copiosament i la calçada està molla.",
+  "a2": "Quan el conductor del vehicle que va davant no ha encès el llum verd.",
+  "a3": "Quan per boira o altra causa, la visibilitat frontal no és suficient."
+ },
+ "2735": {
+  "q": "1194 SI VEIEM QUE EL VEHICLE QUE ENS PRECEDEIX DISMINUEIX SENSIBLEMENT LA SEVA VELOCITAT, I S'ENCENEN ELS LLUMS DE FRENADA I L'INDICADOR DE DIRECCIÓ DE LA DRETA, HEM DE PENSAR",
+  "a1": "Que vol que l'avancem per la dreta.",
+  "a2": "Que té un fals contacte al sistema elèctric.",
+  "a3": "Que pararà o canviarà de direcció vers la dreta."
+ },
+ "2736": {
+  "q": "1187 EN LA MAJORIA DELS VEHICLES, EL RETROVISOR INTERIOR NO PERMET UNA VISIÓ TOTAL: EXISTEIXEN UNS ANGLES MORTS QUE LIMITEN LA VISIÓ POSTERIOR. COM HO PAL·LIAREM?",
+  "a1": "Regulant bé el retrovisor interior.",
+  "a2": "Posant un retrovisor a la finestra de la porta posterior.",
+  "a3": "Utilitzant complementàriament els retrovisors laterals exteriors."
+ },
+ "2737": {
+  "q": "1232 Com hem d'efectuar la maniobra de canvi de direcció a la dreta?",
+  "a1": "Atansant-nos progressivament a la vora dreta de la calçada, senyalitzant la nostra maniobra.",
+  "a2": "Situant-nos en el centre de la calçada.",
+  "a3": "Donant preferència als vehicles que s'atansin en sentit contrari."
+ },
+ "2738": {
+  "q": "1191 SI CIRCULEM QUAN HI HAGI BOIRA, HO HEM DE FER:",
+  "a1": "A vint quilòmetres per hora.",
+  "a2": "Amb la senyalització d'emergència connectada per tal que ens puguin veure els altres usuaris",
+  "a3": "A una velocitat adequada que ens permeti sempre detenir el vehicle dins la zona de visió de què disposem."
+ },
+ "2739": {
+  "q": "1189 QUAN LA CÀRREGA SOBRESURT MÉS D'UN METRE PER LA PART DE DARRERE D'UN VEHICLE, COM L'HEM DE SENYALITZAR?",
+  "a1": "Amb un pannell amb franges diagonals alternes blanques i vermelles durant el dia i en condicions de visibilitat normals i a més amb un llum vermell situat a l'extrem de la càrrega en condicions de visibilitat adverses o durant la nit.",
+  "a2": "Amb un llum vermell a l'extrem de la càrrega, tant de dia com de nit.",
+  "a3": "Amb un drap vermell durant el dia i un dispositiu reflectant durant la nit."
+ },
+ "2740": {
+  "q": "1182 QUÈ INDICA AQUEST SENYAL?",
+  "a1": "Fi de doble sentit de circulació, via lliure.",
+  "a2": "Direcció obligatòria",
+  "a3": "Gir obligatori."
+ },
+ "2741": {
+  "q": "1236 Quan es permet parar el vehicle en les voreres d'emergència de les autopistes?",
+  "a1": "Quan la vorera es trobi a la dreta segons el nostre sentit de marxa.",
+  "a2": "Solament en cas d'emergència.",
+  "a3": "En cap cas."
+ },
+ "2742": {
+  "q": "1227 Com s'anomena la part de la via pública situada dins el límit de les poblacions?",
+  "a1": "Carrer o via urbana.",
+  "a2": "Carretera poblacional.",
+  "a3": "Via ciutadana."
+ },
+ "2743": {
+  "q": "1241 Està prohibit parar-se...",
+  "a1": "En llocs de visibilitat insuficient.",
+  "a2": "Tocant la vorera de l'esquerra.",
+  "a3": "En les voreres de les carreteres."
+ },
+ "2744": {
+  "q": "1171 QUAN TROBEM L'AGENT DE LA CIRCULACIÓ EN AQUESTA POSICIÓ, QUÈ HEM DE FER?",
+  "a1": "Parar i esperar el senyal de pas lliure.",
+  "a2": "Podem continuar en línia recta.",
+  "a3": "Hem d'esperar que l'agent es giri per indicar-nos el que hem de fer."
+ },
+ "2745": {
+  "q": "1183 QUÈ REPRESENTA AQUEST SENYAL?",
+  "a1": "Fi de túnel.",
+  "a2": "Enllumenat d'encreuament obligatori",
+  "a3": "Fi d'obligació d'enllumenat d'encreuament i possibilitat de prescindir-ne si les circumstàncies de visibilitat no ho imposen."
+ },
+ "2746": {
+  "q": "1180 QUÈ REPRESENTA AQUEST SENYAL?",
+  "a1": "Perill per obres en la calçada.",
+  "a2": "Pont mòbil.",
+  "a3": "Canvi de rasant."
+ },
+ "2747": {
+  "q": "1229 Els cinturons de seguretat per als usuaris dels vehicles de turisme dins al Principat d'Andorra...",
+  "a1": "Són obligatoris per als ocupants de les places davanteres i posteriors.",
+  "a2": "Només cal posar-los al circular per zona interurbana.",
+  "a3": "És obligatori per a tots els ocupants del vehicle si es circula per zones on la velocitat autoritzada sigui superior a 60 km/h."
+ },
+ "2748": {
+  "q": "1224 Quan hi hagi condicions meteorològiques o ambientals que disminueixin la visibilitat, tals com boira, pluja o neu, quin enllumenat s'utilitzarà en una autovia?",
+  "a1": "El de carretera.",
+  "a2": "El de posició.",
+  "a3": "El d'encreuament."
+ },
+ "2749": {
+  "q": "1179 QUÈ INDICA AQUEST SENYAL?",
+  "a1": "Circulació prohibida als vehicles que transporten matèries perilloses.",
+  "a2": "Pas prohibit a cisternes.",
+  "a3": "Circulació prohibida als vehicles que transporten productes contaminants de l'aigua."
+ },
+ "2750": {
+  "q": "1177 QUÈ ORDENA AQUEST SEMÀFOR?",
+  "a1": "Precaució a la seva altura.",
+  "a2": "Via lliure.",
+  "a3": "Preparar-se per a parar. Canvi pròxim."
+ },
+ "2751": {
+  "q": "1219 En deixar un vehicle estacionat és obligatori...",
+  "a1": "Recolzar les rodes del vehicle sobre la vorera, en tots els casos.",
+  "a2": "Immobilitzar el vehicle i parar el funcionament del motor.",
+  "a3": "Tancar totes les portes amb clau."
+ },
+ "2752": {
+  "q": "1231 Com demanarem pas al conductor del camió?.",
+  "a1": "Col·locant-nos a la seva esquerra.",
+  "a2": "Amb els senyals òptics o els acústics.",
+  "a3": "No és necessari, perquè té limitada la seva velocitat."
+ },
+ "2753": {
+  "q": "1225 Per quina zona de l'autopista transitaran els vianants?",
+  "a1": "Per la mitjana, amb molta precaució.",
+  "a2": "Per cap lloc, la circulació de vianants en autopistes està prohibida.",
+  "a3": "Per la dreta dels carrils d'alentiment."
+ },
+ "2754": {
+  "q": "1223 Circulant per un túnel, encara que estigui il·luminat s'ha d'utilitzar...",
+  "a1": "L'enllumenat de carretera.",
+  "a2": "Solament l'enllumenat ordinari.",
+  "a3": "L'enllumenat d'encreuament."
+ },
+ "2755": {
+  "q": "1222 Està prohibit...",
+  "a1": "Comprar en parades del carrer sense baixar del vehicle.",
+  "a2": "Avançar per l'esquerra.",
+  "a3": "Vessar matèries greixoses en la via pública."
+ },
+ "2756": {
+  "q": "1197 ON HEM DE FER STOP?",
+  "a1": "Un metre abans de l'encreuament i del senyal.",
+  "a2": "En el lloc on tinguem visibilitat suficient, abans d'entrar en la calçada transversal.",
+  "a3": "Quan les rodes davanteres es trobin a la calçada transversal."
+ },
+ "2757": {
+  "q": "1190 QUAN ARRIBEM EN UN LLOC ON S'HA PRODUÏT UN ACCIDENT, EN PRIMER LLOC, HEM DE:",
+  "a1": "Ajudar els ferits, sense importar rés més.",
+  "a2": "Avisar l'autoritat.",
+  "a3": "Detenir-nos quan sigui possible i, sense crear perills per a la circulació, prestar l'ajut necessari."
+ },
+ "2758": {
+  "q": "1237 Abans d'iniciar una maniobra i mentre l'efectuem, hem de...",
+  "a1": "Apreciar si la podem efectuar a gran velocitat, per no dificultar la circulació.",
+  "a2": "Circular pel carril de la dreta, en tot cas.",
+  "a3": "Advertir els altres usuaris."
+ },
+ "2759": {
+  "q": "1175 QUIN SIGNIFICAT TÉ AQUEST SENYAL?",
+  "a1": "Longitud total de vehicle limitada.",
+  "a2": "Limitació d'amplada.",
+  "a3": "Prohibició d'aparcar més de dos minuts."
+ },
+ "2760": {
+  "q": "1174 QUÈ REPRESENTA AQUEST SENYAL?",
+  "a1": "Prohibit girar a la dreta.",
+  "a2": "Obligatori girar a la dreta.",
+  "a3": "Corba perillosa a la dreta."
+ },
+ "2761": {
+  "q": "1216 Quin enllumenat s'utilitzarà circulant en vies urbanes insuficientment il·luminades?",
+  "a1": "El d'encreuament.",
+  "a2": "El intensiu o el de encreuament segons convingui.",
+  "a3": "El de carretera."
+ },
+ "2762": {
+  "q": "1239 Per efectuar un avançament en una calçada de doble sentit i dos carrils..",
+  "a1": "Cal comprovar que no s'aproxima cap vehicle per darrere a menys de 200 metres.",
+  "a2": "Hem de comprovar que no circula cap vehicle en sentit contrari, per evitar el risc de col·lisió.",
+  "a3": "S'ha de comprovar que el vehicle que va davant circula a menys de 50 quilòmetres per hora."
+ },
+ "2763": {
+  "q": "1230 Digueu dues consideracions correctes que, entre altres, hem de tenir en compte abans d'iniciar un avançament.",
+  "a1": "Que la calçada tingui un mínim de vuit metres i que el vehicle al qual volem avançar no sigui d'una cilindrada major que el nostre.",
+  "a2": "La velocitat i la marxa de l'altre vehicle.",
+  "a3": "Les dimensions i la velocitat de l'altre vehicle."
+ },
+ "2764": {
+  "q": "1170 L'ESTACIONAMENT ESTÀ PROHIBIT",
+  "a1": "En les voreres de l'esquerra.",
+  "a2": "En els llocs no vigilats.",
+  "a3": "Quan s'impedeixi el moviment d'altres vehicles ja estacionats."
+ },
+ "2765": {
+  "q": "1178 QUE ORDENA AQUEST AGENT DE LA CIRCULACIÓ?",
+  "a1": "Parar els vehicles que vénen de front.",
+  "a2": "Parar els vehicles quevénen pel seu darrera.",
+  "a3": "Parar els vehicles que vénen de front i pel seu darrera."
+ },
+ "2766": {
+  "q": "1249 Llocs en què està prohibit parar-se. Digui la resposta correcta.",
+  "a1": "Per temps indefinit i durant més de 12 hores en el mateix lloc.",
+  "a2": "En els ponts i en els túnels.",
+  "a3": "En les carreteres que no tinguin vorera d'emergència i en els carrers que no tinguin voreres."
+ },
+ "2767": {
+  "q": "1256 Què significa aquest senyal?",
+  "a1": "Fi de via ràpida.",
+  "a2": "Pont perillós.",
+  "a3": "Fi d'autopista."
+ },
+ "2768": {
+  "q": "1259 Què significa aquest senyal?",
+  "a1": "Confirmació de ruta.",
+  "a2": "Punt quilomètric de carretera general.",
+  "a3": "Fita quilomètrica en carretera secundària."
+ },
+ "2769": {
+  "q": "1245 Com hem de circular quan arribem a una plaça?",
+  "a1": "Deixant sempre els obstacles a la dreta.",
+  "a2": "Deixant el possible obstacle a la dreta o l'esquerra indiferentment, si no hi ha cap senyal que obligui o prohibeixi.",
+  "a3": "Pel costat dret i deixant el possible obstacle a l'esquerra."
+ },
+ "2770": {
+  "q": "1282 Com es tradueix aquest senyal?",
+  "a1": "Desviació o estrenyiment temporal de la calçada.",
+  "a2": "Aproximació d'una sortida.",
+  "a3": "Direcció per corba."
+ },
+ "2771": {
+  "q": "1244 Com hem d'efectuar la marxa enrere?",
+  "a1": "Traient sempre el cap per la finestra.",
+  "a2": "Amb rapidesa.",
+  "a3": "Amb lentitud."
+ },
+ "2772": {
+  "q": "1252 Què vol dir aquest senyal?",
+  "a1": "Prohibit girar a la dreta i a l'esquerra.",
+  "a2": "Que s'atansa un encreuament.",
+  "a3": "Úniques direccions permeses."
+ },
+ "2773": {
+  "q": "1280 Què significa aquest senyal?",
+  "a1": "Prohibit estacionar dos autobusos, un al costat de l'altre.",
+  "a2": "Prohibit estacionar en els dos carrils de la calçada.",
+  "a3": "Prohibit estacionar els dies parells en el costat on està instal·lat el senyal."
+ },
+ "2774": {
+  "q": "1285 Què significa aquest senyal?",
+  "a1": "Vehicle de llargada superior a 12 metres.",
+  "a2": "Vehicle autoritzat a sobrepassar el pes o les dimensions màximes.",
+  "a3": "Zona d'estacionament prohibit."
+ },
+ "2775": {
+  "q": "1268 Per a quins vehicles és obligatori el senyal de gàlib?",
+  "a1": "Per als camions i autocars.",
+  "a2": "Per als de més de 2,10 metres d'amplada i longitud igual o superior a 6 metres.",
+  "a3": "Per als de longitud igual o superior a 5 metres."
+ },
+ "2776": {
+  "q": "1264 Si circulem darrere un vehicle voluminós i pretenem avançar-lo, què hauríem de fer per poder realitzar-ho amb seguretat?",
+  "a1": "Situar-nos a una distància adequada, que ens permeti tenir un correcte camp de visió.",
+  "a2": "Acostar-nos tant com podrem a fi de tenir un major angle de visibilitat.",
+  "a3": "No avançar-lo perquè és perillós i podem tenir un accident."
+ },
+ "2777": {
+  "q": "1271 Quan circulem per una plaça, glorieta o encreuament de carrers a la part central dels quals existeixi un monument, jardí, font, pal indicador o qualsevol dispositiu anàleg, hem de circular, deixant l'obstacle o centre de la plaça...",
+  "a1": "A la nostra dreta.",
+  "a2": "A la nostra esquerra, llevat senyal que indiqui una altra cosa.",
+  "a3": "Al centre."
+ },
+ "2778": {
+  "q": "1263 El volant s'ha d'agafar:",
+  "a1": "Fortament, amb una mà a la part superior i l'altra a la part inferior del volant.",
+  "a2": "Amb la punta dels dits i per la part inferior.",
+  "a3": "Amb fermesa, i de forma que la posició de les mans s'assimili a la de les agulles del rellotge quan són les deu hores i deu minuts."
+ },
+ "2779": {
+  "q": "1273 Què determina aquest senyal?",
+  "a1": "Final de limitació de velocitat.",
+  "a2": "Velocitat màxima limitada.",
+  "a3": "Velocitat mínima."
+ },
+ "2780": {
+  "q": "1265 Les línies discontínues poden ser sobrepassades...",
+  "a1": "Quan vulguem, sempre que circulem a més de 30 km/h.",
+  "a2": "Per realitzar maniobres com les d'avançament, de canvi de direcció o de canvi de sentit.",
+  "a3": "Sols per efectuar avançaments."
+ },
+ "2781": {
+  "q": "1247 Si vostè, conductor, pretén canviar de direcció, haurà de...",
+  "a1": "Arrambar-se sempre al costat dret.",
+  "a2": "Indicar-ho amb la suficient antelació.",
+  "a3": "Fer la maniobrar a tota velocitat."
+ },
+ "2782": {
+  "q": "1262 Què significa aquest senyal?",
+  "a1": "Prohibit anar al front i a l'esquerra, permès el gir a la dreta.",
+  "a2": "Prohibit anar al front, via lliure a la dreta i l'esquerra.",
+  "a3": "Alto al front, via lliure a la dreta i l'esquerra."
+ },
+ "2783": {
+  "q": "1253 Què significa aquest senyal?",
+  "a1": "Vol rasant d'avions (perill de soroll imprevist).",
+  "a2": "Prohibeix el vol d'avions.",
+  "a3": "Que estem a l'aeroport."
+ },
+ "2784": {
+  "q": "1255 Què significa aquest senyal?",
+  "a1": "Altura limitada.",
+  "a2": "Pes limitat per eix.",
+  "a3": "Limitació de pes total."
+ },
+ "2785": {
+  "q": "1242 Calçada és...",
+  "a1": "La zona de carretera reservada als vianants.",
+  "a2": "La part de via pública utilitzada normalment per vehicles i animals.",
+  "a3": "Solament la franja de carretera amb marques en el paviment."
+ },
+ "2786": {
+  "q": "1274 Què fixa aquest senyal?",
+  "a1": "Carretera de muntanya.",
+  "a2": "Corbes perilloses, la primera a l'esquerra.",
+  "a3": "Paviment lliscant."
+ },
+ "2787": {
+  "q": "1288 Es poden utilitzar, com i quan vulguem, els senyals acústics?",
+  "a1": "No",
+  "a2": "Sí.",
+  "a3": "Depèn del vehicle."
+ },
+ "2788": {
+  "q": "1261 Què significa aquest senyal?",
+  "a1": "Autopista.",
+  "a2": "Carretera preferent.",
+  "a3": "Carretera amb vorera d'emergència."
+ },
+ "2789": {
+  "q": "1270 Els indicadors de direcció avisen, però ens donen drets davant els altres usuaris?",
+  "a1": "No.",
+  "a2": "Sí.",
+  "a3": "Sempre que es posin primer que els altres."
+ },
+ "2790": {
+  "q": "1279 Què significa aquest senyal?",
+  "a1": "Circulació prohibida a vehicles que transportin matèries explosives o inflamables.",
+  "a2": "Circulació prohibida a vehicles amb portamaletes superior.",
+  "a3": "Perill per caiguda de pedres al sostre del vehicle."
+ },
+ "2791": {
+  "q": "1286 Què significa aquest senyal?",
+  "a1": "Confirmació de ruta.",
+  "a2": "Direcció d'interès general.",
+  "a3": "Fita quilomètrica en carretera general."
+ },
+ "2792": {
+  "q": "1277 Quina prohibició imposa aquest senyal?",
+  "a1": "Circulació prohibida solament per a camions de més de 5.5 tones de pes eix.",
+  "a2": "Direcció prohibida per a camions.",
+  "a3": "Circulació prohibida per a vehicles de pes total superior a l'indicat."
+ },
+ "2793": {
+  "q": "1272 Podem, en una autopista, circular a una velocitat anormalment reduïda sense causa justificada?",
+  "a1": "Sí.",
+  "a2": "No.",
+  "a3": "Segons el tipus d'autopista."
+ },
+ "2794": {
+  "q": "1275 Si troba aquest senyal, què ha de fer?",
+  "a1": "Parar en la intersecció pròxima.",
+  "a2": "Continuar sense cap precaució, ja que tenim preferència en la intersecció pròxima.",
+  "a3": "Reduir la velocitat i fixar l'atenció, tot i tenir preferència de pas en la intersecció."
+ },
+ "2795": {
+  "q": "1267 Per quins senyals substituirem els senyals acústics durant la nit?",
+  "a1": "Per l'enllumenament ordinari.",
+  "a2": "Pels senyals amb el braç.",
+  "a3": "Per l'alternança dels llums d'encreuament i de carretera."
+ },
+ "2796": {
+  "q": "1283 Com es tradueix aquest senyal?",
+  "a1": "Túnel.",
+  "a2": "Llum d'encreuament obligatori.",
+  "a3": "Visibilitat reduïda."
+ },
+ "2797": {
+  "q": "1266 On trobem el senyal de perill de nens, caldrà que:",
+  "a1": "Extremem la precaució.",
+  "a2": "Parem.",
+  "a3": "Continuem sense fer-ne gaire cas, ja que són ells els qui han de vigilar."
+ },
+ "2798": {
+  "q": "1276 Què significa aquest senyal?",
+  "a1": "Permesa la circulació paral·lela.",
+  "a2": "Doble sentit de circulació.",
+  "a3": "Direcció doble obligatòria."
+ },
+ "2799": {
+  "q": "1254 Què vol dir aquest senyal?",
+  "a1": "Que no es pot girar en cap sentit.",
+  "a2": "Pròxima intersecció amb circulació giratòria.",
+  "a3": "Gir obligatori."
+ }
+}
