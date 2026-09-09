@@ -2171,7 +2171,7 @@
   },
   "Si circulem darrere un vehicle voluminós i pretenem avançar-lo, que hauríem de fer per poder realitzar-ho amb seguretat?": {
     "question_cat": "Si circulem darrere un vehicle voluminós i pretenem avançar-lo, que hauríem de fer per poder realitzar-ho amb seguretat?",
-    "question_fr": "Si nous circulons derrière un véhicule volumineux et prétendons le dépasser, que devrions-nous faire pour pouvoir le réaliser avec sécurité?",
+    "question_fr": "Si nous circulons derrière un véhicule volumineux et avons l'intention de le dépasser, que devrions-nous faire pour pouvoir le réaliser avec sécurité?",
     "answer_1_cat": "Situar-nos a una distància adequada, que ens permeti tenir un correcte camp de visiò.",
     "answer_1_fr": "Nous situer à une distance adéquate, qui nous permette d'avoir un correct champ de vision.",
     "answer_2_cat": "Acostar-nos tant com podrem a fi de tenir un major angle de visibilitat.",
@@ -2221,7 +2221,7 @@
   },
   "Si vosté, conductor, pretén canviar de direcciò, haurà de...": {
     "question_cat": "Si vosté, conductor, pretén canviar de direcciò, haurà de...",
-    "question_fr": "Si vous, conducteur, prétendez changer de direction, vous devrez...",
+    "question_fr": "Si vous, conducteur, avez l'intention de changer de direction, vous devrez...",
     "answer_1_cat": "Arrambrar-se sempre al costat dret.",
     "answer_1_fr": "Vous serrer toujours du côté droit.",
     "answer_2_cat": "Indicar-ho amb la suficient antelaciò",
@@ -2243,9 +2243,9 @@
     "question_cat": "Que indica l'agent de circulaciò?",
     "question_fr": "Qu'indique l'agent de circulation?",
     "answer_1_cat": "Parar els vehicles que s'atansen pel seu darrere.",
-    "answer_1_fr": "Arrêter les véhicules qui s'approchent par derrière lui.",
+    "answer_1_fr": "Arrêter les véhicules qui s'approchent derrière lui.",
     "answer_2_cat": "Parar als vehicles que s'atansen pel seu davant.",
-    "answer_2_fr": "Arrêter les véhicules qui s'approchent par devant lui.",
+    "answer_2_fr": "Arrêter les véhicules qui s'approchent devant lui.",
     "answer_3_cat": "Parar tocant la vora.",
     "answer_3_fr": "S'arrêter en touchant le bord."
   },
@@ -2411,7 +2411,7 @@
   },
   "Que significa aquest senyal per al conductor del turisme que preten avançar un camiò?": {
     "question_cat": "Que significa aquest senyal per al conductor del turisme que preten avançar un camiò?",
-    "question_fr": "Que signifie ce signal pour le conducteur de la voiture de tourisme qui prétend dépasser un camion?",
+    "question_fr": "Que signifie ce signal pour le conducteur de la voiture de tourisme qui a l'intention de dépasser un camion?",
     "answer_1_cat": "Que només pot avançar el camió per la dreta.",
     "answer_1_fr": "Qu'il peut seulement dépasser le camion par la droite.",
     "answer_2_cat": "Que no pot avançar al camió perquè el senyal ho prohibeix.",
@@ -4631,7 +4631,7 @@
   },
   "Que significa aquest senyal pel conductor del turisme que pretén avançar el camiò?": {
     "question_cat": "Que significa aquest senyal pel conductor del turisme que pretén avançar el camiò?",
-    "question_fr": "Que signifie ce signal pour le conducteur de la voiture de tourisme qui prétend dépasser le camion?",
+    "question_fr": "Que signifie ce signal pour le conducteur de la voiture de tourisme qui a l'intention de dépasser le camion?",
     "answer_1_cat": "Que només pot avançar el camiò per la dreta.",
     "answer_1_fr": "Qu'il peut seulement dépasser le camion par la droite.",
     "answer_2_cat": "Que no pot avançar al camiò perquè el senyal ho prohibeix.",
@@ -5251,7 +5251,7 @@
   },
   "Amb quin senyal òptic ens indicarà el vehicle de devant que pretén reduir o aturar la marxa?": {
     "question_cat": "Amb quin senyal òptic ens indicarà el vehicle de devant que pretén reduir o aturar la marxa?",
-    "question_fr": "Avec quel signal optique le véhicule de devant nous indiquera-t-il qu'il prétend réduire ou arrêter la marche?",
+    "question_fr": "Avec quel signal optique le véhicule de devant nous indiquera-t-il qu'il a l'intention de réduire ou arrêter la marche?",
     "answer_1_cat": "Amb l'enllumenat de posiciò.",
     "answer_1_fr": "Avec l'éclairage de position.",
     "answer_2_cat": "Amb l'indicador de direcciò de l'esquerre.",
@@ -5583,9 +5583,9 @@
     "question_cat": "En una rotonda, els vehicles que circulen dintre de la via circular...",
     "question_fr": "Dans un rond-point, les véhicules qui circulent dans la voie circulaire...",
     "answer_1_cat": "Tenen preferència de pas sobre els que pretenguin accedir a ella.",
-    "answer_1_fr": "Ont la priorité de passage sur ceux qui prétendent y accéder.",
+    "answer_1_fr": "Ont la priorité de passage sur ceux qui ont l'intention d'y accéder.",
     "answer_2_cat": "Hem de cedir el pas als vehicles que per la seva dreta pretenguin accedir a ella.",
-    "answer_2_fr": "Nous devons céder le passage aux véhicules qui par leur droite prétendent y accéder.",
+    "answer_2_fr": "Nous devons céder le passage aux véhicules qui par leur droite ont l'intention d'y accéder.",
     "answer_3_cat": "Facilitaràn sempre l'accès d'altres vehicles a la mateixa.",
     "answer_3_fr": "Faciliteront toujours l'accès d'autres véhicules à celle-ci."
   },
@@ -5991,7 +5991,7 @@
   },
   "En una glorieta en la qual no està regulada la preferència de pas vosté pretèn accedir a ella però observa que dintre de la via circular, per la seva esquerra circula un altre vehicle ha de cedir el pas?": {
     "question_cat": "En una glorieta en la qual no està regulada la preferència de pas vosté pretèn accedir a ella però observa que dintre de la via circular, per la seva esquerra circula un altre vehicle ha de cedir el pas?",
-    "question_fr": "Dans un rond-point dans lequel la priorité de passage n'est pas réglée vous prétendez y accéder mais vous observez que dans la voie circulaire, par votre gauche circule un autre véhicule devez-vous céder le passage?",
+    "question_fr": "Dans un rond-point dans lequel la priorité de passage n'est pas réglée vous avez l'intention d'y accéder mais vous observez que dans la voie circulaire, par votre gauche circule un autre véhicule devez-vous céder le passage?",
     "answer_1_cat": "No, solament ha de cedir el pas als vehicles que s'aproximen per la meva dreta.",
     "answer_1_fr": "Non, je dois céder le passage seulement aux véhicules qui s'approchent par ma droite.",
     "answer_2_cat": "Si, però unicament quan es tracti de vehicles automòbils.",
@@ -6361,7 +6361,7 @@
   },
   "Quan el conductor del vehicle al que preten avançar estigui indicant el propòsit de canviar de direcciò a l'esquerra, se l'ha d'avançar?": {
     "question_cat": "Quan el conductor del vehicle al que preten avançar estigui indicant el propòsit de canviar de direcciò a l'esquerra, se l'ha d'avançar?",
-    "question_fr": "Quand le conducteur du véhicule que vous prétendez dépasser est en train d'indiquer le propos de changer de direction à gauche, doit-on le dépasser?",
+    "question_fr": "Quand le conducteur du véhicule que vous avez l'intention de dépasser est en train d'indiquer le propos de changer de direction à gauche, doit-on le dépasser?",
     "answer_1_cat": "Per l'esquerra.",
     "answer_1_fr": "Par la gauche.",
     "answer_2_cat": "Per qualsevol costat.",
@@ -6507,7 +6507,7 @@
     "answer_2_cat": "Obligaciò d'aturar-se.",
     "answer_2_fr": "Obligation de s'arrêter.",
     "answer_3_cat": "Obligaciò de seguir",
-    "answer_3_fr": "Obligation de suivre"
+    "answer_3_fr": "Obligation de continuer"
   },
   "A la vista de les línies marcades en el paviment pot avançar el camió al turisme?": {
     "question_cat": "A la vista de les línies marcades en el paviment pot avançar el camió al turisme?",
@@ -6951,7 +6951,7 @@
   },
   "Es correcte aproximar-se excessivament a la part posterior del vehicle que pretenem avançar?": {
     "question_cat": "Es correcte aproximar-se excessivament a la part posterior del vehicle que pretenem avançar?",
-    "question_fr": "Est-il correct de s'approcher excessivement de la partie postérieure du véhicule que nous prétendons dépasser?",
+    "question_fr": "Est-il correct de s'approcher excessivement de la partie postérieure du véhicule que nous avons l'intention de dépasser?",
     "answer_1_cat": "Si, perquè aixì l'avancem abans.",
     "answer_1_fr": "Oui, parce qu'ainsi nous le dépassons plus tôt.",
     "answer_2_cat": "No, és un error.",
@@ -7351,7 +7351,7 @@
   },
   "Si circulem darrere un vehicle voluminòs i pretenem avançar l'ho, que haurem de fer per poder realitzar ho amb seguretat?": {
     "question_cat": "Si circulem darrere un vehicle voluminòs i pretenem avançar l'ho, que haurem de fer per poder realitzar ho amb seguretat?",
-    "question_fr": "Si nous circulons derrière un véhicule volumineux et prétendons le dépasser, que devrons-nous faire pour pouvoir le réaliser avec sécurité?",
+    "question_fr": "Si nous circulons derrière un véhicule volumineux et avons l'intention de le dépasser, que devrons-nous faire pour pouvoir le réaliser avec sécurité?",
     "answer_1_cat": "Situar-nos a una distància adequada que ens permeti tenir un correcte camp de visiò.",
     "answer_1_fr": "Nous situer à une distance adéquate qui nous permette d'avoir un correct champ de vision.",
     "answer_2_cat": "Acostar-nos tan com podrem a fì de tenir un major angle de visiò.",
@@ -7581,7 +7581,7 @@
   },
   "Si circulo per una autopista sense cap senyalització previa restrictiva i un vehicle pretén incorporar-se a la meva via per la dreta, estic obligat a cedir l'hi el pas?": {
     "question_cat": "Si circulo per una autopista sense cap senyalització previa restrictiva i un vehicle pretén incorporar-se a la meva via per la dreta, estic obligat a cedir l'hi el pas?",
-    "question_fr": "Si je circule sur une autoroute sans aucune signalisation préalable restrictive et qu'un véhicule prétend s'incorporer à ma voie par la droite, suis-je obligé de lui céder le passage?",
+    "question_fr": "Si je circule sur une autoroute sans aucune signalisation préalable restrictive et qu'un véhicule a l'intention de s'incorporer à ma voie par la droite, suis-je obligé de lui céder le passage?",
     "answer_1_cat": "Si perquè accedeix per la meva dreta.",
     "answer_1_fr": "Oui parce qu'il accède par ma droite.",
     "answer_2_cat": "Depen de quina sigui la categoría de les vies respectives.",
@@ -7721,7 +7721,7 @@
   },
   "Quan el conductor del vehicle al qual pretén avançar estigui indicant el propòsit de canviar de direcciò a l'esquerra, se l'ha d'avançar...": {
     "question_cat": "Quan el conductor del vehicle al qual pretén avançar estigui indicant el propòsit de canviar de direcciò a l'esquerra, se l'ha d'avançar...",
-    "question_fr": "Quand le conducteur du véhicule que vous prétendez dépasser est en train d'indiquer le propos de changer de direction à gauche, doit-on le dépasser...",
+    "question_fr": "Quand le conducteur du véhicule que vous avez l'intention de dépasser est en train d'indiquer le propos de changer de direction à gauche, doit-on le dépasser...",
     "answer_1_cat": "Per l'esquerra.",
     "answer_1_fr": "Par la gauche.",
     "answer_2_cat": "Per qualsevol costat.",
@@ -8857,7 +8857,7 @@
     "answer_2_cat": "Si, a tots els vehicles de motor.",
     "answer_2_fr": "Oui, à tous les véhicules à moteur.",
     "answer_3_cat": "Si, als vehicles que pretenguin accedir a la glorieta.",
-    "answer_3_fr": "Oui, aux véhicules qui prétendent accéder au rond-point."
+    "answer_3_fr": "Oui, aux véhicules qui ont l'intention d'accéder au rond-point."
   },
   "Assenyali les respostes correctes. La falta de presiò en els pneumàtics :": {
     "question_cat": "Assenyali les respostes correctes. La falta de presiò en els pneumàtics :",
@@ -8965,7 +8965,7 @@
     "answer_1_cat": "Si, circulant en zigzag, sense derrocar cap con.",
     "answer_1_fr": "Oui, en circulant en zigzag, sans renverser aucun cône.",
     "answer_2_cat": "Si, tret que un senyal ho prohibeixi expressament.",
-    "answer_2_fr": "Oui, sauf qu'un signal l'interdise expressément.",
+    "answer_2_fr": "Oui, sauf si un signal l'interdit expressément.",
     "answer_3_cat": "No, perquè prohibeixen el pas a través de la linea imaginària que els uneix.",
     "answer_3_fr": "Non, parce qu'ils interdisent le passage à travers la ligne imaginaire qui les unit."
   },
@@ -9991,7 +9991,7 @@
   },
   "El cotxe groc pretén avançar el cotxe blanc, pot fer-ho?": {
     "question_cat": "El cotxe groc pretén avançar el cotxe blanc, pot fer-ho?",
-    "question_fr": "La voiture jaune prétend dépasser la voiture blanche, peut-elle le faire?",
+    "question_fr": "La voiture jaune a l'intention de dépasser la voiture blanche, peut-elle le faire?",
     "answer_1_cat": "No, perqué se l'hi atansa un altre cotxe en sentit contrari.",
     "answer_1_fr": "Non, parce qu'une autre voiture s'approche d'elle en sens contraire.",
     "answer_2_cat": "No pot avançar si per això l'hi cal trepitjar la línia pintada a la calçada.",
@@ -10465,7 +10465,7 @@
     "answer_1_cat": "Si, circulant en zigzag, sense derrocar cap con.",
     "answer_1_fr": "Oui, en circulant en zigzag, sans renverser aucun cône.",
     "answer_2_cat": "Si, tret que el senyal ho prohibeixi expressament.",
-    "answer_2_fr": "Oui, sauf que le signal l'interdise expressément.",
+    "answer_2_fr": "Oui, sauf si le signal l'interdit expressément.",
     "answer_3_cat": "No, perqué prohibeixen el pas a través de la línia imaginària que els uneix.",
     "answer_3_fr": "Non, parce qu'ils interdisent le passage à travers la ligne imaginaire qui les unit."
   },
@@ -10701,7 +10701,7 @@
   },
   "En la majorìa de vehicles, el retrovisor interior no permet una visiò total: existeixen uns angles morts que limiten la visiò posterior. Com ho pal.liarem?": {
     "question_cat": "En la majorìa de vehicles, el retrovisor interior no permet una visiò total: existeixen uns angles morts que limiten la visiò posterior. Com ho pal.liarem?",
-    "question_fr": "Dans la majorité des véhicules, le rétroviseur intérieur ne permet pas une vision totale: il existe des angles morts qui limitent la vision postérieure. Comment y pallierons-nous?",
+    "question_fr": "Dans la majorité des véhicules, le rétroviseur intérieur ne permet pas une vision totale: il existe des angles morts qui limitent la vision postérieure. Comment le pallierons-nous?",
     "answer_1_cat": "Regulant bé el retrovisor interior.",
     "answer_1_fr": "En réglant bien le rétroviseur intérieur.",
     "answer_2_cat": "Posant un retrovisor a la finestra de la porta posterior.",
@@ -10915,7 +10915,7 @@
     "answer_1_cat": "La via mixta destinada a la circulaciò i als estacionaments.",
     "answer_1_fr": "La voie mixte destinée à la circulation et aux stationnements.",
     "answer_2_cat": "La via destinada a adaptar la velocitat a les circumstàncies i característiques de la vìa on pretenim accedir.",
-    "answer_2_fr": "La voie destinée à adapter la vitesse aux circonstances et caractéristiques de la voie où nous prétendons accéder.",
+    "answer_2_fr": "La voie destinée à adapter la vitesse aux circonstances et caractéristiques de la voie où nous avons l'intention d'accéder.",
     "answer_3_cat": "La vìa que és destina a les proves de frenada en circuit de proves.",
     "answer_3_fr": "La voie qui se destine aux essais de freinage sur circuit d'essais."
   },
@@ -12521,7 +12521,7 @@
   },
   "Que significa aquest senyal per al conductor del turisme que pretén avançar un camió?": {
     "question_cat": "Que significa aquest senyal per al conductor del turisme que pretén avançar un camió?",
-    "question_fr": "Que signifie ce signal pour le conducteur de la voiture de tourisme qui prétend dépasser un camion?",
+    "question_fr": "Que signifie ce signal pour le conducteur de la voiture de tourisme qui a l'intention de dépasser un camion?",
     "answer_1_cat": "Que només pot avançar el camió per la dreta.",
     "answer_1_fr": "Qu'il ne peut dépasser le camion que par la droite.",
     "answer_2_cat": "Que no pot avançar al camió perque el senyal ho prohibeix.",
@@ -13085,7 +13085,7 @@
     "answer_1_cat": "Alto a l’esquerra permès seguir endavant.",
     "answer_1_fr": "Halte à gauche permis de continuer en avant.",
     "answer_2_cat": "Alto a l’esquerra i al front.",
-    "answer_2_fr": "Halte à gauche et de front.",
+    "answer_2_fr": "Halte à gauche et en face.",
     "answer_3_cat": "Alto a la dreta i a l’esquerra permès seguir endavant.",
     "answer_3_fr": "Halte à droite et à gauche permis de continuer en avant."
   },
@@ -13631,7 +13631,7 @@
   },
   "Que indica aquest senyal pel conductor de l’automòbil, que pretén avançar al camió?": {
     "question_cat": "Que indica aquest senyal pel conductor de l’automòbil, que pretén avançar al camió?",
-    "question_fr": "Qu'indique ce signal pour le conducteur de l'automobile, qui prétend dépasser le camion?",
+    "question_fr": "Qu'indique ce signal pour le conducteur de l'automobile, qui a l'intention de dépasser le camion?",
     "answer_1_cat": "Que només pot avançar al camió per la dreta.",
     "answer_1_fr": "Qu'il ne peut dépasser le camion que par la droite.",
     "answer_2_cat": "Que no pot avançar al camió perque el senyal ho prohibeix.",
@@ -15191,7 +15191,7 @@
   },
   "D’acord amb la senyalització que s’observa a la fotografia on la línia groga es continua, l’hi està permès parar o estacionar?": {
     "question_cat": "D’acord amb la senyalització que s’observa a la fotografia on la línia groga es continua, l’hi està permès parar o estacionar?",
-    "question_fr": "D'accord avec la signalisation qu'on observe sur la photographie où la ligne jaune est continue, vous est-il permis de vous arrêter ou de stationner?",
+    "question_fr": "Conformément à la signalisation qu'on observe sur la photographie où la ligne jaune est continue, vous est-il permis de vous arrêter ou de stationner?",
     "answer_1_cat": "Estacionar no, parar si.",
     "answer_1_fr": "Stationner non, s'arrêter oui.",
     "answer_2_cat": "Si, perquè no s’obstaculitza a altres vehicles,ja que hi ha més camins per a circular.",
@@ -16373,7 +16373,7 @@
     "question_cat": "Digueu dues consideracions correctes que, entre altres, hem de tenir en compte abans d'iniciar un avançament:",
     "question_fr": "Dites deux considérations correctes que, entre autres, nous devons tenir en compte avant d'initier un dépassement:",
     "answer_1_cat": "Que la calçada tingui un mínim de vuit metres i que el vehicle al qual volem avançar no sigui d'una cilindrada major que el nostre.",
-    "answer_1_fr": "Que la chaussée ait un minimum de huit mètres et que le véhicule que nous voulons dépasser ne soit pas d'une cylindrée majeure que le nôtre.",
+    "answer_1_fr": "Que la chaussée ait un minimum de huit mètres et que le véhicule que nous voulons dépasser ne soit pas d'une cylindrée supérieure à la nôtre.",
     "answer_2_cat": "La velocitat i la marxa de l'altre vehicle.",
     "answer_2_fr": "La vitesse et la marche de l'autre véhicule.",
     "answer_3_cat": "Les dimensions i la velocitat de l'altre vehicle.",
@@ -16501,7 +16501,7 @@
   },
   "Si circulem darrere un vehicle voluminós i pretenem avançar-lo, que hauriem de fer per poder realitzar-ho amb seguretat?": {
     "question_cat": "Si circulem darrere un vehicle voluminós i pretenem avançar-lo, que hauriem de fer per poder realitzar-ho amb seguretat?",
-    "question_fr": "Si nous circulons derrière un véhicule volumineux et nous prétendons le dépasser, que devrions-nous faire pour pouvoir le réaliser avec sécurité?",
+    "question_fr": "Si nous circulons derrière un véhicule volumineux et nous avons l'intention de le dépasser, que devrions-nous faire pour pouvoir le réaliser avec sécurité?",
     "answer_1_cat": "Situar-nos a una distància adequada, que ens permeti tenir un correcte camp de visió.",
     "answer_1_fr": "Nous situer à une distance adéquate, qui nous permette d'avoir un correct champ de vision.",
     "answer_2_cat": "Acostar-nos tant com podrem a fi de tenir un major angle de visibilitat.",
@@ -16557,7 +16557,7 @@
     "answer_2_cat": "Posar el fre d'estacionament.",
     "answer_2_fr": "De mettre le frein de stationnement.",
     "answer_3_cat": "Desocupar totalment el vehicle.",
-    "answer_3_fr": "De désoccuper totalement le véhicule."
+    "answer_3_fr": "De faire évacuer totalement le véhicule."
   },
   "Per quins vehicles es obligatori el senyal de gàlib?": {
     "question_cat": "Per quins vehicles es obligatori el senyal de gàlib?",
@@ -16661,7 +16661,7 @@
   },
   "Si vostè, conductor, pretén canviar la direcció, haurà de…": {
     "question_cat": "Si vostè, conductor, pretén canviar la direcció, haurà de…",
-    "question_fr": "Si vous, conducteur, prétendez changer la direction, vous devrez…",
+    "question_fr": "Si vous, conducteur, avez l'intention de changer la direction, vous devrez…",
     "answer_1_cat": "Arramblar-se sempre al costat dret.",
     "answer_1_fr": "Vous ranger toujours sur le côté droit.",
     "answer_2_cat": "Indicar-ho amb la suficient antelació.",
@@ -16891,7 +16891,7 @@
   },
   "Perquè es un error arramblar-se a la part de darrera del vehicle, que pretenem avançar?": {
     "question_cat": "Perquè es un error arramblar-se a la part de darrera del vehicle, que pretenem avançar?",
-    "question_fr": "Pourquoi est-ce une erreur de se coller à la partie de derrière du véhicule, que nous prétendons dépasser?",
+    "question_fr": "Pourquoi est-ce une erreur de se coller à la partie de derrière du véhicule, que nous avons l'intention de dépasser?",
     "answer_1_cat": "Perquè tenim més angle de visibilitat.",
     "answer_1_fr": "Parce que nous avons plus d'angle de visibilité.",
     "answer_2_cat": "Perquè tenim menys angle de visibilitat.",
@@ -18431,7 +18431,7 @@
   },
   "Que significa aquest senyal per al conductor del turisme que pretén avançar un camió? #2": {
     "question_cat": "Que significa aquest senyal per al conductor del turisme que pretén avançar un camió?",
-    "question_fr": "Que signifie ce signal pour le conducteur de la voiture de tourisme qui prétend dépasser un camion?",
+    "question_fr": "Que signifie ce signal pour le conducteur de la voiture de tourisme qui a l'intention de dépasser un camion?",
     "answer_1_cat": "Que només pot avançar el camió per la dreta.",
     "answer_1_fr": "Qu'il ne peut dépasser le camion que par la droite.",
     "answer_2_cat": "Que no pot avançar al camió perquè ho senyal ho prohibeix.",
@@ -18681,7 +18681,7 @@
   },
   "Si vosté conductor,preten canviar de direcció,haurà de...": {
     "question_cat": "Si vosté conductor,preten canviar de direcció,haurà de...",
-    "question_fr": "Si vous conducteur,prétendez changer de direction,vous devrez...",
+    "question_fr": "Si vous conducteur,avez l'intention de changer de direction,vous devrez...",
     "answer_1_cat": "Arrambar-se sempre al costat dret.",
     "answer_1_fr": "Se serrer toujours au côté droit.",
     "answer_2_cat": "Indicar-ho amb la suficient antelaciò.",
@@ -18955,7 +18955,7 @@
     "answer_1_cat": "La via mixta destinada a la circulació i als estacionaments.",
     "answer_1_fr": "La voie mixte destinée à la circulation et aux stationnements.",
     "answer_2_cat": "La via destinada a adaptar la velocitat a les circumstàncies i les característiques de la via on pretenem accedir.",
-    "answer_2_fr": "La voie destinée à adapter la vitesse aux circonstances et aux caractéristiques de la voie où nous prétendons accéder.",
+    "answer_2_fr": "La voie destinée à adapter la vitesse aux circonstances et aux caractéristiques de la voie où nous avons l'intention d'accéder.",
     "answer_3_cat": "La via que es destina les proves de frenada en circuit de proves.",
     "answer_3_fr": "La voie qui se destine aux épreuves de freinage en circuit d'essais."
   },
@@ -19321,7 +19321,7 @@
   },
   "Es correcte aproximar-se excessivament a la part posterior del vehicle que pretenem avançar? #2": {
     "question_cat": "Es correcte aproximar-se excessivament a la part posterior del vehicle que pretenem avançar?",
-    "question_fr": "Est-il correct de s'approcher excessivement de la partie postérieure du véhicule que nous prétendons dépasser?",
+    "question_fr": "Est-il correct de s'approcher excessivement de la partie postérieure du véhicule que nous avons l'intention de dépasser?",
     "answer_1_cat": "Si, perquè així l'avancem abans.",
     "answer_1_fr": "Oui, parce qu'ainsi nous le dépassons plus tôt.",
     "answer_2_cat": "No es un error, la distància de seguretat entre vehicles ha de mantenir-se sempre.",
@@ -19981,7 +19981,7 @@
   },
   "Els turismes grocs i vermells del dibuix estan immobilitzats sense possibilitat d'avançar. Que ha de fer el turisme blau, que preten seguir en aquella direcció?": {
     "question_cat": "Els turismes grocs i vermells del dibuix estan immobilitzats sense possibilitat d'avançar. Que ha de fer el turisme blau, que preten seguir en aquella direcció?",
-    "question_fr": "Les voitures de tourisme jaunes et rouges du dessin sont immobilisées sans possibilité d'avancer. Que doit faire la voiture de tourisme bleue, qui prétend suivre dans cette direction?",
+    "question_fr": "Les voitures de tourisme jaunes et rouges du dessin sont immobilisées sans possibilité d'avancer. Que doit faire la voiture de tourisme bleue, qui a l'intention de suivre dans cette direction?",
     "answer_1_cat": "Passar, perquè ho ordena el semàfor.",
     "answer_1_fr": "Passer, parce que le feu de signalisation l'ordonne.",
     "answer_2_cat": "Avisar repetidament amb el clàxon a fi que li deixin pas.",
@@ -20831,7 +20831,7 @@
   },
   "El turisme preten avançar el camió. Pot fer-ho?": {
     "question_cat": "El turisme preten avançar el camió. Pot fer-ho?",
-    "question_fr": "La voiture de tourisme prétend dépasser le camion. Peut-elle le faire?",
+    "question_fr": "La voiture de tourisme a l'intention de dépasser le camion. Peut-elle le faire?",
     "answer_1_cat": "Pot avançar si trepitja la ratlla solament amb dues rodes.",
     "answer_1_fr": "Elle peut dépasser si elle franchit la raie seulement avec deux roues.",
     "answer_2_cat": "No pot avançar, si per fer-ho li cal trepitjar les línies pintades en la calçada.",
@@ -20951,7 +20951,7 @@
   },
   "Que significa aquest senyal per al conductor del turisme que pretén avançar un camió? #3": {
     "question_cat": "Que significa aquest senyal per al conductor del turisme que pretén avançar un camió?",
-    "question_fr": "Que signifie ce signal pour le conducteur de la voiture de tourisme qui prétend dépasser un camion?",
+    "question_fr": "Que signifie ce signal pour le conducteur de la voiture de tourisme qui a l'intention de dépasser un camion?",
     "answer_1_cat": "Que només pot avançar el camió per la dreta.",
     "answer_1_fr": "Qu'il peut seulement dépasser le camion par la droite.",
     "answer_2_cat": "Que no pot avançar al camió perquè el senyal ho prohibeix.",
@@ -20961,7 +20961,7 @@
   },
   "Els turismes grocs i vermells del dibuix estan immobilitzats sense possibilitat d'avançar. Que ha de fer el turisme blau, que preten seguir de front?": {
     "question_cat": "Els turismes grocs i vermells del dibuix estan immobilitzats sense possibilitat d'avançar. Que ha de fer el turisme blau, que preten seguir de front?",
-    "question_fr": "Les voitures de tourisme jaune et rouge du dessin sont immobilisées sans possibilité d'avancer. Que doit faire la voiture de tourisme bleue, qui prétend continuer de front?",
+    "question_fr": "Les voitures de tourisme jaune et rouge du dessin sont immobilisées sans possibilité d'avancer. Que doit faire la voiture de tourisme bleue, qui a l'intention de continuer de front?",
     "answer_1_cat": "Passar, perquè ho ordena el semàfor.",
     "answer_1_fr": "Passer, parce que le feu de signalisation l'ordonne.",
     "answer_2_cat": "Avisar repetidament amb el clàxon perquè deixin pas.",
@@ -21981,7 +21981,7 @@
   },
   "Els turismes grocs i vermells del dibuix estan immobilitzats sense possibilitat d'avançar. Que ha de fer el turisme blau, que pretén seguir de front?": {
     "question_cat": "Els turismes grocs i vermells del dibuix estan immobilitzats sense possibilitat d'avançar. Que ha de fer el turisme blau, que pretén seguir de front?",
-    "question_fr": "Les voitures de tourisme jaunes et rouges du dessin sont immobilisées sans possibilité d'avancer. Que doit faire la voiture de tourisme bleue, qui prétend continuer de front?",
+    "question_fr": "Les voitures de tourisme jaunes et rouges du dessin sont immobilisées sans possibilité d'avancer. Que doit faire la voiture de tourisme bleue, qui a l'intention de continuer de front?",
     "answer_1_cat": "Passar, perquè ho ordena el semàfor.",
     "answer_1_fr": "Passer, parce que le feu de signalisation l'ordonne.",
     "answer_2_cat": "Avisar repetidament amb el clàxon perquè deixin pas.",
@@ -22031,7 +22031,7 @@
   },
   "El cotxe groc pretén avançar el cotxe vermell pot fer-ho?": {
     "question_cat": "El cotxe groc pretén avançar el cotxe vermell pot fer-ho?",
-    "question_fr": "La voiture jaune prétend dépasser la voiture rouge peut-elle le faire?",
+    "question_fr": "La voiture jaune a l'intention de dépasser la voiture rouge peut-elle le faire?",
     "answer_1_cat": "No per que se li atansa un altre cotxe en sentit contrari.",
     "answer_1_fr": "Non parce qu'une autre voiture s'approche d'elle en sens contraire.",
     "answer_2_cat": "No pot avançar si per això li cal trepitjar la línia pintada en la calçada.",
@@ -22055,7 +22055,7 @@
     "answer_1_cat": "Si.",
     "answer_1_fr": "Oui.",
     "answer_2_cat": "Si, excepte prohibició expressa en contrari, mitjançant el corresponent senyal.",
-    "answer_2_fr": "Oui, sauf interdiction expresse en sens contraire, au moyen du signal correspondant.",
+    "answer_2_fr": "Oui, sauf interdiction expresse contraire, au moyen du signal correspondant.",
     "answer_3_cat": "No.",
     "answer_3_fr": "Non."
   },
@@ -22231,7 +22231,7 @@
   },
   "Vostè conductor del turisme a la vista del senyal, sabrà?": {
     "question_cat": "Vostè conductor del turisme a la vista del senyal, sabrà?",
-    "question_fr": "Vous conducteur de la voiture de tourisme à la vue du signal, saurez?",
+    "question_fr": "Vous conducteur de la voiture de tourisme à la vue du signal, saurez-vous?",
     "answer_1_cat": "Que no pot passar.",
     "answer_1_fr": "Que vous ne pouvez pas passer.",
     "answer_2_cat": "Que provisionalment s'ha de cedir el pas.",
@@ -22821,7 +22821,7 @@
   },
   "Amb quin senyal òptic ens indicarà el vehicle de davant que pretén reduir o aturar la marxa?": {
     "question_cat": "Amb quin senyal òptic ens indicarà el vehicle de davant que pretén reduir o aturar la marxa?",
-    "question_fr": "Avec quel signal optique le véhicule de devant nous indiquera-t-il qu'il prétend réduire ou arrêter la marche?",
+    "question_fr": "Avec quel signal optique le véhicule de devant nous indiquera-t-il qu'il a l'intention de réduire ou arrêter la marche?",
     "answer_1_cat": "Amb l'enllumenat de posició.",
     "answer_1_fr": "Avec l'éclairage de position.",
     "answer_2_cat": "Amb l'indicador de direcció de l'esquerre.",
@@ -23333,9 +23333,9 @@
     "question_cat": "Quan circulant, veiem nens que juguen prop de la calçada, hem de preveure que:",
     "question_fr": "Quand en circulant, nous voyons des enfants qui jouent près de la chaussée, nous devons prévoir que:",
     "answer_1_cat": "En qualsevol moment es poden creuar en la nostra trajectòria sense prestar atenció a la nostra presència.",
-    "answer_1_fr": "À n'importe quel moment ils peuvent se croiser dans notre trajectoire sans prêter attention à notre présence.",
+    "answer_1_fr": "À n'importe quel moment ils peuvent traverser notre trajectoire sans prêter attention à notre présence.",
     "answer_2_cat": "Sempre hi haurà una persona gran amb ells i per tan, no ens molestaran.",
-    "answer_2_fr": "Il y aura toujours une personne grande avec eux et par conséquent, ils ne nous gêneront pas.",
+    "answer_2_fr": "Il y aura toujours une grande personne avec eux et par conséquent, ils ne nous gêneront pas.",
     "answer_3_cat": "xxxx",
     "answer_3_fr": "xxxx"
   },
@@ -23871,7 +23871,7 @@
   },
   "Està prohibit portar menors com passatgers en una motocicleta a menors de…": {
     "question_cat": "Està prohibit portar menors com passatgers en una motocicleta a menors de…",
-    "question_fr": "Il est interdit de porter des mineurs comme passagers sur une motocyclette de moins de…",
+    "question_fr": "Il est interdit de porter comme passagers sur une motocyclette des mineurs de moins de…",
     "answer_1_cat": "5 anys.",
     "answer_1_fr": "5 ans.",
     "answer_2_cat": "8 anys.",
@@ -23971,7 +23971,7 @@
   },
   "En una glorieta en la qual no està regulada la preferència de pas, vostè pretén accedir a ella, però observa que, dintre de la via circular, per la seva esquerra, circula un altre vehicle, ha de cedir-li el pas?": {
     "question_cat": "En una glorieta en la qual no està regulada la preferència de pas, vostè pretén accedir a ella, però observa que, dintre de la via circular, per la seva esquerra, circula un altre vehicle, ha de cedir-li el pas?",
-    "question_fr": "Dans un rond-point dans lequel la priorité de passage n'est pas réglementée, vous prétendez y accéder, mais vous observez que, à l'intérieur de la voie circulaire, par votre gauche, circule un autre véhicule, devez-vous lui céder le passage?",
+    "question_fr": "Dans un rond-point dans lequel la priorité de passage n'est pas réglementée, vous avez l'intention d'y accéder, mais vous observez que, à l'intérieur de la voie circulaire, par votre gauche, circule un autre véhicule, devez-vous lui céder le passage?",
     "answer_1_cat": "No, perquè només dec cedir el pas als vehicles que s'aproximin per la meva dreta.",
     "answer_1_fr": "Non, parce que je dois seulement céder le passage aux véhicules qui s'approchent par ma droite.",
     "answer_2_cat": "Si, però únicament quan es tracti de vehicles automòbils.",
@@ -24551,7 +24551,7 @@
   },
   "Si circulo per una autopista sense cap senyalització prèvia restrictiva i un vehicle pretén incorporar-se a la meva via per la dreta, estic obligat a cedir-li el pas?": {
     "question_cat": "Si circulo per una autopista sense cap senyalització prèvia restrictiva i un vehicle pretén incorporar-se a la meva via per la dreta, estic obligat a cedir-li el pas?",
-    "question_fr": "Si je circule par une autoroute sans aucune signalisation préalable restrictive et un véhicule prétend s'incorporer à ma voie par la droite, suis-je obligé de lui céder le passage?",
+    "question_fr": "Si je circule par une autoroute sans aucune signalisation préalable restrictive et un véhicule a l'intention de s'incorporer à ma voie par la droite, suis-je obligé de lui céder le passage?",
     "answer_1_cat": "Si perquè accedeix per la meva dreta.",
     "answer_1_fr": "Oui parce qu'il accède par ma droite.",
     "answer_2_cat": "Depèn de quina sigui la categoria de les vies respectives.",
@@ -26423,7 +26423,7 @@
     "question_cat": "A demès del conductor quantes persones es pot transportar en una motocicleta sense sidecar?",
     "question_fr": "En plus du conducteur combien de personnes peut-on transporter sur une motocyclette sans side-car?",
     "answer_1_cat": "Tantes com càpiguen, sempre que no dificultin la visibilitat i mobilitat del conductor.",
-    "answer_1_fr": "Autant qu'il en tienne, pourvu qu'elles ne gênent pas la visibilité et mobilité du conducteur.",
+    "answer_1_fr": "Autant qu'il peut en tenir, pourvu qu'elles ne gênent pas la visibilité et mobilité du conducteur.",
     "answer_2_cat": "Una, si així està autoritzat en el corresponent permís de circulació del vehicle.",
     "answer_2_fr": "Une, si c'est ainsi autorisé dans le permis de circulation correspondant du véhicule.",
     "answer_3_cat": "Cap.",
@@ -27761,7 +27761,7 @@
   },
   "1264 Si circulem darrere un vehicle voluminós i pretenem avançar-lo, què hauríem de fer per poder realitzar-ho amb seguretat?": {
     "question_cat": "1264 Si circulem darrere un vehicle voluminós i pretenem avançar-lo, què hauríem de fer per poder realitzar-ho amb seguretat?",
-    "question_fr": "1264 Si nous circulons derrière un véhicule volumineux et nous prétendons le dépasser, que devrions-nous faire pour pouvoir le réaliser avec sécurité?",
+    "question_fr": "1264 Si nous circulons derrière un véhicule volumineux et nous avons l'intention de le dépasser, que devrions-nous faire pour pouvoir le réaliser avec sécurité?",
     "answer_1_cat": "Situar-nos a una distància adequada, que ens permeti tenir un correcte camp de visió.",
     "answer_1_fr": "Nous situer à une distance adéquate, qui nous permette d'avoir un correct champ de vision.",
     "answer_2_cat": "Acostar-nos tant com podrem a fi de tenir un major angle de visibilitat.",
@@ -27811,7 +27811,7 @@
   },
   "1247 Si vostè, conductor, pretén canviar de direcció, haurà de...": {
     "question_cat": "1247 Si vostè, conductor, pretén canviar de direcció, haurà de...",
-    "question_fr": "1247 Si vous, conducteur, prétendez changer de direction, vous devrez...",
+    "question_fr": "1247 Si vous, conducteur, avez l'intention de changer de direction, vous devrez...",
     "answer_1_cat": "Arrambar-se sempre al costat dret.",
     "answer_1_fr": "Vous ranger toujours du côté droit.",
     "answer_2_cat": "Indicar-ho amb la suficient antelació.",
@@ -28091,7 +28091,7 @@
   },
   "1293 Per què és un error arrambar-se a la part de darrere del vehicle que pretenem avançar?": {
     "question_cat": "1293 Per què és un error arrambar-se a la part de darrere del vehicle que pretenem avançar?",
-    "question_fr": "1293 Pourquoi est-ce une erreur de se coller à la partie arrière du véhicule que nous prétendons dépasser?",
+    "question_fr": "1293 Pourquoi est-ce une erreur de se coller à la partie arrière du véhicule que nous avons l'intention de dépasser?",
     "answer_1_cat": "Perquè tenim més angle de visibilitat",
     "answer_1_fr": "Parce que nous avons plus d'angle de visibilité",
     "answer_2_cat": "Perquè tenim menys angle de visibilitat.",
@@ -28965,7 +28965,7 @@
     "answer_1_cat": "La via mixta destinada a la circulació i als estacionaments.",
     "answer_1_fr": "La voie mixte destinée à la circulation et aux stationnements.",
     "answer_2_cat": "La via destinada a adaptar la velocitat a les circumstàncies i les característiques de la via on pretenem accedir.",
-    "answer_2_fr": "La voie destinée à adapter la vitesse aux circonstances et aux caractéristiques de la voie où nous prétendons accéder.",
+    "answer_2_fr": "La voie destinée à adapter la vitesse aux circonstances et aux caractéristiques de la voie où nous avons l'intention d'accéder.",
     "answer_3_cat": "La via que es destina a les proves de frenada en circuit de proves.",
     "answer_3_fr": "La voie qui se destine aux essais de freinage en circuit d'essais."
   },
@@ -29061,7 +29061,7 @@
   },
   "1473 Què significa aquest senyal per al conductor del turisme que pretén avançar un camió?": {
     "question_cat": "1473 Què significa aquest senyal per al conductor del turisme que pretén avançar un camió?",
-    "question_fr": "1473 Que signifie ce signal pour le conducteur de la voiture de tourisme qui prétend dépasser un camion?",
+    "question_fr": "1473 Que signifie ce signal pour le conducteur de la voiture de tourisme qui a l'intention de dépasser un camion?",
     "answer_1_cat": "Que només pot avançar el camió per la dreta.",
     "answer_1_fr": "Qu'il peut seulement dépasser le camion par la droite.",
     "answer_2_cat": "Que no pot avançar al camió perquè el senyal ho prohibeix.",
@@ -29405,7 +29405,7 @@
     "answer_1_cat": "Sí, si deixa una separació d'un metre.",
     "answer_1_fr": "Oui, si elle laisse une séparation d'un mètre.",
     "answer_2_cat": "No, si per fer-ho ha de depassar la línia contínua pintada en la calçada.",
-    "answer_2_fr": "Non, si pour le faire elle doit dépasser la ligne continue peinte sur la chaussée.",
+    "answer_2_fr": "Non, si pour le faire elle doit franchir la ligne continue peinte sur la chaussée.",
     "answer_3_cat": "Només quan sigui en una autopista.",
     "answer_3_fr": "Seulement quand ce sera sur une autoroute."
   },
@@ -29483,7 +29483,7 @@
     "question_cat": "1507 Si hi ha una línia contínua al centre de la calçada, podem canviar de sentit?",
     "question_fr": "1507 S'il y a une ligne continue au centre de la chaussée, pouvons-nous changer de sens?",
     "answer_1_cat": "Si no la xafem, sí",
-    "answer_1_fr": "Si nous ne l'écrasons pas, oui",
+    "answer_1_fr": "Si nous ne la chevauchons pas, oui",
     "answer_2_cat": "No",
     "answer_2_fr": "Non",
     "answer_3_cat": "Si estem a 100 metres d'un canvi de rasant, sí",
@@ -31131,7 +31131,7 @@
   },
   "1727 El cotxe groc pretén avançar el cotxe blau. Pot fer-ho?": {
     "question_cat": "1727 El cotxe groc pretén avançar el cotxe blau. Pot fer-ho?",
-    "question_fr": "1727 La voiture jaune prétend dépasser la voiture bleue. Peut-elle le faire?",
+    "question_fr": "1727 La voiture jaune a l'intention de dépasser la voiture bleue. Peut-elle le faire?",
     "answer_1_cat": "Sí, sempre que no s'atansi un vehicle en sentit contrari.",
     "answer_1_fr": "Oui, pourvu qu'un véhicule ne s'approche pas en sens contraire.",
     "answer_2_cat": "No pot avançar, si per això li cal trepitjar la línia pintada en la calçada.",
@@ -31311,7 +31311,7 @@
   },
   "1769 Si tenim intenció de girar a l'esquerra, en una via de doble sentit de circulació i tres carrils, on ens posarem?": {
     "question_cat": "1769 Si tenim intenció de girar a l'esquerra, en una via de doble sentit de circulació i tres carrils, on ens posarem?",
-    "question_fr": "1769 Si nous avons l'intention de tourner à gauche, sur une voie à double sens de circulation et trois voies, où nous placerons-nous?",
+    "question_fr": "1769 Si nous avons l'intention de tourner à gauche, sur une voie à double sens de circulation et à trois voies de circulation, où nous placerons-nous?",
     "answer_1_cat": "Al carril esquerre, cedint el pas.",
     "answer_1_fr": "Sur la voie gauche, en cédant le passage.",
     "answer_2_cat": "Al central, cedint el pas als qui s'aproximen de cara.",
@@ -31321,7 +31321,7 @@
   },
   "1777 Què significa aquest senyal per al conductor del turisme que pretén avançar un camió?": {
     "question_cat": "1777 Què significa aquest senyal per al conductor del turisme que pretén avançar un camió?",
-    "question_fr": "1777 Que signifie ce signal pour le conducteur de la voiture de tourisme qui prétend dépasser un camion?",
+    "question_fr": "1777 Que signifie ce signal pour le conducteur de la voiture de tourisme qui a l'intention de dépasser un camion?",
     "answer_1_cat": "Que només pot avançar el camió per la dreta.",
     "answer_1_fr": "Qu'il peut seulement dépasser le camion par la droite.",
     "answer_2_cat": "Que no pot avançar al camió perquè el senyal ho prohibeix.",
@@ -31841,7 +31841,7 @@
   },
   "1817 Amb quin senyal òptic ens indicarà el vehicle de davant que pretén reduir o aturar la marxa?": {
     "question_cat": "1817 Amb quin senyal òptic ens indicarà el vehicle de davant que pretén reduir o aturar la marxa?",
-    "question_fr": "1817 Avec quel signal optique le véhicule de devant nous indiquera-t-il qu'il prétend réduire ou arrêter la marche?",
+    "question_fr": "1817 Avec quel signal optique le véhicule de devant nous indiquera-t-il qu'il a l'intention de réduire ou arrêter la marche?",
     "answer_1_cat": "Amb l'enllumenat de posició.",
     "answer_1_fr": "Avec l'éclairage de position.",
     "answer_2_cat": "Amb l'indicador de direcció de l'esquerra.",
@@ -31943,9 +31943,9 @@
     "question_cat": "1834 En una rotonda, els vehicles que circulin dintre de la via circular...?",
     "question_fr": "1834 Dans un rond-point, les véhicules qui circulent dans la voie circulaire...?",
     "answer_1_cat": "Tenen la preferència de pas sobre els que pretenguin accedir a ella.",
-    "answer_1_fr": "Ont la priorité de passage sur ceux qui prétendent y accéder.",
+    "answer_1_fr": "Ont la priorité de passage sur ceux qui ont l'intention d'y accéder.",
     "answer_2_cat": "Han de cedir el pas als vehicles que per la seva dreta pretenguin accedir a ella.",
-    "answer_2_fr": "Doivent céder le passage aux véhicules qui par leur droite prétendent y accéder.",
+    "answer_2_fr": "Doivent céder le passage aux véhicules qui par leur droite ont l'intention d'y accéder.",
     "answer_3_cat": "Facilitaran sempre l'accés d'altres vehicles a la mateixa",
     "answer_3_fr": "Faciliteront toujours l'accès d'autres véhicules à celle-ci"
   },
@@ -32301,7 +32301,7 @@
   },
   "1898 En una glorieta en la qual no està regulada la preferència de pas, Vostè pretén accedir a ella, però observa que, dintre de la via circular, per la seva esquerra, circula un altre vehicle, ha de cedir-li el pas?": {
     "question_cat": "1898 En una glorieta en la qual no està regulada la preferència de pas, Vostè pretén accedir a ella, però observa que, dintre de la via circular, per la seva esquerra, circula un altre vehicle, ha de cedir-li el pas?",
-    "question_fr": "1898 Dans un rond-point dans lequel la priorité de passage n'est pas réglementée, Vous prétendez y accéder, mais vous observez que, à l'intérieur de la voie circulaire, par votre gauche, circule un autre véhicule, devez-vous lui céder le passage?",
+    "question_fr": "1898 Dans un rond-point dans lequel la priorité de passage n'est pas réglementée, Vous avez l'intention d'y accéder, mais vous observez que, à l'intérieur de la voie circulaire, par votre gauche, circule un autre véhicule, devez-vous lui céder le passage?",
     "answer_1_cat": "No, perquè només dec cedir el pas als vehicles que s'aproximin per la meva dreta.",
     "answer_1_fr": "Non, parce que je dois seulement céder le passage aux véhicules qui s'approchent par ma droite.",
     "answer_2_cat": "Sí, però únicament quan es tracti de vehicles automòbils.",
@@ -33311,7 +33311,7 @@
   },
   "2073 Quant el conductor del vehicle al qual pretén avançar estigui indicant el propòsit de canviar de direcció a l'esquerra, se'l ha d'avançar...": {
     "question_cat": "2073 Quant el conductor del vehicle al qual pretén avançar estigui indicant el propòsit de canviar de direcció a l'esquerra, se'l ha d'avançar...",
-    "question_fr": "2073 Quand le conducteur du véhicule que l'on prétend dépasser indique l'intention de changer de direction à gauche, on doit le dépasser...",
+    "question_fr": "2073 Quand le conducteur du véhicule que l'on a l'intention de dépasser indique l'intention de changer de direction à gauche, on doit le dépasser...",
     "answer_1_cat": "Per l'esquerra",
     "answer_1_fr": "Par la gauche",
     "answer_2_cat": "Pel qualsevol costat",
@@ -33721,7 +33721,7 @@
   },
   "2117 ÉS CORRECTE APROXIMAR-SE EXCESSIVAMENT A LA PART POSTERIOR DEL VEHICLE QUE PRETENEM AVANÇAR?": {
     "question_cat": "2117 ÉS CORRECTE APROXIMAR-SE EXCESSIVAMENT A LA PART POSTERIOR DEL VEHICLE QUE PRETENEM AVANÇAR?",
-    "question_fr": "2117 EST-IL CORRECT DE S'APPROCHER EXCESSIVEMENT DE LA PARTIE ARRIÈRE DU VÉHICULE QUE NOUS PRÉTENDONS DÉPASSER?",
+    "question_fr": "2117 EST-IL CORRECT DE S'APPROCHER EXCESSIVEMENT DE LA PARTIE ARRIÈRE DU VÉHICULE QUE NOUS AVONS L'INTENTION DE DÉPASSER?",
     "answer_1_cat": "Si, perqué així l'avancem abans.",
     "answer_1_fr": "Oui, parce qu'ainsi nous le dépassons plus tôt.",
     "answer_2_cat": "No, és un error.",
@@ -34477,7 +34477,7 @@
     "answer_2_cat": "Sí, a tots els vehicles de motor.",
     "answer_2_fr": "Oui, à tous les véhicules à moteur.",
     "answer_3_cat": "Sí, als vehicles que pretenguin accedir a la glorieta.",
-    "answer_3_fr": "Oui, aux véhicules qui prétendent accéder au rond-point."
+    "answer_3_fr": "Oui, aux véhicules qui ont l'intention d'accéder au rond-point."
   },
   "2259 Circulant amb el seu ciclomotor, rep una trucada pel telèfon mòbil. Pot contestar-la si per a això ha d'utilitzar les mans?": {
     "question_cat": "2259 Circulant amb el seu ciclomotor, rep una trucada pel telèfon mòbil. Pot contestar-la si per a això ha d'utilitzar les mans?",
@@ -34851,7 +34851,7 @@
   },
   "2200 Si circulo per una autopista sense cap senyalització prèvia restrictiva i un vehicle pretén incorporar-se a la meva via per la dreta, estic obligat a cedir-li el pas?": {
     "question_cat": "2200 Si circulo per una autopista sense cap senyalització prèvia restrictiva i un vehicle pretén incorporar-se a la meva via per la dreta, estic obligat a cedir-li el pas?",
-    "question_fr": "2200 Si je circule par une autoroute sans aucune signalisation préalable restrictive et un véhicule prétend s'incorporer à ma voie par la droite, suis-je obligé de lui céder le passage?",
+    "question_fr": "2200 Si je circule par une autoroute sans aucune signalisation préalable restrictive et un véhicule a l'intention de s'incorporer à ma voie par la droite, suis-je obligé de lui céder le passage?",
     "answer_1_cat": "Si, perquè accedeix per la meva dreta",
     "answer_1_fr": "Oui, parce qu'il accède par ma droite",
     "answer_2_cat": "Depèn de quina sigui la categoria de les vies respectives",
@@ -35145,7 +35145,7 @@
     "answer_1_cat": "S'incrementa el consum de carburant i resulta extremadament perillós",
     "answer_1_fr": "S'incrémente la consommation de carburant et cela résulte extrêmement dangereux",
     "answer_2_cat": "Encara que disminueix el consum de carburant, resulta extremadament perillós .",
-    "answer_2_fr": "Bien que diminue la consommation de carburant, cela résulte extrêmement dangereux .",
+    "answer_2_fr": "Bien qu'il diminue la consommation de carburant, cela résulte extrêmement dangereux .",
     "answer_3_cat": "S'ha d'utilitzar amb massa freqüència el fre de ma.",
     "answer_3_fr": "On doit utiliser avec trop de fréquence le frein à main."
   },
@@ -35755,7 +35755,7 @@
     "answer_1_cat": "Falç",
     "answer_1_fr": "Faux",
     "answer_2_cat": "Cert",
-    "answer_2_fr": "Certain",
+    "answer_2_fr": "Vrai",
     "answer_3_cat": "Per aixo el nous vehicles estant equipats amb el sistema Star-Stop",
     "answer_3_fr": "Pour cela les nouveaux véhicules sont équipés avec le système Star-Stop"
   },
@@ -36065,7 +36065,7 @@
     "answer_1_cat": "Falç",
     "answer_1_fr": "Faux",
     "answer_2_cat": "Cert",
-    "answer_2_fr": "Certain",
+    "answer_2_fr": "Vrai",
     "answer_3_cat": "Excepte si disposa de la Llicencia de Conduccio de Categoria J.",
     "answer_3_fr": "Excepté s'il dispose de la Licence de Conduite de Catégorie J."
   },
@@ -36341,7 +36341,7 @@
   },
   "2688 El turisme pretén avançar al camió. Pot fer-ho?": {
     "question_cat": "2688 El turisme pretén avançar al camió. Pot fer-ho?",
-    "question_fr": "2688 La voiture de tourisme prétend dépasser le camion. Peut-elle le faire?",
+    "question_fr": "2688 La voiture de tourisme a l'intention de dépasser le camion. Peut-elle le faire?",
     "answer_1_cat": "Pot avançar si trepitja la ralla solament amb dues rodes.",
     "answer_1_fr": "Elle peut dépasser si elle marche sur la raie seulement avec deux roues.",
     "answer_2_cat": "No pot avançar si per a això li cal trepitjar les línies pintades en la calçada.",
@@ -36503,7 +36503,7 @@
     "question_cat": "2744 Vehicle de mobilitat personal (VMP) es un vehicle capaç d’assistir l’ésser humà en el seu desplaçament personal i que, per la seva construcció, pot excedir les característiques del cicle i estar dotat de motor elèctric.",
     "question_fr": "2744 Véhicule de mobilité personnelle (VMP) est un véhicule capable d’assister l’être humain dans son déplacement personnel et qui, par sa construction, peut excéder les caractéristiques du cycle et être doté de moteur électrique.",
     "answer_1_cat": "Cert",
-    "answer_1_fr": "Certain",
+    "answer_1_fr": "Vrai",
     "answer_2_cat": "Falç",
     "answer_2_fr": "Faux",
     "answer_3_cat": "i/o motor d'explosió o combustió",
@@ -36533,7 +36533,7 @@
     "question_cat": "2740 Cap vehicle tractor no pot arrossegar alhora més d’un remolc o d’un semiremolc.",
     "question_fr": "2740 Aucun véhicule tracteur ne peut traîner à la fois plus d’une remorque ou d’une semi-remorque.",
     "answer_1_cat": "Cert",
-    "answer_1_fr": "Certain",
+    "answer_1_fr": "Vrai",
     "answer_2_cat": "Falç",
     "answer_2_fr": "Faux",
     "answer_3_cat": "Tret de les excepcions reglamentàriament establertes",
@@ -36545,7 +36545,7 @@
     "answer_1_cat": "Falç",
     "answer_1_fr": "Faux",
     "answer_2_cat": "Cert",
-    "answer_2_fr": "Certain",
+    "answer_2_fr": "Vrai",
     "answer_3_cat": "Falç, si existeix un conveni bilateral entre estats.",
     "answer_3_fr": "Faux, s'il existe une convention bilatérale entre États."
   },
@@ -36553,7 +36553,7 @@
     "question_cat": "2738 No es poden utilitzar plaques de matrícula en vehicles inscrits al Registre de Vehicles que no siguin les lliurades per l’Automòbil Club d’Andorra.",
     "question_fr": "2738 On ne peut pas utiliser de plaques d'immatriculation sur des véhicules inscrits au Registre de Véhicules qui ne soient pas celles délivrées par l’Automobile Club d’Andorre.",
     "answer_1_cat": "Cert",
-    "answer_1_fr": "Certain",
+    "answer_1_fr": "Vrai",
     "answer_2_cat": "Falç",
     "answer_2_fr": "Faux",
     "answer_3_cat": "Falç, doncs es poden realitzar en un taller legalment constituit al Principat d'Andorra",
@@ -36663,7 +36663,7 @@
     "question_cat": "2734 Els agents encarregats de la vigilància i la disciplina del trànsit, a més d’imposar les sancions monetàries previstes en aquesta Llei, i sense perjudici de la responsabilitat penal que sigui exigible en cada cas, poden ordenar la immobilitzaci",
     "question_fr": "2734 Les agents chargés de la surveillance et la discipline du trafic, en plus d’imposer les sanctions monétaires prévues dans cette Loi, et sans préjudice de la responsabilité pénale qui soit exigible dans chaque cas, peuvent ordonner l'immobilisati",
     "answer_1_cat": "Cert",
-    "answer_1_fr": "Certain",
+    "answer_1_fr": "Vrai",
     "answer_2_cat": "",
     "answer_2_fr": "",
     "answer_3_cat": "",
@@ -36683,7 +36683,7 @@
     "question_cat": "2739 Els caràcters que figuren en les matrícules, així com els símbols d’Estat que han de portar els vehicles, són propietat del Govern, que cedeix en cada cas el dret a usar-los.",
     "question_fr": "2739 Les caractères qui figurent dans les plaques d'immatriculation, ainsi que les symboles d’État que doivent porter les véhicules, sont propriété du Gouvernement, qui cède dans chaque cas le droit de les utiliser.",
     "answer_1_cat": "Cert",
-    "answer_1_fr": "Certain",
+    "answer_1_fr": "Vrai",
     "answer_2_cat": "Falç",
     "answer_2_fr": "Faux",
     "answer_3_cat": "El caracters com la placa de matricula son propietat del titular del vehicle",
@@ -36743,7 +36743,7 @@
     "question_cat": "2720 El conductor d’una motocicleta, d’un ciclomotor, d’un vehicle de 3 o 4 rodes sense carrosseria o de qualsevol altre vehicle per al qual s’exigeix l’ús del casc per a conductor i passatgers és responsable de la manca d’utilització del c",
     "question_fr": "2720 Le conducteur d’une motocyclette, d’un cyclomoteur, d’un véhicule de 3 ou 4 roues sans carrosserie ou de n'importe quel autre véhicule pour lequel s’exige l'usage du casque pour conducteur et passagers est responsable du manque d’utilisation du c",
     "answer_1_cat": "Cert",
-    "answer_1_fr": "Certain",
+    "answer_1_fr": "Vrai",
     "answer_2_cat": "Falç",
     "answer_2_fr": "Faux",
     "answer_3_cat": "Falç, doncs el passatger es responsable de si mateix.",
@@ -36817,13 +36817,13 @@
     "answer_2_cat": "Si cal la publicació prèvia al Butlletí Oficial del Principat d'Andorra.",
     "answer_2_fr": "Oui il faut la publication préalable au Bulletin Officiel de la Principauté d'Andorre.",
     "answer_3_cat": "Cert, pero han de trasncorrer mes de tres mesos",
-    "answer_3_fr": "Certain, mais il doit s'écouler plus de trois mois"
+    "answer_3_fr": "Vrai, mais il doit s'écouler plus de trois mois"
   },
   "2735 Els agents encarregats de la vigilància i la disciplina del trànsit poden retirar o ordenar retirar un vehicle de la via pública i mantenir-lo en dipòsit en el lloc que es designi, si la persona obligada no ho fa, quan un vehicle romangui més de": {
     "question_cat": "2735 Els agents encarregats de la vigilància i la disciplina del trànsit poden retirar o ordenar retirar un vehicle de la via pública i mantenir-lo en dipòsit en el lloc que es designi, si la persona obligada no ho fa, quan un vehicle romangui més de",
     "question_fr": "2735 Les agents chargés de la surveillance et la discipline du trafic peuvent retirer ou ordonner de retirer un véhicule de la voie publique et le maintenir en dépôt au lieu qui soit désigné, si la personne obligée ne le fait pas, quand un véhicule reste plus de",
     "answer_1_cat": "Cert",
-    "answer_1_fr": "Certain",
+    "answer_1_fr": "Vrai",
     "answer_2_cat": "Falç",
     "answer_2_fr": "Faux",
     "answer_3_cat": "72 Hores",
@@ -37043,7 +37043,7 @@
     "question_cat": "3040 Té alguna obligació quan el seu vehicle va a ser avançat?",
     "question_fr": "3040 A-t-il une obligation quelconque quand son véhicule va être dépassé?",
     "answer_1_cat": "Sí, senyalitzar amb l’intermitent dret per indicar que pot realitzar la maniobra amb seguretat.",
-    "answer_1_fr": "Oui, signaliser avec l’intermittent droit pour indiquer qu’il peut réaliser la manœuvre en sécurité.",
+    "answer_1_fr": "Oui, signaliser avec le clignotant droit pour indiquer qu’il peut réaliser la manœuvre en sécurité.",
     "answer_2_cat": "No, la responsabilitat és del vehicle que avança.",
     "answer_2_fr": "Non, la responsabilité est du véhicule qui dépasse.",
     "answer_3_cat": "Sí, cenyir-se a la vora dreta de la calçada per facilitar la maniobra.",
@@ -37161,7 +37161,7 @@
   },
   "3028 Pot utilitzar el telèfon mòbil mentre condueix amb qualsevol dispositiu de mans lliures?": {
     "question_cat": "3028 Pot utilitzar el telèfon mòbil mentre condueix amb qualsevol dispositiu de mans lliures?",
-    "question_fr": "3028 Peut-il utiliser le téléphone mobile pendant qu’il conduit avec n’importe quel dispositif mains libres?",
+    "question_fr": "3028 Pouvez-vous utiliser le téléphone mobile pendant que vous conduisez avec n’importe quel dispositif mains libres?",
     "answer_1_cat": "No, mai es pot utilitzar el telèfon mòbil conduint, ni tan sols amb el dispositiu mans lliures.",
     "answer_1_fr": "Non, on ne peut jamais utiliser le téléphone mobile en conduisant, pas même avec le dispositif mains libres.",
     "answer_2_cat": "Sí, mentre es pugui fer sense emprar les mans, ni utilitzar cascos o auriculars.",
@@ -37397,7 +37397,7 @@
     "answer_2_cat": "Sí, quan la via forma intersecció amb una travessia.",
     "answer_2_fr": "Oui, quand la voie forme une intersection avec une traversée.",
     "answer_3_cat": "No, quan la il•luminació permeti distingir-los a una distància suficient.",
-    "answer_3_fr": "Non, quand l’illumination permette de les distinguer à une distance suffisante."
+    "answer_3_fr": "Non, quand l’illumination permet de les distinguer à une distance suffisante."
   },
   "3115 Està permès circular per una travessia amb els llums antiboira encesos en condicions normals de visibilitat?": {
     "question_cat": "3115 Està permès circular per una travessia amb els llums antiboira encesos en condicions normals de visibilitat?",
@@ -37551,7 +37551,7 @@
   },
   "3142 Després d’avançar al camió, ha de tornar immediatament al carril de la dreta si pretén continuar avançant?": {
     "question_cat": "3142 Després d’avançar al camió, ha de tornar immediatament al carril de la dreta si pretén continuar avançant?",
-    "question_fr": "3142 Après avoir dépassé le camion, doit-il revenir immédiatement à la voie de droite s’il prétend continuer à dépasser?",
+    "question_fr": "3142 Après avoir dépassé le camion, doit-il revenir immédiatement à la voie de droite s’il a l'intention de continuer à dépasser?",
     "answer_1_cat": "Sí, en qualsevol cas.",
     "answer_1_fr": "Oui, dans n’importe quel cas.",
     "answer_2_cat": "No, excepte quan al darrera circuli un altre vehicle a més velocitat.",
@@ -38441,7 +38441,7 @@
   },
   "3331 Un vianant, té permès circular per la dreta en una via fora de poblat?": {
     "question_cat": "3331 Un vianant, té permès circular per la dreta en una via fora de poblat?",
-    "question_fr": "3331 Un piéton, a-t-il permis de circuler par la droite sur une voie hors agglomération?",
+    "question_fr": "3331 Un piéton, lui est-il permis de circuler par la droite sur une voie hors agglomération?",
     "answer_1_cat": "No.",
     "answer_1_fr": "Non.",
     "answer_2_cat": "Sí, quan ho fa per raons de seguretat.",
@@ -38481,7 +38481,7 @@
   },
   "3527 Quan un autobús pretén incorporar-se des d’una parada senyalitzada, què han de fer la resta de conductors?": {
     "question_cat": "3527 Quan un autobús pretén incorporar-se des d’una parada senyalitzada, què han de fer la resta de conductors?",
-    "question_fr": "3527 Quand un autobus prétend s’incorporer depuis un arrêt signalisé, que doivent faire le reste des conducteurs?",
+    "question_fr": "3527 Quand un autobus a l'intention de s’incorporer depuis un arrêt signalisé, que doivent faire le reste des conducteurs?",
     "answer_1_cat": "Disminuir la velocitat i, si és necessari, parar per deixar-los efectuar les maniobres necessàries.",
     "answer_1_fr": "Diminuer la vitesse et, si c’est nécessaire, s’arrêter pour les laisser effectuer les manœuvres nécessaires.",
     "answer_2_cat": "Continuar la marxa, ja que el conductor de l’autobús els ha de cedir el pas.",
@@ -38501,7 +38501,7 @@
   },
   "3482 En vies urbanes, si no pretén avançar, quina separació s’ha de mantenir amb el turisme que circula davant?": {
     "question_cat": "3482 En vies urbanes, si no pretén avançar, quina separació s’ha de mantenir amb el turisme que circula davant?",
-    "question_fr": "3482 Sur les voies urbaines, s’il ne prétend pas dépasser, quelle séparation doit-on maintenir avec la voiture de tourisme qui circule devant?",
+    "question_fr": "3482 Sur les voies urbaines, s’il n'a pas l'intention de dépasser, quelle séparation doit-on maintenir avec la voiture de tourisme qui circule devant?",
     "answer_1_cat": "Sempre 50 metres.",
     "answer_1_fr": "Toujours 50 mètres.",
     "answer_2_cat": "La que permeti que una motocicleta avanci amb seguretat.",
@@ -38675,7 +38675,7 @@
     "answer_1_cat": "pot rebassar la velocitat màxima fixada.",
     "answer_1_fr": "peut excéder la vitesse maximale fixée.",
     "answer_2_cat": "ha de portar el seu vehicle a una velocitat superior a la del vehicle que pretén avançar.",
-    "answer_2_fr": "doit porter son véhicule à une vitesse supérieure à celle du véhicule qu’il prétend dépasser.",
+    "answer_2_fr": "doit porter son véhicule à une vitesse supérieure à celle du véhicule qu’il a l'intention de dépasser.",
     "answer_3_cat": "ha de mantenir una velocitat moderada, sense importar el temps que utilitzi en l’avançament.",
     "answer_3_fr": "doit maintenir une vitesse modérée, sans importer le temps qu’il utilise dans le dépassement."
   },
@@ -40157,7 +40157,7 @@
     "answer_2_cat": "El vehicle que es trobi dins de la calçada circular.",
     "answer_2_fr": "Le véhicule qui se trouve à l’intérieur de la chaussée circulaire.",
     "answer_3_cat": "El vehicle que pretengui accedir a la rotonda.",
-    "answer_3_fr": "Le véhicule qui prétend accéder au rond-point."
+    "answer_3_fr": "Le véhicule qui a l'intention d'accéder au rond-point."
   },
   "3922 Quan preveu que pot quedar detingut en una intersecció, què ha de fer?": {
     "question_cat": "3922 Quan preveu que pot quedar detingut en una intersecció, què ha de fer?",
@@ -40171,7 +40171,7 @@
   },
   "3909 El vehicle de la fotografia té encesa únicament la senyalització lluminosa, té prioritat de pas?": {
     "question_cat": "3909 El vehicle de la fotografia té encesa únicament la senyalització lluminosa, té prioritat de pas?",
-    "question_fr": "3909 Le véhicule de la photographie a allumée uniquement la signalisation lumineuse, a-t-il la priorité de passage?",
+    "question_fr": "3909 Le véhicule de la photographie a allumé uniquement la signalisation lumineuse, a-t-il la priorité de passage?",
     "answer_1_cat": "Sí, perquè està en una via urbana.",
     "answer_1_fr": "Oui, parce qu’il est sur une voie urbaine.",
     "answer_2_cat": "Sí, sempre que l’omissió del senyal acústic no comporti perill per als altres usuaris.",
@@ -40545,7 +40545,7 @@
     "answer_1_cat": "En preparar-se per canviar de direcció, avançar, parar o estacionar.",
     "answer_1_fr": "En vous préparant à changer de direction, dépasser, vous arrêter ou stationner.",
     "answer_2_cat": "Únicament quan pretengui parar o estacionar.",
-    "answer_2_fr": "Uniquement quand vous prétendez vous arrêter ou stationner.",
+    "answer_2_fr": "Uniquement quand vous avez l'intention de vous arrêter ou stationner.",
     "answer_3_cat": "Quan vulgui canviar de direcció o de sentit.",
     "answer_3_fr": "Quand vous voulez changer de direction ou de sens."
   },
@@ -41275,7 +41275,7 @@
     "answer_1_cat": "un carril d’ús exclusiu per a determinats vehicles.",
     "answer_1_fr": "une voie d’usage exclusif pour certains véhicules.",
     "answer_2_cat": "una rotonda sobre els que pretenguin entrar-hi.",
-    "answer_2_fr": "un rond-point sur ceux qui prétendent y entrer.",
+    "answer_2_fr": "un rond-point sur ceux qui ont l'intention d'y entrer.",
     "answer_3_cat": "la via sense pavimentar.",
     "answer_3_fr": "la voie non pavée."
   },
