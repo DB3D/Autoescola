@@ -1,4 +1,11 @@
-# Autoescola study app data
+# Olympica
+
+The iPhone-first Catalan practice app is implemented with Vite and TypeScript.
+See [APP.md](APP.md) for local setup, GitHub Pages deployment, scoring rules,
+progress storage and verification. Run `npm ci` then `npm run dev` with Node.js
+22.12 or newer.
+
+## Original study bank
 
 Authenticated offline export of the Catalan driving-test bank available to the
 student account. Credentials are prompted for at runtime and are **not** stored
