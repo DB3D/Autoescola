@@ -201,3 +201,16 @@ export function selectQuestions(
     .slice(0, count)
     .map((x) => x.q);
 }
+// Display order of the answers: position -> index in `question.answers`.
+// The source bank always lists the three choices in the same order, so a
+// fixed layout lets the position of the correct answer be memorised instead
+// of its content. The order is drawn again at every presentation; stored
+// attempts keep the original indices.
+export function answerOrder(length: number, rng = Math.random): number[] {
+  const order = [...Array(length).keys()];
+  for (let i = order.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [order[i], order[j]] = [order[j], order[i]];
+  }
+  return order;
+}

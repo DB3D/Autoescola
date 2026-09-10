@@ -2,6 +2,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import {
   allStats,
+  answerOrder,
   discoveryWeight,
   trialRemaining,
   sessionSettings,
@@ -204,4 +205,26 @@ test("IndexedDB stores complete sessions atomically and retry does not duplicate
   assert.equal((await readAll<Attempt>("attempts")).length, 2);
   const rows = await readAll<{ shown: number }>("stats");
   assert.equal(rows[0].shown, 2);
+});
+test("answer order is a fresh permutation that spreads the correct answer over every letter", () => {
+  let seed = 7;
+  const rng = () => {
+    seed = (seed + 0x6d2b79f5) | 0;
+    let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+  const seen = new Map<string, number>();
+  const letters = [0, 0, 0];
+  for (let i = 0; i < 6000; i++) {
+    const order = answerOrder(3, rng);
+    assert.deepEqual([...order].sort(), [0, 1, 2]);
+    seen.set(order.join(""), (seen.get(order.join("")) ?? 0) + 1);
+    letters[order.indexOf(2)]++; // Position shown for the same original answer.
+  }
+  assert.equal(seen.size, 6);
+  for (const n of seen.values()) assert.ok(n > 700 && n < 1300, `permutation share ${n}`);
+  for (const n of letters) assert.ok(n > 1800 && n < 2200, `letter share ${n}`);
+  assert.deepEqual(answerOrder(1), [0]);
+  assert.deepEqual(answerOrder(0), []);
 });

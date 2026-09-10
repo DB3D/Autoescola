@@ -1,6 +1,7 @@
 import "./style.css";
 import {
   allStats,
+  answerOrder,
   selectQuestions,
   trialRemaining,
   sessionSettings,
@@ -40,6 +41,7 @@ let mode: Mode = "smart",
   shownAt = 0,
   shownAtDate = 0,
   revealed = false,
+  order: number[] = [],
   manual = false,
   answered = false,
   timer: number | undefined,
@@ -197,7 +199,7 @@ function questionMetadata(q: Question) {
   return `<div class="question-meta" tabindex="0" role="group" aria-label="Informations et statistiques de la question"><span>${esc(q.category)} · #${esc(q.id)}</span><span>${tries} ${tries === 1 ? "tentative" : "tentatives"}</span><span title="Difficulté personnelle : 100 moins le score de maîtrise. Un score élevé indique une question plus difficile.">Difficulté : ${difficulty}</span><span>Dernière réponse : ${esc(lastLabel)}</span></div>`;
 }
 function examQuestionMarkup(q: Question) {
-  return `<div class="question-top"><button class="text-button" id="quit">Surt</button><b>Pregunta ${index + 1} / 40</b></div><progress value="${index}" max="40" aria-label="Progrés de l’examen"></progress><button class="image-frame" id="enlarge" aria-label="Amplia la imatge"><img src="${base}${esc(q.image)}" alt="Imatge de la pregunta ${esc(q.id)}"><span>⤢</span></button><div class="question-copy"><div class="eyebrow">${esc(q.category)} · #${esc(q.id)}</div><h2 id="question-title" tabindex="-1" lang="ca">${esc(q.question)}</h2></div><div class="answers">${q.answers.map((text, i) => `<button class="answer" data-answer="${i}"><span class="letter">${"ABC"[i]}</span><span><b lang="ca">${esc(text)}</b></span></button>`).join("")}</div><div class="question-actions"><button class="primary" id="next" hidden>${index === 39 ? "Finalitza l’examen" : "Pregunta següent"} <span>→</span></button></div><dialog id="image-dialog"><button id="close-image" class="secondary">Tanca la imatge</button><img src="${base}${esc(q.image)}" alt="Imatge ampliada de la pregunta"></dialog>`;
+  return `<div class="question-top"><button class="text-button" id="quit">Surt</button><b>Pregunta ${index + 1} / 40</b></div><progress value="${index}" max="40" aria-label="Progrés de l’examen"></progress><button class="image-frame" id="enlarge" aria-label="Amplia la imatge"><img src="${base}${esc(q.image)}" alt="Imatge de la pregunta ${esc(q.id)}"><span>⤢</span></button><div class="question-copy"><div class="eyebrow">${esc(q.category)} · #${esc(q.id)}</div><h2 id="question-title" tabindex="-1" lang="ca">${esc(q.question)}</h2></div><div class="answers">${order.map((a, i) => `<button class="answer" data-answer="${a}"><span class="letter">${"ABC"[i]}</span><span><b lang="ca">${esc(q.answers[a])}</b></span></button>`).join("")}</div><div class="question-actions"><button class="primary" id="next" hidden>${index === 39 ? "Finalitza l’examen" : "Pregunta següent"} <span>→</span></button></div><dialog id="image-dialog"><button id="close-image" class="secondary">Tanca la imatge</button><img src="${base}${esc(q.image)}" alt="Imatge ampliada de la pregunta"></dialog>`;
 }
 function question() {
   clearInterval(timer);
@@ -206,8 +208,9 @@ function question() {
   answered = false;
   const q = current();
   const t = fr[q.id];
+  order = answerOrder(q.answers.length);
   shell(active!.mode === "exam" ? examQuestionMarkup(q) :
-    `<div class="question-top"><button class="text-button" id="quit">Quitter</button><b>Question ${index + 1} <span>/ ${active!.questionIds.length}</span></b><div id="timer" class="timer" role="meter" aria-label="Temps de réponse" aria-valuemin="0" aria-valuemax="60" aria-valuenow="0" aria-valuetext="0 seconde"><span class="timer-label" aria-hidden="true">0 s</span><span class="timer-track" aria-hidden="true"><span class="timer-fill"></span></span></div></div><progress value="${index}" max="${active!.questionIds.length}" aria-label="Progression de la session"></progress><button class="image-frame" id="enlarge" aria-label="Agrandir l’image"><img src="${base}${esc(q.image)}" alt="Image de la question ${esc(q.id)}"><span>⤢</span></button><div class="question-copy">${questionMetadata(q)}<h2 tabindex="-1" id="question-title" lang="ca">${esc(q.question)}</h2>${french(t?.question ?? "Traduction indisponible")}</div><div class="answers">${q.answers.map((a, i) => `<button class="answer" data-answer="${i}"><span class="letter">${"ABC"[i]}</span><span><b lang="ca">${esc(a)}</b>${french(t?.answers[i] ?? "Traduction indisponible")}</span><span class="answer-state"></span></button>`).join("")}<button class="answer" id="skip"><span class="letter">D</span><span><b>Passer cette question</b></span><span class="answer-state"></span></button></div><div id="feedback" role="status" aria-live="polite"></div><div class="question-actions"><button class="primary" id="next" hidden>${index + 1 === active!.questionIds.length ? "Terminer et enregistrer" : "Question suivante"} <span>→</span></button></div><dialog id="image-dialog"><button id="close-image" class="secondary">Fermer l’image</button><img src="${base}${esc(q.image)}" alt="Image agrandie de la question"></dialog>`,
+    `<div class="question-top"><button class="text-button" id="quit">Quitter</button><b>Question ${index + 1} <span>/ ${active!.questionIds.length}</span></b><div id="timer" class="timer" role="meter" aria-label="Temps de réponse" aria-valuemin="0" aria-valuemax="60" aria-valuenow="0" aria-valuetext="0 seconde"><span class="timer-label" aria-hidden="true">0 s</span><span class="timer-track" aria-hidden="true"><span class="timer-fill"></span></span></div></div><progress value="${index}" max="${active!.questionIds.length}" aria-label="Progression de la session"></progress><button class="image-frame" id="enlarge" aria-label="Agrandir l’image"><img src="${base}${esc(q.image)}" alt="Image de la question ${esc(q.id)}"><span>⤢</span></button><div class="question-copy">${questionMetadata(q)}<h2 tabindex="-1" id="question-title" lang="ca">${esc(q.question)}</h2>${french(t?.question ?? "Traduction indisponible")}</div><div class="answers">${order.map((a, i) => `<button class="answer" data-answer="${a}"><span class="letter">${"ABC"[i]}</span><span><b lang="ca">${esc(q.answers[a])}</b>${french(t?.answers[a] ?? "Traduction indisponible")}</span><span class="answer-state"></span></button>`).join("")}<button class="answer" id="skip"><span class="letter">D</span><span><b>Passer cette question</b></span><span class="answer-state"></span></button></div><div id="feedback" role="status" aria-live="polite"></div><div class="question-actions"><button class="primary" id="next" hidden>${index + 1 === active!.questionIds.length ? "Terminer et enregistrer" : "Question suivante"} <span>→</span></button></div><dialog id="image-dialog"><button id="close-image" class="secondary">Fermer l’image</button><img src="${base}${esc(q.image)}" alt="Image agrandie de la question"></dialog>`,
   );
   document
     .querySelectorAll<HTMLButtonElement>("[data-answer]")
@@ -339,7 +342,7 @@ function answer(selected: number | null, timedOut = false) {
 
   document.querySelector<HTMLElement>("#next")!.hidden = false;
   document.querySelector("#feedback")!.innerHTML =
-    `<div class="feedback ${correct ? "good" : "bad"}"><span class="thumb">${correct ? "👍" : "👎"}</span><b>${correct ? "Bonne réponse !" : selected === null ? "Question passée." : "Réponse incorrecte."}</b><span>${correct ? "" : `Bonne réponse : ${"ABC"[q.correct]}. `}${seconds >= 50 ? "Réflexe lent · pénalité de maîtrise." : ""}</span></div>${fr[q.id]?.tip ? `<p lang="fr">${esc(fr[q.id].tip)}</p>` : ""}`;
+    `<div class="feedback ${correct ? "good" : "bad"}"><span class="thumb">${correct ? "👍" : "👎"}</span><b>${correct ? "Bonne réponse !" : selected === null ? "Question passée." : "Réponse incorrecte."}</b><span>${correct ? "" : `Bonne réponse : ${"ABC"[order.indexOf(q.correct)]}. `}${seconds >= 50 ? "Réflexe lent · pénalité de maîtrise." : ""}</span></div>${fr[q.id]?.tip ? `<p lang="fr">${esc(fr[q.id].tip)}</p>` : ""}`;
 }
 async function finish() {
   if (!active || saving) return;

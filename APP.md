@@ -25,6 +25,10 @@ Deployment history on 2026-09-10: enabling Pages first failed with HTTP 422, “
 
 `src/lock.ts` shows a passcode screen before any question data is fetched, and stores an unlock marker in `localStorage` so the code is entered once per browser. The code is not present in the source: only an FNV-1a/base36 digest of a salt plus the code is stored, and `digest()` regenerates that value if the code changes. This deters casual visitors only. It is not access control: the repository is public, and the generated `questions_ca.json`, `translations_fr.json` and images are served as static files that anyone can request directly without passing the gate.
 
+## Answer order
+
+The source bank always lists the three choices of a question in the same order, so a fixed layout allows the position of the correct answer to be memorised instead of its content. `answerOrder()` draws a new permutation of A/B/C at every presentation, in practice and in exam mode alike, and the French translation follows its answer. D remains the fixed "Passer cette question" action at the end. The permutation is display-only: the button carries the original index in `data-answer`, so attempts, statistics, history, review and exports keep the source indices and remain comparable with sessions recorded before the shuffle. The correctness letter announced in the feedback is translated to the position shown.
+
 ## Data and recovery
 
 Simulation examen forces 40 random unique questions, a 40-minute global timer, and no French assistance. Setup controls and the header French button are disabled in exam mode. The question screen is in Catalan and has only A/B/C. Selecting an answer highlights the selection neutrally and allows advancing; no correctness, flash, learning statistics or translations are revealed before finishing. At least 38 correct answers passes. Timeouts preserve existing answers and count the current unanswered question as incorrect rather than a voluntary skip. The Exams page includes only the latest 20 completed exam-mode sessions, calculates the fraction passed, and marks readiness after five consecutive successful simulations. This indicator is a practice benchmark, not a prediction of official exam success.
@@ -52,4 +56,4 @@ Progress is private to this browser and origin. Browser data clearing, private b
 
 ## Verification
 
-`npm test` covers French credit, skips, slow penalties, history breakdown, spacing, weighted selection, all session lengths, uniqueness, IndexedDB persistence and idempotent saving. `npm run build` validates the entire source bank and compiles TypeScript. Real-device Safari interaction testing remains a separate check.
+`npm test` covers answer-order shuffling, French credit, skips, slow penalties, history breakdown, spacing, weighted selection, all session lengths, uniqueness, IndexedDB persistence and idempotent saving. `npm run build` validates the entire source bank and compiles TypeScript. Real-device Safari interaction testing remains a separate check.
