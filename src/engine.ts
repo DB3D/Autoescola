@@ -45,21 +45,21 @@ export const MAX_ANSWER_SECONDS = 120;
 export function cappedSeconds(seconds: number): number {
   return Math.min(Math.max(0, seconds), MAX_ANSWER_SECONDS);
 }
-// Catalan score counts only answers found without revealing the French text;
-// the French score counts the ones that needed it.
+// The Catalan score counts only answers found without revealing the French
+// text; the total score counts every correct answer, French-assisted included.
 export function recentScores(attempts: Attempt[], size = 100) {
   const recent = [...attempts]
     .sort((a, b) => b.at.localeCompare(a.at))
     .slice(0, size);
   const count = recent.length,
     catalan = recent.filter((a) => a.correct && !a.frenchVisible).length,
-    french = recent.filter((a) => a.correct && a.frenchVisible).length;
+    total = recent.filter((a) => a.correct).length;
   return {
     count,
     catalan,
-    french,
+    total,
     catalanRate: count ? catalan / count : 0,
-    frenchRate: count ? french / count : 0,
+    totalRate: count ? total / count : 0,
   };
 }
 export function trialRemaining(session: Session, now = Date.now()): number | null {

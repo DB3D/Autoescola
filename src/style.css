@@ -63,10 +63,43 @@ header {
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
 }
+header a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--brand);
+  font-family: Manrope, sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+header small {
+  display: block;
+  font:
+    10px "DM Sans",
+    sans-serif;
+  letter-spacing: 3px;
+  margin-top: 2px;
+}
 .brand-car {
   font-size: 30px;
   line-height: 1;
   letter-spacing: 0;
+}
+.quit-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: white;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
 }
 .header-actions {
   display: flex;
@@ -82,7 +115,8 @@ header {
   color: var(--muted);
   font-weight: 400;
 }
-.clock {
+.clock,
+.timer {
   font-size: 16px;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
@@ -90,12 +124,7 @@ header {
   padding: 8px 6px;
   border-radius: 8px;
   background: #f0f0f0;
-}
-.clock.total {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--muted);
-  background: none;
+  text-align: center;
 }
 .clock.urgent {
   color: #b91c2c;
@@ -259,8 +288,8 @@ legend {
 }
 .lengths {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 7px;
 }
 .lengths label {
   flex: 1;
@@ -272,14 +301,14 @@ legend {
   text-align: center;
   border: 1px solid var(--line);
   border-radius: 12px;
-  padding: 12px 4px;
-  font-size: 23px;
+  padding: 12px 3px;
+  font-size: 21px;
   font-weight: 700;
   background: white;
 }
 .lengths small {
   display: block;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 400;
   margin-top: 3px;
   color: var(--muted);
@@ -415,51 +444,26 @@ nav .current {
   color: var(--brand);
   font-weight: 700;
 }
-.text-button {
-  border: 0;
-  background: none;
-  color: var(--muted);
-  min-height: 44px;
-  padding: 5px 0;
-  min-width: 44px;
-  text-align: left;
-}
+/* The elapsed share of the 120 s ceiling tints the chip from the left. */
 .timer {
   --timer-fill: 0%;
-  --timer-color: #697580;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 5px;
-  width: 84px;
-  flex-shrink: 0;
-  font-variant-numeric: tabular-nums;
-  font-size: 13px;
+  --timer-tint: #dde2e8;
+  --timer-color: #4a555f;
+  min-width: 52px;
   color: var(--timer-color);
-}
-.timer-label {
-  text-align: right;
-  font-weight: 700;
-}
-.timer-track {
-  display: block;
-  height: 7px;
-  background: #e4e4e7;
-  border-radius: 6px;
-  overflow: hidden;
-}
-.timer-fill {
-  display: block;
-  height: 100%;
-  width: var(--timer-fill);
-  background: var(--timer-color);
-  border-radius: inherit;
+  background: linear-gradient(
+    to right,
+    var(--timer-tint) var(--timer-fill),
+    #f0f0f0 var(--timer-fill)
+  );
 }
 .timer-warning {
-  --timer-color: #b65b00;
+  --timer-tint: #ffe0bd;
+  --timer-color: #8a4b00;
 }
 .timer-full {
-  --timer-color: #c2182b;
+  --timer-tint: #ffd3d9;
+  --timer-color: #b91c2c;
 }
 progress {
   appearance: none;
@@ -667,8 +671,23 @@ progress::-moz-progress-bar {
   background: #fffafbf5;
   margin-top: 10px;
 }
-.question-actions button {
-  width: 100%;
+.next-hint {
+  margin: 0;
+  padding: 15px 12px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--brand);
+  background: #fff0f2;
+  border: 1px dashed #edc3ca;
+  border-radius: 13px;
+}
+.next-hint span {
+  margin-left: 4px;
+}
+/* Answered options stop catching taps so the page can advance from anywhere. */
+.answers.locked {
+  pointer-events: none;
 }
 .feedback {
   padding: 15px 0;
@@ -958,16 +977,26 @@ input[type="search"] {
 }
 @media (max-width: 420px) {
   header {
-    gap: 8px;
+    gap: 6px;
   }
   .count-label {
     display: none;
   }
+  .clock,
   .timer {
-    width: 74px;
+    font-size: 14px;
+    padding: 8px 5px;
   }
-  .text-button {
+  .timer {
+    min-width: 46px;
+  }
+  .quit-button {
     font-size: 13px;
+    gap: 4px;
+    padding: 0 9px;
+  }
+  .header-actions {
+    gap: 6px;
   }
 }
 @media (max-width: 360px) {

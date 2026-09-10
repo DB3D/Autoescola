@@ -1,6 +1,6 @@
 # AutoEscola app
 
-An iPhone-first driving-question practice app using Vite and TypeScript. The interface, feedback and statistics are in French; question text and answer choices remain in Catalan, with French translations available as learning assistance. No backend, account or service worker. It uses the existing 4,400-question bank without changing source questions, answer keys, translations or images.
+Vibe coded app so i can nail my driving license test. 
 
 ## Run
 
@@ -27,11 +27,13 @@ Deployment history on 2026-09-10: enabling Pages first failed with HTTP 422, “
 
 ## Interface
 
-The header is sticky and carries the session controls: quit, the question counter, the answer gauge, one time statistic and the French button. It has no branding; the bottom navigation returns to the practice screen. The time statistic shows the elapsed time of the running session, the remaining time when a time trial or an exam is running, and otherwise the total time spent answering. The practice screen has no summary box above the setup: the Progression page holds the statistics.
+The header is sticky. Outside a questionnaire it holds the name of the application and the French button. During one it replaces the name with a quit button and the question counter, and adds two matching chips before the French button: the answer gauge, tinted from the left by the elapsed share of the 120-second ceiling, then the time, which counts up during a session and down during a time trial or an exam. The practice screen has no summary box above the setup: the Progression page holds the statistics.
 
-Progression opens with the average over the last 100 answered questions, split in two. The Catalan score counts the questions answered correctly without revealing the French text, the French score those answered correctly with it displayed; both use the same denominator, so they add up to the success rate of that window and the remainder is the errors. Only the Catalan score reflects examination conditions.
+Progression opens with the average over the last 100 answered questions, split in two. The Catalan score counts the questions answered correctly without revealing the French text; the total score counts every correct answer, French-assisted ones included. Both use the same denominator, so the difference between them is what the translations carried. Only the Catalan score reflects examination conditions.
 
 Each question shows its category from the question bank, with its test number and identifier. Exam mode shows the test number and identifier only.
+
+Once a question is answered there is no next button: a hint invites a click anywhere to continue, and the whole page carries that action. The header, the image and its dialog keep their own; the answered options stop catching taps so a click on them passes through. Enter, Space and the right arrow do the same for a keyboard.
 
 ## Answer order
 
@@ -41,7 +43,7 @@ The source bank always lists the three choices of a question in the same order, 
 
 Simulation examen forces 40 random unique questions, a 40-minute global timer, and no French assistance. Setup controls and the header French button are disabled in exam mode. The question screen is in Catalan and has only A/B/C. Selecting an answer highlights the selection neutrally and allows advancing; no correctness, flash, learning statistics or translations are revealed before finishing. At least 38 correct answers passes. Timeouts preserve existing answers and count the current unanswered question as incorrect rather than a voluntary skip. The Exams page includes only the latest 20 completed exam-mode sessions, calculates the fraction passed, and marks readiness after five consecutive successful simulations. This indicator is a practice benchmark, not a prediction of official exam success.
 
-Time trial is an optional setting below French assistance, available with every selection mode. The global allowance is 60 seconds per selected question (20/40/60/80 minutes). Its deadline is independent of the per-question reflex gauge and keeps running during answer review and when the tab is hidden. On expiry, the current unanswered question is recorded as passed with a timeout marker; already answered questions are kept and unseen questions do not create attempts or affect their mastery. Results use the full requested question count and separately report questions not reached. Timeout state and deadline are saved/exported. Browsers may suspend timers in the background; the deadline is checked immediately on returning and before accepting an answer or advancing.
+Time trial is an optional setting below French assistance, available with every selection mode. The global allowance is 60 seconds per selected question (10/20/40/60/80 minutes). It is the only setting that turns the header time into a countdown, alongside exam mode; every other session counts up from zero. Exam mode displays its fixed settings without overwriting the preferences, which return unchanged when another mode is selected. Its deadline is independent of the per-question reflex gauge and keeps running during answer review and when the tab is hidden. On expiry, the current unanswered question is recorded as passed with a timeout marker; already answered questions are kept and unseen questions do not create attempts or affect their mastery. Results use the full requested question count and separately report questions not reached. Timeout state and deadline are saved/exported. Browsers may suspend timers in the background; the deadline is checked immediately on returning and before accepting an answer or advancing.
 
 The active questionnaire lives in memory. Leaving or refreshing before completion loses it; a browser unload warning is requested but mobile Safari may not show it. A completed session saves its session record, every attempt, and derived question statistics in one IndexedDB transaction. Saving is idempotent and merges existing attempts within the same transaction, including concurrent tabs. No history pruning is performed.
 

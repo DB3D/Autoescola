@@ -47,6 +47,7 @@ let mode: Mode = "smart",
   order: number[] = [],
   manual = false,
   answered = false,
+  answeredAt = 0,
   timer: number | undefined,
   saving = false,
   saveError = false,
@@ -70,13 +71,6 @@ const stopwatch = (n: number) => {
   const rest = `${String(m).padStart(h ? 2 : 1, "0")}:${String(s % 60).padStart(2, "0")}`;
   return h ? `${h}:${rest}` : rest;
 };
-const totalTime = (n: number) =>
-  n >= 3600
-    ? `${Math.floor(n / 3600)} h ${Math.round((n % 3600) / 60)} min`
-    : n >= 60
-      ? `${Math.round(n / 60)} min`
-      : `${Math.round(n)} s`;
-const practiceSeconds = () => attempts.reduce((s, a) => s + a.seconds, 0);
 // Attempts recorded before the cap can hold hours on one question.
 const capAttempt = (a: Attempt): Attempt =>
   a.seconds > MAX_ANSWER_SECONDS ? { ...a, seconds: MAX_ANSWER_SECONDS } : a;
@@ -88,17 +82,23 @@ function languageButton() {
     : "Afficher automatiquement les traductions en français";
   return `<button class="language-button" id="reveal" type="button" aria-label="${label}" aria-pressed="${visible}" title="${label}" ${active && visible ? "disabled" : ""}><span class="france-flag" aria-hidden="true">🇫🇷</span></button>`;
 }
-function sessionControls() {
-  if (!active) return "";
+function headerLead() {
+  if (!active)
+    return '<a href="#" id="brand" aria-label="Accueil"><span class="brand-car" aria-hidden="true">🚗</span><span>AutoEscola<small>ANDORRE</small></span></a>';
   const exam = active.mode === "exam";
-  return `<button class="text-button" id="quit">${exam ? "Surt" : "Quitter"}</button><b class="header-count"><span class="count-label">${exam ? "Pregunta" : "Question"} </span>${index + 1}<span> / ${active.questionIds.length}</span></b>${exam ? "" : `<div id="timer" class="timer" role="meter" aria-label="Temps de réponse" aria-valuemin="0" aria-valuemax="${MAX_ANSWER_SECONDS}" aria-valuenow="0" aria-valuetext="0 seconde"><span class="timer-label" aria-hidden="true">0 s</span><span class="timer-track" aria-hidden="true"><span class="timer-fill"></span></span></div>`}`;
+  const label = exam ? "Surt" : "Quitter";
+  return `<button class="quit-button" id="quit" aria-label="${label}"><span aria-hidden="true">↩️</span><span class="quit-label">${label}</span></button><b class="header-count"><span class="count-label">${exam ? "Pregunta" : "Question"} </span>${index + 1}<span> / ${active.questionIds.length}</span></b>`;
 }
-function clockHeader() {
-  if (active?.timeTrial)
-    return '<span id="trial-clock" class="clock" role="timer" aria-label="Temps restant pour le test"></span>';
-  if (active)
-    return `<span id="session-clock" class="clock" role="timer" aria-label="Temps écoulé dans cette session">${stopwatch(elapsed())}</span>`;
-  return `<span class="clock total" title="Temps total passé à répondre aux questions">${totalTime(practiceSeconds())}</span>`;
+function headerTools() {
+  if (!active) return languageButton();
+  const gauge =
+    active.mode === "exam"
+      ? ""
+      : `<div id="timer" class="timer" role="meter" aria-label="Temps de réponse" aria-valuemin="0" aria-valuemax="${MAX_ANSWER_SECONDS}" aria-valuenow="0" aria-valuetext="0 seconde"><span class="timer-label" aria-hidden="true">0 s</span></div>`;
+  const clock = active.timeTrial
+    ? '<span id="trial-clock" class="clock" role="timer" aria-label="Temps restant pour le test"></span>'
+    : `<span id="session-clock" class="clock" role="timer" aria-label="Temps écoulé dans cette session">${stopwatch(elapsed())}</span>`;
+  return `${gauge}${clock}${languageButton()}`;
 }
 function elapsed() {
   return active ? (Date.now() - Date.parse(active.startedAt)) / 1000 : 0;
@@ -109,8 +109,12 @@ function updateElapsed() {
 }
 function shell(content: string, tab = "practice") {
   document.documentElement.lang = active?.mode === "exam" ? "ca" : "fr";
-  root.innerHTML = `<div class="app-shell"><header>${sessionControls()}<div class="header-actions">${clockHeader()}${languageButton()}</div></header><main>${content}</main>${active ? "" : `<nav aria-label="Navigation principale"><button data-nav="practice" class="${tab === "practice" ? "current" : ""}"><span>◎</span> Pratiquer</button><button data-nav="history" class="${tab === "history" ? "current" : ""}"><span>◷</span> Historique</button><button data-nav="stats" class="${tab === "stats" ? "current" : ""}"><span>▥</span> Progression</button><button data-nav="exams" class="${tab === "exams" ? "current" : ""}"><span>▣</span> Exams</button></nav>`}</div>`;
+  root.innerHTML = `<div class="app-shell"><header>${headerLead()}<div class="header-actions">${headerTools()}</div></header><main>${content}</main>${active ? "" : `<nav aria-label="Navigation principale"><button data-nav="practice" class="${tab === "practice" ? "current" : ""}"><span>◎</span> Pratiquer</button><button data-nav="history" class="${tab === "history" ? "current" : ""}"><span>◷</span> Historique</button><button data-nav="stats" class="${tab === "stats" ? "current" : ""}"><span>▥</span> Progression</button><button data-nav="exams" class="${tab === "exams" ? "current" : ""}"><span>▣</span> Exams</button></nav>`}</div>`;
   if (!active) {
+    document.querySelector("#brand")!.addEventListener("click", (e) => {
+      e.preventDefault();
+      home();
+    });
     document.querySelector<HTMLButtonElement>("#reveal")!.onclick = () => {
       if (mode === "exam") return;
       autoFrench = !autoFrench;
@@ -135,14 +139,16 @@ function home() {
   clearInterval(timer);
   clearInterval(clockTimer);
   active = null;
+  // Exam mode displays its own fixed settings without overwriting the
+  // preferences, which are restored as soon as another mode is picked.
+  const forced = sessionSettings(mode, count, autoFrench, timeTrial);
   shell(
-    `${storageError ? '<p class="warning">Le stockage local est indisponible. Tu peux pratiquer et exporter la session avant de quitter.</p>' : ""}<section class="setup"><div class="section-heading"><h2>Prépare ta session</h2></div><fieldset><legend>Comment veux-tu pratiquer ?</legend>${(["smart", "random", "discovery", "exam"] as Mode[]).map((m, i) => `<label class="mode-card"><input type="radio" name="mode" value="${m}" ${mode === m ? "checked" : ""}><span class="mode-icon">${["✦", "⤨", "◒", "▣"][i]}</span><span><b>${modeName[m]}</b><small>${["Travaille tes points faibles", "Explore toutes les questions du programme", "Questions inédites, peu vues ou anciennes", "40 questions · 40 min · Catalan uniquement"][i]}</small></span><span class="radio-mark"></span></label>`).join("")}</fieldset><fieldset><legend>Combien de questions ?</legend><div class="lengths">${[20, 40, 60, 80].map((n) => `<label><input type="radio" name="count" value="${n}" ${count === n ? "checked" : ""}><span>${n}<small>questions</small></span></label>`).join("")}</div></fieldset><label class="french-toggle"><span><b>Aide en français</b><small>Afficher les traductions dès le début</small></span><input type="checkbox" id="auto-fr" role="switch" ${autoFrench ? "checked" : ""}></label><p class="helper">Avec l’aide, les bonnes réponses rapportent 50 % des points de maîtrise. Tu peux aussi révéler le français pendant la question.</p><label class="french-toggle"><span><b>Time trial</b><small id="trial-duration">${count} questions = ${count} minutes au total.</small></span><input type="checkbox" id="time-trial" role="switch" ${timeTrial ? "checked" : ""}></label><p class="helper">Un chrono global, sans limite par question. À zéro, le test s’arrête et les résultats sont enregistrés.</p><button class="primary" id="start">Commencer la session <span>→</span></button></section><p class="privacy">Sur cet appareil uniquement · Sans compte</p>`,
+    `${storageError ? '<p class="warning">Le stockage local est indisponible. Tu peux pratiquer et exporter la session avant de quitter.</p>' : ""}<section class="setup"><div class="section-heading"><h2>Prépare ta session</h2></div><fieldset><legend>Comment veux-tu pratiquer ?</legend>${(["smart", "random", "discovery", "exam"] as Mode[]).map((m, i) => `<label class="mode-card"><input type="radio" name="mode" value="${m}" ${mode === m ? "checked" : ""}><span class="mode-icon">${["✦", "⤨", "◒", "▣"][i]}</span><span><b>${modeName[m]}</b><small>${["Travaille tes points faibles", "Explore toutes les questions du programme", "Questions inédites, peu vues ou anciennes", "40 questions · 40 min · Catalan uniquement"][i]}</small></span><span class="radio-mark"></span></label>`).join("")}</fieldset><fieldset><legend>Combien de questions ?</legend><div class="lengths">${[10, 20, 40, 60, 80].map((n) => `<label><input type="radio" name="count" value="${n}" ${forced.count === n ? "checked" : ""}><span>${n}<small>questions</small></span></label>`).join("")}</div></fieldset><label class="french-toggle"><span><b>Aide en français</b><small>Afficher les traductions dès le début</small></span><input type="checkbox" id="auto-fr" role="switch" ${forced.french ? "checked" : ""}></label><p class="helper">Avec l’aide, les bonnes réponses rapportent 50 % des points de maîtrise. Tu peux aussi révéler le français pendant la question.</p><label class="french-toggle"><span><b>Time trial</b><small id="trial-duration">${forced.count} questions = ${forced.count} minutes au total.</small></span><input type="checkbox" id="time-trial" role="switch" ${forced.trial ? "checked" : ""}></label><p class="helper">Un chrono global, sans limite par question. À zéro, le test s’arrête et les résultats sont enregistrés. Sans lui, le temps de la session compte simplement à partir de zéro.</p><button class="primary" id="start">Commencer la session <span>→</span></button></section><p class="privacy">Sur cet appareil uniquement · Sans compte</p>`,
   );
   document.querySelectorAll<HTMLInputElement>('input[name="mode"]').forEach(
     (e) =>
       (e.onchange = () => {
         mode = e.value as Mode;
-        if (mode === "exam") { count = 40; autoFrench = false; timeTrial = true; }
         home();
       }),
   );
@@ -167,9 +173,8 @@ function home() {
 }
 function start() {
   const settings = sessionSettings(mode, count, autoFrench, timeTrial);
-  count = settings.count; autoFrench = settings.french; timeTrial = settings.trial;
   stats = allStats(attempts);
-  const selected = selectQuestions(bank, count, mode, stats);
+  const selected = selectQuestions(bank, settings.count, mode, stats);
   active = {
     id: crypto.randomUUID(),
     mode,
@@ -178,8 +183,8 @@ function start() {
     duration: 0,
     questionIds: selected.map((q) => q.id),
     attempts: [],
-    timeTrial,
-    deadlineAt: timeTrial ? new Date(Date.now() + selected.length * 60000).toISOString() : undefined,
+    timeTrial: settings.trial,
+    deadlineAt: settings.trial ? new Date(Date.now() + selected.length * 60000).toISOString() : undefined,
   };
   index = 0;
   question();
@@ -231,7 +236,7 @@ function questionMetadata(q: Question) {
   return `<div class="question-meta" tabindex="0" role="group" aria-label="Informations et statistiques de la question"><span class="tag">${esc(q.category ?? "—")}</span><span>Test ${esc(q.test ?? "?")} · #${esc(q.id)}</span><span>${tries} ${tries === 1 ? "tentative" : "tentatives"}</span><span title="Difficulté personnelle : 100 moins le score de maîtrise. Un score élevé indique une question plus difficile.">Difficulté : ${difficulty}</span><span>Dernière réponse : ${esc(lastLabel)}</span></div>`;
 }
 function examQuestionMarkup(q: Question) {
-  return `<progress value="${index}" max="40" aria-label="Progrés de l’examen"></progress><button class="image-frame" id="enlarge" aria-label="Amplia la imatge"><img src="${base}${esc(q.image)}" alt="Imatge de la pregunta ${esc(q.id)}"><span>⤢</span></button><div class="question-copy"><div class="eyebrow">Test ${esc(q.test ?? "?")} · #${esc(q.id)}</div><h2 id="question-title" tabindex="-1" lang="ca">${esc(q.question)}</h2></div><div class="answers">${order.map((a, i) => `<button class="answer" data-answer="${a}"><span class="letter">${"ABC"[i]}</span><span><b lang="ca">${esc(q.answers[a])}</b></span></button>`).join("")}</div><div class="question-actions"><button class="primary" id="next" hidden>${index === 39 ? "Finalitza l’examen" : "Pregunta següent"} <span>→</span></button></div><dialog id="image-dialog"><button id="close-image" class="secondary">Tanca la imatge</button><img src="${base}${esc(q.image)}" alt="Imatge ampliada de la pregunta"></dialog>`;
+  return `<progress value="${index}" max="40" aria-label="Progrés de l’examen"></progress><button class="image-frame" id="enlarge" aria-label="Amplia la imatge"><img src="${base}${esc(q.image)}" alt="Imatge de la pregunta ${esc(q.id)}"><span>⤢</span></button><div class="question-copy"><div class="eyebrow">Test ${esc(q.test ?? "?")} · #${esc(q.id)}</div><h2 id="question-title" tabindex="-1" lang="ca">${esc(q.question)}</h2></div><div class="answers">${order.map((a, i) => `<button class="answer" data-answer="${a}"><span class="letter">${"ABC"[i]}</span><span><b lang="ca">${esc(q.answers[a])}</b></span></button>`).join("")}</div><div class="question-actions"><p class="next-hint" id="next" role="status" hidden>Toca qualsevol lloc per ${index === 39 ? "finalitzar l’examen" : "continuar"} <span aria-hidden="true">→</span></p></div><dialog id="image-dialog"><button id="close-image" class="secondary">Tanca la imatge</button><img src="${base}${esc(q.image)}" alt="Imatge ampliada de la pregunta"></dialog>`;
 }
 function question() {
   clearInterval(timer);
@@ -242,13 +247,25 @@ function question() {
   const t = fr[q.id];
   order = answerOrder(q.answers.length);
   shell(active!.mode === "exam" ? examQuestionMarkup(q) :
-    `<progress value="${index}" max="${active!.questionIds.length}" aria-label="Progression de la session"></progress><button class="image-frame" id="enlarge" aria-label="Agrandir l’image"><img src="${base}${esc(q.image)}" alt="Image de la question ${esc(q.id)}"><span>⤢</span></button><div class="question-copy">${questionMetadata(q)}<h2 tabindex="-1" id="question-title" lang="ca">${esc(q.question)}</h2>${french(t?.question ?? "Traduction indisponible")}</div><div class="answers">${order.map((a, i) => `<button class="answer" data-answer="${a}"><span class="letter">${"ABC"[i]}</span><span><b lang="ca">${esc(q.answers[a])}</b>${french(t?.answers[a] ?? "Traduction indisponible")}</span><span class="answer-state"></span></button>`).join("")}<button class="answer" id="skip"><span class="letter">D</span><span><b>Passer cette question</b></span><span class="answer-state"></span></button></div><div id="feedback" role="status" aria-live="polite"></div><div class="question-actions"><button class="primary" id="next" hidden>${index + 1 === active!.questionIds.length ? "Terminer et enregistrer" : "Question suivante"} <span>→</span></button></div><dialog id="image-dialog"><button id="close-image" class="secondary">Fermer l’image</button><img src="${base}${esc(q.image)}" alt="Image agrandie de la question"></dialog>`,
+    `<progress value="${index}" max="${active!.questionIds.length}" aria-label="Progression de la session"></progress><button class="image-frame" id="enlarge" aria-label="Agrandir l’image"><img src="${base}${esc(q.image)}" alt="Image de la question ${esc(q.id)}"><span>⤢</span></button><div class="question-copy">${questionMetadata(q)}<h2 tabindex="-1" id="question-title" lang="ca">${esc(q.question)}</h2>${french(t?.question ?? "Traduction indisponible")}</div><div class="answers">${order.map((a, i) => `<button class="answer" data-answer="${a}"><span class="letter">${"ABC"[i]}</span><span><b lang="ca">${esc(q.answers[a])}</b>${french(t?.answers[a] ?? "Traduction indisponible")}</span><span class="answer-state"></span></button>`).join("")}<button class="answer" id="skip"><span class="letter">D</span><span><b>Passer cette question</b></span><span class="answer-state"></span></button></div><div id="feedback" role="status" aria-live="polite"></div><div class="question-actions"><p class="next-hint" id="next" role="status" hidden>Clique n’importe où pour ${index + 1 === active!.questionIds.length ? "terminer et enregistrer" : "passer à la question suivante"} <span aria-hidden="true">→</span></p></div><dialog id="image-dialog"><button id="close-image" class="secondary">Fermer l’image</button><img src="${base}${esc(q.image)}" alt="Image agrandie de la question"></dialog>`,
   );
+  // stopPropagation keeps the answering click from reaching the advance
+  // handler below, which would skip the feedback entirely.
   document
     .querySelectorAll<HTMLButtonElement>("[data-answer]")
-    .forEach((b) => (b.onclick = () => answer(+b.dataset.answer!)));
+    .forEach(
+      (b) =>
+        (b.onclick = (e) => {
+          e.stopPropagation();
+          answer(+b.dataset.answer!);
+        }),
+    );
   const skip = document.querySelector<HTMLButtonElement>("#skip");
-  if (skip) skip.onclick = () => answer(null);
+  if (skip)
+    skip.onclick = (e) => {
+      e.stopPropagation();
+      answer(null);
+    };
   document.querySelector<HTMLButtonElement>("#reveal")!.onclick = () => {
     if (active?.mode === "exam") return;
     if (updateTrialClock()) return;
@@ -258,14 +275,10 @@ function question() {
     showFrench();
 
   };
-  document.querySelector<HTMLButtonElement>("#next")!.onclick = () => {
-    if (saving) return;
-    if (updateTrialClock()) return;
-    if (index + 1 === active!.questionIds.length) void finish();
-    else {
-      index++;
-      question();
-    }
+  // Once answered, the page itself advances; the header, the enlarged image
+  // and its dialog keep their own actions.
+  document.querySelector<HTMLElement>(".app-shell")!.onclick = (e) => {
+    if (!(e.target as HTMLElement).closest("header, dialog, #enlarge")) advance();
   };
   document.querySelector<HTMLButtonElement>("#quit")!.onclick = () => {
     if (
@@ -296,6 +309,28 @@ function question() {
     .querySelector<HTMLElement>("#question-title")
     ?.focus({ preventScroll: true });
 }
+function advance() {
+  if (!active || !answered || saving) return;
+  // A tap that answers can be followed by a ghost click on the redrawn page;
+  // ignoring the first moments keeps it from skipping the feedback.
+  if (Date.now() - answeredAt < 300) return;
+  if (updateTrialClock()) return;
+  if (index + 1 === active.questionIds.length) void finish();
+  else {
+    index++;
+    question();
+  }
+}
+// Keyboard equivalent of clicking the page to move on. Enter and Space are
+// left to whatever control has focus; the arrow always advances.
+document.addEventListener("keydown", (e) => {
+  if (!["Enter", " ", "ArrowRight"].includes(e.key)) return;
+  if (document.querySelector("dialog[open]")) return;
+  if (e.key !== "ArrowRight" && (e.target as HTMLElement).closest("button, a, input, summary"))
+    return;
+  e.preventDefault();
+  advance();
+});
 function updateTimer(seconds: number) {
   const el = document.querySelector<HTMLElement>("#timer");
   if (!el) return;
@@ -335,6 +370,7 @@ function answer(selected: number | null, timedOut = false) {
   if (active.mode === "exam" && selected === null && !timedOut) return;
   if (!timedOut && updateTrialClock()) return;
   answered = true;
+  answeredAt = Date.now();
   clearInterval(timer);
   const q = current(),
     seconds = cappedSeconds(
@@ -358,6 +394,7 @@ function answer(selected: number | null, timedOut = false) {
     at: new Date().toISOString(),
     ...(timedOut ? { timedOut: true, at: active.deadlineAt! } : {}),
   });
+  document.querySelector(".answers")!.classList.add("locked");
   if (active.mode === "exam") {
     document.querySelectorAll<HTMLButtonElement>("[data-answer]").forEach(button => {
       button.disabled = true;
@@ -393,10 +430,10 @@ async function finish() {
   clearInterval(clockTimer);
   saving = true;
   document.querySelectorAll<HTMLButtonElement>("button").forEach(button => { button.disabled = true; });
-  const button = document.querySelector<HTMLButtonElement>("#next");
-  if (button) {
-    button.disabled = true;
-    button.textContent = active.mode === "exam" ? "Desant l’examen…" : "Enregistrement…";
+  const hint = document.querySelector<HTMLElement>("#next");
+  if (hint) {
+    hint.hidden = false;
+    hint.textContent = active.mode === "exam" ? "Desant l’examen…" : "Enregistrement…";
   }
   active.completedAt ||= new Date().toISOString();
   active.duration =
@@ -476,10 +513,13 @@ function result(s: Session) {
       active = s;
       void finish();
     };
-  if (saveError)
+  if (saveError) {
     document
       .querySelectorAll<HTMLButtonElement>("nav button")
       .forEach((b) => (b.disabled = true));
+    const brand = document.querySelector("#brand")!;
+    brand.replaceWith(brand.cloneNode(true)); // Drop its listener: leaving would lose the session.
+  }
 }
 function exams() {
   const summary = examSummary(sessions);
@@ -527,7 +567,8 @@ function recentScoreboard() {
       : recent.count === 1
         ? "Sur la dernière question"
         : `Sur les ${recent.count} dernières questions`;
-  return `<section class="recent-score"><h2>${title}</h2><div class="recent-grid"><div class="catalan"><strong>${value(recent.catalanRate)}</strong><span>Score catalan</span><small>${won(recent.catalan)} sans le français</small></div><div><strong>${value(recent.frenchRate)}</strong><span>Score français</span><small>${won(recent.french)} avec le français affiché</small></div></div><p class="helper">Seul le score catalan compte pour l’examen : les questions réussies avec les traductions affichées ne prouvent pas encore que tu les as en catalan.</p></section>`;
+  const assisted = recent.total - recent.catalan;
+  return `<section class="recent-score"><h2>${title}</h2><div class="recent-grid"><div class="catalan"><strong>${value(recent.catalanRate)}</strong><span>Score catalan</span><small>${won(recent.catalan)} sans le français</small></div><div><strong>${value(recent.totalRate)}</strong><span>Score total</span><small>${won(recent.total)} dont ${assisted} avec le français</small></div></div><p class="helper">Seul le score catalan compte pour l’examen : les questions réussies avec les traductions affichées ne prouvent pas encore que tu les as en catalan.</p></section>`;
 }
 function progress() {
   stats = allStats(attempts);

@@ -119,7 +119,7 @@ const bank: Question[] = Array.from({ length: 100 }, (_, i) => ({
 }));
 test("all modes and lengths select without replacement even with duplicate input IDs", () => {
   for (const mode of ["random", "discovery", "smart", "exam"] as const)
-    for (const count of [20, 40, 60, 80]) {
+    for (const count of [10, 20, 40, 60, 80]) {
       const chosen = selectQuestions(
         [...bank, bank[0]],
         count,
@@ -156,7 +156,7 @@ test("Discovery favors unseen, rare and overdue questions over recent repetition
   assert.deepEqual(selected.map(q => q.id), ["0", "3", "2", "1"]);
 });
 test("Time trial provides one minute per question and expires against wall time", () => {
-  for (const count of [20, 40, 60, 80]) {
+  for (const count of [10, 20, 40, 60, 80]) {
     const session: Session = { id: 'trial', mode: 'discovery', startedAt: at, completedAt: '', duration: 0, questionIds: bank.slice(0, count).map(q => q.id), attempts: [], timeTrial: true, deadlineAt: new Date(now + count * 60000).toISOString() };
     assert.equal(trialRemaining(session, now), count * 60);
     assert.equal(trialRemaining(session, now + 60000), (count - 1) * 60);
@@ -169,7 +169,7 @@ function examSession(correct: number, day: number): Session {
   return { id: `exam-${day}`, mode: "exam", startedAt: at, completedAt: new Date(now + day * 86400000).toISOString(), duration: 2400, timeTrial: true, questionIds: bank.slice(0, 40).map(q => q.id), attempts: bank.slice(0, 40).map((q, i) => attempt({ questionId: q.id, correct: i < correct })) };
 }
 test("Exam locks 40 questions, no French, and the global timer regardless of previous preferences", () => {
-  for (const count of [20, 40, 60, 80]) for (const french of [true, false]) for (const trial of [true, false]) {
+  for (const count of [10, 20, 40, 60, 80]) for (const french of [true, false]) for (const trial of [true, false]) {
     assert.deepEqual(sessionSettings("exam", count, french, trial), { count: 40, french: false, trial: true });
   }
   assert.deepEqual(sessionSettings("discovery", 80, true, false), { count: 80, french: true, trial: false });
@@ -196,7 +196,7 @@ test("answer time is capped so an idle phone cannot distort the statistics", () 
   const idle = statsFor("1", [attempt({ seconds: cappedSeconds(7200) })], now);
   assert.equal(idle.averageSeconds, MAX_ANSWER_SECONDS);
 });
-test("recent scores separate Catalan successes from French-assisted ones", () => {
+test("recent scores separate Catalan successes from the assisted total", () => {
   const rows = [
     ...Array.from({ length: 60 }, (_, i) =>
       attempt({ at: new Date(now - i * 60000).toISOString() }),
@@ -221,18 +221,19 @@ test("recent scores separate Catalan successes from French-assisted ones", () =>
   const scores = recentScores(rows);
   assert.equal(scores.count, 100);
   assert.equal(scores.catalan, 60);
-  assert.equal(scores.french, 30);
+  assert.equal(scores.total, 90); // Catalan plus the 30 answered with French.
   assert.equal(scores.catalanRate, 0.6);
-  assert.equal(scores.frenchRate, 0.3);
+  assert.equal(scores.totalRate, 0.9);
   const short = recentScores([attempt(), attempt({ frenchVisible: true })]);
   assert.equal(short.count, 2);
   assert.equal(short.catalanRate, 0.5);
+  assert.equal(short.totalRate, 1);
   assert.deepEqual(recentScores([]), {
     count: 0,
     catalan: 0,
-    french: 0,
+    total: 0,
     catalanRate: 0,
-    frenchRate: 0,
+    totalRate: 0,
   });
 });
 test("IndexedDB stores complete sessions atomically and retry does not duplicate attempts", async () => {
