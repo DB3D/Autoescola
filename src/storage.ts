@@ -1,12 +1,21 @@
-import { allStats, capAttempt, type Session, type Attempt } from "./engine";
+import {
+  allStats,
+  capAttempt,
+  type Session,
+  type Attempt,
+  type QuizRun,
+} from "./engine";
 const DB = "autoescola-progress";
+// Version 2 adds quizRuns. Existing databases only gain the new store, so a
+// browser that already holds sessions, attempts and stats keeps them.
 export function openDB(): Promise<IDBDatabase> {
   return new Promise((resolve, reject) => {
-    const r = indexedDB.open(DB, 1);
+    const r = indexedDB.open(DB, 2);
     r.onupgradeneeded = () => {
-      r.result.createObjectStore("sessions", { keyPath: "id" });
-      r.result.createObjectStore("attempts", { keyPath: "id" });
-      r.result.createObjectStore("stats", { keyPath: "id" });
+      const names = r.result.objectStoreNames;
+      for (const store of ["sessions", "attempts", "stats", "quizRuns"])
+        if (!names.contains(store))
+          r.result.createObjectStore(store, { keyPath: "id" });
     };
     r.onsuccess = () => resolve(r.result);
     r.onerror = () => reject(r.error);
@@ -24,6 +33,23 @@ export async function readAll<T>(store: string): Promise<T[]> {
     tx.onerror = () => {
       db.close();
       reject(tx.error);
+    };
+  });
+}
+// A finished quiz run stores its cost in time and nothing else: no attempt, no
+// question statistic, no mastery.
+export async function saveQuizRun(run: QuizRun) {
+  const db = await openDB();
+  return new Promise<void>((resolve, reject) => {
+    const tx = db.transaction("quizRuns", "readwrite");
+    tx.objectStore("quizRuns").put(run);
+    tx.oncomplete = () => {
+      db.close();
+      resolve();
+    };
+    tx.onabort = tx.onerror = () => {
+      db.close();
+      reject(tx.error ?? new Error("Storage transaction failed"));
     };
   });
 }

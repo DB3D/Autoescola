@@ -689,10 +689,18 @@ progress::-moz-progress-bar {
 .answers.locked {
   pointer-events: none;
 }
+/* Last thing on the page, behind three rules of empty space: reaching it takes
+   a deliberate scroll, so a tap meant to advance cannot land on it. */
 .end-session {
-  border-top: 1px solid var(--line);
-  margin-top: 20px;
-  padding-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 34px;
+  padding-bottom: 24px;
+}
+.end-session .sep {
+  height: 1px;
+  background: var(--line);
 }
 .danger-button {
   width: 100%;
@@ -1048,5 +1056,108 @@ input[type="search"] {
   }
   .thumb {
     animation: none;
+  }
+}
+
+/* Català quiz: the French instruction above the Catalan text under test, and
+   the takeaway shown once the answer is locked. */
+.quiz-prompt {
+  font-size: 13px;
+  letter-spacing: 0.2px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.quiz-note {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #5c5057;
+  background: #fff5f8;
+  border-left: 3px solid var(--brand);
+  border-radius: 0 10px 10px 0;
+  padding: 10px 12px;
+  margin-top: 12px;
+}
+.review-body .quiz-note {
+  margin-top: 8px;
+}
+/* Five tabs have to share the bar without clipping their labels. */
+nav button {
+  min-width: 0;
+  padding: 0 2px;
+  font-size: 11px;
+}
+@media (max-width: 380px) {
+  nav button {
+    font-size: 10px;
+    letter-spacing: -0.2px;
+  }
+  nav button span {
+    font-size: 20px;
+  }
+}
+
+/* Practice time over the last three days: one row per day, the bar split
+   between driving questions and the Català quiz. */
+.practice-board {
+  margin-bottom: 26px;
+}
+.day-rows {
+  list-style: none;
+  margin: 0 0 12px;
+  padding: 0;
+  display: grid;
+  gap: 9px;
+}
+.day-rows li {
+  display: grid;
+  grid-template-columns: 84px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+}
+.day-label {
+  color: var(--muted);
+}
+.day-bar {
+  display: flex;
+  gap: 2px;
+  height: 10px;
+  border-radius: 5px;
+  background: #f1eaed;
+  overflow: hidden;
+}
+.day-fill {
+  height: 100%;
+  flex: none;
+  min-width: 2px;
+}
+.day-fill.questions {
+  background: var(--brand);
+}
+.day-fill.quiz {
+  background: #7fb3a8;
+}
+.day-total {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+.legend {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 3px;
+  margin-right: 5px;
+}
+.legend.questions {
+  background: var(--brand);
+}
+.legend.quiz {
+  background: #7fb3a8;
+  margin-left: 10px;
+}
+@media (max-width: 380px) {
+  .day-rows li {
+    grid-template-columns: 70px 1fr auto;
+    font-size: 12px;
   }
 }

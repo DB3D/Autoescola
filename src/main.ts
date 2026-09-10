@@ -18,9 +18,19 @@ import {
   type Session,
   type Mode,
   type Stats,
+  practiceDays,
+  totalPracticeSeconds,
+  type QuizRun,
 } from "./engine";
-import { readAll, saveSession } from "./storage";
+import { readAll, saveSession, saveQuizRun } from "./storage";
 import { unlock } from "./lock";
+import {
+  drawVocab,
+  vocabBank,
+  vocabTypeName,
+  VOCAB_LENGTH,
+  type VocabQuestion,
+} from "./vocab";
 const root = document.querySelector<HTMLDivElement>("#app")!;
 const esc = (v: unknown) =>
   String(v).replace(
@@ -55,6 +65,16 @@ let mode: Mode = "smart",
   saving = false,
   saveError = false,
   storageError = false;
+// The Català quiz is a standalone drill: a fixed draw, a score, nothing stored.
+let quizRun: VocabQuestion[] | null = null,
+  quizPicks: (number | null)[] = [],
+  quizIndex = 0,
+  quizOrder: number[] = [],
+  quizAnswered = false,
+  quizAnsweredAt = 0,
+  quizRuns: QuizRun[] = [], // Finished runs, kept only for the practice time.
+  quizShownAt = 0,
+  quizSeconds = 0;
 const modeName: Record<Session["mode"], string> = {
   random: "Aléatoire",
   medium: "Difficulté moyenne",
@@ -66,7 +86,9 @@ const pct = (v: number) => `${Math.round(v * 100)} %`;
 const time = (n: number) =>
   n < 60
     ? `${Math.round(n)} s`
-    : `${Math.floor(n / 60)} min ${Math.round(n % 60)} s`;
+    : n < 3600
+      ? `${Math.floor(n / 60)} min ${Math.round(n % 60)} s`
+      : `${Math.floor(n / 3600)} h ${String(Math.floor((n % 3600) / 60)).padStart(2, "0")} min`;
 const stopwatch = (n: number) => {
   const s = Math.max(0, Math.floor(n)),
     h = Math.floor(s / 3600),
@@ -83,13 +105,17 @@ function languageButton() {
   return `<button class="language-button" id="reveal" type="button" aria-label="${label}" aria-pressed="${visible}" title="${label}" ${active && visible ? "disabled" : ""}><span class="france-flag" aria-hidden="true">🇫🇷</span></button>`;
 }
 function headerLead() {
+  if (quizRun)
+    return `<button class="quit-button" id="quit" aria-label="Stop"><span aria-hidden="true">↩</span><span class="quit-label">Stop</span></button><b class="header-count"><span class="count-label"> </span>${quizIndex + 1}<span> / ${quizRun.length}</span></b>`;
   if (!active)
     return '<a href="#" id="brand" aria-label="Accueil"><span class="brand-car" aria-hidden="true">🚗</span><span>AutoEscola<small>ANDORRE</small></span></a>';
   const exam = active.mode === "exam";
-  const label = exam ? "Surt" : "Quitter";
-  return `<button class="quit-button" id="quit" aria-label="${label}"><span aria-hidden="true">↩️</span><span class="quit-label">${label}</span></button><b class="header-count"><span class="count-label">Q </span>${index + 1}<span> / ${active.endless ? "∞" : active.questionIds.length}</span></b>`;
+  const label = exam ? "Surt" : "Stop";
+  return `<button class="quit-button" id="quit" aria-label="${label}"><span aria-hidden="true">↩</span><span class="quit-label">${label}</span></button><b class="header-count"><span class="count-label"> </span>${index + 1}<span> / ${active.endless ? "∞" : active.questionIds.length}</span></b>`;
 }
 function headerTools() {
+  // The quiz is a French↔Catalan drill on its own: no translation toggle, no clock.
+  if (quizRun) return "";
   if (!active) return languageButton();
   const gauge =
     active.mode === "exam"
@@ -109,8 +135,8 @@ function updateElapsed() {
 }
 function shell(content: string, tab = "practice") {
   document.documentElement.lang = active?.mode === "exam" ? "ca" : "fr";
-  root.innerHTML = `<div class="app-shell"><header>${headerLead()}<div class="header-actions">${headerTools()}</div></header><main>${content}</main>${active ? "" : `<nav aria-label="Navigation principale"><button data-nav="practice" class="${tab === "practice" ? "current" : ""}"><span>◎</span> Pratiquer</button><button data-nav="history" class="${tab === "history" ? "current" : ""}"><span>◷</span> Historique</button><button data-nav="stats" class="${tab === "stats" ? "current" : ""}"><span>▥</span> Progression</button><button data-nav="exams" class="${tab === "exams" ? "current" : ""}"><span>▣</span> Exams</button></nav>`}</div>`;
-  if (!active) {
+  root.innerHTML = `<div class="app-shell"><header>${headerLead()}<div class="header-actions">${headerTools()}</div></header><main>${content}</main>${active || quizRun ? "" : `<nav aria-label="Navigation principale"><button data-nav="practice" class="${tab === "practice" ? "current" : ""}"><span>◎</span> Pratiquer</button><button data-nav="history" class="${tab === "history" ? "current" : ""}"><span>◷</span> Historique</button><button data-nav="stats" class="${tab === "stats" ? "current" : ""}"><span>▥</span> Progression</button><button data-nav="exams" class="${tab === "exams" ? "current" : ""}"><span>▣</span> Exams</button><button data-nav="vocab" class="${tab === "vocab" ? "current" : ""}"><span>▤</span> Català</button></nav>`}</div>`;
+  if (!active && !quizRun) {
     document.querySelector("#brand")!.addEventListener("click", (e) => {
       e.preventDefault();
       home();
@@ -132,13 +158,16 @@ function shell(content: string, tab = "practice") {
             ? home()
             : b.dataset.nav === "history"
               ? history()
-              : b.dataset.nav === "exams" ? exams() : progress()),
+              : b.dataset.nav === "exams"
+                ? exams()
+                : b.dataset.nav === "vocab" ? quizHome() : progress()),
     );
 }
 function home() {
   clearInterval(timer);
   clearInterval(clockTimer);
   active = null;
+  quizRun = null;
   // Exam mode displays its own fixed settings without overwriting the
   // preferences, which are restored as soon as another mode is picked.
   const forced = sessionSettings(mode, count, autoFrench, timeTrial);
@@ -261,7 +290,7 @@ function question() {
   const t = fr[q.id];
   order = answerOrder(q.answers.length);
   shell(active!.mode === "exam" ? examQuestionMarkup(q) :
-    `${active!.endless ? "" : `<progress value="${index}" max="${active!.questionIds.length}" aria-label="Progression de la session"></progress>`}<button class="image-frame" id="enlarge" aria-label="Agrandir l’image"><img src="${base}${esc(q.image)}" alt="Image de la question ${esc(q.id)}"><span>⤢</span></button><div class="question-copy">${questionMetadata(q)}<h2 tabindex="-1" id="question-title" lang="ca">${esc(q.question)}</h2>${french(t?.question ?? "Traduction indisponible")}</div><div class="answers">${order.map((a, i) => `<button class="answer" data-answer="${a}"><span class="letter">${"ABC"[i]}</span><span><b lang="ca">${esc(q.answers[a])}</b>${french(t?.answers[a] ?? "Traduction indisponible")}</span><span class="answer-state"></span></button>`).join("")}<button class="answer" id="skip"><span class="letter">D</span><span><b>Passer cette question</b></span><span class="answer-state"></span></button></div>${active!.endless ? '<div class="end-session"><button class="danger-button" id="end-session">Terminer la session</button></div>' : ""}<div id="feedback" role="status" aria-live="polite"></div><div class="question-actions"><p class="next-hint" id="next" role="status" hidden>Clique n’importe où pour ${lastQuestion() ? "terminer et enregistrer" : "passer à la question suivante"} <span aria-hidden="true">→</span></p></div><dialog id="image-dialog"><button id="close-image" class="secondary">Fermer l’image</button><img src="${base}${esc(q.image)}" alt="Image agrandie de la question"></dialog>`,
+    `${active!.endless ? "" : `<progress value="${index}" max="${active!.questionIds.length}" aria-label="Progression de la session"></progress>`}<button class="image-frame" id="enlarge" aria-label="Agrandir l’image"><img src="${base}${esc(q.image)}" alt="Image de la question ${esc(q.id)}"><span>⤢</span></button><div class="question-copy">${questionMetadata(q)}<h2 tabindex="-1" id="question-title" lang="ca">${esc(q.question)}</h2>${french(t?.question ?? "Traduction indisponible")}</div><div class="answers">${order.map((a, i) => `<button class="answer" data-answer="${a}"><span class="letter">${"ABC"[i]}</span><span><b lang="ca">${esc(q.answers[a])}</b>${french(t?.answers[a] ?? "Traduction indisponible")}</span><span class="answer-state"></span></button>`).join("")}<button class="answer" id="skip"><span class="letter">D</span><span><b>Passer cette question</b></span><span class="answer-state"></span></button></div><div id="feedback" role="status" aria-live="polite"></div><div class="question-actions"><p class="next-hint" id="next" role="status" hidden>Clique n’importe où pour ${lastQuestion() ? "terminer et enregistrer" : "passer à la question suivante"} <span aria-hidden="true">→</span></p></div>${active!.endless ? '<div class="end-session"><span class="sep" aria-hidden="true"></span><span class="sep" aria-hidden="true"></span><span class="sep" aria-hidden="true"></span><button class="danger-button" id="end-session">Terminer la session</button></div>' : ""}<dialog id="image-dialog"><button id="close-image" class="secondary">Fermer l’image</button><img src="${base}${esc(q.image)}" alt="Image agrandie de la question"></dialog>`,
   );
   // stopPropagation keeps the answering click from reaching the advance
   // handler below, which would skip the feedback entirely.
@@ -363,14 +392,15 @@ function endSession() {
 document.addEventListener("keydown", (e) => {
   // Outside an answered question these keys belong to the page: typing in a
   // field, scrolling with Space, activating whatever has focus.
-  if (!active || !answered || saving) return;
+  if (quizRun ? !quizAnswered : !active || !answered || saving) return;
   if (!["Enter", " ", "ArrowRight"].includes(e.key)) return;
   if (document.querySelector("dialog[open]")) return;
   const target = e.target as HTMLElement;
   if (target.closest("input, textarea, select, a, summary")) return;
   if (e.key !== "ArrowRight" && target.closest("button")) return;
   e.preventDefault();
-  advance();
+  if (quizRun) quizAdvance();
+  else advance();
 });
 function updateTimer(seconds: number) {
   const el = document.querySelector<HTMLElement>("#timer");
@@ -497,7 +527,12 @@ async function finish() {
   result(done);
   window.scrollTo(0, 0);
 }
-function metrics(rows: Attempt[], duration?: number, total = rows.length) {
+function metrics(
+  rows: Attempt[],
+  duration?: number,
+  total = rows.length,
+  durationLabel = "Durée totale",
+) {
   const ok = rows.filter((a) => a.correct).length;
   return `<div class="score"><strong>${ok}<span> / ${total}</span></strong><p>bonnes réponses · ${pct(ok / (total || 1))}</p></div><div class="metric-grid">${[
     [rows.filter((a) => !a.correct && !a.passed).length, "Incorrectes"],
@@ -508,7 +543,7 @@ function metrics(rows: Attempt[], duration?: number, total = rows.length) {
     ],
     [rows.filter((a) => a.slow_reflex).length, "Réflexes lents"],
     [rows.filter((a) => a.frenchVisible).length, "Avec français"],
-    [time(duration ?? rows.reduce((s, a) => s + a.seconds, 0)), "Durée totale"],
+    [time(duration ?? rows.reduce((s, a) => s + a.seconds, 0)), durationLabel],
   ]
     .map(
       ([n, label]) => `<div><strong>${n}</strong><span>${label}</span></div>`,
@@ -573,6 +608,148 @@ function exams() {
     button.onclick = () => { saveError = false; result(sessions.find(s => s.id === button.dataset.exam)!); };
   });
 }
+function quizHome() {
+  clearInterval(timer);
+  clearInterval(clockTimer);
+  active = null;
+  quizRun = null;
+  const counts = vocabBank.reduce<Record<string, number>>((acc, q) => {
+    acc[q.type] = (acc[q.type] ?? 0) + 1;
+    return acc;
+  }, {});
+  shell(
+    `<div class="eyebrow">LECTURE DU CATALAN</div><h1>Català</h1><p class="muted">${VOCAB_LENGTH} questions tirées au hasard parmi ${vocabBank.length}. Un score à la fin, rien d’enregistré.</p><section class="setup"><div class="section-heading"><h2>Ce que ça t’entraîne à repérer</h2></div><div class="metric-grid">${Object.entries(counts)
+      .map(
+        ([type, n]) =>
+          `<div><strong>${n}</strong><span>${esc(vocabTypeName[type] ?? type)}</span></div>`,
+      )
+      .join("")}</div><p class="helper">Les mots-pièges et les tournures sont ceux qui retournent le sens d’une phrase : cap, no cal, llevat de, només, sempre que, avançar, pas. Les rater, c’est répondre à côté même en connaissant la règle.</p><button class="primary" id="quiz-start">Commencer le quiz <span>→</span></button></section><p class="privacy">Sans score conservé · Sans compte</p>`,
+    "vocab",
+  );
+  document.querySelector<HTMLButtonElement>("#quiz-start")!.onclick = quizStart;
+}
+function quizStart() {
+  quizRun = drawVocab();
+  quizPicks = [];
+  quizIndex = 0;
+  quizSeconds = 0;
+  quizQuestion();
+}
+function quizQuestion() {
+  quizAnswered = false;
+  const q = quizRun![quizIndex];
+  quizOrder = answerOrder(q.answers.length);
+  shell(
+    `<progress value="${quizIndex}" max="${quizRun!.length}" aria-label="Progression du quiz"></progress><div class="question-copy"><div class="question-meta" role="group" aria-label="Type de question"><span class="tag">${esc(vocabTypeName[q.type] ?? q.type)}</span><span>#${esc(q.id)}</span></div><p class="quiz-prompt">${esc(q.prompt)}</p><h2 tabindex="-1" id="question-title" lang="ca">${esc(q.catalan)}</h2></div><div class="answers">${quizOrder
+      .map(
+        (a, i) =>
+          `<button class="answer" data-answer="${a}"><span class="letter">${"ABC"[i]}</span><span><b lang="fr">${esc(q.answers[a])}</b></span><span class="answer-state"></span></button>`,
+      )
+      .join(
+        "",
+      )}</div><div id="feedback" role="status" aria-live="polite"></div><div class="question-actions"><p class="next-hint" id="next" role="status" hidden>Clique n’importe où pour ${quizIndex + 1 === quizRun!.length ? "voir ton résultat" : "passer à la question suivante"} <span aria-hidden="true">→</span></p></div>`,
+    "vocab",
+  );
+  document
+    .querySelectorAll<HTMLButtonElement>("[data-answer]")
+    .forEach(
+      (b) =>
+        (b.onclick = (e) => {
+          e.stopPropagation();
+          quizAnswer(+b.dataset.answer!);
+        }),
+    );
+  document.querySelector<HTMLElement>(".app-shell")!.onclick = (e) => {
+    if (!(e.target as HTMLElement).closest("header")) quizAdvance();
+  };
+  document.querySelector<HTMLButtonElement>("#quit")!.onclick = () => {
+    if (confirm("Quitter ? Le quiz en cours sera perdu.")) quizHome();
+  };
+  window.scrollTo(0, 0);
+  document
+    .querySelector<HTMLElement>("#question-title")
+    ?.focus({ preventScroll: true });
+  quizShownAt = performance.now();
+}
+function quizAnswer(selected: number) {
+  if (quizAnswered || !quizRun) return;
+  quizAnswered = true;
+  quizAnsweredAt = Date.now();
+  // Same per-question ceiling as a practice session, so both feed one total.
+  quizSeconds += cappedSeconds((performance.now() - quizShownAt) / 1000);
+  const q = quizRun[quizIndex],
+    right = q.correct_option - 1,
+    correct = selected === right;
+  quizPicks[quizIndex] = selected;
+  document.querySelector(".answers")!.classList.add("locked");
+  document
+    .querySelector(".app-shell")!
+    .classList.add(correct ? "flash-success" : "flash-failure");
+  document.querySelectorAll<HTMLButtonElement>("[data-answer]").forEach((b) => {
+    const i = +b.dataset.answer!;
+    b.disabled = true;
+    b.classList.toggle("correct", i === right);
+    b.classList.toggle("incorrect", i === selected && !correct);
+    b.querySelector(".answer-state")!.textContent =
+      i === right ? "✓" : i === selected ? "✕" : "";
+  });
+  document.querySelector<HTMLElement>("#next")!.hidden = false;
+  document.querySelector("#feedback")!.innerHTML =
+    `<div class="feedback ${correct ? "good" : "bad"}"><span class="thumb">${correct ? "👍" : "👎"}</span><b>${correct ? "Bonne réponse !" : "Réponse incorrecte."}</b><span>${correct ? "" : `Bonne réponse : ${"ABC"[quizOrder.indexOf(right)]}.`}</span></div><p class="quiz-note">${esc(q.note)}</p>`;
+}
+function quizAdvance() {
+  if (!quizRun || !quizAnswered) return;
+  // A tap that answers can be followed by a ghost click on the redrawn page.
+  if (Date.now() - quizAnsweredAt < 300) return;
+  if (quizIndex + 1 === quizRun.length) {
+    quizResult();
+    return;
+  }
+  quizIndex++;
+  quizQuestion();
+}
+function quizResult() {
+  const run = quizRun!,
+    picks = quizPicks,
+    ok = run.filter((q, i) => picks[i] === q.correct_option - 1).length,
+    missed = run
+      .map((q, i) => ({ q, picked: picks[i] ?? null }))
+      .filter(({ q, picked }) => picked !== q.correct_option - 1);
+  const record: QuizRun = {
+    id: crypto.randomUUID(),
+    completedAt: new Date().toISOString(),
+    questions: run.length,
+    correct: ok,
+    seconds: Math.round(quizSeconds * 100) / 100,
+  };
+  // The run itself is not kept, only its practice time. A storage failure must
+  // not cost the score on screen, so it is noted and never blocks the result.
+  quizRuns = [...quizRuns, record];
+  void saveQuizRun(record).catch(() => {
+    quizRuns = quizRuns.filter((r) => r.id !== record.id);
+    storageError = true;
+  });
+  quizRun = null; // Back to a normal screen: the nav and the brand return.
+  shell(
+    `<div class="eyebrow">QUIZ TERMINÉ</div><h1>${ok === run.length ? "Sans faute." : ok >= run.length * 0.75 ? "Bien lu." : "À retravailler."}</h1><div class="score"><strong>${ok}<span> / ${run.length}</span></strong><p>bonnes réponses · ${pct(ok / run.length)}</p></div><button class="primary" id="quiz-again">Refaire ${VOCAB_LENGTH} questions →</button><button class="secondary full" id="quiz-back">Revenir à l’accueil du quiz</button>${
+      missed.length
+        ? `<h2 class="review-title">Les ${missed.length === 1 ? "mot manqué" : `${missed.length} mots manqués`}</h2><p class="muted">Relis-les : ce sont eux qui te font mal lire une phrase.</p>${missed
+            .map(
+              ({ q, picked }) =>
+                `<details class="review"><summary><span class="result-mark bad">✕</span><span><span lang="ca">${esc(q.catalan)}</span><small>${esc(vocabTypeName[q.type] ?? q.type)}</small></span></summary><div class="review-body"><p>Ta réponse : ${
+                  picked === null
+                    ? "Sans réponse"
+                    : `<span lang="fr">${esc(q.answers[picked])}</span>`
+                }</p><p class="good"><b>Bonne réponse : <span lang="fr">${esc(q.answers[q.correct_option - 1])}</span></b></p><p class="quiz-note">${esc(q.note)}</p></div></details>`,
+            )
+            .join("")}`
+        : '<p class="empty">Aucune erreur. Retire 20 questions pour en croiser d’autres.</p>'
+    }`,
+    "vocab",
+  );
+  document.querySelector<HTMLButtonElement>("#quiz-again")!.onclick = quizStart;
+  document.querySelector<HTMLButtonElement>("#quiz-back")!.onclick = quizHome;
+}
 function history() {
   shell(
     `<div class="eyebrow">TON PARCOURS</div><h1>Historique des sessions</h1><p class="muted">Chaque session est une nouvelle occasion de progresser.</p>${
@@ -599,6 +776,37 @@ function history() {
   const first = document.querySelector<HTMLButtonElement>("#first");
   if (first) first.onclick = home;
 }
+// Practice time reads in hours and minutes, not in the seconds a single
+// question is measured in.
+const practiceTime = (seconds: number) => {
+  const minutes = Math.round(seconds / 60);
+  return minutes < 60
+    ? `${minutes} min`
+    : `${Math.floor(minutes / 60)} h ${String(minutes % 60).padStart(2, "0")}`;
+};
+function practiceBoard() {
+  const days = practiceDays(attempts, quizRuns);
+  const labels = ["Aujourd’hui", "Hier", "Avant-hier"];
+  const peak = Math.max(...days.map((d) => d.totalSeconds), 1);
+  const total = days.reduce((s, d) => s + d.totalSeconds, 0);
+  const quiz = days.reduce((s, d) => s + d.quizSeconds, 0);
+  return `<section class="practice-board"><h2>Ces 3 derniers jours</h2><div class="score"><strong>${practiceTime(total)}</strong><p>d’entraînement${total ? ` · dont ${practiceTime(quiz)} de català` : ""}</p></div><ol class="day-rows">${days
+    .map((d, i) => {
+      const label =
+        labels[i] ??
+        d.date.toLocaleDateString("fr-FR", { weekday: "long", day: "numeric" });
+      // An empty part is left out entirely: a zero-width span would still show
+      // the gap that separates the two.
+      const fill = (seconds: number, kind: string) =>
+        seconds
+          ? `<span class="day-fill ${kind}" style="width:${(seconds / peak) * 100}%"></span>`
+          : "";
+      return `<li><span class="day-label">${esc(label)}</span><span class="day-bar" role="img" aria-label="${practiceTime(d.questionSeconds)} de questions et ${practiceTime(d.quizSeconds)} de català">${fill(d.questionSeconds, "questions")}${fill(d.quizSeconds, "quiz")}</span><span class="day-total">${d.totalSeconds ? practiceTime(d.totalSeconds) : "—"}</span></li>`;
+    })
+    .join(
+      "",
+    )}</ol><p class="helper"><span class="legend questions"></span>Questions de conduite <span class="legend quiz"></span>Quiz català. Le temps compté est celui passé sur les questions, plafonné à ${MAX_ANSWER_SECONDS} s par question comme partout ailleurs.</p></section>`;
+}
 function recentScoreboard() {
   const recent = recentScores(attempts);
   const value = (rate: number) => (recent.count ? pct(rate) : "—");
@@ -615,7 +823,7 @@ function recentScoreboard() {
 function progress() {
   stats = allStats(attempts);
   shell(
-    `<div class="eyebrow">PAS À PAS</div><h1>Ta progression</h1><p class="muted">${stats.size} sur ${bank.length.toLocaleString("fr-FR")} questions pratiquées.</p><progress value="${stats.size}" max="${bank.length}" aria-label="Questions pratiquées"></progress>${recentScoreboard()}${metrics(attempts)}<button class="secondary full" id="export">Sauvegarder mon historique (JSON) ↓</button><p class="helper">Facultatif : télécharge une copie de tes réponses et sessions. Ton historique reste uniquement dans ce navigateur et peut être perdu si ses données sont effacées.</p><h2 class="review-title">Question par question</h2><input type="search" id="search" placeholder="Rechercher une question pratiquée…" aria-label="Rechercher une question pratiquée"><div id="question-stats"></div>`,
+    `<div class="eyebrow">PAS À PAS</div><h1>Ta progression</h1><p class="muted">${stats.size} sur ${bank.length.toLocaleString("fr-FR")} questions pratiquées.</p><progress value="${stats.size}" max="${bank.length}" aria-label="Questions pratiquées"></progress>${practiceBoard()}${recentScoreboard()}${metrics(attempts, totalPracticeSeconds(attempts, quizRuns), attempts.length, "Temps total · català inclus")}<button class="secondary full" id="export">Sauvegarder mon historique (JSON) ↓</button><p class="helper">Facultatif : télécharge une copie de tes réponses et sessions. Ton historique reste uniquement dans ce navigateur et peut être perdu si ses données sont effacées.</p><h2 class="review-title">Question par question</h2><input type="search" id="search" placeholder="Rechercher une question pratiquée…" aria-label="Rechercher une question pratiquée"><div id="question-stats"></div>`,
     "stats",
   );
   document.querySelector<HTMLButtonElement>("#export")!.onclick = () =>
@@ -645,12 +853,14 @@ function renderStats(query: string) {
 async function exportProgress(extra?: Session) {
   // Refresh before exporting so sessions completed in other tabs are included.
   try {
-    const [rows, saved] = await Promise.all([
+    const [rows, saved, runs] = await Promise.all([
       readAll<Attempt>("attempts"),
       readAll<Session>("sessions"),
+      readAll<QuizRun>("quizRuns"),
     ]);
     attempts = rows.map(capAttempt);
     sessions = saved;
+    quizRuns = runs;
   } catch {
     // Memory still contains the current session when persistent storage fails.
   }
@@ -660,12 +870,13 @@ async function exportProgress(extra?: Session) {
   extra?.attempts.forEach((a) => aa.set(a.id, a));
   const rows = [...aa.values()];
   const data = {
-    schemaVersion: 1,
+    schemaVersion: 2, // Version 2 adds quizRuns; every version 1 field is unchanged.
     app: "autoescola",
     exportedAt: new Date().toISOString(),
     sessions: [...ss.values()],
     attempts: rows,
     stats: [...allStats(rows).values()],
+    quizRuns,
   };
   const url = URL.createObjectURL(
     new Blob([JSON.stringify(data, null, 2)], { type: "application/json" }),
@@ -696,12 +907,14 @@ async function boot() {
       fetchJSON("translations_fr.json"),
     ]);
     try {
-      const [rows, saved] = await Promise.all([
+      const [rows, saved, runs] = await Promise.all([
         readAll<Attempt>("attempts"),
         readAll<Session>("sessions"),
+        readAll<QuizRun>("quizRuns"),
       ]);
       attempts = rows.map(capAttempt);
       sessions = saved;
+      quizRuns = runs;
     } catch {
       storageError = true;
     }

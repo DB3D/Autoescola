@@ -71,6 +71,68 @@ export function recentScores(attempts: Attempt[], size = 100) {
     totalRate: count ? total / count : 0,
   };
 }
+// The Català quiz keeps no per-question history, only what a finished run cost
+// in time, so that practice time can be counted alongside the question bank.
+export interface QuizRun {
+  id: string;
+  completedAt: string;
+  questions: number;
+  correct: number;
+  seconds: number;
+}
+export interface PracticeDay {
+  key: string; // Local YYYY-MM-DD: practice is counted in the user's own days.
+  date: Date;
+  questionSeconds: number;
+  quizSeconds: number;
+  totalSeconds: number;
+}
+function dayKey(date: Date): string {
+  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+}
+// Practice time is the time spent on questions, capped per question exactly as
+// the totals and averages are, so an idle phone cannot inflate a day.
+export function practiceDays(
+  attempts: Attempt[],
+  runs: QuizRun[],
+  days = 3,
+  now = new Date(),
+): PracticeDay[] {
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const buckets = new Map<string, PracticeDay>();
+  for (let i = 0; i < days; i++) {
+    const date = new Date(today);
+    date.setDate(today.getDate() - i);
+    buckets.set(dayKey(date), {
+      key: dayKey(date),
+      date,
+      questionSeconds: 0,
+      quizSeconds: 0,
+      totalSeconds: 0,
+    });
+  }
+  for (const a of attempts) {
+    const day = buckets.get(dayKey(new Date(a.at)));
+    if (day) day.questionSeconds += cappedSeconds(a.seconds);
+  }
+  for (const r of runs) {
+    const day = buckets.get(dayKey(new Date(r.completedAt)));
+    if (day) day.quizSeconds += Math.max(0, r.seconds);
+  }
+  for (const day of buckets.values())
+    day.totalSeconds = day.questionSeconds + day.quizSeconds;
+  return [...buckets.values()]; // Most recent first, as they were created.
+}
+// The lifetime total the Progression page shows, quiz time included.
+export function totalPracticeSeconds(
+  attempts: Attempt[],
+  runs: QuizRun[],
+): number {
+  return (
+    attempts.reduce((s, a) => s + cappedSeconds(a.seconds), 0) +
+    runs.reduce((s, r) => s + Math.max(0, r.seconds), 0)
+  );
+}
 export function trialRemaining(session: Session, now = Date.now()): number | null {
   if (!session.timeTrial || !session.deadlineAt) return null;
   return Math.max(0, (Date.parse(session.deadlineAt) - now) / 1000);

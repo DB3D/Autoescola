@@ -1,0 +1,2614 @@
+{
+  "title": "Vocabulari català",
+  "description": "Entraînement au vocabulaire, aux tournures et aux mots-pièges du questionnaire catalan.",
+  "quiz_length": 20,
+  "question_count": 200,
+  "types": {
+    "vocabulari": "Vocabulaire",
+    "parany": "Mot-piège",
+    "connector": "Tournure",
+    "frase": "Phrase"
+  },
+  "questions": [
+    {
+      "id": "q001",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "la calçada",
+      "answers": [
+        "Le carrefour",
+        "Le trottoir",
+        "La chaussée (la partie où roulent les véhicules)"
+      ],
+      "correct_option": 3,
+      "note": "calçada = chaussée. Mot omniprésent : à ne pas confondre avec vorera (trottoir) ni voral (accotement)."
+    },
+    {
+      "id": "q002",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "la vorera",
+      "answers": [
+        "L'accotement / la bande d'arrêt",
+        "Le bord de la chaussée",
+        "Le trottoir"
+      ],
+      "correct_option": 3,
+      "note": "vorera = trottoir (là où marchent les piétons). Piège : voral = accotement, vora = bord."
+    },
+    {
+      "id": "q003",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "el voral",
+      "answers": [
+        "L'accotement / la bande d'arrêt",
+        "Le trottoir",
+        "Le terre-plein central"
+      ],
+      "correct_option": 1,
+      "note": "voral = accotement, bande d'arrêt d'urgence. Trio à mémoriser : calçada / voral / vorera."
+    },
+    {
+      "id": "q004",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "el carril",
+      "answers": [
+        "La voie de circulation (la file)",
+        "Le carrefour",
+        "Le virage"
+      ],
+      "correct_option": 1,
+      "note": "carril = voie/file. « dos carrils » = deux voies. Ne pas confondre avec carrer (rue) ni carretera (route)."
+    },
+    {
+      "id": "q005",
+      "type": "vocabulari",
+      "prompt": "Quel mot désigne la RUE (en ville) ?",
+      "catalan": "carrer / carretera / carril",
+      "answers": [
+        "carrer",
+        "carretera",
+        "carril"
+      ],
+      "correct_option": 1,
+      "note": "carrer = rue · carretera = route · carril = voie de circulation. Trois mots proches à l'œil, trois sens différents."
+    },
+    {
+      "id": "q006",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "la via",
+      "answers": [
+        "Le trajet effectué",
+        "Le péage",
+        "La voie / la route (au sens général)"
+      ],
+      "correct_option": 3,
+      "note": "via = voie au sens large. « usuaris de la via » = usagers de la route ; « vies urbanes » = voies urbaines."
+    },
+    {
+      "id": "q007",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "el senyal",
+      "answers": [
+        "La signature",
+        "Le sens de circulation",
+        "Le panneau / le signal"
+      ],
+      "correct_option": 3,
+      "note": "senyal = panneau ou signal. « Què significa aquest senyal? » = Que signifie ce panneau ? C'est la question la plus fréquente du test."
+    },
+    {
+      "id": "q008",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "el semàfor",
+      "answers": [
+        "Le sémaphore maritime",
+        "Le feu tricolore",
+        "Le radar"
+      ],
+      "correct_option": 2,
+      "note": "semàfor = feu de signalisation. « semàfor vermell » = feu rouge."
+    },
+    {
+      "id": "q009",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "la cruïlla",
+      "answers": [
+        "Le carrefour / le croisement",
+        "Le rond-point",
+        "La descente"
+      ],
+      "correct_option": 1,
+      "note": "cruïlla = carrefour. Synonymes fréquents : encreuament, intersecció."
+    },
+    {
+      "id": "q010",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "l'encreuament",
+      "answers": [
+        "Le dépassement",
+        "Le croisement / l'intersection",
+        "L'embouteillage"
+      ],
+      "correct_option": 2,
+      "note": "encreuament = croisement. Attention : « llums d'encreuament » = feux de croisement (les codes), pas un carrefour !"
+    },
+    {
+      "id": "q011",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "els vianants",
+      "answers": [
+        "Les piétons",
+        "Les voyageurs",
+        "Les riverains"
+      ],
+      "correct_option": 1,
+      "note": "vianants = piétons. Mot clé : « pas de vianants » = passage piéton."
+    },
+    {
+      "id": "q012",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "el conductor",
+      "answers": [
+        "Le convoyeur",
+        "Le conducteur",
+        "Le passager"
+      ],
+      "correct_option": 2,
+      "note": "conductor = conducteur. « Què ha de fer el conductor...? » = Que doit faire le conducteur… ?"
+    },
+    {
+      "id": "q013",
+      "type": "vocabulari",
+      "prompt": "Que veut dire cette expression ?",
+      "catalan": "els usuaris de la via",
+      "answers": [
+        "Les usagers de la route",
+        "Les propriétaires de la route",
+        "Les services de voirie"
+      ],
+      "correct_option": 1,
+      "note": "usuaris de la via = usagers de la route (conducteurs, piétons, cyclistes…)."
+    },
+    {
+      "id": "q014",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "el trànsit",
+      "answers": [
+        "Le transit douanier",
+        "Le transport de marchandises",
+        "La circulation / le trafic"
+      ],
+      "correct_option": 3,
+      "note": "trànsit = circulation routière. Synonyme fréquent dans le test : circulació."
+    },
+    {
+      "id": "q015",
+      "type": "vocabulari",
+      "prompt": "Que veut dire cette expression ?",
+      "catalan": "el nostre sentit de marxa",
+      "answers": [
+        "Notre sens de circulation",
+        "Notre rapport de boîte",
+        "Notre vitesse engagée"
+      ],
+      "correct_option": 1,
+      "note": "sentit = sens (direction), pas « sentiment ». « sentit contrari » = sens inverse ; « doble sentit » = double sens."
+    },
+    {
+      "id": "q016",
+      "type": "vocabulari",
+      "prompt": "Que veut dire cette expression ?",
+      "catalan": "la marxa enrere",
+      "answers": [
+        "Le demi-tour",
+        "Le rétrogradage",
+        "La marche arrière"
+      ],
+      "correct_option": 3,
+      "note": "enrere = en arrière. marxa = à la fois « marche » et « rapport » de la boîte de vitesses."
+    },
+    {
+      "id": "q017",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "l'avançament",
+      "answers": [
+        "Le dépassement",
+        "L'avancée / le fait d'avancer",
+        "L'accélération"
+      ],
+      "correct_option": 1,
+      "note": "PIÈGE MAJEUR : avançament = DÉPASSEMENT, pas « avancement ». C'est un thème entier du test."
+    },
+    {
+      "id": "q018",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce verbe ?",
+      "catalan": "avançar",
+      "answers": [
+        "Avancer, aller de l'avant",
+        "Dépasser (un autre véhicule)",
+        "Accélérer progressivement"
+      ],
+      "correct_option": 2,
+      "note": "avançar = dépasser. Si tu lis « avancer », tu comprends toute la question à l'envers."
+    },
+    {
+      "id": "q019",
+      "type": "vocabulari",
+      "prompt": "Que veut dire cette expression ?",
+      "catalan": "cedir el pas",
+      "answers": [
+        "Céder le passage",
+        "Interdire le passage",
+        "Ralentir le pas"
+      ],
+      "correct_option": 1,
+      "note": "cedir el pas = céder le passage. Ici « pas » = passage, JAMAIS une négation."
+    },
+    {
+      "id": "q020",
+      "type": "vocabulari",
+      "prompt": "Que veut dire cette expression ?",
+      "catalan": "la prioritat de pas",
+      "answers": [
+        "Le droit de dépasser",
+        "La priorité de passage",
+        "La priorité au ralentissement"
+      ],
+      "correct_option": 2,
+      "note": "prioritat de pas = priorité de passage. Synonyme utilisé aussi : preferència."
+    },
+    {
+      "id": "q021",
+      "type": "vocabulari",
+      "prompt": "Que veut dire cette expression ?",
+      "catalan": "el pas de vianants",
+      "answers": [
+        "La zone piétonne",
+        "Le pas de course des piétons",
+        "Le passage piéton"
+      ],
+      "correct_option": 3,
+      "note": "pas = passage. pas de vianants = passage pour piétons."
+    },
+    {
+      "id": "q022",
+      "type": "vocabulari",
+      "prompt": "Que veut dire cette expression ?",
+      "catalan": "el pas a nivell",
+      "answers": [
+        "Le passage à niveau",
+        "Le passage de plain-pied",
+        "La voie de niveau"
+      ],
+      "correct_option": 1,
+      "note": "pas a nivell = passage à niveau (voie ferrée). Souvent avec barreres = barrières."
+    },
+    {
+      "id": "q023",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "les barreres",
+      "answers": [
+        "Les bornes",
+        "Les barrières",
+        "Les glissières de sécurité"
+      ],
+      "correct_option": 2,
+      "note": "barreres = barrières, typiquement celles d'un pas a nivell (passage à niveau)."
+    },
+    {
+      "id": "q024",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce verbe ?",
+      "catalan": "estacionar",
+      "answers": [
+        "Rester au point mort",
+        "Faire une halte de quelques secondes",
+        "Stationner, se garer"
+      ],
+      "correct_option": 3,
+      "note": "estacionar = stationner (durée longue). À opposer à parada = arrêt bref. La distinction est juridique et tombe souvent."
+    },
+    {
+      "id": "q025",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "l'estacionament",
+      "answers": [
+        "L'immobilisation d'urgence",
+        "La station-service",
+        "Le stationnement"
+      ],
+      "correct_option": 3,
+      "note": "estacionament = stationnement. « prohibit l'estacionament » = stationnement interdit."
+    },
+    {
+      "id": "q026",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot dans le code de la route ?",
+      "catalan": "la parada",
+      "answers": [
+        "La panne",
+        "Le stationnement de longue durée",
+        "L'arrêt bref (sans quitter durablement le véhicule)"
+      ],
+      "correct_option": 3,
+      "note": "parada = arrêt · estacionament = stationnement. Deux régimes différents : ne les confonds jamais."
+    },
+    {
+      "id": "q027",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce verbe ?",
+      "catalan": "aturar-se",
+      "answers": [
+        "S'écarter sur le côté",
+        "S'arrêter",
+        "Se remettre en marche"
+      ],
+      "correct_option": 2,
+      "note": "aturar-se = s'arrêter. Synonymes : parar, detenir-se. Le « -se / -nos » collé à la fin est le pronom réfléchi."
+    },
+    {
+      "id": "q028",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "immobilitzat",
+      "answers": [
+        "Immobilisé, à l'arrêt",
+        "En mouvement lent",
+        "Bloqué mécaniquement (en panne)"
+      ],
+      "correct_option": 1,
+      "note": "immobilitzat = immobilisé, à l'arrêt. « vehicle immobilitzat » = véhicule à l'arrêt."
+    },
+    {
+      "id": "q029",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "la frenada",
+      "answers": [
+        "La distance parcourue",
+        "Le frein à main",
+        "Le freinage"
+      ],
+      "correct_option": 3,
+      "note": "frenada = freinage · fre = frein · frens = freins · frenar = freiner."
+    },
+    {
+      "id": "q030",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "el fre",
+      "answers": [
+        "L'embrayage",
+        "Le frein",
+        "Le froid"
+      ],
+      "correct_option": 2,
+      "note": "fre = frein. « fre de mà » = frein à main. Pluriel : frens."
+    },
+    {
+      "id": "q031",
+      "type": "vocabulari",
+      "prompt": "Que veut dire cette expression ?",
+      "catalan": "trepitjar el fre",
+      "answers": [
+        "Vérifier le frein",
+        "Relâcher le frein",
+        "Appuyer sur le frein (avec le pied)"
+      ],
+      "correct_option": 3,
+      "note": "trepitjar = appuyer du pied, écraser. « trepitjar la línia » = chevaucher la ligne."
+    },
+    {
+      "id": "q032",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "el volant",
+      "answers": [
+        "Le pare-brise",
+        "Le clignotant",
+        "Le volant"
+      ],
+      "correct_option": 3,
+      "note": "volant = volant. Cas rare où le mot ressemble au français ET veut dire la même chose."
+    },
+    {
+      "id": "q033",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "el seient",
+      "answers": [
+        "La ceinture",
+        "Le siège",
+        "Le seuil de porte"
+      ],
+      "correct_option": 2,
+      "note": "seient = siège · respatller = dossier. Question classique sur le réglage du poste de conduite."
+    },
+    {
+      "id": "q034",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "el respatller",
+      "answers": [
+        "Le dossier du siège",
+        "Le repose-pied",
+        "L'appui-tête"
+      ],
+      "correct_option": 1,
+      "note": "respatller = dossier (l'appui du dos ; esquena = dos)."
+    },
+    {
+      "id": "q035",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "els comandaments",
+      "answers": [
+        "Les commandements / les ordres",
+        "Les commandes passées au garage",
+        "Les commandes (du véhicule)"
+      ],
+      "correct_option": 3,
+      "note": "comandaments = commandes du véhicule (volant, pédales, leviers…)."
+    },
+    {
+      "id": "q036",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "el retrovisor",
+      "answers": [
+        "Le rétroviseur intérieur uniquement",
+        "Le pare-soleil",
+        "Le rétroviseur"
+      ],
+      "correct_option": 3,
+      "note": "retrovisor = rétroviseur. « retrovisor lateral » = rétroviseur extérieur."
+    },
+    {
+      "id": "q037",
+      "type": "vocabulari",
+      "prompt": "Que veut dire cette expression ?",
+      "catalan": "els llums d'encreuament",
+      "answers": [
+        "Les feux de croisement (les codes)",
+        "Les feux de carrefour",
+        "Les feux de détresse"
+      ],
+      "correct_option": 1,
+      "note": "llums d'encreuament = feux de croisement. Ici encreuament NE veut PAS dire carrefour."
+    },
+    {
+      "id": "q038",
+      "type": "vocabulari",
+      "prompt": "Que veut dire cette expression ?",
+      "catalan": "els llums de carretera",
+      "answers": [
+        "L'éclairage public de la route",
+        "Les feux de route (les pleins phares)",
+        "Les feux de position"
+      ],
+      "correct_option": 2,
+      "note": "llums de carretera = feux de route. Couple à retenir : encreuament (codes) vs carretera (pleins phares)."
+    },
+    {
+      "id": "q039",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "l'enllumenat",
+      "answers": [
+        "Le tableau de bord",
+        "L'allumage du moteur",
+        "L'éclairage"
+      ],
+      "correct_option": 3,
+      "note": "enllumenat = éclairage. « enllumenat ordinari » = éclairage public ordinaire."
+    },
+    {
+      "id": "q040",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "encès",
+      "answers": [
+        "Éteint",
+        "En panne",
+        "Allumé"
+      ],
+      "correct_option": 3,
+      "note": "encendre = allumer · encès = allumé · apagar = éteindre · apagat = éteint. Un seul mot inverse la bonne réponse."
+    },
+    {
+      "id": "q041",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce verbe ?",
+      "catalan": "apagar",
+      "answers": [
+        "Baisser l'intensité",
+        "Éteindre",
+        "Allumer"
+      ],
+      "correct_option": 2,
+      "note": "apagar = éteindre. Ne confonds jamais encendre (allumer) et apagar (éteindre) dans les questions sur les feux."
+    },
+    {
+      "id": "q042",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "les rodes",
+      "answers": [
+        "Les roues",
+        "Les routes",
+        "Les rodages"
+      ],
+      "correct_option": 1,
+      "note": "rodes = roues. Piège d'œil : rodes (roues) ≠ carreteres (routes)."
+    },
+    {
+      "id": "q043",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "els pneumàtics",
+      "answers": [
+        "Les pneus",
+        "Les amortisseurs",
+        "Les circuits d'air"
+      ],
+      "correct_option": 1,
+      "note": "pneumàtics = pneus. Sujet fréquent : pression, usure, chaînes (cadenes)."
+    },
+    {
+      "id": "q044",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "les cadenes",
+      "answers": [
+        "Les chaînes (neige)",
+        "Les chaînes de distribution du moteur",
+        "Les sangles d'arrimage"
+      ],
+      "correct_option": 1,
+      "note": "cadenes = chaînes à neige. Apparaît avec neu (neige) et gel (verglas)."
+    },
+    {
+      "id": "q045",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "el remolc",
+      "answers": [
+        "Le crochet d'attelage",
+        "La remorque",
+        "Le remorquage par dépanneuse"
+      ],
+      "correct_option": 2,
+      "note": "remolc = remorque. Très présent dans les questions de poids (pes) et de permis."
+    },
+    {
+      "id": "q046",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "la càrrega",
+      "answers": [
+        "La charge administrative",
+        "Le chargement / la charge",
+        "La recharge de la batterie"
+      ],
+      "correct_option": 2,
+      "note": "càrrega = chargement. « carregat » = chargé ; « en buit » = à vide."
+    },
+    {
+      "id": "q047",
+      "type": "vocabulari",
+      "prompt": "Que veut dire cette expression ?",
+      "catalan": "el pes màxim autoritzat",
+      "answers": [
+        "Le poids à vide",
+        "Le poids maximal autorisé",
+        "Le poids constaté à la pesée"
+      ],
+      "correct_option": 2,
+      "note": "pes = poids. « pes en buit » = poids à vide. Ces deux-là s'opposent dans les questions sur les remorques."
+    },
+    {
+      "id": "q048",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "l'amplada",
+      "answers": [
+        "L'ampleur du virage",
+        "La hauteur",
+        "La largeur"
+      ],
+      "correct_option": 3,
+      "note": "amplada = largeur · alçada = hauteur · llargada / longitud = longueur. Les panneaux de gabarit jouent sur ces trois-là."
+    },
+    {
+      "id": "q049",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "l'alçada",
+      "answers": [
+        "L'altitude du col",
+        "La largeur",
+        "La hauteur"
+      ],
+      "correct_option": 3,
+      "note": "alçada = hauteur (panneau de hauteur limitée). À opposer à amplada = largeur."
+    },
+    {
+      "id": "q050",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "la llargada",
+      "answers": [
+        "La largeur",
+        "La durée",
+        "La longueur"
+      ],
+      "correct_option": 3,
+      "note": "llargada (ou longitud) = longueur. « llarg » = long ; « al llarg de » = le long de."
+    },
+    {
+      "id": "q051",
+      "type": "vocabulari",
+      "prompt": "Que désigne ce mot dans le code de la route ?",
+      "catalan": "el turisme",
+      "answers": [
+        "La voiture particulière",
+        "Le trajet d'agrément",
+        "Le car de tourisme"
+      ],
+      "correct_option": 1,
+      "note": "turisme = voiture particulière (véhicule de tourisme), PAS le tourisme. Piège fréquent."
+    },
+    {
+      "id": "q052",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "el camió",
+      "answers": [
+        "La camionnette uniquement",
+        "Le chemin",
+        "Le camion"
+      ],
+      "correct_option": 3,
+      "note": "camió = camion (pluriel camions). Attention à l'œil : camió ≠ camí (chemin)."
+    },
+    {
+      "id": "q053",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "el ciclomotor",
+      "answers": [
+        "La moto de grosse cylindrée",
+        "Le cyclomoteur",
+        "Le vélo"
+      ],
+      "correct_option": 2,
+      "note": "ciclomotor = cyclomoteur · motocicleta = moto · bicicleta / ciclista = vélo / cycliste."
+    },
+    {
+      "id": "q054",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "la corba",
+      "answers": [
+        "Le virage",
+        "La courbe de vitesse",
+        "La bosse"
+      ],
+      "correct_option": 1,
+      "note": "corba = virage. « corba perillosa » = virage dangereux."
+    },
+    {
+      "id": "q055",
+      "type": "vocabulari",
+      "prompt": "Que veut dire cette expression ?",
+      "catalan": "un canvi de rasant",
+      "answers": [
+        "Un changement de revêtement",
+        "Un changement de voie",
+        "Un sommet de côte / un changement de pente"
+      ],
+      "correct_option": 3,
+      "note": "rasant = profil de la route ; canvi de rasant = sommet de côte où la visibilité est coupée. Zone d'interdiction de dépasser."
+    },
+    {
+      "id": "q056",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "el pendent",
+      "answers": [
+        "Le versant opposé",
+        "Le pendentif",
+        "La pente / la côte"
+      ],
+      "correct_option": 3,
+      "note": "pendent = pente. « pendent ascendent » = montée, « descendent » = descente."
+    },
+    {
+      "id": "q057",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "el tram",
+      "answers": [
+        "Le tronçon / la portion de route",
+        "Le tramway",
+        "Le trajet complet"
+      ],
+      "correct_option": 1,
+      "note": "tram = tronçon de route. « un tram de via » = une portion de voie."
+    },
+    {
+      "id": "q058",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "la boira",
+      "answers": [
+        "Le brouillard",
+        "La pluie fine",
+        "Le verglas"
+      ],
+      "correct_option": 1,
+      "note": "boira = brouillard. Vocabulaire météo : pluja (pluie), neu (neige), gel (verglas), vent (vent)."
+    },
+    {
+      "id": "q059",
+      "type": "vocabulari",
+      "prompt": "Que veut dire cette expression ?",
+      "catalan": "moderar la velocitat",
+      "answers": [
+        "Rouler au maximum autorisé",
+        "Maintenir une vitesse constante",
+        "Réduire la vitesse"
+      ],
+      "correct_option": 3,
+      "note": "moderar = réduire, modérer. Réponse type : « moderar la velocitat i, si cal, aturar-nos »."
+    },
+    {
+      "id": "q060",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce verbe ?",
+      "catalan": "disminuir",
+      "answers": [
+        "Stabiliser",
+        "Diminuer, réduire",
+        "Augmenter"
+      ],
+      "correct_option": 2,
+      "note": "disminuir / reduir = diminuer ≠ augmentar = augmenter. Un seul mot fait basculer la bonne réponse."
+    },
+    {
+      "id": "q061",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce verbe ?",
+      "catalan": "atansar-nos",
+      "answers": [
+        "Nous arrêter",
+        "Nous approcher",
+        "Nous écarter"
+      ],
+      "correct_option": 2,
+      "note": "atansar-se = acostar-se = apropar-se = s'approcher. Contraire : allunyar-se = s'éloigner."
+    },
+    {
+      "id": "q062",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce verbe ?",
+      "catalan": "girar",
+      "answers": [
+        "Rouler dans un rond-point",
+        "Faire demi-tour obligatoirement",
+        "Tourner (changer de direction)"
+      ],
+      "correct_option": 3,
+      "note": "girar = tourner · gir = le fait de tourner · « girar cap a l'esquerra » = tourner vers la gauche."
+    },
+    {
+      "id": "q063",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce verbe ?",
+      "catalan": "creuar",
+      "answers": [
+        "Se garer en travers",
+        "Traverser",
+        "Croiser un autre véhicule"
+      ],
+      "correct_option": 2,
+      "note": "creuar = traverser. Ne confonds pas avec encreuar-se (se croiser)."
+    },
+    {
+      "id": "q064",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "la sortida",
+      "answers": [
+        "La saillie du chargement",
+        "Le départ en course",
+        "La sortie"
+      ],
+      "correct_option": 3,
+      "note": "sortida = sortie · sortir = sortir · entrada = entrée."
+    },
+    {
+      "id": "q065",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "el perill",
+      "answers": [
+        "La perte de contrôle",
+        "Le danger",
+        "Le péril financier"
+      ],
+      "correct_option": 2,
+      "note": "perill = danger · perillós/perillosa = dangereux/dangereuse · « matèries perilloses » = matières dangereuses."
+    },
+    {
+      "id": "q066",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "perillosa",
+      "answers": [
+        "Périlleuse au sens sportif",
+        "Dangereuse",
+        "Périphérique"
+      ],
+      "correct_option": 2,
+      "note": "perillosa = dangereuse (féminin de perillós). « corba perillosa » = virage dangereux."
+    },
+    {
+      "id": "q067",
+      "type": "vocabulari",
+      "prompt": "Que veut dire cette expression ?",
+      "catalan": "el cinturó de seguretat",
+      "answers": [
+        "La ceinture de sécurité",
+        "L'airbag",
+        "Le périmètre de sécurité"
+      ],
+      "correct_option": 1,
+      "note": "cinturó de seguretat = ceinture. Autre équipement clé : el casc = le casque."
+    },
+    {
+      "id": "q068",
+      "type": "vocabulari",
+      "prompt": "Que veut dire cette expression ?",
+      "catalan": "el permís de conduir",
+      "answers": [
+        "La carte grise",
+        "L'autorisation de stationner",
+        "Le permis de conduire"
+      ],
+      "correct_option": 3,
+      "note": "permís de conduir = permis de conduire · conduir = conduire · conducció = la conduite."
+    },
+    {
+      "id": "q069",
+      "type": "vocabulari",
+      "prompt": "Que veut dire ce mot ?",
+      "catalan": "la vora",
+      "answers": [
+        "La voie",
+        "Le trottoir",
+        "Le bord"
+      ],
+      "correct_option": 3,
+      "note": "vora = bord · vorera = trottoir · voral = accotement. Trois mots quasi identiques : lis la fin du mot."
+    },
+    {
+      "id": "q070",
+      "type": "vocabulari",
+      "prompt": "Que veut dire cette expression ?",
+      "catalan": "l'eix de la calçada",
+      "answers": [
+        "L'entrée de la chaussée",
+        "L'essieu du véhicule",
+        "L'axe (le milieu) de la chaussée"
+      ],
+      "correct_option": 3,
+      "note": "eix = axe. « l'eix de la calçada » = la ligne médiane de la route."
+    },
+    {
+      "id": "q071",
+      "type": "parany",
+      "prompt": "Dans cette phrase, que veut dire « pas » ?",
+      "catalan": "Pas prohibit.",
+      "answers": [
+        "Passage interdit",
+        "Interdit de marcher",
+        "Ce n'est pas interdit"
+      ],
+      "correct_option": 1,
+      "note": "En catalan « pas » est un NOM = le passage. Ce n'est pas la négation française. Réflexe : pas = passage."
+    },
+    {
+      "id": "q072",
+      "type": "parany",
+      "prompt": "Que veut dire « cap » ici ?",
+      "catalan": "No es troba cap vehicle a menys de 500 m.",
+      "answers": [
+        "Aucun véhicule ne se trouve à moins de 500 m",
+        "Le véhicule est orienté vers 500 m",
+        "Un véhicule se trouve en tête à 500 m"
+      ],
+      "correct_option": 1,
+      "note": "cap + nom = AUCUN. Avec « no », c'est une négation totale. Mot n°1 à repérer : il annule toute la phrase."
+    },
+    {
+      "id": "q073",
+      "type": "parany",
+      "prompt": "Que veut dire « cap a » ici ?",
+      "catalan": "girar cap a l'esquerra",
+      "answers": [
+        "Ne tourner à gauche en aucun cas",
+        "Tourner vers la gauche",
+        "Tourner la tête à gauche"
+      ],
+      "correct_option": 2,
+      "note": "Deuxième sens de cap : « cap a » = VERS. Trois sens à distinguer : cap (aucun) / cap a (vers) / el cap (la tête)."
+    },
+    {
+      "id": "q074",
+      "type": "parany",
+      "prompt": "Que veut dire cette expression ?",
+      "catalan": "En cap cas",
+      "answers": [
+        "En aucun cas",
+        "Dans ce cas-là",
+        "Dans chaque cas"
+      ],
+      "correct_option": 1,
+      "note": "« En cap cas » = en aucun cas. Formule d'exclusion absolue, très fréquente dans les bonnes réponses."
+    },
+    {
+      "id": "q075",
+      "type": "parany",
+      "prompt": "Que veut dire « No cal » ?",
+      "catalan": "No cal aturar-se.",
+      "answers": [
+        "On ne peut pas s'arrêter",
+        "Ce n'est pas nécessaire de s'arrêter",
+        "Il ne faut surtout pas s'arrêter"
+      ],
+      "correct_option": 2,
+      "note": "PIÈGE CLASSIQUE : « no cal » = ce n'est pas nécessaire (pas d'obligation), et NON « il ne faut pas » (interdiction). Interdiction = « no es pot » / « està prohibit »."
+    },
+    {
+      "id": "q076",
+      "type": "parany",
+      "prompt": "Que veut dire « cal » ?",
+      "catalan": "Cal comprovar que no s'aproxima cap vehicle.",
+      "answers": [
+        "Il est possible de vérifier si un véhicule approche",
+        "Il faut vérifier qu'aucun véhicule n'approche",
+        "Il est déconseillé de vérifier"
+      ],
+      "correct_option": 2,
+      "note": "cal = il faut (obligation impersonnelle). Formes : cal / caldrà (il faudra) / calia (il fallait)."
+    },
+    {
+      "id": "q077",
+      "type": "parany",
+      "prompt": "Que veut dire « segons » dans cette phrase ?",
+      "catalan": "Varia segons la categoria del vehicle.",
+      "answers": [
+        "Cela varie en fonction du second véhicule",
+        "Cela varie de quelques secondes selon le véhicule",
+        "Cela varie selon la catégorie du véhicule"
+      ],
+      "correct_option": 3,
+      "note": "DOUBLE SENS : segons = SELON (préposition) ou SECONDES (unité). Le contexte tranche : suivi d'un nom sans chiffre → « selon »."
+    },
+    {
+      "id": "q078",
+      "type": "parany",
+      "prompt": "Que veut dire « segons » ici ?",
+      "catalan": "Cada dos segons.",
+      "answers": [
+        "Chaque deuxième cas",
+        "Selon les deux",
+        "Toutes les deux secondes"
+      ],
+      "correct_option": 3,
+      "note": "Ici « segons » = secondes, parce qu'un chiffre le précède. Toujours regarder s'il y a un nombre devant."
+    },
+    {
+      "id": "q079",
+      "type": "parany",
+      "prompt": "Que veut dire « llevat de » ?",
+      "catalan": "Llevat de certes excepcions.",
+      "answers": [
+        "Y compris certaines exceptions",
+        "En raison de certaines exceptions",
+        "Sauf certaines exceptions"
+      ],
+      "correct_option": 3,
+      "note": "llevat de = tret de = excepte = fora de = SAUF. Ce mot retire un cas de la règle : il change tout."
+    },
+    {
+      "id": "q080",
+      "type": "parany",
+      "prompt": "Que veut dire « excepte » ?",
+      "catalan": "Permès el pas excepte per raons d'afluència.",
+      "answers": [
+        "Passage permis y compris en cas d'affluence",
+        "Passage permis sauf pour raisons d'affluence",
+        "Passage permis surtout en cas d'affluence"
+      ],
+      "correct_option": 2,
+      "note": "excepte = sauf. Repère-le en priorité : il renverse la portée de la règle qui précède."
+    },
+    {
+      "id": "q081",
+      "type": "parany",
+      "prompt": "Que veut dire « llevat que » ?",
+      "catalan": "Detenció, llevat que no es pugui fer amb seguretat.",
+      "answers": [
+        "Arrêt, parce que cela ne peut pas se faire en sécurité",
+        "Arrêt, dès que cela peut se faire en sécurité",
+        "Arrêt, à moins que cela ne puisse se faire en sécurité"
+      ],
+      "correct_option": 3,
+      "note": "llevat que + subjonctif = à moins que. Introduit la condition qui ANNULE l'obligation."
+    },
+    {
+      "id": "q082",
+      "type": "parany",
+      "prompt": "Que veut dire « sempre que » ici ?",
+      "catalan": "Sempre que circulem a més de 30 km/h.",
+      "answers": [
+        "À condition que nous circulions à plus de 30 km/h",
+        "Chaque fois que nous dépassons 30 km/h",
+        "Toujours quand nous circulons à plus de 30 km/h"
+      ],
+      "correct_option": 1,
+      "note": "sempre que + subjonctif = À CONDITION QUE. Ce n'est pas « toujours que ». Il pose une condition, pas une fréquence."
+    },
+    {
+      "id": "q083",
+      "type": "parany",
+      "prompt": "Que veut dire « encara que » ?",
+      "catalan": "Encara que estigui il·luminat.",
+      "answers": [
+        "Même s'il est éclairé",
+        "Tant qu'il est éclairé",
+        "Encore une fois qu'il est éclairé"
+      ],
+      "correct_option": 1,
+      "note": "encara que = même si, bien que (concession). Synonymes : tot i que, malgrat que. Le mot seul « encara » = encore."
+    },
+    {
+      "id": "q084",
+      "type": "parany",
+      "prompt": "Que veut dire « tot i que » ?",
+      "catalan": "Tot i que la via sigui ampla.",
+      "answers": [
+        "Tout au long de la voie large",
+        "Bien que la voie soit large",
+        "Aussitôt que la voie est large"
+      ],
+      "correct_option": 2,
+      "note": "tot i que = bien que. Attention : « tot i » ne veut pas dire « tout »."
+    },
+    {
+      "id": "q085",
+      "type": "parany",
+      "prompt": "Que veut dire « perquè » dans cette phrase ?",
+      "catalan": "Menys, perquè no s'ha mullat gaire.",
+      "answers": [
+        "Moins : pourquoi ne s'est-elle pas mouillée ?",
+        "Moins, parce qu'elle ne s'est pas beaucoup mouillée",
+        "Moins, pour qu'elle ne se mouille pas beaucoup"
+      ],
+      "correct_option": 2,
+      "note": "perquè + indicatif = parce que (cause). perquè + subjonctif = pour que (but). « per què » (séparé) = pourquoi."
+    },
+    {
+      "id": "q086",
+      "type": "parany",
+      "prompt": "Que veut dire « per què » (en deux mots) ?",
+      "catalan": "Per què hem de reduir la velocitat?",
+      "answers": [
+        "Pour que nous réduisions la vitesse",
+        "Parce que nous devons réduire la vitesse",
+        "Pourquoi devons-nous réduire la vitesse ?"
+      ],
+      "correct_option": 3,
+      "note": "« per què » séparé + point d'interrogation = pourquoi. « perquè » collé = parce que / pour que."
+    },
+    {
+      "id": "q087",
+      "type": "parany",
+      "prompt": "Que veut dire « sinó » ?",
+      "catalan": "No és obligatori, sinó aconsellable.",
+      "answers": [
+        "Ce n'est pas obligatoire, mais plutôt conseillé",
+        "Ce n'est pas obligatoire, sinon c'est conseillé",
+        "Ce n'est pas obligatoire, si ce n'est pas conseillé"
+      ],
+      "correct_option": 1,
+      "note": "sinó (en un mot) = mais plutôt (après une négation). « si no » (en deux mots) = si ne… pas. Un espace change tout."
+    },
+    {
+      "id": "q088",
+      "type": "parany",
+      "prompt": "Que veut dire « si no » (en deux mots) ?",
+      "catalan": "Si no hi ha visibilitat, no avancem.",
+      "answers": [
+        "Mais plutôt il y a de la visibilité",
+        "Sinon il y a de la visibilité, nous ne dépassons pas",
+        "S'il n'y a pas de visibilité, nous ne dépassons pas"
+      ],
+      "correct_option": 3,
+      "note": "« si no » = si… ne pas (condition négative). Ne le confonds pas avec « sinó » (mais plutôt)."
+    },
+    {
+      "id": "q089",
+      "type": "parany",
+      "prompt": "Que veut dire « gaire » ?",
+      "catalan": "No s'ha mullat gaire.",
+      "answers": [
+        "Elle s'est complètement mouillée",
+        "Elle ne s'est pas du tout mouillée",
+        "Elle ne s'est pas beaucoup mouillée"
+      ],
+      "correct_option": 3,
+      "note": "gaire = « beaucoup » dans une phrase négative (l'équivalent de « guère »). Nuance de degré, pas de négation totale."
+    },
+    {
+      "id": "q090",
+      "type": "parany",
+      "prompt": "Que veut dire « prou » ?",
+      "catalan": "La calçada no és prou ampla.",
+      "answers": [
+        "La chaussée n'est pas plus large",
+        "La chaussée n'est pas assez large",
+        "La chaussée n'est pas très étroite"
+      ],
+      "correct_option": 2,
+      "note": "prou = assez, suffisamment. « n'hi ha prou » = il suffit. Contraire : massa = trop."
+    },
+    {
+      "id": "q091",
+      "type": "parany",
+      "prompt": "Que veut dire « massa » ici ?",
+      "catalan": "Circular massa a poc a poc també és perillós.",
+      "answers": [
+        "Circuler en masse lentement est dangereux",
+        "Circuler trop lentement est aussi dangereux",
+        "Circuler surtout lentement est dangereux"
+      ],
+      "correct_option": 2,
+      "note": "massa = TROP (excès). Rien à voir avec la masse. Trio de degré : poc (peu) / prou (assez) / massa (trop)."
+    },
+    {
+      "id": "q092",
+      "type": "parany",
+      "prompt": "Que veut dire « força » ici ?",
+      "catalan": "Subjectem amb força el volant.",
+      "answers": [
+        "Nous tenons fermement le volant",
+        "Nous lâchons le volant par la force",
+        "Nous forçons sur le volant pour le tourner"
+      ],
+      "correct_option": 1,
+      "note": "« amb força » = avec force, fermement. Mais « força » seul devant un nom = pas mal de, beaucoup de."
+    },
+    {
+      "id": "q093",
+      "type": "parany",
+      "prompt": "Que veut dire « només » ?",
+      "catalan": "Només en vies urbanes.",
+      "answers": [
+        "Seulement sur les voies urbaines",
+        "Y compris sur les voies urbaines",
+        "Jamais sur les voies urbaines"
+      ],
+      "correct_option": 1,
+      "note": "només = solament = únicament = sols = SEULEMENT. Restriction qui rend la réponse souvent fausse si tu la manques."
+    },
+    {
+      "id": "q094",
+      "type": "parany",
+      "prompt": "Que veut dire « únicament » ?",
+      "catalan": "Únicament en les vies interurbanes.",
+      "answers": [
+        "Uniquement sur les voies interurbaines",
+        "Y compris sur les voies interurbaines",
+        "Notamment sur les voies interurbaines"
+      ],
+      "correct_option": 1,
+      "note": "únicament = uniquement. Même famille : només, solament, sols, exclusivament."
+    },
+    {
+      "id": "q095",
+      "type": "parany",
+      "prompt": "Que veut dire « fins i tot » ?",
+      "catalan": "Fins i tot de dia.",
+      "answers": [
+        "Jusqu'à la fin du jour",
+        "Même de jour",
+        "Jusqu'à tout le jour"
+      ],
+      "correct_option": 2,
+      "note": "« fins i tot » = MÊME (inclusion extrême). « fins » seul = jusqu'à. Ne les confonds pas."
+    },
+    {
+      "id": "q096",
+      "type": "parany",
+      "prompt": "Que veut dire « fins » ici ?",
+      "catalan": "Fins a la propera intersecció.",
+      "answers": [
+        "Même à la prochaine intersection",
+        "Dès la prochaine intersection",
+        "Jusqu'à la prochaine intersection"
+      ],
+      "correct_option": 3,
+      "note": "« fins a » = jusqu'à (limite). Avec « i tot » derrière, le sens devient « même »."
+    },
+    {
+      "id": "q097",
+      "type": "parany",
+      "prompt": "Que veut dire « mai » ?",
+      "catalan": "Mai no s'ha d'avançar en un canvi de rasant.",
+      "answers": [
+        "Il ne faut jamais dépasser dans un sommet de côte",
+        "Il faut parfois dépasser dans un sommet de côte",
+        "Il faut mieux dépasser dans un sommet de côte"
+      ],
+      "correct_option": 1,
+      "note": "mai = jamais. Opposé : sempre = toujours. Un seul de ces deux mots décide de la bonne réponse."
+    },
+    {
+      "id": "q098",
+      "type": "parany",
+      "prompt": "Que veut dire « sempre » ?",
+      "catalan": "Sempre hem de cedir el pas als vianants.",
+      "answers": [
+        "Nous devons parfois céder le passage aux piétons",
+        "Nous devons toujours céder le passage aux piétons",
+        "Nous ne devons jamais céder le passage aux piétons"
+      ],
+      "correct_option": 2,
+      "note": "sempre = toujours. Attention : « sempre que » (suivi d'un verbe) ne veut PAS dire toujours, mais « à condition que »."
+    },
+    {
+      "id": "q099",
+      "type": "parany",
+      "prompt": "Que veut dire « ni » ici ?",
+      "catalan": "No podem parar ni estacionar.",
+      "answers": [
+        "Nous ne pouvons pas nous arrêter si nous stationnons",
+        "Nous ne pouvons ni nous arrêter ni stationner",
+        "Nous ne pouvons pas nous arrêter, mais stationner oui"
+      ],
+      "correct_option": 2,
+      "note": "ni = ni. Étend la négation aux deux éléments. Sans lui, seul le premier serait interdit."
+    },
+    {
+      "id": "q100",
+      "type": "parany",
+      "prompt": "Que veut dire « gens » ?",
+      "catalan": "No hi ha gens de visibilitat.",
+      "answers": [
+        "Il n'y a pas du tout de visibilité",
+        "Il y a peu de gens visibles",
+        "Il n'y a pas beaucoup de visibilité"
+      ],
+      "correct_option": 1,
+      "note": "gens = pas du tout (négation totale de quantité). Rien à voir avec « les gens » (la gent)."
+    },
+    {
+      "id": "q101",
+      "type": "parany",
+      "prompt": "Que veut dire « res » ?",
+      "catalan": "Res, si subjectem el volant.",
+      "answers": [
+        "Nous respirons, si nous tenons le volant",
+        "Rien, si nous tenons le volant",
+        "Un reste, si nous tenons le volant"
+      ],
+      "correct_option": 2,
+      "note": "res = RIEN. Faux ami redoutable : ça ressemble à « rien » de nulle part, mais c'est bien « rien »."
+    },
+    {
+      "id": "q102",
+      "type": "parany",
+      "prompt": "Que veut dire « ningú » ?",
+      "catalan": "Ningú no té preferència.",
+      "answers": [
+        "Chacun a sa préférence",
+        "Aucun d'eux n'a de préférence de trajet",
+        "Personne n'a la priorité"
+      ],
+      "correct_option": 3,
+      "note": "ningú = personne (aucune personne). Famille des négatifs : cap (aucun), res (rien), mai (jamais), gens (pas du tout), ningú (personne)."
+    },
+    {
+      "id": "q103",
+      "type": "parany",
+      "prompt": "Que veut dire « tothom » ?",
+      "catalan": "Tothom sap les normes.",
+      "answers": [
+        "Tous les hommes doivent connaître les règles",
+        "Tout le monde connaît les règles",
+        "Chaque homme connaît les règles"
+      ],
+      "correct_option": 2,
+      "note": "tothom = tout le monde. Opposé : ningú = personne."
+    },
+    {
+      "id": "q104",
+      "type": "parany",
+      "prompt": "Que veut dire « qualsevol » ?",
+      "catalan": "En qualsevol cas.",
+      "answers": [
+        "Dans le cas voulu",
+        "Dans quelques cas",
+        "Dans n'importe quel cas"
+      ],
+      "correct_option": 3,
+      "note": "qualsevol = n'importe quel, quelconque. « en qualsevol cas » = dans tous les cas."
+    },
+    {
+      "id": "q105",
+      "type": "parany",
+      "prompt": "Que veut dire « davant » ?",
+      "catalan": "El vehicle que circula davant.",
+      "answers": [
+        "Le véhicule qui circule en avance",
+        "Le véhicule qui circule devant (position)",
+        "Le véhicule qui circulait avant (temps)"
+      ],
+      "correct_option": 2,
+      "note": "PIÈGE : davant = devant (LIEU). abans = avant (TEMPS). Deux mots différents que le français confond."
+    },
+    {
+      "id": "q106",
+      "type": "parany",
+      "prompt": "Que veut dire « abans » ?",
+      "catalan": "Abans d'iniciar un avançament.",
+      "answers": [
+        "En entamant un dépassement",
+        "Devant celui qui entame un dépassement (lieu)",
+        "Avant d'entamer un dépassement (temps)"
+      ],
+      "correct_option": 3,
+      "note": "abans = avant, dans le temps. Le lieu, c'est davant. Réflexe : ab-ans → temps."
+    },
+    {
+      "id": "q107",
+      "type": "parany",
+      "prompt": "Que veut dire « darrere » ?",
+      "catalan": "Un vehicle s'aproxima per darrere.",
+      "answers": [
+        "Un véhicule s'approche par la droite",
+        "Un véhicule s'approche par derrière",
+        "Un véhicule s'approche en dernier"
+      ],
+      "correct_option": 2,
+      "note": "darrere / darrera = derrière. Couple à retenir : davant (devant) ↔ darrere (derrière)."
+    },
+    {
+      "id": "q108",
+      "type": "parany",
+      "prompt": "Que veut dire « dret » ici ?",
+      "catalan": "El costat dret de la calçada.",
+      "answers": [
+        "Le droit d'usage de la chaussée",
+        "Le côté droit de la chaussée",
+        "Le côté rectiligne de la chaussée"
+      ],
+      "correct_option": 2,
+      "note": "dret = droit (côté) ou droit (juridique). Féminin dreta = la droite. Opposés : esquerre / esquerra = gauche."
+    },
+    {
+      "id": "q109",
+      "type": "parany",
+      "prompt": "Que veut dire « estret » ?",
+      "catalan": "Un pas estret de la calçada.",
+      "answers": [
+        "Un passage étroit de la chaussée",
+        "Un passage sûr de la chaussée",
+        "Un passage strict de la chaussée"
+      ],
+      "correct_option": 1,
+      "note": "estret = étroit (pas « strict »). Contraire : ample = large."
+    },
+    {
+      "id": "q110",
+      "type": "parany",
+      "prompt": "Que veut dire « a poc a poc » ?",
+      "catalan": "Anar a poc a poc.",
+      "answers": [
+        "Aller doucement / lentement",
+        "Aller un peu plus loin",
+        "Aller par petits arrêts"
+      ],
+      "correct_option": 1,
+      "note": "« a poc a poc » = doucement, lentement. Contraire : « de pressa » = vite."
+    },
+    {
+      "id": "q111",
+      "type": "parany",
+      "prompt": "Que veut dire « de pressa » ?",
+      "catalan": "Anar molt de pressa.",
+      "answers": [
+        "Aller de façon pressante",
+        "Aller sous pression",
+        "Aller très vite"
+      ],
+      "correct_option": 3,
+      "note": "« de pressa » = vite. « molt de pressa » = très vite. Rien à voir avec la pression."
+    },
+    {
+      "id": "q112",
+      "type": "parany",
+      "prompt": "Que veut dire « aviat » ?",
+      "catalan": "Encendre els llums aviat.",
+      "answers": [
+        "Allumer les feux tôt / de bonne heure",
+        "Allumer les feux à l'avance sur autorisation",
+        "Allumer les feux avec l'avion"
+      ],
+      "correct_option": 1,
+      "note": "aviat = tôt, bientôt. Contraire : tard = tard."
+    },
+    {
+      "id": "q113",
+      "type": "parany",
+      "prompt": "Que veut dire « lent » ?",
+      "catalan": "Un vehicle lent.",
+      "answers": [
+        "Un véhicule lent",
+        "Un véhicule long",
+        "Un véhicule léger"
+      ],
+      "correct_option": 1,
+      "note": "lent = lent. Attention à l'œil avec llarg (long) et lleuger (léger)."
+    },
+    {
+      "id": "q114",
+      "type": "parany",
+      "prompt": "Que veut dire « ben » ?",
+      "catalan": "Un vehicle ben col·locat.",
+      "answers": [
+        "Un véhicule bien placé",
+        "Un véhicule placé en biais",
+        "Un véhicule à peine placé"
+      ],
+      "correct_option": 1,
+      "note": "ben = bien (forme de « bé » devant un adjectif). « ben col·locat » = bien placé."
+    },
+    {
+      "id": "q115",
+      "type": "parany",
+      "prompt": "Que veut dire « dolenta » ?",
+      "catalan": "La visibilitat sigui dolenta.",
+      "answers": [
+        "Que la visibilité soit mauvaise",
+        "Que la visibilité soit douloureuse",
+        "Que la visibilité soit lente à revenir"
+      ],
+      "correct_option": 1,
+      "note": "dolent/dolenta = mauvais/mauvaise. Contraire : bo/bona = bon/bonne."
+    },
+    {
+      "id": "q116",
+      "type": "parany",
+      "prompt": "Que veut dire « aconsellable » ?",
+      "catalan": "És aconsellable, però no obligatori.",
+      "answers": [
+        "C'est un conseil obligatoire",
+        "C'est conseillé, mais pas obligatoire",
+        "C'est acceptable et obligatoire"
+      ],
+      "correct_option": 2,
+      "note": "aconsellable = conseillé (recommandation). À opposer strictement à obligatori (obligatoire) et prohibit (interdit)."
+    },
+    {
+      "id": "q117",
+      "type": "parany",
+      "prompt": "Que veut dire « permès » ?",
+      "catalan": "El pas és permès.",
+      "answers": [
+        "Le passage est permanent",
+        "Le passage est promis",
+        "Le passage est autorisé"
+      ],
+      "correct_option": 3,
+      "note": "permès = permis, autorisé. Triangle du test : permès (autorisé) / obligatori (obligatoire) / prohibit (interdit)."
+    },
+    {
+      "id": "q118",
+      "type": "parany",
+      "prompt": "Que veut dire « prohibida » ?",
+      "catalan": "Direcció prohibida.",
+      "answers": [
+        "Direction déconseillée",
+        "Direction interdite",
+        "Direction prioritaire"
+      ],
+      "correct_option": 2,
+      "note": "prohibit / prohibida = interdit / interdite. Verbe : es prohibeix = il est interdit."
+    },
+    {
+      "id": "q119",
+      "type": "parany",
+      "prompt": "Que veut dire « obligatòria » ?",
+      "catalan": "Velocitat mínima obligatòria.",
+      "answers": [
+        "Vitesse minimale autorisée",
+        "Vitesse minimale obligatoire",
+        "Vitesse minimale conseillée"
+      ],
+      "correct_option": 2,
+      "note": "Mémorise le couple : mínima (minimale) vs màxima (maximale). Le panneau change complètement de sens selon ce mot."
+    },
+    {
+      "id": "q120",
+      "type": "parany",
+      "prompt": "Quelle différence entre « superior » et « inferior » ?",
+      "catalan": "un pes superior a 3.500 kg",
+      "answers": [
+        "Un poids inférieur à 3 500 kg",
+        "Le poids le plus élevé possible : 3 500 kg",
+        "Un poids supérieur à 3 500 kg"
+      ],
+      "correct_option": 3,
+      "note": "superior a = supérieur à · inferior a = inférieur à. Ces deux mots inversent la réponse d'une question chiffrée."
+    },
+    {
+      "id": "q121",
+      "type": "connector",
+      "prompt": "Que veut dire « hem de » ?",
+      "catalan": "Hem de moderar la velocitat.",
+      "answers": [
+        "Nous devons réduire la vitesse",
+        "Nous pouvons réduire la vitesse",
+        "Nous avons réduit la vitesse"
+      ],
+      "correct_option": 1,
+      "note": "haver de = devoir (obligation). hem de = nous devons · ha de = il doit · han de = ils doivent · heu de = vous devez."
+    },
+    {
+      "id": "q122",
+      "type": "connector",
+      "prompt": "Que veut dire « ha de fer » ?",
+      "catalan": "Què ha de fer el conductor?",
+      "answers": [
+        "Qu'a fait le conducteur ?",
+        "Que peut faire le conducteur ?",
+        "Que doit faire le conducteur ?"
+      ],
+      "correct_option": 3,
+      "note": "« Què ha de fer…? » ouvre une immense partie des questions du test. Traduction automatique : « Que doit faire… ? »"
+    },
+    {
+      "id": "q123",
+      "type": "connector",
+      "prompt": "Que veut dire « haurem de » ?",
+      "catalan": "Què haurem de fer?",
+      "answers": [
+        "Qu'aurons-nous fait ?",
+        "Que devrons-nous faire ? (futur)",
+        "Que devions-nous faire ?"
+      ],
+      "correct_option": 2,
+      "note": "haurem de = nous devrons (futur de haver de). Même obligation, au futur."
+    },
+    {
+      "id": "q124",
+      "type": "connector",
+      "prompt": "Que veut dire « s'ha de » ?",
+      "catalan": "S'ha d'utilitzar l'enllumenat.",
+      "answers": [
+        "On doit utiliser l'éclairage",
+        "Il a utilisé l'éclairage",
+        "On peut utiliser l'éclairage"
+      ],
+      "correct_option": 1,
+      "note": "« s'ha de » = on doit / il faut (forme impersonnelle). Équivaut à « cal »."
+    },
+    {
+      "id": "q125",
+      "type": "connector",
+      "prompt": "Que veut dire « hauríem de » ?",
+      "catalan": "Hauríem de reduir la velocitat.",
+      "answers": [
+        "Nous aurions réduit la vitesse",
+        "Nous devons impérativement réduire la vitesse",
+        "Nous devrions réduire la vitesse (conseil)"
+      ],
+      "correct_option": 3,
+      "note": "hauríem de = nous devrions (conditionnel, conseil). Plus faible que « hem de » (obligation)."
+    },
+    {
+      "id": "q126",
+      "type": "connector",
+      "prompt": "Que veut dire « podem » ?",
+      "catalan": "Podem avançar per la dreta.",
+      "answers": [
+        "Nous pouvons dépasser par la droite",
+        "Nous devons dépasser par la droite",
+        "Nous avons dépassé par la droite"
+      ],
+      "correct_option": 1,
+      "note": "poder = pouvoir. podem (nous pouvons) · pot (il peut) · poden (ils peuvent) · es pot (on peut)."
+    },
+    {
+      "id": "q127",
+      "type": "connector",
+      "prompt": "Que veut dire « no es pot » ?",
+      "catalan": "No es pot girar en cap sentit.",
+      "answers": [
+        "On peut tourner dans un seul sens",
+        "On ne peut tourner dans aucun sens",
+        "On ne doit pas forcément tourner"
+      ],
+      "correct_option": 2,
+      "note": "« no es pot » = interdiction réelle. À distinguer de « no cal » = simple absence d'obligation."
+    },
+    {
+      "id": "q128",
+      "type": "connector",
+      "prompt": "Que veut dire « es prohibeix » ?",
+      "catalan": "Es prohibeix l'estacionament.",
+      "answers": [
+        "Le stationnement est prioritaire",
+        "Le stationnement est interdit",
+        "Le stationnement se termine"
+      ],
+      "correct_option": 2,
+      "note": "es prohibeix = il est interdit (forme verbale). Équivalents : està prohibit, queda prohibit."
+    },
+    {
+      "id": "q129",
+      "type": "connector",
+      "prompt": "Que veut dire « hi ha » ?",
+      "catalan": "Hi ha un obstacle a la calçada.",
+      "answers": [
+        "Il faut un obstacle sur la chaussée",
+        "Il a un obstacle sur la chaussée",
+        "Il y a un obstacle sur la chaussée"
+      ],
+      "correct_option": 3,
+      "note": "« hi ha » = il y a. Négatif : « no hi ha » = il n'y a pas. Le « hi » est obligatoire, ne le cherche pas à traduire seul."
+    },
+    {
+      "id": "q130",
+      "type": "connector",
+      "prompt": "Que veut dire « n'hi ha prou » ?",
+      "catalan": "N'hi ha prou amb encendre els llums.",
+      "answers": [
+        "Il n'y a plus assez de feux allumés",
+        "Il y en a trop en allumant les feux",
+        "Il suffit d'allumer les feux"
+      ],
+      "correct_option": 3,
+      "note": "« n'hi ha prou amb… » = il suffit de… Construction figée à reconnaître d'un bloc."
+    },
+    {
+      "id": "q131",
+      "type": "connector",
+      "prompt": "Que veut dire « en atansar-nos » ?",
+      "catalan": "En atansar-nos a una intersecció...",
+      "answers": [
+        "Dans notre approche autorisée d'une intersection…",
+        "Après nous être approchés d'une intersection…",
+        "En nous approchant d'une intersection…"
+      ],
+      "correct_option": 3,
+      "note": "RÈGLE CLÉ : « en + infinitif » = « en + participe présent » ou « quand on… ». en arribar = en arrivant · en circular = en circulant."
+    },
+    {
+      "id": "q132",
+      "type": "connector",
+      "prompt": "Que veut dire « en arribar » ?",
+      "catalan": "En arribar a un pas de vianants...",
+      "answers": [
+        "Avant d'arriver à un passage piéton…",
+        "En arrivant à un passage piéton…",
+        "À l'arrivée obligatoire d'un passage piéton…"
+      ],
+      "correct_option": 2,
+      "note": "« en + infinitif » exprime le moment. C'est la tournure la plus fréquente pour poser une situation de conduite."
+    },
+    {
+      "id": "q133",
+      "type": "connector",
+      "prompt": "Que veut dire « circulant per » ?",
+      "catalan": "Circulant per una autopista...",
+      "answers": [
+        "Ayant circulé sur une autoroute…",
+        "La circulation d'une autoroute…",
+        "En circulant sur une autoroute…"
+      ],
+      "correct_option": 3,
+      "note": "Le gérondif en -ant existe aussi : circulant = en circulant. Souvent en tête de question pour planter le décor."
+    },
+    {
+      "id": "q134",
+      "type": "connector",
+      "prompt": "Que veut dire « en cas que » ?",
+      "catalan": "En el cas que la visibilitat sigui dolenta...",
+      "answers": [
+        "Bien que la visibilité soit mauvaise…",
+        "Dans le cas où la visibilité serait mauvaise…",
+        "Puisque la visibilité est mauvaise…"
+      ],
+      "correct_option": 2,
+      "note": "« en cas que / en el cas que » + subjonctif = dans le cas où. Hypothèse, pas constat."
+    },
+    {
+      "id": "q135",
+      "type": "connector",
+      "prompt": "Que veut dire « en cas de » ?",
+      "catalan": "Què hem de fer en cas d'accident?",
+      "answers": [
+        "Qu'avons-nous fait lors de l'accident ?",
+        "Que devons-nous faire en cas d'accident ?",
+        "Que devons-nous faire dans ce cas d'accident ?"
+      ],
+      "correct_option": 2,
+      "note": "« en cas de » + nom = en cas de. « en cas que » + verbe au subjonctif = dans le cas où."
+    },
+    {
+      "id": "q136",
+      "type": "connector",
+      "prompt": "Que veut dire « mentre » ?",
+      "catalan": "Mentre circulem per un túnel.",
+      "answers": [
+        "Pendant que nous circulons dans un tunnel",
+        "Bien que nous circulions dans un tunnel",
+        "Avant que nous circulions dans un tunnel"
+      ],
+      "correct_option": 1,
+      "note": "mentre = pendant que · mentre que = tandis que (opposition) · durant = pendant (+ nom)."
+    },
+    {
+      "id": "q137",
+      "type": "connector",
+      "prompt": "Que veut dire « durant » ?",
+      "catalan": "Durant la nit.",
+      "answers": [
+        "Jusqu'à la nuit",
+        "Pendant la nuit",
+        "Durable pendant la nuit"
+      ],
+      "correct_option": 2,
+      "note": "durant + nom = pendant. Vocabulaire lié : la nit (la nuit), el dia (le jour), les hores (les heures)."
+    },
+    {
+      "id": "q138",
+      "type": "connector",
+      "prompt": "Que veut dire « ja que » ?",
+      "catalan": "No cal, ja que tothom sap les normes.",
+      "answers": [
+        "Ce n'est pas nécessaire, jusqu'à ce que tout le monde connaisse les règles",
+        "Ce n'est pas nécessaire, déjà que tout le monde connaît les règles",
+        "Ce n'est pas nécessaire, car tout le monde connaît les règles"
+      ],
+      "correct_option": 3,
+      "note": "« ja que » = puisque, car. Ne le lis pas comme « déjà que ». Synonymes : atès que, com que, perquè."
+    },
+    {
+      "id": "q139",
+      "type": "connector",
+      "prompt": "Que veut dire « com que » en début de phrase ?",
+      "catalan": "Com que plou, hem de reduir la velocitat.",
+      "answers": [
+        "Comme il pleut, nous devons réduire la vitesse",
+        "Combien il pleut : nous devons réduire la vitesse",
+        "De la même façon qu'il pleut, nous réduisons la vitesse"
+      ],
+      "correct_option": 1,
+      "note": "« com que » en tête de phrase = comme (cause). « com » seul = comment / comme (comparaison)."
+    },
+    {
+      "id": "q140",
+      "type": "connector",
+      "prompt": "Que veut dire « per tant » ?",
+      "catalan": "Per tant, hem de cedir el pas.",
+      "answers": [
+        "Pendant ce temps, nous devons céder le passage",
+        "Pour autant, nous devons céder le passage",
+        "Par conséquent, nous devons céder le passage"
+      ],
+      "correct_option": 3,
+      "note": "« per tant » = par conséquent, donc (conclusion). Autre conclusif : doncs = donc, alors."
+    },
+    {
+      "id": "q141",
+      "type": "connector",
+      "prompt": "Que veut dire « però » ?",
+      "catalan": "És aconsellable, però no obligatori.",
+      "answers": [
+        "C'est conseillé, mais pas obligatoire",
+        "C'est conseillé, pour ne pas être obligatoire",
+        "C'est conseillé, ou bien obligatoire"
+      ],
+      "correct_option": 1,
+      "note": "però = mais. Petit mot, gros effet : tout ce qui suit corrige ce qui précède."
+    },
+    {
+      "id": "q142",
+      "type": "connector",
+      "prompt": "Que veut dire « en canvi » ?",
+      "catalan": "En canvi, en vies urbanes és diferent.",
+      "answers": [
+        "En échange, sur les voies urbaines c'est différent",
+        "En revanche, sur les voies urbaines c'est différent",
+        "En changeant de voie urbaine c'est différent"
+      ],
+      "correct_option": 2,
+      "note": "« en canvi » = en revanche, par contre. Signale un contraste avec la phrase précédente."
+    },
+    {
+      "id": "q143",
+      "type": "connector",
+      "prompt": "Que veut dire « a més » ?",
+      "catalan": "A més, hem d'encendre els llums.",
+      "answers": [
+        "De plus, nous devons allumer les feux",
+        "À moins que nous allumions les feux",
+        "Au maximum, nous devons allumer les feux"
+      ],
+      "correct_option": 1,
+      "note": "« a més (de) » = de plus, en plus de. Ne le confonds pas avec « a menys de » = à moins de (distance)."
+    },
+    {
+      "id": "q144",
+      "type": "connector",
+      "prompt": "Que veut dire « a menys de » ?",
+      "catalan": "A menys de 300 metres.",
+      "answers": [
+        "À moins que ce soit 300 mètres",
+        "À moins de 300 mètres (distance)",
+        "Au minimum 300 mètres"
+      ],
+      "correct_option": 2,
+      "note": "« a menys de » = à moins de (distance). Chiffres et distances tombent tout le temps : repère bien més (plus) / menys (moins)."
+    },
+    {
+      "id": "q145",
+      "type": "connector",
+      "prompt": "Que veut dire « com a mínim » ?",
+      "catalan": "Cent metres, com a mínim.",
+      "answers": [
+        "Cent mètres au maximum",
+        "Cent mètres en moyenne",
+        "Cent mètres au minimum"
+      ],
+      "correct_option": 3,
+      "note": "« com a mínim » = au minimum · « com a màxim » = au maximum. Deux expressions opposées, presque identiques à l'œil."
+    },
+    {
+      "id": "q146",
+      "type": "connector",
+      "prompt": "Que veut dire « com a màxim » ?",
+      "catalan": "Han de circular com a màxim a 45 km/h.",
+      "answers": [
+        "Ils doivent circuler à 45 km/h au minimum",
+        "Ils doivent circuler à environ 45 km/h",
+        "Ils doivent circuler à 45 km/h au maximum"
+      ],
+      "correct_option": 3,
+      "note": "« com a màxim » = au maximum, plafond à ne pas dépasser."
+    },
+    {
+      "id": "q147",
+      "type": "connector",
+      "prompt": "Que veut dire « almenys » ?",
+      "catalan": "Almenys dos carrils.",
+      "answers": [
+        "Au moins deux voies",
+        "Au maximum deux voies",
+        "Presque deux voies"
+      ],
+      "correct_option": 1,
+      "note": "almenys = au moins. Synonyme de « com a mínim »."
+    },
+    {
+      "id": "q148",
+      "type": "connector",
+      "prompt": "Que veut dire « sobrepassar » ?",
+      "catalan": "Que no sobrepassi el pes autoritzat.",
+      "answers": [
+        "Qu'il ne se rapproche pas du poids autorisé",
+        "Qu'il ne passe pas sous le poids autorisé",
+        "Qu'il ne dépasse pas le poids autorisé"
+      ],
+      "correct_option": 3,
+      "note": "sobrepassar = superar = ultrapassar = dépasser (une limite). Pour dépasser un véhicule, c'est avançar."
+    },
+    {
+      "id": "q149",
+      "type": "connector",
+      "prompt": "Que veut dire « d'acord amb » ?",
+      "catalan": "D'acord amb la normativa vigent.",
+      "answers": [
+        "En accord avec l'avis du conducteur",
+        "Conformément à la réglementation en vigueur",
+        "D'accord avec ce que dit la réglementation ancienne"
+      ],
+      "correct_option": 2,
+      "note": "« d'acord amb » = conformément à, selon. Synonyme : segons, seguint."
+    },
+    {
+      "id": "q150",
+      "type": "connector",
+      "prompt": "Que veut dire « pel que fa a » ?",
+      "catalan": "Pel que fa a la velocitat...",
+      "answers": [
+        "En ce qui concerne la vitesse…",
+        "Par ce que fait la vitesse…",
+        "Pour ce que vaut la vitesse…"
+      ],
+      "correct_option": 1,
+      "note": "« pel que fa a » = en ce qui concerne. Formule d'introduction de sujet."
+    },
+    {
+      "id": "q151",
+      "type": "connector",
+      "prompt": "Que veut dire « mitjançant » ?",
+      "catalan": "Mitjançant senyals amb el braç.",
+      "answers": [
+        "En moyenne, par signaux avec le bras",
+        "Au moyen de signaux avec le bras",
+        "À mi-chemin des signaux avec le bras"
+      ],
+      "correct_option": 2,
+      "note": "mitjançant = au moyen de, par le biais de. Synonyme : per mitjà de."
+    },
+    {
+      "id": "q152",
+      "type": "connector",
+      "prompt": "Que veut dire « per tal de » ?",
+      "catalan": "Per tal d'evitar un accident.",
+      "answers": [
+        "Afin d'éviter un accident",
+        "Par un tel accident évité",
+        "Pour un accident évitable"
+      ],
+      "correct_option": 1,
+      "note": "« per tal de » = « a fi de » = « amb l'objectiu de » = AFIN DE (but). Souvent en fin de réponse."
+    },
+    {
+      "id": "q153",
+      "type": "connector",
+      "prompt": "Que veut dire « amb aquest propòsit » ?",
+      "catalan": "Amb aquest propòsit, hem de...",
+      "answers": [
+        "À cette proposition, nous devons…",
+        "Avec cette proportion, nous devons…",
+        "Dans ce but, nous devons…"
+      ],
+      "correct_option": 3,
+      "note": "propòsit = but, intention. « amb aquest propòsit » = dans ce but."
+    },
+    {
+      "id": "q154",
+      "type": "connector",
+      "prompt": "Que veut dire « sigui » ici ?",
+      "catalan": "Que la visibilitat sigui suficient.",
+      "answers": [
+        "Si la visibilité était suffisante",
+        "Que la visibilité sera suffisante",
+        "Que la visibilité soit suffisante"
+      ],
+      "correct_option": 3,
+      "note": "sigui = subjonctif de ser (soit). Autres subjonctifs fréquents : estigui (soit/se trouve), pugui (puisse), hagi (ait), tingui (ait/tienne)."
+    },
+    {
+      "id": "q155",
+      "type": "connector",
+      "prompt": "Que veut dire « pugui » ?",
+      "catalan": "Llevat que no es pugui fer amb seguretat.",
+      "answers": [
+        "Puisque cela ne peut pas se faire en sécurité",
+        "Bien que cela puisse se faire en sécurité",
+        "À moins que cela ne puisse se faire en sécurité"
+      ],
+      "correct_option": 3,
+      "note": "pugui = subjonctif de poder (puisse). Il apparaît après llevat que, en cas que, sempre que…"
+    },
+    {
+      "id": "q156",
+      "type": "connector",
+      "prompt": "Que veut dire « ho » dans cette phrase ?",
+      "catalan": "Ho hem de fer immediatament.",
+      "answers": [
+        "Nous devons y aller immédiatement",
+        "Nous devons en faire immédiatement",
+        "Nous devons LE faire immédiatement"
+      ],
+      "correct_option": 3,
+      "note": "ho = pronom neutre « le » (reprend une idée entière). hi = y · en = en · el/la/els/les = le/la/les."
+    },
+    {
+      "id": "q157",
+      "type": "connector",
+      "prompt": "Que veut dire « hi » dans cette phrase ?",
+      "catalan": "No hi podem circular.",
+      "answers": [
+        "Nous ne pouvons pas y circuler",
+        "Nous ne pouvons pas la faire circuler",
+        "Nous ne pouvons pas en circuler"
+      ],
+      "correct_option": 1,
+      "note": "hi = y (reprend un lieu déjà mentionné). Toujours collé devant le verbe."
+    },
+    {
+      "id": "q158",
+      "type": "connector",
+      "prompt": "Que veut dire « -nos » collé au verbe ?",
+      "catalan": "Hem d'aturar-nos.",
+      "answers": [
+        "Nous devons les arrêter",
+        "Nous devons faire arrêter",
+        "Nous devons nous arrêter"
+      ],
+      "correct_option": 3,
+      "note": "En catalan les pronoms se collent à la fin de l'infinitif : aturar-nos (nous arrêter), atansar-nos (nous approcher), detenir-nos (nous arrêter)."
+    },
+    {
+      "id": "q159",
+      "type": "connector",
+      "prompt": "Que veut dire « el que » ?",
+      "catalan": "El que es pot fer i el que no.",
+      "answers": [
+        "Ce qu'on peut faire et ce qu'on ne peut pas",
+        "Ce qui se fait et ce qui ne se fait pas",
+        "Celui qui peut faire et celui qui ne peut pas"
+      ],
+      "correct_option": 1,
+      "note": "« el que » = ce que / ce qui. « el qui » = celui qui (personne). Une lettre change la personne référée."
+    },
+    {
+      "id": "q160",
+      "type": "connector",
+      "prompt": "Que veut dire « el qui » ?",
+      "catalan": "El qui té preferència.",
+      "answers": [
+        "Celui qui a la priorité",
+        "Ce qui a la priorité",
+        "Lequel a la priorité"
+      ],
+      "correct_option": 1,
+      "note": "« el qui » = celui qui (une personne). À opposer à « el que » = ce que."
+    },
+    {
+      "id": "q161",
+      "type": "connector",
+      "prompt": "Que veut dire « quin » / « quina » ?",
+      "catalan": "Quina és la velocitat màxima?",
+      "answers": [
+        "Quelle est la vitesse maximale ?",
+        "Qui fixe la vitesse maximale ?",
+        "Combien vaut la vitesse maximale ?"
+      ],
+      "correct_option": 1,
+      "note": "quin/quina/quins/quines = quel/quelle/quels/quelles. Ouvre une question à choisir parmi des options."
+    },
+    {
+      "id": "q162",
+      "type": "connector",
+      "prompt": "Que veut dire « on » ?",
+      "catalan": "On ens situarem?",
+      "answers": [
+        "Quand nous placerons-nous ?",
+        "Où nous placerons-nous ?",
+        "Comment nous placerons-nous ?"
+      ],
+      "correct_option": 2,
+      "note": "on = OÙ (lieu). Faux ami visuel avec le français « on ». Le « on » français se dit « es » ou « hom »."
+    },
+    {
+      "id": "q163",
+      "type": "connector",
+      "prompt": "Que veut dire « quan » ?",
+      "catalan": "Quan poden circular per la vorera?",
+      "answers": [
+        "Combien peuvent circuler sur le trottoir ?",
+        "Quand peuvent-ils circuler sur le trottoir ?",
+        "Qui peut circuler sur le trottoir ?"
+      ],
+      "correct_option": 2,
+      "note": "quan = quand (temps) · quant = combien · on = où · com = comment · qui = qui · què = quoi."
+    },
+    {
+      "id": "q164",
+      "type": "connector",
+      "prompt": "Que veut dire « què » (avec accent) ?",
+      "catalan": "Què significa aquest senyal?",
+      "answers": [
+        "Qui signale ce panneau ?",
+        "Que signifie ce panneau ?",
+        "Quand signale-t-on ce panneau ?"
+      ],
+      "correct_option": 2,
+      "note": "« què » accentué = quoi / que (interrogatif). « que » sans accent = que (conjonction de liaison)."
+    },
+    {
+      "id": "q165",
+      "type": "connector",
+      "prompt": "Que veut dire « és a dir » ?",
+      "catalan": "És a dir, hem de parar.",
+      "answers": [
+        "C'est-à-dire que nous devons nous arrêter",
+        "Il s'agit de dire que nous devons nous arrêter",
+        "Il est à dire que nous devons nous arrêter"
+      ],
+      "correct_option": 1,
+      "note": "« és a dir » = c'est-à-dire. Synonyme : « o sigui ». Introduit une reformulation, souvent la clé de la bonne réponse."
+    },
+    {
+      "id": "q166",
+      "type": "connector",
+      "prompt": "Que veut dire « tot seguit » ?",
+      "catalan": "Tot seguit, hem de senyalitzar la maniobra.",
+      "answers": [
+        "Aussitôt après, nous devons signaler la manœuvre",
+        "Tout au long, nous devons signaler la manœuvre",
+        "Tout en suivant, nous devons signaler la manœuvre"
+      ],
+      "correct_option": 1,
+      "note": "« tot seguit » = juste après, aussitôt. « de seguida » = tout de suite. « immediatament » = immédiatement."
+    },
+    {
+      "id": "q167",
+      "type": "connector",
+      "prompt": "Que veut dire « abans de » vs « després de » ?",
+      "catalan": "Abans d'avançar i després d'avançar",
+      "answers": [
+        "Devant celui qui dépasse et derrière lui",
+        "Après avoir dépassé et avant de dépasser",
+        "Avant de dépasser et après avoir dépassé"
+      ],
+      "correct_option": 3,
+      "note": "abans de = avant de · després de = après. L'ordre chronologique décide souvent quelle réponse est correcte."
+    },
+    {
+      "id": "q168",
+      "type": "connector",
+      "prompt": "Que veut dire « tenir en compte » ?",
+      "catalan": "Hem de tenir en compte la distància.",
+      "answers": [
+        "Nous devons avoir un compte de distance",
+        "Nous devons compter la distance",
+        "Nous devons tenir compte de la distance"
+      ],
+      "correct_option": 3,
+      "note": "« tenir en compte » = tenir compte de. Voisin : « fer cas de » = prêter attention à, tenir compte de."
+    },
+    {
+      "id": "q169",
+      "type": "connector",
+      "prompt": "Que veut dire « fer cas » ?",
+      "catalan": "Continuem sense fer-ne gaire cas.",
+      "answers": [
+        "Nous continuons sans nous en faire beaucoup",
+        "Nous continuons sans trop en tenir compte",
+        "Nous continuons sans faire beaucoup de cas particuliers"
+      ],
+      "correct_option": 2,
+      "note": "« fer cas de » = tenir compte de, prêter attention à. Ici avec « gaire » (guère) et « en » : sans trop en tenir compte."
+    },
+    {
+      "id": "q170",
+      "type": "connector",
+      "prompt": "Que veut dire « posar en marxa » ?",
+      "catalan": "Abans de posar en marxa el vehicle.",
+      "answers": [
+        "Avant de mettre le véhicule en marche",
+        "Avant de mettre le véhicule sur le marché",
+        "Avant de mettre le véhicule en mouvement arrière"
+      ],
+      "correct_option": 1,
+      "note": "« posar en marxa » = mettre en marche, démarrer. Synonyme : engegar. Contraire : aturar (arrêter)."
+    },
+    {
+      "id": "q171",
+      "type": "frase",
+      "prompt": "Que veut dire cette phrase ?",
+      "catalan": "Què ha de fer el conductor abans d'iniciar un avançament?",
+      "answers": [
+        "Qu'a fait le conducteur avant d'avancer ?",
+        "Que peut faire le conducteur devant celui qui le dépasse ?",
+        "Que doit faire le conducteur avant d'entamer un dépassement ?"
+      ],
+      "correct_option": 3,
+      "note": "Trois clés d'un coup : ha de fer (doit faire), abans de (avant de), avançament (dépassement)."
+    },
+    {
+      "id": "q172",
+      "type": "frase",
+      "prompt": "Que veut dire cette phrase ?",
+      "catalan": "Què hem de comprovar abans d'efectuar un canvi de direcció?",
+      "answers": [
+        "Que devons-nous acheter avant de changer de direction ?",
+        "Qu'avons-nous vérifié après le changement de direction ?",
+        "Que devons-nous vérifier avant d'effectuer un changement de direction ?"
+      ],
+      "correct_option": 3,
+      "note": "comprovar = vérifier (pas « acheter » : ça, c'est comprar). Une lettre sépare les deux."
+    },
+    {
+      "id": "q173",
+      "type": "frase",
+      "prompt": "Que veut dire cette phrase ?",
+      "catalan": "Comprovar que no circula cap vehicle al darrere a menys de 300 metres.",
+      "answers": [
+        "Vérifier qu'un véhicule circule derrière à moins de 300 mètres",
+        "Vérifier qu'aucun véhicule ne circule derrière à moins de 300 mètres",
+        "Vérifier que chaque véhicule derrière est à plus de 300 mètres"
+      ],
+      "correct_option": 2,
+      "note": "« cap vehicle » = aucun véhicule. Sans ce « cap », la phrase dirait exactement l'inverse."
+    },
+    {
+      "id": "q174",
+      "type": "frase",
+      "prompt": "Que veut dire cette phrase ?",
+      "catalan": "Què haurem de fer en atansar-nos a un pas estret de la calçada?",
+      "answers": [
+        "Qu'avons-nous fait en nous éloignant du passage de la chaussée ?",
+        "Que devrons-nous faire en nous approchant d'un passage étroit de la chaussée ?",
+        "Que devrons-nous faire après avoir traversé la chaussée étroite ?"
+      ],
+      "correct_option": 2,
+      "note": "« en + infinitif » = en… -ant. atansar-nos = nous approcher · estret = étroit."
+    },
+    {
+      "id": "q175",
+      "type": "frase",
+      "prompt": "Que veut dire cette phrase ?",
+      "catalan": "Què ha de fer el conductor d'un vehicle en arribar a un pas de vianants?",
+      "answers": [
+        "Que doit faire le conducteur en descendant à un arrêt de piétons ?",
+        "Qu'a fait le conducteur avant le passage des piétons ?",
+        "Que doit faire le conducteur en arrivant à un passage piéton ?"
+      ],
+      "correct_option": 3,
+      "note": "en arribar = en arrivant · pas de vianants = passage piéton. Question type des priorités."
+    },
+    {
+      "id": "q176",
+      "type": "frase",
+      "prompt": "Que veut dire cette phrase ?",
+      "catalan": "Hem de detenir-nos i no passar.",
+      "answers": [
+        "Nous devons ralentir et passer",
+        "Nous devons nous détourner et ne pas passer",
+        "Nous devons nous arrêter et ne pas passer"
+      ],
+      "correct_option": 3,
+      "note": "detenir-nos = nous arrêter (pas « détenir »). Le « no » devant passar interdit le passage."
+    },
+    {
+      "id": "q177",
+      "type": "frase",
+      "prompt": "Que veut dire cette phrase ?",
+      "catalan": "Circulant per una autopista, on ens situarem en arribar a un pas a nivell tancat?",
+      "answers": [
+        "En circulant sur une autoroute, où nous placerons-nous en arrivant à un passage à niveau fermé ?",
+        "Circulez sur l'autoroute : situez-vous après le passage à niveau fermé",
+        "En circulant sur une autoroute, quand serons-nous situés au passage à niveau ouvert ?"
+      ],
+      "correct_option": 1,
+      "note": "on = où · tancat = fermé (contraire : obert = ouvert). Un seul mot, tancat/obert, retourne la réponse."
+    },
+    {
+      "id": "q178",
+      "type": "frase",
+      "prompt": "Que veut dire cette phrase ?",
+      "catalan": "El qui té preferència també ha d'estar atent en arribar a una intersecció.",
+      "answers": [
+        "Ce qui a la préférence doit aussi être attendu à l'intersection",
+        "Celui qui a la priorité peut arriver sans attention à l'intersection",
+        "Celui qui a la priorité doit lui aussi rester attentif en arrivant à une intersection"
+      ],
+      "correct_option": 3,
+      "note": "« també » = aussi (inclusion) · « estar atent » = être attentif · preferència = priorité."
+    },
+    {
+      "id": "q179",
+      "type": "frase",
+      "prompt": "Que veut dire cette phrase ?",
+      "catalan": "No poden circular per la vorera.",
+      "answers": [
+        "Ils ne peuvent pas circuler sur l'accotement",
+        "Ils ne peuvent pas circuler dans le virage",
+        "Ils ne peuvent pas circuler sur le trottoir"
+      ],
+      "correct_option": 3,
+      "note": "vorera = trottoir. Si tu lis « voral » (accotement), la règle n'est plus la même du tout."
+    },
+    {
+      "id": "q180",
+      "type": "frase",
+      "prompt": "Que veut dire cette phrase ?",
+      "catalan": "Circulació prohibida als vehicles que transporten matèries perilloses.",
+      "answers": [
+        "Circulation interdite aux véhicules transportant des matières dangereuses",
+        "Circulation interdite sauf pour les matières dangereuses",
+        "Circulation prioritaire pour les véhicules transportant des matières dangereuses"
+      ],
+      "correct_option": 1,
+      "note": "prohibida = interdite · matèries perilloses = matières dangereuses. Panneau classique."
+    },
+    {
+      "id": "q181",
+      "type": "frase",
+      "prompt": "Que veut dire cette phrase ?",
+      "catalan": "Pas prohibit per a nens no acompanyats.",
+      "answers": [
+        "Passage obligatoire pour les enfants accompagnés",
+        "Pas d'interdiction pour les enfants accompagnés",
+        "Passage interdit aux enfants non accompagnés"
+      ],
+      "correct_option": 3,
+      "note": "Double négation à démêler : prohibit (interdit) + no acompanyats (non accompagnés). Lis les deux « no » séparément."
+    },
+    {
+      "id": "q182",
+      "type": "frase",
+      "prompt": "Que veut dire cette phrase ?",
+      "catalan": "Sí, encara que hagi de trepitjar o ultrapassar les línies.",
+      "answers": [
+        "Oui, encore qu'il doive éviter de toucher les lignes",
+        "Oui, à condition de ne pas franchir les lignes",
+        "Oui, même s'il doit chevaucher ou franchir les lignes"
+      ],
+      "correct_option": 3,
+      "note": "encara que = même si · trepitjar = marcher/rouler dessus, chevaucher · ultrapassar = franchir, dépasser."
+    },
+    {
+      "id": "q183",
+      "type": "frase",
+      "prompt": "Que veut dire cette phrase ?",
+      "catalan": "Circulant per un túnel, encara que estigui il·luminat, s'ha d'utilitzar l'enllumenat.",
+      "answers": [
+        "Dans un tunnel éclairé, l'éclairage n'est pas nécessaire",
+        "Dans un tunnel, tant qu'il est éclairé, on peut couper l'éclairage",
+        "Dans un tunnel, même s'il est éclairé, on doit utiliser l'éclairage"
+      ],
+      "correct_option": 3,
+      "note": "Empilement typique : encara que (même si) + estigui (subjonctif) + s'ha de (on doit). Trois marqueurs dans une seule phrase."
+    },
+    {
+      "id": "q184",
+      "type": "frase",
+      "prompt": "Que veut dire cette phrase ?",
+      "catalan": "Només cal posar-los als ocupants en circular per zona interurbana.",
+      "answers": [
+        "Il faut seulement les mettre aux occupants en circulant en zone interurbaine",
+        "Il n'est pas nécessaire de les mettre aux occupants en zone interurbaine",
+        "Il faut les mettre à tous les occupants, y compris en zone urbaine"
+      ],
+      "correct_option": 1,
+      "note": "« només » restreint la règle à un seul cas. C'est exactement le mot qui rend une réponse fausse au test."
+    },
+    {
+      "id": "q185",
+      "type": "frase",
+      "prompt": "Que veut dire cette phrase ?",
+      "catalan": "No cal, ja que tothom sap les normes.",
+      "answers": [
+        "Ce n'est pas nécessaire, car tout le monde connaît les règles",
+        "Ce n'est pas possible, déjà que tout le monde connaît les règles",
+        "Il ne faut pas, puisque personne ne connaît les règles"
+      ],
+      "correct_option": 1,
+      "note": "no cal (pas nécessaire) + ja que (car) + tothom (tout le monde). Trois pièges dans une phrase de six mots."
+    },
+    {
+      "id": "q186",
+      "type": "frase",
+      "prompt": "Que veut dire cette phrase ?",
+      "catalan": "En el cas que, en acostar-nos a una intersecció, la visibilitat sigui dolenta, què cal fer?",
+      "answers": [
+        "Dans le cas où, en nous approchant d'une intersection, la visibilité serait mauvaise, que faut-il faire ?",
+        "Puisque la visibilité est mauvaise à l'intersection, que peut-on faire ?",
+        "Dans ce cas d'intersection bien visible, qu'avons-nous fait ?"
+      ],
+      "correct_option": 1,
+      "note": "Phrase à tiroirs : en el cas que (hypothèse) + en acostar-nos (moment) + sigui (subjonctif) + què cal fer (que faut-il faire)."
+    },
+    {
+      "id": "q187",
+      "type": "frase",
+      "prompt": "Que veut dire cette phrase ?",
+      "catalan": "Anar a poc a poc i, si cal, aturar-nos.",
+      "answers": [
+        "Aller doucement et, si nécessaire, nous arrêter",
+        "Aller petit à petit, s'il le faut, sans nous arrêter",
+        "Aller un peu plus loin et, si possible, nous arrêter"
+      ],
+      "correct_option": 1,
+      "note": "« si cal » = si nécessaire, le cas échéant. Formule très courante en fin de bonne réponse."
+    },
+    {
+      "id": "q188",
+      "type": "frase",
+      "prompt": "Que veut dire cette phrase ?",
+      "catalan": "Sempre que sigui necessari posar aigua al radiador.",
+      "answers": [
+        "Toujours nécessaire : mettre de l'eau dans le radiateur",
+        "Il n'est jamais nécessaire de mettre de l'eau dans le radiateur",
+        "Chaque fois qu'il est nécessaire de mettre de l'eau dans le radiateur"
+      ],
+      "correct_option": 3,
+      "note": "« sempre que » = chaque fois que / à condition que, selon le contexte. Jamais un simple « toujours »."
+    },
+    {
+      "id": "q189",
+      "type": "frase",
+      "prompt": "Que veut dire cette phrase ?",
+      "catalan": "Que no es trobi cap vehicle a menys de 500 m.",
+      "answers": [
+        "Qu'un véhicule se trouve à moins de 500 m",
+        "Qu'aucun véhicule ne se trouve à moins de 500 m",
+        "Que chaque véhicule se trouve à plus de 500 m"
+      ],
+      "correct_option": 2,
+      "note": "cap (aucun) + a menys de (à moins de). Deux marqueurs qui décident seuls de la bonne case."
+    },
+    {
+      "id": "q190",
+      "type": "frase",
+      "prompt": "Que veut dire cette phrase ?",
+      "catalan": "Quan la vorera es trobi a la dreta segons el nostre sentit de marxa.",
+      "answers": [
+        "Quand le trottoir se trouvait à droite avant notre marche",
+        "Quand le trottoir se trouve à droite selon notre sens de circulation",
+        "Quand l'accotement se trouve à droite pendant quelques secondes"
+      ],
+      "correct_option": 2,
+      "note": "« segons » = selon (pas « secondes » : aucun chiffre devant). vorera = trottoir. sentit de marxa = sens de circulation."
+    },
+    {
+      "id": "q191",
+      "type": "frase",
+      "prompt": "Que veut dire cette phrase ?",
+      "catalan": "Sempre que el pes màxim autoritzat del remolc no sobrepassi el pes en buit del turisme.",
+      "answers": [
+        "Puisque le poids de la remorque ne dépasse jamais celui de la voiture",
+        "À condition que le poids maximal autorisé de la remorque ne dépasse pas le poids à vide de la voiture",
+        "Toujours quand le poids de la remorque dépasse le poids chargé de la voiture"
+      ],
+      "correct_option": 2,
+      "note": "sempre que (à condition que) + no sobrepassi (ne dépasse pas) + en buit (à vide) + turisme (voiture particulière)."
+    },
+    {
+      "id": "q192",
+      "type": "frase",
+      "prompt": "Que veut dire cette phrase ?",
+      "catalan": "Regular el seient, el respatller i, si és possible, el volant.",
+      "answers": [
+        "Remplacer le siège, le dossier et, si possible, le volant",
+        "Régler le siège, le dossier et, si possible, le volant",
+        "Réguler l'assise, le dossier et, si nécessaire, le volume"
+      ],
+      "correct_option": 2,
+      "note": "regular = régler (pas « réguler »). Poste de conduite : seient, respatller, volant, retrovisors."
+    },
+    {
+      "id": "q193",
+      "type": "frase",
+      "prompt": "Que veut dire cette phrase ?",
+      "catalan": "Per l'alternança dels llums d'encreuament i de carretera.",
+      "answers": [
+        "Pour l'alternance de l'éclairage au croisement de la route",
+        "Par l'alternance des feux de carrefour et de la route",
+        "Par l'alternance des feux de croisement et des feux de route"
+      ],
+      "correct_option": 3,
+      "note": "Réponse type sur l'avertissement de nuit : on remplace le klaxon par un appel de phares (alternance codes / pleins phares)."
+    },
+    {
+      "id": "q194",
+      "type": "frase",
+      "prompt": "Que veut dire cette phrase ?",
+      "catalan": "Que no es pot girar en cap sentit.",
+      "answers": [
+        "Qu'on ne peut tourner dans aucun sens",
+        "Qu'on ne peut pas tourner dans un seul sens",
+        "Qu'on peut tourner dans n'importe quel sens"
+      ],
+      "correct_option": 1,
+      "note": "« en cap sentit » = dans aucun sens. Sans « cap », la phrase autoriserait un sens sur deux."
+    },
+    {
+      "id": "q195",
+      "type": "frase",
+      "prompt": "Que veut dire cette phrase ?",
+      "catalan": "Quan volguem, sempre que circulem a més de 30 km/h.",
+      "answers": [
+        "Quand nous voulons, à condition de circuler à plus de 30 km/h",
+        "Quand nous voulons, toujours en circulant à 30 km/h",
+        "Quand nous voulions circuler à moins de 30 km/h"
+      ],
+      "correct_option": 1,
+      "note": "volguem = subjonctif de voler (vouloir) · « a més de » avec un chiffre = à plus de. Ne le confonds pas avec « a menys de »."
+    },
+    {
+      "id": "q196",
+      "type": "frase",
+      "prompt": "Que veut dire cette phrase ?",
+      "catalan": "Als carrers de doble sentit, si la calçada no és prou ampla, hem de...",
+      "answers": [
+        "Dans les rues à sens unique, si la chaussée est trop large, nous devons…",
+        "Dans les rues à double sens, puisque la chaussée est assez large, nous pouvons…",
+        "Dans les rues à double sens, si la chaussée n'est pas assez large, nous devons…"
+      ],
+      "correct_option": 3,
+      "note": "carrers (rues) + doble sentit (double sens) + prou ampla (assez large). Trois mots porteurs dans une même condition."
+    },
+    {
+      "id": "q197",
+      "type": "frase",
+      "prompt": "Que veut dire cette phrase ?",
+      "catalan": "2,55 m a excepció dels camions frigorífics que han de mesurar com a màxim 2,60 m.",
+      "answers": [
+        "2,55 m sauf les camions frigorifiques qui doivent mesurer 2,60 m au maximum",
+        "2,55 m y compris les camions frigorifiques qui mesurent au minimum 2,60 m",
+        "2,55 m en moyenne pour les camions frigorifiques de 2,60 m"
+      ],
+      "correct_option": 1,
+      "note": "« a excepció de » = à l'exception de, sauf. Suivi de « com a màxim » = au maximum. Question chiffrée typique."
+    },
+    {
+      "id": "q198",
+      "type": "frase",
+      "prompt": "Que veut dire cette phrase ?",
+      "catalan": "Únicament en vies interurbanes d'un sol sentit i amb dos carrils com a mínim.",
+      "answers": [
+        "Uniquement sur les voies urbaines à double sens et avec deux voies au maximum",
+        "Uniquement sur les voies interurbaines à sens unique et avec deux voies au minimum",
+        "Notamment sur les voies interurbaines d'un seul côté avec deux files"
+      ],
+      "correct_option": 2,
+      "note": "Quatre filtres cumulés : únicament, interurbanes, un sol sentit, com a mínim. Rate-en un et la réponse est fausse."
+    },
+    {
+      "id": "q199",
+      "type": "frase",
+      "prompt": "Que veut dire cette phrase ?",
+      "catalan": "No, llevat del distintiu de nacionalitat andorrana.",
+      "answers": [
+        "Non, y compris le signe distinctif de nationalité andorrane",
+        "Non, sauf le signe distinctif de nationalité andorrane",
+        "Non, à cause du signe distinctif de nationalité andorrane"
+      ],
+      "correct_option": 2,
+      "note": "« llevat de » = sauf. Après un « No », il ouvre l'unique exception : c'est souvent là qu'est la bonne réponse."
+    },
+    {
+      "id": "q200",
+      "type": "frase",
+      "prompt": "Que veut dire cette phrase ?",
+      "catalan": "Hem de moderar la velocitat i, si cal, detenir el vehicle.",
+      "answers": [
+        "Nous devons réduire la vitesse et, si nécessaire, arrêter le véhicule",
+        "Nous devons maintenir la vitesse et, si possible, garer le véhicule",
+        "Nous pouvons modérer la vitesse et détenir le véhicule"
+      ],
+      "correct_option": 1,
+      "note": "La formule gagnante du test : moderar la velocitat + si cal + detenir. Quand tu la vois, c'est très souvent la bonne réponse."
+    }
+  ]
+}
