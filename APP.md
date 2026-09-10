@@ -19,7 +19,11 @@ npm run build
 
 The workflow in `.github/workflows/pages.yml` tests, builds and deploys every push to `main`. In the GitHub repository's Settings → Pages, select **GitHub Actions** as the source. Push the app changes to `DB3D/Autoescola`, or run the workflow manually after they are pushed. The expected project URL is `https://db3d.github.io/Autoescola/`. Relative asset URLs also support other repository names and custom domains.
 
-Deployment check on 2026-09-10: GitHub rejected enabling Pages with HTTP 422, “Your current plan does not support GitHub Pages for this repository.” The repository is private. Deployment needs a plan supporting private-repository Pages or an explicit user decision to make the repository public. Repository visibility has not been changed, and the app is not published.
+Deployment history on 2026-09-10: enabling Pages first failed with HTTP 422, “Your current plan does not support GitHub Pages for this repository,” because the repository was private on a free plan. The repository was then made public, but the first workflow run still failed at `actions/configure-pages` with “Get Pages site failed … Not Found”, because a Pages site had never been created for the repository. The step now passes `enablement: true`, which creates the site on its first successful run, so no manual Settings → Pages step is required. Action versions were also raised to the Node 24 releases (`checkout@v7`, `setup-node@v7`, `configure-pages@v6`, `upload-pages-artifact@v5`, `deploy-pages@v5`) to clear the Node 20 runner deprecation warning.
+
+## Access gate
+
+`src/lock.ts` shows a passcode screen before any question data is fetched, and stores an unlock marker in `localStorage` so the code is entered once per browser. The code is not present in the source: only an FNV-1a/base36 digest of a salt plus the code is stored, and `digest()` regenerates that value if the code changes. This deters casual visitors only. It is not access control: the repository is public, and the generated `questions_ca.json`, `translations_fr.json` and images are served as static files that anyone can request directly without passing the gate.
 
 ## Data and recovery
 
