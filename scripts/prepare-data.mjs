@@ -17,7 +17,11 @@ for (const test of source.tests)
   for (const q of test.questions) {
     if (ids.has(q.question_id)) throw Error(`Duplicate ID ${q.question_id}`);
     ids.add(q.question_id);
-    if (q.answers.length !== 3 || ![1, 2, 3].includes(q.correct_option))
+    if (
+      q.answers.length !== 3 ||
+      ![1, 2, 3].includes(q.correct_option) ||
+      !q.category
+    )
       throw Error(`Invalid question ${q.question_id}`);
     await access(`src/${q.image_local}`);
     questions.push({
@@ -26,7 +30,8 @@ for (const test of source.tests)
       answers: q.answers,
       correct: q.correct_option - 1,
       image: q.image_local,
-      category: `Test ${test.test_number}`,
+      category: q.category,
+      test: test.test_number,
     });
     const t = lookup.get(key(q.question, q.answers));
     if (!t)

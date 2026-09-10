@@ -9,8 +9,11 @@ import {
   examPassed,
   examSummary,
   masteryCredit,
+  cappedSeconds,
+  recentScores,
   selectQuestions,
   statsFor,
+  MAX_ANSWER_SECONDS,
   type Attempt,
   type Question,
   type Session,
@@ -184,6 +187,53 @@ test("Exam threshold is 38/40 and dashboard counts only the last 20 completed ex
   assert.equal(examSummary([examSession(40, 1)]).ready, false);
   assert.equal(examSummary([...recent, examSession(37, 26)]).ready, false);
   assert.equal(examSummary([]).rate, null);
+});
+test("answer time is capped so an idle phone cannot distort the statistics", () => {
+  assert.equal(cappedSeconds(12.5), 12.5);
+  assert.equal(cappedSeconds(MAX_ANSWER_SECONDS), MAX_ANSWER_SECONDS);
+  assert.equal(cappedSeconds(7200), MAX_ANSWER_SECONDS);
+  assert.equal(cappedSeconds(-5), 0);
+  const idle = statsFor("1", [attempt({ seconds: cappedSeconds(7200) })], now);
+  assert.equal(idle.averageSeconds, MAX_ANSWER_SECONDS);
+});
+test("recent scores separate Catalan successes from French-assisted ones", () => {
+  const rows = [
+    ...Array.from({ length: 60 }, (_, i) =>
+      attempt({ at: new Date(now - i * 60000).toISOString() }),
+    ),
+    ...Array.from({ length: 30 }, (_, i) =>
+      attempt({
+        frenchVisible: true,
+        at: new Date(now - (60 + i) * 60000).toISOString(),
+      }),
+    ),
+    ...Array.from({ length: 10 }, (_, i) =>
+      attempt({
+        correct: false,
+        at: new Date(now - (90 + i) * 60000).toISOString(),
+      }),
+    ),
+    // Older than the window: never counted.
+    ...Array.from({ length: 50 }, (_, i) =>
+      attempt({ at: new Date(now - (200 + i) * 60000).toISOString() }),
+    ),
+  ];
+  const scores = recentScores(rows);
+  assert.equal(scores.count, 100);
+  assert.equal(scores.catalan, 60);
+  assert.equal(scores.french, 30);
+  assert.equal(scores.catalanRate, 0.6);
+  assert.equal(scores.frenchRate, 0.3);
+  const short = recentScores([attempt(), attempt({ frenchVisible: true })]);
+  assert.equal(short.count, 2);
+  assert.equal(short.catalanRate, 0.5);
+  assert.deepEqual(recentScores([]), {
+    count: 0,
+    catalan: 0,
+    french: 0,
+    catalanRate: 0,
+    frenchRate: 0,
+  });
 });
 test("IndexedDB stores complete sessions atomically and retry does not duplicate attempts", async () => {
   const a = attempt();

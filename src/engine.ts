@@ -6,6 +6,7 @@ export interface Question {
   correct: number;
   image: string;
   category?: string;
+  test?: number;
 }
 export interface Translation {
   question: string;
@@ -37,6 +38,29 @@ export interface Session {
   timeTrial?: boolean;
   deadlineAt?: string;
   timedOut?: boolean;
+}
+// A question never times out, but a phone left awake would otherwise record
+// hours on a single answer and distort average time, priority and totals.
+export const MAX_ANSWER_SECONDS = 120;
+export function cappedSeconds(seconds: number): number {
+  return Math.min(Math.max(0, seconds), MAX_ANSWER_SECONDS);
+}
+// Catalan score counts only answers found without revealing the French text;
+// the French score counts the ones that needed it.
+export function recentScores(attempts: Attempt[], size = 100) {
+  const recent = [...attempts]
+    .sort((a, b) => b.at.localeCompare(a.at))
+    .slice(0, size);
+  const count = recent.length,
+    catalan = recent.filter((a) => a.correct && !a.frenchVisible).length,
+    french = recent.filter((a) => a.correct && a.frenchVisible).length;
+  return {
+    count,
+    catalan,
+    french,
+    catalanRate: count ? catalan / count : 0,
+    frenchRate: count ? french / count : 0,
+  };
 }
 export function trialRemaining(session: Session, now = Date.now()): number | null {
   if (!session.timeTrial || !session.deadlineAt) return null;

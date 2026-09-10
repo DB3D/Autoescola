@@ -50,41 +50,39 @@ summary:focus-visible {
     calc(100px + env(safe-area-inset-bottom));
 }
 header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 38px;
-}
-header a {
+  position: sticky;
+  top: 0;
+  z-index: 6;
   display: flex;
   align-items: center;
   gap: 10px;
-  text-decoration: none;
-  color: var(--brand);
-  font-family: Manrope, sans-serif;
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: -1px;
+  min-height: 58px;
+  margin: calc(-20px - env(safe-area-inset-top)) -24px 22px;
+  padding: calc(8px + env(safe-area-inset-top)) 24px 8px;
+  background: #fffafbf5;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
 }
 .brand-car {
   font-size: 30px;
   line-height: 1;
   letter-spacing: 0;
 }
-header small {
-  display: block;
-  font:
-    10px "DM Sans",
-    sans-serif;
-  letter-spacing: 3px;
-  margin-top: 2px;
-}
 .header-actions {
   display: flex;
   align-items: center;
   gap: 8px;
+  margin-left: auto;
 }
-.trial-clock {
+.header-count {
+  font-size: 14px;
+  white-space: nowrap;
+}
+.header-count span {
+  color: var(--muted);
+  font-weight: 400;
+}
+.clock {
   font-size: 16px;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
@@ -93,7 +91,13 @@ header small {
   border-radius: 8px;
   background: #f0f0f0;
 }
-.trial-clock.urgent {
+.clock.total {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  background: none;
+}
+.clock.urgent {
   color: #b91c2c;
   background: #ffe7ea;
 }
@@ -136,31 +140,46 @@ h2 {
 p {
   line-height: 1.5;
 }
-.overview {
-  display: flex;
-  justify-content: space-between;
-  background: var(--brand);
-  border-radius: 18px;
-  color: white;
-  padding: 23px 20px;
-  margin-bottom: 30px;
+.recent-score h2 {
+  margin-bottom: 12px;
 }
-.overview div {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+.recent-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
 }
-.overview strong {
+.recent-grid div {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: white;
+  padding: 14px 13px;
+}
+.recent-grid .catalan {
+  border-color: var(--brand);
+  background: #fff0f2;
+}
+.recent-grid strong {
+  display: block;
   font-family: Manrope, sans-serif;
-  font-size: 26px;
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+.recent-grid .catalan strong {
+  color: var(--brand);
+}
+.recent-grid span {
+  display: block;
+  font-size: 13px;
   font-weight: 700;
+  margin-top: 4px;
 }
-.overview div:first-child strong {
-  color: var(--on-brand);
-}
-.overview span {
-  font-size: 12px;
-  color: #ffe0e5;
+.recent-grid small {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 3px;
+  line-height: 1.35;
 }
 .section-heading {
   display: flex;
@@ -396,17 +415,6 @@ nav .current {
   color: var(--brand);
   font-weight: 700;
 }
-.question-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 8px;
-  font-size: 14px;
-}
-.question-top b span {
-  color: var(--muted);
-  font-weight: 400;
-}
 .text-button {
   border: 0;
   background: none;
@@ -638,6 +646,16 @@ progress::-moz-progress-bar {
 .question-meta > span + span {
   padding-left: 12px;
   border-left: 1px solid var(--line);
+}
+.question-meta .tag {
+  color: var(--brand);
+  background: #fff0f2;
+  border: 1px solid #f3d3d8;
+  border-radius: 6px;
+  padding: 3px 7px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
 }
 .question-actions:has(#next[hidden]) {
   display: none;
@@ -927,12 +945,39 @@ input[type="search"] {
     padding-left: 36px;
     padding-right: 36px;
   }
+  header {
+    margin-left: -36px;
+    margin-right: -36px;
+    padding-left: 36px;
+    padding-right: 36px;
+    border-radius: 24px 24px 0 0;
+  }
   nav {
     border-radius: 18px 18px 0 0;
   }
 }
+@media (max-width: 420px) {
+  header {
+    gap: 8px;
+  }
+  .count-label {
+    display: none;
+  }
+  .timer {
+    width: 74px;
+  }
+  .text-button {
+    font-size: 13px;
+  }
+}
 @media (max-width: 360px) {
   .app-shell {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  header {
+    margin-left: -16px;
+    margin-right: -16px;
     padding-left: 16px;
     padding-right: 16px;
   }

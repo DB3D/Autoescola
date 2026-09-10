@@ -13,7 +13,7 @@ npm test
 npm run build
 ```
 
-`scripts/prepare-data.mjs` validates every ID, answer key, image path and exact French match. It generates `public/questions_ca.json`, `public/translations_fr.json` keyed by ID, and copies the existing images into `public/images`. Those generated files are ignored by Git. To update content, edit the existing `src/data/questions.json`, `src/data/translations.json`, and `src/images`, then rebuild. Translation matching uses the Catalan question AND all three ordered answers; repeated question wording cannot select another question's translations. To maintain the generated ID-based format directly, remove the preparation step from the scripts and track the public files.
+`scripts/prepare-data.mjs` validates every ID, answer key, category, image path and exact French match. It generates `public/questions_ca.json`, `public/translations_fr.json` keyed by ID, and copies the existing images into `public/images`. Those generated files are ignored by Git. To update content, edit the existing `src/data/questions.json`, `src/data/translations.json`, and `src/images`, then rebuild. Translation matching uses the Catalan question AND all three ordered answers; repeated question wording cannot select another question's translations. To maintain the generated ID-based format directly, remove the preparation step from the scripts and track the public files.
 
 ## GitHub Pages
 
@@ -24,6 +24,14 @@ Deployment history on 2026-09-10: enabling Pages first failed with HTTP 422, “
 ## Access gate
 
 `src/lock.ts` shows a passcode screen before any question data is fetched, and stores an unlock marker in `localStorage` so the code is entered once per browser. The code is not present in the source: only an FNV-1a/base36 digest of a salt plus the code is stored, and `digest()` regenerates that value if the code changes. This deters casual visitors only. It is not access control: the repository is public, and the generated `questions_ca.json`, `translations_fr.json` and images are served as static files that anyone can request directly without passing the gate.
+
+## Interface
+
+The header is sticky and carries the session controls: quit, the question counter, the answer gauge, one time statistic and the French button. It has no branding; the bottom navigation returns to the practice screen. The time statistic shows the elapsed time of the running session, the remaining time when a time trial or an exam is running, and otherwise the total time spent answering. The practice screen has no summary box above the setup: the Progression page holds the statistics.
+
+Progression opens with the average over the last 100 answered questions, split in two. The Catalan score counts the questions answered correctly without revealing the French text, the French score those answered correctly with it displayed; both use the same denominator, so they add up to the success rate of that window and the remainder is the errors. Only the Catalan score reflects examination conditions.
+
+Each question shows its category from the question bank, with its test number and identifier. Exam mode shows the test number and identifier only.
 
 ## Answer order
 
@@ -46,7 +54,7 @@ Progress is private to this browser and origin. Browser data clearing, private b
 - Start at 0, clamp to 0–100 after each attempt.
 - Correct: +12 within 15 seconds, +10 below 50 seconds, +4 at/after 50 seconds.
 - French visible before answering halves that positive credit, including auto-visible French. The automatic reveal after answering does not count as assistance.
-- Wrong or passed: −22. Slow reflex (at least 50 seconds): an additional −6 for any result. The question never times out.
+- Wrong or passed: −22. Slow reflex (at least 50 seconds): an additional −6 for any result. The question never times out, but the recorded time is capped at 120 seconds so a phone left awake cannot distort average time, priority or totals; the gauge then reads “Trop lent !”. Attempts recorded before the cap are capped when read.
 - After three days away, displayed mastery decays 0.6 points/day. Raw attempts stay unchanged and statistics can always be recomputed.
 - Sequential bounded updates account for both historical and recent results. Success/failure ratio, average time and French dependency additionally inform smart priority.
 - Smart priority combines inverse mastery (45%), failure ratio (up to 25), average response time (up to 20), French use (up to 15), and spacing (up to 40), with a base of 10.
