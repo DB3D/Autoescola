@@ -871,6 +871,54 @@ input[type="search"] {
   text-align: center;
   padding: 80px 20px;
 }
+.gate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gate form {
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+}
+.gate .brand-car {
+  display: block;
+  font-size: 46px;
+  margin-bottom: 14px;
+}
+.gate h1 {
+  font-family: Manrope, sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: var(--brand);
+  margin: 0 0 8px;
+}
+.gate label {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.gate input {
+  width: 100%;
+  min-height: 52px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px;
+  background: white;
+  color: var(--brand);
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 8px;
+  text-indent: 8px;
+}
+.gate-error {
+  color: var(--brand);
+  font-size: 13px;
+  margin: 14px 0 0;
+}
 @media (min-width: 700px) {
   .app-shell {
     margin: 30px auto;

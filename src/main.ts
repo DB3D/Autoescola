@@ -14,6 +14,7 @@ import {
   type Stats,
 } from "./engine";
 import { readAll, saveSession } from "./storage";
+import { unlock } from "./lock";
 const root = document.querySelector<HTMLDivElement>("#app")!;
 const esc = (v: unknown) =>
   String(v).replace(
@@ -543,6 +544,8 @@ window.addEventListener("beforeunload", (e) => {
   }
 });
 async function boot() {
+  await unlock(root);
+  root.innerHTML = '<p class="loading">Chargement des questions…</p>';
   try {
     const fetchJSON = async (path: string) => {
       const r = await fetch(base + path);
