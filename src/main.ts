@@ -67,7 +67,7 @@ function languageButton() {
 }
 function shell(content: string, tab = "practice") {
   document.documentElement.lang = active?.mode === "exam" ? "ca" : "fr";
-  root.innerHTML = `<div class="app-shell"><header><a href="#" id="brand" aria-label="Accueil"><span class="brand-car" aria-hidden="true">🚗</span><span>olympica<small>${active?.mode === "exam" ? "ANDORRA" : "ANDORRE"}</small></span></a><div class="header-actions">${trialHeader()}${languageButton()}</div></header><main>${content}</main>${active ? "" : `<nav aria-label="Navigation principale"><button data-nav="practice" class="${tab === "practice" ? "current" : ""}"><span>◎</span> Pratiquer</button><button data-nav="history" class="${tab === "history" ? "current" : ""}"><span>◷</span> Historique</button><button data-nav="stats" class="${tab === "stats" ? "current" : ""}"><span>▥</span> Progression</button><button data-nav="exams" class="${tab === "exams" ? "current" : ""}"><span>▣</span> Exams</button></nav>`}</div>`;
+  root.innerHTML = `<div class="app-shell"><header><a href="#" id="brand" aria-label="Accueil"><span class="brand-car" aria-hidden="true">🚗</span><span>AutoEscola<small>${active?.mode === "exam" ? "ANDORRA" : "ANDORRE"}</small></span></a><div class="header-actions">${trialHeader()}${languageButton()}</div></header><main>${content}</main>${active ? "" : `<nav aria-label="Navigation principale"><button data-nav="practice" class="${tab === "practice" ? "current" : ""}"><span>◎</span> Pratiquer</button><button data-nav="history" class="${tab === "history" ? "current" : ""}"><span>◷</span> Historique</button><button data-nav="stats" class="${tab === "stats" ? "current" : ""}"><span>▥</span> Progression</button><button data-nav="exams" class="${tab === "exams" ? "current" : ""}"><span>▣</span> Exams</button></nav>`}</div>`;
   document.querySelector("#brand")?.addEventListener("click", (e) => {
     e.preventDefault();
     if (!active) home();
@@ -532,7 +532,7 @@ async function exportProgress(extra?: Session) {
   );
   const a = document.createElement("a");
   a.href = url;
-  a.download = `olympica-progress-${new Date().toISOString().slice(0, 10)}.json`;
+  a.download = `autoescola-progress-${new Date().toISOString().slice(0, 10)}.json`;
   a.click();
   setTimeout(() => URL.revokeObjectURL(url), 60000);
 }

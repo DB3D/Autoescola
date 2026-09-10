@@ -1,4 +1,4 @@
-# Olympica
+# AutoEscola
 
 The iPhone-first Catalan practice app is implemented with Vite and TypeScript.
 See [APP.md](APP.md) for local setup, GitHub Pages deployment, scoring rules,

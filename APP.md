@@ -1,4 +1,4 @@
-# Olympica app
+# AutoEscola app
 
 An iPhone-first driving-question practice app using Vite and TypeScript. The interface, feedback and statistics are in French; question text and answer choices remain in Catalan, with French translations available as learning assistance. No backend, account or service worker. It uses the existing 4,400-question bank without changing source questions, answer keys, translations or images.
 
