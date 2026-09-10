@@ -3,12 +3,14 @@ import {
   allStats,
   answerOrder,
   cappedSeconds,
+  capAttempt,
   selectQuestions,
   trialRemaining,
   sessionSettings,
   examPassed,
   examSummary,
   recentScores,
+  ENDLESS,
   MAX_ANSWER_SECONDS,
   type Question,
   type Translation,
@@ -40,6 +42,7 @@ let mode: Mode = "smart",
   timeTrial = false,
   clockTimer: number | undefined,
   active: Session | null = null,
+  pool: string[] = [], // Questions still to serve in an endless session.
   index = 0,
   shownAt = 0,
   shownAtDate = 0,
@@ -71,9 +74,6 @@ const stopwatch = (n: number) => {
   const rest = `${String(m).padStart(h ? 2 : 1, "0")}:${String(s % 60).padStart(2, "0")}`;
   return h ? `${h}:${rest}` : rest;
 };
-// Attempts recorded before the cap can hold hours on one question.
-const capAttempt = (a: Attempt): Attempt =>
-  a.seconds > MAX_ANSWER_SECONDS ? { ...a, seconds: MAX_ANSWER_SECONDS } : a;
 function languageButton() {
   if ((active?.mode ?? mode) === "exam") return '<button class="language-button" id="reveal" type="button" disabled aria-label="Francès desactivat durant l’examen" title="Francès desactivat durant l’examen"><span class="france-flag" aria-hidden="true">🇫🇷</span></button>';
   const visible = active ? revealed : autoFrench;
@@ -87,7 +87,7 @@ function headerLead() {
     return '<a href="#" id="brand" aria-label="Accueil"><span class="brand-car" aria-hidden="true">🚗</span><span>AutoEscola<small>ANDORRE</small></span></a>';
   const exam = active.mode === "exam";
   const label = exam ? "Surt" : "Quitter";
-  return `<button class="quit-button" id="quit" aria-label="${label}"><span aria-hidden="true">↩️</span><span class="quit-label">${label}</span></button><b class="header-count"><span class="count-label">${exam ? "Pregunta" : "Question"} </span>${index + 1}<span> / ${active.questionIds.length}</span></b>`;
+  return `<button class="quit-button" id="quit" aria-label="${label}"><span aria-hidden="true">↩️</span><span class="quit-label">${label}</span></button><b class="header-count"><span class="count-label">Q </span>${index + 1}<span> / ${active.endless ? "∞" : active.questionIds.length}</span></b>`;
 }
 function headerTools() {
   if (!active) return languageButton();
@@ -142,8 +142,16 @@ function home() {
   // Exam mode displays its own fixed settings without overwriting the
   // preferences, which are restored as soon as another mode is picked.
   const forced = sessionSettings(mode, count, autoFrench, timeTrial);
+  const endless = forced.count === ENDLESS;
+  const lengths: { value: number; label: string; note: string }[] = [
+    ...[10, 20, 40, 60].map((n) => ({ value: n, label: String(n), note: "questions" })),
+    { value: ENDLESS, label: "∞", note: "sans fin" },
+  ];
+  const trialNote = endless
+    ? "Indisponible en mode sans fin."
+    : `${forced.count} questions = ${forced.count} minutes au total.`;
   shell(
-    `${storageError ? '<p class="warning">Le stockage local est indisponible. Tu peux pratiquer et exporter la session avant de quitter.</p>' : ""}<section class="setup"><div class="section-heading"><h2>Prépare ta session</h2></div><fieldset><legend>Comment veux-tu pratiquer ?</legend>${(["smart", "random", "discovery", "exam"] as Mode[]).map((m, i) => `<label class="mode-card"><input type="radio" name="mode" value="${m}" ${mode === m ? "checked" : ""}><span class="mode-icon">${["✦", "⤨", "◒", "▣"][i]}</span><span><b>${modeName[m]}</b><small>${["Travaille tes points faibles", "Explore toutes les questions du programme", "Questions inédites, peu vues ou anciennes", "40 questions · 40 min · Catalan uniquement"][i]}</small></span><span class="radio-mark"></span></label>`).join("")}</fieldset><fieldset><legend>Combien de questions ?</legend><div class="lengths">${[10, 20, 40, 60, 80].map((n) => `<label><input type="radio" name="count" value="${n}" ${forced.count === n ? "checked" : ""}><span>${n}<small>questions</small></span></label>`).join("")}</div></fieldset><label class="french-toggle"><span><b>Aide en français</b><small>Afficher les traductions dès le début</small></span><input type="checkbox" id="auto-fr" role="switch" ${forced.french ? "checked" : ""}></label><p class="helper">Avec l’aide, les bonnes réponses rapportent 50 % des points de maîtrise. Tu peux aussi révéler le français pendant la question.</p><label class="french-toggle"><span><b>Time trial</b><small id="trial-duration">${forced.count} questions = ${forced.count} minutes au total.</small></span><input type="checkbox" id="time-trial" role="switch" ${forced.trial ? "checked" : ""}></label><p class="helper">Un chrono global, sans limite par question. À zéro, le test s’arrête et les résultats sont enregistrés. Sans lui, le temps de la session compte simplement à partir de zéro.</p><button class="primary" id="start">Commencer la session <span>→</span></button></section><p class="privacy">Sur cet appareil uniquement · Sans compte</p>`,
+    `${storageError ? '<p class="warning">Le stockage local est indisponible. Tu peux pratiquer et exporter la session avant de quitter.</p>' : ""}<section class="setup"><div class="section-heading"><h2>Prépare ta session</h2></div><fieldset><legend>Comment veux-tu pratiquer ?</legend>${(["smart", "random", "discovery", "exam"] as Mode[]).map((m, i) => `<label class="mode-card"><input type="radio" name="mode" value="${m}" ${mode === m ? "checked" : ""}><span class="mode-icon">${["✦", "⤨", "◒", "▣"][i]}</span><span><b>${modeName[m]}</b><small>${["Travaille tes points faibles", "Explore toutes les questions du programme", "Questions inédites, peu vues ou anciennes", "40 questions · 40 min · Catalan uniquement"][i]}</small></span><span class="radio-mark"></span></label>`).join("")}</fieldset><fieldset><legend>Combien de questions ?</legend><div class="lengths">${lengths.map((l) => `<label><input type="radio" name="count" value="${l.value}" ${forced.count === l.value ? "checked" : ""}><span>${l.label}<small>${l.note}</small></span></label>`).join("")}</div></fieldset><label class="french-toggle"><span><b>Aide en français</b><small>Afficher les traductions dès le début</small></span><input type="checkbox" id="auto-fr" role="switch" ${forced.french ? "checked" : ""}></label><p class="helper">Avec l’aide, les bonnes réponses rapportent 50 % des points de maîtrise. Tu peux aussi révéler le français pendant la question.</p><label class="french-toggle"><span><b>Time trial</b><small id="trial-duration">${trialNote}</small></span><input type="checkbox" id="time-trial" role="switch" ${forced.trial ? "checked" : ""}></label><p class="helper">Un chrono global, sans limite par question. À zéro, le test s’arrête et les résultats sont enregistrés. Sans lui, le temps de la session compte simplement à partir de zéro.</p><button class="primary" id="start">Commencer la session <span>→</span></button></section><p class="privacy">Sur cet appareil uniquement · Sans compte</p>`,
   );
   document.querySelectorAll<HTMLInputElement>('input[name="mode"]').forEach(
     (e) =>
@@ -156,7 +164,7 @@ function home() {
     (e) =>
       (e.onchange = () => {
         count = +e.value;
-        document.querySelector("#trial-duration")!.textContent = `${count} questions = ${count} minutes au total.`;
+        home(); // The endless length also decides whether time trial is offered.
       }),
   );
   document.querySelector<HTMLInputElement>("#auto-fr")!.onchange = (e) => {
@@ -167,24 +175,30 @@ function home() {
   document.querySelector<HTMLInputElement>("#time-trial")!.onchange = e => {
     timeTrial = (e.target as HTMLInputElement).checked;
   };
-  if (mode === "exam") {
+  if (mode === "exam")
     document.querySelectorAll<HTMLInputElement>('input[name="count"], #auto-fr, #time-trial').forEach(input => { input.disabled = true; });
-  }
+  else if (endless)
+    document.querySelector<HTMLInputElement>("#time-trial")!.disabled = true;
 }
 function start() {
   const settings = sessionSettings(mode, count, autoFrench, timeTrial);
   stats = allStats(attempts);
   const selected = selectQuestions(bank, settings.count, mode, stats);
+  const endless = settings.count === ENDLESS;
+  // Endless keeps the drawn order in reserve and serves one question at a time,
+  // so the record holds only what was actually asked.
+  pool = endless ? selected.slice(1).map((q) => q.id) : [];
   active = {
     id: crypto.randomUUID(),
     mode,
     startedAt: new Date().toISOString(),
     completedAt: "",
     duration: 0,
-    questionIds: selected.map((q) => q.id),
+    questionIds: endless ? selected.slice(0, 1).map((q) => q.id) : selected.map((q) => q.id),
     attempts: [],
     timeTrial: settings.trial,
     deadlineAt: settings.trial ? new Date(Date.now() + selected.length * 60000).toISOString() : undefined,
+    ...(endless ? { endless: true } : {}),
   };
   index = 0;
   question();
@@ -247,7 +261,7 @@ function question() {
   const t = fr[q.id];
   order = answerOrder(q.answers.length);
   shell(active!.mode === "exam" ? examQuestionMarkup(q) :
-    `<progress value="${index}" max="${active!.questionIds.length}" aria-label="Progression de la session"></progress><button class="image-frame" id="enlarge" aria-label="Agrandir l’image"><img src="${base}${esc(q.image)}" alt="Image de la question ${esc(q.id)}"><span>⤢</span></button><div class="question-copy">${questionMetadata(q)}<h2 tabindex="-1" id="question-title" lang="ca">${esc(q.question)}</h2>${french(t?.question ?? "Traduction indisponible")}</div><div class="answers">${order.map((a, i) => `<button class="answer" data-answer="${a}"><span class="letter">${"ABC"[i]}</span><span><b lang="ca">${esc(q.answers[a])}</b>${french(t?.answers[a] ?? "Traduction indisponible")}</span><span class="answer-state"></span></button>`).join("")}<button class="answer" id="skip"><span class="letter">D</span><span><b>Passer cette question</b></span><span class="answer-state"></span></button></div><div id="feedback" role="status" aria-live="polite"></div><div class="question-actions"><p class="next-hint" id="next" role="status" hidden>Clique n’importe où pour ${index + 1 === active!.questionIds.length ? "terminer et enregistrer" : "passer à la question suivante"} <span aria-hidden="true">→</span></p></div><dialog id="image-dialog"><button id="close-image" class="secondary">Fermer l’image</button><img src="${base}${esc(q.image)}" alt="Image agrandie de la question"></dialog>`,
+    `${active!.endless ? "" : `<progress value="${index}" max="${active!.questionIds.length}" aria-label="Progression de la session"></progress>`}<button class="image-frame" id="enlarge" aria-label="Agrandir l’image"><img src="${base}${esc(q.image)}" alt="Image de la question ${esc(q.id)}"><span>⤢</span></button><div class="question-copy">${questionMetadata(q)}<h2 tabindex="-1" id="question-title" lang="ca">${esc(q.question)}</h2>${french(t?.question ?? "Traduction indisponible")}</div><div class="answers">${order.map((a, i) => `<button class="answer" data-answer="${a}"><span class="letter">${"ABC"[i]}</span><span><b lang="ca">${esc(q.answers[a])}</b>${french(t?.answers[a] ?? "Traduction indisponible")}</span><span class="answer-state"></span></button>`).join("")}<button class="answer" id="skip"><span class="letter">D</span><span><b>Passer cette question</b></span><span class="answer-state"></span></button></div>${active!.endless ? '<div class="end-session"><button class="danger-button" id="end-session">Terminer la session</button></div>' : ""}<div id="feedback" role="status" aria-live="polite"></div><div class="question-actions"><p class="next-hint" id="next" role="status" hidden>Clique n’importe où pour ${lastQuestion() ? "terminer et enregistrer" : "passer à la question suivante"} <span aria-hidden="true">→</span></p></div><dialog id="image-dialog"><button id="close-image" class="secondary">Fermer l’image</button><img src="${base}${esc(q.image)}" alt="Image agrandie de la question"></dialog>`,
   );
   // stopPropagation keeps the answering click from reaching the advance
   // handler below, which would skip the feedback entirely.
@@ -265,6 +279,12 @@ function question() {
     skip.onclick = (e) => {
       e.stopPropagation();
       answer(null);
+    };
+  const end = document.querySelector<HTMLButtonElement>("#end-session");
+  if (end)
+    end.onclick = (e) => {
+      e.stopPropagation();
+      endSession();
     };
   document.querySelector<HTMLButtonElement>("#reveal")!.onclick = () => {
     if (active?.mode === "exam") return;
@@ -309,25 +329,46 @@ function question() {
     .querySelector<HTMLElement>("#question-title")
     ?.focus({ preventScroll: true });
 }
+function lastQuestion() {
+  return active!.endless
+    ? pool.length === 0
+    : index + 1 === active!.questionIds.length;
+}
 function advance() {
   if (!active || !answered || saving) return;
   // A tap that answers can be followed by a ghost click on the redrawn page;
   // ignoring the first moments keeps it from skipping the feedback.
   if (Date.now() - answeredAt < 300) return;
   if (updateTrialClock()) return;
-  if (index + 1 === active.questionIds.length) void finish();
-  else {
-    index++;
-    question();
+  if (lastQuestion()) {
+    void finish();
+    return;
   }
+  if (active.endless) active.questionIds.push(pool.shift()!);
+  index++;
+  question();
+}
+function endSession() {
+  if (!active || saving) return;
+  // The question on screen only belongs to the record once it is answered.
+  if (!answered) active.questionIds = active.questionIds.slice(0, index);
+  if (!active.attempts.length) {
+    home();
+    return;
+  }
+  void finish();
 }
 // Keyboard equivalent of clicking the page to move on. Enter and Space are
 // left to whatever control has focus; the arrow always advances.
 document.addEventListener("keydown", (e) => {
+  // Outside an answered question these keys belong to the page: typing in a
+  // field, scrolling with Space, activating whatever has focus.
+  if (!active || !answered || saving) return;
   if (!["Enter", " ", "ArrowRight"].includes(e.key)) return;
   if (document.querySelector("dialog[open]")) return;
-  if (e.key !== "ArrowRight" && (e.target as HTMLElement).closest("button, a, input, summary"))
-    return;
+  const target = e.target as HTMLElement;
+  if (target.closest("input, textarea, select, a, summary")) return;
+  if (e.key !== "ArrowRight" && target.closest("button")) return;
   e.preventDefault();
   advance();
 });
@@ -493,7 +534,7 @@ function risk(a: Attempt) {
 }
 function result(s: Session) {
   shell(
-    `<div class="eyebrow">SESSION TERMINÉE</div><h1>${s.mode === "exam" ? examPassed(s) ? "Examen réussi" : "Examen échoué" : "Un pas de plus."}</h1>${s.mode === "exam" ? '<p class="muted">Seuil de réussite : 38 bonnes réponses sur 40.</p>' : ""}<p class="muted">${modeName[s.mode]}${s.timeTrial ? " · Time trial" : ""} · ${new Date(s.completedAt).toLocaleDateString("fr-FR")}</p>${saveError ? '<div class="warning">Échec de l’enregistrement. Exporte la session ou réessaie avant de quitter.<button id="retry" class="secondary">Réessayer l’enregistrement</button></div>' : '<p class="saved">✓ Progression enregistrée sur cet appareil</p>'}${s.timedOut ? `<div class="warning" role="alert"><b>Temps écoulé — test terminé.</b><p>Le chrono de ${s.questionIds.length} minutes est arrivé à zéro. ${s.questionIds.length - s.attempts.length} question(s) non abordée(s). ${s.attempts.some(a => a.timedOut) ? s.mode === "exam" ? "La question restée sans réponse compte comme incorrecte." : "La question restée sans réponse est comptée comme passée." : ""}</p></div>` : ""}${metrics(s.attempts, s.duration, s.questionIds.length)}<button class="primary" id="again">Préparer une autre session →</button><button class="secondary full" id="export-session">Sauvegarder mon historique (JSON)</button><h2 class="review-title">Les points à retravailler</h2><p class="muted">En premier, les questions qui méritent le plus de pratique.</p>${review(s.attempts, s.mode === "exam")}`,
+    `<div class="eyebrow">SESSION TERMINÉE</div><h1>${s.mode === "exam" ? examPassed(s) ? "Examen réussi" : "Examen échoué" : "Un pas de plus."}</h1>${s.mode === "exam" ? '<p class="muted">Seuil de réussite : 38 bonnes réponses sur 40.</p>' : ""}<p class="muted">${modeName[s.mode]}${s.endless ? " · Sans fin" : ""}${s.timeTrial ? " · Time trial" : ""} · ${new Date(s.completedAt).toLocaleDateString("fr-FR")}</p>${saveError ? '<div class="warning">Échec de l’enregistrement. Exporte la session ou réessaie avant de quitter.<button id="retry" class="secondary">Réessayer l’enregistrement</button></div>' : '<p class="saved">✓ Progression enregistrée sur cet appareil</p>'}${s.timedOut ? `<div class="warning" role="alert"><b>Temps écoulé — test terminé.</b><p>Le chrono de ${s.questionIds.length} minutes est arrivé à zéro. ${s.questionIds.length - s.attempts.length} question(s) non abordée(s). ${s.attempts.some(a => a.timedOut) ? s.mode === "exam" ? "La question restée sans réponse compte comme incorrecte." : "La question restée sans réponse est comptée comme passée." : ""}</p></div>` : ""}${metrics(s.attempts, s.duration, s.questionIds.length)}<button class="primary" id="again">Préparer une autre session →</button><button class="secondary full" id="export-session">Sauvegarder mon historique (JSON)</button><h2 class="review-title">Les points à retravailler</h2><p class="muted">En premier, les questions qui méritent le plus de pratique.</p>${review(s.attempts, s.mode === "exam")}`,
     "history",
   );
   document.querySelector<HTMLButtonElement>("#again")!.onclick = () => {
@@ -525,7 +566,8 @@ function exams() {
   const summary = examSummary(sessions);
   shell(`<div class="eyebrow">SIMULATIONS UNIQUEMENT</div><h1>Exams</h1><p class="muted">40 questions · 40 minutes · Réussite à partir de 38/40.</p><div class="score"><strong>${summary.rate === null ? "—" : pct(summary.rate)}</strong><p>taux d’examens réussis · ${summary.passed} sur ${summary.recent.length}</p></div><section class="exam-readiness"><h2>${summary.ready ? "Prêt selon tes simulations" : summary.recent.length < 5 ? "Préparation à confirmer" : "Encore un peu d’entraînement"}</h2><p>${summary.ready ? "Tes 5 derniers examens sont réussis." : "Repère de préparation : réussir 5 examens consécutifs avec au moins 38 bonnes réponses."}</p><p class="helper">Indicateur basé sur tes simulations, pas une garantie de réussite à l’examen.</p></section><button class="primary" id="prepare-exam">Préparer un examen →</button><h2 class="review-title">Les 20 derniers examens</h2>${summary.recent.length ? summary.recent.map(s => `<button class="session-row" data-exam="${s.id}"><span><b>${examPassed(s) ? "Réussi" : "Échoué"}${s.timedOut ? " · Temps écoulé" : ""}</b><small>${new Date(s.completedAt).toLocaleString("fr-FR")} · ${time(s.duration)}</small></span><strong class="${examPassed(s) ? "good" : "bad"}">${s.attempts.filter(a => a.correct).length}/40 →</strong></button>`).join("") : '<p class="empty">Aucun examen terminé. Tes sessions d’entraînement ne comptent pas ici.</p>'}`, "exams");
   document.querySelector<HTMLButtonElement>("#prepare-exam")!.onclick = () => {
-    mode = "exam"; count = 40; autoFrench = false; timeTrial = true; home();
+    mode = "exam"; // Exam settings are forced at start, never written over the preferences.
+    home();
   };
   document.querySelectorAll<HTMLButtonElement>("[data-exam]").forEach(button => {
     button.onclick = () => { saveError = false; result(sessions.find(s => s.id === button.dataset.exam)!); };
@@ -540,7 +582,7 @@ function history() {
             .sort((a, b) => b.completedAt.localeCompare(a.completedAt))
             .map(
               (s) =>
-                `<button class="session-row" data-session="${s.id}"><span><b>${modeName[s.mode]}${s.timeTrial ? " · Time trial" : ""}${s.timedOut ? " · Temps écoulé" : ""}</b><small>${new Date(s.completedAt).toLocaleString("fr-FR")} · ${s.questionIds.length} questions</small></span><strong>${pct(s.attempts.filter((a) => a.correct).length / s.questionIds.length)} →</strong></button>`,
+                `<button class="session-row" data-session="${s.id}"><span><b>${modeName[s.mode]}${s.endless ? " · Sans fin" : ""}${s.timeTrial ? " · Time trial" : ""}${s.timedOut ? " · Temps écoulé" : ""}</b><small>${new Date(s.completedAt).toLocaleString("fr-FR")} · ${s.questionIds.length} questions</small></span><strong>${pct(s.attempts.filter((a) => a.correct).length / s.questionIds.length)} →</strong></button>`,
             )
             .join("")
         : '<div class="empty"><span>◷</span><h2>Ton parcours commence ici</h2><p>Tes sessions terminées apparaîtront ici.</p><button class="primary" id="first">Commencer à pratiquer →</button></div>'

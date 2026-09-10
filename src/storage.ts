@@ -1,4 +1,4 @@
-import { allStats, type Session, type Attempt } from "./engine";
+import { allStats, capAttempt, type Session, type Attempt } from "./engine";
 const DB = "autoescola-progress";
 export function openDB(): Promise<IDBDatabase> {
   return new Promise((resolve, reject) => {
@@ -39,7 +39,7 @@ export async function saveSession(session: Session) {
       session.attempts.forEach((a) => merged.set(a.id, a));
       tx.objectStore("sessions").put(session);
       session.attempts.forEach((a) => tx.objectStore("attempts").put(a));
-      allStats([...merged.values()]).forEach((s) =>
+      allStats([...merged.values()].map(capAttempt)).forEach((s) =>
         tx.objectStore("stats").put(s),
       );
     };

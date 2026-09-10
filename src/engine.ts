@@ -38,12 +38,21 @@ export interface Session {
   timeTrial?: boolean;
   deadlineAt?: string;
   timedOut?: boolean;
+  endless?: boolean; // Runs until stopped: questionIds grows as questions are served.
 }
+// The endless length draws from the whole bank instead of a fixed count.
+export const ENDLESS = Infinity;
 // A question never times out, but a phone left awake would otherwise record
 // hours on a single answer and distort average time, priority and totals.
 export const MAX_ANSWER_SECONDS = 120;
 export function cappedSeconds(seconds: number): number {
   return Math.min(Math.max(0, seconds), MAX_ANSWER_SECONDS);
+}
+// Attempts recorded before the cap existed can hold hours on one question.
+export function capAttempt(attempt: Attempt): Attempt {
+  return attempt.seconds > MAX_ANSWER_SECONDS
+    ? { ...attempt, seconds: MAX_ANSWER_SECONDS }
+    : attempt;
 }
 // The Catalan score counts only answers found without revealing the French
 // text; the total score counts every correct answer, French-assisted included.
@@ -67,9 +76,10 @@ export function trialRemaining(session: Session, now = Date.now()): number | nul
   return Math.max(0, (Date.parse(session.deadlineAt) - now) / 1000);
 }
 export function sessionSettings(mode: Mode, count: number, french: boolean, trial: boolean) {
+  // An endless session has no question count, so it can have no global clock.
   return mode === "exam"
     ? { count: 40, french: false, trial: true }
-    : { count, french, trial };
+    : { count, french, trial: count === ENDLESS ? false : trial };
 }
 export function examPassed(session: Session): boolean {
   return session.mode === "exam" && session.questionIds.length === 40

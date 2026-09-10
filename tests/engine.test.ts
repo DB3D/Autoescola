@@ -13,6 +13,7 @@ import {
   recentScores,
   selectQuestions,
   statsFor,
+  ENDLESS,
   MAX_ANSWER_SECONDS,
   type Attempt,
   type Question,
@@ -168,6 +169,19 @@ test("Time trial provides one minute per question and expires against wall time"
 function examSession(correct: number, day: number): Session {
   return { id: `exam-${day}`, mode: "exam", startedAt: at, completedAt: new Date(now + day * 86400000).toISOString(), duration: 2400, timeTrial: true, questionIds: bank.slice(0, 40).map(q => q.id), attempts: bank.slice(0, 40).map((q, i) => attempt({ questionId: q.id, correct: i < correct })) };
 }
+test("Endless draws the whole bank in order and rules out the global timer", () => {
+  for (const french of [true, false])
+    for (const trial of [true, false]) {
+      const settings = sessionSettings("smart", ENDLESS, french, trial);
+      assert.equal(settings.count, ENDLESS);
+      assert.equal(settings.french, french);
+      assert.equal(settings.trial, false); // No count, so no deadline to compute.
+    }
+  const drawn = selectQuestions([...bank, bank[0]], ENDLESS, "smart", new Map());
+  assert.equal(drawn.length, bank.length);
+  assert.equal(new Set(drawn.map((q) => q.id)).size, bank.length);
+  assert.equal(sessionSettings("smart", 20, false, true).trial, true);
+});
 test("Exam locks 40 questions, no French, and the global timer regardless of previous preferences", () => {
   for (const count of [10, 20, 40, 60, 80]) for (const french of [true, false]) for (const trial of [true, false]) {
     assert.deepEqual(sessionSettings("exam", count, french, trial), { count: 40, french: false, trial: true });
