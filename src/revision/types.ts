@@ -5,6 +5,7 @@ export interface RevisionQuestion {
   answers: string[];
   correct: number;
   explanation: string;
+  french: { prompt: string; answers: string[] };
 }
 export interface RevisionPage {
   title: string;

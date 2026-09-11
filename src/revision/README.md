@@ -1,8 +1,11 @@
 # Révision
 
 Independent learning area: 12 driving themes plus 2 Catalan language themes.
-Each contains two concise French lessons, Catalan vocabulary, memory aids and
+Each contains two visual French lessons, Catalan vocabulary, memory aids and
 contextual grammar, and 14 authored non-visual questions in Catalan (196 total).
+All 28 lessons use complete explanations with context and concrete examples;
+the main teaching text is approximately twice as long as the initial shorthand.
+Each numbered block still focuses on one rule or a closely related distinction.
 Five of each lesson's seven questions are drawn per test. Both questions and
 answer order shuffle; the next draw changes at least one question from the last.
 
@@ -16,7 +19,25 @@ The source question bank, vocabulary quiz and their scores are never modified.
 percentages for the selected theme, or all available tests while fewer than five
 exist. Unseen mastery is null, displayed as a dash rather than a misleading 0%.
 Skipped questions count as incorrect. An abandoned test does not create a run.
-Corrections appear only after all ten questions. No time or French penalties.
+Clicking an answer locks it and immediately shows correct/incorrect feedback,
+the French question, all translated choices and the explanation. French text is
+initially blurred and hidden from assistive technology; the header's 🇫🇷 button
+can reveal it before answering. Each new question starts with French blurred.
+A separate click anywhere in the content (or Enter/Space/Right Arrow) advances;
+a 300 ms guard prevents a quick double tap from skipping the correction. Header,
+quit and dialog controls keep their own actions. Skipping also reveals feedback.
+The last question's feedback precedes the saved result and full review.
+`french.ts` supplies all 196 translations in the original answer order, so they
+stay paired with their Catalan choices after shuffling. No time or French penalties.
+
+Inside a theme, the sticky header contains numbered lesson buttons and a Q
+button on the right. Q starts a test immediately or resumes the current one.
+Reading a lesson during a test preserves the question, shuffled answer order,
+confirmed response, feedback and French visibility. Returning to Q restores that
+state without scoring the answer twice. The same study clock continues throughout.
+Returning to the catalogue, leaving Revision or explicitly abandoning a test
+clears the unfinished test. Header controls are disabled while a completed result
+is being saved.
 
 `storage.ts` uses a separate IndexedDB database (`autoescola-revision`, version 2,
 stores `runs` and `time`). Upgrading preserves existing version 1 scores. Run
@@ -100,3 +121,15 @@ local midnight, uncapped daily/lifetime totals, checkpoint idempotency and the
 database migration. Browser checks cover abandon without a mastery score,
 reload, the blue Progression segment, theme totals, failed-write journal recovery,
 both JSON exports and the timer header at 320 px.
+
+Immediate-feedback verification completed 14 tests (140 questions), checking
+correct/wrong/skip feedback, translation pairing after answer shuffling, blurred
+French and manual reveal, separate mouse/keyboard advancement, the double-tap
+guard, quit/resume, saved scores after reload and widths of 320/390/1440 px.
+The study-time browser checks also passed with this interaction flow.
+
+Lesson/header validation visited all 28 rewritten lessons, checked sticky header
+navigation while scrolled, and completed a test with reading detours before and
+after every answer (including errors and a skip). Its ten answers produced one
+70% result. Question order, translations, feedback and elapsed time survived each
+detour; header layouts were checked at 320, 390 and 1440 px.

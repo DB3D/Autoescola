@@ -147,7 +147,7 @@ const revision = createRevision((content, testing) => shell(content, "revision",
 function shell(content: string, tab = "practice", revisionTest = false) {
   if (tab !== "revision") revision.leave();
   document.documentElement.lang = active?.mode === "exam" ? "ca" : "fr";
-  root.innerHTML = `<div class="app-shell"><header>${revisionTest ? '<b>📖 Révision</b>' : headerLead()}<div class="header-actions">${tab === "revision" ? revision.header() : headerTools()}</div></header><main>${content}</main>${active || quizRun || revisionTest ? "" : `<nav aria-label="Navigation principale">
+  root.innerHTML = `<div class="app-shell"><header>${revisionTest ? '<b>📖 Révision</b>' : headerLead()}<div class="header-actions">${tab === "revision" ? revision.header() : headerTools()}</div>${tab === "revision" ? revision.headerNav() : ''}</header><main>${content}</main>${active || quizRun || revisionTest ? "" : `<nav aria-label="Navigation principale">
     <button data-nav="practice" class="${tab === "practice" ? "current" : ""}"><span>◎</span> Pratiquer</button>
     <button data-nav="exams" class="${tab === "exams" ? "current" : ""}"><span>▣</span> Exam</button>
     <button data-nav="revision" class="${tab === "revision" ? "current" : ""}"><span>▧</span> Révision</button>

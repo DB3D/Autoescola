@@ -1,10 +1,14 @@
 import type { RevisionPage, RevisionTheme } from './types';
+import { frenchQuestions } from './french';
 
 type Item = [prompt: string, correct: string, wrong1: string, wrong2: string, explanation: string];
 const page = (title: string, kicker: string, facts: string[], tip: string, words: [string, string][], grammar: [string, string, string, string]): RevisionPage => ({ title, kicker, facts, tip, words, grammar: { title: grammar[0], rule: grammar[1], ca: grammar[2], fr: grammar[3] } });
 function theme(id: string, title: string, icon: string, color: string, subtitle: string, categories: string[], bankIds: string[], sources: string, articles: string, pages: RevisionPage[], items: Item[][]): RevisionTheme {
   return { id, title, icon, color, subtitle, categories, bankIds, sources, articles, pages,
-    questions: items.flatMap((rows, p) => rows.map(([prompt, correct, wrong1, wrong2, explanation], i) => ({ id: `${id}-${p + 1}-${i + 1}`, page: p, prompt, answers: [correct, wrong1, wrong2], correct: 0, explanation }))) };
+    questions: items.flatMap((rows, p) => rows.map(([prompt, correct, wrong1, wrong2, explanation], i) => {
+      const [promptFr, ...answersFr] = frenchQuestions[id][p * 7 + i];
+      return { id: `${id}-${p + 1}-${i + 1}`, page: p, prompt, answers: [correct, wrong1, wrong2], correct: 0, explanation, french: { prompt: promptFr, answers: answersFr } };
+    })) };
 }
 
 // Original, non-visual teaching questions: each answer is taught on its linked
@@ -12,20 +16,20 @@ function theme(id: string, title: string, icon: string, color: string, subtitle:
 export const themes: RevisionTheme[] = [
   theme('routes', 'Routes & vitesse', '🛣️', 'blue', 'Se repérer. Choisir son allure.', ['SPEED', 'LANES', 'HIGHWAY', 'DISTANCE'], ['952', '927', '7404', '7482', '1130'], 'Synthèse p. 5–6, 12–13 · QCM p. 3–4', '6, 8, 10, 20', [
     page('La bonne voie, la bonne vitesse', '90 · 60 · 50', [
-      '**Route générale : 90 km/h.** Route secondaire : **60 km/h**.',
-      '**En ville : 50 km/h.** Zone 30 : **30**. Zone 20 : **20**.',
-      'Ces plafonds s’appliquent **sans autre signalisation**, sous réserve des limites propres au véhicule.',
-      'Rouler **à droite**. Sur 3 voies à double sens : voie centrale pour dépasser ou tourner à gauche.',
-      '**Calçada** = chaussée · **carril** = voie · **vorera** = trottoir · **voral** = accotement.'
-    ], 'Une limite est un plafond. Une route difficile peut imposer de rouler bien plus lentement.', [['poblat', 'agglomération'], ['dreta / esquerra', 'droite / gauche'], ['carril / carrer', 'voie / rue']], ['Si no hi ha…', 'si = si · no hi ha = il n’y a pas.', 'Si no hi ha un altre senyal, el límit és de 60 km/h.', 'S’il n’y a pas d’autre panneau, la limite est de 60 km/h.']),
+      "Sur une **route générale**, la limite habituelle est de **90 km/h**. Sur une **route secondaire**, elle est de **60 km/h** : commence par identifier le type de route.",
+      "**En agglomération, la limite habituelle est de 50 km/h.** Dans une zone 30 ou une zone 20, le nombre indiqué donne la vitesse maximale de cette zone.",
+      "Ces valeurs s’appliquent **en l’absence d’une autre signalisation**. Un panneau ou une limite propre à ton véhicule peut imposer une vitesse différente.",
+      "On circule normalement **à droite**. Sur une chaussée à trois voies et à double sens, la voie centrale sert à dépasser ou à tourner à gauche ; on n’y roule pas en permanence.",
+      "La **calçada** est la chaussée, divisée en **carrils** (voies). La **vorera** est le trottoir destiné aux piétons ; le **voral** est l’accotement qui borde la chaussée."
+    ], "Une limitation indique une **vitesse maximale**, pas une vitesse à atteindre. Si la visibilité ou l’adhérence sont mauvaises, tu dois choisir une allure plus basse pour rester en sécurité.", [['poblat', 'agglomération'], ['dreta / esquerra', 'droite / gauche'], ['carril / carrer', 'voie / rue']], ['Si no hi ha…', "Si signifie « si » et no hi ha signifie « il n’y a pas ». Lis d’abord la condition : la limite annoncée ensuite vaut lorsqu’aucun autre panneau ne donne une consigne différente.", 'Si no hi ha un altre senyal, el límit és de 60 km/h.', 'S’il n’y a pas d’autre panneau, la limite est de 60 km/h.']),
     page('Garder une marge pour s’arrêter', 'VOIR → RÉAGIR → FREINER', [
-      '**Réaction** : entre voir le danger et commencer à freiner.',
-      '**Freinage** : du début du freinage à l’arrêt complet.',
-      '**Distance d’arrêt = réaction + freinage.**',
-      'Vitesse plus élevée → **distance d’arrêt plus longue**. Fatigue → réaction plus lente.',
-      'Pluie, faible visibilité : **ralentir + augmenter la distance de sécurité**.',
-      'Pouvoir s’arrêter **dans la zone visible**. Ralentir avant un virage ou un passage étroit.'
-    ], 'Aucun chiffre magique ne garantit l’arrêt. La chaussée, les pneus, la vitesse et ton état comptent.', [['frenada', 'freinage'], ['detenció', 'arrêt / immobilisation'], ['davant', 'devant']], ['Més / menys', 'més = plus · menys = moins. Repère le sens de la comparaison.', 'Més velocitat, més distància de frenada.', 'Plus de vitesse, plus de distance de freinage.'])
+      "Le **temps de réaction** commence quand tu perçois un danger et se termine quand tu commences à freiner. Pendant ce délai, la voiture continue d’avancer.",
+      "La **distance de freinage** est la distance parcourue entre le début du freinage et l’arrêt complet. Elle commence donc après la phase de réaction.",
+      "La **distance d’arrêt additionne la distance de réaction et la distance de freinage**. Pour éviter un obstacle, il faut disposer de toute cette distance devant soi.",
+      "Plus tu roules vite, plus la **distance nécessaire pour t’arrêter augmente**. La fatigue peut aussi retarder ta réaction : tu parcours alors davantage de mètres avant de freiner.",
+      "Sous la pluie ou avec une faible visibilité, **ralentis et augmente la distance de sécurité**. Cet espace supplémentaire te laisse une marge si le véhicule devant freine.",
+      "Choisis une allure qui permet de t’arrêter **dans la portion de route que tu vois**. Ralentis avant un virage ou un passage étroit, sans attendre de découvrir un obstacle."
+    ], "Imagine deux étapes : **je comprends le danger, puis la voiture freine**. De bons freins ne suppriment pas la première étape ; la vitesse, les pneus, la chaussée et ton état influencent l’ensemble.", [['frenada', 'freinage'], ['detenció', 'arrêt / immobilisation'], ['davant', 'devant']], ['Més / menys', "Més veut dire « plus » et menys veut dire « moins ». Dans une comparaison, repère ce qui augmente ou diminue : més velocitat annonce plus de vitesse, més distància annonce plus de distance.", 'Més velocitat, més distància de frenada.', 'Plus de vitesse, plus de distance de freinage.'])
   ], [
     [
       ['Sense un altre senyal, quin límit general té una carretera general?', '90 km/h.', '60 km/h.', '120 km/h.', 'Route générale : 90 km/h, sauf autre signalisation ou limite propre au véhicule.'],
@@ -47,21 +51,21 @@ export const themes: RevisionTheme[] = [
   ]),
   theme('priorites', 'Priorités & signaux', '🚦', 'rose', 'Savoir qui passe en premier.', ['PRIORITY', 'ROUNDABOUT', 'SIGNS', 'SIGNALING', 'PEDESTRIANS'], ['1155', '1147', '1666', '1694', '923'], 'Synthèse p. 8–9, 16 · QCM p. 3–4, 9–10', '12, 13, 14, 84', [
     page('Lire les consignes dans le bon ordre', 'AGENT → BALISAGE → FEU → PANNEAU → SOL', [
-      '**L’agent passe avant les autres signaux.** Même devant un feu vert.',
-      'Ensuite : **balisage temporaire**, puis **feux**, puis **panneaux**, puis **marquage au sol**.',
-      'Deux signaux du même type se contredisent ? Retenir **le plus restrictif**.',
-      '**STOP : arrêt complet.** Respecter la ligne ; si la vue manque, avancer prudemment et s’arrêter à nouveau avant de s’engager.',
-      '**Cediu el pas** : laisser passer. S’arrêter si nécessaire.',
-      'Ne pas entrer dans un carrefour **si l’on risque de le bloquer**.'
-    ], '« Je suis prioritaire » ne veut jamais dire « je peux bloquer le passage ».', [['senyal', 'signal / panneau'], ['semàfor', 'feu tricolore'], ['aturar-se', 's’arrêter']], ['Cal / no cal', 'cal + infinitif = il faut · no cal = il n’est pas nécessaire.', 'Al STOP cal aturar-se.', 'Au STOP, il faut s’arrêter.']),
+      "**L’ordre d’un agent est prioritaire sur les autres signaux.** S’il te demande de t’arrêter, tu t’arrêtes, même lorsque le feu est vert.",
+      "Après l’agent viennent **le balisage temporaire, les feux, les panneaux, puis le marquage au sol**. Cet ordre permet de choisir quelle consigne suivre lorsqu’elles se contredisent.",
+      "Si deux signaux **du même type** se contredisent, suis le plus restrictif. Il s’agit de la consigne qui limite le plus ce que tu peux faire.",
+      "Au **STOP, l’arrêt doit être complet**, à la ligne prévue. Si tu ne vois pas suffisamment, avance prudemment puis arrête-toi de nouveau avant de t’engager.",
+      "**Cediu el pas** signifie « cédez le passage ». Tu dois laisser passer les usagers prioritaires et t’arrêter si cela est nécessaire pour les laisser circuler.",
+      "N’entre pas dans un carrefour si tu risques de **rester bloqué au milieu**. Même avec la priorité, attends de pouvoir dégager le passage de l’autre côté."
+    ], "Au STOP, **ralentir ne suffit jamais** : les roues doivent s’immobiliser. Au cédez-le-passage, l’objectif est de laisser passer ; l’arrêt dépend donc de la situation.", [['senyal', 'signal / panneau'], ['semàfor', 'feu tricolore'], ['aturar-se', 's’arrêter']], ['Cal / no cal', "Cal suivi d’un infinitif signifie « il faut faire cette action ». No cal signifie « ce n’est pas nécessaire » : cela retire l’obligation, mais n’interdit pas l’action.", 'Al STOP cal aturar-se.', 'Au STOP, il faut s’arrêter.']),
     page('Carrefours, ronds-points, piétons', 'DROITE · DÉJÀ DEDANS · PIÉTONS', [
-      'Carrefour **sans signalisation** : priorité à droite, en règle générale.',
-      'Rond-point : priorité aux véhicules **déjà dans l’anneau**, sauf consigne contraire.',
-      '**Rotonda = glorieta.** Deux mots pour rond-point.',
-      'En tournant : céder aux piétons qui traversent la voie où tu entres, **même sans passage marqué**.',
-      'Au passage piéton : **laisser traverser**. Près d’enfants : ralentir et anticiper.',
-      'Un ballon arrive sur la route ? **Un enfant peut suivre**.'
-    ], 'Dans un rond-point, ne transpose pas automatiquement la priorité à droite du carrefour ordinaire.', [['cruïlla', 'carrefour'], ['vianant', 'piéton'], ['cedir el pas', 'céder le passage']], ['Encara que…', 'encara que = même si. La règle reste valable malgré la situation.', 'Cediu el pas, encara que no hi hagi pas senyalitzat.', 'Cédez le passage, même s’il n’y a pas de passage marqué.'])
+      "À un carrefour **sans signalisation**, la règle générale est la priorité à droite. Tu laisses donc passer le véhicule qui arrive de ton côté droit.",
+      "Dans un rond-point, ce sont les véhicules **déjà dans l’anneau** qui ont la priorité, sauf indication contraire. Avant d’entrer, vérifie que tu peux le faire sans les gêner.",
+      "Les mots catalans **rotonda et glorieta** désignent tous les deux un rond-point. Une question peut employer l’un ou l’autre pour parler de la même situation.",
+      "Quand tu tournes, laisse passer les piétons qui traversent la rue dans laquelle tu entres. Cette priorité existe **même sans passage piéton marqué** à cet endroit.",
+      "Au passage piéton, **laisse les personnes traverser**. Près d’une école ou d’enfants, réduis ton allure et surveille aussi les trottoirs pour anticiper une traversée.",
+      "Un ballon qui arrive sur la chaussée peut annoncer **un enfant qui le suit**. Ralentis et prépare-toi à t’arrêter avant même de voir l’enfant."
+    ], "Pose-toi la question **« où suis-je ? »** avant d’appliquer une priorité. Le carrefour ordinaire sans signalisation et le rond-point ne suivent pas le même repère.", [['cruïlla', 'carrefour'], ['vianant', 'piéton'], ['cedir el pas', 'céder le passage']], ['Encara que…', "Encara que signifie « même si ». Cette expression précise qu’une règle reste valable malgré une circonstance : ici, l’absence de passage marqué ne supprime pas la priorité décrite.", 'Cediu el pas, encara que no hi hagi pas senyalitzat.', 'Cédez le passage, même s’il n’y a pas de passage marqué.'])
   ], [
     [
       ['Un agent ordena aturar-se i el semàfor és verd. Què cal fer?', 'Aturar-se.', 'Continuar perquè el semàfor és verd.', 'Seguir només les marques viàries.', 'L’ordre de l’agent prime sur le feu.'],
@@ -83,21 +87,21 @@ export const themes: RevisionTheme[] = [
   ]),
   theme('manoeuvres', 'Tourner & s’insérer', '↪️', 'teal', 'Observer. Signaler. Manœuvrer.', ['MANEUVER', 'SIGNALING', 'LANES', 'HIGHWAY'], ['941', '947', '942', '953', '1143'], 'Synthèse p. 8–9, 13 · QCM p. 3–4', '11, 16, 23, 24, 25, 35', [
     page('Avant de changer de direction', 'RÉTROS → CLIGNOTANT → MANŒUVRE', [
-      'Régler **siège, dossier et rétroviseurs** avant de partir.',
-      'Observer **devant, derrière et sur les côtés**. Vérifier aussi l’angle mort.',
-      '**Clignotant assez tôt.** Il annonce une intention ; il ne donne pas la priorité.',
-      'Vérifier **vitesse + distance** des véhicules qui approchent.',
-      '**Canvi de direcció** : tourner. **Canvi de sentit** : repartir dans le sens inverse.',
-      'Pour tourner à droite : se rapprocher du **bord droit**, sans mettre les autres en danger.'
-    ], 'Un angle mort reste invisible dans les rétroviseurs : un contrôle adapté est nécessaire.', [['girar', 'tourner'], ['intermitent', 'clignotant'], ['angle mort', 'angle mort']], ['Abans de + infinitif', 'abans de = avant de · després de = après avoir / après.', 'Abans de girar, hem de mirar.', 'Avant de tourner, nous devons regarder.']),
+      "Règle **ton siège, ton dossier et tes rétroviseurs avant le départ**. Tu dois pouvoir atteindre les commandes et observer la circulation sans te réinstaller pendant une manœuvre.",
+      "Avant de tourner, observe **devant, derrière et sur les côtés**. Vérifie aussi l’angle mort : cette zone n’apparaît pas dans les rétroviseurs.",
+      "Mets le **clignotant suffisamment tôt** pour que les autres comprennent ton intention. Il annonce la manœuvre, mais ne te donne jamais la priorité pour l’effectuer.",
+      "Évalue **la vitesse et la distance des véhicules qui approchent**. Un véhicule encore éloigné peut arriver rapidement : sa distance seule ne suffit pas à juger le danger.",
+      "Un **canvi de direcció** est un changement de direction, par exemple tourner dans une rue. Un **canvi de sentit** est un demi-tour pour repartir dans le sens opposé.",
+      "Pour tourner à droite, rapproche-toi du **bord droit de la chaussée**. Vérifie que ce placement ne met pas en danger un usager situé à côté de toi."
+    ], "Retiens la suite **observer → annoncer → manœuvrer**. Le clignotant informe les autres ; tes contrôles servent à vérifier que la manœuvre est réellement possible.", [['girar', 'tourner'], ['intermitent', 'clignotant'], ['angle mort', 'angle mort']], ['Abans de + infinitif', "Abans de suivi d’un infinitif signifie « avant de ». Dans abans de girar, hem de mirar, on regarde d’abord, puis on tourne. Després de indique au contraire ce qui vient après.", 'Abans de girar, hem de mirar.', 'Avant de tourner, nous devons regarder.']),
     page('Insertion, demi-tour, marche arrière', 'LA PLACE DOIT ÊTRE LIBRE', [
-      'En s’insérant : **céder aux véhicules déjà sur la voie**.',
-      '**Carril d’acceleració** : adapter sa vitesse pour entrer. Signaler et vérifier l’espace.',
-      '**Carril de desacceleració** : voie pour sortir et ralentir.',
-      'Demi-tour : seulement **autorisé + visible + sans danger**. Pas en virage sans visibilité ni en tunnel, sauf autorisation expresse.',
-      'Marche arrière : pour une manœuvre nécessaire, sur **le minimum de distance**. Pas pour rouler normalement.',
-      'Avant de reculer : vérifier les obstacles. **S’arrêter si quelqu’un approche**.'
-    ], 'Si la manœuvre devient dangereuse, on y renonce. Les feux de détresse ne la rendent pas autorisée.', [['incorporar-se', 's’insérer'], ['marxa enrere', 'marche arrière'], ['sentit contrari', 'sens opposé']], ['Només / llevat de', 'només = seulement · llevat de = sauf. Ces mots limitent une autorisation.', 'Fem marxa enrere només el mínim indispensable.', 'Nous reculons seulement du minimum indispensable.'])
+      "Quand tu t’insères sur une route, **cède le passage aux véhicules qui y circulent déjà**. Tu dois choisir un espace qui permet d’entrer sans les obliger à réagir brusquement.",
+      "Le **carril d’acceleració** est la voie d’accélération. Elle sert à adapter ta vitesse avant l’insertion ; tu dois aussi signaler ton intention et vérifier l’espace disponible.",
+      "Le **carril de desacceleració** est la voie de décélération. Elle facilite la sortie de la route et la réduction de vitesse pour rejoindre la voie de sortie.",
+      "Un demi-tour exige une manœuvre **autorisée, bien visible et sans danger**. Il est interdit dans un virage sans visibilité ou dans un tunnel, sauf autorisation expresse pour ce dernier.",
+      "La marche arrière sert à effectuer une **manœuvre nécessaire sur la distance minimale**. Elle ne remplace pas la circulation normale lorsque tu as manqué ta direction.",
+      "Avant de reculer, vérifie que l’espace est libre. Si une personne approche et qu’il existe un risque, **arrête immédiatement la manœuvre** au lieu d’essayer de la finir vite."
+    ], "Si tu n’as plus assez de place ou de visibilité, **renonce à la manœuvre**. Les feux de détresse n’effacent ni le danger ni une interdiction.", [['incorporar-se', 's’insérer'], ['marxa enrere', 'marche arrière'], ['sentit contrari', 'sens opposé']], ['Només / llevat de', "Només signifie « seulement » : il réduit ce qui est permis. Llevat de signifie « sauf » et introduit une exception. Repère ces mots avant de conclure qu’une action est toujours autorisée.", 'Fem marxa enrere només el mínim indispensable.', 'Nous reculons seulement du minimum indispensable.'])
   ], [
     [
       ['Quan hem de regular el seient i els retrovisors?', 'Abans d’iniciar la marxa.', 'Mentre girem.', 'Només després d’un accident.', 'Les réglages se font avant le départ.'],
@@ -119,21 +123,21 @@ export const themes: RevisionTheme[] = [
   ]),
   theme('depassements', 'Dépasser sans danger', '🚙', 'amber', 'La visibilité avant la vitesse.', ['OVERTAKING', 'BICYCLE', 'ATTITUDE'], ['926', '920', '921', '1447'], 'Synthèse p. 9 · QCM p. 3–6', '26, 27, 28', [
     page('Préparer un dépassement', 'VOIR LOIN · GARDER UNE ISSUE', [
-      'En règle générale : dépasser **par la gauche**.',
-      'Vérifier **devant + derrière + sens opposé + signalisation**.',
-      'Prévoir l’espace pour **dépasser puis se rabattre** sans gêner.',
-      'Virage, sommet, brouillard : ne pas empiéter sur le sens opposé **sans visibilité suffisante**.',
-      'Avant un déplacement latéral : **signaler** et vérifier qu’aucun véhicule ne dépasse déjà.',
-      'La situation change ? **Renoncer** si le dépassement n’est plus sûr.'
-    ], 'Le désir de gagner quelques secondes n’est pas un critère de sécurité.', [['avançar', 'dépasser un véhicule'], ['canvi de rasant', 'sommet / changement de pente'], ['visibilitat', 'visibilité']], ['Hem de / podem', 'hem de = nous devons · podem = nous pouvons. Obligation et possibilité sont différentes.', 'Abans d’avançar, hem de comprovar la visibilitat.', 'Avant de dépasser, nous devons vérifier la visibilité.']),
+      "En règle générale, tu dépasses **par la gauche** du véhicule devant toi. Les possibilités de dépassement par la droite correspondent à des situations particulières.",
+      "Avant de commencer, vérifie **la route devant, les véhicules derrière, le sens opposé et la signalisation**. Aucun de ces contrôles ne remplace les autres.",
+      "Il faut assez d’espace pour **dépasser puis revenir à droite sans gêner**. Voir une place pour se décaler ne suffit pas : tu dois prévoir toute la manœuvre.",
+      "Un virage, un sommet ou du brouillard peuvent cacher un véhicule en face. Ne t’engage pas sur le sens opposé **sans visibilité suffisante** pour dépasser.",
+      "Avant de te décaler, vérifie qu’un véhicule **n’a pas déjà commencé à te dépasser**, puis signale ton intention. Ton clignotant ne l’oblige pas à te laisser passer.",
+      "Si la situation change et que le dépassement n’est plus sûr, **renonce à le poursuivre**. L’objectif est de garder une marge de sécurité, pas de terminer à tout prix."
+    ], "Imagine la manœuvre jusqu’au bout : **sortir de ma file → passer le véhicule → retrouver ma place**. Si tu ne peux pas prévoir la dernière étape en sécurité, attends.", [['avançar', 'dépasser un véhicule'], ['canvi de rasant', 'sommet / changement de pente'], ['visibilitat', 'visibilité']], ['Hem de / podem', "Hem de signifie « nous devons » : c’est une obligation. Podem signifie « nous pouvons » : c’est une possibilité. Vérifier la visibilité est obligatoire avant d’envisager un dépassement.", 'Abans d’avançar, hem de comprovar la visibilitat.', 'Avant de dépasser, nous devons vérifier la visibilité.']),
     page('Pendant et après la manœuvre', 'NE PAS SERRER · NE PAS FORCER', [
-      'Véhicule dépassé : **ne pas accélérer**. Faciliter la manœuvre.',
-      'Avant de revenir à droite : laisser au moins **deux fois la longueur du véhicule dépassé**.',
-      'Ne pas dépasser un véhicule **arrêté pour laisser traverser des piétons**.',
-      'Hors agglomération, vélo ou deux-roues : **au moins 1,5 m d’écart latéral**. Attendre si l’espace manque.',
-      'En ville, dépassement par la droite possible avec **au moins 2 voies dans le même sens**, sans danger.',
-      '**Avançar** = dépasser un véhicule. **Sobresortir** = dépasser du gabarit : attention au contexte.'
-    ], 'L’exception urbaine par la droite ne permet pas de dépasser partout par la droite.', [['vehicle avançat', 'véhicule dépassé'], ['llargada', 'longueur'], ['separació lateral', 'écart latéral']], ['Almenys / com a mínim', 'Les deux signifient au moins. Ils donnent un minimum, pas un maximum.', 'Calen almenys dos carrils en el mateix sentit.', 'Il faut au moins deux voies dans le même sens.'])
+      "Si un autre véhicule te dépasse, **n’accélère pas**. Facilite son passage afin qu’il puisse terminer la manœuvre et revenir à droite en sécurité.",
+      "Avant de te rabattre, laisse devant le véhicule dépassé un espace d’au moins **deux fois sa longueur**. Tu évites ainsi de revenir trop près de son avant.",
+      "Ne dépasse pas un véhicule **arrêté pour laisser traverser des piétons**. Il peut masquer une personne qui continue sa traversée devant lui.",
+      "Hors agglomération, garde **au moins 1,5 m d’écart latéral** pour dépasser un vélo ou un deux-roues. Si la largeur disponible ne le permet pas, attends.",
+      "En ville, dépasser par la droite peut être possible lorsqu’il y a **au moins deux voies dans le même sens**. La manœuvre doit toujours pouvoir se faire sans danger.",
+      "**Avançar** signifie dépasser un véhicule ; **sobresortir** décrit quelque chose qui dépasse du gabarit. Par exemple, un bagage peut dépasser du véhicule sans effectuer un dépassement routier."
+    ], "Distingue les deux espaces : **sur le côté**, tu laisses de la place au deux-roues ; **devant le véhicule dépassé**, tu gardes une marge avant de revenir à droite.", [['vehicle avançat', 'véhicule dépassé'], ['llargada', 'longueur'], ['separació lateral', 'écart latéral']], ['Almenys / com a mínim', "Almenys et com a mínim signifient tous deux « au moins ». Le nombre donne un minimum : almenys dos carrils veut dire deux voies ou davantage, jamais une seule.", 'Calen almenys dos carrils en el mateix sentit.', 'Il faut au moins deux voies dans le même sens.'])
   ], [
     [
       ['Per quin costat s’avança com a norma general?', 'Per l’esquerra.', 'Per la dreta.', 'Pel voral.', 'La règle générale est le dépassement par la gauche.'],
@@ -155,21 +159,21 @@ export const themes: RevisionTheme[] = [
   ]),
   theme('stationnement', 'Arrêt & stationnement', '🅿️', 'blue', 'Trois mots. Des situations différentes.', ['PARKING', 'STOPPING'], ['1154', '1180', '919', '1266'], 'Synthèse p. 9 · QCM p. 9–10', '3, 29, 30, 31, 32, 33', [
     page('Parada, estacionament, detenció', 'VOLONTAIRE OU IMPOSÉ ?', [
-      '**Parada** : arrêt volontaire pour faire monter/descendre ou charger/décharger.',
-      '**Estacionament** : stationnement volontaire hors de ces opérations.',
-      '**Detenció** : immobilisation imposée par la circulation, une panne ou une urgence.',
-      'Feu rouge ou embouteillage : **detenció**. Déposer un passager : **parada**.',
-      'Se placer **à droite** ; en ville à sens unique, aussi à gauche si l’emplacement le permet.',
-      'Ne jamais créer de **danger ni d’obstacle** pour les autres.'
-    ], 'Le mot « arrêt » en français ne suffit pas : demande-toi pourquoi le véhicule est immobilisé.', [['aturat', 'arrêté'], ['aparcament', 'parking / stationnement'], ['sentit únic', 'sens unique']], ['També / tampoc', 'també = aussi · tampoc = non plus. Une lettre peut inverser le sens.', 'En una via urbana de sentit únic, també a l’esquerra.', 'Dans une rue à sens unique, aussi à gauche.']),
+      "Une **parada** est un arrêt volontaire pour faire monter ou descendre quelqu’un, ou pour charger ou décharger. Le véhicule s’immobilise pour réaliser cette opération.",
+      "Un **estacionament** est un stationnement volontaire qui ne correspond pas à ces opérations. Tu laisses par exemple ta voiture garée pendant que tu fais autre chose.",
+      "Une **detenció** est une immobilisation imposée par la circulation, une panne ou une urgence. Tu t’arrêtes parce que la situation t’y oblige, pas pour déposer quelqu’un.",
+      "Au feu rouge ou dans un embouteillage, pense **detenció**. Si tu t’arrêtes pour déposer un passager, pense **parada** : c’est la raison de l’arrêt qui change le mot.",
+      "Place normalement le véhicule **du côté droit**. En ville, dans une rue à sens unique, tu peux aussi te placer à gauche si l’emplacement et la signalisation le permettent.",
+      "Même pour une courte immobilisation, ne crée **ni danger ni obstacle**. Vérifie que les autres usagers peuvent te voir et continuer à circuler en sécurité."
+    ], "Pour choisir le bon mot catalan, demande-toi **« pourquoi la voiture est-elle arrêtée ? »**. Le seul mot français « arrêt » ne permet pas de distinguer ces trois situations.", [['aturat', 'arrêté'], ['aparcament', 'parking / stationnement'], ['sentit únic', 'sens unique']], ['També / tampoc', "També signifie « aussi » dans une phrase affirmative. Tampoc signifie « non plus » dans une phrase négative. Dans l’exemple, també ajoute le côté gauche aux possibilités déjà indiquées.", 'En una via urbana de sentit únic, també a l’esquerra.', 'Dans une rue à sens unique, aussi à gauche.']),
     page('Choisir et quitter sa place', 'VISIBILITÉ · FREIN · CONTRÔLE', [
-      'Pas d’arrêt ni de stationnement **sur un passage piéton, en tunnel ou sans visibilité**.',
-      'Ne pas stationner dans un **emplacement réservé au transport public**.',
-      'Même emplacement sur la voie publique : **15 jours consécutifs maximum**, sous réserve des restrictions locales.',
-      'Stationner en pente, boîte manuelle : **frein de stationnement + 1re en montée / marche arrière en descente**.',
-      'Avant d’ouvrir la porte : vérifier **piétons, vélos et véhicules**.',
-      'Pour repartir : **observer, signaler, céder le passage**.'
-    ], 'Les feux de détresse ne transforment pas une place interdite en place autorisée.', [['pujada / baixada', 'montée / descente'], ['fre d’estacionament', 'frein de stationnement'], ['romandre', 'rester']], ['No es pot + infinitif', 'no es pot = on ne peut pas. Dans une règle de circulation, c’est une interdiction.', 'No es pot estacionar en un túnel.', 'On ne peut pas stationner dans un tunnel.'])
+      "Ne t’arrête pas et ne stationne pas **sur un passage piéton, dans un tunnel ou à un endroit sans visibilité**. Ton véhicule pourrait masquer un danger ou en créer un.",
+      "Ne stationne pas sur une **place réservée aux transports publics**. Même si elle paraît libre, elle doit rester disponible pour l’usage auquel elle est destinée.",
+      "Sur la voie publique, le stationnement au même emplacement est limité à **15 jours consécutifs maximum**. Vérifie aussi les restrictions locales, qui peuvent imposer une durée plus courte.",
+      "Avec une boîte manuelle, serre le **frein de stationnement** en pente. Engage aussi la **première en montée** ou la **marche arrière en descente** pour immobiliser le véhicule.",
+      "Avant d’ouvrir une porte, vérifie l’arrivée de **piétons, de cyclistes et de véhicules**. Une portière ouverte brusquement peut couper leur trajectoire.",
+      "Pour quitter ta place, **observe, signale ton intention et cède le passage**. Les véhicules déjà en circulation ne doivent pas être surpris par ton départ."
+    ], "Une place doit être sûre **quand tu arrives, pendant le stationnement et quand tu repars**. Les feux de détresse ne rendent pas autorisé un emplacement interdit.", [['pujada / baixada', 'montée / descente'], ['fre d’estacionament', 'frein de stationnement'], ['romandre', 'rester']], ['No es pot + infinitif', "No es pot suivi d’un infinitif signifie « on ne peut pas ». Dans une règle de stationnement, cela exprime une interdiction : no es pot estacionar veut dire qu’on n’a pas le droit d’y stationner.", 'No es pot estacionar en un túnel.', 'On ne peut pas stationner dans un tunnel.'])
   ], [
     [
       ['Ens immobilitzem per un semàfor vermell. Què és?', 'Una detenció.', 'Un estacionament voluntari.', 'Una operació de càrrega.', 'Le feu impose l’immobilisation : detenció.'],
@@ -191,21 +195,21 @@ export const themes: RevisionTheme[] = [
   ]),
   theme('eclairage', 'Éclairage & tunnels', '💡', 'violet', 'Voir et être vu, sans éblouir.', ['LIGHTS', 'TUNNEL', 'SIGNALING'], ['951', '931', '1232', '1531'], 'Synthèse p. 4–5, 11 · QCM p. 5–6', '73, 75, 76, 77, 78', [
     page('Reconnaître les feux dans le texte', 'POSICIÓ · ENCREUAMENT · CARRETERA', [
-      '**Position** : rendre le véhicule visible. Ce ne sont pas les feux pour éclairer loin.',
-      '**Encreuament** : feux de croisement. **Carretera** : feux de route, plus éblouissants.',
-      'Risque d’éblouir quelqu’un : **passer en croisement**, même si l’autre ne le fait pas.',
-      'Véhicule arrêté ou stationné : **pas de feux de route**.',
-      '**Marxa enrere** : feu blanc à l’arrière. Feux stop : rouges, plus intenses que la position.',
-      '**Intermitents** : clignotants. Signaler assez tôt, puis les couper après la manœuvre.'
-    ], '« Encreuament » veut dire croisement : dans « llums d’encreuament », il s’agit des feux, pas d’un carrefour.', [['enllumenat', 'éclairage'], ['enlluernar', 'éblouir'], ['encendre / apagar', 'allumer / éteindre']], ['Per + infinitif', 'per = pour : la tournure donne le but de l’action.', 'Els llums de posició serveixen per fer visible el vehicle.', 'Les feux de position servent à rendre le véhicule visible.']),
+      "Les **feux de position** servent surtout à rendre le véhicule visible aux autres. Ils ne sont pas conçus pour éclairer suffisamment loin devant toi.",
+      "Les **llums d’encreuament** sont les feux de croisement. Les **llums de carretera** sont les feux de route : ils éclairent plus loin, mais peuvent éblouir les autres usagers.",
+      "Dès que tes feux de route risquent d’éblouir quelqu’un, **repasse en feux de croisement**. Tu dois le faire même si l’autre conducteur ne change pas ses propres feux.",
+      "N’utilise pas les **feux de route lorsque le véhicule est arrêté ou stationné**. Leur puissance peut gêner les autres alors que tu n’as pas besoin d’éclairer loin pour avancer.",
+      "Le **feu de marche arrière** est blanc et placé à l’arrière. Les feux stop sont rouges et brillent plus fortement que les feux de position pour annoncer le freinage.",
+      "Les **intermitents** sont les clignotants. Allume-les assez tôt pour annoncer une manœuvre, puis éteins-les une fois celle-ci terminée pour ne pas tromper les autres."
+    ], "Retiens deux fonctions : **être vu** avec les feux de position, et **voir la route** avec les feux adaptés. Dans llums d’encreuament, le mot croisement désigne bien un type de feux.", [['enllumenat', 'éclairage'], ['enlluernar', 'éblouir'], ['encendre / apagar', 'allumer / éteindre']], ['Per + infinitif', "Per suivi d’un infinitif signifie « pour » et explique le but. Dans per fer visible el vehicle, on explique à quoi servent les feux : à rendre le véhicule visible.", 'Els llums de posició serveixen per fer visible el vehicle.', 'Les feux de position servent à rendre le véhicule visible.']),
     page('Choisir selon la situation', 'TUNNEL = CROISEMENT, MÊME DE JOUR', [
-      'En tunnel : **feux de croisement au minimum**, même de jour et même si le tunnel est éclairé.',
-      'Moto : **croisement de jour comme de nuit**.',
-      'Antibrouillard arrière : seulement en conditions **particulièrement défavorables**, pas à la moindre pluie.',
-      'La nuit : choisir une allure permettant de s’arrêter **dans la zone éclairée**.',
-      'Ébloui : **ralentir**, et s’arrêter si nécessaire pour rester en sécurité.',
-      'Tunnel : suivre **feux, panneaux et instructions**. Feu d’entrée rouge : ne pas entrer.'
-    ], 'Un tunnel éclairé ne dispense pas d’allumer ses propres feux.', [['boira', 'brouillard'], ['de dia / de nit', 'de jour / de nuit'], ['si cal', 'si nécessaire']], ['Encara que / també', 'encara que = même si · també = aussi. Repère ce qui ne change pas l’obligation.', 'Cal encendre els llums encara que el túnel estigui il·luminat.', 'Il faut allumer les feux même si le tunnel est éclairé.'])
+      "Dans un tunnel, allume **au minimum les feux de croisement**. Cette obligation reste valable en plein jour et lorsque le tunnel possède son propre éclairage.",
+      "À moto, les **feux de croisement doivent être allumés de jour comme de nuit**. Ne réserve donc pas leur utilisation aux seuls moments où il fait sombre.",
+      "Le **feu antibrouillard arrière** s’utilise dans des conditions particulièrement défavorables. Une petite pluie ne suffit pas à justifier son utilisation.",
+      "La nuit, adapte ta vitesse pour pouvoir t’arrêter **dans la zone éclairée que tu vois**. Tu dois conserver assez de distance pour réagir à un obstacle qui y apparaît.",
+      "Si tu es ébloui, **ralentis pour retrouver une marge de sécurité**. Arrête-toi si nécessaire lorsque tu ne peux plus continuer à conduire en sécurité.",
+      "À l’entrée d’un tunnel, respecte les **feux, les panneaux et les instructions**. Un feu rouge interdit l’entrée, même si tes propres feux sont allumés."
+    ], "L’éclairage d’un tunnel éclaire l’endroit ; **tes feux rendent aussi ton véhicule visible**. La présence de lampes dans le tunnel ne remplace donc pas tes feux de croisement.", [['boira', 'brouillard'], ['de dia / de nit', 'de jour / de nuit'], ['si cal', 'si nécessaire']], ['Encara que / també', "Encara que signifie « même si » : la circonstance annoncée ne supprime pas l’obligation. També signifie « aussi » et ajoute une situation dans laquelle la règle s’applique.", 'Cal encendre els llums encara que el túnel estigui il·luminat.', 'Il faut allumer les feux même si le tunnel est éclairé.'])
   ], [
     [
       ['Quina és la funció principal dels llums de posició?', 'Fer visible el vehicle.', 'Il·luminar molt lluny.', 'Indicar un canvi de sentit.', 'Position = être vu.'],
@@ -227,21 +231,21 @@ export const themes: RevisionTheme[] = [
   ]),
   theme('meteo', 'Pluie, neige & montagne', '🌧️', 'blue', 'Moins d’adhérence, plus de marge.', ['WEATHER', 'DISTANCE', 'SPEED'], ['930', '1144', '1130', '927'], 'Synthèse p. 11–12 · QCM p. 5–6', '6, 10, 72', [
     page('Pluie, brouillard et vent', 'RALENTIR + ESPACER + ADOUCIR', [
-      'Pluie : **moins d’adhérence et de visibilité**, freinage plus long.',
-      'Les **premières gouttes** rendent la chaussée particulièrement glissante.',
-      '**Aquaplaning** : le pneu n’évacue plus assez d’eau ; il perd le contact avec le sol.',
-      'Eau sur la route : réduire l’allure, éviter **freinage et gestes brusques**.',
-      'Brouillard : s’arrêter dans la zone visible ; **ne pas coller** le véhicule devant.',
-      'Vent latéral : tenir le volant fermement. À la sortie d’une zone abritée, prévoir un **écart de trajectoire**.'
-    ], 'Mémo : PLUJA ressemble à PLUIE. BOIRA : imagine une « bouillie » de brouillard devant toi (association sonore).', [['pluja', 'pluie'], ['moll / eixut', 'mouillé / sec'], ['vent lateral', 'vent de côté']], ['Menys… més…', 'menys = moins · més = plus. Les effets peuvent aller dans des sens opposés.', 'Amb pluja, menys adherència i més distància de frenada.', 'Avec la pluie, moins d’adhérence et plus de distance de freinage.']),
+      "Sous la pluie, les pneus ont **moins d’adhérence** et tu vois moins bien. Le freinage peut demander davantage de distance : réduis ta vitesse et garde plus d’espace devant toi.",
+      "Méfie-toi particulièrement des **premières gouttes de pluie**. La chaussée peut devenir très glissante dès le début de l’averse, même si elle n’est pas encore couverte d’eau.",
+      "L’**aquaplaning** apparaît quand le pneu n’évacue plus suffisamment l’eau. Une couche d’eau lui fait perdre le contact avec la chaussée, ce qui compromet le contrôle du véhicule.",
+      "Quand il y a de l’eau sur la route, réduis l’allure et agis **avec douceur sur le volant et les pédales**. Évite les freinages brusques et les changements soudains de direction.",
+      "Dans le brouillard, roule assez lentement pour pouvoir t’arrêter **dans la zone visible**. Ne colle pas le véhicule devant pour suivre ses feux : garde ta distance de sécurité.",
+      "Par vent latéral, tiens fermement le volant. En sortant d’une zone abritée, le vent peut brusquement pousser le véhicule et **modifier sa trajectoire**."
+    ], "Retiens **ralentir, espacer, adoucir** : moins de vitesse, plus d’espace, des gestes plus doux. Pour le vocabulaire, PLUJA rappelle PLUIE ; imagine une « bouillie » de brouillard pour BOIRA.", [['pluja', 'pluie'], ['moll / eixut', 'mouillé / sec'], ['vent lateral', 'vent de côté']], ['Menys… més…', "Menys signifie « moins » et més signifie « plus ». Une même situation peut produire deux effets opposés : avec la pluie, l’adhérence diminue tandis que la distance de freinage augmente.", 'Amb pluja, menys adherència i més distància de frenada.', 'Avec la pluie, moins d’adhérence et plus de distance de freinage.']),
     page('Neige, verglas et descente', 'DOUCEUR AVANT TOUT', [
-      '**Neu** = neige. **Gel** = glace / verglas. Réduire la vitesse et augmenter fortement les distances.',
-      'Sur sol glissant : accélérer, tourner et freiner **en douceur**.',
-      'Avant un virage : **ralentir avant d’entrer**, sans attendre le milieu.',
-      'En descente : rapport adapté et **frein moteur**. Pas de descente au point mort.',
-      'Du **1er novembre au 15 mai** : emporter des chaînes prêtes à servir, sauf pneus hiver ou M+S.',
-      'Chaussée enneigée/verglacée : équipements adaptés obligatoires selon les conditions et consignes. **Pas de chaînes sur route dégagée**.'
-    ], 'Mémo : GEL se lit comme en français. BAIXADA : pense « bas » pour la descente.', [['neu / gel', 'neige / verglas'], ['cadenes', 'chaînes'], ['punt mort', 'point mort']], ['Llevat que…', 'llevat que = sauf si. La suite indique l’exception.', 'Cal portar cadenes, llevat que portem pneumàtics d’hivern o M+S.', 'Il faut emporter des chaînes, sauf si l’on a des pneus hiver ou M+S.'])
+      "**Neu** signifie neige et **gel** signifie glace ou verglas. Ces surfaces réduisent fortement l’adhérence : ralentis et laisse beaucoup plus de distance avec le véhicule devant.",
+      "Sur un sol glissant, **accélère, tourne et freine en douceur**. Des actions brusques sur les commandes peuvent faire perdre aux pneus leur adhérence.",
+      "Prépare ta vitesse **avant d’entrer dans un virage**. N’attends pas d’être au milieu pour découvrir que ton allure est trop élevée pour la courbe.",
+      "En descente, garde un **rapport adapté pour utiliser le frein moteur**. Au point mort, cette aide au ralentissement disparaît : ne descends donc pas ainsi.",
+      "Du **1er novembre au 15 mai**, tu dois emporter des chaînes prêtes à servir, sauf si le véhicule est équipé de pneus hiver ou M+S. Le beau temps du jour ne supprime pas ce repère saisonnier.",
+      "Sur chaussée enneigée ou verglacée, utilise les équipements adaptés aux conditions et aux consignes. En revanche, **les chaînes sont interdites sur une chaussée dégagée de neige et de glace**."
+    ], "Distingue **emporter des chaînes** et **les monter sur les pneus**. Elles doivent être disponibles pendant la période prévue, mais on ne roule pas avec des chaînes sur une route dégagée. GEL rappelle le gel français ; BAIXADA fait penser au bas d’une descente.", [['neu / gel', 'neige / verglas'], ['cadenes', 'chaînes'], ['punt mort', 'point mort']], ['Llevat que…', "Llevat que signifie « sauf si » et introduit l’exception à la règle. Dans l’exemple, les pneus hiver ou M+S expliquent dans quel cas l’obligation d’emporter des chaînes ne s’applique pas.", 'Cal portar cadenes, llevat que portem pneumàtics d’hivern o M+S.', 'Il faut emporter des chaînes, sauf si l’on a des pneus hiver ou M+S.'])
   ], [
     [
       ['Amb pluja, què passa normalment amb l’adherència?', 'Disminueix.', 'Augmenta sempre.', 'No canvia mai.', 'Pluie = adhérence réduite.'],
@@ -263,21 +267,21 @@ export const themes: RevisionTheme[] = [
   ]),
   theme('vigilance', 'Vigilance & alcool', '🧠', 'rose', 'Un conducteur prêt à réagir.', ['ALCOHOL', 'FATIGUE', 'ATTITUDE', 'SAFETY'], ['922', '937', '1124', '921'], 'Synthèse p. 5–7 · QCM p. 7–8', '4, 79, 80, 81, 82', [
     page('Reconnaître quand faire une pause', 'FATIGUE = RÉACTION PLUS LENTE', [
-      'Fatigue, somnolence, maladie : **attention et réaction diminuent**.',
-      'Bâillements, paupières lourdes : chercher un endroit **sûr pour s’arrêter et se reposer**.',
-      'Ouvrir la fenêtre ou monter la musique **ne remplace pas le repos**.',
-      'Téléphone et distractions : les yeux quittent la route, le danger arrive **avant ta réaction**.',
-      'Un médicament peut altérer la conduite : **lire la notice et demander conseil**.',
-      'Conduite prévisible : annoncer ses intentions, garder une marge, **ne pas surprendre les autres**.'
-    ], 'Mémo : CANSAMENT → pense « quand ça fatigue ». SON = envie de dormir, pas le bruit.', [['cansament', 'fatigue'], ['son', 'sommeil / somnolence'], ['descansar', 'se reposer']], ['Tenir son', 'tenir = avoir. « Tinc son » signifie « j’ai sommeil ».', 'Si tinc son, he de parar en un lloc segur.', 'Si j’ai sommeil, je dois m’arrêter dans un endroit sûr.']),
+      "La fatigue, la somnolence ou la maladie peuvent **réduire ton attention et ralentir tes réactions**. Tu risques alors de repérer un danger plus tard et de freiner trop tard.",
+      "Des bâillements ou des paupières lourdes signalent un besoin de repos. Cherche un **endroit sûr pour t’arrêter et te reposer**, au lieu d’attendre de ne plus pouvoir rester éveillé.",
+      "Ouvrir la fenêtre ou monter la musique **ne remplace pas le repos**. Ces gestes ne doivent pas servir de raison pour continuer malgré la somnolence.",
+      "Regarder un téléphone détourne ton regard et ton attention de la route. Pendant ce temps, tu peux **manquer l’apparition d’un danger** et réagir trop tard.",
+      "Avant de conduire avec un médicament nouveau, **lis les avertissements et demande conseil**. Ne suppose pas qu’il est sans effet sur la vigilance simplement parce qu’il est prescrit.",
+      "Une conduite prévisible aide les autres à anticiper. **Annonce tes manœuvres et garde une marge**, sans changer brusquement de trajectoire ni freiner pour surprendre quelqu’un."
+    ], "Le bon réflexe face à la somnolence est **de s’arrêter pour se reposer**, pas de chercher à tenir encore. SON signifie sommeil, pas un bruit ; CANSAMENT désigne la fatigue.", [['cansament', 'fatigue'], ['son', 'sommeil / somnolence'], ['descansar', 'se reposer']], ['Tenir son', "Tenir signifie « avoir ». Tinc est la forme « j’ai » : tinc son veut donc dire « j’ai sommeil ». Dans he de parar, he de ajoute l’obligation : « je dois m’arrêter ».", 'Si tinc son, he de parar en un lloc segur.', 'Si j’ai sommeil, je dois m’arrêter dans un endroit sûr.']),
     page('Alcool : les bons repères', '0,5 g/l · CATÉGORIES À 0,0 g/l', [
-      'Limite générale : **0,5 g d’alcool par litre de sang**. Ce n’est pas un objectif à atteindre.',
-      '**0,0 g/l** pour les catégories visées : notamment urgences, transport de passagers, marchandises > 3 500 kg, matières dangereuses et véhicules spéciaux.',
-      '**Même une petite dose** peut dégrader la conduite. Le choix le plus sûr : ne pas boire avant de conduire.',
-      '**0,8 g/l n’est pas la limite autorisée.** Ne pas mélanger les seuils.',
-      'Après un accident, le contrôle peut concerner **tout usager impliqué**, pas seulement le responsable présumé.',
-      'Résultat contesté : possibilité de demander une **analyse de sang de contrôle**. Cela n’annule pas automatiquement le résultat.'
-    ], 'Mémo : SANG s’écrit comme en français. TAXA = taux ; ne pense pas à une taxe à payer.', [['taxa', 'taux'], ['prova', 'test / épreuve'], ['qualsevol', 'n’importe quel / tout']], ['No superior a…', 'no superior a = ne dépassant pas. C’est un plafond, pas une permission de le dépasser un peu.', 'Una taxa no superior a 0,5 g/l.', 'Un taux ne dépassant pas 0,5 g/l.'])
+      "La limite générale est de **0,5 gramme d’alcool par litre de sang**. Ce nombre est un plafond réglementaire, pas une quantité qu’il serait conseillé d’atteindre avant de conduire.",
+      "Certaines catégories sont soumises à **0,0 g/l** : notamment les urgences, le transport de passagers, les marchandises de plus de 3 500 kg, les matières dangereuses et les véhicules spéciaux.",
+      "**Même une petite dose d’alcool peut dégrader la conduite**. Pour éviter ce risque, le choix le plus sûr consiste à ne pas boire d’alcool avant de prendre le volant.",
+      "Ne retiens pas **0,8 g/l comme limite générale autorisée** : ce serait le mauvais repère. Pour la règle générale étudiée ici, le nombre à reconnaître est bien 0,5 g/l.",
+      "Après un accident, un contrôle peut concerner **tout usager impliqué**. Il ne se limite pas automatiquement au conducteur que l’on suppose responsable de l’accident.",
+      "Si le résultat de l’éthylomètre est contesté, une **analyse de sang de contrôle peut être demandée**. La contestation ne fait pas disparaître automatiquement le premier résultat."
+    ], "Lis le **type de conducteur ou de transport** avant de choisir le taux. Pour les mots : SANG s’écrit comme en français et TAXA signifie « taux », pas « taxe à payer ».", [['taxa', 'taux'], ['prova', 'test / épreuve'], ['qualsevol', 'n’importe quel / tout']], ['No superior a…', "No superior a signifie « ne dépassant pas ». Le nombre est une limite maximale : la formule n’autorise pas à dépasser cette valeur, même légèrement.", 'Una taxa no superior a 0,5 g/l.', 'Un taux ne dépassant pas 0,5 g/l.'])
   ], [
     [
       ['Quin efecte pot tenir la fatiga en la conducció?', 'Reduir l’atenció.', 'Millorar els reflexos.', 'Fer innecessàries les pauses.', 'La fatigue diminue la vigilance.'],
@@ -299,21 +303,21 @@ export const themes: RevisionTheme[] = [
   ]),
   theme('vehicule', 'Mécanique & éco-conduite', '⚙️', 'teal', 'Comprendre les pièces et les bons gestes.', ['VEHICLE', 'MAINTENANCE', 'ENVIRONMENT'], ['953', '1249', '1306', '1650', '1894'], 'Synthèse p. 10–12', '6, 62 · mécanique : synthèse', [
     page('Les commandes et les pneus', 'TRANSMETTRE · FREINER · ADHÉRER', [
-      '**Transmission** : transmet le mouvement du moteur aux roues motrices.',
-      '**Embragatge** = embrayage. Pédale enfoncée : débrayé ; relâchée : embrayé.',
-      '**Roues motrices** : reçoivent la force du moteur. **Directrices** : orientent la trajectoire.',
-      '**Fre de servei** : frein à pédale. **Fre d’estacionament** : immobilise le véhicule garé.',
-      'Pneus : contrôler pression **à froid**, selon le constructeur, et surveiller l’usure.',
-      'Usure irrégulière ou vibrations : faire vérifier le véhicule. **Entretenir = prévenir les accidents**.'
-    ], 'Mémo : EMBRAGATGE → embrayage. RODES → roues. Les deux familles de mots sont proches.', [['roda / pneumàtic', 'roue / pneu'], ['desgast', 'usure'], ['fre', 'frein']], ['Premut / lliure', 'premut = enfoncé · lliure = libre / relâché. Les états changent le sens.', 'Pedal premut: desembragat. Pedal lliure: embragat.', 'Pédale enfoncée : débrayé. Pédale relâchée : embrayé.']),
+      "La **transmission** transmet le mouvement du moteur aux roues motrices. Elle permet donc d’utiliser la force du moteur pour faire avancer le véhicule.",
+      "**Embragatge** signifie embrayage. Avec la pédale enfoncée, on est **débrayé** ; avec la pédale relâchée, on est **embrayé** : repère bien l’état de la pédale dans la question.",
+      "Les **roues motrices reçoivent la force du moteur**. Les **roues directrices orientent la trajectoire** : ces deux noms décrivent des fonctions différentes.",
+      "Le **fre de servei** est le frein commandé par la pédale pour ralentir ou arrêter le véhicule. Le **fre d’estacionament** maintient le véhicule immobilisé lorsqu’il est garé.",
+      "Contrôle la pression des pneus **à froid, selon les valeurs du constructeur**. Vérifie aussi leur usure : la pression ne suffit pas à connaître leur état.",
+      "Des vibrations ou une usure irrégulière des pneus doivent conduire à **faire vérifier le véhicule**. L’entretien permet de repérer un problème avant qu’il compromette la sécurité."
+    ], "Associe chaque pièce à son action : **la transmission transmet, les roues motrices entraînent, les roues directrices dirigent**. EMBRAGATGE et RODES rappellent les mots français embrayage et roues.", [['roda / pneumàtic', 'roue / pneu'], ['desgast', 'usure'], ['fre', 'frein']], ['Premut / lliure', "Premut signifie « enfoncé » et lliure signifie ici « relâché ». Ces mots décrivent la pédale. Desembragat et embragat décrivent ensuite l’état de l’embrayage : ne mélange pas les deux paires.", 'Pedal premut: desembragat. Pedal lliure: embragat.', 'Pédale enfoncée : débrayé. Pédale relâchée : embrayé.']),
     page('Conduire souplement, consommer moins', 'ANTICIPER > ACCÉLÉRER / FREINER', [
-      '**Anticiper** limite les accélérations et freinages inutiles.',
-      'Utiliser un **rapport adapté**, plutôt long quand le moteur le permet.',
-      'Bagages : le **coffre** dégrade moins l’aérodynamisme que la galerie.',
-      'Charge inutile, galerie et vitres ouvertes à vitesse élevée peuvent **augmenter la consommation**.',
-      'En descente : garder une vitesse engagée pour le **frein moteur**. Ne pas couper le contact ni rouler au point mort.',
-      'Freiner continuellement peut **surchauffer les freins** et réduire leur efficacité.'
-    ], 'Mémo : ESTALVIAR = économiser. Imagine une tirelire « estalvi » : moins d’à-coups, moins de carburant.', [['estalviar', 'économiser'], ['maleter / baca', 'coffre / galerie'], ['marxa llarga', 'rapport long']], ['Perquè…', 'perquè = parce que dans une explication. Il introduit la raison.', 'El maleter és preferible perquè redueix la resistència a l’aire.', 'Le coffre est préférable parce qu’il réduit la résistance de l’air.'])
+      "**Anticiper la circulation** permet d’éviter des accélérations suivies immédiatement d’un freinage. Une allure régulière limite les changements de vitesse inutiles.",
+      "Choisis un **rapport adapté à la vitesse et au fonctionnement du moteur**. Un rapport plutôt long peut aider à économiser, à condition de ne pas forcer le moteur.",
+      "Pour transporter les bagages, préfère le **coffre à la galerie de toit**. Il perturbe moins l’écoulement de l’air autour de la voiture.",
+      "Une charge inutile, une galerie ou des vitres ouvertes à vitesse élevée peuvent **augmenter la consommation**. Le poids et la résistance à l’air demandent davantage d’énergie au véhicule.",
+      "En descente, garde une vitesse engagée pour bénéficier du **frein moteur**. Ne roule pas au point mort et ne coupe pas le contact pour essayer d’économiser du carburant.",
+      "Utiliser les freins de façon continue et excessive peut **les faire surchauffer**. Leur efficacité peut alors diminuer, ce qui rend le ralentissement moins sûr."
+    ], "Pense **« regarder loin pour agir moins brusquement »**. Le mot ESTALVIAR signifie économiser : imagine une tirelire pour associer une conduite régulière à moins de carburant consommé.", [['estalviar', 'économiser'], ['maleter / baca', 'coffre / galerie'], ['marxa llarga', 'rapport long']], ['Perquè…', "Perquè signifie « parce que » lorsqu’il donne une explication. Dans l’exemple, la première partie donne le choix conseillé ; la partie après perquè explique la raison de ce choix.", 'El maleter és preferible perquè redueix la resistència a l’aire.', 'Le coffre est préférable parce qu’il réduit la résistance de l’air.'])
   ], [
     [
       ['Quina funció té la transmissió?', 'Portar el moviment del motor a les rodes motrius.', 'Il·luminar la carretera.', 'Rentar el parabrisa.', 'La transmission transmet le mouvement.'],
@@ -335,21 +339,21 @@ export const themes: RevisionTheme[] = [
   ]),
   theme('transport', 'Passagers & chargement', '🧳', 'amber', 'Tout attacher. Tout garder visible.', ['SAFETY', 'CHILDREN', 'MOTORCYCLE', 'LOAD', 'DIMENSIONS'], ['1300', '1207', '1384', '953'], 'Synthèse p. 14–15 · QCM p. 7–10', '31, 37, 38, 67, 69, 70', [
     page('Protéger chaque occupant', 'CEINTURE DEVANT + DERRIÈRE', [
-      'Voiture équipée de ceintures : **conducteur et passagers attachés**, en ville comme sur route, hors exemptions légales.',
-      'La ceinture arrière n’est **pas une simple recommandation**.',
-      'Voiture jusqu’à 9 places : enfant **de moins de 10 ans ET de moins de 1,50 m** → siège adapté, normalement à l’arrière.',
-      'Siège enfant : homologué, adapté à **taille et poids**, installé selon le fabricant.',
-      'Moto ordinaire : conducteur et passager portent un **casque attaché et des gants adaptés**.',
-      'Ne pas transporter plus de personnes que de **places autorisées**.'
-    ], 'Mémo : CINTURÓ ressemble à ceinture. CASC ressemble à casque. CORDAT = attaché, pense à une corde.', [['cinturó', 'ceinture'], ['seient', 'siège'], ['casc cordat', 'casque attaché']], ['Tant… com…', 'tant… com… = aussi bien… que… Les deux groupes sont concernés.', 'Tant el conductor com els passatgers han de portar cinturó.', 'Aussi bien le conducteur que les passagers doivent porter la ceinture.']),
+      "Dans une voiture équipée de ceintures, **le conducteur et tous les passagers doivent s’attacher**, hors exemptions légales. La règle s’applique en ville comme sur route.",
+      "Cette obligation concerne aussi **les passagers installés à l’arrière**. La ceinture arrière n’est donc pas une simple recommandation réservée aux longs trajets.",
+      "Dans une voiture jusqu’à neuf places, la règle étudiée vise l’enfant **de moins de 10 ans ET de moins de 1,50 m**. Il voyage normalement à l’arrière avec un dispositif adapté, sous réserve des exceptions prévues.",
+      "Le siège enfant doit être **homologué et adapté à sa taille et à son poids**. Il faut également l’installer selon les instructions du fabricant pour qu’il protège correctement.",
+      "Sur une moto ordinaire, le conducteur et le passager portent **un casque correctement attaché et des gants adaptés**. Un casque simplement posé sur la tête ne suffit pas.",
+      "Respecte le **nombre de places autorisées** du véhicule. Un trajet court ne permet pas d’ajouter une personne au-delà de cette capacité."
+    ], "Dans la règle enfant, lis bien le **ET entre l’âge et la taille** : les deux critères sont associés. CINTURÓ rappelle ceinture, CASC rappelle casque et CORDAT évoque une corde pour penser « attaché ».", [['cinturó', 'ceinture'], ['seient', 'siège'], ['casc cordat', 'casque attaché']], ['Tant… com…', "Tant… com… signifie « aussi bien… que… ». La phrase réunit les deux groupes : le conducteur et les passagers sont tous concernés par l’obligation de porter la ceinture.", 'Tant el conductor com els passatgers han de portar cinturó.', 'Aussi bien le conducteur que les passagers doivent porter la ceinture.']),
     page('Fixer la charge et dégager la vue', 'ATTACHÉ · STABLE · VISIBLE', [
-      'Chargement **bien fixé** : ne doit ni tomber ni glisser au freinage.',
-      'Préserver **stabilité et visibilité** du conducteur.',
-      'Ne masquer **ni feux, ni plaque d’immatriculation, ni signaux du véhicule**.',
-      'Répartir la charge. Respecter les **masses et dimensions autorisées**.',
-      'Charger/décharger : **moteur coupé**, si possible hors voie publique ; sinon côté trottoir.',
-      '**Pes** = poids · **amplada** = largeur · **llargada** = longueur · **sobresortir** = dépasser du gabarit.'
-    ], 'Mémo : AMPLADA → amplitude en largeur. LLARGADA → quelque chose qui s’allonge.', [['càrrega', 'chargement'], ['lligada', 'attachée'], ['matrícula', 'immatriculation / plaque']], ['Ni… ni…', 'ni… ni… fonctionne comme en français. Aucun des éléments ne doit être masqué.', 'La càrrega no pot tapar ni els llums ni la matrícula.', 'Le chargement ne peut masquer ni les feux ni la plaque.'])
+      "Fixe solidement les objets transportés pour qu’ils **ne tombent pas et ne glissent pas**. Ils doivent rester en place même pendant un freinage ou un virage.",
+      "Place les bagages de manière à conserver **la stabilité du véhicule et la visibilité du conducteur**. Pouvoir fermer le coffre ne suffit pas si la charge gêne la conduite.",
+      "Le chargement ne doit masquer **ni les feux, ni la plaque d’immatriculation, ni les signaux du véhicule**. Les autres doivent pouvoir voir tes indications et identifier le véhicule.",
+      "Répartis la charge et respecte les **masses et dimensions autorisées**. La capacité apparente du coffre ne remplace pas les limites prévues pour le véhicule.",
+      "Pour charger ou décharger, **coupe le moteur** et utilise si possible un emplacement hors voie publique. Si tu dois le faire sur la voie publique, privilégie le côté du trottoir.",
+      "**Pes** désigne le poids, **amplada** la largeur et **llargada** la longueur. **Sobresortir** signifie dépasser du gabarit, par exemple lorsqu’un objet dépasse de la carrosserie."
+    ], "Vérifie trois choses : **les objets tiennent, tu vois bien, les feux et la plaque restent visibles**. AMPLADA évoque l’amplitude en largeur ; LLARGADA évoque quelque chose qui s’allonge.", [['càrrega', 'chargement'], ['lligada', 'attachée'], ['matrícula', 'immatriculation / plaque']], ['Ni… ni…', "Ni… ni… fonctionne comme en français et relie plusieurs éléments dans une négation. Dans la phrase, la charge ne doit masquer aucun des deux éléments : ni les feux ni la plaque.", 'La càrrega no pot tapar ni els llums ni la matrícula.', 'Le chargement ne peut masquer ni les feux ni la plaque.'])
   ], [
     [
       ['En un turisme equipat, qui ha de portar cinturó, fora de les exempcions legals?', 'El conductor i tots els passatgers.', 'Només el conductor.', 'Només els ocupants del davant.', 'La ceinture concerne aussi les passagers arrière.'],
@@ -371,21 +375,21 @@ export const themes: RevisionTheme[] = [
   ]),
   theme('documents', 'Permis & documents', '🪪', 'violet', 'Le conducteur, le véhicule, l’assurance.', ['DOCUMENTATION', 'MAINTENANCE'], ['1149', '1221', '1303', '1306'], 'Synthèse p. 2–4 · QCM p. 1–2', '87, 88, 95, 98, 99 · règlement des permis, art. 4', [
     page('Qui autorise quoi ?', 'PERMIS ≠ IMMATRICULATION', [
-      '**Permís de conduir** : autorise la personne à conduire les catégories concernées.',
-      '**Certificat de matrícula / permís de circulació** : identifie le véhicule et autorise sa circulation.',
-      '**Assegurança** : assurance. La responsabilité civile couvre les **dommages aux tiers**.',
-      '**ITV** : contrôle technique. Il vérifie l’état réglementaire du véhicule.',
-      'Présenter les documents exigibles : permis, immatriculation, **assurance valide**, ITV si applicable.',
-      'L’assurance ne remplace **ni le permis ni le contrôle technique**.'
-    ], 'Mémo : CONDUIR → conducteur. CIRCULACIÓ → circulation du véhicule. ASSEGURANÇA → assurance.', [['vigent', 'en cours de validité'], ['danys a tercers', 'dommages aux tiers'], ['exhibir', 'présenter']], ['Si escau', 'si escau = le cas échéant / si cela s’applique. Ce n’est pas « si tu en as envie ».', 'El certificat de la ITV, si escau.', 'Le certificat de contrôle technique, le cas échéant.']),
+      "Le **permís de conduir** est le permis de conduire de la personne. Il indique quelles catégories de véhicules cette personne est autorisée à conduire.",
+      "Le **certificat de matrícula**, ou document de circulation du véhicule, concerne le véhicule lui-même. Il sert à l’identifier administrativement et à autoriser sa circulation.",
+      "**Assegurança** signifie assurance. L’assurance obligatoire de responsabilité civile couvre les dommages causés aux tiers, et non automatiquement toutes les pannes de ton propre véhicule.",
+      "L’**ITV** est l’inspection technique du véhicule, c’est-à-dire le contrôle technique. Elle vérifie son état au regard des exigences réglementaires.",
+      "Tu dois pouvoir présenter les **documents exigibles et en cours de validité** : permis, immatriculation, assurance et contrôle technique lorsque celui-ci s’applique au véhicule.",
+      "Ces documents ont des rôles différents : **l’assurance ne remplace ni le permis ni le contrôle technique**. Posséder l’un ne dispense pas de respecter les autres obligations."
+    ], "Demande-toi ce que le document concerne : **le conducteur, le véhicule, les dommages ou son état technique**. CONDUIR rappelle conduire ; ASSEGURANÇA rappelle assurance.", [['vigent', 'en cours de validité'], ['danys a tercers', 'dommages aux tiers'], ['exhibir', 'présenter']], ['Si escau', "Si escau signifie « le cas échéant », autrement dit « si cela s’applique à cette situation ». Pour l’ITV, cela renvoie aux exigences du véhicule, pas à la volonté du conducteur.", 'El certificat de la ITV, si escau.', 'Le certificat de contrôle technique, le cas échéant.']),
     page('Lire les limites sans se tromper', 'PERSONNES · POIDS · VALIDITÉ', [
-      'Permis B : **9 personnes maximum, conducteur compris**.',
-      '**MMA** = masse maximale autorisée. Ce n’est pas le poids à vide.',
-      '**Pes en buit** = poids à vide. **Remolc** = remorque ; vérifier l’autorisation de l’ensemble.',
-      'Les catégories ne donnent pas toutes les mêmes droits : vérifier **véhicule + remorque + places**.',
-      '**Vigent** = valide. Un document périmé n’est pas « en vigueur ».',
-      'ITV : respecter l’échéance propre au véhicule. Une ITV valide **n’exclut pas un contrôle des émissions**.'
-    ], 'Mémo : « incloent-hi » → INCLUANT. Dans 9 places, compte-toi : toi + 8 passagers.', [['incloent-hi', 'y compris'], ['pes en buit', 'poids à vide'], ['remolc', 'remorque']], ['Fins a / més de', 'fins a = jusqu’à, limite incluse · més de = plus de, limite exclue.', 'Fins a nou persones, incloent-hi el conductor.', 'Jusqu’à neuf personnes, conducteur compris.'])
+      "Pour le nombre de personnes, le permis B permet **neuf personnes maximum, conducteur compris**. Cela correspond donc au conducteur plus huit passagers, et non neuf passagers en plus de lui.",
+      "La **MMA est la masse maximale autorisée**. Ce plafond ne doit pas être confondu avec le poids du véhicule à vide : les deux nombres décrivent des choses différentes.",
+      "**Pes en buit** signifie poids à vide et **remolc** signifie remorque. Avant d’atteler une remorque, vérifie que ton permis et les caractéristiques de l’ensemble le permettent.",
+      "Toutes les catégories de permis ne donnent pas les mêmes droits. Vérifie **le véhicule, la remorque éventuelle et le nombre de places**, au lieu de te fier seulement à l’apparence du véhicule.",
+      "**Vigent** signifie en cours de validité, tandis que **caducat** signifie périmé. Un document dont la date de validité est dépassée n’est donc plus vigent.",
+      "Respecte l’échéance de contrôle technique propre au véhicule. Même avec une **ITV valide**, un contrôle des émissions du véhicule reste possible."
+    ], "**Incloent-hi** ressemble à « incluant ». Quand tu lis neuf personnes conducteur compris, compte-toi dans le total : **toi + huit passagers = neuf**.", [['incloent-hi', 'y compris'], ['pes en buit', 'poids à vide'], ['remolc', 'remorque']], ['Fins a / més de', "Fins a signifie « jusqu’à », avec la limite incluse. Més de signifie « plus de », sans inclure la limite : fins a nou autorise neuf, tandis que més de nou commence au-delà de neuf.", 'Fins a nou persones, incloent-hi el conductor.', 'Jusqu’à neuf personnes, conducteur compris.'])
   ], [
     [
       ['Quin document autoritza una persona a conduir una categoria de vehicles?', 'El permís de conduir.', 'Només l’assegurança.', 'Només el certificat de matrícula.', 'Le permis concerne les droits du conducteur.'],
@@ -407,21 +411,21 @@ export const themes: RevisionTheme[] = [
   ]),
   theme('accidents', 'Accident & panne', '🦺', 'rose', 'Protéger. Alerter. Aider.', ['ACCIDENT', 'EMERGENCY', 'SAFETY'], ['929', '1142', '1176', '1197'], 'Synthèse p. 7–8 · QCM p. 7–8', '56, 57, 58, 59', [
     page('Éviter le deuxième accident', 'P → A → S', [
-      '**Protéger** : s’arrêter sans créer de danger, si possible hors chaussée.',
-      '**Gilet réfléchissant** si l’on occupe la chaussée. Signaler le danger sans s’exposer.',
-      '**Alerter** les secours ou la police. Donner le lieu précis, les dangers, les véhicules et blessés.',
-      '**Secourir** : aider dans la limite de ses capacités et suivre les instructions des secours.',
-      'Accident avec blessés : **rester disponible sur place**, sauf nécessité de partir chercher de l’aide.',
-      'Ne pas modifier les lieux inutilement. **La sécurité des personnes passe d’abord**.'
-    ], 'Mémo PAS, en français : Protéger → Alerter → Secourir. En catalan : protegir → avisar → socórrer.', [['armilla reflectant', 'gilet réfléchissant'], ['avisar', 'alerter'], ['ferit', 'blessé']], ['Primer / després', 'primer = d’abord · després = ensuite. L’ordre des gestes compte.', 'Primer protegim; després avisem.', 'D’abord nous protégeons ; ensuite nous alertons.']),
+      "**Protéger vient en premier** : arrête-toi sans créer un nouveau danger, si possible hors de la chaussée. Ton intervention ne doit pas provoquer un second accident.",
+      "Si tu occupes la chaussée, porte le **gilet réfléchissant pour être visible**. Signale le danger en veillant à ne pas t’exposer toi-même à la circulation.",
+      "**Alerte les secours ou la police** en donnant le lieu précis de l’accident. Indique aussi les dangers présents, les véhicules concernés et le nombre de blessés observés.",
+      "**Secourir signifie aider selon tes capacités**, en suivant les instructions des secours. N’improvise pas une manœuvre que tu ne sais pas réaliser.",
+      "Lorsqu’il y a des blessés, **reste disponible sur place**, sauf nécessité de partir chercher de l’aide. Donner simplement ton numéro de téléphone ne suffit pas pour quitter les lieux.",
+      "Évite de modifier inutilement les lieux de l’accident. **La sécurité des personnes reste toutefois prioritaire** lorsqu’une action est nécessaire pour les protéger."
+    ], "Retiens **PAS : Protéger → Alerter → Secourir**. En catalan, retrouve la même suite avec protegir → avisar → socórrer : tu sécurises la situation avant d’organiser l’aide.", [['armilla reflectant', 'gilet réfléchissant'], ['avisar', 'alerter'], ['ferit', 'blessé']], ['Primer / després', "Primer signifie « d’abord » et després signifie « ensuite ». Ces mots donnent l’ordre des actions : dans l’exemple, la protection vient avant l’alerte.", 'Primer protegim; després avisem.', 'D’abord nous protégeons ; ensuite nous alertons.']),
     page('Donner les bonnes informations', 'OÙ ? QUOI ? COMBIEN ?', [
-      '**On?** = où ? **Què?** = quoi ? **Quants?** = combien ? Utiles pour comprendre l’alerte.',
-      '**Ferit** = blessé ; **inconscient** = inconscient ; **respira** = respire.',
-      'Décrire ce que l’on observe. **Suivre les consignes des secours** plutôt qu’improviser.',
-      'Présignalisation de danger : doit être **visible à au moins 100 m**. Visibilité ≠ distance de pose.',
-      'Accident avec seulement des dégâts matériels : prévenir les assureurs dans un maximum de **8 jours calendaires**.',
-      '**Dies naturals** : week-ends et jours fériés inclus. **Danys materials** : dégâts matériels.'
-    ], 'Mémo : FERIT → pense à « une blessure qui fait souffrir ». AVISAR → donner un avis d’alerte.', [['romandre', 'rester'], ['avaria', 'panne'], ['dies naturals', 'jours calendaires']], ['Com a mínim / com a màxim', 'mínim = au moins · màxim = au plus. Vérifie le mot avant de choisir un nombre.', 'Visible a cent metres com a mínim.', 'Visible à cent mètres au minimum.'])
+      "**On ?** demande où se trouve l’accident, **què ?** demande ce qui se passe et **quants ?** demande combien de personnes ou de véhicules sont concernés. Ces mots t’aident à comprendre les questions des secours.",
+      "**Ferit** signifie blessé, **inconscient** signifie inconscient et **respira** signifie respire. Ce vocabulaire permet de comprendre ou de décrire les observations demandées.",
+      "Décris **ce que tu observes réellement** et réponds aux questions des secours. Suis leurs consignes sans inventer de diagnostic ni improviser une intervention.",
+      "La présignalisation du danger doit être **visible à au moins 100 mètres**. Cette distance indique d’où l’on doit pouvoir la voir, pas qu’elle doit forcément être posée exactement à 100 mètres.",
+      "Après un accident avec uniquement des dégâts matériels, préviens les assureurs dans un délai maximal de **huit jours calendaires**. Ce délai concerne la déclaration aux assureurs.",
+      "Les **dies naturals** sont les jours calendaires : les week-ends et les jours fériés comptent aussi. **Danys materials** désigne les dégâts matériels, par exemple ceux subis par les véhicules."
+    ], "Pour transmettre une information utile, pense **lieu → situation observée → personnes concernées**. AVISAR rappelle « donner un avis d’alerte » ; FERIT désigne la personne blessée.", [['romandre', 'rester'], ['avaria', 'panne'], ['dies naturals', 'jours calendaires']], ['Com a mínim / com a màxim', "Com a mínim signifie « au minimum » et com a màxim signifie « au maximum ». Repère ce mot avant le nombre : un minimum demande au moins cette valeur, un maximum interdit de la dépasser.", 'Visible a cent metres com a mínim.', 'Visible à cent mètres au minimum.'])
   ], [
     [
       ['En arribar a un accident, què hem de fer primer?', 'Protegir sense crear un altre perill.', 'Aparcar al mig sense mirar.', 'Marxar sense valorar la situació.', 'La première priorité est d’éviter un autre accident.'],
@@ -443,21 +447,21 @@ export const themes: RevisionTheme[] = [
   ]),
   theme('catala-pieges', 'Català · les mots-pièges', '🔎', 'violet', 'Bonus langue · une lettre change tout.', ['CATALA'], [], 'quizz.json : q072–q098, q127, q129, q138–q140 · Synthèse p. 16', '', [
     page('Obligation, interdiction ou exception ?', 'CAL ≠ NO CAL ≠ NO ES POT', [
-      '**Cal frenar** = il faut freiner. **No cal frenar** = pas besoin de freiner.',
-      '**No es pot frenar** = on ne peut pas freiner. Dans une règle : c’est interdit.',
-      '**Només** = seulement. **Llevat de** = sauf. Ils limitent la règle.',
-      '**No… cap** = aucun : no hi ha cap vehicle = il n’y a aucun véhicule.',
-      '**Mai** = jamais. **Sempre** = toujours. **En cap cas** = en aucun cas.',
-      '**Sempre que**, dans une condition = à condition que. Selon le contexte : chaque fois que.'
-    ], 'Mémo : NO CAL enlève le besoin. NO ES POT ferme la porte. Deux panneaux mentaux différents : « facultatif » / « interdit ».', [['només', 'seulement'], ['llevat de', 'sauf'], ['cap vehicle', 'aucun véhicule (avec no)']], ['Repérer le petit mot', 'Lire la négation avant le reste. Une phrase proche peut avoir un sens opposé.', 'No cal parar. / No es pot parar.', 'Il n’est pas nécessaire de s’arrêter. / On ne peut pas s’arrêter.']),
+      "**Cal frenar** signifie « il faut freiner » : l’action est nécessaire. **No cal frenar** signifie « il n’est pas nécessaire de freiner » : l’obligation disparaît, mais ce n’est pas une interdiction.",
+      "**No es pot** signifie « on ne peut pas ». Dans une règle comme **no es pot estacionar**, cela exprime une interdiction : on n’a pas le droit de stationner.",
+      "**Només** signifie seulement et **llevat de** signifie sauf. Le premier limite les cas concernés ; le second annonce une exception à la règle.",
+      "Avec une négation, **no… cap** signifie aucun. Dans **no hi ha cap vehicle**, la phrase dit qu’il n’y a aucun véhicule, et non qu’un véhicule est devant.",
+      "**Mai** signifie jamais, **sempre** signifie toujours et **en cap cas** signifie en aucun cas. Ces mots changent la portée de la réponse : lis-les avant de choisir.",
+      "**Sempre que** peut signifier « à condition que » lorsqu’il introduit une condition. Selon le contexte, il peut aussi signifier « chaque fois que » : lis la phrase entière pour trancher."
+    ], "Imagine deux messages différents : **NO CAL = pas nécessaire** et **NO ES POT = pas autorisé**. Une action qui n’est pas obligatoire n’est pas automatiquement interdite.", [['només', 'seulement'], ['llevat de', 'sauf'], ['cap vehicle', 'aucun véhicule (avec no)']], ['Repérer le petit mot', "Commence par repérer cal ou es pot, puis regarde s’il y a no devant. Ces petits mots déterminent si la phrase donne une obligation, retire une obligation ou exprime une interdiction.", 'No cal parar. / No es pot parar.', 'Il n’est pas nécessaire de s’arrêter. / On ne peut pas s’arrêter.']),
     page('Quantités, causes et petits pièges', 'PLUS ≠ MOINS · POURQUOI ≠ PARCE QUE', [
-      '**Més de** = plus de. **Menys de** = moins de. **Fins a** = jusqu’à, inclus.',
-      '**Almenys / com a mínim** = au moins. **Com a màxim** = au maximum.',
-      '**Prou** = assez. **Massa** = trop, devant un adjectif : massa ràpid = trop vite.',
-      '**Per què?** = pourquoi ? **Perquè** = parce que dans une réponse.',
-      '**Per tant** = donc. **Ja que** = puisque / car.',
-      '**Cap a** = vers. **El cap** = la tête. Ce n’est pas le cap de « aucun véhicule ».'
-    ], 'Mémo : MÉS → « mets-en plus ». MENYS → « moins ». PER QUÈ séparé pose la question ; PERQUÈ collé donne la raison.', [['prou / massa', 'assez / trop'], ['cap a', 'vers'], ['per tant', 'donc']], ['Du nombre à l’inégalité', 'més de 50 : 50 exclu · fins a 50 : 50 inclus · almenys 50 : 50 ou plus.', 'Fins a nou persones.', 'Jusqu’à neuf personnes, neuf compris.'])
+      "**Més de** signifie plus de et **menys de** signifie moins de : la valeur citée n’est pas incluse. Avec **fins a**, « jusqu’à », la limite est au contraire comprise.",
+      "**Almenys** et **com a mínim** signifient au moins : almenys 50 veut dire 50 ou davantage. **Com a màxim** donne un maximum qu’il ne faut pas dépasser.",
+      "**Prou** signifie assez et **massa** signifie trop devant un adjectif. Ainsi, **massa ràpid** veut dire trop rapide, alors que prou ne signale pas un excès.",
+      "**Per què ?**, en deux mots, pose la question « pourquoi ? ». **Perquè**, en un mot, peut y répondre avec le sens « parce que ».",
+      "**Per tant** annonce une conséquence : « donc » ou « par conséquent ». **Ja que** donne une raison : « puisque » ou « car ».",
+      "**Cap a** signifie vers, comme dans girar cap a la dreta, tourner vers la droite. **El cap** est la tête ; dans **no… cap**, le même mot participe au sens « aucun »."
+    ], "MÉS peut te rappeler « mets-en plus » et MENYS « moins ». Pour la cause, **PER QUÈ séparé pose la question ; PERQUÈ collé donne la raison**.", [['prou / massa', 'assez / trop'], ['cap a', 'vers'], ['per tant', 'donc']], ['Du nombre à l’inégalité', "Transforme l’expression en une plage de nombres : més de 50 exclut 50 ; fins a 50 inclut 50 et les valeurs inférieures ; almenys 50 inclut 50 et les valeurs supérieures.", 'Fins a nou persones.', 'Jusqu’à neuf personnes, neuf compris.'])
   ], [
     [
       ['Quina expressió indica una obligació?', 'Cal aturar-se.', 'No cal aturar-se.', 'Es pot aturar.', 'Cal = il faut.'],
@@ -479,21 +483,21 @@ export const themes: RevisionTheme[] = [
   ]),
   theme('catala-verbes', 'Català · verbes & réflexes', '💬', 'teal', 'Bonus langue · décoder une phrase de QCM.', ['CATALA'], [], 'quizz.json : q027, q076, q129, q156, q158, q172, q174, q205, q266 · Synthèse p. 16', '', [
     page('Les verbes qui reviennent partout', 'LIRE LE VERBE, TROUVER L’ACTION', [
-      '**Aturar-se / parar-se / detenir-se** = s’arrêter. Trois formes pour le même geste.',
-      '**Comprovar** = vérifier. **Comprar** = acheter. Le V te dit : **Vérifie !**',
-      '**Girar** = tourner. **Avançar** = dépasser. **Frenar** = freiner.',
-      '**Reduir / augmentar** = réduire / augmenter. Ils changent la vitesse ou la distance.',
-      '**Encendre / apagar** = allumer / éteindre. **Senyalitzar** = signaler.',
-      '**Acostar-se / atansar-se** = s’approcher. **Trobar-se** = se trouver.'
-    ], 'Mémo : FRE(NAR) → freiner. GIRA(R) → giratoire, ça tourne. Dans COMPROVAR, le V est celui de VÉRIFIER.', [['aturar-nos', 'nous arrêter'], ['comprovar', 'vérifier'], ['acostar-nos', 'nous approcher']], ['-se / -nos', 'Après l’infinitif, le pronom se colle : -se = se · -nos = nous.', 'Hem d’aturar-nos.', 'Nous devons nous arrêter.']),
+      "**Aturar-se, parar-se et detenir-se** signifient s’arrêter dans les situations étudiées. Reconnaître ces trois formes évite de croire que chaque question demande une action différente.",
+      "**Comprovar** veut dire vérifier, tandis que **comprar** veut dire acheter. Pour les distinguer, repère le **V de comprovar**, comme le V de « vérifier ».",
+      "**Girar** signifie tourner, **avançar** signifie dépasser dans le contexte routier et **frenar** signifie freiner. Cherche le verbe pour identifier d’abord la manœuvre demandée.",
+      "**Reduir** signifie réduire et **augmentar** signifie augmenter. Regarde ensuite ce qui suit : la phrase peut demander de modifier la vitesse ou la distance de sécurité.",
+      "**Encendre** signifie allumer et **apagar** signifie éteindre, notamment les feux. **Senyalitzar** signifie signaler : il s’agit d’annoncer une intention aux autres usagers.",
+      "**Acostar-se, apropar-se et atansar-se** signifient s’approcher. **Trobar-se** signifie se trouver : le premier groupe décrit un rapprochement, le second situe quelqu’un ou quelque chose."
+    ], "Associe le mot à un geste : **FRENAR → freiner**, **GIRAR → un giratoire où l’on tourne**. Pour COMPROVAR, imagine un grand V qui te rappelle de vérifier.", [['aturar-nos', 'nous arrêter'], ['comprovar', 'vérifier'], ['acostar-nos', 'nous approcher']], ['-se / -nos', "Le pronom peut se placer après l’infinitif, relié par un trait d’union : -se veut dire « se » et -nos veut dire « nous ». Aturar-nos signifie donc « nous arrêter ».", 'Hem d’aturar-nos.', 'Nous devons nous arrêter.']),
     page('Décoder sans tout traduire', 'QUAND ? → CONDITION → ACTION', [
-      '**Hem de** = nous devons. **Podem** = nous pouvons. **Caldrà** = il faudra.',
-      '**Abans de** = avant de. **Després de** = après. **En + infinitif** = en faisant / au moment de.',
-      '**Hi ha** = il y a. **No hi ha** = il n’y a pas.',
-      '**Si cal** = si nécessaire. **Sense** = sans. **Amb** = avec.',
-      '**Què?** = quoi ? **Quan?** = quand ? **On?** = où ? **Com?** = comment ?',
-      'Exemple : **En acostar-nos** (en approchant) **a una cruïlla** (d’un carrefour), **hem de mirar** (nous devons regarder).'
-    ], 'Mémo : QUAN contient le début de QUAND. ON en catalan demande OÙ. Cherche d’abord le verbe : le reste précise quand et comment.', [['abans / després', 'avant / après'], ['amb / sense', 'avec / sans'], ['hi ha', 'il y a']], ['Une phrase en trois blocs', 'Moment → lieu → action. Pas besoin de connaître tous les mots pour repérer la structure.', 'En acostar-nos a una cruïlla, hem de mirar.', 'En nous approchant d’un carrefour, nous devons regarder.'])
+      "**Hem de** signifie nous devons, **podem** signifie nous pouvons et **caldrà** signifie il faudra. Repère cette expression pour savoir si l’action est obligatoire, possible ou nécessaire plus tard.",
+      "**Abans de** signifie avant de et **després de** signifie après. **En suivi d’un infinitif** peut situer l’action au moment de quelque chose, comme en acostar-nos, en nous approchant.",
+      "**Hi ha** signifie il y a ; **no hi ha** signifie il n’y a pas. Ces expressions indiquent la présence ou l’absence d’un élément, par exemple un obstacle.",
+      "**Si cal** signifie si nécessaire, **sense** signifie sans et **amb** signifie avec. Ces petits mots précisent les conditions dans lesquelles une action doit être réalisée.",
+      "**Què ?** demande quoi, **quan ?** demande quand, **on ?** demande où et **com ?** demande comment. Identifier le mot interrogatif permet de savoir quel type de réponse chercher.",
+      "Découpe l’exemple en trois blocs : **en acostar-nos** indique le moment, **a una cruïlla** le lieu, et **hem de mirar** l’action obligatoire. Le sens est : en approchant d’un carrefour, nous devons regarder."
+    ], "Ne cherche pas tous les mots à la fois : repère **l’action, puis le lieu et le moment**. QUAN rappelle QUAND ; ON demande OÙ, même si ce mot ressemble au pronom français « on ».", [['abans / després', 'avant / après'], ['amb / sense', 'avec / sans'], ['hi ha', 'il y a']], ['Une phrase en trois blocs', "Une phrase peut se lire par blocs. Dans l’exemple, en acostar-nos donne le moment, a una cruïlla donne le lieu et hem de mirar donne l’obligation : « nous devons regarder ».", 'En acostar-nos a una cruïlla, hem de mirar.', 'En nous approchant d’un carrefour, nous devons regarder.'])
   ], [
     [
       ['Quin verb té un sentit semblant a «aturar-se»?', 'Detenir-se.', 'Accelerar.', 'Avançar.', 'Aturar-se, parar-se et detenir-se signifient s’arrêter.'],

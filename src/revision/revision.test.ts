@@ -29,6 +29,10 @@ test('14 independent themes, 28 lessons and 196 unique, explicitly linked questi
       assert.equal(q.answers.length, 3);
       assert.equal(new Set(q.answers).size, 3);
       assert.ok(q.answers[q.correct] && q.explanation && q.prompt);
+      assert.ok(q.french.prompt.trim(), `${q.id}: missing French question`);
+      assert.equal(q.french.answers.length, q.answers.length);
+      assert.ok(q.french.answers.every(answer => answer.trim()), `${q.id}: missing French answer`);
+      assert.equal(new Set(q.french.answers).size, 3, `${q.id}: ambiguous French choices`);
       assert.ok(!/\b(aquest senyal|aquesta imatge)\b/i.test(q.prompt), `${q.id} depends on a missing image`);
     }
   }
