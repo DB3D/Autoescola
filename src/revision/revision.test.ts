@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import 'fake-indexeddb/auto';
 import { themes } from './content';
-import { drawTest, finishRun, mastery, recentRuns, shuffle } from './engine';
+import { drawTest, finishRun, mastery, recentRuns, runPercent, shuffle } from './engine';
 import { readRuns, saveRun } from './storage';
 import { readAll } from '../storage';
 import type { RevisionRun } from './types';
@@ -78,7 +78,7 @@ test('scores count errors and skips as zero and reject incomplete tests', () => 
 
 test('mastery uses only the five latest completed tests for that theme, even out of order', () => {
   const q = drawTest(themes[0]);
-  const runs: RevisionRun[] = [0, 2, 4, 6, 8, 10].map((correct, i) => ({ ...finishRun('routes', q, q.map(item => item.correct)), id: `run-${i}`, correct, completedAt: `2026-09-${String(i + 1).padStart(2, '0')}T12:00:00.000Z` }));
+  const runs: RevisionRun[] = [0, 2, 4, 6, 8, 10].map((correct, i) => ({ ...finishRun('routes', q, q.map(item => item.correct)), id: `run-${i}`, correct, points: correct, completedAt: `2026-09-${String(i + 1).padStart(2, '0')}T12:00:00.000Z` }));
   assert.equal(mastery([], 'routes'), null);
   assert.equal(mastery([runs[0]], 'routes'), 0);
   assert.equal(mastery(runs.slice(0, 2), 'routes'), 10);
@@ -98,4 +98,35 @@ test('separate database persists completed runs idempotently and leaves driving 
   assert.deepEqual(loaded.find(r => r.id === run.id), run);
   assert.deepEqual(await readAll('attempts'), before);
   assert.equal(mastery(loaded, themes[1].id), 100);
+});
+
+test('French-assisted answers earn no mastery credit, even when correct', async () => {
+  const q = drawTest(themes[0]);
+  const picks = q.map((item, i) => i < 8 ? item.correct : i === 8 ? 1 : null);
+  const french = q.map((_, i) => i >= 5);
+  const run = finishRun('routes', q, picks, french);
+  assert.equal(run.correct, 8);
+  assert.equal(run.points, 5);
+  assert.equal(runPercent(run), 50);
+  french[0] = true;
+  assert.equal(run.frenchUsed![0], false, 'saved assistance flags are copied');
+  await saveRun(run);
+  assert.deepEqual((await readRuns()).find(r => r.id === run.id), run);
+  const allFrench = finishRun('routes', q, q.map(item => item.correct), q.map(() => true));
+  assert.equal(allFrench.correct, 10);
+  assert.equal(allFrench.points, 0);
+  assert.equal(runPercent(allFrench), 0);
+  assert.throws(() => finishRun('routes', q, picks, [true]));
+});
+
+test('last-five mastery mixes weighted scores and legacy scores without changing historical credit', () => {
+  const q = drawTest(themes[0]);
+  const legacy = { ...finishRun('routes', q, q.map(item => item.correct)), correct: 8 };
+  delete legacy.points; delete legacy.frenchUsed;
+  assert.equal(runPercent(legacy), 80);
+  const weighted = finishRun('routes', q, q.map(item => item.correct), q.map(() => true));
+  assert.equal(mastery([legacy, weighted], 'routes'), 40);
+  const runs = Array.from({ length: 6 }, (_, i) => ({ ...weighted, id: `weighted-${i}`, points: i === 0 ? 10 : 0, completedAt: `2026-09-${10 + i}T12:00:00Z` }));
+  assert.equal(mastery(runs, 'routes'), 0, 'sixth-oldest score falls out of the average');
+  assert.equal(mastery([{ ...weighted, points: 0 }], 'routes'), 0, 'zero points do not fall back to correct count');
 });

@@ -1,5 +1,7 @@
 import type { RevisionQuestion, RevisionRun, RevisionTheme } from './types';
 export const TEST_LENGTH = 10;
+export const FRENCH_CREDIT = 0;
+export const runPercent = (run: RevisionRun) => Math.round(100 * (run.points ?? run.correct) / run.total);
 export function shuffle<T>(items: readonly T[], random = Math.random): T[] {
   const result = [...items];
   for (let i = result.length - 1; i > 0; i--) {
@@ -24,9 +26,11 @@ export function recentRuns(runs: RevisionRun[], themeId: string): RevisionRun[] 
 }
 export function mastery(runs: RevisionRun[], themeId: string): number | null {
   const recent = recentRuns(runs, themeId);
-  return recent.length ? Math.round(recent.reduce((sum, r) => sum + 100 * r.correct / r.total, 0) / recent.length) : null;
+  return recent.length ? Math.round(recent.reduce((sum, r) => sum + 100 * (r.points ?? r.correct) / r.total, 0) / recent.length) : null;
 }
-export function finishRun(themeId: string, questions: RevisionQuestion[], picks: (number | null)[]): RevisionRun {
+export function finishRun(themeId: string, questions: RevisionQuestion[], picks: (number | null)[], frenchUsed = questions.map(() => false)): RevisionRun {
   if (questions.length !== TEST_LENGTH || picks.length !== questions.length || picks.some((p, i) => p !== null && (!Number.isInteger(p) || p < 0 || p >= questions[i].answers.length))) throw new Error('Test incomplet');
-  return { id: crypto.randomUUID(), themeId, completedAt: new Date().toISOString(), questionIds: questions.map(q => q.id), picks: [...picks], correct: questions.filter((q, i) => picks[i] === q.correct).length, total: questions.length };
+  if (frenchUsed.length !== questions.length || frenchUsed.some(used => typeof used !== 'boolean')) throw new Error('Aide française invalide');
+  const points = Math.round(10 * questions.reduce((sum, q, i) => sum + (picks[i] === q.correct ? frenchUsed[i] ? FRENCH_CREDIT : 1 : 0), 0)) / 10;
+  return { id: crypto.randomUUID(), themeId, completedAt: new Date().toISOString(), questionIds: questions.map(q => q.id), picks: [...picks], correct: questions.filter((q, i) => picks[i] === q.correct).length, total: questions.length, points, frenchUsed: [...frenchUsed] };
 }

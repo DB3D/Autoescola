@@ -147,7 +147,7 @@ const revision = createRevision((content, testing) => shell(content, "revision",
 function shell(content: string, tab = "practice", revisionTest = false) {
   if (tab !== "revision") revision.leave();
   document.documentElement.lang = active?.mode === "exam" ? "ca" : "fr";
-  root.innerHTML = `<div class="app-shell"><header>${revisionTest ? '<b>📖 Révision</b>' : headerLead()}<div class="header-actions">${tab === "revision" ? revision.header() : headerTools()}</div>${tab === "revision" ? revision.headerNav() : ''}</header><main>${content}</main>${active || quizRun || revisionTest ? "" : `<nav aria-label="Navigation principale">
+  root.innerHTML = `<div class="app-shell"><header>${tab === "revision" ? revision.headerLead() || headerLead() : headerLead()}<div class="header-actions">${tab === "revision" ? revision.header() : headerTools()}</div>${tab === "revision" ? revision.headerNav() : ''}</header><main>${content}</main>${active || quizRun || revisionTest ? "" : `<nav aria-label="Navigation principale">
     <button data-nav="practice" class="${tab === "practice" ? "current" : ""}"><span>◎</span> Pratiquer</button>
     <button data-nav="exams" class="${tab === "exams" ? "current" : ""}"><span>▣</span> Exam</button>
     <button data-nav="revision" class="${tab === "revision" ? "current" : ""}"><span>▧</span> Révision</button>
@@ -158,7 +158,7 @@ function shell(content: string, tab = "practice", revisionTest = false) {
     -->
   </nav>`}</div>`;
   if (!active && !quizRun && !revisionTest) {
-    document.querySelector("#brand")!.addEventListener("click", (e) => {
+    document.querySelector("#brand")?.addEventListener("click", (e) => {
       e.preventDefault();
       home();
     });
@@ -973,7 +973,7 @@ async function exportProgress(extra?: Session) {
   const rows = [...aa.values()];
   const data = {
     // Version 4 adds revision scores/time; earlier fields are unchanged.
-    schemaVersion: 4,
+    schemaVersion: 5,
     app: "autoescola",
     exportedAt: new Date().toISOString(),
     sessions: [...ss.values()],

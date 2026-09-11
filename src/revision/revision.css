@@ -35,6 +35,8 @@
 .rev-note p:last-child { margin-bottom:0; }
 .rev-footnote { font-size:11px; text-align:center; color:var(--rev-muted); }
 .rev-back { border:0; background:transparent; padding:8px 0; min-height:44px; color:#59677c; font-weight:700; font-size:13px; }
+.rev-header-back { display:flex; align-items:center; gap:9px; min-height:44px; padding:8px 12px; border:1px solid #dce1e9; border-radius:11px; background:white; color:#52617a; font-size:14px; font-weight:700; }
+.rev-header-back > span { font-size:20px; }
 header:has(.rev-header-tabs) { flex-wrap:wrap; }
 .rev-header-tabs { display:flex; align-items:center; gap:8px; flex-basis:100%; padding-top:8px; border-top:1px solid #e5e7ed; }
 .rev-header-caption { color:#66758a; font-size:12px; margin-right:4px; }
