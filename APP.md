@@ -27,7 +27,7 @@ Deployment history on 2026-09-10: enabling Pages first failed with HTTP 422, “
 
 ## Interface
 
-The header is sticky. Outside a questionnaire it holds the name of the application and the French button. During one it replaces the name with a quit button and the question counter, and adds two matching chips before the French button: the answer gauge, tinted from the left by the elapsed share of the 120-second ceiling, then the time, which counts up during a session and down during a time trial or an exam. The practice screen has no summary box above the setup: the Progression page holds the statistics.
+The header is sticky. Outside a questionnaire the French button is hidden; the practice setup toggle controls automatic translations. During a driving questionnaire the header replaces the name with a quit button and the question counter, and adds two matching chips before the French button: the answer gauge, tinted from the left by the elapsed share of the 120-second ceiling, then the time, which counts up during a session and down during a time trial or an exam. The practice screen has no summary box above the setup: the Progression page holds the statistics. Navigation is ordered Pratiquer, Exam, Révision, Català, Progression. The Historique navigation button is commented out; the page and its saved records remain in the code.
 
 Progression opens with the average over the last 100 answered questions, split in two. The Catalan score counts the questions answered correctly without revealing the French text; the total score counts every correct answer, French-assisted ones included. Both use the same denominator, so the difference between them is what the translations carried. Only the Catalan score reflects examination conditions.
 

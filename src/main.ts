@@ -1,4 +1,5 @@
 import "./style.css";
+import { createRevision } from "./revision";
 import {
   allStats,
   answerOrder,
@@ -125,7 +126,7 @@ function headerLead() {
 function headerTools() {
   // The quiz is a French↔Catalan drill on its own: no translation toggle, no clock.
   if (quizRun) return "";
-  if (!active) return languageButton();
+  if (!active) return "";
   const gauge =
     active.mode === "exam"
       ? ""
@@ -142,21 +143,25 @@ function updateElapsed() {
   const clock = document.querySelector<HTMLElement>("#session-clock");
   if (clock) clock.textContent = stopwatch(elapsed());
 }
-function shell(content: string, tab = "practice") {
+const revision = createRevision((content, testing) => shell(content, "revision", testing));
+function shell(content: string, tab = "practice", revisionTest = false) {
+  if (tab !== "revision") revision.leave();
   document.documentElement.lang = active?.mode === "exam" ? "ca" : "fr";
-  root.innerHTML = `<div class="app-shell"><header>${headerLead()}<div class="header-actions">${headerTools()}</div></header><main>${content}</main>${active || quizRun ? "" : `<nav aria-label="Navigation principale"><button data-nav="practice" class="${tab === "practice" ? "current" : ""}"><span>◎</span> Pratiquer</button><button data-nav="history" class="${tab === "history" ? "current" : ""}"><span>◷</span> Historique</button><button data-nav="stats" class="${tab === "stats" ? "current" : ""}"><span>▥</span> Progression</button><button data-nav="exams" class="${tab === "exams" ? "current" : ""}"><span>▣</span> Exams</button><button data-nav="vocab" class="${tab === "vocab" ? "current" : ""}"><span>▤</span> Català</button></nav>`}</div>`;
-  if (!active && !quizRun) {
+  root.innerHTML = `<div class="app-shell"><header>${revisionTest ? '<b>📖 Révision</b>' : headerLead()}<div class="header-actions">${tab === "revision" ? '<span class="rev-header-label">FR → Català</span>' : headerTools()}</div></header><main>${content}</main>${active || quizRun || revisionTest ? "" : `<nav aria-label="Navigation principale">
+    <button data-nav="practice" class="${tab === "practice" ? "current" : ""}"><span>◎</span> Pratiquer</button>
+    <button data-nav="exams" class="${tab === "exams" ? "current" : ""}"><span>▣</span> Exam</button>
+    <button data-nav="revision" class="${tab === "revision" ? "current" : ""}"><span>▧</span> Révision</button>
+    <button data-nav="vocab" class="${tab === "vocab" ? "current" : ""}"><span>▤</span> Català</button>
+    <button data-nav="stats" class="${tab === "stats" ? "current" : ""}"><span>▥</span> Progression</button>
+    <!-- Historique: navigation hidden; page and saved history remain available in the code.
+    <button data-nav="history" class="${tab === "history" ? "current" : ""}"><span>◷</span> Historique</button>
+    -->
+  </nav>`}</div>`;
+  if (!active && !quizRun && !revisionTest) {
     document.querySelector("#brand")!.addEventListener("click", (e) => {
       e.preventDefault();
       home();
     });
-    document.querySelector<HTMLButtonElement>("#reveal")!.onclick = () => {
-      if (mode === "exam") return;
-      autoFrench = !autoFrench;
-      document.querySelector("#reveal")!.setAttribute("aria-pressed", String(autoFrench));
-      const toggle = document.querySelector<HTMLInputElement>("#auto-fr");
-      if (toggle) toggle.checked = autoFrench;
-    };
   }
   document
     .querySelectorAll<HTMLButtonElement>("[data-nav]")
@@ -169,7 +174,7 @@ function shell(content: string, tab = "practice") {
               ? history()
               : b.dataset.nav === "exams"
                 ? exams()
-                : b.dataset.nav === "vocab" ? quizHome() : progress()),
+                : b.dataset.nav === "vocab" ? quizHome() : b.dataset.nav === "revision" ? void revision.open() : progress()),
     );
 }
 function home() {
@@ -207,7 +212,6 @@ function home() {
   );
   document.querySelector<HTMLInputElement>("#auto-fr")!.onchange = (e) => {
     autoFrench = (e.target as HTMLInputElement).checked;
-    document.querySelector("#reveal")!.setAttribute("aria-pressed", String(autoFrench));
   };
   document.querySelector<HTMLButtonElement>("#start")!.onclick = start;
   document.querySelector<HTMLInputElement>("#time-trial")!.onchange = e => {
@@ -977,7 +981,7 @@ async function exportProgress(extra?: Session) {
   setTimeout(() => URL.revokeObjectURL(url), 60000);
 }
 window.addEventListener("beforeunload", (e) => {
-  if (active || saveError) {
+  if (active || saveError || revision.hasUnfinished()) {
     e.preventDefault();
     e.returnValue = "";
   }

@@ -8,7 +8,7 @@
     "dev": "node scripts/prepare-data.mjs && vite --host 0.0.0.0",
     "build": "node scripts/prepare-data.mjs && tsc --noEmit && vite build",
     "preview": "vite preview --host 0.0.0.0",
-    "test": "tsx --test tests/*.test.ts"
+    "test": "tsx --test tests/*.test.ts src/revision/*.test.ts"
   },
   "devDependencies": {
     "vite": "^7.0.0",
