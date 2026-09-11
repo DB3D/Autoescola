@@ -1137,6 +1137,12 @@ nav button {
 .day-fill.quiz {
   background: #7fb3a8;
 }
+.day-fill.revision,
+.legend.revision {
+  background: #4286d6;
+}
+.legend.revision { margin-left: 10px; }
+.day-fill { flex-shrink: 1; }
 .day-total {
   font-variant-numeric: tabular-nums;
   font-weight: 700;

@@ -36,3 +36,12 @@ export interface RevisionRun {
   correct: number;
   total: number;
 }
+// A cumulative checkpoint per study visit and local calendar day. Reading and
+// testing share one clock; these records never enter theme mastery.
+export interface RevisionTime {
+  id: string;
+  sessionId: string;
+  themeId: string;
+  day: string;
+  seconds: number;
+}

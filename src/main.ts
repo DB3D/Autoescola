@@ -147,7 +147,7 @@ const revision = createRevision((content, testing) => shell(content, "revision",
 function shell(content: string, tab = "practice", revisionTest = false) {
   if (tab !== "revision") revision.leave();
   document.documentElement.lang = active?.mode === "exam" ? "ca" : "fr";
-  root.innerHTML = `<div class="app-shell"><header>${revisionTest ? '<b>📖 Révision</b>' : headerLead()}<div class="header-actions">${tab === "revision" ? '<span class="rev-header-label">FR → Català</span>' : headerTools()}</div></header><main>${content}</main>${active || quizRun || revisionTest ? "" : `<nav aria-label="Navigation principale">
+  root.innerHTML = `<div class="app-shell"><header>${revisionTest ? '<b>📖 Révision</b>' : headerLead()}<div class="header-actions">${tab === "revision" ? revision.header() : headerTools()}</div></header><main>${content}</main>${active || quizRun || revisionTest ? "" : `<nav aria-label="Navigation principale">
     <button data-nav="practice" class="${tab === "practice" ? "current" : ""}"><span>◎</span> Pratiquer</button>
     <button data-nav="exams" class="${tab === "exams" ? "current" : ""}"><span>▣</span> Exam</button>
     <button data-nav="revision" class="${tab === "revision" ? "current" : ""}"><span>▧</span> Révision</button>
@@ -874,27 +874,28 @@ const practiceTime = (seconds: number) => {
     : `${Math.floor(minutes / 60)} h ${String(minutes % 60).padStart(2, "0")}`;
 };
 function practiceBoard() {
-  const days = practiceDays(attempts, quizRuns);
+  const days = practiceDays(attempts, quizRuns, 3, new Date(), revision.timeEntries());
   const labels = ["Aujourd’hui", "Hier", "Avant-hier"];
   const peak = Math.max(...days.map((d) => d.totalSeconds), 1);
   const total = days.reduce((s, d) => s + d.totalSeconds, 0);
   const quiz = days.reduce((s, d) => s + d.quizSeconds, 0);
-  return `<section class="practice-board"><h2>Ces 3 derniers jours</h2><div class="score"><strong>${practiceTime(total)}</strong><p>d’entraînement${total ? ` · dont ${practiceTime(quiz)} de català` : ""}</p></div><ol class="day-rows">${days
+  const study = days.reduce((s, d) => s + d.revisionSeconds, 0);
+  return `<section class="practice-board"><h2>Ces 3 derniers jours</h2><div class="score"><strong>${practiceTime(total)}</strong><p>d’entraînement${total ? ` · dont ${practiceTime(quiz)} de català et ${practiceTime(study)} de révision` : ""}</p></div>${revision.timeError() ? '<p class="warning">Le temps de révision local n’a pas pu être entièrement chargé ou sauvegardé. Réessaie ou exporte tes données avant de fermer.</p>' : ''}<ol class="day-rows">${days
     .map((d, i) => {
       const label =
         labels[i] ??
         d.date.toLocaleDateString("fr-FR", { weekday: "long", day: "numeric" });
       // An empty part is left out entirely: a zero-width span would still show
-      // the gap that separates the two.
+      // the gaps that separate the activities.
       const fill = (seconds: number, kind: string) =>
         seconds
           ? `<span class="day-fill ${kind}" style="width:${(seconds / peak) * 100}%"></span>`
           : "";
-      return `<li><span class="day-label">${esc(label)}</span><span class="day-bar" role="img" aria-label="${practiceTime(d.questionSeconds)} de questions et ${practiceTime(d.quizSeconds)} de català">${fill(d.questionSeconds, "questions")}${fill(d.quizSeconds, "quiz")}</span><span class="day-total">${d.totalSeconds ? practiceTime(d.totalSeconds) : "—"}</span></li>`;
+      return `<li><span class="day-label">${esc(label)}</span><span class="day-bar" role="img" aria-label="${practiceTime(d.questionSeconds)} de questions, ${practiceTime(d.quizSeconds)} de català et ${practiceTime(d.revisionSeconds)} de révision">${fill(d.questionSeconds, "questions")}${fill(d.quizSeconds, "quiz")}${fill(d.revisionSeconds, "revision")}</span><span class="day-total">${d.totalSeconds ? practiceTime(d.totalSeconds) : "—"}</span></li>`;
     })
     .join(
       "",
-    )}</ol><p class="helper"><span class="legend questions"></span>Questions de conduite <span class="legend quiz"></span>Quiz català. Le temps compté est celui passé sur les questions, plafonné à ${MAX_ANSWER_SECONDS} s par question comme partout ailleurs.</p></section>`;
+    )}</ol><p class="helper"><span class="legend questions"></span>Questions de conduite <span class="legend quiz"></span>Quiz català <span class="legend revision"></span>Révision (lecture + tests).</p><p class="helper">Conduite et quiz : ${MAX_ANSWER_SECONDS} s maximum par question. Révision : temps passé dans les fiches, tests et corrections, en pause quand l’app est masquée.</p></section>`;
 }
 function recentScoreboard() {
   const recent = recentScores(attempts);
@@ -909,10 +910,11 @@ function recentScoreboard() {
   const assisted = recent.total - recent.catalan;
   return `<section class="recent-score"><h2>${title}</h2><div class="recent-grid"><div class="catalan"><strong>${value(recent.catalanRate)}</strong><span>Score catalan</span><small>${won(recent.catalan)} sans le français</small></div><div><strong>${value(recent.totalRate)}</strong><span>Score total</span><small>${won(recent.total)} dont ${assisted} avec le français</small></div></div><p class="helper">Seul le score catalan compte pour l’examen : les questions réussies avec les traductions affichées ne prouvent pas encore que tu les as en catalan.</p></section>`;
 }
-function progress() {
+function progress(refresh = true) {
+  revision.leave(); // Include the final reading/test seconds before computing totals.
   stats = allStats(attempts);
   shell(
-    `<div class="eyebrow">PAS À PAS</div><h1>Ta progression</h1><p class="muted">${stats.size} sur ${bank.length.toLocaleString("fr-FR")} questions pratiquées.</p><progress value="${stats.size}" max="${bank.length}" aria-label="Questions pratiquées"></progress>${practiceBoard()}${recentScoreboard()}${metrics(attempts, totalPracticeSeconds(attempts, quizRuns), attempts.length, "Temps total · català inclus")}<button class="secondary full" id="export">Sauvegarder mon historique (JSON) ↓</button><p class="helper">Facultatif : télécharge une copie de tes réponses et sessions. Ton historique reste uniquement dans ce navigateur et peut être perdu si ses données sont effacées.</p><h2 class="review-title">Question par question</h2><input type="search" id="search" placeholder="Rechercher une question pratiquée…" aria-label="Rechercher une question pratiquée"><div id="question-stats"></div>`,
+    `<div class="eyebrow">PAS À PAS</div><h1>Ta progression</h1><p class="muted">${stats.size} sur ${bank.length.toLocaleString("fr-FR")} questions pratiquées.</p><progress value="${stats.size}" max="${bank.length}" aria-label="Questions pratiquées"></progress>${practiceBoard()}${recentScoreboard()}${metrics(attempts, totalPracticeSeconds(attempts, quizRuns, revision.timeEntries()), attempts.length, "Temps total · toutes activités")}<button class="secondary full" id="export">Sauvegarder mon historique (JSON) ↓</button><p class="helper">Facultatif : télécharge une copie de tes réponses, sessions et temps de révision. Ton historique reste uniquement dans ce navigateur et peut être perdu si ses données sont effacées.</p><h2 class="review-title">Question par question</h2><input type="search" id="search" placeholder="Rechercher une question pratiquée…" aria-label="Rechercher une question pratiquée"><div id="question-stats"></div>`,
     "stats",
   );
   document.querySelector<HTMLButtonElement>("#export")!.onclick = () =>
@@ -920,6 +922,14 @@ function progress() {
   const search = document.querySelector<HTMLInputElement>("#search")!;
   search.oninput = () => renderStats(search.value);
   renderStats("");
+  if (refresh) void revision.refreshTime().then(() => {
+    if (document.querySelector('[data-nav="stats"].current')) {
+      const query = document.querySelector<HTMLInputElement>('#search')?.value ?? '';
+      progress(false);
+      document.querySelector<HTMLInputElement>('#search')!.value = query;
+      renderStats(query);
+    }
+  });
 }
 function renderStats(query: string) {
   const entries = [...stats.values()]
@@ -940,6 +950,7 @@ function renderStats(query: string) {
     : '<p class="empty">Aucune question pratiquée ne correspond à la recherche.</p>';
 }
 async function exportProgress(extra?: Session) {
+  const revisionData = await revision.exportData();
   // Refresh before exporting so sessions completed in other tabs are included.
   try {
     const [rows, saved, runs, words] = await Promise.all([
@@ -961,8 +972,8 @@ async function exportProgress(extra?: Session) {
   extra?.attempts.forEach((a) => aa.set(a.id, a));
   const rows = [...aa.values()];
   const data = {
-    // Version 2 adds quizRuns, version 3 quizAttempts; earlier fields are unchanged.
-    schemaVersion: 3,
+    // Version 4 adds revision scores/time; earlier fields are unchanged.
+    schemaVersion: 4,
     app: "autoescola",
     exportedAt: new Date().toISOString(),
     sessions: [...ss.values()],
@@ -970,6 +981,8 @@ async function exportProgress(extra?: Session) {
     stats: [...allStats(rows).values()],
     quizRuns,
     quizAttempts,
+    revisionRuns: revisionData.runs,
+    revisionTime: revisionData.time,
   };
   const url = URL.createObjectURL(
     new Blob([JSON.stringify(data, null, 2)], { type: "application/json" }),

@@ -107,6 +107,10 @@
 .rev-dialog-backdrop { position:fixed; inset:0; z-index:20; background:#18243780; display:grid; place-items:center; padding:24px; }
 .rev-dialog { background:white; border-radius:20px; padding:24px; max-width:400px; width:100%; }
 .rev-header-label { color:#59446f; font-size:12px; font-weight:700; }
+.revision-clock { color:#245ea5; background:#eaf2ff; min-width:64px; }
+#revision-time-status { color:#94600c; max-width:90px; font-size:10px; letter-spacing:0; }
+.rev-theme-time { margin-top:9px; color:#245ea5; font-size:11px; }
+.rev-time-total { color:#245ea5; font-size:13px; padding:12px 0 0; }
 @media (max-width:380px) {
   .rev-theme { gap:9px; padding:15px 11px; }
   .rev-icon { width:33px; height:36px; font-size:20px; }

@@ -10,7 +10,7 @@ answer order shuffle; the next draw changes at least one question from the last.
 its lesson index, used by the review links. The source bank's category names and
 representative IDs document the curriculum's relationship to `questions.json`.
 These are newly written comprehension questions, not a filtered copy of the bank.
-The source question bank, vocabulary quiz and their progress are never modified.
+The source question bank, vocabulary quiz and their scores are never modified.
 
 `engine.ts` computes an unweighted mean of the latest five completed test
 percentages for the selected theme, or all available tests while fewer than five
@@ -18,15 +18,45 @@ exist. Unseen mastery is null, displayed as a dash rather than a misleading 0%.
 Skipped questions count as incorrect. An abandoned test does not create a run.
 Corrections appear only after all ten questions. No time or French penalties.
 
-`storage.ts` uses a separate IndexedDB database (`autoescola-revision`, version 1,
-store `runs`). Records are idempotent by UUID and preserve question IDs, original
+`storage.ts` uses a separate IndexedDB database (`autoescola-revision`, version 2,
+stores `runs` and `time`). Upgrading preserves existing version 1 scores. Run
+records are idempotent by UUID and preserve question IDs, original
 answer indices and scores. All completed runs are retained, while mastery and its
 history display only the latest five per theme. Failed writes remain in memory,
 can be retried, and are included in the dedicated JSON export. Browser clearing
 can remove progress. In-progress tests are memory-only; refreshing abandons them.
 
-`index.ts` and `revision.css` own the UI; only the shell's new navigation entry,
-header variation and unload guard integrate with `main.ts`. Styles are scoped to
+## Study time
+
+Opening a theme's lesson starts a visible header clock. Both lessons, tests and
+correction reading share the same visit clock. Returning to the theme catalogue
+or leaving Revision stops the visit. Opening another theme starts a new visit.
+An abandoned test keeps its study time without adding a mastery score. The theme
+catalogue shows lifetime study time per theme and across all Revision themes;
+the lesson/result history also shows that theme's cumulative time.
+
+`time.ts` measures monotonic elapsed time and splits intervals at local midnight.
+`time-tracking.ts` pauses on visibility loss or pagehide and resumes on return.
+Time counts while a lesson/test/correction is visible, including passive reading;
+there is no inactivity timeout or answer-duration cap for Revision. The code does
+not estimate reading time from scrolling or attempt to reconstruct past sessions.
+
+Each visit/day has a cumulative `RevisionTime` checkpoint: ID, visit ID, theme ID,
+local day, seconds. A synchronous localStorage journal is updated every second
+and at pause/exit; IndexedDB checkpoints run every five seconds and at pause/exit.
+The journal recovers updates when mobile teardown interrupts asynchronous writes.
+An abrupt process kill may lose the fraction since the last tick. Max-by-ID
+merging prevents replayed checkpoints from double-counting or rolling time back.
+Storage failures are visible and retryable; exports include in-memory time.
+
+Progression adds Revision in blue to daily bars and the all-activity lifetime
+total. Driving and Català scoring and duration rules remain unchanged. The global
+JSON export is version 4 (`revisionRuns`, `revisionTime` added); the standalone
+Revision export is version 2 (`runs`, `time`). Existing scores without a recorded
+duration remain valid but contribute no invented time.
+
+`index.ts` and `revision.css` own the UI. The shell's navigation entry, header,
+unload guard, time aggregation and exports integrate with `main.ts`. Styles are scoped to
 `.revision` / `rev-*`. The shell uses five navigation destinations; the Historique
 navigation button is commented out while its page and records are preserved.
 
@@ -64,3 +94,9 @@ injected a storage-write failure, verified wrong-answer corrections and JSON
 export of the unsaved record, then retried and checked one durable record.
 Screenshots of the dashboard, lesson, grammar, question and results were reviewed.
 Native iPhone Safari remains a separate device check.
+
+Time verification covers read/test continuity, pause/resume, separate themes,
+local midnight, uncapped daily/lifetime totals, checkpoint idempotency and the
+database migration. Browser checks cover abandon without a mastery score,
+reload, the blue Progression segment, theme totals, failed-write journal recovery,
+both JSON exports and the timer header at 320 px.

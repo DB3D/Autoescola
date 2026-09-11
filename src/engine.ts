@@ -97,18 +97,20 @@ export interface PracticeDay {
   date: Date;
   questionSeconds: number;
   quizSeconds: number;
+  revisionSeconds: number;
   totalSeconds: number;
 }
 function dayKey(date: Date): string {
   return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
 }
-// Practice time is the time spent on questions, capped per question exactly as
-// the totals and averages are, so an idle phone cannot inflate a day.
+// Driving questions retain their answer cap. Revision supplies separate
+// visible-study checkpoints already split by local day, without that cap.
 export function practiceDays(
   attempts: Attempt[],
   runs: QuizRun[],
   days = 3,
   now = new Date(),
+  revisionTime: { day: string; seconds: number }[] = [],
 ): PracticeDay[] {
   const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
   const buckets = new Map<string, PracticeDay>();
@@ -120,6 +122,7 @@ export function practiceDays(
       date,
       questionSeconds: 0,
       quizSeconds: 0,
+      revisionSeconds: 0,
       totalSeconds: 0,
     });
   }
@@ -131,18 +134,24 @@ export function practiceDays(
     const day = buckets.get(dayKey(new Date(r.completedAt)));
     if (day) day.quizSeconds += Math.max(0, r.seconds);
   }
+  for (const row of revisionTime) {
+    const day = buckets.get(row.day);
+    if (day && Number.isFinite(row.seconds)) day.revisionSeconds += Math.max(0, row.seconds);
+  }
   for (const day of buckets.values())
-    day.totalSeconds = day.questionSeconds + day.quizSeconds;
+    day.totalSeconds = day.questionSeconds + day.quizSeconds + day.revisionSeconds;
   return [...buckets.values()]; // Most recent first, as they were created.
 }
-// The lifetime total the Progression page shows, quiz time included.
+// Lifetime time across driving, Català and Revision; scores remain separate.
 export function totalPracticeSeconds(
   attempts: Attempt[],
   runs: QuizRun[],
+  revisionTime: { seconds: number }[] = [],
 ): number {
   return (
     attempts.reduce((s, a) => s + cappedSeconds(a.seconds), 0) +
-    runs.reduce((s, r) => s + Math.max(0, r.seconds), 0)
+    runs.reduce((s, r) => s + Math.max(0, r.seconds), 0) +
+    revisionTime.reduce((s, r) => s + (Number.isFinite(r.seconds) ? Math.max(0, r.seconds) : 0), 0)
   );
 }
 export function trialRemaining(session: Session, now = Date.now()): number | null {

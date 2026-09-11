@@ -3,6 +3,8 @@ import { themes, memoryAids } from './content';
 import { drawTest, finishRun, mastery, recentRuns, shuffle, TEST_LENGTH } from './engine';
 import { readRuns, saveRun } from './storage';
 import type { RevisionQuestion, RevisionRun, RevisionTheme } from './types';
+import { createTimeTracking } from './time-tracking';
+import { studyDuration } from './time';
 
 const esc = (value: unknown) => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
 const rich = (value: string) => esc(value).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
@@ -11,6 +13,8 @@ const level = (value: number | null) => value === null ? 'À découvrir' : value
 const date = (iso: string) => new Date(iso).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
 
 export function createRevision(shell: (html: string, testing: boolean) => void) {
+  const study = createTimeTracking();
+  const themeSeconds = (id: string) => study.entries().filter(row => row.themeId === id).reduce((sum, row) => sum + row.seconds, 0);
   let runs: RevisionRun[] = [];
   let theme: RevisionTheme = themes[0];
   let questions: RevisionQuestion[] = [];
@@ -29,53 +33,62 @@ export function createRevision(shell: (html: string, testing: boolean) => void) 
   function render(html: string, testing = false) {
     viewGeneration++;
     shell(`<div class="revision">${html}</div>`, testing);
+    study.updateHeader();
     window.scrollTo({ top: 0, behavior: 'instant' });
     document.querySelector<HTMLElement>('.revision h1')?.focus({ preventScroll: true });
   }
   const back = '<button class="rev-back" id="rev-home">← Tous les thèmes</button>';
   function warning() {
-    return loadFailed || unsaved.size ? '<p class="rev-warning" role="status">La sauvegarde locale est indisponible. Les résultats affichés peuvent être conservés seulement pendant cette visite. Exporte-les avant de fermer.</p>' : '';
+    return loadFailed || unsaved.size || study.error() ? '<p class="rev-warning" role="status">La sauvegarde locale est indisponible. Les résultats ou le temps affichés peuvent être conservés seulement pendant cette visite. Exporte-les avant de fermer.</p>' : '';
   }
-  function exportRuns() {
-    const data = { app: 'autoescola-revision', schemaVersion: 1, exportedAt: new Date().toISOString(), runs };
+  async function exportData() {
+    study.checkpoint();
+    await study.refresh();
+    try { runs = [...new Map([...(await readRuns()), ...runs].map(r => [r.id, r])).values()]; } catch { /* Retain local results for export. */ }
+    return { runs, time: study.entries() };
+  }
+  async function exportRuns() {
+    const data = { app: 'autoescola-revision', schemaVersion: 2, exportedAt: new Date().toISOString(), ...await exportData() };
     const url = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' }));
     const link = document.createElement('a');
     link.href = url; link.download = `revision-${new Date().toISOString().slice(0, 10)}.json`; link.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
   function overview() {
+    study.stop();
     active = false;
     const learned = themes.filter(t => mastery(runs, t.id) !== null).length;
     render(`<div class="rev-eyebrow">LIRE · COMPRENDRE · RETENIR</div><h1 tabindex="-1">Révision<span class="rev-title-dot">.</span></h1><p class="rev-intro">Une idée à la fois.<br>Le code en français, les réflexes en catalan.</p>
       <div class="rev-overview"><span><b>12 + 2</b>thèmes + bonus català</span><span><b>${learned}<small> / 14</small></b>thèmes évalués</span></div>
-      <p class="rev-how">📖 2 fiches courtes → 📝 10 questions au hasard → 🎯 ton bilan</p>${warning()}
+      <p class="rev-time-total">⏱ <strong>${studyDuration(study.entries().reduce((sum, row) => sum + row.seconds, 0))}</strong> de révision · lecture + tests</p><p class="rev-how">📖 2 fiches courtes → 📝 10 questions au hasard → 🎯 ton bilan</p>${warning()}
       <div class="rev-section-label">LE CODE, PAR PETITES DOSES <span>12 thèmes</span></div><div class="rev-theme-list">${themes.filter(t => t.categories[0] !== 'CATALA').map(card).join('')}</div>
       <div class="rev-section-label">LE PETIT PLUS CATALÀ <span>2 bonus A1</span></div><div class="rev-theme-list">${themes.filter(t => t.categories[0] === 'CATALA').map(card).join('')}</div>
-      <div class="rev-note"><b>Comment est calculée ta maîtrise ?</b><p>La moyenne des <strong>5 derniers tests terminés</strong> de chaque thème. Au début, on utilise les tests disponibles. Un test quitté ne compte pas.</p><p>Chaque question vaut 1 point. Aucun chrono. Les corrections arrivent à la fin.</p></div>
-      ${unsaved.size ? '<button id="rev-save-all" class="rev-secondary">Réessayer les sauvegardes en attente</button>' : ''}<button id="rev-export" class="rev-secondary">Exporter mes résultats Révision</button><p class="rev-footnote">Sur ce navigateur · ${runs.length} test${runs.length === 1 ? '' : 's'} terminé${runs.length === 1 ? '' : 's'}</p>`);
+      <div class="rev-note"><b>Comment est calculée ta maîtrise ?</b><p>La moyenne des <strong>5 derniers tests terminés</strong> de chaque thème. Au début, on utilise les tests disponibles. Un test quitté ne compte pas dans la maîtrise ; son temps reste enregistré.</p><p>Chaque question vaut 1 point. Aucune limite de temps. Les corrections arrivent à la fin.</p><p>Le chrono démarre à l’ouverture d’une fiche et cumule lecture, tests et corrections jusqu’au retour aux thèmes. Il se met en pause quand l’app est masquée. Les temps antérieurs à cette fonction ne sont pas disponibles.</p></div>
+      ${unsaved.size || study.error() ? '<button id="rev-save-all" class="rev-secondary">Réessayer les sauvegardes en attente</button>' : ''}<button id="rev-export" class="rev-secondary">Exporter mes résultats Révision</button><p class="rev-footnote">Sur ce navigateur · ${runs.length} test${runs.length === 1 ? '' : 's'} terminé${runs.length === 1 ? '' : 's'}</p>`);
     document.querySelectorAll<HTMLButtonElement>('[data-theme]').forEach(b => b.onclick = () => { theme = themes.find(t => t.id === b.dataset.theme)!; lesson(0); });
     button('rev-export', exportRuns);
     button('rev-save-all', () => {
       const request = viewGeneration;
       const control = document.querySelector<HTMLButtonElement>('#rev-save-all')!;
       control.disabled = true; control.textContent = 'Enregistrement…';
-      void Promise.all([...unsaved.values()].map(async r => {
+      void Promise.all([study.refresh(), ...[...unsaved.values()].map(async r => {
         try { await saveRun(r); unsaved.delete(r.id); } catch { /* Keep retryable records. */ }
-      })).then(() => { if (request === viewGeneration) overview(); });
+      })]).then(() => { if (request === viewGeneration) overview(); });
     });
   }
   function card(t: RevisionTheme) {
     const score = mastery(runs, t.id), recent = recentRuns(runs, t.id);
-    return `<button class="rev-theme rev-${t.color}" data-theme="${t.id}"><span class="rev-icon" aria-hidden="true">${t.icon}</span><span class="rev-card-body"><strong>${esc(t.title)}</strong><span class="rev-subtitle">${esc(t.subtitle)}</span><span class="rev-meter"><span style="width:${score ?? 0}%"></span></span><span class="rev-card-meta">${level(score)} · ${recent.length}/5 tests récents</span></span><span class="rev-card-score">${percent(score)}<span aria-hidden="true">↗</span></span></button>`;
+    return `<button class="rev-theme rev-${t.color}" data-theme="${t.id}"><span class="rev-icon" aria-hidden="true">${t.icon}</span><span class="rev-card-body"><strong>${esc(t.title)}</strong><span class="rev-subtitle">${esc(t.subtitle)}</span><span class="rev-meter"><span style="width:${score ?? 0}%"></span></span><span class="rev-card-meta">${level(score)} · ${recent.length}/5 tests récents</span><span class="rev-theme-time">⏱ ${studyDuration(themeSeconds(t.id))} · lecture + tests</span></span><span class="rev-card-score">${percent(score)}<span aria-hidden="true">↗</span></span></button>`;
   }
   function history() {
     const recent = recentRuns(runs, theme.id);
-    return `<div class="rev-history"><div><b>Maîtrise du thème</b><strong>${percent(mastery(runs, theme.id))}</strong></div><p>Moyenne des ${recent.length || 'futurs'} derniers tests terminés${recent.length < 5 && recent.length ? ' · 5 maximum' : ''}.</p><ol>${recent.length ? [...recent].reverse().map(r => `<li><b>${Math.round(100 * r.correct / r.total)} %</b><time datetime="${r.completedAt}">${esc(date(r.completedAt))}</time></li>`).join('') : '<li>Pas encore évalué. Le premier test donnera ton point de départ.</li>'}</ol></div>`;
+    return `<div class="rev-history"><div><b>Maîtrise du thème</b><strong>${percent(mastery(runs, theme.id))}</strong></div><p>Moyenne des ${recent.length || 'futurs'} derniers tests terminés${recent.length < 5 && recent.length ? ' · 5 maximum' : ''}.</p><ol>${recent.length ? [...recent].reverse().map(r => `<li><b>${Math.round(100 * r.correct / r.total)} %</b><time datetime="${r.completedAt}">${esc(date(r.completedAt))}</time></li>`).join('') : '<li>Pas encore évalué. Le premier test donnera ton point de départ.</li>'}</ol><p class="rev-theme-time">⏱ Temps total sur ce thème : <strong data-study-theme="${theme.id}">${studyDuration(themeSeconds(theme.id))}</strong><br>Lecture + tests + corrections</p></div>`;
   }
   function sources() {
     return `<details class="rev-sources"><summary>Sources de ce thème</summary><p>${esc(theme.sources)}</p>${theme.articles ? `<p><a href="https://portaljuridicandorra.ad/L2021012" target="_blank" rel="noopener noreferrer">Code de circulation d’Andorre</a> · articles ${esc(theme.articles)}.</p>${theme.id === 'documents' ? '<p><a href="https://portaljuridicandorra.ad/R20250702B" target="_blank" rel="noopener noreferrer">Règlement des permis du 2 juillet 2025</a></p>' : ''}<p>Points réglementaires recoupés le 11 septembre 2026. Les anciennes règles contradictoires des supports ne sont pas reprises.</p>` : ''}<p>${theme.bankIds.length ? `Catégories : ${esc(theme.categories.join(', '))}. Questions repères : ${esc(theme.bankIds.join(', '))}.` : 'Bonus fondé sur le vocabulaire et les tournures du quiz catalan.'}</p></details>`;
   }
   function lesson(pageIndex: number) {
+    study.start(theme.id);
     active = false;
     const p = theme.pages[pageIndex];
     render(`${back}<div class="rev-lesson rev-${theme.color}"><div class="rev-eyebrow">${theme.icon} ${esc(theme.title)}</div><div class="rev-page-tabs" aria-label="Fiches du thème">${theme.pages.map((_, i) => `<button data-page="${i}" ${i === pageIndex ? 'aria-current="step"' : ''}>Fiche ${i + 1}<span>${i === pageIndex ? '●' : '○'}</span></button>`).join('')}</div><h1 tabindex="-1">${esc(p.title)}</h1><p class="rev-kicker">${esc(p.kicker)}</p>
@@ -89,6 +102,7 @@ export function createRevision(shell: (html: string, testing: boolean) => void) 
     button('rev-continue', () => pageIndex === 0 ? lesson(1) : start());
   }
   function start() {
+    study.start(theme.id);
     questions = drawTest(theme, previous.get(theme.id) ?? recentRuns(runs, theme.id)[0]?.questionIds);
     previous.set(theme.id, questions.map(q => q.id));
     picks = []; index = 0; active = true; prepareQuestion();
@@ -161,16 +175,22 @@ export function createRevision(shell: (html: string, testing: boolean) => void) 
   }
   return {
     async open() {
+      study.stop();
       const request = ++generation;
       render('<h1 tabindex="-1">Révision</h1><p role="status">Chargement de tes résultats…</p>');
       try {
-        const stored = await readRuns();
+        const [stored] = await Promise.all([readRuns(), study.refresh()]);
         if (request !== generation) return;
         runs = [...new Map([...stored, ...runs].map(r => [r.id, r])).values()]; loadFailed = false;
       } catch { if (request !== generation) return; loadFailed = true; }
       overview();
     },
-    leave() { generation++; viewGeneration++; active = false; },
-    hasUnfinished() { return active || unsaved.size > 0; }
+    leave() { generation++; viewGeneration++; active = false; study.stop(); },
+    hasUnfinished() { return active || unsaved.size > 0 || study.unsaved(); },
+    header: study.header,
+    refreshTime: study.refresh,
+    timeEntries: study.entries,
+    timeError: study.error,
+    exportData
   };
 }
