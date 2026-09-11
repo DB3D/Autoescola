@@ -4,16 +4,17 @@ import {
   type Session,
   type Attempt,
   type QuizRun,
+  type QuizAttempt,
 } from "./engine";
 const DB = "autoescola-progress";
-// Version 2 adds quizRuns. Existing databases only gain the new store, so a
-// browser that already holds sessions, attempts and stats keeps them.
+// Version 2 adds quizRuns, version 3 quizAttempts. Existing databases only
+// gain the new stores, so a browser that already holds data keeps it.
 export function openDB(): Promise<IDBDatabase> {
   return new Promise((resolve, reject) => {
-    const r = indexedDB.open(DB, 2);
+    const r = indexedDB.open(DB, 3);
     r.onupgradeneeded = () => {
       const names = r.result.objectStoreNames;
-      for (const store of ["sessions", "attempts", "stats", "quizRuns"])
+      for (const store of ["sessions", "attempts", "stats", "quizRuns", "quizAttempts"])
         if (!names.contains(store))
           r.result.createObjectStore(store, { keyPath: "id" });
     };
@@ -36,13 +37,12 @@ export async function readAll<T>(store: string): Promise<T[]> {
     };
   });
 }
-// A finished quiz run stores its cost in time and nothing else: no attempt, no
-// question statistic, no mastery.
-export async function saveQuizRun(run: QuizRun) {
-  const db = await openDB();
-  return new Promise<void>((resolve, reject) => {
-    const tx = db.transaction("quizRuns", "readwrite");
-    tx.objectStore("quizRuns").put(run);
+// Quiz records go to their own stores and never touch the driving attempts,
+// statistics or mastery. Saving the same record twice keeps one row.
+function putOne(store: "quizRuns" | "quizAttempts", row: QuizRun | QuizAttempt) {
+  return openDB().then((db) => new Promise<void>((resolve, reject) => {
+    const tx = db.transaction(store, "readwrite");
+    tx.objectStore(store).put(row);
     tx.oncomplete = () => {
       db.close();
       resolve();
@@ -51,8 +51,12 @@ export async function saveQuizRun(run: QuizRun) {
       db.close();
       reject(tx.error ?? new Error("Storage transaction failed"));
     };
-  });
+  }));
 }
+// A quiz run stores its cost in time; the difficulty lives in quizAttempts.
+export const saveQuizRun = (run: QuizRun) => putOne("quizRuns", run);
+export const saveQuizAttempt = (attempt: QuizAttempt) =>
+  putOne("quizAttempts", attempt);
 export async function saveSession(session: Session) {
   const db = await openDB();
   return new Promise<void>((resolve, reject) => {

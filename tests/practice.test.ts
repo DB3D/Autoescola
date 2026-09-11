@@ -6,9 +6,10 @@ import {
   MAX_ANSWER_SECONDS,
   type Attempt,
   type QuizRun,
+  type QuizAttempt,
 } from "../src/engine";
 import "fake-indexeddb/auto";
-import { readAll, saveQuizRun } from "../src/storage";
+import { readAll, saveQuizRun, saveQuizAttempt } from "../src/storage";
 
 const NOW = new Date(2026, 8, 10, 14, 30); // 10 September 2026, local time.
 const at = (daysAgo: number, hour = 12) =>
@@ -114,6 +115,26 @@ test("quiz runs persist on their own and saving one twice keeps one row", async 
     540,
   );
   // The quiz stores its cost in time, never an attempt or a question statistic.
+  assert.equal((await readAll("attempts")).length, 0);
+  assert.equal((await readAll("stats")).length, 0);
+});
+
+test("quiz answers persist in their own store and never become driving attempts", async () => {
+  const answer: QuizAttempt = {
+    id: "qa1",
+    runId: "r",
+    questionId: "q201",
+    selected: null,
+    correct: false,
+    passed: true,
+    seconds: 6,
+    at: at(0),
+  };
+  await saveQuizAttempt(answer);
+  await saveQuizAttempt(answer); // Same id: a repeated save must not double it.
+  await saveQuizAttempt({ ...answer, id: "qa2", selected: 2, correct: true, passed: false });
+  const stored = await readAll<QuizAttempt>("quizAttempts");
+  assert.deepEqual(stored.map((a) => a.id).sort(), ["qa1", "qa2"]);
   assert.equal((await readAll("attempts")).length, 0);
   assert.equal((await readAll("stats")).length, 0);
 });

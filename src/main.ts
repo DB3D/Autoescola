@@ -21,14 +21,19 @@ import {
   practiceDays,
   totalPracticeSeconds,
   type QuizRun,
+  type QuizAttempt,
 } from "./engine";
-import { readAll, saveSession, saveQuizRun } from "./storage";
+import { readAll, saveSession, saveQuizRun, saveQuizAttempt } from "./storage";
 import { unlock } from "./lock";
 import {
+  difficultyTier,
   drawVocab,
   vocabBank,
+  vocabStats,
+  vocabStatsFor,
   vocabTypeName,
   VOCAB_LENGTH,
+  type QuizMode,
   type VocabQuestion,
 } from "./vocab";
 const root = document.querySelector<HTMLDivElement>("#app")!;
@@ -65,8 +70,12 @@ let mode: Mode = "smart",
   saving = false,
   saveError = false,
   storageError = false;
-// The Català quiz is a standalone drill: a fixed draw, a score, nothing stored.
-let quizRun: VocabQuestion[] | null = null,
+// The Català quiz is a standalone drill with its own difficulty tracking: its
+// answers never reach the driving attempts, statistics or mastery.
+let quizMode: QuizMode = "smart",
+  quizAttempts: QuizAttempt[] = [],
+  quizRunId = "",
+  quizRun: VocabQuestion[] | null = null,
   quizPicks: (number | null)[] = [],
   quizIndex = 0,
   quizOrder: number[] = [],
@@ -617,19 +626,58 @@ function quizHome() {
     acc[q.type] = (acc[q.type] ?? 0) + 1;
     return acc;
   }, {});
+  const stats = vocabStats(quizAttempts);
+  const tiers = { hard: 0, shaky: 0, known: 0, new: 0 };
+  for (const q of vocabBank) tiers[difficultyTier(stats.get(q.id))]++;
+  // Only words that are still a problem: a known word is not worth listing.
+  const hardest = vocabBank
+    .map((q) => ({ q, s: stats.get(q.id) }))
+    .filter(({ s }) => s && difficultyTier(s) !== "known")
+    .sort((a, b) => b.s!.difficulty - a.s!.difficulty)
+    .slice(0, 12);
+  const modes: [QuizMode, string, string, string][] = [
+    ["smart", "✦", "Entraînement intelligent", "Revient surtout sur les mots classés difficiles, avec quelques mots jamais vus"],
+    ["random", "⤨", "Aléatoire", `${VOCAB_LENGTH} questions au hasard parmi les ${vocabBank.length}`],
+  ];
   shell(
-    `<div class="eyebrow">LECTURE DU CATALAN</div><h1>Català</h1><p class="muted">${VOCAB_LENGTH} questions tirées au hasard parmi ${vocabBank.length}. Un score à la fin, rien d’enregistré.</p><section class="setup"><div class="section-heading"><h2>Ce que ça t’entraîne à repérer</h2></div><div class="metric-grid">${Object.entries(counts)
+    `<div class="eyebrow">LECTURE DU CATALAN</div><h1>Català</h1><p class="muted">${VOCAB_LENGTH} questions parmi ${vocabBank.length} : ${Object.entries(counts)
+      .map(([type, n]) => `${n} ${esc((vocabTypeName[type] ?? type).toLocaleLowerCase("fr-FR"))}`)
+      .join(" · ")}.</p><section class="setup"><fieldset><legend>Comment veux-tu t’entraîner ?</legend>${modes
       .map(
-        ([type, n]) =>
-          `<div><strong>${n}</strong><span>${esc(vocabTypeName[type] ?? type)}</span></div>`,
+        ([m, icon, name, note]) =>
+          `<label class="mode-card"><input type="radio" name="quiz-mode" value="${m}" ${quizMode === m ? "checked" : ""}><span class="mode-icon">${icon}</span><span><b>${name}</b><small>${note}</small></span><span class="radio-mark"></span></label>`,
       )
-      .join("")}</div><p class="helper">Les mots-pièges et les tournures sont ceux qui retournent le sens d’une phrase : cap, no cal, llevat de, només, sempre que, avançar, pas. Les rater, c’est répondre à côté même en connaissant la règle.</p><button class="primary" id="quiz-start">Commencer le quiz <span>→</span></button></section><p class="privacy">Sans score conservé · Sans compte</p>`,
+      .join("")}</fieldset><button class="primary" id="quiz-start">Commencer le quiz <span>→</span></button></section><h2 class="review-title">Ta difficulté</h2><div class="metric-grid">${(
+      [
+        [tiers.hard, "Difficiles"],
+        [tiers.shaky, "Fragiles"],
+        [tiers.known, "Acquis"],
+        [tiers.new, "Jamais vus"],
+      ] as const
+    )
+      .map(([n, label]) => `<div><strong>${n}</strong><span>${label}</span></div>`)
+      .join("")}</div><p class="helper">Une erreur ou un passage classe un mot difficile. Deux bonnes réponses rapides (moins de 8 s) le rendent acquis ; sans révision, il redevient fragile après quelques jours.</p>${
+      hardest.length
+        ? `<h2 class="review-title">Les mots qui te résistent</h2>${hardest
+            .map(
+              ({ q, s }) =>
+                `<details class="review"><summary><span class="mastery">${Math.round(s!.difficulty)}<small>/100</small></span><span><span lang="ca">${esc(q.catalan)}</span><small>${s!.shown} ${s!.shown === 1 ? "tentative" : "tentatives"} · ${s!.successes} réussie${s!.successes > 1 ? "s" : ""} · ${s!.failures} ratée${s!.failures > 1 ? "s" : ""}${s!.passes ? ` dont ${s!.passes} passée${s!.passes > 1 ? "s" : ""}` : ""}</small></span></summary><div class="review-body"><p class="muted">${esc(q.prompt)}</p><p class="good"><b>Bonne réponse : <span lang="${q.answer_lang ?? "fr"}">${esc(q.answers[q.correct_option - 1])}</span></b></p><p class="quiz-note">${esc(q.note)}</p></div></details>`,
+            )
+            .join("")}`
+        : '<p class="empty">Aucun mot difficile pour l’instant. Lance un quiz pour que chaque réponse classe le mot.</p>'
+    }<p class="privacy">Sur cet appareil uniquement · Sans compte</p>`,
     "vocab",
   );
+  document.querySelectorAll<HTMLInputElement>('input[name="quiz-mode"]').forEach((input) => {
+    input.onchange = () => {
+      quizMode = input.value as QuizMode;
+    };
+  });
   document.querySelector<HTMLButtonElement>("#quiz-start")!.onclick = quizStart;
 }
 function quizStart() {
-  quizRun = drawVocab();
+  quizRun = drawVocab(VOCAB_LENGTH, vocabBank, quizMode, vocabStats(quizAttempts));
+  quizRunId = crypto.randomUUID();
   quizPicks = [];
   quizIndex = 0;
   quizSeconds = 0;
@@ -638,16 +686,17 @@ function quizStart() {
 function quizQuestion() {
   quizAnswered = false;
   const q = quizRun![quizIndex];
+  const s = vocabStatsFor(q.id, quizAttempts);
   quizOrder = answerOrder(q.answers.length);
   shell(
-    `<progress value="${quizIndex}" max="${quizRun!.length}" aria-label="Progression du quiz"></progress><div class="question-copy"><div class="question-meta" role="group" aria-label="Type de question"><span class="tag">${esc(vocabTypeName[q.type] ?? q.type)}</span><span>#${esc(q.id)}</span></div><p class="quiz-prompt">${esc(q.prompt)}</p><h2 tabindex="-1" id="question-title" lang="ca">${esc(q.catalan)}</h2></div><div class="answers">${quizOrder
+    `<progress value="${quizIndex}" max="${quizRun!.length}" aria-label="Progression du quiz"></progress><div class="question-copy"><div class="question-meta" role="group" aria-label="Type et difficulté de la question"><span class="tag">${esc(vocabTypeName[q.type] ?? q.type)}</span><span>#${esc(q.id)}</span><span>${s.shown} ${s.shown === 1 ? "tentative" : "tentatives"}</span><span title="Difficulté personnelle : 100 moins le score de maîtrise du mot.">Difficulté : ${s.shown ? `${Math.round(s.difficulty)}/100` : "À évaluer"}</span></div><p class="quiz-prompt">${esc(q.prompt)}</p><h2 tabindex="-1" id="question-title" lang="ca">${esc(q.catalan)}</h2></div><div class="answers">${quizOrder
       .map(
         (a, i) =>
-          `<button class="answer" data-answer="${a}"><span class="letter">${"ABC"[i]}</span><span><b lang="fr">${esc(q.answers[a])}</b></span><span class="answer-state"></span></button>`,
+          `<button class="answer" data-answer="${a}"><span class="letter">${"ABCD"[i]}</span><span><b lang="${q.answer_lang ?? "fr"}">${esc(q.answers[a])}</b></span><span class="answer-state"></span></button>`,
       )
       .join(
         "",
-      )}</div><div id="feedback" role="status" aria-live="polite"></div><div class="question-actions"><p class="next-hint" id="next" role="status" hidden>Clique n’importe où pour ${quizIndex + 1 === quizRun!.length ? "voir ton résultat" : "passer à la question suivante"} <span aria-hidden="true">→</span></p></div>`,
+      )}<button class="answer" id="skip"><span class="letter">${"ABCDE"[quizOrder.length]}</span><span><b>Passer cette question</b></span><span class="answer-state"></span></button></div><div id="feedback" role="status" aria-live="polite"></div><div class="question-actions"><p class="next-hint" id="next" role="status" hidden>Clique n’importe où pour ${quizIndex + 1 === quizRun!.length ? "voir ton résultat" : "passer à la question suivante"} <span aria-hidden="true">→</span></p></div>`,
     "vocab",
   );
   document
@@ -659,11 +708,19 @@ function quizQuestion() {
           quizAnswer(+b.dataset.answer!);
         }),
     );
+  document.querySelector<HTMLButtonElement>("#skip")!.onclick = (e) => {
+    e.stopPropagation();
+    quizAnswer(null);
+  };
   document.querySelector<HTMLElement>(".app-shell")!.onclick = (e) => {
     if (!(e.target as HTMLElement).closest("header")) quizAdvance();
   };
   document.querySelector<HTMLButtonElement>("#quit")!.onclick = () => {
-    if (confirm("Quitter ? Le quiz en cours sera perdu.")) quizHome();
+    if (!confirm("Quitter le quiz ? Les réponses déjà données restent comptées dans ta difficulté.")) return;
+    // Every answer is already saved; the time they took is kept with them.
+    const answered = quizIndex + (quizAnswered ? 1 : 0);
+    if (answered) recordQuizRun(quizRun!.slice(0, answered));
+    quizHome();
   };
   window.scrollTo(0, 0);
   document
@@ -671,17 +728,40 @@ function quizQuestion() {
     ?.focus({ preventScroll: true });
   quizShownAt = performance.now();
 }
-function quizAnswer(selected: number) {
+function quizAnswer(selected: number | null) {
   if (quizAnswered || !quizRun) return;
   quizAnswered = true;
   quizAnsweredAt = Date.now();
   // Same per-question ceiling as a practice session, so both feed one total.
-  quizSeconds += cappedSeconds((performance.now() - quizShownAt) / 1000);
+  const seconds = cappedSeconds((performance.now() - quizShownAt) / 1000);
+  quizSeconds += seconds;
   const q = quizRun[quizIndex],
     right = q.correct_option - 1,
     correct = selected === right;
   quizPicks[quizIndex] = selected;
+  // Saved at once, so leaving mid-run still classes the words already seen.
+  // A storage failure keeps the answer in memory for this visit.
+  const attempt: QuizAttempt = {
+    id: crypto.randomUUID(),
+    runId: quizRunId,
+    questionId: q.id,
+    selected,
+    correct,
+    passed: selected === null,
+    seconds: Math.round(seconds * 100) / 100,
+    at: new Date().toISOString(),
+  };
+  quizAttempts = [...quizAttempts, attempt];
+  void saveQuizAttempt(attempt).catch(() => {
+    storageError = true;
+  });
   document.querySelector(".answers")!.classList.add("locked");
+  const skip = document.querySelector<HTMLButtonElement>("#skip")!;
+  skip.disabled = true;
+  if (selected === null) {
+    skip.classList.add("incorrect");
+    skip.querySelector(".answer-state")!.textContent = "✕";
+  }
   document
     .querySelector(".app-shell")!
     .classList.add(correct ? "flash-success" : "flash-failure");
@@ -695,7 +775,7 @@ function quizAnswer(selected: number) {
   });
   document.querySelector<HTMLElement>("#next")!.hidden = false;
   document.querySelector("#feedback")!.innerHTML =
-    `<div class="feedback ${correct ? "good" : "bad"}"><span class="thumb">${correct ? "👍" : "👎"}</span><b>${correct ? "Bonne réponse !" : "Réponse incorrecte."}</b><span>${correct ? "" : `Bonne réponse : ${"ABC"[quizOrder.indexOf(right)]}.`}</span></div><p class="quiz-note">${esc(q.note)}</p>`;
+    `<div class="feedback ${correct ? "good" : "bad"}"><span class="thumb">${correct ? "👍" : "👎"}</span><b>${correct ? "Bonne réponse !" : selected === null ? "Question passée." : "Réponse incorrecte."}</b><span>${correct ? "" : `Bonne réponse : ${"ABCD"[quizOrder.indexOf(right)]}.`}</span></div><p class="quiz-note">${esc(q.note)}</p>`;
 }
 function quizAdvance() {
   if (!quizRun || !quizAnswered) return;
@@ -708,39 +788,44 @@ function quizAdvance() {
   quizIndex++;
   quizQuestion();
 }
-function quizResult() {
-  const run = quizRun!,
-    picks = quizPicks,
-    ok = run.filter((q, i) => picks[i] === q.correct_option - 1).length,
-    missed = run
-      .map((q, i) => ({ q, picked: picks[i] ?? null }))
-      .filter(({ q, picked }) => picked !== q.correct_option - 1);
+// A run's practice time is recorded when it ends, and also when it is left
+// early, since the answers already given count in the difficulty. A storage
+// failure must not cost the score on screen, so it is noted and never blocks.
+function recordQuizRun(answered: VocabQuestion[]) {
   const record: QuizRun = {
-    id: crypto.randomUUID(),
+    id: quizRunId,
     completedAt: new Date().toISOString(),
-    questions: run.length,
-    correct: ok,
+    questions: answered.length,
+    correct: answered.filter((q, i) => quizPicks[i] === q.correct_option - 1).length,
     seconds: Math.round(quizSeconds * 100) / 100,
   };
-  // The run itself is not kept, only its practice time. A storage failure must
-  // not cost the score on screen, so it is noted and never blocks the result.
   quizRuns = [...quizRuns, record];
   void saveQuizRun(record).catch(() => {
     quizRuns = quizRuns.filter((r) => r.id !== record.id);
     storageError = true;
   });
+}
+function quizResult() {
+  const run = quizRun!,
+    picks = quizPicks,
+    ok = run.filter((q, i) => picks[i] === q.correct_option - 1).length,
+    skipped = picks.filter((p) => p === null).length,
+    missed = run
+      .map((q, i) => ({ q, picked: picks[i] ?? null }))
+      .filter(({ q, picked }) => picked !== q.correct_option - 1);
+  recordQuizRun(run);
   quizRun = null; // Back to a normal screen: the nav and the brand return.
   shell(
-    `<div class="eyebrow">QUIZ TERMINÉ</div><h1>${ok === run.length ? "Sans faute." : ok >= run.length * 0.75 ? "Bien lu." : "À retravailler."}</h1><div class="score"><strong>${ok}<span> / ${run.length}</span></strong><p>bonnes réponses · ${pct(ok / run.length)}</p></div><button class="primary" id="quiz-again">Refaire ${VOCAB_LENGTH} questions →</button><button class="secondary full" id="quiz-back">Revenir à l’accueil du quiz</button>${
+    `<div class="eyebrow">QUIZ TERMINÉ · ${quizMode === "smart" ? "ENTRAÎNEMENT INTELLIGENT" : "ALÉATOIRE"}</div><h1>${ok === run.length ? "Sans faute." : ok >= run.length * 0.75 ? "Bien lu." : "À retravailler."}</h1><div class="score"><strong>${ok}<span> / ${run.length}</span></strong><p>bonnes réponses · ${pct(ok / run.length)}${skipped ? ` · ${skipped} passée${skipped > 1 ? "s" : ""}` : ""}</p></div><button class="primary" id="quiz-again">Refaire ${VOCAB_LENGTH} questions →</button><button class="secondary full" id="quiz-back">Voir ma difficulté</button>${
       missed.length
         ? `<h2 class="review-title">Les ${missed.length === 1 ? "mot manqué" : `${missed.length} mots manqués`}</h2><p class="muted">Relis-les : ce sont eux qui te font mal lire une phrase.</p>${missed
             .map(
               ({ q, picked }) =>
-                `<details class="review"><summary><span class="result-mark bad">✕</span><span><span lang="ca">${esc(q.catalan)}</span><small>${esc(vocabTypeName[q.type] ?? q.type)}</small></span></summary><div class="review-body"><p>Ta réponse : ${
+                `<details class="review"><summary><span class="result-mark bad">${picked === null ? "—" : "✕"}</span><span><span lang="ca">${esc(q.catalan)}</span><small>${esc(vocabTypeName[q.type] ?? q.type)}</small></span></summary><div class="review-body"><p>Ta réponse : ${
                   picked === null
-                    ? "Sans réponse"
-                    : `<span lang="fr">${esc(q.answers[picked])}</span>`
-                }</p><p class="good"><b>Bonne réponse : <span lang="fr">${esc(q.answers[q.correct_option - 1])}</span></b></p><p class="quiz-note">${esc(q.note)}</p></div></details>`,
+                    ? "Passée"
+                    : `<span lang="${q.answer_lang ?? "fr"}">${esc(q.answers[picked])}</span>`
+                }</p><p class="good"><b>Bonne réponse : <span lang="${q.answer_lang ?? "fr"}">${esc(q.answers[q.correct_option - 1])}</span></b></p><p class="quiz-note">${esc(q.note)}</p></div></details>`,
             )
             .join("")}`
         : '<p class="empty">Aucune erreur. Retire 20 questions pour en croiser d’autres.</p>'
@@ -853,14 +938,16 @@ function renderStats(query: string) {
 async function exportProgress(extra?: Session) {
   // Refresh before exporting so sessions completed in other tabs are included.
   try {
-    const [rows, saved, runs] = await Promise.all([
+    const [rows, saved, runs, words] = await Promise.all([
       readAll<Attempt>("attempts"),
       readAll<Session>("sessions"),
       readAll<QuizRun>("quizRuns"),
+      readAll<QuizAttempt>("quizAttempts"),
     ]);
     attempts = rows.map(capAttempt);
     sessions = saved;
     quizRuns = runs;
+    quizAttempts = words;
   } catch {
     // Memory still contains the current session when persistent storage fails.
   }
@@ -870,13 +957,15 @@ async function exportProgress(extra?: Session) {
   extra?.attempts.forEach((a) => aa.set(a.id, a));
   const rows = [...aa.values()];
   const data = {
-    schemaVersion: 2, // Version 2 adds quizRuns; every version 1 field is unchanged.
+    // Version 2 adds quizRuns, version 3 quizAttempts; earlier fields are unchanged.
+    schemaVersion: 3,
     app: "autoescola",
     exportedAt: new Date().toISOString(),
     sessions: [...ss.values()],
     attempts: rows,
     stats: [...allStats(rows).values()],
     quizRuns,
+    quizAttempts,
   };
   const url = URL.createObjectURL(
     new Blob([JSON.stringify(data, null, 2)], { type: "application/json" }),
@@ -907,14 +996,16 @@ async function boot() {
       fetchJSON("translations_fr.json"),
     ]);
     try {
-      const [rows, saved, runs] = await Promise.all([
+      const [rows, saved, runs, words] = await Promise.all([
         readAll<Attempt>("attempts"),
         readAll<Session>("sessions"),
         readAll<QuizRun>("quizRuns"),
+        readAll<QuizAttempt>("quizAttempts"),
       ]);
       attempts = rows.map(capAttempt);
       sessions = saved;
       quizRuns = runs;
+      quizAttempts = words;
     } catch {
       storageError = true;
     }

@@ -71,14 +71,26 @@ export function recentScores(attempts: Attempt[], size = 100) {
     totalRate: count ? total / count : 0,
   };
 }
-// The Català quiz keeps no per-question history, only what a finished run cost
-// in time, so that practice time can be counted alongside the question bank.
+// What a Català quiz run cost in time, so that practice time can be counted
+// alongside the question bank.
 export interface QuizRun {
   id: string;
   completedAt: string;
   questions: number;
   correct: number;
   seconds: number;
+}
+// One answer in the Català quiz, the basis of its difficulty tracking. It is
+// kept apart from Attempt so the quiz can never move a driving-question score.
+export interface QuizAttempt {
+  id: string;
+  runId: string;
+  questionId: string;
+  selected: number | null; // Index in the file's answers; null when skipped.
+  correct: boolean;
+  passed: boolean;
+  seconds: number;
+  at: string;
 }
 export interface PracticeDay {
   key: string; // Local YYYY-MM-DD: practice is counted in the user's own days.
