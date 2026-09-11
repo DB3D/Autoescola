@@ -28,16 +28,21 @@ a 300 ms guard prevents a quick double tap from skipping the correction. Header,
 quit and dialog controls keep their own actions. Skipping also reveals feedback.
 The last question's feedback precedes the saved result and full review.
 `french.ts` supplies all 196 translations in the original answer order, so they
-stay paired with their Catalan choices after shuffling. No time or French penalties.
+stay paired with their Catalan choices after shuffling. There is no time penalty.
+A correct answer earns 1 point only without French assistance. Revealing French
+before confirmation gives that question 0 points, even if correct. Automatic
+reveal after confirmation does not count as assistance. Runs retain factual
+`correct`, mastery `points`, and per-question `frenchUsed` flags. Results, history
+and last-five mastery use points; legacy runs without points keep their original
+score because their assistance usage was not recorded.
 
-Inside a theme, the sticky header contains numbered lesson buttons and a Q
-button on the right. Q starts a test immediately or resumes the current one.
-Reading a lesson during a test preserves the question, shuffled answer order,
-confirmed response, feedback and French visibility. Returning to Q restores that
-state without scoring the answer twice. The same study clock continues throughout.
-Returning to the catalogue, leaving Revision or explicitly abandoning a test
-clears the unfinished test. Header controls are disabled while a completed result
-is being saved.
+Inside a theme, the header replaces the logo with a return-to-themes button on
+the left. During reading, numbered lesson buttons and Q provide direct access to
+lessons and the test. During a test, lesson access is removed and guarded in the
+handlers; returning to themes uses the quit/resume dialog. Lesson access returns
+after completion. Lesson pages do not display the mastery panel. The same study
+clock continues from reading through testing and corrections. Header controls are
+disabled while a completed result is being saved.
 
 `storage.ts` uses a separate IndexedDB database (`autoescola-revision`, version 2,
 stores `runs` and `time`). Upgrading preserves existing version 1 scores. Run
@@ -54,7 +59,7 @@ correction reading share the same visit clock. Returning to the theme catalogue
 or leaving Revision stops the visit. Opening another theme starts a new visit.
 An abandoned test keeps its study time without adding a mastery score. The theme
 catalogue shows lifetime study time per theme and across all Revision themes;
-the lesson/result history also shows that theme's cumulative time.
+the result history also shows that theme's cumulative time.
 
 `time.ts` measures monotonic elapsed time and splits intervals at local midnight.
 `time-tracking.ts` pauses on visibility loss or pagehide and resumes on return.
@@ -72,8 +77,9 @@ Storage failures are visible and retryable; exports include in-memory time.
 
 Progression adds Revision in blue to daily bars and the all-activity lifetime
 total. Driving and Català scoring and duration rules remain unchanged. The global
-JSON export is version 4 (`revisionRuns`, `revisionTime` added); the standalone
-Revision export is version 2 (`runs`, `time`). Existing scores without a recorded
+JSON export is version 5 (`revisionRuns`, `revisionTime`); the standalone
+Revision export is version 3 (`runs`, `time`). Both include points and assistance
+flags on new runs. Existing scores without a recorded
 duration remain valid but contribute no invented time.
 
 `index.ts` and `revision.css` own the UI. The shell's navigation entry, header,
@@ -128,8 +134,9 @@ French and manual reveal, separate mouse/keyboard advancement, the double-tap
 guard, quit/resume, saved scores after reload and widths of 320/390/1440 px.
 The study-time browser checks also passed with this interaction flow.
 
-Lesson/header validation visited all 28 rewritten lessons, checked sticky header
-navigation while scrolled, and completed a test with reading detours before and
-after every answer (including errors and a skip). Its ten answers produced one
-70% result. Question order, translations, feedback and elapsed time survived each
-detour; header layouts were checked at 320, 390 and 1440 px.
+Lesson/header validation visited all 28 rewritten lessons and checked sticky
+navigation while scrolled. Current flow validation checks header-only return,
+absence of the logo and lesson mastery panel, blocked lesson access during tests,
+quit/resume, and zero French credit. A mixed test scored 50%, an all-French test
+scored 0%, and their 25% mastery persisted after reload. Automatic correction
+reveal preserved unassisted credit. Header layouts passed at 320/390/1440 px.
