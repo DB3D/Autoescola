@@ -7,11 +7,23 @@ import {
   drawVocab,
   vocabBank,
   vocabStats,
+  vocabCoverage,
   vocabStatsFor,
   vocabTypeName,
   UNSEEN_PRIORITY,
   VOCAB_LENGTH,
 } from "../src/vocab";
+
+test('Catalan coverage counts distinct known-bank wins once and ignores skips and unknown IDs', () => {
+  const row: QuizAttempt = { id: 'coverage', runId: 'r', questionId: vocabBank[0].id, correct: true, passed: false, selected: 0, seconds: 1, at: new Date().toISOString() };
+  assert.equal(vocabCoverage([]).percent, 0);
+  const coverage = vocabCoverage([row, { ...row, id: 'duplicate' }, { ...row, id: 'unknown', questionId: 'not-in-bank' }, { ...row, id: 'skip', questionId: vocabBank[1].id, passed: true }]);
+  assert.equal(coverage.won, 1);
+  assert.equal(coverage.total, 300);
+  assert.equal(coverage.percent, 100 / 300);
+  assert.equal(vocabCoverage([row], []).percent, 0);
+  assert.equal(vocabCoverage(vocabBank.map(q => ({ ...row, id: q.id, questionId: q.id }))).percent, 100);
+});
 
 test("the Catalan quiz bank is complete and internally consistent", () => {
   assert.equal(vocabBank.length, quiz.question_count);

@@ -32,6 +32,7 @@ import {
   vocabBank,
   vocabStats,
   vocabStatsFor,
+  vocabCoverage,
   vocabTypeName,
   VOCAB_LENGTH,
   type QuizMode,
@@ -874,17 +875,15 @@ const practiceTime = (seconds: number) => {
     : `${Math.floor(minutes / 60)} h ${String(minutes % 60).padStart(2, "0")}`;
 };
 function practiceBoard() {
-  const days = practiceDays(attempts, quizRuns, 3, new Date(), revision.timeEntries());
-  const labels = ["Aujourd’hui", "Hier", "Avant-hier"];
+  const days = practiceDays(attempts, quizRuns, 7, new Date(), revision.timeEntries());
   const peak = Math.max(...days.map((d) => d.totalSeconds), 1);
   const total = days.reduce((s, d) => s + d.totalSeconds, 0);
   const quiz = days.reduce((s, d) => s + d.quizSeconds, 0);
   const study = days.reduce((s, d) => s + d.revisionSeconds, 0);
-  return `<section class="practice-board"><h2>Ces 3 derniers jours</h2><div class="score"><strong>${practiceTime(total)}</strong><p>d’entraînement${total ? ` · dont ${practiceTime(quiz)} de català et ${practiceTime(study)} de révision` : ""}</p></div>${revision.timeError() ? '<p class="warning">Le temps de révision local n’a pas pu être entièrement chargé ou sauvegardé. Réessaie ou exporte tes données avant de fermer.</p>' : ''}<ol class="day-rows">${days
+  return `<section class="practice-board"><h2>Ces 7 derniers jours</h2><div class="score"><strong>${practiceTime(total)}</strong><p>d’entraînement${total ? ` · dont ${practiceTime(quiz)} de català et ${practiceTime(study)} de révision` : ""}</p></div>${revision.timeError() ? '<p class="warning">Le temps de révision local n’a pas pu être entièrement chargé ou sauvegardé. Réessaie ou exporte tes données avant de fermer.</p>' : ''}<ol class="day-rows">${days
     .map((d, i) => {
       const label =
-        labels[i] ??
-        d.date.toLocaleDateString("fr-FR", { weekday: "long", day: "numeric" });
+        i === 0 ? "Aujourd’hui" : d.date.toLocaleDateString("fr-FR", { weekday: "long" });
       // An empty part is left out entirely: a zero-width span would still show
       // the gaps that separate the activities.
       const fill = (seconds: number, kind: string) =>
@@ -910,11 +909,16 @@ function recentScoreboard() {
   const assisted = recent.total - recent.catalan;
   return `<section class="recent-score"><h2>${title}</h2><div class="recent-grid"><div class="catalan"><strong>${value(recent.catalanRate)}</strong><span>Score catalan</span><small>${won(recent.catalan)} sans le français</small></div><div><strong>${value(recent.totalRate)}</strong><span>Score total</span><small>${won(recent.total)} dont ${assisted} avec le français</small></div></div><p class="helper">Seul le score catalan compte pour l’examen : les questions réussies avec les traductions affichées ne prouvent pas encore que tu les as en catalan.</p></section>`;
 }
+function learningGauges() {
+  const ca = vocabCoverage(quizAttempts), rev = revision.masterySummary();
+  const caPercent = ca.percent.toLocaleString('fr-FR', { maximumFractionDigits: 1 });
+  return `<section class="learning-gauges" aria-label="Maîtrise des apprentissages"><div class="learning-gauge"><div><b>Catalan maîtrisé</b><strong>${caPercent} %</strong></div><progress class="catalan-progress" value="${ca.percent}" max="100" aria-label="Catalan maîtrisé"></progress><p>${ca.won} / ${ca.total} questions du quiz Català réussies au moins une fois. Chaque question compte une seule fois.</p></div><div class="learning-gauge"><div><b>Révision maîtrisée</b><strong>${rev.percent} %</strong></div><progress class="revision-progress" value="${rev.percent}" max="100" aria-label="Révision maîtrisée"></progress><p>Moyenne des ${rev.total} thèmes, chacun sur 5 tests. Les tests manquants valent 0 %. Le Test Maîtrise a sa jauge séparée.</p>${rev.error ? '<p role="status">Les résultats locaux de révision n’ont pas pu être entièrement chargés.</p>' : ''}</div></section>`;
+}
 function progress(refresh = true) {
   revision.leave(); // Include the final reading/test seconds before computing totals.
   stats = allStats(attempts);
   shell(
-    `<div class="eyebrow">PAS À PAS</div><h1>Ta progression</h1><p class="muted">${stats.size} sur ${bank.length.toLocaleString("fr-FR")} questions pratiquées.</p><progress value="${stats.size}" max="${bank.length}" aria-label="Questions pratiquées"></progress>${practiceBoard()}${recentScoreboard()}${metrics(attempts, totalPracticeSeconds(attempts, quizRuns, revision.timeEntries()), attempts.length, "Temps total · toutes activités")}<button class="secondary full" id="export">Sauvegarder mon historique (JSON) ↓</button><p class="helper">Facultatif : télécharge une copie de tes réponses, sessions et temps de révision. Ton historique reste uniquement dans ce navigateur et peut être perdu si ses données sont effacées.</p><h2 class="review-title">Question par question</h2><input type="search" id="search" placeholder="Rechercher une question pratiquée…" aria-label="Rechercher une question pratiquée"><div id="question-stats"></div>`,
+    `<div class="eyebrow">PAS À PAS</div><h1>Ta progression</h1><p class="muted">${stats.size} sur ${bank.length.toLocaleString("fr-FR")} questions pratiquées.</p><progress value="${stats.size}" max="${bank.length}" aria-label="Questions pratiquées"></progress>${learningGauges()}${practiceBoard()}${recentScoreboard()}${metrics(attempts, totalPracticeSeconds(attempts, quizRuns, revision.timeEntries()), attempts.length, "Temps total · toutes activités")}<button class="secondary full" id="export">Sauvegarder mon historique (JSON) ↓</button><p class="helper">Facultatif : télécharge une copie de tes réponses, sessions et temps de révision. Ton historique reste uniquement dans ce navigateur et peut être perdu si ses données sont effacées.</p><h2 class="review-title">Question par question</h2><input type="search" id="search" placeholder="Rechercher une question pratiquée…" aria-label="Rechercher une question pratiquée"><div id="question-stats"></div>`,
     "stats",
   );
   document.querySelector<HTMLButtonElement>("#export")!.onclick = () =>
@@ -922,7 +926,7 @@ function progress(refresh = true) {
   const search = document.querySelector<HTMLInputElement>("#search")!;
   search.oninput = () => renderStats(search.value);
   renderStats("");
-  if (refresh) void revision.refreshTime().then(() => {
+  if (refresh) void revision.refreshProgress().then(() => {
     if (document.querySelector('[data-nav="stats"].current')) {
       const query = document.querySelector<HTMLInputElement>('#search')?.value ?? '';
       progress(false);

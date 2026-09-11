@@ -1,5 +1,6 @@
 import type { RevisionPage, RevisionTheme } from './types';
 import { frenchQuestions } from './french';
+import { extraThemes } from './extra-content';
 
 type Item = [prompt: string, correct: string, wrong1: string, wrong2: string, explanation: string];
 const page = (title: string, kicker: string, facts: string[], tip: string, words: [string, string][], grammar: [string, string, string, string]): RevisionPage => ({ title, kicker, facts, tip, words, grammar: { title: grammar[0], rule: grammar[1], ca: grammar[2], fr: grammar[3] } });
@@ -516,7 +517,8 @@ export const themes: RevisionTheme[] = [
       ['Quina expressió significa «si és necessari»?', 'Si cal.', 'Sense.', 'Mai.', 'Si cal = si nécessaire.'],
       ['A «en acostar-nos a una cruïlla, hem de mirar», quina és l’acció obligatòria?', 'Mirar.', 'Estacionar.', 'Accelerar.', 'Hem de mirar est le bloc qui donne l’obligation.']
     ]
-  ])
+  ]),
+  ...extraThemes
 ];
 
 export const memoryAids: Record<string, string> = {

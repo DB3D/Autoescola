@@ -17,6 +17,14 @@ export const VOCAB_LENGTH = quiz.quiz_length;
 export const vocabBank: VocabQuestion[] = quiz.questions;
 export const vocabTypeName: Record<string, string> = quiz.types;
 
+// Coverage of successful quiz answers. Repeating the same win cannot inflate
+// the total, and attempts for removed/unknown questions do not count.
+export function vocabCoverage(attempts: QuizAttempt[], questions: VocabQuestion[] = vocabBank) {
+  const ids = new Set(questions.map(q => q.id));
+  const won = new Set(attempts.filter(a => a.correct && !a.passed && ids.has(a.questionId)).map(a => a.questionId)).size;
+  return { won, total: ids.size, percent: ids.size ? 100 * won / ids.size : 0 };
+}
+
 export interface VocabStats {
   id: string;
   shown: number;

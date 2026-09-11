@@ -108,7 +108,7 @@ function dayKey(date: Date): string {
 export function practiceDays(
   attempts: Attempt[],
   runs: QuizRun[],
-  days = 3,
+  days = 7,
   now = new Date(),
   revisionTime: { day: string; seconds: number }[] = [],
 ): PracticeDay[] {

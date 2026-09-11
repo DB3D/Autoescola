@@ -63,6 +63,20 @@ test("practice time splits the last three days between questions and the quiz", 
   );
 });
 
+test('seven-day history includes day six, excludes day seven, and keeps local dates across month boundaries', () => {
+  const now = new Date(2026, 8, 3, 12);
+  const ago = (n: number) => new Date(2026, 8, 3 - n, 12).toISOString();
+  const days = practiceDays([{ ...attempt(0, 30), at: ago(6) }, { ...attempt(0, 90), at: ago(7) }], [{ ...run(0, 40), completedAt: ago(1) }], 7, now, [{ day: '2026-09-03', seconds: 100 }]);
+  assert.equal(days.length, 7);
+  assert.equal(days[0].key, '2026-09-03');
+  assert.equal(days[6].key, '2026-08-28');
+  assert.equal(days[6].questionSeconds, 30);
+  assert.equal(days[1].quizSeconds, 40);
+  assert.equal(days[0].revisionSeconds, 100);
+  assert.equal(days.reduce((n, d) => n + d.totalSeconds, 0), 170);
+  assert.equal(practiceDays([], []).length, 7);
+});
+
 test("a day with no practice at all still gets a row", () => {
   const days = practiceDays([attempt(0, 30)], [], 3, NOW);
   assert.deepEqual(

@@ -25,6 +25,7 @@ export interface RevisionTheme {
   bankIds: string[];
   sources: string;
   articles: string;
+  links?: { title: string; url: string }[];
   pages: RevisionPage[];
   questions: RevisionQuestion[];
 }
