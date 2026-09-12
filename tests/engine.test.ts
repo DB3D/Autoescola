@@ -160,7 +160,7 @@ test("Discovery strictly orders unseen, attempt count, then oldest last attempt"
   assert.deepEqual(selectQuestions(bank.slice(0, 4), 3, "discovery", s).map(q => q.id), ["0", "3", "2"]);
 });
 
-test("Discovery ignores difficulty, wins, French use and speed; only exposure matters", () => {
+test("Discovery ignores difficulty, wins and speed; total and Catalan exposure matter", () => {
   const qs = bank.slice(0, 3);
   const history = allStats([
     attempt({ questionId: "0", at: "2026-09-01T12:00:00Z" }),
@@ -173,8 +173,27 @@ test("Discovery ignores difficulty, wins, French use and speed; only exposure ma
     averageSeconds: 0, frenchDependency: 1 - s.frenchDependency,
   }]));
   assert.deepEqual(selectQuestions(qs, ENDLESS, "discovery", changed, () => 0.5), before);
-  assert.deepEqual(before.map(q => q.id), ["0", "1", "2"]);
+  assert.deepEqual(before.map(q => q.id), ["2", "0", "1"]);
   assert.deepEqual([...history.values()].map(s => s.shown), [1, 1, 1]);
+  assert.deepEqual([...history.values()].map(s => s.catalanShown), [1, 1, 0]);
+});
+
+test("Discovery compares total attempts before Catalan-only attempts, then oldest date", () => {
+  const old = "2026-09-01T12:00:00Z";
+  const history = allStats([
+    attempt({ questionId: "1" }),
+    ...[0, 1].map(() => attempt({ questionId: "2", frenchVisible: true })),
+    attempt({ questionId: "3", at: old, frenchVisible: true }),
+    attempt({ questionId: "3", at: old, correct: false, passed: true }),
+    attempt({ questionId: "4", frenchVisible: true }),
+    attempt({ questionId: "4", correct: false }),
+    ...[0, 1, 2].map(() => attempt({ questionId: "5", at: old, frenchVisible: true })),
+  ], now);
+  for (const rng of [() => 0, () => 0.999999, Math.random])
+    assert.deepEqual(selectQuestions(bank.slice(0, 6), 6, "discovery", history, rng).map(q => q.id), ["0", "1", "2", "3", "4", "5"]);
+  // A skip without French is still Catalan practice; a French-assisted answer isn't.
+  assert.equal(history.get("3")!.catalanShown, 1);
+  assert.equal(history.get("2")!.catalanShown, 0);
 });
 
 test("Discovery randomizes equal exposure ties without repeating IDs", () => {

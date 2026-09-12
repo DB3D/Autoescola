@@ -181,6 +181,7 @@ export function examSummary(sessions: Session[]) {
 export interface Stats {
   id: string;
   shown: number;
+  catalanShown: number;
   successes: number;
   failures: number;
   passes: number;
@@ -253,6 +254,7 @@ export function statsFor(
   return {
     id,
     shown: n,
+    catalanShown: n - fr.length,
     successes,
     failures,
     passes: rows.filter((a) => a.passed).length,
