@@ -1,13 +1,14 @@
 {
   "title": "Vocabulari català",
-  "description": "Entraînement au vocabulaire, aux tournures et aux mots-pièges du questionnaire catalan.",
+  "description": "Entraînement au vocabulaire, aux synonymes, aux tournures et aux mots-pièges du questionnaire catalan.",
   "quiz_length": 20,
-  "question_count": 300,
+  "question_count": 330,
   "types": {
     "vocabulari": "Vocabulaire",
     "parany": "Mot-piège",
     "connector": "Tournure",
-    "frase": "Phrase"
+    "frase": "Phrase",
+    "sinonims": "Synonymes"
   },
   "questions": [
     {
@@ -4223,6 +4224,456 @@
       ],
       "correct_option": 4,
       "note": "botzina = clàxon = klaxon ; « senyals acústics » = signaux sonores. « tocar la botzina » = klaxonner."
+    },
+    {
+      "id": "q301",
+      "type": "sinonims",
+      "prompt": "Trouve l’intrus : quelle expression N’A PAS le même sens dans ce contexte ?",
+      "catalan": "Immobilitzar completament el vehicle",
+      "answers": [
+        "frenar",
+        "aturar-se",
+        "parar-se",
+        "detenir-se"
+      ],
+      "correct_option": 1,
+      "note": "Aturar-se, parar-se et detenir-se expriment ici un arrêt complet. Frenar signifie freiner : on peut freiner sans s’arrêter. Ces verbes ne rendent pas pour autant les notions réglementaires de parada, detenció et estacionament interchangeables.",
+      "answer_lang": "ca"
+    },
+    {
+      "id": "q302",
+      "type": "sinonims",
+      "prompt": "Trouve l’intrus : quelle expression N’A PAS le même sens dans ce contexte ?",
+      "catalan": "Hem de deixar de moure’ns amb el vehicle.",
+      "answers": [
+        "aturar-nos",
+        "posar-nos en marxa",
+        "parar-nos",
+        "detenir-nos"
+      ],
+      "correct_option": 2,
+      "note": "Aturar-nos, parar-nos et detenir-nos veulent ici dire nous arrêter. Posar-nos en marxa signifie nous mettre en mouvement : c’est l’inverse. Le suffixe -nos renvoie à nous.",
+      "answer_lang": "ca"
+    },
+    {
+      "id": "q303",
+      "type": "sinonims",
+      "prompt": "Trouve l’intrus : quelle expression N’A PAS le même sens dans ce contexte ?",
+      "catalan": "Circular més a poc a poc",
+      "answers": [
+        "reduir la velocitat",
+        "disminuir la velocitat",
+        "mantenir la velocitat",
+        "moderar la velocitat"
+      ],
+      "correct_option": 3,
+      "note": "Reduir, disminuir et, dans ce contexte, moderar la velocitat demandent de ralentir. Mantenir la velocitat signifie garder la même vitesse.",
+      "answer_lang": "ca"
+    },
+    {
+      "id": "q304",
+      "type": "sinonims",
+      "prompt": "Quelle expression a le même sens que le passage en catalan ?",
+      "catalan": "En acostar-nos a la intersecció, cal minvar la velocitat.",
+      "answers": [
+        "augmentar la velocitat",
+        "mantenir la velocitat",
+        "recuperar la velocitat anterior",
+        "reduir la velocitat"
+      ],
+      "correct_option": 4,
+      "note": "Minvar la velocitat = diminuer la vitesse, comme reduir ou disminuir la velocitat. Ce verbe ne demande pas à lui seul un arrêt complet.",
+      "answer_lang": "ca"
+    },
+    {
+      "id": "q305",
+      "type": "sinonims",
+      "prompt": "Trouve l’intrus : quelle expression N’A PAS le même sens dans ce contexte ?",
+      "catalan": "Començar a moure’s amb el vehicle",
+      "answers": [
+        "detenir-se",
+        "iniciar la marxa",
+        "posar-se en marxa",
+        "començar a circular"
+      ],
+      "correct_option": 1,
+      "note": "Iniciar la marxa, posar-se en marxa et començar a circular expriment le début du déplacement. Detenir-se signifie s’arrêter. Marxa désigne ici le mouvement du véhicule.",
+      "answer_lang": "ca"
+    },
+    {
+      "id": "q306",
+      "type": "sinonims",
+      "prompt": "Trouve l’intrus : quelle expression N’A PAS le même sens dans ce contexte ?",
+      "catalan": "Fer que el motor comenci a funcionar",
+      "answers": [
+        "arrencar el motor",
+        "aturar el motor",
+        "engegar el motor",
+        "posar en marxa el motor"
+      ],
+      "correct_option": 2,
+      "note": "Arrencar, engegar ou posar en marxa el motor signifient démarrer le moteur. Aturar el motor, c’est l’arrêter. Démarrer le moteur et iniciar la marxa (commencer à rouler) sont deux actions distinctes.",
+      "answer_lang": "ca"
+    },
+    {
+      "id": "q307",
+      "type": "sinonims",
+      "prompt": "Quelle expression a le même sens que le passage en catalan ?",
+      "catalan": "Després d’aturar-nos, podem reprendre la marxa.",
+      "answers": [
+        "fer marxa enrere",
+        "aturar el motor",
+        "tornar a posar-nos en marxa",
+        "continuar immobilitzats"
+      ],
+      "correct_option": 3,
+      "note": "Reprendre la marxa signifie repartir, se remettre à rouler après une interruption. Reprendre n’indique ni marche arrière ni demi-tour.",
+      "answer_lang": "ca"
+    },
+    {
+      "id": "q308",
+      "type": "sinonims",
+      "prompt": "Trouve l’intrus : quelle expression N’A PAS le même sens dans ce contexte ?",
+      "catalan": "Començar la maniobra per passar davant d’un altre vehicle",
+      "answers": [
+        "iniciar un avançament",
+        "començar un avançament",
+        "començar a avançar un vehicle",
+        "acabar un avançament"
+      ],
+      "correct_option": 4,
+      "note": "Iniciar et començar signifient commencer. Avançar un vehicle et fer un avançament désignent ici le dépassement. Acabar signifie terminer : le moment de la manœuvre change.",
+      "answer_lang": "ca"
+    },
+    {
+      "id": "q309",
+      "type": "sinonims",
+      "prompt": "Trouve l’intrus : quelle expression N’A PAS le même sens dans ce contexte ?",
+      "catalan": "En aquesta cruïlla, volem entrar al carrer de la dreta.",
+      "answers": [
+        "fer un canvi de sentit",
+        "girar a la dreta",
+        "fer un gir a la dreta",
+        "canviar de direcció cap a la dreta"
+      ],
+      "correct_option": 1,
+      "note": "Girar a la dreta, fer un gir a la dreta et canviar de direcció cap a la dreta décrivent ici le même virage. Fer un canvi de sentit signifie faire demi-tour. Attention aussi à tornar a la dreta après un dépassement : cela signifie revenir à droite, se rabattre, et non tourner dans une rue.",
+      "answer_lang": "ca"
+    },
+    {
+      "id": "q310",
+      "type": "sinonims",
+      "prompt": "Quelle expression a le même sens que le passage en catalan ?",
+      "catalan": "Fer un canvi de sentit",
+      "answers": [
+        "girar a la dreta en una cruïlla",
+        "fer mitja volta per circular en el sentit contrari",
+        "passar al carril del costat en el mateix sentit",
+        "desplaçar-se uns metres marxa enrere"
+      ],
+      "correct_option": 2,
+      "note": "Canvi de sentit = demi-tour. Ne le confonds pas avec canvi de direcció (changement de direction), canvi de carril (changement de voie) ou marxa enrere (marche arrière).",
+      "answer_lang": "ca"
+    },
+    {
+      "id": "q311",
+      "type": "sinonims",
+      "prompt": "Trouve l’intrus : quelle expression N’A PAS le même sens dans ce contexte ?",
+      "catalan": "Moure el vehicle cap enrere",
+      "answers": [
+        "retrocedir",
+        "fer marxa enrere",
+        "fer un canvi de sentit",
+        "desplaçar-se enrere"
+      ],
+      "correct_option": 3,
+      "note": "Retrocedir, fer marxa enrere et desplaçar-se enrere expriment un recul. Un canvi de sentit est un demi-tour : il change le sens de circulation, sans être un synonyme de reculer.",
+      "answer_lang": "ca"
+    },
+    {
+      "id": "q312",
+      "type": "sinonims",
+      "prompt": "Trouve l’intrus : quelle expression N’A PAS le même sens dans ce contexte ?",
+      "catalan": "Reduir la distància que ens separa d’una intersecció",
+      "answers": [
+        "atansar-nos",
+        "acostar-nos",
+        "apropar-nos",
+        "aturar-nos"
+      ],
+      "correct_option": 4,
+      "note": "Atansar-nos, acostar-nos et apropar-nos signifient nous approcher. Aturar-nos veut dire nous arrêter. Attention à la ressemblance entre atansar et aturar.",
+      "answer_lang": "ca"
+    },
+    {
+      "id": "q313",
+      "type": "sinonims",
+      "prompt": "Quelle expression a le même sens que le passage en catalan ?",
+      "catalan": "Avançar el vehicle que circula davant nostre",
+      "answers": [
+        "sobrepassar-lo per situar-nos davant seu",
+        "acostar-nos-hi sense passar-lo",
+        "seguir darrere seu a la mateixa velocitat",
+        "deixar que ens passi al davant"
+      ],
+      "correct_option": 1,
+      "note": "Avançar un vehicle signifie ici le dépasser : on le sobrepassa pour se placer devant lui. S’en approcher ou le suivre ne suffit pas. Avançar peut aussi signifier avancer dans d’autres phrases.",
+      "answer_lang": "ca"
+    },
+    {
+      "id": "q314",
+      "type": "sinonims",
+      "prompt": "Trouve l’intrus : quelle expression N’A PAS le même sens dans ce contexte ?",
+      "catalan": "Anar més enllà del límit indicat",
+      "answers": [
+        "sobrepassar el límit",
+        "respectar el límit",
+        "superar el límit",
+        "excedir el límit"
+      ],
+      "correct_option": 2,
+      "note": "Sobrepassar, superar et excedir el límit signifient dépasser la limite. Respectar el límit signifie la respecter. Sobrepassar n’est donc pas réservé au dépassement d’un véhicule.",
+      "answer_lang": "ca"
+    },
+    {
+      "id": "q315",
+      "type": "sinonims",
+      "prompt": "Trouve l’intrus : quelle expression N’A PAS le même sens dans ce contexte ?",
+      "catalan": "Mantenir el desplaçament cap endavant",
+      "answers": [
+        "continuar la marxa cap endavant",
+        "seguir circulant cap endavant",
+        "aturar-se",
+        "seguir endavant amb el vehicle"
+      ],
+      "correct_option": 3,
+      "note": "Continuar et seguir expriment ici la poursuite du déplacement. Aturar-se interrompt ce mouvement. Seguir peut aussi vouloir dire suivre quelqu’un : regarde son complément.",
+      "answer_lang": "ca"
+    },
+    {
+      "id": "q316",
+      "type": "sinonims",
+      "prompt": "Trouve l’intrus : quelle expression N’A PAS le même sens dans ce contexte ?",
+      "catalan": "Fer saber als altres quina maniobra volem fer",
+      "answers": [
+        "advertir els altres de la maniobra",
+        "avisar els altres de la maniobra",
+        "senyalitzar la maniobra",
+        "iniciar la maniobra"
+      ],
+      "correct_option": 4,
+      "note": "Advertir et avisar veulent ici dire prévenir. Senyalitzar la maniobra consiste à la signaler aux autres. Iniciar la maniobra signifie commencer à l’exécuter, pas l’annoncer.",
+      "answer_lang": "ca"
+    },
+    {
+      "id": "q317",
+      "type": "sinonims",
+      "prompt": "Trouve l’intrus : quelle expression N’A PAS le même sens dans ce contexte ?",
+      "catalan": "Servir-se d’un dispositiu",
+      "answers": [
+        "evitar el dispositiu",
+        "emprar el dispositiu",
+        "utilitzar el dispositiu",
+        "fer ús del dispositiu"
+      ],
+      "correct_option": 1,
+      "note": "Emprar, utilitzar et fer ús de signifient utiliser. Evitar signifie éviter. Dans fer ús del dispositiu, del correspond à de + el.",
+      "answer_lang": "ca"
+    },
+    {
+      "id": "q318",
+      "type": "sinonims",
+      "prompt": "Trouve l’intrus : quelle expression N’A PAS le même sens dans ce contexte ?",
+      "catalan": "Poder passar abans que l’altre vehicle en aquesta intersecció",
+      "answers": [
+        "tenir prioritat de pas",
+        "cedir el pas a l’altre vehicle",
+        "tenir preferència de pas",
+        "tenir dret a passar primer"
+      ],
+      "correct_option": 2,
+      "note": "Tenir prioritat, tenir preferència et tenir dret a passar primer expriment ici la même priorité. Cedir el pas signifie laisser passer l’autre véhicule.",
+      "answer_lang": "ca"
+    },
+    {
+      "id": "q319",
+      "type": "sinonims",
+      "prompt": "Quelle expression a le même sens que le passage en catalan ?",
+      "catalan": "Cedir el pas a un altre vehicle",
+      "answers": [
+        "passar abans que l’altre vehicle",
+        "impedir que l’altre vehicle passi",
+        "deixar passar primer l’altre vehicle",
+        "avançar l’altre vehicle"
+      ],
+      "correct_option": 3,
+      "note": "Cedir el pas = laisser passer, comme deixar passar primer. Le mot pas désigne ici le passage. Il ne suffit pas de repérer passar : il faut regarder qui passe en premier.",
+      "answer_lang": "ca"
+    },
+    {
+      "id": "q320",
+      "type": "sinonims",
+      "prompt": "Trouve l’intrus : quelle expression N’A PAS le même sens dans ce contexte ?",
+      "catalan": "Dificultar la circulació dels altres",
+      "answers": [
+        "obstaculitzar la circulació",
+        "entorpir la circulació",
+        "destorbar la circulació",
+        "facilitar la circulació"
+      ],
+      "correct_option": 4,
+      "note": "Obstaculitzar, entorpir et destorbar signifient ici gêner ou entraver la circulation. Facilitar signifie la faciliter : c’est l’inverse.",
+      "answer_lang": "ca"
+    },
+    {
+      "id": "q321",
+      "type": "sinonims",
+      "prompt": "Quelle expression a le même sens que le passage en catalan ?",
+      "catalan": "Caminar per la voravia del carrer",
+      "answers": [
+        "caminar per la vorera",
+        "caminar pel voral de la carretera",
+        "caminar pel centre de la calçada",
+        "caminar per un carril de circulació"
+      ],
+      "correct_option": 1,
+      "note": "Voravia et vorera désignent ici le trottoir. Voral désigne l’accotement, calçada la chaussée, et carril une voie de circulation.",
+      "answer_lang": "ca"
+    },
+    {
+      "id": "q322",
+      "type": "sinonims",
+      "prompt": "Trouve l’intrus : quelle expression N’A PAS le même sens dans ce contexte ?",
+      "catalan": "La part lateral d’un carrer destinada al pas dels vianants",
+      "answers": [
+        "la vorera",
+        "el voral",
+        "la voravia",
+        "l’espai lateral del carrer destinat als vianants"
+      ],
+      "correct_option": 2,
+      "note": "Vorera et voravia sont les deux mots à reconnaître pour le trottoir. L’explication espai lateral… décrit le même espace dans ce contexte. Voral désigne l’accotement d’une route.",
+      "answer_lang": "ca"
+    },
+    {
+      "id": "q323",
+      "type": "sinonims",
+      "prompt": "Quelle expression a le même sens que le passage en catalan ?",
+      "catalan": "Carretera amb vorera d’emergència",
+      "answers": [
+        "carretera amb una voravia per als vianants",
+        "carretera amb una cruïlla",
+        "carretera amb voral",
+        "carretera amb un carril addicional de circulació"
+      ],
+      "correct_option": 3,
+      "note": "L’expression complète vorera d’emergència est un synonyme de voral : l’accotement. C’est le groupe entier qu’il faut lire. Vorera seule désigne habituellement le trottoir.",
+      "answer_lang": "ca"
+    },
+    {
+      "id": "q324",
+      "type": "sinonims",
+      "prompt": "Quelle paire NE contient PAS deux synonymes dans ce contexte ?",
+      "catalan": "Quatre parelles de mots sobre la via",
+      "answers": [
+        "vorera — voravia",
+        "cruïlla — intersecció",
+        "corba — revolt",
+        "calçada — carril"
+      ],
+      "correct_option": 4,
+      "note": "Calçada = chaussée ; carril = voie de circulation. Une chaussée peut comporter plusieurs voies. Les autres paires sont des synonymes dans ce contexte routier.",
+      "answer_lang": "ca"
+    },
+    {
+      "id": "q325",
+      "type": "sinonims",
+      "prompt": "Trouve l’intrus : quelle expression N’A PAS le même sens dans ce contexte ?",
+      "catalan": "El lloc on es troben o es creuen diverses vies",
+      "answers": [
+        "una voravia",
+        "una cruïlla",
+        "un encreuament",
+        "una intersecció"
+      ],
+      "correct_option": 1,
+      "note": "Cruïlla, encreuament et intersecció désignent ici un carrefour ou une intersection. Voravia signifie trottoir. Le contexte est essentiel : encreuament apparaît aussi dans le nom des feux de croisement.",
+      "answer_lang": "ca"
+    },
+    {
+      "id": "q326",
+      "type": "sinonims",
+      "prompt": "Quelle expression a le même sens que le passage en catalan ?",
+      "catalan": "Encendre els llums d’encreuament",
+      "answers": [
+        "encendre els llums de carretera",
+        "encendre els llums curts",
+        "encendre els intermitents",
+        "encendre els llums de marxa enrere"
+      ],
+      "correct_option": 2,
+      "note": "Llums d’encreuament, llums curts et llums de curt abast désignent les feux de croisement. Llums de carretera désigne les feux de route. Ici, encreuament fait partie d’un nom de feux.",
+      "answer_lang": "ca"
+    },
+    {
+      "id": "q327",
+      "type": "sinonims",
+      "prompt": "Quelle expression a le même sens que le passage en catalan ?",
+      "catalan": "Arribar a una glorieta",
+      "answers": [
+        "arribar a un pas de vianants",
+        "arribar a un revolt",
+        "arribar a una rotonda",
+        "arribar a un canvi de rasant"
+      ],
+      "correct_option": 3,
+      "note": "Glorieta et rotonda désignent ici un carrefour giratoire. Revolt signifie virage ; canvi de rasant, changement de pente ou sommet de côte selon le contexte.",
+      "answer_lang": "ca"
+    },
+    {
+      "id": "q328",
+      "type": "sinonims",
+      "prompt": "Trouve l’intrus : quelle expression N’A PAS le même sens dans ce contexte ?",
+      "catalan": "Una intersecció on se circula al voltant d’una illa central",
+      "answers": [
+        "una rotonda",
+        "una glorieta",
+        "una intersecció de circulació giratòria",
+        "un revolt"
+      ],
+      "correct_option": 4,
+      "note": "Rotonda et glorieta sont les deux noms à reconnaître pour le giratoire ; la troisième formulation le décrit. Un revolt est un virage, sans être nécessairement une intersection.",
+      "answer_lang": "ca"
+    },
+    {
+      "id": "q329",
+      "type": "sinonims",
+      "prompt": "Trouve l’intrus : quelle expression N’A PAS le même sens dans ce contexte ?",
+      "catalan": "Un tram on la carretera gira cap a un costat",
+      "answers": [
+        "un canvi de rasant",
+        "una corba",
+        "un revolt",
+        "un tram corbat de la via"
+      ],
+      "correct_option": 1,
+      "note": "Corba et revolt désignent un virage, décrit aussi par tram corbat de la via. Un canvi de rasant concerne le profil vertical de la route (la pente), pas un virage à gauche ou à droite.",
+      "answer_lang": "ca"
+    },
+    {
+      "id": "q330",
+      "type": "sinonims",
+      "prompt": "Quelle expression a le même sens que le passage en catalan ?",
+      "catalan": "Un senyal de fons groc i vorada vermella",
+      "answers": [
+        "un senyal que indica una voravia vermella",
+        "un senyal amb el fons groc i la vora vermella",
+        "un senyal que indica un voral vermell",
+        "un senyal que indica una calçada vermella"
+      ],
+      "correct_option": 2,
+      "note": "Vorada désigne ici la bordure du panneau, autrement dit sa vora. Ne le confonds pas avec vorera/voravia (trottoir) ou voral (accotement). Le même mot vorada peut aussi désigner une bordure de trottoir dans un autre contexte.",
+      "answer_lang": "ca"
     }
   ]
 }

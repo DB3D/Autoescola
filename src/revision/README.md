@@ -26,7 +26,7 @@ The source question bank, vocabulary quiz and their scores are never modified.
 `engine.ts` sums the latest five completed test percentages and always divides
 by five. Missing tests count as zero: one perfect run gives 20% mastery, five
 perfect runs give 100%. An unseen theme shows 0% and “À découvrir”. The history
-shows five slots, with unfilled slots labelled “À faire”. Progression's Revision
+shows five slots, with unfilled slots labelled “À faire”. The catalogue cards also show the last five score percentages directly below their gauges, oldest to newest, with dashes for missing tests. Progression's Revision
 gauge averages all 18 theme masteries, including untouched themes; Test Maîtrise
 is assessed separately, not included as a nineteenth theme in that average.
 Skipped questions count as incorrect. An abandoned test does not create a run.
@@ -60,7 +60,7 @@ disabled while a completed result is being saved.
 `storage.ts` uses a separate IndexedDB database (`autoescola-revision`, version 2,
 stores `runs` and `time`). Upgrading preserves existing version 1 scores. Run
 records are idempotent by UUID and preserve question IDs, original
-answer indices and scores. All completed runs are retained, while mastery and its
+answer indices and scores. New completed runs also include per-answer `answeredAt` timestamps for the combined recent-mistakes panel in Progression; old runs retain their completion-date fallback. The panel reads factual wrong picks and skips, never zero mastery points from a correct French-assisted answer. All completed runs are retained, while mastery and its
 history display only the latest five per theme. Failed writes remain in memory,
 can be retried, and are included in the dedicated JSON export. Browser clearing
 can remove progress. In-progress tests are memory-only; refreshing abandons them.

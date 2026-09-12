@@ -53,9 +53,10 @@ export function drawMasteryTest(themes: RevisionTheme[], previous: string[] = []
   }
   return shuffle(selected, random);
 }
-export function finishRun(themeId: string, questions: RevisionQuestion[], picks: (number | null)[], frenchUsed = questions.map(() => false)): RevisionRun {
+export function finishRun(themeId: string, questions: RevisionQuestion[], picks: (number | null)[], frenchUsed = questions.map(() => false), answeredAt?: string[]): RevisionRun {
   if (questions.length !== (themeId === MASTERY_TEST_ID ? MASTERY_TEST_LENGTH : TEST_LENGTH) || picks.length !== questions.length || picks.some((p, i) => p !== null && (!Number.isInteger(p) || p < 0 || p >= questions[i].answers.length))) throw new Error('Test incomplet');
   if (frenchUsed.length !== questions.length || frenchUsed.some(used => typeof used !== 'boolean')) throw new Error('Aide française invalide');
+  if (answeredAt && (answeredAt.length !== questions.length || answeredAt.some(at => !Number.isFinite(Date.parse(at))))) throw new Error('Dates de réponse invalides');
   const points = Math.round(10 * questions.reduce((sum, q, i) => sum + (picks[i] === q.correct ? frenchUsed[i] ? FRENCH_CREDIT : 1 : 0), 0)) / 10;
-  return { id: crypto.randomUUID(), themeId, completedAt: new Date().toISOString(), questionIds: questions.map(q => q.id), picks: [...picks], correct: questions.filter((q, i) => picks[i] === q.correct).length, total: questions.length, points, frenchUsed: [...frenchUsed] };
+  return { id: crypto.randomUUID(), themeId, completedAt: new Date().toISOString(), questionIds: questions.map(q => q.id), picks: [...picks], correct: questions.filter((q, i) => picks[i] === q.correct).length, total: questions.length, points, frenchUsed: [...frenchUsed], ...(answeredAt ? { answeredAt: [...answeredAt] } : {}) };
 }

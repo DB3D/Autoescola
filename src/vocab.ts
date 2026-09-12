@@ -1,5 +1,6 @@
 import quiz from "./data/quizz.json";
 import type { QuizAttempt } from "./engine";
+import { discover } from "./discovery";
 
 export type VocabQuestion = {
   id: string;
@@ -11,7 +12,7 @@ export type VocabQuestion = {
   note: string;
   answer_lang?: string; // "ca" when the choices are Catalan words, not French.
 };
-export type QuizMode = "random" | "smart";
+export type QuizMode = "random" | "smart" | "discovery";
 
 export const VOCAB_LENGTH = quiz.quiz_length;
 export const vocabBank: VocabQuestion[] = quiz.questions;
@@ -123,6 +124,7 @@ export function drawVocab(
   stats: Map<string, VocabStats> = new Map(),
   rng = Math.random,
 ): VocabQuestion[] {
+  if (mode === "discovery") return discover(bank, count, stats, rng);
   if (mode === "smart")
     return bank
       .map((q) => ({

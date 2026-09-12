@@ -1,7 +1,10 @@
 import "./style.css";
 import { createRevision } from "./revision";
+import { themes as revisionThemes } from "./revision/content";
+import { recentMistakes, mistakesText, contextLabel, sourceLabel, type RecentMistake } from "./mistakes";
 import {
   allStats,
+  categoryProgress,
   answerOrder,
   cappedSeconds,
   capAttempt,
@@ -19,11 +22,13 @@ import {
   type Session,
   type Mode,
   type Stats,
+  type MasterySummary,
   practiceDays,
   totalPracticeSeconds,
   type QuizRun,
   type QuizAttempt,
 } from "./engine";
+import { categoryIcon, categoryLabel, filterCategories, questionCategory } from "./categories";
 import { readAll, saveSession, saveQuizRun, saveQuizAttempt } from "./storage";
 import { unlock } from "./lock";
 import {
@@ -72,6 +77,8 @@ let mode: Mode = "smart",
   saving = false,
   saveError = false,
   storageError = false;
+const excludedCategories = new Set<string>(); // All categories enabled initially.
+let categoriesOpen = false;
 // The Català quiz is a standalone drill with its own difficulty tracking: its
 // answers never reach the driving attempts, statistics or mastery.
 let quizMode: QuizMode = "smart",
@@ -178,6 +185,84 @@ function shell(content: string, tab = "practice", revisionTest = false) {
                 : b.dataset.nav === "vocab" ? quizHome() : b.dataset.nav === "revision" ? void revision.open() : progress()),
     );
 }
+function masteryGauges(row: MasterySummary, label: string) {
+  const gauge = (value: number, language: string, combined = false) => {
+    const formatted = `${value.toLocaleString("fr-FR", { maximumFractionDigits: 1 })} %`;
+    return `<div class="mastery-track"><div><span>${language}</span><strong>${formatted}</strong></div><progress class="${combined ? "combined-progress" : "catalan-progress"}" value="${value}" max="100" aria-label="${esc(label)} · ${language}"></progress></div>`;
+  };
+  return `<div class="mastery-tracks">${gauge(row.catalan, "Català seul")}${gauge(row.combined, "Català + français", true)}</div>`;
+}
+function practiceBank() {
+  return mode === "exam" ? bank : filterCategories(bank,
+    new Set(bank.map(questionCategory).filter(id => !excludedCategories.has(id))));
+}
+function categoryPicker() {
+  const summary = categoryProgress(bank, stats);
+  return `<details class="category-picker" id="category-picker" ${categoriesOpen ? "open" : ""}>
+    <summary><div class="category-heading"><span><b>Maîtrise globale</b><small>Toutes les catégories · ${summary.total.total.toLocaleString("fr-FR")} questions</small></span><span class="category-chevron" aria-hidden="true">⌄</span></div>
+      ${masteryGauges(summary.total, "Maîtrise globale")}
+      <span class="category-selection" id="category-selection"></span>
+    </summary>
+    <div class="category-options">
+      <p class="helper">Moyenne de toutes les questions, y compris celles jamais vues à 0 %. Català seul : les réussites sans aide. Català + français : l’aide apporte aussi ses demi-points. Erreurs, lenteur et temps sans révision réduisent les deux jauges.</p>
+      <fieldset class="category-fieldset" ${mode === "exam" ? "disabled" : ""}><legend>Questions à pratiquer</legend>
+        <label class="category-all"><input type="checkbox" id="all-categories"><span>Toutes les catégories</span></label>
+        <div class="category-list">${summary.categories.map(row => `<label class="category-row"><input type="checkbox" data-category="${esc(row.id)}" ${mode === "exam" || !excludedCategories.has(row.id) ? "checked" : ""}><span class="category-content"><span class="category-title"><b><span class="category-emoji" aria-hidden="true">${categoryIcon(row.id)}</span> ${esc(categoryLabel(row.id))}</b><small>${row.total} questions</small></span>${masteryGauges(row, categoryLabel(row.id))}</span></label>`).join("")}</div>
+      </fieldset>
+    </div>
+  </details>`;
+}
+function updateCategorySelection() {
+  const eligible = practiceBank();
+  const categories = new Set(bank.map(questionCategory));
+  const selected = [...categories].filter(id => !excludedCategories.has(id)).length;
+  const exam = mode === "exam";
+  document.querySelector("#category-selection")!.textContent = exam
+    ? "Examen : toutes les catégories · répartition 15 / 10 / 15"
+    : `${selected === categories.size ? "Toutes les catégories" : `${selected} / ${categories.size} catégories`} · ${eligible.length.toLocaleString("fr-FR")} questions · Filtrer`;
+  const all = document.querySelector<HTMLInputElement>("#all-categories")!;
+  all.checked = exam || selected === categories.size;
+  all.indeterminate = !exam && selected > 0 && selected < categories.size;
+  const actualCount = Math.min(count, eligible.length);
+  document.querySelector<HTMLButtonElement>("#start")!.disabled = !eligible.length;
+  document.querySelector("#selection-note")!.textContent = exam
+    ? "15 normativa · 10 seguretat vial · 15 senyals. Les filtres sont désactivés pendant l’examen."
+    : !eligible.length ? "Sélectionne au moins une catégorie pour commencer."
+    : count !== ENDLESS && actualCount < count
+      ? `Ta sélection contient ${actualCount} questions. Cette session les utilisera toutes, sans répétition.` : "";
+  document.querySelector("#trial-duration")!.textContent = exam ? "40 questions = 40 minutes au total."
+    : count === ENDLESS ? "Indisponible en mode sans fin."
+    : `${actualCount} questions = ${actualCount} minutes au total.`;
+}
+function bindCategoryPicker() {
+  const picker = document.querySelector<HTMLDetailsElement>("#category-picker")!;
+  picker.ontoggle = () => { categoriesOpen = picker.open; };
+  const inputs = picker.querySelectorAll<HTMLInputElement>("[data-category]");
+  inputs.forEach(input => { input.onchange = () => {
+    if (input.checked) excludedCategories.delete(input.dataset.category!);
+    else excludedCategories.add(input.dataset.category!);
+    updateCategorySelection();
+  }; });
+  document.querySelector<HTMLInputElement>("#all-categories")!.onchange = e => {
+    const checked = (e.target as HTMLInputElement).checked;
+    inputs.forEach(input => {
+      input.checked = checked;
+      if (checked) excludedCategories.delete(input.dataset.category!);
+      else excludedCategories.add(input.dataset.category!);
+    });
+    updateCategorySelection();
+  };
+  updateCategorySelection();
+}
+function progressCard(title: string, value: number, max: number, description: string, warning = "") {
+  const percent = max ? 100 * value / max : 0;
+  return `<section class="learning-gauge" aria-label="${esc(title)}"><div><h2>${esc(title)}</h2><strong>${percent.toLocaleString("fr-FR", { maximumFractionDigits: 1 })} %</strong></div><progress value="${value}" max="${max || 1}" aria-label="${esc(title)}"></progress><p>${esc(description)}</p>${warning ? `<p role="status">${esc(warning)}</p>` : ""}</section>`;
+}
+function bankCoverage() {
+  const { total } = categoryProgress(bank, stats);
+  return progressCard("Questions de conduite", total.practiced, total.total,
+    `${total.practiced.toLocaleString("fr-FR")} / ${total.total.toLocaleString("fr-FR")} questions pratiquées · ${(total.total - total.practiced).toLocaleString("fr-FR")} à découvrir.`);
+}
 function home() {
   clearInterval(timer);
   clearInterval(clockTimer);
@@ -186,6 +271,7 @@ function home() {
   // Exam mode displays its own fixed settings without overwriting the
   // preferences, which are restored as soon as another mode is picked.
   const forced = sessionSettings(mode, count, autoFrench, timeTrial);
+  stats = allStats(attempts);
   const endless = forced.count === ENDLESS;
   const lengths: { value: number; label: string; note: string }[] = [
     ...[10, 20, 40, 60].map((n) => ({ value: n, label: String(n), note: "questions" })),
@@ -195,7 +281,7 @@ function home() {
     ? "Indisponible en mode sans fin."
     : `${forced.count} questions = ${forced.count} minutes au total.`;
   shell(
-    `${storageError ? '<p class="warning">Le stockage local est indisponible. Tu peux pratiquer et exporter la session avant de quitter.</p>' : ""}<section class="setup"><div class="section-heading"><h2>Prépare ta session</h2></div><fieldset><legend>Comment veux-tu pratiquer ?</legend>${(["smart", "random", "discovery", "exam"] as Mode[]).map((m, i) => `<label class="mode-card"><input type="radio" name="mode" value="${m}" ${mode === m ? "checked" : ""}><span class="mode-icon">${["✦", "⤨", "◒", "▣"][i]}</span><span><b>${modeName[m]}</b><small>${["Travaille tes points faibles", "Explore toutes les questions du programme", "Questions inédites, peu vues ou anciennes", "40 questions · 40 min · Catalan uniquement"][i]}</small></span><span class="radio-mark"></span></label>`).join("")}</fieldset><fieldset><legend>Combien de questions ?</legend><div class="lengths">${lengths.map((l) => `<label><input type="radio" name="count" value="${l.value}" ${forced.count === l.value ? "checked" : ""}><span>${l.label}<small>${l.note}</small></span></label>`).join("")}</div></fieldset><label class="french-toggle"><span><b>Aide en français</b><small>Afficher les traductions dès le début</small></span><input type="checkbox" id="auto-fr" role="switch" ${forced.french ? "checked" : ""}></label><p class="helper">Avec l’aide, les bonnes réponses rapportent 50 % des points de maîtrise. Tu peux aussi révéler le français pendant la question.</p><label class="french-toggle"><span><b>Time trial</b><small id="trial-duration">${trialNote}</small></span><input type="checkbox" id="time-trial" role="switch" ${forced.trial ? "checked" : ""}></label><p class="helper">Un chrono global, sans limite par question. À zéro, le test s’arrête et les résultats sont enregistrés. Sans lui, le temps de la session compte simplement à partir de zéro.</p><button class="primary" id="start">Commencer la session <span>→</span></button></section><p class="privacy">Sur cet appareil uniquement · Sans compte</p>`,
+    `${storageError ? '<p class="warning">Le stockage local est indisponible. Tu peux pratiquer et exporter la session avant de quitter.</p>' : ""}<section class="setup"><div class="section-heading"><h2>Prépare ta session</h2></div>${categoryPicker()}<fieldset><legend>Comment veux-tu pratiquer ?</legend>${(["smart", "random", "discovery", "exam"] as Mode[]).map((m, i) => `<label class="mode-card"><input type="radio" name="mode" value="${m}" ${mode === m ? "checked" : ""}><span class="mode-icon">${["✦", "⤨", "◒", "▣"][i]}</span><span><b>${modeName[m]}</b><small>${["Travaille tes points faibles", "Explore toutes les questions du programme", "Jamais vues, puis moins pratiquées et plus anciennes. Sans tenir compte de la réussite", "40 questions · 40 min · Catalan uniquement"][i]}</small></span><span class="radio-mark"></span></label>`).join("")}</fieldset><fieldset><legend>Combien de questions ?</legend><div class="lengths">${lengths.map((l) => `<label><input type="radio" name="count" value="${l.value}" ${forced.count === l.value ? "checked" : ""}><span>${l.label}<small>${l.note}</small></span></label>`).join("")}</div></fieldset><label class="french-toggle"><span><b>Aide en français</b><small>Afficher les traductions dès le début</small></span><input type="checkbox" id="auto-fr" role="switch" ${forced.french ? "checked" : ""}></label><label class="french-toggle"><span><b>Time trial</b><small id="trial-duration">${trialNote}</small></span><input type="checkbox" id="time-trial" role="switch" ${forced.trial ? "checked" : ""}></label><p class="helper" id="selection-note" role="status"></p><hr class="start-separator" aria-hidden="true"><button class="primary" id="start">Commencer la session <span>→</span></button></section><p class="privacy">Sur cet appareil uniquement · Sans compte</p>`,
   );
   document.querySelectorAll<HTMLInputElement>('input[name="mode"]').forEach(
     (e) =>
@@ -222,11 +308,19 @@ function home() {
     document.querySelectorAll<HTMLInputElement>('input[name="count"], #auto-fr, #time-trial').forEach(input => { input.disabled = true; });
   else if (endless)
     document.querySelector<HTMLInputElement>("#time-trial")!.disabled = true;
+  bindCategoryPicker();
 }
 function start() {
   const settings = sessionSettings(mode, count, autoFrench, timeTrial);
   stats = allStats(attempts);
-  const selected = selectQuestions(bank, settings.count, mode, stats);
+  let selected: Question[];
+  try {
+    selected = selectQuestions(practiceBank(), settings.count, mode, stats);
+  } catch (error) {
+    document.querySelector("#selection-note")!.textContent = error instanceof Error ? error.message : "Impossible de préparer cette session.";
+    return;
+  }
+  if (!selected.length) return;
   const endless = settings.count === ENDLESS;
   // Endless keeps the drawn order in reserve and serves one question at a time,
   // so the record holds only what was actually asked.
@@ -290,7 +384,7 @@ function questionMetadata(q: Question) {
   const lastLabel = last
     ? new Date(last).toLocaleString("fr-FR", { dateStyle: "short", timeStyle: "short" })
     : "Jamais";
-  return `<div class="question-meta" tabindex="0" role="group" aria-label="Informations et statistiques de la question"><span class="tag">${esc(q.category ?? "—")}</span><span>Test ${esc(q.test ?? "?")} · #${esc(q.id)}</span><span>${tries} ${tries === 1 ? "tentative" : "tentatives"}</span><span title="Difficulté personnelle : 100 moins le score de maîtrise. Un score élevé indique une question plus difficile.">Difficulté : ${difficulty}</span><span>Dernière réponse : ${esc(lastLabel)}</span></div>`;
+  return `<div class="question-meta" tabindex="0" role="group" aria-label="Informations et statistiques de la question"><span class="tag"><span aria-hidden="true">${categoryIcon(questionCategory(q))}</span> ${esc(categoryLabel(questionCategory(q)))}</span><span>Test ${esc(q.test ?? "?")} · #${esc(q.id)}</span><span>${tries} ${tries === 1 ? "tentative" : "tentatives"}</span><span title="Difficulté personnelle : 100 moins le score de maîtrise. Un score élevé indique une question plus difficile.">Difficulté : ${difficulty}</span><span>Dernière réponse : ${esc(lastLabel)}</span></div>`;
 }
 function examQuestionMarkup(q: Question) {
   return `<progress value="${index}" max="40" aria-label="Progrés de l’examen"></progress><button class="image-frame" id="enlarge" aria-label="Amplia la imatge"><img src="${base}${esc(q.image)}" alt="Imatge de la pregunta ${esc(q.id)}"><span>⤢</span></button><div class="question-copy"><div class="eyebrow">Test ${esc(q.test ?? "?")} · #${esc(q.id)}</div><h2 id="question-title" tabindex="-1" lang="ca">${esc(q.question)}</h2></div><div class="answers">${order.map((a, i) => `<button class="answer" data-answer="${a}"><span class="letter">${"ABC"[i]}</span><span><b lang="ca">${esc(q.answers[a])}</b></span></button>`).join("")}</div><div class="question-actions"><p class="next-hint" id="next" role="status" hidden>Toca qualsevol lloc per ${index === 39 ? "finalitzar l’examen" : "continuar"} <span aria-hidden="true">→</span></p></div><dialog id="image-dialog"><button id="close-image" class="secondary">Tanca la imatge</button><img src="${base}${esc(q.image)}" alt="Imatge ampliada de la pregunta"></dialog>`;
@@ -613,7 +707,7 @@ function result(s: Session) {
 }
 function exams() {
   const summary = examSummary(sessions);
-  shell(`<div class="eyebrow">SIMULATIONS UNIQUEMENT</div><h1>Exams</h1><p class="muted">40 questions · 40 minutes · Réussite à partir de 38/40.</p><div class="score"><strong>${summary.rate === null ? "—" : pct(summary.rate)}</strong><p>taux d’examens réussis · ${summary.passed} sur ${summary.recent.length}</p></div><section class="exam-readiness"><h2>${summary.ready ? "Prêt selon tes simulations" : summary.recent.length < 5 ? "Préparation à confirmer" : "Encore un peu d’entraînement"}</h2><p>${summary.ready ? "Tes 5 derniers examens sont réussis." : "Repère de préparation : réussir 5 examens consécutifs avec au moins 38 bonnes réponses."}</p><p class="helper">Indicateur basé sur tes simulations, pas une garantie de réussite à l’examen.</p></section><button class="primary" id="prepare-exam">Préparer un examen →</button><h2 class="review-title">Les 20 derniers examens</h2>${summary.recent.length ? summary.recent.map(s => `<button class="session-row" data-exam="${s.id}"><span><b>${examPassed(s) ? "Réussi" : "Échoué"}${s.timedOut ? " · Temps écoulé" : ""}</b><small>${new Date(s.completedAt).toLocaleString("fr-FR")} · ${time(s.duration)}</small></span><strong class="${examPassed(s) ? "good" : "bad"}">${s.attempts.filter(a => a.correct).length}/40 →</strong></button>`).join("") : '<p class="empty">Aucun examen terminé. Tes sessions d’entraînement ne comptent pas ici.</p>'}`, "exams");
+  shell(`<div class="eyebrow">SIMULATIONS UNIQUEMENT</div><h1>Exams</h1><p class="muted">40 questions · 40 minutes · Réussite à partir de 38/40.</p><p class="helper">15 normativa · 10 seguretat vial · 15 senyals, mélangées à chaque simulation.</p><div class="score"><strong>${summary.rate === null ? "—" : pct(summary.rate)}</strong><p>taux d’examens réussis · ${summary.passed} sur ${summary.recent.length}</p></div><section class="exam-readiness"><h2>${summary.ready ? "Prêt selon tes simulations" : summary.recent.length < 5 ? "Préparation à confirmer" : "Encore un peu d’entraînement"}</h2><p>${summary.ready ? "Tes 5 derniers examens sont réussis." : "Repère de préparation : réussir 5 examens consécutifs avec au moins 38 bonnes réponses."}</p><p class="helper">Indicateur basé sur tes simulations, pas une garantie de réussite à l’examen.</p></section><button class="primary" id="prepare-exam">Préparer un examen →</button><h2 class="review-title">Les 20 derniers examens</h2>${summary.recent.length ? summary.recent.map(s => `<button class="session-row" data-exam="${s.id}"><span><b>${examPassed(s) ? "Réussi" : "Échoué"}${s.timedOut ? " · Temps écoulé" : ""}</b><small>${new Date(s.completedAt).toLocaleString("fr-FR")} · ${time(s.duration)}</small></span><strong class="${examPassed(s) ? "good" : "bad"}">${s.attempts.filter(a => a.correct).length}/40 →</strong></button>`).join("") : '<p class="empty">Aucun examen terminé. Tes sessions d’entraînement ne comptent pas ici.</p>'}`, "exams");
   document.querySelector<HTMLButtonElement>("#prepare-exam")!.onclick = () => {
     mode = "exam"; // Exam settings are forced at start, never written over the preferences.
     home();
@@ -621,6 +715,17 @@ function exams() {
   document.querySelectorAll<HTMLButtonElement>("[data-exam]").forEach(button => {
     button.onclick = () => { saveError = false; result(sessions.find(s => s.id === button.dataset.exam)!); };
   });
+}
+function quizProgress(stats: ReturnType<typeof vocabStats>) {
+  const card = (title: string, questions: typeof vocabBank) => {
+    const coverage = vocabCoverage(quizAttempts, questions);
+    const unseen = questions.filter(q => !stats.get(q.id)?.shown).length;
+    return progressCard(title, coverage.won, coverage.total,
+      `${coverage.won} / ${coverage.total} réussies · ${unseen} à découvrir`);
+  };
+  return `<section class="quiz-progress" aria-label="Progression du quiz Català"><h2 class="review-title">Ta progression</h2><p class="helper">Questions réussies au moins une fois. Chaque question compte une seule fois.</p>${card("Catalan maîtrisé", vocabBank)}<div class="quiz-category-progress">${Object.entries(vocabTypeName)
+    .map(([type, name]) => card(name, vocabBank.filter(q => q.type === type)))
+    .join("")}</div></section>`;
 }
 function quizHome() {
   clearInterval(timer);
@@ -643,11 +748,12 @@ function quizHome() {
   const modes: [QuizMode, string, string, string][] = [
     ["smart", "✦", "Entraînement intelligent", "Revient surtout sur les mots classés difficiles, avec quelques mots jamais vus"],
     ["random", "⤨", "Aléatoire", `${VOCAB_LENGTH} questions au hasard parmi les ${vocabBank.length}`],
+    ["discovery", "◒", "Discovery", "Jamais vus d’abord, puis les moins pratiqués, du plus ancien au plus récent. La réussite et la difficulté ne comptent pas."],
   ];
   shell(
     `<div class="eyebrow">LECTURE DU CATALAN</div><h1>Català</h1><p class="muted">${VOCAB_LENGTH} questions parmi ${vocabBank.length} : ${Object.entries(counts)
       .map(([type, n]) => `${n} ${esc((vocabTypeName[type] ?? type).toLocaleLowerCase("fr-FR"))}`)
-      .join(" · ")}.</p><section class="setup"><fieldset><legend>Comment veux-tu t’entraîner ?</legend>${modes
+      .join(" · ")}.</p>${quizProgress(stats)}<section class="setup"><fieldset><legend>Comment veux-tu t’entraîner ?</legend>${modes
       .map(
         ([m, icon, name, note]) =>
           `<label class="mode-card"><input type="radio" name="quiz-mode" value="${m}" ${quizMode === m ? "checked" : ""}><span class="mode-icon">${icon}</span><span><b>${name}</b><small>${note}</small></span><span class="radio-mark"></span></label>`,
@@ -821,7 +927,7 @@ function quizResult() {
   recordQuizRun(run);
   quizRun = null; // Back to a normal screen: the nav and the brand return.
   shell(
-    `<div class="eyebrow">QUIZ TERMINÉ · ${quizMode === "smart" ? "ENTRAÎNEMENT INTELLIGENT" : "ALÉATOIRE"}</div><h1>${ok === run.length ? "Sans faute." : ok >= run.length * 0.75 ? "Bien lu." : "À retravailler."}</h1><div class="score"><strong>${ok}<span> / ${run.length}</span></strong><p>bonnes réponses · ${pct(ok / run.length)}${skipped ? ` · ${skipped} passée${skipped > 1 ? "s" : ""}` : ""}</p></div><button class="primary" id="quiz-again">Refaire ${VOCAB_LENGTH} questions →</button><button class="secondary full" id="quiz-back">Voir ma difficulté</button>${
+    `<div class="eyebrow">QUIZ TERMINÉ · ${modeName[quizMode].toLocaleUpperCase("fr-FR")}</div><h1>${ok === run.length ? "Sans faute." : ok >= run.length * 0.75 ? "Bien lu." : "À retravailler."}</h1><div class="score"><strong>${ok}<span> / ${run.length}</span></strong><p>bonnes réponses · ${pct(ok / run.length)}${skipped ? ` · ${skipped} passée${skipped > 1 ? "s" : ""}` : ""}</p></div><button class="primary" id="quiz-again">Refaire ${VOCAB_LENGTH} questions →</button><button class="secondary full" id="quiz-back">Voir ma difficulté</button>${
       missed.length
         ? `<h2 class="review-title">Les ${missed.length === 1 ? "mot manqué" : `${missed.length} mots manqués`}</h2><p class="muted">Relis-les : ce sont eux qui te font mal lire une phrase.</p>${missed
             .map(
@@ -911,47 +1017,74 @@ function recentScoreboard() {
 }
 function learningGauges() {
   const ca = vocabCoverage(quizAttempts), rev = revision.masterySummary();
-  const caPercent = ca.percent.toLocaleString('fr-FR', { maximumFractionDigits: 1 });
-  return `<section class="learning-gauges" aria-label="Maîtrise des apprentissages"><div class="learning-gauge"><div><b>Catalan maîtrisé</b><strong>${caPercent} %</strong></div><progress class="catalan-progress" value="${ca.percent}" max="100" aria-label="Catalan maîtrisé"></progress><p>${ca.won} / ${ca.total} questions du quiz Català réussies au moins une fois. Chaque question compte une seule fois.</p></div><div class="learning-gauge"><div><b>Révision maîtrisée</b><strong>${rev.percent} %</strong></div><progress class="revision-progress" value="${rev.percent}" max="100" aria-label="Révision maîtrisée"></progress><p>Moyenne des ${rev.total} thèmes, chacun sur 5 tests. Les tests manquants valent 0 %. Le Test Maîtrise a sa jauge séparée.</p>${rev.error ? '<p role="status">Les résultats locaux de révision n’ont pas pu être entièrement chargés.</p>' : ''}</div></section>`;
+  return `<div class="learning-gauges" role="group" aria-label="Progression des apprentissages">${bankCoverage()}${progressCard("Catalan maîtrisé", ca.won, ca.total,
+    `${ca.won} / ${ca.total} questions du quiz Català réussies au moins une fois. Chaque question compte une seule fois.`)}${progressCard("Révision maîtrisée", rev.percent, 100,
+    `Moyenne des ${rev.total} thèmes, chacun sur 5 tests. Les tests manquants valent 0 %. Le Test Maîtrise a sa jauge séparée.`,
+    rev.error ? "Les résultats locaux de révision n’ont pas pu être entièrement chargés." : "")}</div>`;
+}
+function mistakesPanel(items: RecentMistake[], total: number) {
+  return `<details class="mistakes-panel" id="recent-mistakes"><summary><span><b>Questions ratées récemment</b><small>72 dernières heures · toutes les activités</small></span><span class="mistakes-count">${items.length}${total > items.length ? ` / ${total}` : ""}<span class="mistakes-chevron" aria-hidden="true">⌄</span></span></summary><div class="mistakes-body">
+    <p class="helper">100 questions maximum, de la plus récente à la plus ancienne. La dernière erreur de chaque question est affichée ; les questions passées sont incluses.</p>
+    ${revision.masterySummary().error ? '<p class="warning" role="status">Les erreurs de Révision n’ont pas pu être entièrement chargées.</p>' : ''}
+    <button type="button" class="secondary full" id="copy-mistakes" ${items.length ? "" : "disabled"}>Copier les questions et les réponses</button><p class="helper" id="copy-mistakes-status" role="status"></p><textarea id="mistakes-copy-text" aria-label="Questions et réponses à copier" readonly hidden></textarea>
+    ${items.length ? `<ol class="mistakes-list">${items.map(row => `<li><article class="mistake-item"><div class="mistake-meta"><b>${sourceLabel[row.source]}</b><span><span aria-hidden="true">${esc(row.icon)}</span> ${esc(row.category)}</span></div><div class="mistake-context"><span class="mistake-language">${contextLabel[row.context]}</span><time datetime="${esc(row.at)}">${new Date(row.at).toLocaleString("fr-FR", { dateStyle: "short", timeStyle: "short" })}</time></div>
+      ${row.instruction ? `<p class="mistake-instruction">${esc(row.instruction)}</p>` : ''}${row.image ? `<img class="mistake-image" src="${base}${esc(row.image)}" alt="Image de la question ${esc(row.questionId)}" loading="lazy">` : ''}<h3 lang="ca">${esc(row.question)}</h3>${row.questionFrench ? `<p class="mistake-translation" lang="fr">${esc(row.questionFrench)}</p>` : ''}
+      <dl><div class="mistake-answer wrong"><dt>Ta réponse${row.passed ? ' · question passée' : ''}</dt><dd lang="${row.passed ? 'fr' : esc(row.answerLanguage)}">${esc(row.selectedAnswer)}${row.selectedFrench ? `<small lang="fr">${esc(row.selectedFrench)}</small>` : ''}</dd></div><div class="mistake-answer correct"><dt>Bonne réponse</dt><dd lang="${esc(row.answerLanguage)}">${esc(row.correctAnswer)}${row.correctFrench ? `<small lang="fr">${esc(row.correctFrench)}</small>` : ''}</dd></div></dl>
+      <p class="mistake-id">#${esc(row.questionId)}${row.occurrences > 1 ? ` · ${row.occurrences} erreurs sur cette période` : ''}</p></article></li>`).join('')}</ol>` : '<p class="mistakes-empty">Aucune question ratée dans l’historique enregistré des 72 dernières heures.</p>'}
+  </div></details>`;
+}
+function bindMistakesCopy(items: RecentMistake[]) {
+  document.querySelector<HTMLButtonElement>('#copy-mistakes')!.onclick = async () => {
+    const content = mistakesText(items, new URL(base, location.href).href);
+    const status = document.querySelector<HTMLElement>('#copy-mistakes-status')!;
+    const fallback = document.querySelector<HTMLTextAreaElement>('#mistakes-copy-text')!;
+    try {
+      await navigator.clipboard.writeText(content);
+      status.textContent = `${items.length} questions et leurs réponses copiées.`;
+      fallback.hidden = true;
+    } catch {
+      fallback.value = content;
+      fallback.hidden = false;
+      fallback.focus(); fallback.select();
+      status.textContent = 'Copie automatique indisponible. Le texte est sélectionné : utilise Ctrl+C ou l’action Copier de ton appareil.';
+    }
+  };
+}
+async function refreshProgressRecords() {
+  // Keep answers still held in memory if a storage write failed.
+  try {
+    const [savedAttempts, words, runs] = await Promise.all([
+      readAll<Attempt>('attempts'), readAll<QuizAttempt>('quizAttempts'), readAll<QuizRun>('quizRuns'),
+    ]);
+    attempts = [...new Map([...savedAttempts.map(capAttempt), ...attempts].map(a => [a.id, a])).values()];
+    quizAttempts = [...new Map([...words, ...quizAttempts].map(a => [a.id, a])).values()];
+    quizRuns = [...new Map([...runs, ...quizRuns].map(a => [a.id, a])).values()];
+  } catch { storageError = true; }
 }
 function progress(refresh = true) {
   revision.leave(); // Include the final reading/test seconds before computing totals.
   stats = allStats(attempts);
+  const mistakes = recentMistakes({ bank, translations: fr, attempts, vocabBank, vocabTypes: vocabTypeName,
+    quizAttempts, revisionThemes, revisionRuns: revision.savedRuns() });
   shell(
-    `<div class="eyebrow">PAS À PAS</div><h1>Ta progression</h1><p class="muted">${stats.size} sur ${bank.length.toLocaleString("fr-FR")} questions pratiquées.</p><progress value="${stats.size}" max="${bank.length}" aria-label="Questions pratiquées"></progress>${learningGauges()}${practiceBoard()}${recentScoreboard()}${metrics(attempts, totalPracticeSeconds(attempts, quizRuns, revision.timeEntries()), attempts.length, "Temps total · toutes activités")}<button class="secondary full" id="export">Sauvegarder mon historique (JSON) ↓</button><p class="helper">Facultatif : télécharge une copie de tes réponses, sessions et temps de révision. Ton historique reste uniquement dans ce navigateur et peut être perdu si ses données sont effacées.</p><h2 class="review-title">Question par question</h2><input type="search" id="search" placeholder="Rechercher une question pratiquée…" aria-label="Rechercher une question pratiquée"><div id="question-stats"></div>`,
+    `<div class="eyebrow">PAS À PAS</div><h1>Ta progression</h1>${learningGauges()}${mistakesPanel(mistakes.items, mistakes.total)}${practiceBoard()}${recentScoreboard()}${metrics(attempts, totalPracticeSeconds(attempts, quizRuns, revision.timeEntries()), attempts.length, "Temps total · toutes activités")}<button class="secondary full" id="export">Sauvegarder mon historique (JSON) ↓</button><p class="helper">Facultatif : télécharge une copie de tes réponses, sessions et temps de révision. Ton historique reste uniquement dans ce navigateur et peut être perdu si ses données sont effacées.</p>`,
     "stats",
   );
   document.querySelector<HTMLButtonElement>("#export")!.onclick = () =>
     exportProgress();
-  const search = document.querySelector<HTMLInputElement>("#search")!;
-  search.oninput = () => renderStats(search.value);
-  renderStats("");
-  if (refresh) void revision.refreshProgress().then(() => {
+  bindMistakesCopy(mistakes.items);
+  if (refresh) void Promise.all([revision.refreshProgress(), refreshProgressRecords()]).then(() => {
     if (document.querySelector('[data-nav="stats"].current')) {
-      const query = document.querySelector<HTMLInputElement>('#search')?.value ?? '';
+      const opened = document.querySelector<HTMLDetailsElement>('#recent-mistakes')?.open ?? false;
+      const copyText = document.querySelector<HTMLTextAreaElement>('#mistakes-copy-text')!;
+      const copied = { text: copyText.value, hidden: copyText.hidden, status: document.querySelector('#copy-mistakes-status')!.textContent };
       progress(false);
-      document.querySelector<HTMLInputElement>('#search')!.value = query;
-      renderStats(query);
+      document.querySelector<HTMLDetailsElement>('#recent-mistakes')!.open = opened;
+      const restored = document.querySelector<HTMLTextAreaElement>('#mistakes-copy-text')!;
+      restored.value = copied.text; restored.hidden = copied.hidden;
+      document.querySelector('#copy-mistakes-status')!.textContent = copied.status;
     }
   });
-}
-function renderStats(query: string) {
-  const entries = [...stats.values()]
-    .filter((s) => {
-      const q = bank.find((q) => q.id === s.id);
-      return `${q?.question} ${s.id}`
-        .toLocaleLowerCase()
-        .includes(query.toLocaleLowerCase());
-    })
-    .sort((a, b) => a.mastery - b.mastery);
-  document.querySelector("#question-stats")!.innerHTML = entries.length
-    ? entries
-        .map(
-          (s) =>
-            `<details class="review"><summary><span class="mastery">${Math.round(s.mastery)}<small>/100</small></span><span><span lang="ca">${esc(bank.find((q) => q.id === s.id)?.question ?? s.id)}</span><small>${s.shown} tentatives · ${pct(s.successRate)} de réussite · ${time(s.averageSeconds)}</small></span></summary><div class="review-body"><p>${s.successes} bonnes réponses · ${s.failures} erreurs (dont ${s.passes} passées)</p><p>Avec français : ${s.successesWithFrench} bonnes réponses / ${s.failuresWithFrench} erreurs<br>Sans français : ${s.successesWithoutFrench} bonnes réponses / ${s.failuresWithoutFrench} erreurs</p><p>Dépendance au français : ${pct(s.frenchDependency)} · Réflexes lents : ${s.slowCount}</p><p>Priorité : ${s.priority.toLocaleString("fr-FR", { minimumFractionDigits: 1, maximumFractionDigits: 1 })} · Dernière tentative : ${new Date(s.lastAsked!).toLocaleString("fr-FR")}</p>${review(attempts.filter((a) => a.questionId === s.id))}</div></details>`,
-        )
-        .join("")
-    : '<p class="empty">Aucune question pratiquée ne correspond à la recherche.</p>';
 }
 async function exportProgress(extra?: Session) {
   const revisionData = await revision.exportData();

@@ -40,6 +40,8 @@ export interface RevisionRun {
   // Absent on legacy runs, which retain their original full-credit score.
   points?: number;
   frenchUsed?: boolean[];
+  // Legacy runs have only completedAt. New runs retain each answer's time.
+  answeredAt?: string[];
 }
 // A cumulative checkpoint per study visit and local calendar day. Reading and
 // testing share one clock; these records never enter theme mastery.

@@ -169,3 +169,16 @@ test('global mastery draws 25 unique questions across every theme and retains so
   assert.throws(() => finishRun(MASTERY_TEST_ID, first.slice(0, 24), first.slice(0, 24).map(q => q.correct)));
   assert.equal(runPercent(finishRun(MASTERY_TEST_ID, first, first.map(q => q.correct), first.map(() => true))), 0);
 });
+
+test('Revision preserves per-answer dates without changing legacy runs or accepting invalid date arrays', async () => {
+  const qs = drawTest(themes[0]);
+  const dates = qs.map((_, i) => new Date(Date.UTC(2026, 8, 12, 12, i)).toISOString());
+  const run = finishRun(themes[0].id, qs, qs.map(q => q.correct), qs.map(() => false), dates);
+  dates[0] = 'changed';
+  assert.equal(run.answeredAt![0], '2026-09-12T12:00:00.000Z');
+  await saveRun(run);
+  assert.deepEqual((await readRuns()).find(r => r.id === run.id), run);
+  assert.equal(finishRun(themes[0].id, qs, qs.map(q => q.correct)).answeredAt, undefined);
+  assert.throws(() => finishRun(themes[0].id, qs, qs.map(q => q.correct), qs.map(() => false), dates), /Dates/);
+  assert.throws(() => finishRun(themes[0].id, qs, qs.map(q => q.correct), qs.map(() => false), []), /Dates/);
+});

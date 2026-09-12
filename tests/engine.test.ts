@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import {
   allStats,
   answerOrder,
-  discoveryWeight,
+  categoryProgress,
   trialRemaining,
   sessionSettings,
   examPassed,
@@ -117,6 +117,7 @@ const bank: Question[] = Array.from({ length: 100 }, (_, i) => ({
   answers: ["A", "B", "C"],
   correct: 0,
   image: "x.jpg",
+  category: ["PARKING", "SAFETY", "SIGNS"][i % 3],
 }));
 test("all modes and lengths select without replacement even with duplicate input IDs", () => {
   for (const mode of ["random", "discovery", "smart", "exam"] as const)
@@ -127,8 +128,9 @@ test("all modes and lengths select without replacement even with duplicate input
         mode,
         new Map(),
       );
-      assert.equal(chosen.length, count);
-      assert.equal(new Set(chosen.map((q) => q.id)).size, count);
+      const expected = mode === "exam" ? 40 : count;
+      assert.equal(chosen.length, expected);
+      assert.equal(new Set(chosen.map((q) => q.id)).size, expected);
     }
   assert.equal(
     selectQuestions(bank.slice(0, 4), 60, "smart", new Map()).length,
@@ -144,17 +146,73 @@ test("weighted selection favors smart weakness", () => {
     "0",
   );
 });
-test("Discovery favors unseen, rare and overdue questions over recent repetition", () => {
+test("Discovery strictly orders unseen, attempt count, then oldest last attempt", () => {
   const recent = { ...statsFor("1", [attempt()], now), shown: 20 };
   const old = { ...recent, lastAsked: new Date(now - 30 * 86400000).toISOString() };
   const rare = { ...old, shown: 1 };
-  assert.ok(discoveryWeight(undefined, now) > discoveryWeight(rare, now));
-  assert.ok(discoveryWeight(rare, now) > discoveryWeight(old, now));
-  assert.ok(discoveryWeight(old, now) > discoveryWeight(recent, now));
-  assert.equal(discoveryWeight({ ...recent, shown: 0 }, now), 120);
   const s = new Map([["1", recent], ["2", old], ["3", rare]]);
-  const selected = selectQuestions(bank.slice(0, 4), 4, "discovery", s, () => 0.5, now);
-  assert.deepEqual(selected.map(q => q.id), ["0", "3", "2", "1"]);
+  for (const rng of [() => 0, () => 1 - Number.EPSILON, Math.random]) {
+    const selected = selectQuestions(bank.slice(0, 4), 4, "discovery", s, rng);
+    assert.deepEqual(selected.map(q => q.id), ["0", "3", "2", "1"]);
+  }
+  // Even a recent one-attempt question comes before a very old 20-attempt one.
+  s.set("3", { ...rare, lastAsked: at });
+  assert.deepEqual(selectQuestions(bank.slice(0, 4), 3, "discovery", s).map(q => q.id), ["0", "3", "2"]);
+});
+
+test("Discovery ignores difficulty, wins, French use and speed; only exposure matters", () => {
+  const qs = bank.slice(0, 3);
+  const history = allStats([
+    attempt({ questionId: "0", at: "2026-09-01T12:00:00Z" }),
+    attempt({ questionId: "1", at: "2026-09-02T12:00:00Z", correct: false, passed: true }),
+    attempt({ questionId: "2", at, frenchVisible: true, seconds: 100, slow_reflex: true }),
+  ], now);
+  const before = selectQuestions(qs, ENDLESS, "discovery", history, () => 0.5);
+  const changed = new Map([...history].map(([id, s]) => [id, {
+    ...s, mastery: 100 - s.mastery, priority: 999, successRate: 1 - s.successRate,
+    averageSeconds: 0, frenchDependency: 1 - s.frenchDependency,
+  }]));
+  assert.deepEqual(selectQuestions(qs, ENDLESS, "discovery", changed, () => 0.5), before);
+  assert.deepEqual(before.map(q => q.id), ["0", "1", "2"]);
+  assert.deepEqual([...history.values()].map(s => s.shown), [1, 1, 1]);
+});
+
+test("Discovery randomizes equal exposure ties without repeating IDs", () => {
+  const qs = bank.slice(0, 3);
+  let i = 0;
+  const first = selectQuestions([...qs, qs[0]], ENDLESS, "discovery", new Map(), () => ++i / 4);
+  i = 4;
+  const second = selectQuestions(qs, ENDLESS, "discovery", new Map(), () => --i / 4);
+  assert.deepEqual(first.map(q => q.id), ["0", "1", "2"]);
+  assert.deepEqual(second.map(q => q.id), ["2", "1", "0"]);
+});
+
+test("Category mastery includes unseen questions and weights the overall total by bank size", () => {
+  const qs = bank.slice(0, 4).map((q, i) => ({ ...q, category: i ? "SIGNS" : "SAFETY" }));
+  const history = allStats([
+    attempt({ questionId: "0" }),
+    attempt({ questionId: "1", frenchVisible: true }),
+    attempt({ questionId: "2", correct: false }),
+    attempt({ questionId: "removed" }),
+  ], now);
+  const result = categoryProgress([...qs, qs[0]], history);
+  assert.deepEqual(result.total, { total: 4, practiced: 3, catalan: 3, combined: 4.5 });
+  const signs = result.categories.find(c => c.id === "SIGNS")!;
+  assert.deepEqual(signs, { id: "SIGNS", total: 3, practiced: 2, catalan: 0, combined: 2 });
+  assert.deepEqual(categoryProgress([], history).total, { total: 0, practiced: 0, catalan: 0, combined: 0 });
+});
+
+test("Catalan mastery only rewards unaided wins and preserves existing combined scoring", () => {
+  const rows = [attempt(), attempt({ frenchVisible: true })];
+  const initial = statsFor("1", rows, now);
+  assert.equal(initial.catalanMastery, 12);
+  assert.equal(initial.mastery, 18);
+  const later = statsFor("1", rows, now + 4 * 86400000);
+  assert.equal(later.catalanMastery, 11.4);
+  assert.equal(later.mastery, 17.4);
+  const missed = statsFor("1", [...rows, attempt({ correct: false })], now);
+  assert.equal(missed.catalanMastery, 0);
+  assert.equal(missed.mastery, 0);
 });
 test("Time trial provides one minute per question and expires against wall time", () => {
   for (const count of [10, 20, 40, 60, 80]) {

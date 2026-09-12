@@ -1,3 +1,6 @@
+import { EXAM_QUOTAS, examGroup, questionCategory, categoryLabel, type ExamGroup } from "./categories";
+import { discover } from "./discovery";
+
 export type Mode = "random" | "discovery" | "smart" | "exam";
 export interface Question {
   id: string;
@@ -193,6 +196,7 @@ export interface Stats {
   frenchDependency: number;
   slowCount: number;
   mastery: number;
+  catalanMastery: number;
   priority: number;
   streak: number;
 }
@@ -212,10 +216,15 @@ export function statsFor(
     .filter((a) => a.questionId === id)
     .sort((a, b) => a.at.localeCompare(b.at));
   let mastery = 0,
+    catalanMastery = 0,
     streak = 0;
   for (const a of rows) {
     mastery = clamp(
       mastery + (a.correct ? masteryCredit(a) : -22) - (a.slow_reflex ? 6 : 0),
+    );
+    catalanMastery = clamp(
+      catalanMastery + (a.correct ? (a.frenchVisible ? 0 : masteryCredit(a)) : -22)
+      - (a.slow_reflex ? 6 : 0),
     );
     streak = a.correct ? streak + 1 : 0;
   }
@@ -225,6 +234,7 @@ export function statsFor(
     last = rows.at(-1);
   const age = last ? Math.max(0, (now - Date.parse(last.at)) / 86400000) : 0;
   mastery = clamp(mastery - Math.max(0, age - 3) * 0.6);
+  catalanMastery = clamp(catalanMastery - Math.max(0, age - 3) * 0.6);
   const averageSeconds = n ? rows.reduce((s, a) => s + a.seconds, 0) / n : 0;
   const failures = n - successes,
     frenchDependency = n ? fr.length / n : 0;
@@ -266,6 +276,7 @@ export function statsFor(
     frenchDependency,
     slowCount: rows.filter((a) => a.slow_reflex).length,
     mastery,
+    catalanMastery,
     priority,
     streak,
   };
@@ -284,15 +295,49 @@ export function allStats(
     [...groups].map(([id, rows]) => [id, statsFor(id, rows, now)]),
   );
 }
-export function discoveryWeight(stats: Stats | undefined, now = Date.now()): number {
-  if (!stats || stats.shown === 0) return 120;
-  const ageDays = stats.lastAsked
-    ? Math.max(0, (now - Date.parse(stats.lastAsked)) / 86400000)
-    : 30;
-  const rarity = 60 / Math.sqrt(stats.shown);
-  const overdue = 40 * Math.min(ageDays / 30, 1);
-  const recency = 0.25 + 0.75 * Math.min(ageDays, 1);
-  return (5 + rarity + overdue) * recency;
+export interface MasterySummary {
+  total: number;
+  practiced: number;
+  catalan: number;
+  combined: number;
+}
+export function categoryProgress(bank: Question[], stats: ReadonlyMap<string, Stats>) {
+  const groups = new Map<string, MasterySummary>();
+  const total: MasterySummary = { total: 0, practiced: 0, catalan: 0, combined: 0 };
+  for (const q of new Map(bank.map(q => [q.id, q])).values()) {
+    const category = questionCategory(q);
+    const group = groups.get(category) ?? { total: 0, practiced: 0, catalan: 0, combined: 0 };
+    groups.set(category, group);
+    const s = stats.get(q.id);
+    for (const row of [group, total]) {
+      row.total++;
+      row.practiced += s?.shown ? 1 : 0;
+      row.catalan += s?.catalanMastery ?? 0;
+      row.combined += s?.mastery ?? 0;
+    }
+  }
+  for (const row of [...groups.values(), total]) {
+    row.catalan = row.total ? row.catalan / row.total : 0;
+    row.combined = row.total ? row.combined / row.total : 0;
+  }
+  return {
+    total,
+    categories: [...groups].map(([id, row]) => ({ id, ...row }))
+      .sort((a, b) => categoryLabel(a.id).localeCompare(categoryLabel(b.id), "fr")),
+  };
+}
+
+function selectExam(bank: Question[], rng: () => number): Question[] {
+  const groups: Record<ExamGroup, Question[]> = { normativa: [], seguretat: [], senyals: [] };
+  for (const q of bank) groups[examGroup(q)].push(q);
+  const selected: Question[] = [];
+  for (const group of Object.keys(EXAM_QUOTAS) as ExamGroup[]) {
+    const quota = EXAM_QUOTAS[group];
+    if (groups[group].length < quota)
+      throw new Error(`Pas assez de questions pour l’examen : ${group} (${groups[group].length}/${quota}).`);
+    selected.push(...answerOrder(groups[group].length, rng).slice(0, quota).map(i => groups[group][i]));
+  }
+  return answerOrder(selected.length, rng).map(i => selected[i]);
 }
 export function selectQuestions(
   bank: Question[],
@@ -300,18 +345,17 @@ export function selectQuestions(
   mode: Mode,
   stats: Map<string, Stats>,
   rng = Math.random,
-  now = Date.now(),
 ): Question[] {
   const unique = [...new Map(bank.map((q) => [q.id, q])).values()];
+  if (mode === "discovery") return discover(unique, count, stats, rng);
+  if (mode === "exam") return selectExam(unique, rng);
   return unique
     .map((q) => {
       const s = stats.get(q.id);
       const weight =
-        mode === "random" || mode === "exam"
+        mode === "random"
           ? 1
-          : mode === "discovery"
-            ? discoveryWeight(s, now)
-            : Math.max(0.1, s?.priority ?? 55);
+          : Math.max(0.1, s?.priority ?? 55);
       return { q, key: -Math.log(Math.max(Number.EPSILON, rng())) / weight };
     })
     .sort((a, b) => a.key - b.key)

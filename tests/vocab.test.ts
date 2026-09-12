@@ -19,16 +19,17 @@ test('Catalan coverage counts distinct known-bank wins once and ignores skips an
   assert.equal(vocabCoverage([]).percent, 0);
   const coverage = vocabCoverage([row, { ...row, id: 'duplicate' }, { ...row, id: 'unknown', questionId: 'not-in-bank' }, { ...row, id: 'skip', questionId: vocabBank[1].id, passed: true }]);
   assert.equal(coverage.won, 1);
-  assert.equal(coverage.total, 300);
-  assert.equal(coverage.percent, 100 / 300);
+  assert.equal(coverage.total, 330);
+  assert.equal(coverage.percent, 100 / 330);
   assert.equal(vocabCoverage([row], []).percent, 0);
   assert.equal(vocabCoverage(vocabBank.map(q => ({ ...row, id: q.id, questionId: q.id }))).percent, 100);
 });
 
 test("the Catalan quiz bank is complete and internally consistent", () => {
   assert.equal(vocabBank.length, quiz.question_count);
-  assert.equal(vocabBank.length, 300);
+  assert.equal(vocabBank.length, 330);
   assert.equal(VOCAB_LENGTH, 20);
+  assert.equal(vocabBank.filter(q => q.type === "sinonims").length, 30);
 
   const ids = new Set(vocabBank.map((q) => q.id));
   assert.equal(ids.size, vocabBank.length, "question ids must be unique");
@@ -74,7 +75,7 @@ test("the correct answer is spread over the four positions", () => {
 });
 
 test("a draw takes distinct questions and never exceeds the bank", () => {
-  for (const mode of ["random", "smart"] as const)
+  for (const mode of ["random", "smart", "discovery"] as const)
     for (let run = 0; run < 50; run++) {
       const drawn = drawVocab(VOCAB_LENGTH, vocabBank, mode);
       assert.equal(drawn.length, VOCAB_LENGTH);
@@ -190,4 +191,22 @@ test("the intelligent mode brings difficult words back far more than random", ()
     random = hardPerRun("random");
   assert.ok(smart > 3, `only ${smart} difficult words per intelligent run`);
   assert.ok(smart > random * 4, `intelligent ${smart} vs random ${random}`);
+});
+
+test("Català discovery exhausts unseen words, then uses count and oldest answer, ignoring difficulty", () => {
+  const bank = vocabBank.slice(0, 4);
+  const [unseen, frequent, recent, old] = bank.map(q => q.id);
+  const stats = vocabStats([
+    answer(frequent, false, 10000), answer(frequent, false, 9000),
+    answer(recent, false, 1, 120, true), answer(old, true, 60, 2),
+  ], NOW);
+  for (const rng of [() => 0.000001, () => 0.999999, Math.random]) {
+    assert.deepEqual(drawVocab(4, bank, "discovery", stats, rng).map(q => q.id), [unseen, old, recent, frequent]);
+    assert.equal(drawVocab(1, bank, "discovery", stats, rng)[0].id, unseen);
+  }
+  // Once everything has been tried, even a just-answered one-trial word
+  // comes before a two-trial word last answered several days ago.
+  stats.set(unseen, vocabStatsFor(unseen, [answer(unseen, true, 0)], NOW));
+  assert.deepEqual(drawVocab(10, [...bank, bank[0]], "discovery", stats).map(q => q.id), [old, recent, unseen, frequent]);
+  assert.deepEqual(drawVocab(20, [], "discovery", stats), []);
 });

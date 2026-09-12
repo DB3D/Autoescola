@@ -23,6 +23,7 @@ export function createRevision(shell: (html: string, testing: boolean) => void) 
   let questions: RevisionQuestion[] = [];
   let picks: (number | null)[] = [];
   let frenchUsed: boolean[] = [];
+  let answeredAt: string[] = [];
   let index = 0;
   let selected: number | null | undefined;
   let confirmedAt = 0;
@@ -76,9 +77,9 @@ export function createRevision(shell: (html: string, testing: boolean) => void) 
     study.stop();
     active = false; themeOpen = false; lessonIndex = null;
     const learned = themes.filter(t => recentRuns(runs, t.id).length > 0).length;
-    render(`<div class="rev-eyebrow">LIRE · COMPRENDRE · RETENIR</div><h1 tabindex="-1">Révision<span class="rev-title-dot">.</span></h1><p class="rev-intro">Une idée à la fois.<br>Le code en français, les réflexes en catalan.</p>
+    render(`<div class="rev-eyebrow">LIRE · COMPRENDRE · RETENIR</div><h1 tabindex="-1">Révision<span class="rev-title-dot">.</span></h1>
       <div class="rev-overview"><span><b>13 + 5</b>thèmes code + català</span><span><b>${learned}<small> / ${themes.length}</small></b>thèmes évalués</span></div>
-      <p class="rev-time-total">⏱ <strong>${studyDuration(study.entries().reduce((sum, row) => sum + row.seconds, 0))}</strong> de révision · lecture + tests</p><p class="rev-how">📖 2–3 fiches → 📝 10 questions au hasard → 🎯 ton bilan</p>${warning()}
+      <p class="rev-time-total">⏱ <strong>${studyDuration(study.entries().reduce((sum, row) => sum + row.seconds, 0))}</strong> de révision · lecture + tests</p>${warning()}
       <div class="rev-section-label">LE CODE, PAR PETITES DOSES <span>13 thèmes</span></div><div class="rev-theme-list">${themes.filter(t => t.categories[0] !== 'CATALA').map(card).join('')}</div>
       <div class="rev-section-label">LE CATALÀ, PAS À PAS <span>5 thèmes</span></div><div class="rev-theme-list">${themes.filter(t => t.categories[0] === 'CATALA').map(card).join('')}</div>
       <div class="rev-section-label">TEST MAÎTRISE <span>25 questions</span></div><div class="rev-theme-list">${card(masteryTest)}</div><p class="rev-footnote">Un tirage parmi les ${themes.length} thèmes, avec au moins une question de chacun. Sa maîtrise est suivie séparément.</p>
@@ -97,7 +98,15 @@ export function createRevision(shell: (html: string, testing: boolean) => void) 
   }
   function card(t: RevisionTheme) {
     const score = mastery(runs, t.id), recent = recentRuns(runs, t.id);
-    return `<button class="rev-theme" data-theme="${t.id}"><span class="rev-icon" aria-hidden="true">${t.icon}</span><span class="rev-card-body"><strong>${esc(t.title)}</strong><span class="rev-subtitle">${esc(t.subtitle)}</span><span class="rev-meter"><span style="width:${score ?? 0}%"></span></span><span class="rev-card-meta">${recent.length ? level(score) : "À découvrir"} · ${recent.length}/5 tests récents</span><span class="rev-theme-time">⏱ ${studyDuration(themeSeconds(t.id))} · ${t.pages.length ? "lecture + tests" : "tests"}</span></span><span class="rev-card-score">${percent(score)}<span aria-hidden="true">↗</span></span></button>`;
+    return `<button class="rev-theme" data-theme="${t.id}"><span class="rev-icon" aria-hidden="true">${t.icon}</span><span class="rev-card-body"><strong>${esc(t.title)}</strong><span class="rev-subtitle">${esc(t.subtitle)}</span><span class="rev-meter"><span style="width:${score ?? 0}%"></span></span>${recentScores(t.id)}<span class="rev-card-meta">${recent.length ? level(score) : "À découvrir"} · ${recent.length}/5 tests récents</span><span class="rev-theme-time">⏱ ${studyDuration(themeSeconds(t.id))} · ${t.pages.length ? "lecture + tests" : "tests"}</span></span><span class="rev-card-score">${percent(score)}<span aria-hidden="true">↗</span></span></button>`;
+  }
+  function recentScores(themeId: string) {
+    const recent = [...recentRuns(runs, themeId)].reverse();
+    return `<span class="rev-recent-label">5 derniers tests · ancien → récent</span><span class="rev-recent-scores" aria-label="Scores des cinq derniers tests">${Array.from({ length: 5 }, (_, i) => {
+      const run = recent[i];
+      return run ? `<span title="${esc(date(run.completedAt))}">${runPercent(run)} %</span>`
+        : '<span class="rev-score-pending" title="Test à faire · 0 % dans la moyenne">—</span>';
+    }).join('')}</span>`;
   }
   function history() {
     const recent = recentRuns(runs, theme.id);
@@ -126,7 +135,7 @@ export function createRevision(shell: (html: string, testing: boolean) => void) 
     const last = previous.get(theme.id) ?? recentRuns(runs, theme.id)[0]?.questionIds;
     questions = isMastery() ? drawMasteryTest(themes, last) : drawTest(theme, last);
     previous.set(theme.id, questions.map(q => q.id));
-    picks = []; frenchUsed = questions.map(() => false); index = 0; active = true; lessonIndex = null; prepareQuestion();
+    picks = []; answeredAt = []; frenchUsed = questions.map(() => false); index = 0; active = true; lessonIndex = null; prepareQuestion();
   }
   function prepareQuestion() {
     selected = undefined;
@@ -163,6 +172,7 @@ export function createRevision(shell: (html: string, testing: boolean) => void) 
   function confirmAnswer(pick: number | null) {
     if (!active || selected !== undefined || saving) return;
     selected = pick; confirmedAt = performance.now(); picks.push(pick);
+    answeredAt.push(new Date().toISOString());
     showFeedback();
   }
   function showFeedback() {
@@ -219,7 +229,7 @@ export function createRevision(shell: (html: string, testing: boolean) => void) 
     if (++index < questions.length) prepareQuestion();
     else {
       active = false;
-      const run = finishRun(theme.id, questions, picks, frenchUsed);
+      const run = finishRun(theme.id, questions, picks, frenchUsed, answeredAt);
       runs = [...runs, run];
       unsaved.set(run.id, run);
       void persist(run);
@@ -275,6 +285,7 @@ export function createRevision(shell: (html: string, testing: boolean) => void) 
       } catch { loadFailed = true; }
     },
     masterySummary: () => ({ percent: overallMastery(runs, themes), total: themes.length, error: loadFailed }),
+    savedRuns: () => [...runs],
     timeEntries: study.entries,
     timeError: study.error,
     exportData
