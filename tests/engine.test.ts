@@ -215,13 +215,13 @@ test("Category mastery includes unseen questions and weights the overall total b
     attempt({ questionId: "removed" }),
   ], now);
   const result = categoryProgress([...qs, qs[0]], history);
-  assert.deepEqual(result.total, { total: 4, practiced: 3, catalan: 3, combined: 4.5 });
+  assert.deepEqual(result.total, { total: 4, practiced: 3, catalan: 25, combined: 50 });
   const signs = result.categories.find(c => c.id === "SIGNS")!;
-  assert.deepEqual(signs, { id: "SIGNS", total: 3, practiced: 2, catalan: 0, combined: 2 });
+  assert.deepEqual(signs, { id: "SIGNS", total: 3, practiced: 2, catalan: 0, combined: 100 / 3 });
   assert.deepEqual(categoryProgress([], history).total, { total: 0, practiced: 0, catalan: 0, combined: 0 });
 });
 
-test("Catalan mastery only rewards unaided wins and preserves existing combined scoring", () => {
+test("Adaptive difficulty scores still use repetition, errors and time away", () => {
   const rows = [attempt(), attempt({ frenchVisible: true })];
   const initial = statsFor("1", rows, now);
   assert.equal(initial.catalanMastery, 12);
@@ -232,6 +232,68 @@ test("Catalan mastery only rewards unaided wins and preserves existing combined 
   const missed = statsFor("1", [...rows, attempt({ correct: false })], now);
   assert.equal(missed.catalanMastery, 0);
   assert.equal(missed.mastery, 0);
+});
+
+test("Category mastery requires a correct, unskipped answer strictly below 60 seconds", () => {
+  for (const seconds of [0, 15, 49.99, 50, 59.99, 60, 60.01, 120, -1, NaN, Infinity]) {
+    const s = statsFor("1", [attempt({ seconds, slow_reflex: seconds >= 50 })], now);
+    const expected = seconds >= 0 && seconds < 60;
+    assert.equal(s.masteredCatalan, expected, `${seconds}s in Catalan`);
+    assert.equal(s.masteredCombined, expected, `${seconds}s combined`);
+  }
+  for (const overrides of [{ correct: false }, { passed: true }, { timedOut: true }]) {
+    const s = statsFor("1", [attempt(overrides)], now);
+    assert.equal(s.masteredCatalan, false);
+    assert.equal(s.masteredCombined, false);
+  }
+});
+
+test("French-assisted wins count only in combined coverage; an unaided win completes both", () => {
+  const qs = [{ ...bank[0], id: "1" }];
+  const assisted = attempt({ frenchVisible: true, frenchManuallyRevealed: true, seconds: 59.99 });
+  const before = categoryProgress(qs, allStats([assisted, { ...assisted, id: 'duplicate' }], now)).total;
+  assert.equal(before.catalan, 0);
+  assert.equal(before.combined, 100);
+  const after = categoryProgress(qs, allStats([assisted, attempt({ seconds: 59.99 })], now)).total;
+  assert.equal(after.catalan, 100);
+  assert.equal(after.combined, 100);
+});
+
+test("Repeated wins count once and time away alone does not change category progress", () => {
+  const qs = [{ ...bank[0], id: "1" }, { ...bank[1], id: "2" }];
+  const rows = [attempt({ seconds: 55, slow_reflex: true }), attempt()];
+  const expected = { total: 2, practiced: 1, catalan: 50, combined: 50 };
+  assert.deepEqual(categoryProgress(qs, allStats(rows, now)).total, expected);
+  assert.deepEqual(categoryProgress(qs, allStats(rows, now + 365 * 86400000)).total, expected);
+});
+
+test("The latest dated answer replaces a prior win, including misses, skips, slow answers and French help", () => {
+  const qs = [{ ...bank[0], id: "1" }];
+  const initial = attempt({ at: "2026-09-01T12:00:00.000Z" });
+  const recovered = attempt({ at: "2026-09-11T12:00:00.000Z", seconds: 59.99, slow_reflex: true });
+  for (const overrides of [
+    { correct: false }, { correct: false, selected: null, passed: true },
+    { seconds: 60 }, { seconds: 75 }, { timedOut: true }, { frenchVisible: true },
+  ]) {
+    const latest = attempt(overrides);
+    // Deliberately unordered: use the answer timestamp, not input-array order.
+    const result = categoryProgress(qs, allStats([latest, initial], now)).total;
+    assert.equal(result.catalan, 0, JSON.stringify(overrides));
+    assert.equal(result.combined, overrides.frenchVisible ? 100 : 0, JSON.stringify(overrides));
+    const restored = categoryProgress(qs, allStats([recovered, latest, initial], now + 86400000)).total;
+    assert.equal(restored.catalan, 100);
+    assert.equal(restored.combined, 100);
+  }
+});
+
+test("495 qualifying wins out of 600 questions give 82.5%, and every question must qualify for 100%", () => {
+  const qs = Array.from({ length: 600 }, (_, i) => ({ ...bank[0], id: `coverage-${i}`, category: "SIGNS" }));
+  const rows = qs.slice(0, 550).map((q, i) => attempt({ questionId: q.id, correct: i < 495, seconds: 59.99, slow_reflex: true }));
+  assert.deepEqual(categoryProgress(qs, allStats(rows, now)).total,
+    { total: 600, practiced: 550, catalan: 82.5, combined: 82.5 });
+  const allWins = qs.map(q => attempt({ questionId: q.id, seconds: 59.99, slow_reflex: true }));
+  assert.ok(categoryProgress(qs, allStats(allWins.slice(0, -1), now)).total.catalan < 100);
+  assert.equal(categoryProgress(qs, allStats(allWins, now)).total.catalan, 100);
 });
 test("Time trial provides one minute per question and expires against wall time", () => {
   for (const count of [10, 20, 40, 60, 80]) {

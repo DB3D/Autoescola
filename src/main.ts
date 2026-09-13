@@ -187,7 +187,9 @@ function shell(content: string, tab = "practice", revisionTest = false) {
 }
 function masteryGauges(row: MasterySummary, label: string) {
   const gauge = (value: number, language: string, combined = false) => {
-    const formatted = `${value.toLocaleString("fr-FR", { maximumFractionDigits: 1 })} %`;
+    // Reserve the 100% label for a fully completed bank, even after rounding.
+    const displayValue = value < 100 ? Math.min(value, 99.9) : value;
+    const formatted = `${displayValue.toLocaleString("fr-FR", { maximumFractionDigits: 1 })} %`;
     return `<div class="mastery-track"><div><span>${language}</span><strong>${formatted}</strong></div><progress class="${combined ? "combined-progress" : "catalan-progress"}" value="${value}" max="100" aria-label="${esc(label)} · ${language}"></progress></div>`;
   };
   return `<div class="mastery-tracks">${gauge(row.catalan, "Català seul")}${gauge(row.combined, "Català + français", true)}</div>`;
@@ -204,7 +206,7 @@ function categoryPicker() {
       <span class="category-selection" id="category-selection"></span>
     </summary>
     <div class="category-options">
-      <p class="helper">Moyenne de toutes les questions, y compris celles jamais vues à 0 %. Català seul : les réussites sans aide. Català + français : l’aide apporte aussi ses demi-points. Erreurs, lenteur et temps sans révision réduisent les deux jauges.</p>
+      <p class="helper">La dernière réponse à chaque question doit être correcte et donnée en moins de 60 s. Català seul : sans aide française. Català + français : avec ou sans aide. Une nouvelle erreur fait baisser la jauge.</p>
       <fieldset class="category-fieldset" ${mode === "exam" ? "disabled" : ""}><legend>Questions à pratiquer</legend>
         <label class="category-all"><input type="checkbox" id="all-categories"><span>Toutes les catégories</span></label>
         <div class="category-list">${summary.categories.map(row => `<label class="category-row"><input type="checkbox" data-category="${esc(row.id)}" ${mode === "exam" || !excludedCategories.has(row.id) ? "checked" : ""}><span class="category-content"><span class="category-title"><b><span class="category-emoji" aria-hidden="true">${categoryIcon(row.id)}</span> ${esc(categoryLabel(row.id))}</b><small>${row.total} questions</small></span>${masteryGauges(row, categoryLabel(row.id))}</span></label>`).join("")}</div>
@@ -384,7 +386,7 @@ function questionMetadata(q: Question) {
   const lastLabel = last
     ? new Date(last).toLocaleString("fr-FR", { dateStyle: "short", timeStyle: "short" })
     : "Jamais";
-  return `<div class="question-meta" tabindex="0" role="group" aria-label="Informations et statistiques de la question"><span class="tag"><span aria-hidden="true">${categoryIcon(questionCategory(q))}</span> ${esc(categoryLabel(questionCategory(q)))}</span><span>Test ${esc(q.test ?? "?")} · #${esc(q.id)}</span><span>${tries} ${tries === 1 ? "tentative" : "tentatives"}</span><span title="Difficulté personnelle : 100 moins le score de maîtrise. Un score élevé indique une question plus difficile.">Difficulté : ${difficulty}</span><span>Dernière réponse : ${esc(lastLabel)}</span></div>`;
+  return `<div class="question-meta" tabindex="0" role="group" aria-label="Informations et statistiques de la question"><span class="tag"><span aria-hidden="true">${categoryIcon(questionCategory(q))}</span> ${esc(categoryLabel(questionCategory(q)))}</span><span>Test ${esc(q.test ?? "?")} · #${esc(q.id)}</span><span>${tries} ${tries === 1 ? "tentative" : "tentatives"}</span><span title="Difficulté personnelle calculée selon tes réponses, leur rapidité et la fréquence de révision.">Difficulté : ${difficulty}</span><span>Dernière réponse : ${esc(lastLabel)}</span></div>`;
 }
 function examQuestionMarkup(q: Question) {
   return `<progress value="${index}" max="40" aria-label="Progrés de l’examen"></progress><button class="image-frame" id="enlarge" aria-label="Amplia la imatge"><img src="${base}${esc(q.image)}" alt="Imatge de la pregunta ${esc(q.id)}"><span>⤢</span></button><div class="question-copy"><div class="eyebrow">Test ${esc(q.test ?? "?")} · #${esc(q.id)}</div><h2 id="question-title" tabindex="-1" lang="ca">${esc(q.question)}</h2></div><div class="answers">${order.map((a, i) => `<button class="answer" data-answer="${a}"><span class="letter">${"ABC"[i]}</span><span><b lang="ca">${esc(q.answers[a])}</b></span></button>`).join("")}</div><div class="question-actions"><p class="next-hint" id="next" role="status" hidden>Toca qualsevol lloc per ${index === 39 ? "finalitzar l’examen" : "continuar"} <span aria-hidden="true">→</span></p></div><dialog id="image-dialog"><button id="close-image" class="secondary">Tanca la imatge</button><img src="${base}${esc(q.image)}" alt="Imatge ampliada de la pregunta"></dialog>`;
@@ -541,7 +543,7 @@ function showFrench() {
     button.disabled = true;
     button.setAttribute("aria-pressed", "true");
     button.setAttribute("aria-label", "Traductions françaises visibles");
-    button.title = answered ? "Traductions françaises visibles" : "Français visible · 50 % des points";
+    button.title = answered ? "Traductions françaises visibles" : "Français visible · aide utilisée";
   }
 }
 function answer(selected: number | null, timedOut = false) {
@@ -601,7 +603,7 @@ function answer(selected: number | null, timedOut = false) {
 
   document.querySelector<HTMLElement>("#next")!.hidden = false;
   document.querySelector("#feedback")!.innerHTML =
-    `<div class="feedback ${correct ? "good" : "bad"}"><span class="thumb">${correct ? "👍" : "👎"}</span><b>${correct ? "Bonne réponse !" : selected === null ? "Question passée." : "Réponse incorrecte."}</b><span>${correct ? "" : `Bonne réponse : ${"ABC"[order.indexOf(q.correct)]}. `}${seconds >= 50 ? "Réflexe lent · pénalité de maîtrise." : ""}</span></div>${fr[q.id]?.tip ? `<p lang="fr">${esc(fr[q.id].tip)}</p>` : ""}`;
+    `<div class="feedback ${correct ? "good" : "bad"}"><span class="thumb">${correct ? "👍" : "👎"}</span><b>${correct ? "Bonne réponse !" : selected === null ? "Question passée." : "Réponse incorrecte."}</b><span>${correct ? "" : `Bonne réponse : ${"ABC"[order.indexOf(q.correct)]}. `}${seconds >= 50 ? "Réflexe lent · à retravailler." : ""}</span></div>${fr[q.id]?.tip ? `<p lang="fr">${esc(fr[q.id].tip)}</p>` : ""}`;
 }
 async function finish() {
   if (!active || saving) return;

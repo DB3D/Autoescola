@@ -198,6 +198,8 @@ export interface Stats {
   slowCount: number;
   mastery: number;
   catalanMastery: number;
+  masteredCatalan: boolean;
+  masteredCombined: boolean;
   priority: number;
   streak: number;
 }
@@ -233,6 +235,10 @@ export function statsFor(
     successes = rows.filter((a) => a.correct).length,
     fr = rows.filter((a) => a.frenchVisible),
     last = rows.at(-1);
+  // Only the latest answer sets category progress. Adaptive difficulty keeps
+  // using the full history, but time away alone never changes this status.
+  const latestQualifies = !!last && last.correct && !last.passed && !last.timedOut
+    && last.seconds >= 0 && last.seconds < 60;
   const age = last ? Math.max(0, (now - Date.parse(last.at)) / 86400000) : 0;
   mastery = clamp(mastery - Math.max(0, age - 3) * 0.6);
   catalanMastery = clamp(catalanMastery - Math.max(0, age - 3) * 0.6);
@@ -279,6 +285,8 @@ export function statsFor(
     slowCount: rows.filter((a) => a.slow_reflex).length,
     mastery,
     catalanMastery,
+    masteredCatalan: latestQualifies && !last!.frenchVisible,
+    masteredCombined: latestQualifies,
     priority,
     streak,
   };
@@ -314,13 +322,13 @@ export function categoryProgress(bank: Question[], stats: ReadonlyMap<string, St
     for (const row of [group, total]) {
       row.total++;
       row.practiced += s?.shown ? 1 : 0;
-      row.catalan += s?.catalanMastery ?? 0;
-      row.combined += s?.mastery ?? 0;
+      row.catalan += s?.masteredCatalan ? 1 : 0;
+      row.combined += s?.masteredCombined ? 1 : 0;
     }
   }
   for (const row of [...groups.values(), total]) {
-    row.catalan = row.total ? row.catalan / row.total : 0;
-    row.combined = row.total ? row.combined / row.total : 0;
+    row.catalan = row.total ? 100 * row.catalan / row.total : 0;
+    row.combined = row.total ? 100 * row.combined / row.total : 0;
   }
   return {
     total,
